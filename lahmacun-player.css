@@ -1,0 +1,127 @@
+html.ismobile .bottomwrap {
+	display: none;
+}
+
+html.ismobile .stations {
+    min-height: 100px;
+}
+
+a:hover, a:hover * {
+	text-decoration: none;
+}
+
+body.embed.station-lahmacun {
+    background-image: url("lahmacun.png") !important;
+	display: flex;
+/* 
+	background-size: cover !important;
+    background-position: center !important;
+ */
+    background-color: #d3a0f7 !important;
+}
+
+.in-row{
+	display: inline-block !important;
+}
+
+.stations {
+    margin: auto;
+    background: white;
+    padding: 1.4em 1.6em;
+    border-radius: 5px;
+    width: 400px;
+    min-height: 130px;
+}
+
+.stations a, .stations a:active, .stations a:focus {
+    color: black;
+}
+
+.stations a:hover {
+   color: #6b337c;
+}
+
+
+.media-body {
+    font-family: Rubik, "Helvetica Neue", sans-serif;
+	overflow: auto;
+}
+
+.player-wrap {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.player-wrap.bottomwrap {
+	margin-top: 0.7em;
+}
+
+.player-wrap.creditswrap {
+    margin-top: 0.7em;
+    text-align: center;
+}
+
+
+.player-wrap.creditswrap a {
+    margin: 0 0.5em;
+}
+
+
+.volumesign {
+    display: inline-block;
+    color: black;
+    cursor: default;
+}
+
+.volumesign.low {
+    margin-right: 3px;
+}
+
+.volumesign.high {
+    margin-left: 7px;
+}
+
+.pull-left.pr-2 img {
+    margin: 0 12px 0 2px;
+}
+
+.nowplaying h4 {
+    font-size: 16px;
+    line-height: 1.15em;
+    padding-bottom: 0.2em;
+}
+
+.nowplaying .nowplaying-progress {
+    font-size: 12px;
+    color: #c7c7c7;
+}
+
+.progress {
+
+}
+
+.progress-bar {
+    border-bottom: 10px solid #682f7c !important;
+	cursor: pointer;
+}
+
+.progress-bar::after {
+    background-color: #d3a0f7 !important;
+    height: 10px;
+}
+
+
+@media only screen and (max-width:480px) {
+
+.stations { zoom: 0.9; min-height: 100px; }
+
+}
+
+
+
+@media only screen and (max-width:320px) {
+
+.stations { zoom: 0.7; }
+
+}
