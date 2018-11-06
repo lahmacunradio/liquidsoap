@@ -90,8 +90,11 @@ $(function() {
                 if (time_played > time_total) {
                     time_played = time_total;
                 }
-
-                return formatTime(time_played) + ' / ' + formatTime(time_total);
+                if (this.np.now_playing.song.title == "No show no show"){
+                  return "OFF AIR"
+                } else {
+                  return formatTime(time_played) + ' / ' + formatTime(time_total);
+                }
             }
         }
     });
@@ -153,7 +156,7 @@ $(function() {
 <div class="player-wrap bottomwrap">
 	<div class="volumesign low">
 		<i class="material-icons">volume_mute</i>
-	</div>	
+	</div>
 		 <div class="progress jp-volume-bar d-inline-block" style="width: 290px;">
 			 <div class="jp-volume-bar-value progress-bar" role="progressbar"></div>
 		 </div>
@@ -162,7 +165,7 @@ $(function() {
 	</div>
 
 
-<!--              
+<!--
         <div class="float-left text-left flex-row" id="radio-player-controls">
 
              <a href="javascript:;" class="jp-mute" title="Mute">
@@ -173,8 +176,8 @@ $(function() {
              </a>
 
          </div>
--->      
-  
+-->
+
     <!--<div id="radio-embedded-controls" class="jp-state-playing">
         <i class="fa fa-volume-up" aria-hidden="true"></i>
 		<div class="progress jp-volume-bar" style="height: 15px; " title="Volume">
@@ -187,7 +190,7 @@ $(function() {
 <div class="player-wrap creditswrap">
 <a href="schedule.pdf" target="_blank">Schedule</a> | <a href="lahmacun.m3u" target="_blank">Stream</a> | <a href="mailto:lahmacun@mmmnmnm.com" target="_blank">Contact</a>
 </div>
-		
+
 
 </div>
 
