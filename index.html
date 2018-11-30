@@ -1,48 +1,41 @@
-<html><head>
+
+<!DOCTYPE html>
+<html>
+<head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Lahmacun radio</title>
 
-<!--<link rel="apple-touch-icon" sizes="57x57" href="/static/icons/production/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/static/icons/production/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/static/icons/production/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/static/icons/production/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/static/icons/production/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/static/icons/production/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/static/icons/production/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/static/icons/production/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/production/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/production/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/production/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/static/icons/production/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/production/favicon-16x16.png">-->
 <link rel="icon" type="image/png" sizes="16x16" href="/lahmacun.png">
 <meta name="msapplication-TileColor" content="#FFFFFF">
-<!-- <meta name="msapplication-TileImage" content="/static/icons/production/ms-icon-144x144.png">-->
+<meta name="msapplication-TileImage" content="/static/icons/production/ms-icon-144x144.png">
 <meta name="theme-color" content="#2196F3">
 
-<link rel="stylesheet" type="text/css" href="/static/dist/light-9b3ba4f3d0.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.lahmacun.hu:8084/static/js/bootgrid/jquery.bootgrid.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" crossorigin="anonymous" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" />
+<link rel="stylesheet" type="text/css" href="https://www.lahmacun.hu:8084/static/dist/light-7dc090a955.css" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js" crossorigin="anonymous" integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA="></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA="></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8="></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js" crossorigin="anonymous" integrity="sha256-ICvFZLf7gslwfpvdxzQ8w8oZt0brzoFr8v2dXBecuLY=" defer=""></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js" crossorigin="anonymous" integrity="sha256-LlN0a0J3hMkDLO1mhcMwy+GIMbIRV7kvKHx4oCxNoxI=" defer=""></script>
-<script type="text/javascript" src="/static/dist/app-9dbd46ed17.js"></script>
-<script type="text/javascript" src="/static/dist/material-a93414a265.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js" crossorigin="anonymous" integrity="sha256-0jgHNEQo7sIScbcI/Pc5GYJ+VosKM1mJ+fI0iuQ1a9E=" defer=""></script>
-<script type="text/javascript" src="/static/dist/radio-bf97216194.js" defer=""></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js" crossorigin="anonymous" integrity="sha256-ICvFZLf7gslwfpvdxzQ8w8oZt0brzoFr8v2dXBecuLY=" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js" crossorigin="anonymous" integrity="sha256-LlN0a0J3hMkDLO1mhcMwy+GIMbIRV7kvKHx4oCxNoxI=" defer></script>
+<script type="text/javascript" src="https://www.lahmacun.hu:8084/static/dist/app-9dbd46ed17.js"></script>
+<script type="text/javascript" src="https://www.lahmacun.hu:8084/static/dist/material-a93414a265.js"></script>
+<script type="text/javascript" src="https://www.lahmacun.hu:8084/static/js/bootgrid/jquery.bootgrid.updated.js"></script>
+<script type="text/javascript" src="https://www.lahmacun.hu:8084/static/dist/bootgrid-28de3d6f6d.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" crossorigin="anonymous" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js" crossorigin="anonymous" integrity="sha256-0jgHNEQo7sIScbcI/Pc5GYJ+VosKM1mJ+fI0iuQ1a9E=" defer></script>
+<script type="text/javascript" src="https://www.lahmacun.hu:8084/static/dist/radio-7c2492a14b.js" defer></script>
 
 <link rel="stylesheet" type="text/css" href="lahmacun-player.css">
 
 </head>
 
-<body class="page-minimal embed station-lahmacun">
-
-<script type="text/javascript" nonce="7PxQhoLJyuIUoRpNQ3VM4+BV">
+<body class="page-minimal station-lahmacun_radio">
+<script type="text/javascript" nonce="BQ4A2ZdmNz1kbMfKQl0nVf6H">
 
 var nowPlaying;
 
@@ -90,11 +83,8 @@ $(function() {
                 if (time_played > time_total) {
                     time_played = time_total;
                 }
-                if (this.np.now_playing.song.title == "No show no show"){
-                  return "OFF AIR"
-                } else {
-                  return formatTime(time_played) + ' / ' + formatTime(time_total);
-                }
+
+                return formatTime(time_played) + ' / ' + formatTime(time_total);
             }
         }
     });
@@ -102,12 +92,26 @@ $(function() {
     setInterval(iterateTimer, 1000);
 });
 </script>
-
-<script type="text/javascript" nonce="7PxQhoLJyuIUoRpNQ3VM4+BV">
+<script type="text/javascript" nonce="BQ4A2ZdmNz1kbMfKQl0nVf6H">
 $(function() {
+    songHistory = new Vue({
+        el: '#station-history',
+        data: {
+            history: [
+                {
+                    song: {
+                        title: 'Song Title',
+                        artist: 'Song Artist'
+                    }
+                }
+            ]
+        }
+    });
+
     function loadNowPlaying() {
-        $.getJSON('https://www.lahmacun.hu:8083/api/nowplaying/1', function(row) {
+        $.getJSON('https://www.lahmacun.hu:8084/api/nowplaying/1', function(row) {
             nowPlaying.np = row;
+            songHistory.history = row.song_history;
 
             if ('mediaSession' in navigator) {
                 navigator.mediaSession.metadata = new MediaMetadata({
@@ -124,19 +128,78 @@ $(function() {
             setTimeout(loadNowPlaying, 30000);
         });
     }
-
     loadNowPlaying();
+
+    $('[data-fancybox]').fancybox({
+        buttons: ['close']
+    });
+
+	var request_dialog = $('#modal-request');
+
+	request_dialog.on('show.bs.modal', function (event) {
+
+		if (!request_dialog.data('request_loaded'))
+		{
+			var grid = $("#requests-table").bootgrid({
+				ajax: true,
+				rowSelect: false,
+				caseSensitive: false,
+				url: "/api/station/1/requests",
+				formatters: {
+					"commands": function(column, row) {
+						return '<a class="btn btn-request btn-sm btn-primary" data-url="'+row.request_url+'">Request</a>';
+					}
+				}
+			}).on("loaded.rs.jquery.bootgrid", function()
+			{
+				/* Executes after data is loaded and rendered */
+				grid.find(".btn-request").on("click", function(e)
+				{
+					e.preventDefault();
+					request_dialog.modal('hide');
+
+					$.ajax({
+						dataType: "json",
+						url: $(this).data('url')
+					}).done(function(data) {
+						notify(data, 'success');
+					}).fail(function(jqXhr) {
+						notify('Error: ' + jqXhr.responseJSON, 'danger');
+					});
+
+					return false;
+				});
+			});
+
+			request_dialog.data('request_loaded', true);
+		}
+
+	});
 });
 </script>
 
 
-<div class="stations nowplaying">
-<div class="player-wrap topwrap">
-    <div id="station-nowplaying" class="media media-left">
-		<div class="pull-left pr-2 pt-3">
-			<a role="button" title="Play/Pause" href="#" data-url="https://www.lahmacun.hu:8083/radio/8000/radio.mp3" class="btn-audio"><i class="material-icons lg">play_circle_filled</i></a>
-		</div>
-	    <div class="pull-left pr-2" v-if="np.now_playing.song.art">
+<div class="public-page">
+    <div class="card">
+        <div class="card-body">
+            <div class="radio-controls-standalone" id="radio-player-controls">
+                <a href="javascript:;" class="text-secondary jp-mute" title="Mute">
+                    <i class="material-icons">volume_mute</i>
+                </a>
+                <input type="range" title="Volume" class="d-inline-block custom-range jp-volume-range" style="" id="jp-volume-range" min="0" max="100" step="1">
+                <a href="javascript:;" class="text-secondary jp-volume-full" title="Full Volume">
+                    <i class="material-icons">volume_up</i>
+                </a>
+            </div>
+
+            <div class="stations nowplaying">
+                <div class="media media-left" id="station-nowplaying">
+    <div class="pull-left pr-2 pt-3">
+        <a class="btn-audio" role="button" title="Play/Pause" href="#" data-url="https://www.lahmacun.hu:8084/radio/8000/radio.mp3?1543513066" >
+            <i class="material-icons lg">play_circle_filled</i>
+        </a>
+    </div>
+    <div class="pull-left pr-2" v-if="np.now_playing.song.art">
         <a v-bind:href="np.now_playing.song.art" data-fancybox target="_blank"><img v-bind:src="np.now_playing.song.art" alt="Album Cover" style="width: 50px; height: auto; border-radius: 5px;"></a>
     </div>
     <div class="media-body">
@@ -151,53 +214,65 @@ $(function() {
         </div>
     </div>
 </div>
-</div>
+            </div>
+        </div>
+        <div class="player-wrap creditswrap">
+        <a href="schedule.pdf" target="_blank">Schedule</a> | <a href="lahmacun.m3u" target="_blank">Stream</a> | <a href="mailto:lahmacun@mmmnmnm.com" target="_blank">Contact</a>
+        </div>
 
-<div class="player-wrap bottomwrap">
-	<div class="volumesign low">
-		<i class="material-icons">volume_mute</i>
-	</div>
-		 <div class="progress jp-volume-bar d-inline-block" style="width: 290px;">
-			 <div class="jp-volume-bar-value progress-bar" role="progressbar"></div>
-		 </div>
-	<div class="volumesign high">
-		<i class="material-icons">volume_up</i>
-	</div>
-
-
-<!--
-        <div class="float-left text-left flex-row" id="radio-player-controls">
-
-             <a href="javascript:;" class="jp-mute" title="Mute">
-                 <i class="material-icons">volume_off</i>
-             </a>
-             <a href="javascript:;" class="jp-unmute" title="Unmute">
-                 <i class="material-icons">volume_up</i>
-             </a>
-
-         </div>
--->
-
-    <!--<div id="radio-embedded-controls" class="jp-state-playing">
-        <i class="fa fa-volume-up" aria-hidden="true"></i>
-		<div class="progress jp-volume-bar" style="height: 15px; " title="Volume">
-			<div class="jp-volume-bar-value progress-bar" role="progressbar" style="width: 84%;">
-
-			</div>
-		</div>-->
-</div>
-
-<div class="player-wrap creditswrap">
-<a href="schedule.pdf" target="_blank">Schedule</a> | <a href="lahmacun.m3u" target="_blank">Stream</a> | <a href="mailto:lahmacun@mmmnmnm.com" target="_blank">Contact</a>
-</div>
-
+    </div>
 
 </div>
 
+<div class="modal fade" id="modal-history" tabindex="-1" role="dialog" aria-labelledby="modal-history-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-history-label">Song History</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <ol type="1" id="station-history">
+                    <li v-for="row in history">
+                        <b>{{ row.song.title }}</b><br>
+                        {{ row.song.artist }}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="modal-request" tabindex="-1" role="dialog" aria-labelledby="modal-request-label">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-request-label">Request a Song</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
 
+                <table class="data-table table table-striped" id="requests-table">
+                    <thead>
+                    <tr>
+                        <th data-column-id="song_id" data-identifier="true" data-visible="false" data-visible-in-selection="false">ID</th>
+                        <th data-column-id="song_title">Title</th>
+                        <th data-column-id="song_artist">Artist</th>
+                        <th data-column-id="song_album" data-visible="false">Album</th>
+                        <th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <footer id="footer" class="footer-alt" role="contentinfo">
+        Powered by <a href="https://www.mmmnmnm.com" target="_blank">MMN</a> <br>
+        </footer>
 
 </body>
-
-
 </html>
