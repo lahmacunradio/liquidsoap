@@ -150,6 +150,7 @@ html.ismobile body.page-minimal .public-page .card {
 body.page-minimal .public-page .card {
     width: 400px;
 	height: 140px;
+	min-width: 400px;
 }
 
 body.page-minimal .public-page .card .card-body {
