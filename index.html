@@ -71,7 +71,11 @@ function formatTime(time) {
 $(function() {
     nowPlaying = new Vue({
         el: '#station-nowplaying',
-        data: {"np":{"now_playing":{"song":{"title":"Song Title","artist":"Song Artist","art":"https:\/\/www.lahmacun.hu:8084\/static\/img\/generic_song.jpg"},"is_request":false,"elapsed":0,"duration":0}}},
+        data: {"np":{ "live":{"is_live":"Is Live","streamer_name":"Streamer Name"},
+                      "now_playing":
+                      {"song":{"title":"Song Title","artist":"Song Artist","art":"http:\/\/178.238.217.146:8083\/static\/img\/generic_song.jpg"},"is_request":false,"elapsed":0,"duration":0}
+                    }
+              },
         computed: {
             "time_display": function() {
                 var time_played = this.np.now_playing.elapsed;
@@ -86,6 +90,12 @@ $(function() {
                 }
 
                 return formatTime(time_played) + ' / ' + formatTime(time_total);
+            },
+            "show_title": function() {
+              if (this.np.live.is_live)
+                return this.np.live.streamer_name
+              else
+                return this.np.now_playing.song.title
             }
         }
     });
@@ -197,13 +207,10 @@ $(function() {
     </div>
     <div class="media-body">
         <h4 class="media-heading might-overflow nowplaying-title">
-            {{ np.now_playing.song.title }}
+            {{ show_title }}
         </h4>
         <div class="nowplaying-artist might-overflow">
             {{ np.now_playing.song.artist }}
-        </div>
-        <div class="nowplaying-progress" v-if="time_display">
-            {{ time_display }}
         </div>
     </div>
 </div>
