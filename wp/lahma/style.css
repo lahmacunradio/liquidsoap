@@ -16,7 +16,16 @@
 body {
 	font:500 12px/1.4 'Times New Roman', Times, Arial, sans-serif;
 	color:#444;
-	background-color: #d3a0f7;
+	background-image: url("img/lahmacun.png") !important;
+background-repeat: repeat !important;
+background-size: initial !important;
+}
+
+.player_frame{
+	background-color: white;
+	margin: auto;
+	width: 50%;
+
 }
 
 a:hover {
