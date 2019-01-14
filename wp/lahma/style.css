@@ -1,9 +1,9 @@
 /*
  Theme Name:   Radio Lahmacun theme
- Theme URI:    
+ Theme URI:
  Description:  Radio Lahmacun theme based on HTML5Stable Wordpress theme
  Author:       Janos Hegymegi
- Author URI:   
+ Author URI:
  Template:     stable
  Version:      1.0.0
  License:      GNU General Public License v2 or later
@@ -17,9 +17,22 @@ body {
 	font:500 12px/1.4 'Times New Roman', Times, Arial, sans-serif;
 	color:#444;
 	background-image: url("img/lahmacun.png") !important;
-background-repeat: repeat !important;
 background-size: initial !important;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-color: #d09cf8 !important;
 }
+
+
+
+body.page-template-default {
+	font:500 12px/1.4 'Times New Roman', Times, Arial, sans-serif;
+	color:#444;
+background-color: #d09cf8 !important;
+background-image: none !important;
+}
+
 
 .player_frame{
 	background-color: white;
@@ -50,11 +63,11 @@ a:hover, a:hover * {
 body.embed.station-lahmacun {
     background-image: url("lahmacun.png") !important;
 	display: flex;
-/* 
+/*
 	background-size: cover !important;
     background-position: center !important;
  */
-    background-color: #d3a0f7 !important;
+    background-color: #d09cf8 !important;
 }
 
 .in-row{
@@ -185,7 +198,7 @@ body.embed.station-lahmacun {
 \*------------------------------------*/
 
 #lahma-menu #menu-item-31 {
-	
+
 	/* background-color: #FFF; */
 	border: 3px dotted #444;
 	border-radius: 45px;
@@ -239,7 +252,7 @@ body.embed.station-lahmacun {
 
 #lahma-menu .menu-item-has-children:hover .sub-menu {
 	display: block;
-	
+
 }
 
 #lahma-menu .menu-item-has-children:hover a:hover {
@@ -272,4 +285,3 @@ body.embed.station-lahmacun {
 		background-color: aqua;
 	} */
 }
-
