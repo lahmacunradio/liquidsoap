@@ -1,0 +1,38 @@
+/*
+ Theme Name:   Radio Lahmacun theme (maker)
+ Theme URI:
+ Description:  Radio Lahmacun theme based on maker Wordpress theme
+ Author:       gamma
+ Author URI:
+ Template:     maker
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         no-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  lahmacun
+*/
+
+body.home {
+	background-image: url("img/lahmacun.png") !important;
+background-size: initial !important;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-color: #d09cf8 !important;
+}
+
+div#page{
+	background-color: transparent !important;
+}
+
+body.page-template-default {
+background-color: #d09cf8 !important;
+background-image: none;
+}
+
+@media screen and (min-width: 768px) {
+	.main-navigation ul ul {
+			background-color: #d09cf8;
+	}
+
+}
