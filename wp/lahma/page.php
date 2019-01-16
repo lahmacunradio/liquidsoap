@@ -6,7 +6,7 @@
 		<!-- section -->
 		<section>
 
-			<h1 class="title-wrap" style="background-image: url('<?php echo $backgroundImg[0]; ?>') no-repeat;"><?php the_title(); ?></h1>
+			<h1 class="title-wrap"><?php the_title(); ?></h1>
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -41,7 +41,5 @@
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

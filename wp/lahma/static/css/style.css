@@ -1,0 +1,344 @@
+/*
+ Theme Name:   Radio Lahmacun theme
+ Theme URI:    
+ Description:  Radio Lahmacun theme based on HTML5Stable Wordpress theme
+ Author:       Janos Hegymegi
+ Author URI:   
+ Template:     stable
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         no-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  lahmacun
+*/
+
+
+body {
+	font:500 12px/1.4 'Times New Roman', Times, Arial, sans-serif;
+	color:#444;
+	background-image: url("img/lahmacun.png") !important;
+	background-size: initial !important;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: #d09cf8 !important;
+}
+
+.player_frame{
+	background-color: white;
+	margin: auto;
+	width: 50%;
+
+}
+
+a:hover {
+	color:#888;
+}
+
+.page-child article > p > img {
+    display: none;
+}
+
+body.page-template-default.page-child h1.title-wrap {
+    height: 333px;
+    padding-left: 40%;
+    background-image: url(http://127.0.0.1:9999/wp-content/uploads/2018/11/google-earth-view-1156-250x167.jpg);
+}
+
+/*------------------------------------*\
+    MAIN PLAYER
+\*------------------------------------*/
+/* @media (max-width: 575.98px) {
+body .public-page .card {
+  width: calc(80%);
+  left: 0 !important;
+} */
+
+#radio-player-controls.radio-controls-standalone.jp-state-playing {
+  display: none;
+}
+
+body .might-overflow{
+  width: calc(90%) !important;
+}
+
+}
+
+ /* volume control styles*/
+ /* mute and unmute buttons */
+.text-secondary {
+color: #9a9a9a !important;
+}
+
+.radio-controls-standalone a:hover {
+color: #6b337c!important;
+}
+
+/* volume control cursos */
+/* these ones work for Safari and Chrome  */
+.custom-range::-webkit-slider-thumb {
+  transition-duration: .3s;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #f5f5f5;
+  border: 1px solid #9a9a9a;
+  border-radius: 50%;
+  height: 19px;
+  margin-top: -7px;
+  width: 19px;
+}
+
+.custom-range:focus::-webkit-slider-thumb {
+    border: 1px solid grey;
+    box-shadow: none;
+    background: #e6e6e6;
+}
+
+.custom-range::-webkit-slider-thumb:active {
+  box-shadow: none;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  border-radius: 2px;
+  height: 5px;
+}
+
+
+/* these ones work for Mozilla */
+.custom-range::-moz-range-thumb {
+  transition-duration: .3s;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #f5f5f5;
+  border: 1px solid #9a9a9a;
+  border-radius: 50%;
+  height: 19px;
+  margin-top: -7px;
+  width: 19px;
+}
+
+.custom-range::-moz-range-progress {
+  background-color: #9a9a9a;
+}
+
+.custom-range:focus::-moz-range-thumb {
+    border: 1px solid grey;
+    box-shadow: none;
+    background: #e6e6e6;
+}
+
+.custom-range::-moz-range-thumb:active {
+  box-shadow: none;
+}
+
+.custom-range::-moz-range-runnable-track {
+  border-radius: 2px;
+  height: 5px;
+}
+
+
+
+/* Links: schedule, stream, contact */
+
+.player-wrap a{
+  color: #6b337c !important
+}
+
+.player-wrap a:hover {
+  color: #9a9a9a !important;
+  text-decoration: none;
+}
+
+.player-wrap {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.player-wrap.bottomwrap {
+	margin-top: 0.7em;
+}
+
+.player-wrap.creditswrap {
+    margin: 0 0.5em 0.8em;
+    text-align: center;
+    width: auto;
+}
+
+
+/* Gaspar global */
+
+html.ismobile .volumecontrolos {
+	display: none !important;
+}
+
+html.ismobile body .public-page .card {
+    height: 120px;
+}
+
+/* body .public-page .card {
+    width: 400px;
+	height: 140px;
+	min-width: 400px;
+} */
+
+.altalanosinfok, .volumecontrolos {
+	display: block;
+	float: none !important;
+}
+
+.altalanosinfok {
+    padding-bottom: 0.5em;
+}
+
+#radio-player-controls.radio-controls-standalone {
+    display: inline-block;
+    width: 100%;
+    margin-top: 0.5em;
+	height: 20px;
+}
+
+#radio-player-controls.radio-controls-standalone input.jp-volume-range {
+    width: 300px;
+    height: 10px;
+}
+
+#radio-player-controls.radio-controls-standalone input.jp-volume-range:focus {
+
+}
+
+#radio-player-controls.radio-controls-standalone a.jp-volume-full {
+    margin-left: 5px;
+}
+
+.player-wrap.creditswrap a:hover {
+    color: #212121 !important;
+}
+
+#station-nowplaying .pr-2 {
+    padding-right: 0.8rem!important;
+}
+
+@media (max-width: 460px) {
+
+body .public-page .card {  zoom: 0.8;   width: 100vW; }
+
+}
+
+
+/*------------------------------------*\
+    MENU
+\*------------------------------------*/
+
+#lahma-menu {
+	float: left;
+	width: 150px;
+	line-height: 20px;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+#lahma-menu li {
+	list-style: none;
+	text-decoration: none;
+}
+
+/*------------------------------------*\
+    DONATE BUTTON
+\*------------------------------------*/
+
+#lahma-menu #menu-item-31 {
+	
+	/* background-color: #FFF; */
+	border: 3px dotted #444;
+	border-radius: 45px;
+}
+
+#lahma-menu #menu-item-31 a {
+	text-decoration: none;
+	color: #444;
+  	display: block;
+}
+
+#lahma-menu #menu-item-31 a:hover {
+	text-decoration: none;
+	color: #d3a0f7;
+	background-color: #444;
+	border: 0px;
+	border-radius: 45px;
+}
+
+/*------------------------------------*\
+    DROPDOWN
+\*------------------------------------*/
+
+#lahma-menu .menu-item-has-children,
+#lahma-menu .menu-item-has-children a {
+	cursor: pointer;
+}
+
+#lahma-menu .menu-item-has-children:before {
+	font-family: "Material Icons";
+    content: "text_rotation_down";
+}
+
+#lahma-menu .menu-item-has-children .sub-menu, #lahma-menu .menu-item-has-children:active .sub-menu {
+	display: none;
+	position: absolute;
+	padding: 20px;
+	background: #d3a0f7;
+	border: 3px solid #444;
+	/* right: 20px; */
+	/* top: 60px; */
+	width: 20%;
+	border-radius: 45px;
+}
+
+#lahma-menu .menu-item-has-children li {
+	text-align: center;
+	padding: 2px 0;
+	margin: 0;
+}
+
+#lahma-menu .menu-item-has-children:hover .sub-menu {
+	display: block;
+	
+}
+
+#lahma-menu .menu-item-has-children:hover a:hover {
+	color: #444;
+}
+
+#lahma-menu .menu-item-has-children:hover .sub-menu li:hover {
+	text-decoration: none;
+	background-color: #444;
+	border: 0px;
+	border-radius: 45px;
+}
+
+#lahma-menu .menu-item-has-children .sub-menu li:hover a {
+	color: #d3a0f7;
+}
+
+/*MEDIA QUERY*/
+@media only screen and (max-width : 640px) {
+
+	#lahma-menu .menu-item-has-children .sub-menu, #lahma-menu .menu-item-has-children:active .sub-menu {
+		width: 100%;
+		display: block;
+		position: relative;
+		/* width: 40%; */
+
+	}
+
+	/* #lahma-menu .menu-item-has-children:focus .sub-menu {
+		background-color: aqua;
+	} */
+}
+
