@@ -9,7 +9,6 @@ WORKDIR /var/www/html
 # themes added below
 # see entrypoint.sh
 
-COPY lahma /var/www/html/wp-content/themes/lahma/
-COPY stable /var/www/html/wp-content/themes/stable/
+COPY maker /var/www/html/wp-content/themes/maker
 COPY lahma_maker /var/www/html/wp-content/themes/lahma_maker
 COPY uploads /var/www/html/wp-content/uploads/
