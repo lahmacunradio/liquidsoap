@@ -12,14 +12,60 @@
  Text Domain:  lahmacun
 */
 
+body {
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: .875rem;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
 body.home {
 	background-image: url("img/lahmacun.png") !important;
-background-size: initial !important;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-color: #d09cf8 !important;
+	background-size: initial !important;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: #d09cf8 !important;
 }
+
+body a {
+    color: #762778;
+    text-decoration: none;
+}
+
+body a:active, body a:focus, body a:hover,
+.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+body div#main {
+    padding-bottom: 2em;
+    padding-top: 2em;
+    min-height: auto;
+}
+
+
+.station-lahmacun_radio {
+    display: block;
+    margin: auto;
+    width: 400px;
+}
+
+.site-branding {
+    max-width: none;
+}
+
+.site-title {
+    font-family: inherit;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.main-navigation {
+    font-size: 1.3em;
+}
+
 
 div#page{
 	background-color: transparent !important;
@@ -29,6 +75,25 @@ body.page-template-default {
 background-color: #d09cf8 !important;
 background-image: none;
 }
+
+.site-footer {
+    padding: 1.5em 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+}
+
+.site-info {
+    float: none;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Responsive */
 
 @media screen and (min-width: 768px) {
 	.main-navigation ul ul {

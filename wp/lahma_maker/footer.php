@@ -15,6 +15,7 @@
 			<?php endif; ?>
 
 			<div class="site-info">
+			Powered by <a href="https://www.mmmnmnm.com" target="_blank">MMN</a> <br>
 			</div><!-- .site-info -->
 		</div><!-- .column -->
 	</footer><!-- #colophon -->
