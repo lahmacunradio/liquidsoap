@@ -42,3 +42,9 @@
 			</nav><!-- #site-navigation -->
 		</div><!-- .column -->
 	</header><!-- #masthead -->
+
+<div id="playerdiv">
+<?php 
+	get_template_part( 'playercode' );
+?>
+</div>
