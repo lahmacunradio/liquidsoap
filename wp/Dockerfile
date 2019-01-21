@@ -1,6 +1,5 @@
 FROM wordpress:php7.1-apache
 
-#RUN apt-get update && apt-get install unzip -y
 
 WORKDIR /var/www/html
 
