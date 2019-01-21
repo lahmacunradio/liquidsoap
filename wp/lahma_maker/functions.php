@@ -21,12 +21,12 @@ function lahma_enqueue_js() {
         array( 'jquery' ),
         wp_get_theme()->get('Version')
     );
-}    
+}
 
-add_action( 'wp_enqueue_scripts', 'lahma_enqueue_js' );    
+add_action( 'wp_enqueue_scripts', 'lahma_enqueue_js' );
 
 
-/* Player styles + scripts */ 
+/* Player styles + scripts */
 
 function lahma_player_css() {
     wp_enqueue_style('lahmaplayer',  get_stylesheet_directory_uri() . '/radio_files/web-lahmacun-player.css');
@@ -40,11 +40,9 @@ function lahma_enqueue_playerjs() {
         get_stylesheet_directory_uri() . '/radio_files/web-radio_BG.js',
         array( 'jquery' ), null, true
     );
-}    
+}
 
-add_action( 'wp_enqueue_scripts', 'lahma_enqueue_playerjs' );    
+add_action( 'wp_enqueue_scripts', 'lahma_enqueue_playerjs' );
 
 
 ?>
-
-
