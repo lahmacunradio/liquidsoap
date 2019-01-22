@@ -27,7 +27,7 @@ $( document ).ready(function() {
     is_touch_device();
     
 /* AJAX link click */
-jQuery(document).on("click", "a[target!='_blank']:not(a[href^='#'])", function(e){
+jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#'])", function(e){
 	var link = jQuery(this).attr("href");
 	// var title = jQuery(responseHtml).filter('title').text();
 	// console.log(title);
