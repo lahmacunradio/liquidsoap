@@ -31,13 +31,18 @@ jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#'])", func
 	var link = jQuery(this).attr("href");
 	// var title = jQuery(responseHtml).filter('title').text();
 	// console.log(title);
-	jQuery("#content").load( link + " #content", function(responseText) {
+	jQuery("#content").load( link + " #primary", function(responseText) {
 	  var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
 	  document.title = newtitle; } 
 	);
 	e.preventDefault();
 	history.pushState({}, null, link);
 	// jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
+	jQuery("body").removeClass("home");
+});
+    
+jQuery(document).on("click", ".site-title a", function(e){
+	jQuery("body").addClass("home");
 });
     
     

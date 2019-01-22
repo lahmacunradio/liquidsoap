@@ -153,9 +153,11 @@ $(function() {
     }
     loadNowPlaying();
 
+/* 
     $('[data-fancybox]').fancybox({
         buttons: ['close']
     });
+ */
 
 	var request_dialog = $('#modal-request');
 

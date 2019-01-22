@@ -17,15 +17,16 @@ body {
     font-size: .875rem;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+	background-color: #d09cf8 !important;
+	color: #23282d;
 }
 
-body {
+body.home {
 	background-image: url("img/lahmacun.png") !important;
 	background-size: initial !important;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-	background-color: #d09cf8 !important;
 }
 
 body a {
@@ -45,6 +46,9 @@ body div#main {
     min-height: auto;
 }
 
+
+.site-header {   border-bottom: 2px solid #9a74b8; }
+body.home .site-header {   border-bottom: none; }
 
 .station-lahmacun_radio {
     display: block;
@@ -76,6 +80,53 @@ background-color: #d09cf8 !important;
 background-image: none;
 }
 
+header #playerdiv {
+	float:left;
+}
+
+header .wrap {
+	float:right;
+}
+
+header .wrap .site-branding {
+	display: block;
+}
+
+
+/* player overrides */
+
+header #playerdiv div.station-lahmacun_radio .public-page .card {
+	background: none;
+	box-shadow: none;
+	width: 360px;
+    height: 100px;
+    min-width: 360px;
+   margin-top: 2em;
+}
+
+header #playerdiv div.station-lahmacun_radio .public-page .card-body {
+    padding: 0;
+}
+
+header #playerdiv .public-page .card-body a,
+header #playerdiv .public-page .card-body .media-body {
+    color: #1e1e1e !important;
+}
+
+header #playerdiv .custom-range::-webkit-slider-runnable-track {
+
+}
+
+header #playerdiv #radio-player-controls.radio-controls-standalone {
+    margin-top: 0;
+}
+
+header #playerdiv .creditswrap {
+    display:none;
+}
+
+
+
 .site-footer {
     padding: 1.5em 0;
     position: fixed;
@@ -93,11 +144,46 @@ background-image: none;
 }
 
 
+/* Post-sub-pages */
+
+.lahma_post-title {
+    text-transform: uppercase;
+    margin: 0 0 1em;
+}
+
+.lahma_side-infos, .lahma_post-content {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 1.1em;
+	color: #1e1e1e;
+}
+
+.lahma_side-infos {
+	width: 30%;
+	margin-right: 2%;
+}
+
+.lahma_post-content {
+    width: 67%;
+/* 
+    border-radius: 2px;
+    background-color: #ffffffed;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.14), 0 3px 4px 0 rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+    padding: 1em;
+ */
+}
+
+
+
 /* Responsive */
 
 @media screen and (min-width: 768px) {
-	.main-navigation ul ul {
-			background-color: #d09cf8;
-	}
 
+.main-navigation ul {  padding: 0.3em 0; }
+.main-navigation ul ul {background-color: #d09cf8; }
+.site-header {   padding: 0 0 0.5em; }
+.entry-title { font-size: 2.5em;  margin-bottom: 0.5em;   margin-top: 0.1em; }
+
+/* end 786 */
 }
+

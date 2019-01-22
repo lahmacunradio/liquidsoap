@@ -20,31 +20,38 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<?php if ( is_home() ) : ?>
+    <body <?php body_class("home"); ?>>
+<?php else : ?>
+    <body <?php body_class(); ?>>
+<?php endif; ?>
+
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maker' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="wrap">
-			<div class="site-branding">
-				<?php maker_site_logo(); ?>
-				<?php maker_site_title(); ?>
-				<?php maker_site_description(); ?>
-			</div><!-- .site-branding -->
-
-			<button id="site-navigation-toggle" class="menu-toggle" >
-				<span class="menu-toggle-icon"></span>
-				<?php esc_html_e( 'Primary Menu', 'maker' ); ?>
-			</button><!-- #site-navigation-menu-toggle -->
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-		</div><!-- .column -->
-	</header><!-- #masthead -->
+<header id="masthead" class="site-header" role="banner">
 
 <div id="playerdiv">
 <?php 
 	get_template_part( 'playercode' );
 ?>
 </div>
+
+	<div class="wrap">
+		<div class="site-branding">
+			<?php maker_site_logo(); ?>
+			<?php maker_site_title(); ?>
+			<?php maker_site_description(); ?>
+		</div><!-- .site-branding -->
+
+		<button id="site-navigation-toggle" class="menu-toggle" >
+			<span class="menu-toggle-icon"></span>
+			<?php esc_html_e( 'Primary Menu', 'maker' ); ?>
+		</button><!-- #site-navigation-menu-toggle -->
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
+	</div><!-- .column -->
+</header><!-- #masthead -->
+
