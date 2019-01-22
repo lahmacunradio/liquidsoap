@@ -44,5 +44,4 @@ function lahma_enqueue_playerjs() {
 
 add_action( 'wp_enqueue_scripts', 'lahma_enqueue_playerjs' );
 
-
 ?>

@@ -19,7 +19,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-body.home {
+body {
 	background-image: url("img/lahmacun.png") !important;
 	background-size: initial !important;
 	background-repeat: no-repeat;
