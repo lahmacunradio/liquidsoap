@@ -12,8 +12,8 @@
  Text Domain:  lahmacun
 */
 
-body {
-    font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+html > body {
+    font-family: 'Rubik', "Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-size: .875rem;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -32,6 +32,14 @@ body.home {
 body a {
     color: #762778;
     text-decoration: none;
+}
+
+p, #main ul {
+	font-family: "Libre Baskerville", Georgia, serif;
+}
+
+#main p {
+	line-height: 1.6em;
 }
 
 body a:active, body a:focus, body a:hover,
@@ -125,6 +133,10 @@ header #playerdiv .creditswrap {
     display:none;
 }
 
+.site-title a {
+    font-weight: 500;
+}
+
 
 
 .site-footer {
@@ -182,7 +194,7 @@ header #playerdiv .creditswrap {
 .main-navigation ul {  padding: 0.3em 0; }
 .main-navigation ul ul {background-color: #d09cf8; }
 .site-header {   padding: 0 0 0.5em; }
-.entry-title { font-size: 2.5em;  margin-bottom: 0.5em;   margin-top: 0.1em; }
+.entry-title {     font-size: 2.5em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
 
 /* end 786 */
 }
