@@ -13,6 +13,8 @@ a{
 }
 
 
+
+/* mobile view */
 @media (max-width: 575.98px) {
 body.page-minimal .public-page .card {
   width: calc(80%);
@@ -28,6 +30,14 @@ body.page-minimal .might-overflow{
 }
 
 }
+
+/* general view */
+
+body.page-minimal .might-overflow{
+  width: calc(80%) !important; /* otherwise long subtitle overflows */
+}
+
+
 
  /* volume control styles*/
  /* mute and unmute buttons */
