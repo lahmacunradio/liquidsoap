@@ -39,6 +39,7 @@ jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#'])", func
 	history.pushState({}, null, link);
 	// jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
 	jQuery("body").removeClass("home");
+	jQuery(".main-navigation ul.menu li:hover > ul").hide();
 });
     
 jQuery(document).on("click", ".site-title a", function(e){

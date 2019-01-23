@@ -54,6 +54,9 @@ body div#main {
     min-height: auto;
 }
 
+div#main h1, div#main h2, div#main h3 {
+	font-family: "Libre Baskerville", Georgia, serif;
+}
 
 .site-header {   border-bottom: 2px solid #9a74b8; }
 body.home .site-header {   border-bottom: none; }
@@ -61,7 +64,7 @@ body.home .site-header {   border-bottom: none; }
 .station-lahmacun_radio {
     display: block;
     margin: auto;
-    width: 400px;
+    width: 360px;
 }
 
 .site-branding {
@@ -121,6 +124,12 @@ header #playerdiv .public-page .card-body .media-body {
     color: #1e1e1e !important;
 }
 
+header #playerdiv .public-page .card-body .media-body .nowplaying-artist {
+    color: #585858 !important;
+    font-size: 0.9em;
+}
+
+
 header #playerdiv .custom-range::-webkit-slider-runnable-track {
 
 }
@@ -133,11 +142,18 @@ header #playerdiv .creditswrap {
     display:none;
 }
 
+.main-navigation ul.menu li > ul {
+	display: none;
+}
+
+.main-navigation ul.menu li:hover > ul {
+	right: 0;
+	display: block !important;
+}
+
 .site-title a {
     font-weight: 500;
 }
-
-
 
 .site-footer {
     padding: 1.5em 0;
@@ -146,6 +162,7 @@ header #playerdiv .creditswrap {
     text-align: center;
     bottom: 0;
     left: 0;
+    background: #d09cf8;
 }
 
 .site-info {
@@ -196,6 +213,18 @@ header #playerdiv .creditswrap {
 .site-header {   padding: 0 0 0.5em; }
 .entry-title {     font-size: 2.5em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
 
-/* end 786 */
+/* end min 786 */
 }
 
+
+@media screen and (max-width: 768px) {
+
+header .wrap {   float: left; }
+.site-title {   padding-top: 0.5em; }
+.menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
+.site-header {   margin-bottom: 0.5em; }
+.lahma_side-infos, .lahma_post-content {  display: block;  width: 100%; }
+.lahma_post-title {   margin-bottom: 2em; }
+
+/* end max 786 */
+}
