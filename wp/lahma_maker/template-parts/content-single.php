@@ -18,7 +18,7 @@
 <div class="lahma_side-infos">
 	<?php if ( has_post_thumbnail() ) { ?>
 
-			<a class="post-thumbnail" href="<?php the_post_thumbnail_url(); ?>" aria-hidden="true" tabindex="-1">
+			<a class="post-thumbnail swipebox" href="<?php the_post_thumbnail_url(); ?>" aria-hidden="true" >
 			<?php
 			the_post_thumbnail( 'medium', array(
 				'alt' => the_title_attribute( array(
