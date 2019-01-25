@@ -30,6 +30,12 @@
 ;( function( $ ) {
 
 	$( '.swipebox' ).swipebox();
+	
+	var X = 0; // set a global var 
+	$('.swipebox').each(function() { //for each swipebox
+	  X += 1; //increment the global var by 1
+	  $(this).attr('rel', 'gallery-' + X); // set the rel attribute to gallery- plus the value of X
+	});
 
 } )( jQuery );
 </script>
