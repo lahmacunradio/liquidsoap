@@ -20,11 +20,28 @@ function escapeHtml(unsafe) {
          .replace(/'/g, "&#039;")
          .replace(/–/g, "&#8211;");
  }
+ 
+function openAllExternalBlank() {
+$('a').each(function() {
+   var a = new RegExp('/' + window.location.host + '/');
+   if(!a.test(this.href)) {
+       $(this).click(function(event) {
+           event.preventDefault();
+           event.stopPropagation();
+           window.open(this.href, '_blank');
+       });
+   }
+});
+} 
+ 
 
 // A $( document ).ready() block.
 $( document ).ready(function() {
+
     // console.log( "ready!" );
     is_touch_device();
+    openAllExternalBlank();
+    
     
 /* AJAX link click */
 jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox)", function(e){
@@ -40,13 +57,18 @@ jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.s
 	// jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
 	jQuery("body").removeClass("home");
 	jQuery(".main-navigation ul.menu li:hover > ul").hide();
+	
+	openAllExternalBlank();
+	
 });
+
     
 jQuery(document).on("click", ".site-title a", function(e){
 	jQuery("body").addClass("home");
 });
+ 
     
-    
+// A $( document ).ready() block end    
 });
 
 
