@@ -28,9 +28,6 @@
 			?>
 		</a>
 	<?php } ?>	
-	
-		<p>IDOPONT: SZERDA, 14:00</p>
-		<p>HAZIGAZDA: V. A. Laki</p>
 
 	</div><!-- side-content -->
 
