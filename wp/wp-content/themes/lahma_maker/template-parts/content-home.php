@@ -69,7 +69,7 @@
   <tr>
     <td class="tg-baqh" rowspan="2">Lazy<br>Calm<br>Raga</td>
     <td class="tg-baqh"></td>
-    <td class="tg-baqh"></td>
+    <td class="tg-baqh"><br></td>
     <td class="tg-baqh"></td>
   </tr>
   <tr>
@@ -95,14 +95,14 @@
     <td class="tg-wp8o" rowspan="2"></td>
     <td class="tg-wp8o" rowspan="2"></td>
     <td class="tg-wp8o" rowspan="2"></td>
-    <td class="tg-wp8o"></td>
+    <td class="tg-wp8o"><br></td>
     <td class="tg-wp8o"></td>
     <td class="tg-idopont" rowspan="2">20-22h</td>
   </tr>
   <tr>
     <td class="tg-baqh"></td>
     <td class="tg-baqh"></td>
-    <td class="tg-baqh"></td>
+    <td class="tg-baqh"><br></td>
   </tr>
 </tbody></table>
 		

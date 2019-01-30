@@ -211,15 +211,12 @@ header #playerdiv .creditswrap {
 }
 
 .lahma_home-content table {
-	background: #d09cf8f0;
-    border: 1px solid #82377f;
+	background: #d09cf859;
     line-height: 1.2em;
     width: 100%;
 }
 
 .lahma_home-content table tr:first-child th, .lahma_home-content .tg-idopont {
-	background: rgba(208, 156, 248, 0.95);
-	color: white;
 	text-align: center;
 	white-space: nowrap;
 }
