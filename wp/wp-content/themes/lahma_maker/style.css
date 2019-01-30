@@ -211,28 +211,27 @@ header #playerdiv .creditswrap {
 }
 
 .lahma_home-content table {
-    background: #fffffff7;
+	background: #d09cf8f0;
     border: 1px solid #82377f;
     line-height: 1.2em;
     width: 100%;
 }
 
-.lahma_home-content table tr:first-child th {
-	background: #d8d8d8;
+.lahma_home-content table tr:first-child th, .lahma_home-content .tg-idopont {
+	background: rgba(208, 156, 248, 0.95);
+	color: white;
 	text-align: center;
+	white-space: nowrap;
 }
 
 .lahma_home-content td, .lahma_home-content th {
 	padding: 0.7em 0.5em;
-    border: 1px solid #bbbaba;
+    border: 1px solid #441054;
     width: 12%;
 }
 
 .lahma_home-content .tg-idopont {
-	background: #d8d8d8;
-	text-align: center;
 	width: 80px;
-	white-space: nowrap;
 }
 
 
