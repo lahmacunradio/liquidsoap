@@ -35,7 +35,7 @@
     <th class="tg-idopont"></th>
   </tr>
   <tr>
-    <td class="tg-idopont">12-14h</td>
+    <td class="tg-idopont" style="font-weight: bold">12-14h</td>
     <td class="tg-wp8o"></td>
     <td class="tg-wp8o"></td>
     <td class="tg-wp8o"></td>
@@ -43,10 +43,10 @@
     <td class="tg-wp8o"></td>
     <td class="tg-wp8o"></td>
     <td class="tg-wp8o">Bambuszrádió</td>
-    <td class="tg-idopont">12-14h</td>
+    <td class="tg-idopont" style="font-weight: bold">12-14h</td>
   </tr>
   <tr>
-    <td class="tg-idopont">14-16h</td>
+    <td class="tg-idopont" style="font-weight: bold">14-16h</td>
     <td class="tg-baqh"></td>
     <td class="tg-baqh"></td>
     <td class="tg-baqh"></td>
@@ -54,17 +54,17 @@
     <td class="tg-baqh"></td>
     <td class="tg-baqh"></td>
     <td class="tg-baqh" rowspan="2">Donald<br>Kacsa<br>Klub</td>
-    <td class="tg-idopont">14-16h</td>
+    <td class="tg-idopont" style="font-weight: bold">14-16h</td>
   </tr>
   <tr>
-    <td class="tg-idopont" rowspan="2">16-18h</td>
+    <td class="tg-idopont" rowspan="2" style="font-weight: bold">16-18h</td>
     <td class="tg-baqh" rowspan="2"></td>
     <td class="tg-baqh" rowspan="2"></td>
     <td class="tg-baqh" rowspan="2"></td>
     <td class="tg-baqh"></td>
     <td class="tg-baqh"></td>
     <td class="tg-baqh"></td>
-    <td class="tg-idopont" rowspan="2">16-18h</td>
+    <td class="tg-idopont" rowspan="2" style="font-weight: bold">16-18h</td>
   </tr>
   <tr>
     <td class="tg-baqh" rowspan="2">Lazy<br>Calm<br>Raga</td>
@@ -73,14 +73,14 @@
     <td class="tg-baqh"></td>
   </tr>
   <tr>
-    <td class="tg-idopont" rowspan="2">18-20h</td>
+    <td class="tg-idopont" rowspan="2" style="font-weight: bold">18-20h</td>
     <td class="tg-wp8o">Szmúti csórba</td>
     <td class="tg-wp8o" rowspan="2">MMN radio</td>
     <td class="tg-wp8o">Wikihow Advanture <br>Cruise</td>
     <td class="tg-wp8o">Agybaj</td>
     <td class="tg-wp8o" rowspan="2">rnr666 radioshow</td>
     <td class="tg-wp8o"></td>
-    <td class="tg-idopont" rowspan="2">18-20h</td>
+    <td class="tg-idopont" rowspan="2" style="font-weight: bold">18-20h</td>
   </tr>
   <tr>
     <td class="tg-wp8o">TBA</td>
@@ -90,14 +90,14 @@
     <td class="tg-wp8o"></td>
   </tr>
   <tr>
-    <td class="tg-idopont" rowspan="2">20-22h</td>
+    <td class="tg-idopont" rowspan="2" style="font-weight: bold"> 20-22h</td>
     <td class="tg-wp8o" rowspan="2">TBA</td>
     <td class="tg-wp8o" rowspan="2"></td>
     <td class="tg-wp8o" rowspan="2"></td>
     <td class="tg-wp8o" rowspan="2"></td>
     <td class="tg-wp8o"><br></td>
     <td class="tg-wp8o"></td>
-    <td class="tg-idopont" rowspan="2">20-22h</td>
+    <td class="tg-idopont" rowspan="2" style="font-weight: bold">20-22h</td>
   </tr>
   <tr>
     <td class="tg-baqh"></td>
