@@ -13,12 +13,20 @@ if(window.matchMedia("(any-pointer: coarse)").matches) {
 
 function escapeHtml(unsafe) {
     return unsafe
+         /* 
          .replace(/&/g, "&amp;")
          .replace(/</g, "&lt;")
          .replace(/>/g, "&gt;")
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;")
          .replace(/–/g, "&#8211;");
+         */
+         .replace("&#8211;", "—")
+         .replace("&amp;", "and")
+         .replace("&lt;", "-")
+         .replace("&gt;", "-")
+         .replace("&quot;", "”")
+         .replace("&#039;", "‘");
  }
  
 function openAllExternalBlank() {
@@ -49,7 +57,7 @@ jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.s
 	var link = jQuery(this).attr("href");
 	// var title = jQuery(responseHtml).filter('title').text();
 	// console.log(title);
-	jQuery("#content").load( link + " #primary", function(responseText) {
+	jQuery("#main").load( link + " #primary", function(responseText) {
 	  var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
 	  document.title = newtitle; 
 	  openAllExternalBlank();

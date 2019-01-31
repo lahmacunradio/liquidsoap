@@ -105,6 +105,13 @@ header .wrap .site-branding {
 }
 
 
+/* Fix maker mistakes */
+.blog .entry-content, .blog .entry-footer, .blog .comments-area, .blog .post-navigation, .archive .entry-content, .archive .entry-footer, .archive .comments-area, .archive .post-navigation, .single-post .entry-content, .single-post .entry-footer, .single-post .comments-area, .single-post .post-navigation, .blog .entry-header, .archive .entry-header, .single-post .entry-header, .page-template-default .entry-header, .page-template-default .entry-content, .page-template-default .comments-area {
+    max-width: initial;
+}
+
+
+
 /* player overrides */
 
 header #playerdiv div.station-lahmacun_radio .public-page .card {
@@ -238,6 +245,15 @@ header #playerdiv .creditswrap {
 html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
     height: 60px;
 }
+
+
+@media screen and (min-width: 1024px)
+.blog.no-sidebar .entry-content, .blog.no-sidebar .entry-footer, .blog.no-sidebar .comments-area, .blog.no-sidebar .post-navigation, .archive.no-sidebar .entry-content, .archive.no-sidebar .entry-footer, .archive.no-sidebar .comments-area, .archive.no-sidebar .post-navigation, .single-post.no-sidebar .entry-content, .single-post.no-sidebar .entry-footer, .single-post.no-sidebar .comments-area, .single-post.no-sidebar .post-navigation,
+.blog.no-sidebar .entry-header, .archive.no-sidebar .entry-header, .single-post.no-sidebar .entry-header {
+    width: 100%;
+    padding-right: 0;
+}
+
 
 @media screen and (min-width: 768px) {
 
