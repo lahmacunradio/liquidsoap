@@ -17,17 +17,17 @@
 <?php wp_head(); ?>
 
 <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i&amp;subset=latin-ext" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&amp;subset=latin-ext" rel="stylesheet">
-
 
 
 </head>
 
-<?php if ( is_home() ) : ?>
+<?php /* if ( is_home() ) : ?>
     <body <?php body_class("home"); ?>>
 <?php else : ?>
     <body <?php body_class(); ?>>
-<?php endif; ?>
+<?php endif; */ ?>
+
+<body>
 
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maker' ); ?></a>

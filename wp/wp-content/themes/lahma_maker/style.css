@@ -34,6 +34,10 @@ body a {
     text-decoration: none;
 }
 
+body button:focus {
+    outline: none;
+}
+
 p, #main ul {
 
 }
@@ -59,7 +63,7 @@ div#main h1, div#main h2, div#main h3 {
 }
 
 .site-header {   border-bottom: 2px solid #9a74b8; }
-body.home .site-header {   border-bottom: none; }
+body.home .site-header {   }
 
 .station-lahmacun_radio {
     display: block;
@@ -238,7 +242,18 @@ header #playerdiv .creditswrap {
 	width: 80px;
 }
 
+/* Swipebox fixes */
 
+body #swipebox-slider .slide {
+    height: 90%;
+    width: 90%;
+    display: block;
+    margin: 5% auto;
+}
+
+body #swipebox-overlay {
+    background: rgba(13, 13, 13, 0.87);
+}
 
 /* Responsive */
 
@@ -253,7 +268,7 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
     width: 100%;
     padding-right: 0;
 }
-
+.content-area {  width: 100%;  max-width: 100%; margin-right: 0; }
 
 @media screen and (min-width: 768px) {
 
@@ -269,12 +284,10 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 @media screen and (max-width: 768px) {
 
 header .wrap {   float: left; }
-.site {  padding-right: 2%;  padding-left: 2%; }
-.site-title {   padding-top: 0.5em; }
 .menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
-.site-header {   margin-bottom: 0.5em; }
-.lahma_side-infos, .lahma_post-content {  display: block;  width: 100%; }
-.lahma_post-title {   margin-bottom: 2em; }
+.main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
+.main-navigation.toggled ul.sub-menu a {      padding: 0.2em 0 0.2em 0; }
+.main-navigation.toggled ul.nav-menu {  margin-bottom: 1em ; }
 
 /* end max 786 */
 }
@@ -282,6 +295,12 @@ header .wrap {   float: left; }
 
 @media (max-width: 460px) {
 
+.site {  padding-right: 3%;  padding-left: 3%; }
+.site-title {   padding-top: 0.5em; }
+.site-header {   margin-bottom: 0.5em; }
+
+.lahma_side-infos, .lahma_post-content {  display: block;  width: 100%;     margin: 3% auto; }
+.lahma_post-title {   margin-bottom: 2em; }
 header #playerdiv div.station-lahmacun_radio .public-page .card {   zoom: 0.9; margin-top: 4%;      width: 320px;  min-width: 320px; }
 
 }

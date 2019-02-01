@@ -30,7 +30,7 @@ function escapeHtml(unsafe) {
  }
  
 function openAllExternalBlank() {
-$('a').each(function() {
+$('a:not(.swipebox)').each(function() {
    var a = new RegExp('/' + window.location.host + '/');
    if(!a.test(this.href)) {
        $(this).click(function(event) {
@@ -43,6 +43,15 @@ $('a').each(function() {
 });
 } 
  
+function swipeboxGalleryFixer() {
+	var X = 0; // set a global var 
+	$('.swipebox').each(function() { //for each swipebox
+	  X += 1; //increment the global var by 1
+	  $(this).attr('rel', 'gallery-' + X); // set the rel attribute to gallery- plus the value of X
+	  $(this).attr('target', '');
+	});
+} 
+ 
 
 // A $( document ).ready() block.
 $( document ).ready(function() {
@@ -50,6 +59,7 @@ $( document ).ready(function() {
     // console.log( "ready!" );
     is_touch_device();
     openAllExternalBlank();
+    swipeboxGalleryFixer();
     
     
 /* AJAX link click */
@@ -61,6 +71,7 @@ jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.s
 	  var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
 	  document.title = newtitle; 
 	  openAllExternalBlank();
+	  swipeboxGalleryFixer();
 	  } 
 	);
 	e.preventDefault();

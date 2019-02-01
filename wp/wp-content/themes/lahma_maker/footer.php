@@ -29,13 +29,10 @@
 <script type="text/javascript">
 ;( function( $ ) {
 
-	$( '.swipebox' ).swipebox();
-	
-	var X = 0; // set a global var 
-	$('.swipebox').each(function() { //for each swipebox
-	  X += 1; //increment the global var by 1
-	  $(this).attr('rel', 'gallery-' + X); // set the rel attribute to gallery- plus the value of X
+	$( '.swipebox' ).swipebox({
+		hideCloseButtonOnMobile : true, // true will hide the close button on mobile devices
 	});
+	
 
 } )( jQuery );
 </script>
