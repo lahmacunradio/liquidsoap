@@ -62,33 +62,43 @@ $( document ).ready(function() {
     swipeboxGalleryFixer();
     
     
-/* AJAX link click */
-jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox)", function(e){
-	var link = jQuery(this).attr("href");
-	// var title = jQuery(responseHtml).filter('title').text();
-	// console.log(title);
-	jQuery("#main").load( link + " #primary", function(responseText) {
-	  var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
-	  document.title = newtitle; 
-	  openAllExternalBlank();
-	  swipeboxGalleryFixer();
-	  } 
-	);
-	e.preventDefault();
-	history.pushState({}, null, link);
-	// jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
-	jQuery("body").removeClass("home");
-	jQuery(".main-navigation ul.menu li:hover > ul").hide();
-		
-});
+    /* AJAX link click */
+    jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox)", function(e){
+        var link = jQuery(this).attr("href");
+        // var title = jQuery(responseHtml).filter('title').text();
+        // console.log(title);
+        jQuery("#main").load( link + " #primary", function(responseText) {
+            var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
+            document.title = newtitle; 
+            openAllExternalBlank();
+            swipeboxGalleryFixer();
+            } 
+        );
+        e.preventDefault();
+        history.pushState({}, null, link);
+        // jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
+        jQuery("body").removeClass("home");
+        jQuery(".main-navigation ul.menu li:hover > ul").hide();
+            
+    });
 
+        
+    jQuery(document).on("click", ".site-title a", function(e){
+        jQuery("body").addClass("home");
+    });
+
+    // $(window).on("navigate", function (event, data) {
+    //     var direction = data.state.direction;
+    //     if (direction == 'back') {
+    //       window.history.back;
+    //     }
+    //     if (direction == 'forward') {
+    //       window.history.forward;
+    //     }
+    //   });
     
-jQuery(document).on("click", ".site-title a", function(e){
-	jQuery("body").addClass("home");
-});
- 
-    
-// A $( document ).ready() block end    
+        
+    // A $( document ).ready() block end    
 });
 
 
