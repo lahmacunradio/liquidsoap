@@ -91,7 +91,7 @@
   </tr>
   <tr>
     <td class="tg-idopont" rowspan="2" style="font-weight: bold"> 20-22h</td>
-    <td class="tg-wp8o" rowspan="2">TBA</td>
+    <td class="tg-wp8o" rowspan="2">Earth Oddities - Erdenklang</td>
     <td class="tg-wp8o" rowspan="2"></td>
     <td class="tg-wp8o" rowspan="2"></td>
     <td class="tg-wp8o" rowspan="2"></td>

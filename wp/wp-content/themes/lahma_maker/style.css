@@ -242,6 +242,13 @@ header #playerdiv .creditswrap {
 	width: 80px;
 }
 
+.content-area.centered {
+    width: 70%;
+    margin: auto;
+    float: none;
+}
+
+
 /* Swipebox fixes */
 
 body #swipebox-slider .slide {
@@ -288,6 +295,7 @@ header .wrap {   float: left; }
 .main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
 .main-navigation.toggled ul.sub-menu a {      padding: 0.2em 0 0.2em 0; }
 .main-navigation.toggled ul.nav-menu {  margin-bottom: 1em ; }
+.content-area.centered {  width: 100%; }
 
 /* end max 786 */
 }

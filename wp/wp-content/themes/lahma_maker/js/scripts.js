@@ -72,6 +72,11 @@ $( document ).ready(function() {
             } 
         );
     });
+    // check if is on home an add class
+    if (location.pathname == "/"  &&  location.hash.length <= 1  &&  location.search.length <= 1) {
+   		jQuery("body").addClass("home");
+   		// console.log("home");
+    }
     
     
     /* AJAX link click */
