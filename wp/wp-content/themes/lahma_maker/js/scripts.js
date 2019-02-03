@@ -60,6 +60,18 @@ $( document ).ready(function() {
     is_touch_device();
     openAllExternalBlank();
     swipeboxGalleryFixer();
+
+    window.addEventListener("popstate", function(e) {
+        var loc = document.location;
+
+        $("#main").load(loc.href + "#primary", function(responseText) {
+            var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
+            document.title = newtitle; 
+            openAllExternalBlank();
+            swipeboxGalleryFixer();
+            } 
+        );
+    });
     
     
     /* AJAX link click */
@@ -87,15 +99,7 @@ $( document ).ready(function() {
         jQuery("body").addClass("home");
     });
 
-    // $(window).on("navigate", function (event, data) {
-    //     var direction = data.state.direction;
-    //     if (direction == 'back') {
-    //       window.history.back;
-    //     }
-    //     if (direction == 'forward') {
-    //       window.history.forward;
-    //     }
-    //   });
+    
     
         
     // A $( document ).ready() block end    
