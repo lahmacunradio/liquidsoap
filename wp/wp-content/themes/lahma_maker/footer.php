@@ -30,7 +30,7 @@
 ;( function( $ ) {
 
 	$( '.swipebox' ).swipebox({
-		hideCloseButtonOnMobile : true, // true will hide the close button on mobile devices
+		// hideCloseButtonOnMobile : true, // true will hide the close button on mobile devices
 	});
 	
 
