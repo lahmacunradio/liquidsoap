@@ -61,6 +61,17 @@ $( document ).ready(function() {
     openAllExternalBlank();
     swipeboxGalleryFixer();
 
+    window.addEventListener("popstate", function(e) {
+        var loc = document.location;
+
+        $("#main").load(loc.href + " #primary", function(responseText) {
+            var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
+            document.title = newtitle; 
+            openAllExternalBlank();
+            swipeboxGalleryFixer();
+            } 
+        );
+    });
     // check if is on home an add class
     if (location.pathname == "/"  &&  location.hash.length <= 1  &&  location.search.length <= 1) {
    		jQuery("body").addClass("home");
@@ -68,33 +79,35 @@ $( document ).ready(function() {
     }
     
     
-/* AJAX link click */
-jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox)", function(e){
-	var link = jQuery(this).attr("href");
-	// var title = jQuery(responseHtml).filter('title').text();
-	// console.log(title);
-	jQuery("#main").load( link + " #primary", function(responseText) {
-	  var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
-	  document.title = newtitle; 
-	  openAllExternalBlank();
-	  swipeboxGalleryFixer();
-	  } 
-	);
-	e.preventDefault();
-	history.pushState({}, null, link);
-	// jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
-	jQuery("body").removeClass("home");
-	jQuery(".main-navigation ul.menu li:hover > ul").hide();
-		
-});
+    /* AJAX link click */
+    jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox)", function(e){
+        var link = jQuery(this).attr("href");
+        // var title = jQuery(responseHtml).filter('title').text();
+        // console.log(title);
+        jQuery("#main").load( link + " #primary", function(responseText) {
+            var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
+            document.title = newtitle; 
+            openAllExternalBlank();
+            swipeboxGalleryFixer();
+            } 
+        );
+        e.preventDefault();
+        history.pushState({}, null, link);
+        // jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
+        jQuery("body").removeClass("home");
+        jQuery(".main-navigation ul.menu li:hover > ul").hide();
+            
+    });
+
+        
+    jQuery(document).on("click", ".site-title a", function(e){
+        jQuery("body").addClass("home");
+    });
 
     
-jQuery(document).on("click", ".site-title a", function(e){
-	jQuery("body").addClass("home");
-});
- 
     
-// A $( document ).ready() block end    
+        
+    // A $( document ).ready() block end    
 });
 
 
