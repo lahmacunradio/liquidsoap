@@ -21,11 +21,11 @@
 
 </head>
 
-<?php /* if ( is_home() ) : ?>
+<?php if ( is_home() ) : ?>
     <body <?php body_class("home"); ?>>
 <?php else : ?>
     <body <?php body_class(); ?>>
-<?php endif; */ ?>
+<?php endif; ?>
 
 <body>
 

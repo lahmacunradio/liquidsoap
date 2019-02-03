@@ -50,7 +50,16 @@ function swipeboxGalleryFixer() {
 	  $(this).attr('rel', 'gallery-' + X); // set the rel attribute to gallery- plus the value of X
 	  $(this).attr('target', '');
 	});
-} 
+}
+
+function set_home_class(scope){
+    if (scope.pathname == "/"  &&  scope.hash.length <= 1  &&  scope.search.length <= 1) {
+        jQuery("body").addClass("home");
+        // console.log("home");
+    } else {
+        jQuery("body").removeClass("home");
+    }
+}
  
 
 // A $( document ).ready() block.
@@ -61,6 +70,7 @@ $( document ).ready(function() {
     openAllExternalBlank();
     swipeboxGalleryFixer();
 
+    // popstate event handler for browser back button
     window.addEventListener("popstate", function(e) {
         var loc = document.location;
 
@@ -69,14 +79,12 @@ $( document ).ready(function() {
             document.title = newtitle; 
             openAllExternalBlank();
             swipeboxGalleryFixer();
-            } 
-        );
+            set_home_class(document.location);
+        });
     });
+    
     // check if is on home an add class
-    if (location.pathname == "/"  &&  location.hash.length <= 1  &&  location.search.length <= 1) {
-   		jQuery("body").addClass("home");
-   		// console.log("home");
-    }
+    set_home_class(document.location);
     
     
     /* AJAX link click */
@@ -94,15 +102,16 @@ $( document ).ready(function() {
         e.preventDefault();
         history.pushState({}, null, link);
         // jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
-        jQuery("body").removeClass("home");
+        set_home_class(document.location);
         jQuery(".main-navigation ul.menu li:hover > ul").hide();
             
     });
 
         
-    jQuery(document).on("click", ".site-title a", function(e){
+    
+    /*jQuery(document).on("click", ".site-title a", function(e){
         jQuery("body").addClass("home");
-    });
+    });*/
 
     
     
