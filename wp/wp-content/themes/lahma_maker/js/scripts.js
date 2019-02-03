@@ -64,7 +64,7 @@ $( document ).ready(function() {
     window.addEventListener("popstate", function(e) {
         var loc = document.location;
 
-        $("#main").load(loc.href + "#primary", function(responseText) {
+        $("#main").load(loc.href + " #primary", function(responseText) {
             var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
             document.title = newtitle; 
             openAllExternalBlank();
