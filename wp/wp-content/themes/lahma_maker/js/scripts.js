@@ -97,7 +97,7 @@ $( document ).ready(function() {
             document.title = newtitle; 
             openAllExternalBlank();
             swipeboxGalleryFixer();
-            $("#site-navigation-toggle.toggled").trigger("click");
+            //$("#site-navigation-toggle.toggled").trigger("click"); //automatically collapses open show menu on mobile
             } 
         );
         e.preventDefault();
