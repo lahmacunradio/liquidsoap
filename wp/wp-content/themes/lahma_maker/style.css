@@ -46,11 +46,19 @@ p, #main ul {
 	line-height: 1.6em;
 }
 
-body a:active, body a:focus, body a:hover,
-.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+
+html:not(.ismobile) body a:active, html:not(.ismobile) body a:focus, html:not(.ismobile) body a:hover,
+html:not(.ismobile) .main-navigation a:hover, html:not(.ismobile) .main-navigation a:focus, html:not(.ismobile) .main-navigation a:active {
     color: #ffffff;
     text-decoration: none;
 }
+
+html.ismobile body a:active, html.ismobile body a:focus, html.ismobile body a:hover,
+html.ismobile .main-navigation a:hover, html.ismobile .main-navigation a:focus, html.ismobile .main-navigation a:active {
+    color: #23282d;
+    text-decoration: none;
+}
+
 
 body div#main {
     padding-bottom: 2em;
@@ -62,7 +70,7 @@ div#main h1, div#main h2, div#main h3 {
 
 }
 
-.site-header {   border-bottom: 2px solid #9a74b8; }
+.site-header {   border-bottom: 2px solid #9a74b8;  background: #d09cf859; }
 body.home .site-header {   }
 
 .station-lahmacun_radio {
@@ -293,9 +301,13 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 header .wrap {   float: left; }
 .menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
 .main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
-.main-navigation.toggled ul.sub-menu a {      padding: 0.2em 0 0.2em 0; }
+.main-navigation.toggled ul.sub-menu { padding-left: 0; margin-bottom: 5px; }
+.main-navigation.toggled ul.sub-menu li { display: inline-block; }
+.main-navigation.toggled ul.sub-menu a { padding: 0 0.6em;  border-left: 1px solid; }
 .main-navigation.toggled ul.nav-menu {  margin-bottom: 1em ; }
+
 .content-area.centered {  width: 100%; }
+
 
 /* end max 786 */
 }

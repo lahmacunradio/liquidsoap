@@ -97,6 +97,7 @@ $( document ).ready(function() {
             document.title = newtitle; 
             openAllExternalBlank();
             swipeboxGalleryFixer();
+            $("#site-navigation-toggle.toggled").trigger("click");
             } 
         );
         e.preventDefault();
