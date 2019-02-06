@@ -6,3 +6,5 @@ wp/wp-content/\.DS_Store
 mockup_db\.dump
 
 uploads\.zip
+
+export_lokal\.sh

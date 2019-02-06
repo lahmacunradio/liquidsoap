@@ -17,6 +17,7 @@ curl -O [URL_SERVER]/mockup_db.dump
 read -p "Press enter to continue"
 
 echo "STEP 2: unzipping and copying upload files"
+rm -R wp/wp-content/uploads
 unzip uploads.zip
 read -p "Press enter to continue"
 
