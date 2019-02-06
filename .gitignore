@@ -3,3 +3,6 @@ wp/wp-content/uploads/
 
 wp/wp-content/\.DS_Store
 **/.DS_Store
+mockup_db\.dump
+
+uploads\.zip
