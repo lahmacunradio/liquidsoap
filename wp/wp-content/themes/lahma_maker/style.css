@@ -70,7 +70,7 @@ div#main h1, div#main h2, div#main h3 {
 
 }
 
-.site-header {   border-bottom: 2px solid #9a74b8;  background: #d09cf859; }
+.site-header {   border-bottom: 2px solid #9a74b8;  }
 body.home .site-header {   }
 
 .station-lahmacun_radio {
@@ -299,6 +299,7 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 @media screen and (max-width: 768px) {
 
 header .wrap {   float: left; }
+.main-navigation ul.menu li:hover > ul {  right: auto; }
 .menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
 .main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
 .main-navigation.toggled ul.sub-menu { padding-left: 0; margin-bottom: 5px; }
@@ -317,7 +318,7 @@ header .wrap {   float: left; }
 
 .site {  padding-right: 3%;  padding-left: 3%; }
 .site-title {   padding-top: 0.5em; }
-.site-header {   margin-bottom: 0.5em; }
+.site-header {   margin-bottom: 0.5em; background: #d09cf859; }
 
 .lahma_side-infos, .lahma_post-content {  display: block;  width: 100%;     margin: 3% auto; }
 .lahma_post-title {   margin-bottom: 2em; }
