@@ -47,12 +47,17 @@ p, #main ul {
 }
 
 
-html:not(.ismobile) body a:active, html:not(.ismobile) body a:focus, html:not(.ismobile) body a:hover,
-html:not(.ismobile) .main-navigation a:hover, html:not(.ismobile) .main-navigation a:focus, html:not(.ismobile) .main-navigation a:active {
+html:not(.ismobile) body a:hover,
+html:not(.ismobile) .main-navigation a:hover{
     color: #ffffff;
     text-decoration: none;
 }
 
+/* workaround for issue 31 "Highlight remains after hitting back/clicking on non-reloadable parts"*/
+html:not(.ismobile) body a:focus, html:not(.ismobile) body a:active, html:not(.ismobile) .main-navigation a:active, html:not(.ismobile) .main-navigation a:focus{
+    color: #23282d;
+    text-decoration: none;
+}
 html.ismobile body a:active, html.ismobile body a:focus, html.ismobile body a:hover,
 html.ismobile .main-navigation a:hover, html.ismobile .main-navigation a:focus, html.ismobile .main-navigation a:active {
     color: #23282d;
