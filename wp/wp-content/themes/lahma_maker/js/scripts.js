@@ -91,7 +91,8 @@ $( document ).ready(function() {
     jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox)", function(e){
         var link = jQuery(this).attr("href");
         // var title = jQuery(responseHtml).filter('title').text();
-        // console.log(title);
+        // console.log(link);
+       
         jQuery("#main").load( link + " #primary", function(responseText) {
             var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
             document.title = newtitle; 
@@ -105,7 +106,7 @@ $( document ).ready(function() {
         // jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
         set_home_class(document.location);
         jQuery(".main-navigation ul.menu li:hover > ul").hide();
-            
+        
     });
 
         
@@ -114,7 +115,12 @@ $( document ).ready(function() {
         jQuery("body").addClass("home");
     });*/
 
-    
+
+	// Main-menu toggler
+	$(document).on("click", "html.ismobile nav.main-navigation li.menu-item-has-children a", function(e){
+		$(this).parentsUntil("ul").find("ul.sub-menu").toggle();
+		e.preventDefault;
+	})    
     
         
     // A $( document ).ready() block end    
