@@ -310,7 +310,7 @@ header .wrap {   float: left; }
 .main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
 .main-navigation.toggled ul.sub-menu { padding-left: 0; margin-bottom: 5px; }
 .main-navigation.toggled ul.sub-menu li { display: inline-block; }
-.main-navigation.toggled ul.sub-menu a { padding: 0 0.6em;  border-left: 1px solid; }
+.main-navigation.toggled ul.sub-menu a { padding: 0.2em 0.6em;  border-left: 1px solid; }
 .main-navigation.toggled ul.nav-menu {  margin-bottom: 1em ; }
 
 .content-area.centered {  width: 100%; }
