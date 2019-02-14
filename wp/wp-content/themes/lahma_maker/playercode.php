@@ -9,7 +9,7 @@ else lahmacun - lahmacun
 then echo
 */
 
-$development = "http://178.238.217.146:8083/";
+$development = "https://178.238.217.146:8083/";
 $main = "https://www.lahmacun.hu:8084/"; 
 $localServer = $_SERVER['REMOTE_ADDR'];
 
@@ -84,7 +84,7 @@ $(function() {
         el: '#station-nowplaying',
         data: {"np":{ "live":{"is_live":"Is Live","streamer_name":"Streamer Name"},
                       "now_playing":
-                      {"song":{"title":"Song Title","artist":"Song Artist","art":"http:\/\/"+streamServer+"\/static\/img\/generic_song.jpg"},"is_request":false,"elapsed":0,"duration":0}
+                      {"song":{"title":"Song Title","artist":"Song Artist","art":"https://www.lahmacun.hu:8084/api/station/1/art/bc6f2c7ed9ca958d13d8bb55.jpg"},"is_request":false,"elapsed":0,"duration":0}
                     }
               },
         computed: {

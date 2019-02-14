@@ -1,5 +1,5 @@
 
-wp/wp-content/uploads/
+wp/wp-content/uploads/*
 
 wp/wp-content/\.DS_Store
 **/.DS_Store
@@ -7,4 +7,5 @@ mockup_db\.dump
 
 uploads\.zip
 
-export_lokal\.sh
+export_local\.sh
+import_local\.sh
