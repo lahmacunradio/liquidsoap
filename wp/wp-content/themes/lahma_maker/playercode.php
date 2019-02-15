@@ -29,7 +29,7 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 
 <link rel="stylesheet" type="text/css" href="<?php echo $broadcastServer ?>static/js/bootgrid/jquery.bootgrid.min.css" />
 
-<link rel="stylesheet" type="text/css" href="<?php echo $broadcastServer ?>/static/dist/light-4069fdbe6a.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $broadcastServer ?>static/dist/light-4069fdbe6a.css" />
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js" crossorigin="anonymous" integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA="></script>
