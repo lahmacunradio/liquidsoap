@@ -14,7 +14,7 @@ $main = "https://www.lahmacun.hu:8084/";
 $localServer = $_SERVER['REMOTE_ADDR'];
 
 if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) { 
-	$broadcastServer = "http://dev.lahmacun.hu:8083/";
+	$broadcastServer = "https://dev.lahmacun.hu:8084/";
 } else {
 	$broadcastServer = "https://www.lahmacun.hu:8084/";
 }
