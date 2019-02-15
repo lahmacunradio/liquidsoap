@@ -1,0 +1,339 @@
+/*
+ Theme Name:   Radio Lahmacun theme (maker)
+ Theme URI:
+ Description:  Radio Lahmacun theme based on maker Wordpress theme
+ Author:       gamma
+ Author URI:
+ Template:     maker
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         no-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  lahmacun
+*/
+
+html > body {
+    font-family: 'Rubik', "Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: .875rem;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+	background-color: #d09cf8 !important;
+	color: #23282d;
+}
+
+body.home {
+	background-image: url("img/lahmacun.png") !important;
+	background-size: initial !important;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+body a {
+    color: #762778;
+    text-decoration: none;
+}
+
+body button:focus {
+    outline: none;
+}
+
+p, #main ul {
+
+}
+
+#main p {
+	line-height: 1.6em;
+}
+
+
+html:not(.ismobile) body a:hover,
+html:not(.ismobile) .main-navigation a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* workaround for issue 31 "Highlight remains after hitting back/clicking on non-reloadable parts"*/
+html:not(.ismobile) body a:focus, html:not(.ismobile) body a:active, html:not(.ismobile) .main-navigation a:active, html:not(.ismobile) .main-navigation a:focus{
+    color: #23282d;
+    text-decoration: none;
+}
+html.ismobile body a:active, html.ismobile body a:focus, html.ismobile body a:hover,
+html.ismobile .main-navigation a:hover, html.ismobile .main-navigation a:focus, html.ismobile .main-navigation a:active {
+    color: #23282d;
+    text-decoration: none;
+}
+
+
+body div#main {
+    padding-bottom: 2em;
+    padding-top: 2em;
+    min-height: auto;
+}
+
+div#main h1, div#main h2, div#main h3 {
+
+}
+
+.site-header {   border-bottom: 2px solid #9a74b8;  }
+body.home .site-header {   }
+
+.station-lahmacun_radio {
+    display: block;
+    margin: auto;
+    width: 360px;
+}
+
+.site-branding {
+    max-width: none;
+}
+
+.site-title {
+    font-family: inherit;
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height:1em>
+}
+
+.main-navigation {
+    font-size: 1.3em;
+}
+
+
+div#page{
+	background-color: transparent !important;
+}
+
+body.page-template-default {
+background-color: #d09cf8 !important;
+background-image: none;
+}
+
+header #playerdiv {
+	float:left;
+}
+
+header .wrap {
+	float:right;
+}
+
+header .wrap .site-branding {
+	display: block;
+}
+
+
+/* Fix maker mistakes */
+.blog .entry-content, .blog .entry-footer, .blog .comments-area, .blog .post-navigation, .archive .entry-content, .archive .entry-footer, .archive .comments-area, .archive .post-navigation, .single-post .entry-content, .single-post .entry-footer, .single-post .comments-area, .single-post .post-navigation, .blog .entry-header, .archive .entry-header, .single-post .entry-header, .page-template-default .entry-header, .page-template-default .entry-content, .page-template-default .comments-area {
+    max-width: initial;
+}
+
+
+
+/* player overrides */
+
+header #playerdiv div.station-lahmacun_radio .public-page .card {
+	background: none;
+	box-shadow: none;
+	width: 360px;
+    height: 100px;
+    min-width: 360px;
+   margin-top: 2em;
+}
+
+header #playerdiv div.station-lahmacun_radio .public-page .card-body {
+    padding: 0;
+}
+
+header #playerdiv .public-page .card-body a,
+header #playerdiv .public-page .card-body .media-body {
+    color: #1e1e1e !important;
+}
+
+header #playerdiv .public-page .card-body .media-body .nowplaying-artist {
+    color: #585858 !important;
+    font-size: 0.9em;
+}
+
+
+header #playerdiv .custom-range::-webkit-slider-runnable-track {
+
+}
+
+header #playerdiv #radio-player-controls.radio-controls-standalone {
+    margin-top: 0;
+}
+
+header #playerdiv .creditswrap {
+    display:none;
+}
+
+.main-navigation ul.menu li > ul {
+	display: none;
+}
+
+
+html:not(.ismobile) .main-navigation ul.menu li:hover > ul {
+	right: 0;
+	display: block !important;
+}
+
+.site-title a {
+    font-weight: 500;
+}
+
+.site-footer {
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    background: #d09cf8;
+}
+
+.site-info {
+    float: none;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Post-sub-pages */
+
+.lahma_post-title {
+    text-transform: uppercase;
+    margin: 0 0 1em;
+}
+
+.lahma_side-infos, .lahma_post-content {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 1.1em;
+	color: #1e1e1e;
+}
+
+.lahma_side-infos {
+	width: 30%;
+	margin-right: 2%;
+}
+
+.lahma_post-content {
+    width: 67%;
+/* 
+    border-radius: 2px;
+    background-color: #ffffffed;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.14), 0 3px 4px 0 rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+    padding: 1em;
+ */
+}
+
+
+/* Home page */
+
+.lahma_home-content  {
+    overflow: auto;
+}
+
+.lahma_home-content table {
+	background: #d09cf859;
+    line-height: 1.2em;
+    width: 100%;
+}
+
+.lahma_home-content table tr:first-child th, .lahma_home-content .tg-idopont {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.lahma_home-content td, .lahma_home-content th {
+	padding: 0.7em 0.5em;
+    border: 1px solid #441054;
+    width: 12%;
+}
+
+.lahma_home-content .tg-idopont {
+	width: 80px;
+}
+
+.content-area.centered {
+    width: 70%;
+    margin: auto;
+    float: none;
+}
+
+
+/* Swipebox fixes */
+
+body #swipebox-slider .slide {
+    height: 90%;
+    width: 90%;
+    display: block;
+    margin: 5% auto;
+}
+
+body #swipebox-overlay {
+    background: rgba(13, 13, 13, 0.87);
+}
+
+/* Responsive */
+
+html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
+    height: 60px;
+}
+
+
+@media screen and (min-width: 1024px)
+.blog.no-sidebar .entry-content, .blog.no-sidebar .entry-footer, .blog.no-sidebar .comments-area, .blog.no-sidebar .post-navigation, .archive.no-sidebar .entry-content, .archive.no-sidebar .entry-footer, .archive.no-sidebar .comments-area, .archive.no-sidebar .post-navigation, .single-post.no-sidebar .entry-content, .single-post.no-sidebar .entry-footer, .single-post.no-sidebar .comments-area, .single-post.no-sidebar .post-navigation,
+.blog.no-sidebar .entry-header, .archive.no-sidebar .entry-header, .single-post.no-sidebar .entry-header {
+    width: 100%;
+    padding-right: 0;
+}
+.content-area {  width: 100%;  max-width: 100%; margin-right: 0; }
+
+@media screen and (min-width: 768px) {
+
+.main-navigation ul {  padding: 0.3em 0; }
+.main-navigation ul ul {background-color: #d09cf8; }
+.site-header {   padding: 0 0 0.5em; }
+.entry-title {     font-size: 2.5em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
+
+/* end min 786 */
+}
+
+
+@media screen and (max-width: 768px) {
+
+header .wrap {   float: left; }
+.main-navigation ul.menu li:hover > ul {  right: auto; }
+.menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
+.main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
+.main-navigation.toggled ul.sub-menu { padding-left: 0; margin-bottom: 5px; }
+.main-navigation.toggled ul.sub-menu li { display: inline-block; }
+.main-navigation.toggled ul.sub-menu a { padding: 0.2em 0.6em;  border-left: 1px solid; }
+.main-navigation.toggled ul.nav-menu {  margin-bottom: 1em ; }
+
+.content-area.centered {  width: 100%; }
+
+
+/* end max 786 */
+}
+
+
+@media (max-width: 460px) {
+
+.site {  padding-right: 3%;  padding-left: 3%; }
+.site-title {   padding-top: 0.5em; }
+.site-header {   margin-bottom: 0.5em; background: #d09cf859; }
+
+.lahma_side-infos, .lahma_post-content {  display: block;  width: 100%;     margin: 3% auto; }
+.lahma_post-title {   margin-bottom: 2em; }
+header #playerdiv div.station-lahmacun_radio .public-page .card {   zoom: 0.9; margin-top: 4%;      width: 320px;  min-width: 320px; }
+
+}
+
+@media (max-width: 330px) {
+
+div#page { overflow: hidden; }
+
+}
