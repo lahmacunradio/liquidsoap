@@ -9,15 +9,13 @@ else lahmacun - lahmacun
 then echo
 */
 
-$development = "https://178.238.217.146:8083/";
+$development = "http://dev.lahmacun.hu:8083/";
 $main = "https://www.lahmacun.hu:8084/"; 
 $localServer = $_SERVER['REMOTE_ADDR'];
 
-if ( in_array( $_SERVER['HTTP_HOST'], array( 'localhost', '127.0.0.1' ) ) ) { 
-	// echo "<h1>lokal</h1>";
-	$broadcastServer = "http://178.238.217.146:8083/";
+if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) { 
+	$broadcastServer = "http://dev.lahmacun.hu:8083/";
 } else {
-	// echo "<h1>notlokal</h1>";
 	$broadcastServer = "https://www.lahmacun.hu:8084/";
 }
 
