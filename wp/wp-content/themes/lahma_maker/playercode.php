@@ -215,7 +215,7 @@ $(function() {
         </a>
     </div>
     <div class="pull-left pr-2" v-if="np.now_playing.song.art">
-        <a v-bind:href="np.now_playing.song.art" data-fancybox target="_blank" class="swipebox" ><img v-bind:src="np.now_playing.song.art" alt="Album Cover" style="width: 50px; height: auto; border-radius: 5px;"></a>
+        <a v-bind:href="np.now_playing.song.art" data-fancybox target="_blank" class="swipebox programimage" ><img v-bind:src="np.now_playing.song.art" alt="Album Cover" class="progimg"></a>
     </div>
     <div class="media-body">
         <h4 class="media-heading might-overflow nowplaying-title">
