@@ -1,5 +1,6 @@
 <?php
 
+
 function lahma_maker_enqueue_styles() {
 
     $parent_style = 'maker';
@@ -13,6 +14,15 @@ function lahma_maker_enqueue_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'lahma_maker_enqueue_styles' );
+
+
+function add_modernizr() {
+    wp_register_script('add_modernizr', "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js", array('jquery'), false, false);
+    wp_enqueue_script('add_modernizr');
+}
+
+add_action('wp_enqueue_scripts', 'add_modernizr');
+
 
 function lahma_enqueue_js() {
     wp_enqueue_script(
