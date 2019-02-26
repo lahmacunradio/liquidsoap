@@ -229,11 +229,11 @@ $(function() {
             </div>
 
             <div class="radio-controls-standalone volumecontrolos" id="radio-player-controls">
-                <a href="javascript:;" class="text-secondary jp-mute" title="Mute">
+                <a href="#" class="text-secondary jp-mute" title="Mute">
                     <i class="material-icons">volume_mute</i>
                 </a>
                 <input type="range" title="Volume" class="d-inline-block custom-range jp-volume-range" style="" id="jp-volume-range" min="0" max="100" step="1">
-                <a href="javascript:;" class="text-secondary jp-volume-full" title="Full Volume">
+                <a href="#" class="text-secondary jp-volume-full" title="Full Volume">
                     <i class="material-icons">volume_up</i>
                 </a>
             </div>
