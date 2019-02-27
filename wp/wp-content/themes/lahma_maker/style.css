@@ -149,6 +149,36 @@ header #playerdiv .public-page .card-body .media-body {
     color: #1e1e1e !important;
 }
 
+header #playerdiv .public-page .card-body a.programimage {
+    width: 50px;
+    height: 50px;
+    display: block;
+    overflow: hidden;
+}
+
+header #playerdiv .public-page .card-body a.programimage img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+header #playerdiv .public-page .card-body .media-body {
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+header #playerdiv .public-page .card-body .media-body > h4, 
+header #playerdiv .public-page .card-body .media-body > div {
+	text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
 header #playerdiv .public-page .card-body .media-body .nowplaying-artist {
     color: #585858 !important;
     font-size: 0.9em;
@@ -283,23 +313,29 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 }
 
 
-@media screen and (min-width: 1024px)
+@media screen and (min-width: 1024px) {
 .blog.no-sidebar .entry-content, .blog.no-sidebar .entry-footer, .blog.no-sidebar .comments-area, .blog.no-sidebar .post-navigation, .archive.no-sidebar .entry-content, .archive.no-sidebar .entry-footer, .archive.no-sidebar .comments-area, .archive.no-sidebar .post-navigation, .single-post.no-sidebar .entry-content, .single-post.no-sidebar .entry-footer, .single-post.no-sidebar .comments-area, .single-post.no-sidebar .post-navigation,
 .blog.no-sidebar .entry-header, .archive.no-sidebar .entry-header, .single-post.no-sidebar .entry-header {
     width: 100%;
     padding-right: 0;
 }
 .content-area {  width: 100%;  max-width: 100%; margin-right: 0; }
+}
 
 @media screen and (min-width: 768px) {
 
 .main-navigation ul {  padding: 0.3em 0; }
 .main-navigation ul ul {background-color: #d09cf8; }
+.main-navigation ul ul li {  box-shadow: 0 13px 0 -12px rgba(88, 88, 88, 0.3);  float: right; }
+.main-navigation ul ul a {  width: auto;  padding: 0.6em 1em;  white-space: nowrap;   font-size: 0.9em; }
+.main-navigation ul ul li:first-child a {  padding-top: 0.8em; }
+.main-navigation ul ul li:last-child a {  padding-bottom: 1em; }
 .site-header {   padding: 0 0 0.5em; }
 .entry-title {     font-size: 2.5em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
 
 /* end min 786 */
 }
+
 
 
 @media screen and (max-width: 768px) {

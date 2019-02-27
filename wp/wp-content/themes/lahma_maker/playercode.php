@@ -9,14 +9,14 @@ else lahmacun - lahmacun
 then echo
 */
 
-$development = "http://dev.lahmacun.hu:8083/";
+$development = "https://dev.lahmacun.hu:8084/";
 $main = "https://www.lahmacun.hu:8084/"; 
 $localServer = $_SERVER['REMOTE_ADDR'];
 
 if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) { 
-	$broadcastServer = "https://dev.lahmacun.hu:8084/";
+	$broadcastServer = $development;
 } else {
-	$broadcastServer = "https://www.lahmacun.hu:8084/";
+	$broadcastServer = $main;
 }
 
 // echo "<h1>".$broadcastServer."</h1>";
@@ -105,7 +105,20 @@ $(function() {
                 return this.np.live.streamer_name
               else
                 return this.np.now_playing.song.title
+            },
+            "show_subtitle": function() {
+              if (this.np.live.is_live)
+                return ""
+              else
+                return this.np.now_playing.song.artist
+            },
+            "show_art_url": function() {
+              if (this.np.live.is_live)
+                return "https://www.lahmacun.hu:8084/api/station/1/art/bc6f2c7ed9ca958d13d8bb55.jpg"
+              else
+                return this.np.now_playing.song.art
             }
+
         }
     });
 
@@ -214,26 +227,26 @@ $(function() {
             <i class="material-icons lg">play_circle_outline</i>
         </a>
     </div>
-    <div class="pull-left pr-2" v-if="np.now_playing.song.art">
-        <a v-bind:href="np.now_playing.song.art" data-fancybox target="_blank" class="swipebox" ><img v-bind:src="np.now_playing.song.art" alt="Album Cover" style="width: 50px; height: auto; border-radius: 5px;"></a>
+    <div class="pull-left pr-2" v-if="show_art_url">
+        <a v-bind:href="show_art_url" data-fancybox target="_blank" class="swipebox programimage" ><img v-bind:src="show_art_url" alt="Album Cover" class="progimg"></a>
     </div>
     <div class="media-body">
         <h4 class="media-heading might-overflow nowplaying-title">
             {{ show_title }}
         </h4>
         <div class="nowplaying-artist might-overflow">
-            {{ np.now_playing.song.artist }}
+            {{ show_subtitle }}
         </div>
     </div>
 </div>
             </div>
 
             <div class="radio-controls-standalone volumecontrolos" id="radio-player-controls">
-                <a href="javascript:;" class="text-secondary jp-mute" title="Mute">
+                <a href="#" class="text-secondary jp-mute" title="Mute">
                     <i class="material-icons">volume_mute</i>
                 </a>
                 <input type="range" title="Volume" class="d-inline-block custom-range jp-volume-range" style="" id="jp-volume-range" min="0" max="100" step="1">
-                <a href="javascript:;" class="text-secondary jp-volume-full" title="Full Volume">
+                <a href="#" class="text-secondary jp-volume-full" title="Full Volume">
                     <i class="material-icons">volume_up</i>
                 </a>
             </div>
