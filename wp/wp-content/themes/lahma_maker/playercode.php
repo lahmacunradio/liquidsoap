@@ -1,6 +1,10 @@
 <!-- RADIO code -->
 
 <?php
+
+// load in the shows lister
+get_template_part( "showslist" );
+
 /*
 server
 if local - boerek
@@ -10,17 +14,17 @@ then echo
 */
 
 $development = "https://dev.lahmacun.hu:8084/";
-$main = "https://www.lahmacun.hu:8084/"; 
+$main = "https://www.lahmacun.hu:8084/";
 $localServer = $_SERVER['REMOTE_ADDR'];
 
-if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) { 
+if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 	$broadcastServer = $development;
 } else {
 	$broadcastServer = $main;
 }
 
 // echo "<h1>".$broadcastServer."</h1>";
- 
+
 ?>
 
 <script type="text/javascript">
@@ -164,7 +168,7 @@ $(function() {
     }
     loadNowPlaying();
 
-/* 
+/*
     $('[data-fancybox]').fancybox({
         buttons: ['close']
     });
