@@ -78,8 +78,14 @@ $(function() {
             "show_art_url": function() {
               if (this.np.live.is_live)
                 return "https://www.lahmacun.hu:8084/api/station/1/art/bc6f2c7ed9ca958d13d8bb55.jpg"
-              else
-                return showsList_lookup[this.np.now_playing.song.title]
+              else {
+                  try_art_from_show = showsList_lookup[this.np.now_playing.song.title]
+                  if (try_art_from_show == undefined)
+                    return this.np.now_playing.song.art
+                  else
+                    return try_art_from_show
+              } 
+                
             }
 
         }
