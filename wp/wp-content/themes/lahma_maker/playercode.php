@@ -52,6 +52,7 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 <script type="text/javascript" nonce="BQ4A2ZdmNz1kbMfKQl0nVf6H">
 
 var nowPlaying;
+var showsList_lookup = {};
 
 $(function() {
     nowPlaying = new Vue({
@@ -78,7 +79,7 @@ $(function() {
               if (this.np.live.is_live)
                 return "https://www.lahmacun.hu:8084/api/station/1/art/bc6f2c7ed9ca958d13d8bb55.jpg"
               else
-                return this.np.now_playing.song.art
+                return showsList_lookup[this.np.now_playing.song.title]
             }
 
         }
@@ -110,6 +111,13 @@ $(function() {
     }
     loadNowPlaying();
 
+    function create_showsList_lookup(){
+        showsList.forEach(function (el, i, arr) {
+            var key = Object.keys(el)[0];
+            showsList_lookup[key] = el[key];
+        });
+    }
+    create_showsList_lookup();
 
 });
 </script>

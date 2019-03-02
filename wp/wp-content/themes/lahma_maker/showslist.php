@@ -12,11 +12,11 @@ $loop = new WP_Query( $args );
 
 while ( $loop->have_posts() ) : $loop->the_post();
 
-    $slug = get_post_field( 'post_name', get_post() );
+    $title = get_post_field( 'post_title', get_post() );
     $image = get_the_post_thumbnail_url( $post->ID, 'thumbnail' );
 
     $showlist[] = array(
-        $slug => $image
+        $title => $image
         // "slug" => "image"
     );
 
@@ -33,5 +33,5 @@ wp_reset_postdata();
 ?>
 
 <script type="text/javascript">
-  	var showsList = "<?php echo json_encode($showlist, JSON_UNESCAPED_SLASHES); ?>";
+  	var showsList = <?php echo json_encode($showlist, JSON_UNESCAPED_SLASHES); ?>;
 </script>
