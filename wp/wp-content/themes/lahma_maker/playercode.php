@@ -110,53 +110,7 @@ $(function() {
     }
     loadNowPlaying();
 
-/*
-    $('[data-fancybox]').fancybox({
-        buttons: ['close']
-    });
- */
 
-	var request_dialog = $('#modal-request');
-
-	request_dialog.on('show.bs.modal', function (event) {
-
-		if (!request_dialog.data('request_loaded'))
-		{
-			var grid = $("#requests-table").bootgrid({
-				ajax: true,
-				rowSelect: false,
-				caseSensitive: false,
-				url: "/api/station/1/requests",
-				formatters: {
-					"commands": function(column, row) {
-						return '<a class="btn btn-request btn-sm btn-primary" data-url="'+row.request_url+'">Request</a>';
-					}
-				}
-			}).on("loaded.rs.jquery.bootgrid", function()
-			{
-				/* Executes after data is loaded and rendered */
-				grid.find(".btn-request").on("click", function(e)
-				{
-					e.preventDefault();
-					request_dialog.modal('hide');
-
-					$.ajax({
-						dataType: "json",
-						url: $(this).data('url')
-					}).done(function(data) {
-						notify(data, 'success');
-					}).fail(function(jqXhr) {
-						notify('Error: ' + jqXhr.responseJSON, 'danger');
-					});
-
-					return false;
-				});
-			});
-
-			request_dialog.data('request_loaded', true);
-		}
-
-	});
 });
 </script>
 
