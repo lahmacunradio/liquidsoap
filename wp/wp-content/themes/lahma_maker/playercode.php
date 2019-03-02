@@ -53,34 +53,6 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 
 var nowPlaying;
 
-function iterateTimer() {
-    var np_elapsed = nowPlaying.np.now_playing.elapsed;
-    var np_total = nowPlaying.np.now_playing.duration;
-
-    if (np_elapsed < np_total) {
-        nowPlaying.np.now_playing.elapsed = np_elapsed + 1;
-    }
-}
-
-function formatTime(time) {
-    var sec_num = parseInt(time, 10);
-
-    var hours = Math.floor(sec_num / 3600);
-    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    return (hours !== "00" ? hours + ':' : "") + minutes + ':' + seconds;
-}
-
 $(function() {
     nowPlaying = new Vue({
         el: '#station-nowplaying',
@@ -90,20 +62,6 @@ $(function() {
                     }
               },
         computed: {
-            "time_display": function() {
-                var time_played = this.np.now_playing.elapsed;
-                var time_total = this.np.now_playing.duration;
-
-                if (!time_total) {
-                    return null;
-                }
-
-                if (time_played > time_total) {
-                    time_played = time_total;
-                }
-
-                return formatTime(time_played) + ' / ' + formatTime(time_total);
-            },
             "show_title": function() {
               if (this.np.live.is_live)
                 return this.np.live.streamer_name
@@ -126,30 +84,14 @@ $(function() {
         }
     });
 
-    setInterval(iterateTimer, 1000);
 });
 </script>
 <script type="text/javascript" nonce="BQ4A2ZdmNz1kbMfKQl0nVf6H">
 $(function() {
 
-    songHistory = new Vue({
-        el: '#station-history',
-        data: {
-            history: [
-                {
-                    song: {
-                        title: 'Song Title',
-                        artist: 'Song Artist'
-                    }
-                }
-            ]
-        }
-    });
-
     function loadNowPlaying() {
         $.getJSON( streamServer + 'api/nowplaying/1', function(row) {
             nowPlaying.np = row;
-            songHistory.history = row.song_history;
 
             if ('mediaSession' in navigator) {
                 navigator.mediaSession.metadata = new MediaMetadata({
