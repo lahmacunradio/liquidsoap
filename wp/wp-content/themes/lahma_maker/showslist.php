@@ -13,7 +13,7 @@ $loop = new WP_Query( $args );
 while ( $loop->have_posts() ) : $loop->the_post();
 
     $title = get_post_field( 'post_title', get_post() );
-    $image = get_the_post_thumbnail_url( $post->ID, 'thumbnail' );
+    $image = get_the_post_thumbnail_url( $post->ID, 'large' );
 
     $showlist[] = array(
         $title => $image
