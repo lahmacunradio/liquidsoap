@@ -20,7 +20,7 @@ $localServer = $_SERVER['REMOTE_ADDR'];
 if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 	$broadcastServer = $development;
 } else {
-	$broadcastServer = $main;
+	$broadcastServer = $development;
 }
 
 // echo "<h1>".$broadcastServer."</h1>";
@@ -53,13 +53,15 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 
 var nowPlaying;
 var showsList_lookup = {};
+var last_showname = "";
+var default_art_url = "<?php echo $broadcastServer ?>wp-content/uploads/defaultshowart.jpg";
 
 $(function() {
     nowPlaying = new Vue({
         el: '#station-nowplaying',
         data: {"np":{ "live":{"is_live":"Is Live","streamer_name":"Streamer Name"},
                       "now_playing":
-                      {"song":{"title":"Song Title","artist":"Song Artist","art":"https://www.lahmacun.hu:8084/api/station/1/art/bc6f2c7ed9ca958d13d8bb55.jpg"},"is_request":false,"elapsed":0,"duration":0}
+                      {"song":{"title":"Song Title","artist":"Song Artist","art":default_art_url},"is_request":false,"elapsed":0,"duration":0}
                     }
               },
         computed: {
@@ -76,18 +78,31 @@ $(function() {
                 return this.np.now_playing.song.artist
             },
             "show_art_url": function() {
-              if (this.np.live.is_live)
-                return "https://www.lahmacun.hu:8084/api/station/1/art/bc6f2c7ed9ca958d13d8bb55.jpg"
-              else {
-                  try_art_from_show = showsList_lookup[this.np.now_playing.song.title]
-                  if (try_art_from_show == undefined)
-                    return this.np.now_playing.song.art
-                  else
-                    return try_art_from_show
-              } 
-                
-            }
+                if (this.np.live.is_live){
+                    try_art_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
+                    if (try_art_from_show == undefined) //show not found
+                        return default_art_url // return default
+                    else return try_art_from_show //resturn show art work
+                }
+                else {
+                    artwork_json = this.np.now_playing.song.art //art work url in json
+                    try_art_from_show = showsList_lookup[this.np.now_playing.song.title] //try to find show artwork url based on show title
+                    if (try_art_from_show == undefined) //show not found
+                        if (artwork_json == "<?php echo $broadcastServer ?>static/img/generic_song.jpg") //default url by azuracast (must be returning off air music with art work)
+                            if (last_showname == "") //invlaid starting state
+                                return default_art_url    
+                            else 
+                                return last_showname
+                        else { //it's a valid art work url by azuracast
+                            last_showname = artwork_json
+                            return artwork_json
+                        } 
+                    else 
+                        return try_art_from_show //return show art work 
 
+
+                }
+            }
         }
     });
 
