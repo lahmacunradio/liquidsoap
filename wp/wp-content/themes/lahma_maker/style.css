@@ -337,17 +337,15 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 .main-navigation ul {  padding: 0.3em 0; }
 .main-navigation li {  position: initial; }
 .main-navigation ul > li > a {  padding-bottom: 2em; }
-.main-navigation ul ul {background-color: #d09cf8; }
+.main-navigation ul ul {background-color: #d09cf8de; }
 .main-navigation ul.menu li > ul {
   right: 0;
   top: 0;
   margin: 135px 0 0;
   border-top: none;
-  width: 98vW;
   left: 0;
   text-align: center;
   box-shadow: none;
-  padding-bottom: 0.5em;
 }
 .main-navigation ul ul li, .main-navigation ul ul li:last-child {
   box-shadow: 0 13px 0 -12px rgba(88, 88, 88, 0.3);
