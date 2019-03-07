@@ -58,6 +58,7 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 var nowPlaying;
 var showsList_lookup = {};
 var default_art_url = "<?php echo $home_url ?>/wp-content/uploads/defaultshowart.jpg";
+var default_azuracast_art_url = "<?php echo $broadcastServer ?>static/img/generic_song.jpg";
 
 $(function() {
     nowPlaying = new Vue({
@@ -93,10 +94,10 @@ $(function() {
                     artwork_json = this.np.now_playing.song.art //art work url in json
                     try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
                     if (try_art_from_show == undefined) //show not found
-                        if (artwork_json == "<?php echo $broadcastServer ?>static/img/generic_song.jpg"){ //default url by azuracast (must be returning off air music with art work)
+                        if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
                             artwork_history_json = "";
                             (this.np.song_history).some(function (el){
-                                if (el.song.title == song_title_json){
+                                if (el.song.title == song_title_json && el.song.art != default_azuracast_art_url){
                                     artwork_history_json = el.song.art;
                                     return true;
                                 }
