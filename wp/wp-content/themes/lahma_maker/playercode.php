@@ -92,9 +92,9 @@ $(function() {
                 else {
                     song_title_json = this.np.now_playing.song.title
                     artwork_json = this.np.now_playing.song.art //art work url in json
-                    try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
-                    if (try_art_from_show == undefined) //show not found
-                        if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
+                    if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
+                        try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
+                        if (try_art_from_show == undefined){ //show not found
                             artwork_history_json = "";
                             (this.np.song_history).some(function (el){
                                 if (el.song.title == song_title_json && el.song.art != default_azuracast_art_url){
@@ -107,12 +107,11 @@ $(function() {
                             else 
                                 return default_art_url  //fallback to default art URL
                         }
-                        else  //it's a valid art work url by azuracast
-                            return artwork_json
-                    else 
-                        return try_art_from_show //return show art work 
-
-
+                        else 
+                            return try_art_from_show //return show art work 
+                    }
+                    else  //it's a valid art work url by azuracast
+                        return artwork_json
                 }
             }
         }
