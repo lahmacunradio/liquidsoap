@@ -7,7 +7,7 @@ end
 # Stop show (not fade out), play jingle, fade in off air music
 def transition_into_off(j,a,b)
   add(normalize=false,
-	  [ sequence([a,j,fade.initial(b)]) ])
+	  [ sequence([fade.final(a),j,fade.initial(b)]) ])
 end
 
 
