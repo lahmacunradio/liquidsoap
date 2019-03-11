@@ -34,7 +34,7 @@ main () {
     fi
     
     src=$1
-    dst="./archive"
+    dst="../archive"
 
     if ! is_container "$src"; then
         fatal "there is no container with this name running"
