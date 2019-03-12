@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 self=$0
 
@@ -13,7 +13,7 @@ is_container() {
     # eg. in the form of: 'docker_container_name:/path/to/folder_or_file'
     container_name=${1%:*}
     echo "$self: $container_name"
-    echo "$self: testing..."
+    echo "$self: checking if running container with this name is available..."
     if [[ $(docker ps -f "name=$container_name" --format '{{.Names}}') == $container_name ]];
     then
         return 0
@@ -23,7 +23,9 @@ is_container() {
 }
 
 copy_container_host() {
+  echo "copying $1..."
   docker cp "$1" "$2"
+  echo "data copy finished successfully"
 }
 
 main () {
