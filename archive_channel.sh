@@ -24,9 +24,9 @@ is_container() {
 }
 
 copy_container_host() {
-  echo "copying $1..."
+  echo "$self: copying $1..."
   docker cp "$1" "$2"
-  echo "data copy finished successfully"
+  echo "$self: data copy finished successfully"
 }
 
 main () {
@@ -37,7 +37,9 @@ main () {
     fi
     
     src=$1
-    dst="../archive"
+    # so we don't add this huge data blob to the repo we create archive in the
+    # parent folder. No need to gitignore this way either
+    dst="$(pwd)/../archive"
 
     if ! is_container "$src"; then
         fatal "there is no container with this name running"
