@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 self=$0
 
 # print an error
