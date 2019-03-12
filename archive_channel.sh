@@ -46,6 +46,8 @@ main () {
         exit
     fi 
 
+    cd $(dirname $self)
+
     if ! [ -d $dst ]; then
         mkdir -p $dst
     fi
