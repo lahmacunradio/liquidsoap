@@ -27,6 +27,11 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
     $home_url = "https://www.lahmacun.hu/";
 }
 
+/* Only for development, uncomment - Gas
+$broadcastServer = "https://dev.lahmacun.hu:8084/";
+$home_url = "https://dev.lahmacun.hu";
+*/
+
 // echo "<h1>".$broadcastServer."</h1>";
 
 ?>
@@ -105,11 +110,11 @@ $(function() {
                             })
                             if (artwork_history_json != "")
                                 return artwork_history_json
-                            else 
+                            else
                                 return default_art_url  //fallback to default art URL
                         }
-                        else 
-                            return try_art_from_show //return show art work 
+                        else
+                            return try_art_from_show //return show art work
                     }
                     else  //it's a valid art work url by azuracast
                         return artwork_json

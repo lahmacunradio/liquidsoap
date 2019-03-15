@@ -165,7 +165,7 @@ header #playerdiv .public-page .card-body a.programimage img {
 }
 
 header #playerdiv .public-page .card-body .media-body {
-    max-height: 50px;
+    max-height: 55px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
@@ -332,6 +332,7 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 .main-navigation ul.menu li > ul {  padding: 0px 5%; }
 }
 
+
 @media screen and (min-width: 768px) {
 
 .main-navigation ul {  padding: 0.3em 0; }
@@ -365,11 +366,18 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 /* end min 786 */
 }
 
+@media screen and (min-width: 769px) and (max-width: 840px) {
+  .main-navigation ul.menu > li > a {
+      font-size: 0.9em;
+      padding: 1.2em 0.5em 2em 0.5em;
+  }
+
+}
 
 
 @media screen and (max-width: 768px) {
 
-header .wrap {   float: left; }
+header .wrap {       float: left; }
 .main-navigation ul.menu li:hover > ul {  right: auto; }
 .menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
 .main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
@@ -380,6 +388,8 @@ header .wrap {   float: left; }
 
 .content-area.centered {  width: 100%; }
 
+header #playerdiv div.station-lahmacun_radio .public-page .card {    width: 340px; }
+#radio-player-controls.radio-controls-standalone input.jp-volume-range {  width: 280px  !important; }
 
 /* end max 786 */
 }
@@ -394,11 +404,16 @@ header .wrap {   float: left; }
 .lahma_side-infos, .lahma_post-content {  display: block;  width: 100%;     margin: 3% auto; }
 .lahma_post-title {   margin-bottom: 2em; }
 header #playerdiv div.station-lahmacun_radio .public-page .card {   zoom: 0.9; margin-top: 4%;      width: 320px;  min-width: 320px; }
+header div.station-lahmacun_radio .might-overflow {   width: 100% !important; }
+div.station-lahmacun_radio h4.might-overflow {  max-height: 2.3em; }
+header #playerdiv .public-page .card-body .media-body > div {    min-height: 20px; }
+#radio-player-controls.radio-controls-standalone input.jp-volume-range {  width: 240px !important; }
 
 }
 
 @media (max-width: 330px) {
 
 div#page { overflow: hidden; }
+
 
 }
