@@ -1,6 +1,10 @@
 <!-- RADIO code -->
 
 <?php
+
+// load in the shows lister
+get_template_part( "showslist" );
+
 /*
 server
 if local - boerek
@@ -9,18 +13,27 @@ else lahmacun - lahmacun
 then echo
 */
 
-$development = "https://dev.lahmacun.hu:8084/";
-$main = "https://www.lahmacun.hu:8084/"; 
-$localServer = $_SERVER['REMOTE_ADDR'];
+$development = "https://dev.lahmacun.hu";
+$main = "https://www.lahmacun.hu";
+$port = "8084";
+$broadcastServer = "";
+$home_url = "";
 
-if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) { 
-	$broadcastServer = $development;
+if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
+    $broadcastServer = "https://dev.lahmacun.hu:8084/";
+    $home_url = "https://dev.lahmacun.hu";
 } else {
-	$broadcastServer = $main;
+    $broadcastServer = "https://www.lahmacun.hu:8084/";
+    $home_url = "https://www.lahmacun.hu/";
 }
 
+/* Only for development, uncomment - Gas
+$broadcastServer = "https://dev.lahmacun.hu:8084/";
+$home_url = "https://dev.lahmacun.hu";
+*/
+
 // echo "<h1>".$broadcastServer."</h1>";
- 
+
 ?>
 
 <script type="text/javascript">
@@ -29,7 +42,7 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 
 <link rel="stylesheet" type="text/css" href="<?php echo $broadcastServer ?>static/js/bootgrid/jquery.bootgrid.min.css" />
 
-<link rel="stylesheet" type="text/css" href="<?php echo $broadcastServer ?>static/dist/light-cec2eee1b0.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $broadcastServer ?>static/dist/light-1d16f139b5.css" />
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js" crossorigin="anonymous" integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA="></script>
@@ -48,58 +61,20 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
 <script type="text/javascript" nonce="BQ4A2ZdmNz1kbMfKQl0nVf6H">
 
 var nowPlaying;
-
-function iterateTimer() {
-    var np_elapsed = nowPlaying.np.now_playing.elapsed;
-    var np_total = nowPlaying.np.now_playing.duration;
-
-    if (np_elapsed < np_total) {
-        nowPlaying.np.now_playing.elapsed = np_elapsed + 1;
-    }
-}
-
-function formatTime(time) {
-    var sec_num = parseInt(time, 10);
-
-    var hours = Math.floor(sec_num / 3600);
-    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    return (hours !== "00" ? hours + ':' : "") + minutes + ':' + seconds;
-}
+var showsList_lookup = {};
+var default_art_url = "<?php echo $home_url ?>/wp-content/uploads/defaultshowart.jpg";
+var default_azuracast_art_url = "<?php echo $broadcastServer ?>static/img/generic_song.jpg";
 
 $(function() {
     nowPlaying = new Vue({
         el: '#station-nowplaying',
         data: {"np":{ "live":{"is_live":"Is Live","streamer_name":"Streamer Name"},
                       "now_playing":
-                      {"song":{"title":"Song Title","artist":"Song Artist","art":"https://www.lahmacun.hu:8084/api/station/1/art/bc6f2c7ed9ca958d13d8bb55.jpg"},"is_request":false,"elapsed":0,"duration":0}
+                      {"song":{"title":"Song Title","artist":"Song Artist","art":default_art_url},"is_request":false,"elapsed":0,"duration":0},
+                      "song_history": [{"song": {"title": "Song Title","artist": "Song Artist"}}]
                     }
               },
         computed: {
-            "time_display": function() {
-                var time_played = this.np.now_playing.elapsed;
-                var time_total = this.np.now_playing.duration;
-
-                if (!time_total) {
-                    return null;
-                }
-
-                if (time_played > time_total) {
-                    time_played = time_total;
-                }
-
-                return formatTime(time_played) + ' / ' + formatTime(time_total);
-            },
             "show_title": function() {
               if (this.np.live.is_live)
                 return this.np.live.streamer_name
@@ -113,39 +88,49 @@ $(function() {
                 return this.np.now_playing.song.artist
             },
             "show_art_url": function() {
-              if (this.np.live.is_live)
-                return "https://www.lahmacun.hu:8084/api/station/1/art/bc6f2c7ed9ca958d13d8bb55.jpg"
-              else
-                return this.np.now_playing.song.art
+                if (this.np.live.is_live){
+                    try_art_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
+                    if (try_art_from_show == undefined) //show not found
+                        return default_art_url // return default
+                    else return try_art_from_show //resturn show art work
+                }
+                else {
+                    song_title_json = this.np.now_playing.song.title;
+                    song_artist_json = this.np.now_playing.song.artist;
+                    artwork_json = this.np.now_playing.song.art; //art work url in json
+                    if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
+                        try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
+                        if (try_art_from_show == undefined){ //show not found
+                            artwork_history_json = "";
+                            (this.np.song_history).some(function (el){  //check song in history one by one; check by artist not by title!
+                                if (el.song.artist == song_artist_json && el.song.art != default_azuracast_art_url){
+                                    artwork_history_json = el.song.art;
+                                    return true;
+                                }
+                            })
+                            if (artwork_history_json != "")
+                                return artwork_history_json
+                            else
+                                return default_art_url  //fallback to default art URL
+                        }
+                        else
+                            return try_art_from_show //return show art work
+                    }
+                    else  //it's a valid art work url by azuracast
+                        return artwork_json
+                }
             }
-
         }
     });
 
-    setInterval(iterateTimer, 1000);
 });
 </script>
 <script type="text/javascript" nonce="BQ4A2ZdmNz1kbMfKQl0nVf6H">
 $(function() {
 
-    songHistory = new Vue({
-        el: '#station-history',
-        data: {
-            history: [
-                {
-                    song: {
-                        title: 'Song Title',
-                        artist: 'Song Artist'
-                    }
-                }
-            ]
-        }
-    });
-
     function loadNowPlaying() {
         $.getJSON( streamServer + 'api/nowplaying/1', function(row) {
             nowPlaying.np = row;
-            songHistory.history = row.song_history;
 
             if ('mediaSession' in navigator) {
                 navigator.mediaSession.metadata = new MediaMetadata({
@@ -164,53 +149,14 @@ $(function() {
     }
     loadNowPlaying();
 
-/* 
-    $('[data-fancybox]').fancybox({
-        buttons: ['close']
-    });
- */
+    function create_showsList_lookup(){
+        showsList.forEach(function (el, i, arr) {
+            var key = Object.keys(el)[0];
+            showsList_lookup[key] = el[key];
+        });
+    }
+    create_showsList_lookup();
 
-	var request_dialog = $('#modal-request');
-
-	request_dialog.on('show.bs.modal', function (event) {
-
-		if (!request_dialog.data('request_loaded'))
-		{
-			var grid = $("#requests-table").bootgrid({
-				ajax: true,
-				rowSelect: false,
-				caseSensitive: false,
-				url: "/api/station/1/requests",
-				formatters: {
-					"commands": function(column, row) {
-						return '<a class="btn btn-request btn-sm btn-primary" data-url="'+row.request_url+'">Request</a>';
-					}
-				}
-			}).on("loaded.rs.jquery.bootgrid", function()
-			{
-				/* Executes after data is loaded and rendered */
-				grid.find(".btn-request").on("click", function(e)
-				{
-					e.preventDefault();
-					request_dialog.modal('hide');
-
-					$.ajax({
-						dataType: "json",
-						url: $(this).data('url')
-					}).done(function(data) {
-						notify(data, 'success');
-					}).fail(function(jqXhr) {
-						notify('Error: ' + jqXhr.responseJSON, 'danger');
-					});
-
-					return false;
-				});
-			});
-
-			request_dialog.data('request_loaded', true);
-		}
-
-	});
 });
 </script>
 
