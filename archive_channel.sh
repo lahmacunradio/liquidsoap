@@ -42,10 +42,10 @@ main () {
     # parent folder. No need to gitignore this way either
     dst="$(pwd)/../archive"
 
-    if ! is_container "$src"; then
-        fatal "there is no container with this name running"
-        exit
-    fi 
+    # if ! is_container "$src"; then
+    #     fatal "there is no container with this name running"
+    #     exit
+    # fi 
 
     cd $(dirname $self)
 
