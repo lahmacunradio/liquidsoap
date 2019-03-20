@@ -15,7 +15,7 @@ is_container() {
     container_name=${1%:*}
     echo "$self: $container_name"
     echo "$self: checking if running container with this name is available..."
-    if [[ $(docker ps -f "name=$container_name" --format '{{.Names}}') == $container_name ]];
+    if [[ $(docker ps --no-trunc -qf "name=$container_name" --format '{{.Names}}') == $container_name ]];
     then
         return 0
     else
@@ -36,7 +36,8 @@ main () {
         exit
     fi
     
-    src=$1
+    image_based_container_name=$(docker ps | awk '$2=="azuracast/azuracast_web_v2:latest" { print $12 }')
+    src="$image_based_container_name:$1"
     # so we don't add this huge data blob to the repo we create archive in the
     # parent folder. No need to gitignore this way either
     dst="$(pwd)/../archive"
