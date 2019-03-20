@@ -15,7 +15,7 @@ is_container() {
     container_name=${1%:*}
     echo "$self: $container_name"
     echo "$self: checking if running container with this name is available..."
-    if [[ $(docker ps --no-trunc -qf "name=$container_name" --format '{{.Names}}') == $container_name ]];
+    if [[ $(docker ps --no-trunc -qf "id=$container_name" --format '{{.ID}}') == $container_name ]];
     then
         return 0
     else
