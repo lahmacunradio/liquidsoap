@@ -36,7 +36,7 @@ main () {
         exit
     fi
     
-    image_based_container_name=$(docker ps | awk '$2=="azuracast/azuracast_web_v2:latest" { print $12 }')
+    image_based_container_name=$(docker ps | awk '$2=="azuracast/azuracast_web_v2:latest" { print $1 }')
     src="$image_based_container_name:$1"
     # so we don't add this huge data blob to the repo we create archive in the
     # parent folder. No need to gitignore this way either
