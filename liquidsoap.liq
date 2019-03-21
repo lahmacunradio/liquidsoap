@@ -46,7 +46,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 18h-19h}, once(playlist_geigercounterculture)),  
     ({3w and 19h-20h}, once(playlist_cellz)),  
     #Thursday
-    ({4w and 16h49-18h}, once(playlist_lazy_calm_raga)),  
+    ({4w and 16h-18h}, once(playlist_lazy_calm_raga)),  
     ({4w and 18h-19h}, once(playlist_mt)),  
     ({4w and 20h-22h}, once(playlist_great_galactick_ghaul)),  
     #Friday
