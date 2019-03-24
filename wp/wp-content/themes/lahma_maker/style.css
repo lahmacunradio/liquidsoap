@@ -306,6 +306,38 @@ body #swipebox-overlay {
     background: rgba(13, 13, 13, 0.87);
 }
 
+#swipebox-close, #swipebox-next, #swipebox-prev {
+	background-image: url(img/icons.svg) !important;
+	background-size: 120px;
+}
+
+body #swipebox-bottom-bar, body #swipebox-top-bar {
+    background: #00000000;
+}
+
+li.facebookmenu a {
+    overflow: hidden;
+      width: 35px;
+      height: 25px;
+      vertical-align: top;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 5px;
+}
+
+li.facebookmenu a:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f09a";
+  font-size: 1em;
+      margin-bottom: 50px;
+}
+
+
 /* Responsive */
 
 html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
