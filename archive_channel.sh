@@ -38,16 +38,16 @@ main () {
     
     image_based_container_name=$(docker ps | awk '$2=="azuracast/azuracast_web_v2:latest" { print $1 }')
     src="$image_based_container_name:$1"
-    # so we don't add this huge data blob to the repo we create archive in the
-    # parent folder. No need to gitignore this way either
-    dst="$(pwd)/../archive"
 
     # if ! is_container "$src"; then
     #     fatal "there is no container with this name running"
     #     exit
     # fi 
 
+    # so we don't add this huge data blob to the repo we create archive in the
+    # parent folder. No need to gitignore this way either
     cd $(dirname $self)
+    dst="$(pwd)/../archive"
 
     if ! [ -d $dst ]; then
         mkdir -p $dst
