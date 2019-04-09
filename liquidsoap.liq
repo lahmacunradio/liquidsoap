@@ -43,7 +43,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 16h-18h}, once(playlist_mmn_radio)),  
     ({2w and 19h-20h}, once(playlist_turmeric_acid)),  
     #Wednesday
-    ({3w and 12h50m-14h}, once(playlist_rt_hallgats)),  
+    ({3w and 13h-14h}, once(playlist_rt_hallgats)),  
     ({3w and 16h-17h}, once(playlist_wikihow_adventure_cruise)),  
     ({3w and 17h-18h}, once(playlist_geigercounterculture)),  
     ({3w and 18h-19h}, once(playlist_cellz)),  
