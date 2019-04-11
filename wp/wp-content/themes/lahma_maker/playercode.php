@@ -27,10 +27,10 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
     $home_url = "https://www.lahmacun.hu/";
 }
 
-/* Only for development, uncomment - Gas
+/* Only for development, uncomment - Gas*/
 $broadcastServer = "https://dev.lahmacun.hu:8084/";
 $home_url = "https://dev.lahmacun.hu";
-*/
+
 
 // echo "<h1>".$broadcastServer."</h1>";
 
@@ -197,9 +197,6 @@ $(function() {
                 </a>
             </div>
 
-        </div>
-        <div class="player-wrap creditswrap">
-        <a href="schedule.pdf" target="_blank">Schedule</a> | <a href="lahmacun.m3u" target="_blank">Stream</a> | <a href="mailto:lahmacun@mmmnmnm.com" target="_blank">Contact</a>
         </div>
 
     </div>
