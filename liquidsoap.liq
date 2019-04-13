@@ -32,6 +32,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [ 
     #Monday
     ({1w and 5h-6h}, once(playlist_szarok_bele)),  
@@ -55,6 +56,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 16h-17h}, once(playlist_agybaj)),
     ({5w and 17h-19h}, once(playlist_mkd_mkd)),
     #Saturday
+    ({6w and 10h-14h}, playlist_azvlm),  
     ({6w and 16h-18h}, once(playlist_rnr666)),  
     #Sunday
     ({7w and 10h-12h}, once(playlist_bambusz)),  
