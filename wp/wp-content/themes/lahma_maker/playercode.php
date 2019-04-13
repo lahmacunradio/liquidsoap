@@ -83,7 +83,7 @@ $(function() {
             },
             "show_subtitle": function() {
               if (this.np.live.is_live)
-                return ""
+                return this.np.now_playing.song.title
               else
                 return this.np.now_playing.song.artist
             },
