@@ -49,6 +49,14 @@ function playAudio(source_url)
         console.error(error);
         stopAllPlayers();
     });
+    window.addEventListener('online', function() {
+      player.play();
+      // console.log("restarted");
+    });
+    player.addEventListener('timeupdate', function() {
+      player.play();
+      // console.log("restarted");
+    });
 }
 
 function handlePlayClick(audio_source)
