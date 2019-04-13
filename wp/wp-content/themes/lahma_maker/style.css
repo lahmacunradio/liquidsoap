@@ -337,6 +337,28 @@ li.facebookmenu a:before {
       margin-bottom: 50px;
 }
 
+li.listen a {
+    overflow: hidden;
+      width: 35px;
+      height: 25px;
+      vertical-align: top;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 5px;
+}
+
+li.listen a:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f025";
+  font-size: 1em;
+      margin-bottom: 50px;
+}
+
 
 /* Responsive */
 
