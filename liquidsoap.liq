@@ -10,7 +10,7 @@ def transition_into_off(j,a,b)
 	  [ sequence([fade.final(a),j,fade.initial(b)]) ])
 end
 
-playlist_once_azvlm = playlist.once(id="playlist_once_azvlm",reload_mode="watch","/var/azuracast/stations/boerek/playlists/playlist_azvlm.m3u")
+playlist_once_azvlm = playlist.once(id="playlist_once_azvlm",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_azvlm.m3u")
 
 radio = switch(track_sensitive=false, transitions=[ 
     transition_into_show(playlist_jingle),
