@@ -60,12 +60,15 @@ var datedifference = 7 - gooddateobj;
 // var $lastday = $(".day").eq(6);
 // var $today = $(".day").eq(gooddateobj);
 
-$(".day").each(function(i){
-// console.log(i);
-if ( i < gooddateobj ) {
-	$(this).appendTo($("#endofweek"));
-}
+$( document ).ajaxComplete(function() {
+	$(".day").each(function(i){
+	// console.log(i);
+	if ( i < gooddateobj ) {
+		$(this).appendTo($("#endofweek"));
+	}
+	});
 });
+
 
 
 </script>
