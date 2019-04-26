@@ -54,4 +54,28 @@ function lahma_enqueue_playerjs() {
 
 add_action( 'wp_enqueue_scripts', 'lahma_enqueue_playerjs' );
 
+// Changing excerpt more
+
+function new_excerpt_more($more) {
+    return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more', 21 );
+
+function the_excerpt_more_link( $excerpt ){
+    $post = get_post();
+    $excerpt .= '<a class="readmorelink" href="'. get_permalink($post->ID) . '">Olvass tovább/Read more...</a>';
+    return $excerpt;
+}
+add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
+
+ function excerpt_length_home( $length ) {
+ if ( is_front_page() || is_home() ) {
+ 	return 30;
+ } else {
+ 	return 50;
+ }
+ }
+ add_filter( 'excerpt_length', 'excerpt_length_home' );
+
+
 ?>

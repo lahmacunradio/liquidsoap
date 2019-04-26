@@ -12,6 +12,12 @@
  Text Domain:  lahmacun
 */
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 html > body {
     font-family: 'Rubik', "Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-size: .875rem;
@@ -359,8 +365,147 @@ li.listen a:before {
       margin-bottom: 50px;
 }
 
+/* Home News/Schedule */
 
-/* Responsive */
+.lahma_home-content {
+  background: #d09cf891;
+  margin-top: -2em;
+  padding-top: 2em;
+  width: 100%;
+}
+
+.lahma_home-content h1, .categoryposts h1 {
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+
+.halver {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+}
+
+.halver.news-block {
+  padding-right: 4%;
+}
+
+.newslist {
+  margin-bottom: 0em;
+  clear: both;
+  margin-top: 2em;
+}
+
+.halver a, .postslister h3 a {
+  color: #1d1d1d;
+}
+
+.postslister h3 a {
+  font-weight: 500;
+}
+
+.newspic-container {
+  float: left;
+  margin-right: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.news-block .description {
+
+}
+
+.description p {
+  margin-bottom: 0.3em;
+}
+
+.readmorelink {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  color: #1d1d1d;
+}
+
+.morenews {
+  text-align: right;
+  display: block;
+  border-top: 1px solid rgba(0,0,0,.87);
+  margin-top: 2em;
+  padding-top: 1em;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+
+.categoryposts .page-header {
+    margin-bottom: 0em;
+}
+
+
+.postslister {
+  margin-bottom: 2em;
+  clear: both;
+  margin-top: 1em;
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  margin-right: 4%;
+  border-bottom: 1px solid rgba(0,0,0,.87);
+  padding-bottom: 2em;
+}
+
+/* Schedule */
+
+.schedulewrap .day {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.schedulewrap h1 {
+    margin-bottom: 0.5em;
+}
+
+.schedulewrap h4 {
+    text-transform: none;
+    margin-bottom: 1em;
+}
+
+.schedulewrap .timenotice {
+  float: right;
+    margin-top: -3em;
+    margin-bottom: 1em;
+}
+
+.schedulewrap .day h3 {
+  border-bottom: 1px solid rgba(0,0,0,.87);
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.schedulewrap ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.schedulewrap ul li {
+  margin-bottom: 0.3em;
+}
+
+.schedulewrap a {
+  margin: 0 0.5em;
+}
+
+.schedulewrap strong {
+  font-weight: 500;
+}
+
+
+/*******
+********
+Responsive
+******
+******/
 
 html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
     height: 60px;
@@ -444,6 +589,9 @@ header .wrap {       float: left; }
 
 header #playerdiv div.station-lahmacun_radio .public-page .card {    width: 340px; }
 #radio-player-controls.radio-controls-standalone input.jp-volume-range {  width: 280px  !important; }
+
+.halver {  display: block;  width: 100%;  margin-bottom: 3em; }
+
 
 /* end max 786 */
 }
