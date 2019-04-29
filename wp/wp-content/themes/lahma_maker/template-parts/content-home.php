@@ -18,8 +18,8 @@
 
 <section class="schedulewrap">
 <h1>Schedule</h1>
-<span class="timenotice">Times are CET</span>
-<h4>In-between Shows non-stop!</h4>
+<span class="timenotice">All times are CET</span>
+<p>In-between shows non-stop</p>
 
 <?php
 /**** Automatisation not finished in loopshows.php, needs filtering by day/time
