@@ -10,10 +10,7 @@ def transition_into_off(j,a,b)
 	  [ sequence([fade.final(a),j,fade.initial(b)]) ])
 end
 
-playlist_once_azvlm = playlist.once(id="playlist_once_azvlm",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_azvlm.m3u")
-
 radio = switch(track_sensitive=false, transitions=[ 
-    transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -57,7 +54,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 16h-17h}, once(playlist_agybaj)),
     ({5w and 17h-19h}, once(playlist_mkd_mkd)),
     #Saturday
-    ({6w and 10h-14h}, playlist_once_azvlm),  
     ({6w and 16h-18h}, once(playlist_rnr666)),  
     #Sunday
     ({7w and 10h-12h}, once(playlist_bambusz)),  
