@@ -416,7 +416,8 @@ li.listen a:before {
 }
 
 .description p {
-  margin-bottom: 0.3em;
+  /* margin-bottom: 0.3em; */
+  display: inline;
 }
 
 .readmorelink {
@@ -452,6 +453,19 @@ li.listen a:before {
   margin-right: 4%;
   border-bottom: 1px solid rgba(0,0,0,.87);
   padding-bottom: 2em;
+}
+
+.news-title, .news-time {
+  margin-bottom: 0.3em;
+}
+
+.news-title {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.news-time {
+
 }
 
 /* Schedule */
