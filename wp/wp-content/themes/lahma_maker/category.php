@@ -23,7 +23,7 @@ get_header(); ?>
 
 				<article class="postslister">
 				  <h3 class="news-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<p class="news-time">Posted on: <?php the_time('l, F jS, Y') ?></p>
+					<p class="news-time"><?php the_time('l, F jS, Y') ?></p>
 				  <?php if ( has_post_thumbnail()) : ?>
 				  <div class="newspic-container">
 				   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="newsimage">
