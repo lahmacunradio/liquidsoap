@@ -31,7 +31,10 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [ 
+    #Live DJ
+    ({!live_enabled}, live),
     #Monday
     ({1w and 5h-6h}, once(playlist_szarok_bele)),  
     ({1w and 16h-17h}, once(playlist_szmuti_csorba)),  
