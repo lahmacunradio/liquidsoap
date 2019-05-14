@@ -10,8 +10,6 @@ def transition_into_off(j,a,b)
 	  [ sequence([fade.final(a),j,fade.initial(b)]) ])
 end
 
-playlist_once_azvlm = playlist.once(id="playlist_once_azvlm",reload_mode="watch","/var/azuracast/stations/boerek/playlists/playlist_azvlm.m3u")
-
 radio = switch(track_sensitive=false, transitions=[ 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -35,6 +33,8 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [ 
+    #Live DJ
+    ({!live_enabled}, live),
     #Monday
     ({1w and 5h-6h}, once(playlist_szarok_bele)),  
     ({1w and 16h-17h}, once(playlist_szmuti_csorba)),  
@@ -46,7 +46,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 19h-20h}, once(playlist_turmeric_acid)),  
     #Wednesday
     ({3w and 13h-14h}, once(playlist_rt_hallgats)),  
-    ({3w and 16h-17h}, once(playlist_wikihow_adventure_cruise)),  
+    ({3w and 14h-15h}, once(playlist_wikihow_adventure_cruise)),  
     ({3w and 17h-18h}, once(playlist_geigercounterculture)),  
     ({3w and 18h-19h}, once(playlist_cellz)),  
     #Thursday
@@ -57,7 +57,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 16h-17h}, once(playlist_agybaj)),
     ({5w and 17h-19h}, once(playlist_mkd_mkd)),
     #Saturday
-    ({6w and 10h-14h}, playlist_once_azvlm),  
     ({6w and 16h-18h}, once(playlist_rnr666)),  
     #Sunday
     ({7w and 10h-12h}, once(playlist_bambusz)),  
