@@ -27,10 +27,10 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
     $home_url = "https://www.lahmacun.hu/";
 }
 
-/* Only for development, uncomment - Gas*/
+/* Only for development, uncomment - Gas
 $broadcastServer = "https://dev.lahmacun.hu:8084/";
 $home_url = "https://dev.lahmacun.hu";
-
+*/
 
 // echo "<h1>".$broadcastServer."</h1>";
 
@@ -40,9 +40,9 @@ $home_url = "https://dev.lahmacun.hu";
 	var streamServer = "<?php echo $broadcastServer ?>";
 </script>
 
-<link rel="stylesheet" type="text/css" href="<?php echo $broadcastServer ?>static/js/bootgrid/jquery.bootgrid.min.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/jquery.bootgrid.min.css" />
 
-<link rel="stylesheet" type="text/css" href="<?php echo $broadcastServer ?>static/dist/light-97c42ad66e.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/light.css" />
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js" crossorigin="anonymous" integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA="></script>
@@ -51,7 +51,7 @@ $home_url = "https://dev.lahmacun.hu";
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js" crossorigin="anonymous" integrity="sha256-ICvFZLf7gslwfpvdxzQ8w8oZt0brzoFr8v2dXBecuLY=" defer></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js" crossorigin="anonymous" integrity="sha256-LlN0a0J3hMkDLO1mhcMwy+GIMbIRV7kvKHx4oCxNoxI=" defer></script>
 
-<script type="text/javascript" src="<?php echo $broadcastServer ?>static/js/bootgrid/jquery.bootgrid.updated.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/jquery.bootgrid.updated.js"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js" crossorigin="anonymous" integrity="sha256-0jgHNEQo7sIScbcI/Pc5GYJ+VosKM1mJ+fI0iuQ1a9E=" defer></script>
 
