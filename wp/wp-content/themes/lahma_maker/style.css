@@ -87,7 +87,7 @@ body.home .site-header {   }
 .station-lahmacun_radio {
     display: block;
     margin: auto;
-    width: 360px;
+    width: 300px;
 }
 
 .site-branding {
@@ -324,7 +324,7 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
 li.facebookmenu a {
     overflow: hidden;
       width: 35px;
-      height: 25px;
+      height: 35px;
       vertical-align: top;
       text-align: center;
       padding-left: 0;
@@ -541,12 +541,12 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 .main-navigation ul.menu li > ul {  padding: 0px 17%; }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1300px)  {
+@media screen and (min-width: 769px) and (max-width: 1300px)  {
 .main-navigation ul.menu li > ul {  padding: 0px 5%; }
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
 
 .main-navigation ul {  padding: 0.3em 0; }
 .main-navigation li {  position: initial; }
@@ -590,7 +590,7 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 
 @media screen and (max-width: 768px) {
 
-header .wrap {       float: left; }
+header .wrap {       float: none; }
 .main-navigation ul.menu li:hover > ul {  right: auto; }
 .menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
 .main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
@@ -605,7 +605,16 @@ header #playerdiv div.station-lahmacun_radio .public-page .card {    width: 340p
 #radio-player-controls.radio-controls-standalone input.jp-volume-range {  width: 280px  !important; }
 
 .halver {  display: block;  width: 100%;  margin-bottom: 3em; }
+.halver .newslist {  display: none;  }
+.halver .newslist:first-child {  display: block;  }
 
+.station-lahmacun_radio {   width: 300px; }
+.main-navigation a {   padding-right: 0; }
+
+body.home div#page {  background-color: #d09cf891 !important; }
+.lahma_home-content {  background-color: transparent; }
+.schedulewrap .timenotice {   margin-top: -2.6em; }
+.site-header {   padding: 1em 0; }
 
 /* end max 786 */
 }
@@ -624,7 +633,11 @@ header div.station-lahmacun_radio .might-overflow {   width: 100% !important; }
 div.station-lahmacun_radio h4.might-overflow {  max-height: 2.3em; }
 header #playerdiv .public-page .card-body .media-body > div {    min-height: 20px; }
 #radio-player-controls.radio-controls-standalone input.jp-volume-range {  width: 240px !important; }
+.postslister {   display: block;   width: auto;   padding-bottom: 1em;    margin: 1em auto; }
+.newspic-container {   float: none;   margin-right: 0;   margin-top: 10px;    margin-bottom: 10px;    width: 100%; }
 
+
+/* end max 460 */
 }
 
 @media (max-width: 330px) {
