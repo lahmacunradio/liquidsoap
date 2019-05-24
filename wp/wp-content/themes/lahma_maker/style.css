@@ -104,11 +104,11 @@ body.home .site-header {   }
   height: 82px;
 }
 
-.site-title:hover {
+html:not(.ismobile) .site-title:hover {
     background-image: url("img/lahmacun-logo-wh.png");
 }
 
-.site-title:hover > a {
+html:not(.ismobile) .site-title:hover > a {
     color: white;
 }
 
