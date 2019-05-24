@@ -53,6 +53,20 @@ var ndateobj = dateobj.getDay() || 7 - 1;
 var gooddateobj = ndateobj - 1;
 var datedifference = 7 - gooddateobj;
 
+window.onfocus = function() {
+		var Cdateobj = new Date();
+		var Cndateobj = Cdateobj.getDay() || 7 - 1;
+		var Cgooddateobj = Cndateobj - 1;
+
+		// console.log(gooddateobj);
+		// console.log(Cgooddateobj);
+
+if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") ) {
+		location.reload();
+}
+
+};
+
 // console.log(gooddateobj);
 // console.log(datedifference);
 
@@ -60,8 +74,7 @@ var datedifference = 7 - gooddateobj;
 // var $lastday = $(".day").eq(6);
 // var $today = $(".day").eq(gooddateobj);
 
-
-$( document ).ajaxComplete(function() {
+function sortDates() {
 	$(".day").not(".sorted").addClass("notsorted");
 	$(".day.notsorted").each(function(i){
 	// console.log(i);
@@ -70,6 +83,11 @@ $( document ).ajaxComplete(function() {
 	}
 	$(".day").removeClass("notsorted").addClass("sorted");
 	});
+}
+
+
+$( document ).ajaxComplete(function() {
+		sortDates();
 });
 
 
