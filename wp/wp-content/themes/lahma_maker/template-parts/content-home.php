@@ -49,13 +49,16 @@ if ( $query1->have_posts() ) {
 <script type="text/javascript">
 
 var dateobj = new Date();
-var ndateobj = dateobj.getDay() || 7 - 1;
+var ndateobj = dateobj.getDay() || 8 - 1;
 var gooddateobj = ndateobj - 1;
 var datedifference = 7 - gooddateobj;
+		// console.log(ndateobj);
+		// console.log(gooddateobj);
+		// console.log(datedifference);
 
 window.onfocus = function() {
 		var Cdateobj = new Date();
-		var Cndateobj = Cdateobj.getDay() || 7 - 1;
+		var Cndateobj = Cdateobj.getDay() || 8 - 1;
 		var Cgooddateobj = Cndateobj - 1;
 
 		// console.log(gooddateobj);
@@ -66,9 +69,6 @@ if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") ) {
 }
 
 };
-
-// console.log(gooddateobj);
-// console.log(datedifference);
 
 // var $monday = $(".day").eq(0);
 // var $lastday = $(".day").eq(6);
