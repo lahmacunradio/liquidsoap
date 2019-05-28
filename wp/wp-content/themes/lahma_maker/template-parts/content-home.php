@@ -74,7 +74,7 @@ if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") ) {
 // var $lastday = $(".day").eq(6);
 // var $today = $(".day").eq(gooddateobj);
 
-function sortDates() {
+function sortDates( callbackFunction ) {
 	$(".day").not(".sorted").addClass("notsorted");
 	$(".day.notsorted").each(function(i){
 	// console.log(i);
@@ -83,11 +83,30 @@ function sortDates() {
 	}
 	$(".day").removeClass("notsorted").addClass("sorted");
 	});
+
+	callbackFunction();
+
 }
+
+function dateWriteSchedule() {
+	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	var i = 0;
+	$(".schedulewrap .sorted > h3:not(.addedDate)").each(function(i){
+		var nextday = new Date(dateobj.getFullYear(),dateobj.getMonth(),dateobj.getDate()+i);
+		var $dateformat = "<div class='scheddate'>" + monthNames[nextday.getMonth()] + " " + nextday.getDate() + "</div>";
+		$(this).addClass("addedDate").append($dateformat);
+		i++;
+	})
+
+}
+
+// var nextday = new Date(dateobj.getFullYear(),dateobj.getMonth(),dateobj.getDate()+1);
+// console.log(nextday);
 
 
 $( document ).ajaxComplete(function() {
-		sortDates();
+		sortDates( dateWriteSchedule );
 });
 
 

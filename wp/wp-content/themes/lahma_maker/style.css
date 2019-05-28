@@ -517,6 +517,12 @@ font-style: italic;
   font-weight: 500;
 }
 
+.scheddate {
+  float: right;
+  font-weight: normal;
+      font-size: 0.8em;
+}
+
 
 /*******
 ********
