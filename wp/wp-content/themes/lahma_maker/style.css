@@ -54,7 +54,7 @@ p, #main ul {
 
 
 html:not(.ismobile) body a:hover,
-html:not(.ismobile) .main-navigation a:hover{
+html:not(.ismobile) .main-navigation a:hover, html:not(.ismobile) .main-navigation a:focus {
     color: #ffffff;
     text-decoration: none;
 }
@@ -95,10 +95,27 @@ body.home .site-header {   }
 }
 
 .site-title {
-    font-family: inherit;
-    font-size: 2rem;
-    text-transform: uppercase;
-    line-height:1em>
+  font-family: inherit;
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 1em;
+  background: url(img/lahmacun-logo.png) no-repeat left 20px;
+  background-size: 70px;
+  height: 82px;
+}
+
+html:not(.ismobile) .site-title:hover {
+    background-image: url("img/lahmacun-logo-wh.png");
+}
+
+html:not(.ismobile) .site-title:hover > a {
+    color: white;
+}
+
+.site-title a {
+    font-weight: 500;
+    padding-left: 80px;
+    display: block;
 }
 
 .main-navigation {
@@ -143,7 +160,7 @@ header #playerdiv div.station-lahmacun_radio .public-page .card {
 	width: 360px;
     height: 100px;
     min-width: 360px;
-   margin-top: 2em;
+   margin-top: 2.3em;
 }
 
 header #playerdiv div.station-lahmacun_radio .public-page .card-body {
@@ -211,10 +228,6 @@ header #playerdiv .creditswrap {
 html:not(.ismobile) .main-navigation ul.menu li:hover > ul {
 	right: 0;
 	display: block !important;
-}
-
-.site-title a {
-    font-weight: 500;
 }
 
 .site-footer {
@@ -321,7 +334,7 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
     background: #00000000;
 }
 
-li.facebookmenu a {
+li.facebookmenu a, li.listen a, li.donate a {
     overflow: hidden;
       width: 35px;
       height: 35px;
@@ -331,39 +344,29 @@ li.facebookmenu a {
       padding-right: 5px;
 }
 
-li.facebookmenu a:before {
+li.facebookmenu a:before, li.listen a:before, li.donate a:before  {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f09a";
   font-size: 1em;
       margin-bottom: 50px;
 }
 
-li.listen a {
-    overflow: hidden;
-      width: 35px;
-      height: 25px;
-      vertical-align: top;
-      text-align: center;
-      padding-left: 0;
-      padding-right: 5px;
+li.facebookmenu a:before {
+  content: "\f09a";
 }
 
 li.listen a:before {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f025";
-  font-size: 1em;
-      margin-bottom: 50px;
 }
+
+li.donate a:before {
+  content: "\f004";
+}
+
 
 /* Home News/Schedule */
 
@@ -514,6 +517,12 @@ font-style: italic;
   font-weight: 500;
 }
 
+.scheddate {
+  float: right;
+  font-weight: normal;
+      font-size: 0.8em;
+}
+
 
 /*******
 ********
@@ -545,12 +554,18 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 .main-navigation ul.menu li > ul {  padding: 0px 5%; }
 }
 
+@media screen and (min-width: 768px) and (max-width: 769px)  {
+.main-navigation {  float: left}
+.main-navigation ul {   padding:0; }
+}
+
+
 
 @media screen and (min-width: 769px) {
 
 .main-navigation ul {  padding: 0.3em 0; }
 .main-navigation li {  position: initial; }
-.main-navigation ul > li > a {  padding-bottom: 2em; }
+.main-navigation ul > li > a {  padding-bottom: 2em; padding-top: 0; }
 .main-navigation ul ul {background-color: #d09cf8de; }
 .main-navigation ul.menu li > ul {
   right: 0;
@@ -579,10 +594,10 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 /* end min 786 */
 }
 
-@media screen and (min-width: 769px) and (max-width: 840px) {
+@media screen and (min-width: 769px) and (max-width: 855px) {
   .main-navigation ul.menu > li > a {
       font-size: 0.9em;
-      padding: 1.2em 0.5em 2em 0.5em;
+      padding: 0 0.4em 2em 0.4em;
   }
 
 }
@@ -614,7 +629,7 @@ header #playerdiv div.station-lahmacun_radio .public-page .card {    width: 340p
 body.home div#page {  background-color: #d09cf891 !important; }
 .lahma_home-content {  background-color: transparent; }
 .schedulewrap .timenotice {   margin-top: -2.6em; }
-.site-header {   padding: 1em 0; }
+.site-header {   padding: 0; }
 
 /* end max 786 */
 }

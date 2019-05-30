@@ -49,19 +49,32 @@ if ( $query1->have_posts() ) {
 <script type="text/javascript">
 
 var dateobj = new Date();
-var ndateobj = dateobj.getDay() || 7 - 1;
+var ndateobj = dateobj.getDay() || 8 - 1;
 var gooddateobj = ndateobj - 1;
 var datedifference = 7 - gooddateobj;
+		// console.log(ndateobj);
+		// console.log(gooddateobj);
+		// console.log(datedifference);
 
-// console.log(gooddateobj);
-// console.log(datedifference);
+window.onfocus = function() {
+		var Cdateobj = new Date();
+		var Cndateobj = Cdateobj.getDay() || 8 - 1;
+		var Cgooddateobj = Cndateobj - 1;
+
+		// console.log(gooddateobj);
+		// console.log(Cgooddateobj);
+
+if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") ) {
+		location.reload();
+}
+
+};
 
 // var $monday = $(".day").eq(0);
 // var $lastday = $(".day").eq(6);
 // var $today = $(".day").eq(gooddateobj);
 
-
-$( document ).ajaxComplete(function() {
+function sortDates( callbackFunction ) {
 	$(".day").not(".sorted").addClass("notsorted");
 	$(".day.notsorted").each(function(i){
 	// console.log(i);
@@ -70,6 +83,30 @@ $( document ).ajaxComplete(function() {
 	}
 	$(".day").removeClass("notsorted").addClass("sorted");
 	});
+
+	callbackFunction();
+
+}
+
+function dateWriteSchedule() {
+	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	var i = 0;
+	$(".schedulewrap .sorted > h3:not(.addedDate)").each(function(i){
+		var nextday = new Date(dateobj.getFullYear(),dateobj.getMonth(),dateobj.getDate()+i);
+		var $dateformat = "<div class='scheddate'>" + monthNames[nextday.getMonth()] + " " + nextday.getDate() + "</div>";
+		$(this).addClass("addedDate").append($dateformat);
+		i++;
+	})
+
+}
+
+// var nextday = new Date(dateobj.getFullYear(),dateobj.getMonth(),dateobj.getDate()+1);
+// console.log(nextday);
+
+
+$( document ).ajaxComplete(function() {
+		sortDates( dateWriteSchedule );
 });
 
 
