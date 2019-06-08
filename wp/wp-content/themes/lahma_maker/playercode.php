@@ -23,7 +23,7 @@
 <script type="text/javascript" src="/static/js/bootgrid/jquery.bootgrid.updated.js"></script>
 <script type="text/javascript" src="/static/dist/bootgrid-acbc545ec1.js"></script>
 <script type="text/javascript" src="/static/dist/lib/fancybox/jquery-49a6b4d019.fancybox.min.js" defer></script>
-<script type="text/javascript" src="/assets/playerfiles/radio_player.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/radio_player.js"></script>
 </head>
 
 <body class="page-minimal station-lahmacun_radio">
