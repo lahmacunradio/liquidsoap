@@ -1,162 +1,126 @@
 <!-- RADIO code -->
 
-<?php
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/production/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/production/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/production/favicon-16x16.png">
+<link rel="manifest" href="/static/icons/production/site.webmanifest">
+<link rel="mask-icon" href="/static/icons/production/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/static/icons/production/favicon.ico">
+<meta name="msapplication-TileColor" content="#2196F3">
+<meta name="msapplication-config" content="/static/icons/production/browserconfig.xml">
+<meta name="theme-color" content="#2196F3">
 
-// load in the shows lister
-get_template_part( "showslist" );
+<link rel="stylesheet" type="text/css" href="/static/js/bootgrid/jquery.bootgrid.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/dist/lib/fancybox/jquery-a2d4258429.fancybox.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/dist/light-7708c1e378.css" />
+<script type="text/javascript" src="/static/dist/lib/jquery/jquery-220afd743d.min.js"></script>
+<script type="text/javascript" src="/static/dist/lib/vue/vue-17e942ea08.min.js"></script>
+<script type="text/javascript" src="/static/dist/lib/vue-i18n/vue-i18n-40a1d42f5a.min.js"></script>
+<script type="text/javascript" src="/static/dist/lib/bootstrap/bootstrap-a454220fc0.bundle.min.js"></script>
+<script type="text/javascript" src="/static/dist/lib/bootstrap-notify/bootstrap-notify-a02f92a499.min.js" defer></script>
+<script type="text/javascript" src="/static/dist/app-d20352e929.js" defer></script>
+<script type="text/javascript" src="/static/dist/material-c652fed16a.js"></script>
+<script type="text/javascript" src="/static/js/bootgrid/jquery.bootgrid.updated.js"></script>
+<script type="text/javascript" src="/static/dist/bootgrid-acbc545ec1.js"></script>
+<script type="text/javascript" src="/static/dist/lib/fancybox/jquery-49a6b4d019.fancybox.min.js" defer></script>
+<script type="text/javascript" src="/assets/playerfiles/radio_player.js"></script>
+</head>
 
-/*
-server
-if local - boerek
-else lahmacun - lahmacun
+<body class="page-minimal station-lahmacun_radio">
+<script type="text/javascript" nonce="BgC6RZJvXd9J/qcBqlIz7EFw">
+Vue.prototype.$eventHub = new Vue();</script>
+<script type="text/javascript" nonce="BgC6RZJvXd9J/qcBqlIz7EFw">
 
-then echo
-*/
-
-$development = "https://dev.lahmacun.hu";
-$main = "https://www.lahmacun.hu";
-$port = "8084";
-$broadcastServer = "";
-$home_url = "";
-
-if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
-    $broadcastServer = "https://dev.lahmacun.hu:8084/";
-    $home_url = "https://dev.lahmacun.hu";
-} else {
-    $broadcastServer = "https://www.lahmacun.hu:8084/";
-    $home_url = "https://www.lahmacun.hu/";
-}
-
-/* Only for development, uncomment - Gas
-$broadcastServer = "https://dev.lahmacun.hu:8084/";
-$home_url = "https://dev.lahmacun.hu";
-*/
-
-// echo "<h1>".$broadcastServer."</h1>";
-
-?>
-
-<script type="text/javascript">
-	var streamServer = "<?php echo $broadcastServer ?>";
-</script>
-
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/jquery.bootgrid.min.css" />
-
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/light.css" />
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js" crossorigin="anonymous" integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA="></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous" integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA="></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8="></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js" crossorigin="anonymous" integrity="sha256-ICvFZLf7gslwfpvdxzQ8w8oZt0brzoFr8v2dXBecuLY=" defer></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js" crossorigin="anonymous" integrity="sha256-LlN0a0J3hMkDLO1mhcMwy+GIMbIRV7kvKHx4oCxNoxI=" defer></script>
-
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/jquery.bootgrid.updated.js"></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js" crossorigin="anonymous" integrity="sha256-0jgHNEQo7sIScbcI/Pc5GYJ+VosKM1mJ+fI0iuQ1a9E=" defer></script>
-
-
-<div class="page-minimal station-lahmacun_radio">
-
-<script type="text/javascript" nonce="BQ4A2ZdmNz1kbMfKQl0nVf6H">
-
-var nowPlaying;
-var showsList_lookup = {};
-var default_art_url = "<?php echo $home_url ?>/wp-content/uploads/defaultshowart.jpg";
-var default_azuracast_art_url = "<?php echo $broadcastServer ?>static/img/generic_song.jpg";
+var i18n, radio_player;
 
 $(function() {
-    nowPlaying = new Vue({
+    i18n = new VueI18n({"locale":"en","messages":{"en":{"play_btn":"Play","pause_btn":"Pause","mute_btn":"Mute","volume_slider":"Volume","full_volume_btn":"Full Volume","album_art_alt":"Album Art"}}})
+    radio_player = new Vue({
+        i18n,
         el: '#station-nowplaying',
-        data: {"np":{ "live":{"is_live":"Is Live","streamer_name":"Streamer Name"},
-                      "now_playing":
-                      {"song":{"title":"Song Title","artist":"Song Artist","art":default_art_url},"is_request":false,"elapsed":0,"duration":0},
-                      "song_history": [{"song": {"title": "Song Title","artist": "Song Artist"}}]
-                    }
-              },
-        computed: {
-            "show_title": function() {
-              if (this.np.live.is_live)
-                return this.np.live.streamer_name
-              else
-                return this.np.now_playing.song.title
-            },
-            "show_subtitle": function() {
-              if (this.np.live.is_live)
-                return this.np.now_playing.song.title
-              else
-                return this.np.now_playing.song.artist
-            },
-            "show_art_url": function() {
-                if (this.np.live.is_live){
-                    try_art_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
-                    if (try_art_from_show == undefined) //show not found
-                        return default_art_url // return default
-                    else return try_art_from_show //resturn show art work
+        render: function(createElement) {
+            return createElement(RadioPlayer.default, {
+                props: {
+                    show_album_art: true,
+                    now_playing_uri: '/api/nowplaying/1'
                 }
-                else {
-                    song_title_json = this.np.now_playing.song.title;
-                    song_artist_json = this.np.now_playing.song.artist;
-                    artwork_json = this.np.now_playing.song.art; //art work url in json
-                    if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
-                        try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
-                        if (try_art_from_show == undefined){ //show not found
-                            artwork_history_json = "";
-                            (this.np.song_history).some(function (el){  //check song in history one by one; check by artist not by title!
-                                if (el.song.artist == song_artist_json && el.song.art != default_azuracast_art_url){
-                                    artwork_history_json = el.song.art;
-                                    return true;
-                                }
-                            })
-                            if (artwork_history_json != "")
-                                return artwork_history_json
-                            else
-                                return default_art_url  //fallback to default art URL
-                        }
-                        else
-                            return try_art_from_show //return show art work
+            });
+        }
+    });
+});
+</script>
+<script type="text/javascript" nonce="BgC6RZJvXd9J/qcBqlIz7EFw">
+$(function() {
+    // Song history Vue component
+    songHistory = new Vue({
+        el: '#station-history',
+        data: {
+            history: [
+                {
+                    song: {
+                        title: 'Song Title',
+                        artist: 'Song Artist'
                     }
-                    else  //it's a valid art work url by azuracast
-                        return artwork_json
                 }
-            }
+            ]
+        },
+        created: function() {
+            Vue.prototype.$eventHub.$on('np_updated', function(np_new) {
+                songHistory.history = np_new.song_history;
+            });
         }
     });
 
-});
-</script>
-<script type="text/javascript" nonce="BQ4A2ZdmNz1kbMfKQl0nVf6H">
-$(function() {
+    $('[data-fancybox]').fancybox({
+        buttons: ['close']
+    });
 
-    function loadNowPlaying() {
-        $.getJSON( streamServer + 'api/nowplaying/1', function(row) {
-            nowPlaying.np = row;
+    // Song request modal dialog component
+	var request_dialog = $('#modal-request');
 
-            if ('mediaSession' in navigator) {
-                navigator.mediaSession.metadata = new MediaMetadata({
-                    title: row.now_playing.song.title,
-                    artist: row.now_playing.song.artist,
-                    artwork: [
-                        { src: row.now_playing.song.art }
-                    ]
-                });
-            }
+	request_dialog.on('show.bs.modal', function (event) {
 
-            setTimeout(loadNowPlaying, 15000);
-        }).fail(function() {
-            setTimeout(loadNowPlaying, 30000);
-        });
-    }
-    loadNowPlaying();
+		if (!request_dialog.data('request_loaded'))
+		{
+			var grid = $("#requests-table").bootgrid({
+				ajax: true,
+                ajaxSettings: {
+                    method: "GET",
+                    cache: false
+                },
+				rowSelect: false,
+				caseSensitive: false,
+				url: "/api/station/1/requests",
+				formatters: {
+					"commands": function(column, row) {
+						return '<a class="btn btn-request btn-sm btn-primary" data-url="'+row.request_url+'" tabindex="0">Request</a>';
+					}
+				}
+			}).on("loaded.rs.jquery.bootgrid", function()
+			{
+				/* Executes after data is loaded and rendered */
+				grid.find(".btn-request").on("click", function(e)
+				{
+					e.preventDefault();
+					request_dialog.modal('hide');
 
-    function create_showsList_lookup(){
-        showsList.forEach(function (el, i, arr) {
-            var key = Object.keys(el)[0];
-            showsList_lookup[key] = el[key];
-        });
-    }
-    create_showsList_lookup();
+					$.ajax({
+						dataType: "json",
+						url: $(this).data('url')
+					}).done(function(data) {
+						notify(data, 'success');
+					}).fail(function(jqXhr) {
+						notify('Error: ' + jqXhr.responseJSON, 'danger');
+					});
 
+					return false;
+				});
+			});
+
+			request_dialog.data('request_loaded', true);
+		}
+
+	});
 });
 </script>
 
@@ -164,48 +128,66 @@ $(function() {
 <div class="public-page">
     <div class="card">
         <div class="card-body">
+            <h2 class="card-title">Lahmacun radio</h2>
 
+            <div class="stations nowplaying">
+                
+<div id="station-nowplaying"></div>
+            </div>
+        </div>
 
-            <div class="stations nowplaying altalanosinfok">
-                <div class="media media-left" id="station-nowplaying">
-    <div class="pull-left pr-2 pt-3">
-        <a class="btn-audio" role="button" title="Play/Pause" href="#" data-url="<?php echo $broadcastServer ?>radio/8000/radio.mp3?1543513066" >
-            <i class="material-icons lg">play_circle_outline</i>
-        </a>
-    </div>
-    <div class="pull-left pr-2" v-if="show_art_url">
-        <a v-bind:href="show_art_url" data-fancybox target="_blank" class="swipebox programimage" ><img v-bind:src="show_art_url" alt="Album Cover" class="progimg"></a>
-    </div>
-    <div class="media-body">
-        <h4 class="media-heading might-overflow nowplaying-title">
-            {{ show_title }}
-        </h4>
-        <div class="nowplaying-artist might-overflow">
-            {{ show_subtitle }}
+        <div class="card-actions">
+            <a class="btn btn-sm btn-outline-secondary" href="#modal-history" data-toggle="modal" data-target="#modal-history">
+                <i class="material-icons" aria-hidden="true">history</i> Song History            </a>
+                        <a class="btn btn-sm btn-outline-secondary" href="/public/lahmacun_radio/playlist/pls">
+                <i class="material-icons" aria-hidden="true">file_download</i> Playlist            </a>
         </div>
     </div>
 </div>
-            </div>
 
-            <div class="radio-controls-standalone volumecontrolos" id="radio-player-controls">
-                <a href="#" class="text-secondary jp-mute" title="Mute">
-                    <i class="material-icons">volume_mute</i>
-                </a>
-                <input type="range" title="Volume" class="d-inline-block custom-range jp-volume-range" style="" id="jp-volume-range" min="0" max="100" step="1">
-                <a href="#" class="text-secondary jp-volume-full" title="Full Volume">
-                    <i class="material-icons">volume_up</i>
-                </a>
+<div class="modal fade" id="modal-history" tabindex="-1" role="dialog" aria-labelledby="modal-history-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-history-label">Song History</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
-
+            <div class="modal-body">
+                <ol type="1" id="station-history">
+                    <li v-for="row in history">
+                        <b>{{ row.song.title }}</b><br>
+                        {{ row.song.artist }}
+                    </li>
+                </ol>
+            </div>
         </div>
-
     </div>
-
 </div>
 
+<div class="modal fade" id="modal-request" tabindex="-1" role="dialog" aria-labelledby="modal-request-label">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-request-label">Request a Song</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
 
-
-
+                <table class="data-table table table-striped" id="requests-table">
+                    <thead>
+                    <tr>
+                        <th data-column-id="song_id" data-identifier="true" data-visible="false" data-visible-in-selection="false">ID</th>
+                        <th data-column-id="song_title">Title</th>
+                        <th data-column-id="song_artist">Artist</th>
+                        <th data-column-id="song_album" data-visible="false">Album</th>
+                        <th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- RADIO code -->
