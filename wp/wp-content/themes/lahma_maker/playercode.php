@@ -1,28 +1,28 @@
 <!-- RADIO code -->
 
-<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/production/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/production/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/production/favicon-16x16.png">
-<link rel="manifest" href="/static/icons/production/site.webmanifest">
-<link rel="mask-icon" href="/static/icons/production/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/static/icons/production/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="https://dev.lahmacun.hu:8084/static/icons/production/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dev.lahmacun.hu:8084/static/icons/production/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dev.lahmacun.hu:8084/static/icons/production/favicon-16x16.png">
+<link rel="manifest" href="https://dev.lahmacun.hu:8084/static/icons/production/site.webmanifest">
+<link rel="mask-icon" href="https://dev.lahmacun.hu:8084/static/icons/production/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://dev.lahmacun.hu:8084/static/icons/production/favicon.ico">
 <meta name="msapplication-TileColor" content="#2196F3">
-<meta name="msapplication-config" content="/static/icons/production/browserconfig.xml">
+<meta name="msapplication-config" content="https://dev.lahmacun.hu:8084/static/icons/production/browserconfig.xml">
 <meta name="theme-color" content="#2196F3">
 
-<link rel="stylesheet" type="text/css" href="/static/js/bootgrid/jquery.bootgrid.min.css" />
-<link rel="stylesheet" type="text/css" href="/static/dist/lib/fancybox/jquery-a2d4258429.fancybox.min.css" />
-<link rel="stylesheet" type="text/css" href="/static/dist/light-7708c1e378.css" />
-<script type="text/javascript" src="/static/dist/lib/jquery/jquery-220afd743d.min.js"></script>
-<script type="text/javascript" src="/static/dist/lib/vue/vue-17e942ea08.min.js"></script>
-<script type="text/javascript" src="/static/dist/lib/vue-i18n/vue-i18n-40a1d42f5a.min.js"></script>
-<script type="text/javascript" src="/static/dist/lib/bootstrap/bootstrap-a454220fc0.bundle.min.js"></script>
-<script type="text/javascript" src="/static/dist/lib/bootstrap-notify/bootstrap-notify-a02f92a499.min.js" defer></script>
-<script type="text/javascript" src="/static/dist/app-d20352e929.js" defer></script>
-<script type="text/javascript" src="/static/dist/material-c652fed16a.js"></script>
-<script type="text/javascript" src="/static/js/bootgrid/jquery.bootgrid.updated.js"></script>
-<script type="text/javascript" src="/static/dist/bootgrid-acbc545ec1.js"></script>
-<script type="text/javascript" src="/static/dist/lib/fancybox/jquery-49a6b4d019.fancybox.min.js" defer></script>
+<link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/js/bootgrid/jquery.bootgrid.min.css" />
+<link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/dist/lib/fancybox/jquery-a2d4258429.fancybox.min.css" />
+<link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/dist/light-7708c1e378.css" />
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/jquery/jquery-220afd743d.min.js"></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/vue/vue-17e942ea08.min.js"></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/vue-i18n/vue-i18n-40a1d42f5a.min.js"></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/bootstrap/bootstrap-a454220fc0.bundle.min.js"></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/bootstrap-notify/bootstrap-notify-a02f92a499.min.js" defer></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/app-7ceeed727b.js" defer></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/material-c652fed16a.js"></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/js/bootgrid/jquery.bootgrid.updated.js"></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/bootgrid-acbc545ec1.js"></script>
+<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/fancybox/jquery-49a6b4d019.fancybox.min.js" defer></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/radio_player.js"></script>
 </head>
 
