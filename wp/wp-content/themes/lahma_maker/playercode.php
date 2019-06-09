@@ -23,7 +23,7 @@
 <script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/js/bootgrid/jquery.bootgrid.updated.js"></script>
 <script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/bootgrid-acbc545ec1.js"></script>
 <script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/fancybox/jquery-49a6b4d019.fancybox.min.js" defer></script>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/radio_player.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/dist/radio_player.js"></script>
 </head>
 
 <body class="page-minimal station-lahmacun_radio">
@@ -42,7 +42,7 @@ $(function() {
             return createElement(RadioPlayer.default, {
                 props: {
                     show_album_art: true,
-                    now_playing_uri: '/api/nowplaying/1'
+                    now_playing_uri: 'https://dev.lahmacun.hu:8084/api/nowplaying/1'
                 }
             });
         }

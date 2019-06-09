@@ -1,9 +1,6 @@
 {
-  "name": "lahmacun via azuracast",
+  "name": "lahmacun",
   "license": "Apache-2.0",
-  "scripts": {
-    "build": "gulp"
-  },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "@flowjs/flow.js": "^2.13.1",
@@ -35,6 +32,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
     "del": "^3.0.0",
     "node-sass": "^4.12.0",
