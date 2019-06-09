@@ -13,7 +13,6 @@
 <link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/js/bootgrid/jquery.bootgrid.min.css" />
 <link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/dist/lib/fancybox/jquery-a2d4258429.fancybox.min.css" />
 <link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/dist/light-7708c1e378.css" />
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/jquery/jquery-220afd743d.min.js"></script>
 <script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/vue/vue-17e942ea08.min.js"></script>
 <script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/vue-i18n/vue-i18n-40a1d42f5a.min.js"></script>
 <script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/bootstrap/bootstrap-a454220fc0.bundle.min.js"></script>
