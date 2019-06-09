@@ -31,6 +31,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [ 
     #Live DJ
     ({!live_enabled}, live),
@@ -56,7 +57,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 17h-19h}, once(playlist_mkd_mkd)),
     #Saturday
     ({6w and 16h-18h}, once(playlist_rnr666)),  
-    ({6w and 18-20h}, once(playlist_mood_sequence)),  
+    ({6w and 18h-20h}, once(playlist_mood_sequence)),  
     #Sunday
     ({7w and 10h-12h}, once(playlist_bambusz)),  
     ({7w and 12h-16h}, once(playlist_donald_kacsa_klub)),  
