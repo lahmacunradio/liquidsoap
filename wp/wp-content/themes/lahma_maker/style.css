@@ -300,7 +300,9 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
   height: 5px;
 }
 
-
+html.ismobile .volumecontrolos {
+    display: none !important;
+}
 
 header #playerdiv .creditswrap {
     display:none;
@@ -716,6 +718,8 @@ body.home div#page {  background-color: #d09cf891 !important; }
 .lahma_home-content {  background-color: transparent; }
 .schedulewrap .timenotice {   margin-top: -2.6em; }
 .site-header {   padding: 0; }
+
+header #playerdiv {  }
 
 /* end max 786 */
 }
