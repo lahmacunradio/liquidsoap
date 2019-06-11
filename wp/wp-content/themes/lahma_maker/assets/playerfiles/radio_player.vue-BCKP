@@ -1,28 +1,12 @@
 <template>
-  <div class="stations nowplaying altalanosinfok">
     <div class="radio-player-widget">
         <div class="now-playing-details">
-
-          <div class="radio-controls">
-              <div class="radio-control-play-button" v-if="is_playing">
-                  <a href="#" role="button" :title="$t('pause_btn')" :aria-label="$t('pause_btn')" @click.prevent="toggle()">
-                      <i class="material-icons lg" aria-hidden="true">pause_circle_outline</i>
-                  </a>
-              </div>
-              <div class="radio-control-play-button" v-else>
-                  <a href="#" role="button" :title="$t('play_btn')" :aria-label="$t('play_btn')" @click.prevent="toggle()">
-                      <i class="material-icons lg" aria-hidden="true">play_circle_outline</i>
-                  </a>
-              </div>
-
             <div class="now-playing-art" v-if="show_album_art && np.now_playing.song.art">
-                <a v-bind:href="np.now_playing.song.art" class="swipebox programimage" target="_blank" rel="playerimg">
-                    <img class="progimg" v-bind:src="np.now_playing.song.art" :alt="$t('album_art_alt')">
+                <a v-bind:href="np.now_playing.song.art" data-fancybox target="_blank">
+                    <img v-bind:src="np.now_playing.song.art" :alt="$t('album_art_alt')">
                 </a>
             </div>
-            
             <div class="now-playing-main">
-              <div class="media-body">
                 <div v-if="np.now_playing.song.title !== ''">
                     <h4 class="now-playing-title">{{ np.now_playing.song.title }}</h4>
                     <h5 class="now-playing-artist">{{ np.now_playing.song.artist }}</h5>
@@ -30,9 +14,8 @@
                 <div v-else>
                     <h4 class="now-playing-title">{{ np.now_playing.song.text }}</h4>
                 </div>
-              </div>
 
-                <div class="time-display" v-if="time_display_played" style="display:none;">
+                <div class="time-display" v-if="time_display_played">
                     <div class="time-display-played text-secondary">
                         {{ time_display_played }}
                     </div>
@@ -48,8 +31,21 @@
             </div>
         </div>
 
+        <hr>
 
-            <div class="radio-control-select-stream" style="display:none;">
+        <div class="radio-controls">
+            <div class="radio-control-play-button" v-if="is_playing">
+                <a href="#" role="button" :title="$t('pause_btn')" :aria-label="$t('pause_btn')" @click.prevent="toggle()">
+                    <i class="material-icons lg" aria-hidden="true">pause_circle_filled</i>
+                </a>
+            </div>
+            <div class="radio-control-play-button" v-else>
+                <a href="#" role="button" :title="$t('play_btn')" :aria-label="$t('play_btn')" @click.prevent="toggle()">
+                    <i class="material-icons lg" aria-hidden="true">play_circle_filled</i>
+                </a>
+            </div>
+
+            <div class="radio-control-select-stream">
                 <div v-if="this.streams.length > 1" class="dropdown">
                     <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="btn-select-stream" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ current_stream.name }}
@@ -61,23 +57,20 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-          <div class="radio-controls-standalone volumecontrolos" id="radio-player-controls">
             <div class="radio-control-mute-button">
                 <a href="#" class="text-secondary" :title="$t('mute_btn')" @click.prevent="volume = 0">
                     <i class="material-icons" aria-hidden="true">volume_mute</i>
                 </a>
             </div>
             <div class="radio-control-volume-slider">
-                <input type="range" :title="$t('volume_slider')" class="custom-range jp-volume-range" min="0" max="100" step="1" v-model="volume" id="jp-volume-range">
+                <input type="range" :title="$t('volume_slider')" class="custom-range" min="0" max="100" step="1" v-model="volume">
             </div>
             <div class="radio-control-max-volume-button">
                 <a href="#" class="text-secondary" :title="$t('full_volume_btn')" @click.prevent="volume = 100">
                     <i class="material-icons" aria-hidden="true">volume_up</i>
                 </a>
             </div>
-          </div>
         </div>
     </div>
 </template>
@@ -88,8 +81,15 @@
         display: flex;
         align-items: center;
         .now-playing-art {
-              margin-right: 0.7rem;
-
+            padding-right: .5rem;
+            img {
+                width: 75px;
+                height: auto;
+                border-radius: 5px;
+                @media (max-width:575px) {
+                    width: 50px;
+                }
+            }
         }
         .now-playing-main {
             flex: 1;
@@ -149,9 +149,9 @@
     .radio-controls {
         display: flex;
         flex-direction: row;
+        align-items: center;
         .radio-control-play-button {
-            margin-right: 0.5em;
-            margin-top: 0.5em;
+            margin-right: .25rem;
         }
         .radio-control-select-stream {
             flex: 1 1 auto;
@@ -161,7 +161,11 @@
             flex-shrink: 0;
         }
         .radio-control-volume-slider {
-
+            flex: 1 1 auto;
+            max-width: 30%;
+            input {
+                height: 10px;
+            }
         }
     }
 }

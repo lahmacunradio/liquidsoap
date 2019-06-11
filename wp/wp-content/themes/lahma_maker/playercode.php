@@ -1,28 +1,34 @@
 <!-- RADIO code -->
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://dev.lahmacun.hu:8084/static/icons/production/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://dev.lahmacun.hu:8084/static/icons/production/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://dev.lahmacun.hu:8084/static/icons/production/favicon-16x16.png">
-<link rel="manifest" href="https://dev.lahmacun.hu:8084/static/icons/production/site.webmanifest">
-<link rel="mask-icon" href="https://dev.lahmacun.hu:8084/static/icons/production/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://dev.lahmacun.hu:8084/static/icons/production/favicon.ico">
+
+<link rel="manifest" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/site.webmanifest">
 <meta name="msapplication-TileColor" content="#2196F3">
-<meta name="msapplication-config" content="https://dev.lahmacun.hu:8084/static/icons/production/browserconfig.xml">
+<meta name="msapplication-config" content="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/browserconfig.xml">
 <meta name="theme-color" content="#2196F3">
 
-<link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/js/bootgrid/jquery.bootgrid.min.css" />
-<link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/dist/lib/fancybox/jquery-a2d4258429.fancybox.min.css" />
-<link rel="stylesheet" type="text/css" href="https://dev.lahmacun.hu:8084/static/dist/light-7708c1e378.css" />
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/vue/vue-17e942ea08.min.js"></script>
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/vue-i18n/vue-i18n-40a1d42f5a.min.js"></script>
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/bootstrap/bootstrap-a454220fc0.bundle.min.js"></script>
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/bootstrap-notify/bootstrap-notify-a02f92a499.min.js" defer></script>
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/app-7ceeed727b.js" defer></script>
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/material-c652fed16a.js"></script>
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/js/bootgrid/jquery.bootgrid.updated.js"></script>
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/bootgrid-acbc545ec1.js"></script>
-<script type="text/javascript" src="https://dev.lahmacun.hu:8084/static/dist/lib/fancybox/jquery-49a6b4d019.fancybox.min.js" defer></script>
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/jquery.bootgrid.min.css" />
+
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/light-7708c1e378.css" />
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/vue-17e942ea08.min.js"></script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/vue-i18n-40a1d42f5a.min.js"></script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/bootstrap-a454220fc0.bundle.min.js"></script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/bootstrap-notify-a02f92a499.min.js" defer></script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/app-7ceeed727b.js" defer></script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/material-c652fed16a.js"></script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/jquery.bootgrid.updated.js"></script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/bootgrid-acbc545ec1.js"></script>
+
+
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/dist/radio_player.js"></script>
+
 </head>
 
 <body class="page-minimal station-lahmacun_radio">
@@ -70,9 +76,7 @@ $(function() {
         }
     });
 
-    $('[data-fancybox]').fancybox({
-        buttons: ['close']
-    });
+    // $('[data-fancybox]').swipebox();
 
     // Song request modal dialog component
 	var request_dialog = $('#modal-request');
@@ -123,70 +127,21 @@ $(function() {
 });
 </script>
 
-
+<div id="playerdiv">
+<div class="station-lahmacun_radio">
 <div class="public-page">
     <div class="card">
         <div class="card-body">
-            <h2 class="card-title">Lahmacun radio</h2>
 
             <div class="stations nowplaying">
-                
+
 <div id="station-nowplaying"></div>
             </div>
         </div>
 
-        <div class="card-actions">
-            <a class="btn btn-sm btn-outline-secondary" href="#modal-history" data-toggle="modal" data-target="#modal-history">
-                <i class="material-icons" aria-hidden="true">history</i> Song History            </a>
-                        <a class="btn btn-sm btn-outline-secondary" href="/public/lahmacun_radio/playlist/pls">
-                <i class="material-icons" aria-hidden="true">file_download</i> Playlist            </a>
-        </div>
     </div>
 </div>
-
-<div class="modal fade" id="modal-history" tabindex="-1" role="dialog" aria-labelledby="modal-history-label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-history-label">Song History</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <ol type="1" id="station-history">
-                    <li v-for="row in history">
-                        <b>{{ row.song.title }}</b><br>
-                        {{ row.song.artist }}
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
 </div>
-
-<div class="modal fade" id="modal-request" tabindex="-1" role="dialog" aria-labelledby="modal-request-label">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-request-label">Request a Song</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-
-                <table class="data-table table table-striped" id="requests-table">
-                    <thead>
-                    <tr>
-                        <th data-column-id="song_id" data-identifier="true" data-visible="false" data-visible-in-selection="false">ID</th>
-                        <th data-column-id="song_title">Title</th>
-                        <th data-column-id="song_artist">Artist</th>
-                        <th data-column-id="song_album" data-visible="false">Album</th>
-                        <th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 
 <!-- RADIO code -->
