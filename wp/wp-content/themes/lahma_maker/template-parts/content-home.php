@@ -48,6 +48,9 @@ if ( $query1->have_posts() ) {
 
 <script type="text/javascript">
 
+// A $( document ).ready() block.
+$( document ).ready(function() {
+
 var dateobj = new Date();
 var ndateobj = dateobj.getDay() || 8 - 1;
 var gooddateobj = ndateobj - 1;
@@ -105,11 +108,16 @@ function dateWriteSchedule() {
 // console.log(nextday);
 
 
-$( document ).ajaxComplete(function() {
+$( document ).bind("ajaxComplete", function(){
 		sortDates( dateWriteSchedule );
 });
 
+$( ".shows-block" ).ready(function(){
+		sortDates( dateWriteSchedule );
+});
 
+// A $( document ).ready() block end
+});
 
 </script>
 
