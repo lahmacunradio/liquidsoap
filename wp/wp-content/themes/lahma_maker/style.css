@@ -203,6 +203,8 @@ header #playerdiv .public-page .card-body .media-body h4,
 header #playerdiv .public-page .card-body .media-body h5 {
 	text-overflow: ellipsis;
     overflow: hidden;
+    max-height: 30px;
+    cursor: default;
 }
 
 header #playerdiv .public-page .card-body .media-body h5 {
