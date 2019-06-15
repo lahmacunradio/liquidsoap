@@ -81,78 +81,7 @@ $(function() {
     });
 });
 </script>
-<script type="text/javascript" nonce="BgC6RZJvXd9J/qcBqlIz7EFw">
-$(function() {
-    // Song history Vue component
-    songHistory = new Vue({
-        el: '#station-history',
-        data: {
-            history: [
-                {
-                    song: {
-                        title: 'Song Title',
-                        artist: 'Song Artist'
-                    }
-                }
-            ]
-        },
-        created: function() {
-            Vue.prototype.$eventHub.$on('np_updated', function(np_new) {
-                songHistory.history = np_new.song_history;
-            });
-        }
-    });
 
-    // $('[data-fancybox]').swipebox();
-
-    // Song request modal dialog component
-	var request_dialog = $('#modal-request');
-
-	request_dialog.on('show.bs.modal', function (event) {
-
-		if (!request_dialog.data('request_loaded'))
-		{
-			var grid = $("#requests-table").bootgrid({
-				ajax: true,
-                ajaxSettings: {
-                    method: "GET",
-                    cache: false
-                },
-				rowSelect: false,
-				caseSensitive: false,
-				url: "/api/station/1/requests",
-				formatters: {
-					"commands": function(column, row) {
-						return '<a class="btn btn-request btn-sm btn-primary" data-url="'+row.request_url+'" tabindex="0">Request</a>';
-					}
-				}
-			}).on("loaded.rs.jquery.bootgrid", function()
-			{
-				/* Executes after data is loaded and rendered */
-				grid.find(".btn-request").on("click", function(e)
-				{
-					e.preventDefault();
-					request_dialog.modal('hide');
-
-					$.ajax({
-						dataType: "json",
-						url: $(this).data('url')
-					}).done(function(data) {
-						notify(data, 'success');
-					}).fail(function(jqXhr) {
-						notify('Error: ' + jqXhr.responseJSON, 'danger');
-					});
-
-					return false;
-				});
-			});
-
-			request_dialog.data('request_loaded', true);
-		}
-
-	});
-});
-</script>
 
 <div id="playerdiv">
 <div class="station-lahmacun_radio">
