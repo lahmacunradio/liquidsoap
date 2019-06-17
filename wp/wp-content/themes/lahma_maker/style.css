@@ -210,6 +210,7 @@ header #playerdiv .public-page .card-body .media-body h5 {
 header #playerdiv .public-page .card-body .media-body h5 {
     color: #585858 !important;
     font-size: 0.9em;
+    text-transform: none;
 }
 
 
