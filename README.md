@@ -1,13 +1,6 @@
 # lahmacun
-Community music radio
+Lahmacun is a community music webradio. We develop our station's code based on [Azuracast](https://www.azuracast.com/).  
 
-This is how to contribute via GitHub:
-1. Log into GitHub using your GitHub account
-2. Fork this project: https://github.com/mmmnmnm/lahmacun
-3. Push code change into your forked project
-4. Create pull request on the master branch of https://github.com/mmmnmnm/lahmacun
+This is more or less how our architecture looks like: 
 
-Architecture notes:
-- Web radio is Azurast (docker installation)
-  - Web interface on custom ports
-- Frontent is custom html (Wordpress coming soon)
+![](https://github.com/mmmnmnm/lahmacun/blob/master/docs/lahma-arch.jpg)
