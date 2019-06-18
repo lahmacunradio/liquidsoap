@@ -47,6 +47,7 @@ if ( $query1->have_posts() ) {
 <div id="endofweek"></div>
 
 <script type="text/javascript">
+/* Added to Scripts.js
 
 // A $( document ).ready() block.
 $( document ).ready(function() {
@@ -108,7 +109,7 @@ function dateWriteSchedule() {
 // console.log(nextday);
 
 
-$( document ).bind("ajaxComplete", function(){
+$( document ).on("ajaxComplete", function(){
 		sortDates( dateWriteSchedule );
 });
 
@@ -119,6 +120,8 @@ $( ".shows-block" ).ready(function(){
 // A $( document ).ready() block end
 });
 
+
+*/
 </script>
 
 
