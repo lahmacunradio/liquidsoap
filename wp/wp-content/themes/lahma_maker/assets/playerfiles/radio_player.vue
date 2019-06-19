@@ -178,6 +178,10 @@ export default {
     data: function() {
         return {
             "np": {
+                "live": {
+                    "is_live":"Is Live",
+                    "streamer_name":"Streamer Name"
+                },
                 "station": {
                     "listen_url": '',
                     "mounts": [],
