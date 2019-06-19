@@ -17,7 +17,7 @@
 
             <div class="now-playing-art" v-if="show_album_art && np.now_playing.song.art">
                 <a v-bind:href="np.now_playing.song.art" class="swipebox programimage" target="_blank" rel="playerimg">
-                    <img class="progimg" v-bind:src="np.now_playing.song.art" :alt="$t('album_art_alt')">
+                    <img class="progimg" v-bind:src="show_art_url" :alt="$t('album_art_alt')">
                 </a>
             </div>
             
@@ -302,6 +302,39 @@ export default {
             return this.np.now_playing.song.title
             else
             return this.np.now_playing.song.artist
+        },
+        "show_art_url": function() {
+            if (this.np.live.is_live){
+                try_art_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
+                if (try_art_from_show == undefined) //show not found
+                    return default_art_url // return default
+                else return try_art_from_show //resturn show art work
+            }
+            else {
+                song_title_json = this.np.now_playing.song.title;
+                song_artist_json = this.np.now_playing.song.artist;
+                artwork_json = this.np.now_playing.song.art; //art work url in json
+                if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
+                    try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
+                    if (try_art_from_show == undefined){ //show not found
+                        artwork_history_json = "";
+                        (this.np.song_history).some(function (el){  //check song in history one by one; check by artist not by title!
+                            if (el.song.artist == song_artist_json && el.song.art != default_azuracast_art_url){
+                                artwork_history_json = el.song.art;
+                                return true;
+                            }
+                        })
+                        if (artwork_history_json != "")
+                            return artwork_history_json
+                        else
+                            return default_art_url  //fallback to default art URL
+                    }
+                    else
+                        return try_art_from_show //return show art work
+                }
+                else  //it's a valid art work url by azuracast
+                    return artwork_json
+            }
         }
     },
     watch: {
