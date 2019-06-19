@@ -7,7 +7,7 @@ var deviceAgent = navigator.userAgent.toLowerCase();
 var isTouchDevice = Modernizr.touch || (deviceAgent.match(/(iphone|ipod|ipad)/) || deviceAgent.match(/(android)/)  || deviceAgent.match(/(iemobile)/) || deviceAgent.match(/iphone/i) || deviceAgent.match(/ipad/i) || deviceAgent.match(/ipod/i) || deviceAgent.match(/blackberry/i) || deviceAgent.match(/bada/i));
 
 function is_touch_device() {
-/* 
+/*
 if(window.matchMedia("(any-pointer: coarse)").matches) {
     // touchscreen
     //console.log( "touch!" );
@@ -22,13 +22,13 @@ if (isTouchDevice) {
 } else {
 	//Can't touch this
 	$("html").addClass("notmobile");
-} 
- 
+}
+
 }
 
 function escapeHtml(unsafe) {
     return unsafe
-         /* 
+         /*
          .replace(/&/g, "&amp;")
          .replace(/</g, "&lt;")
          .replace(/>/g, "&gt;")
@@ -43,7 +43,7 @@ function escapeHtml(unsafe) {
          .replace("&quot;", "”")
          .replace("&#039;", "‘");
  }
- 
+
 function openAllExternalBlank() {
 $('#main a:not(.swipebox)').each(function() {
    var a = new RegExp('/' + window.location.host + '/');
@@ -56,10 +56,10 @@ $('#main a:not(.swipebox)').each(function() {
        $(this).attr('target','_blank');
    }
 });
-} 
- 
+}
+
 function swipeboxGalleryFixer() {
-	var X = 0; // set a global var 
+	var X = 0; // set a global var
 	$('.swipebox').each(function() { //for each swipebox
 	  X += 1; //increment the global var by 1
 	  $(this).attr('rel', 'gallery-' + X); // set the rel attribute to gallery- plus the value of X
@@ -75,7 +75,7 @@ function set_home_class(scope){
         jQuery("body").removeClass("home");
     }
 }
- 
+
 
 // A $( document ).ready() block.
 $( document ).ready(function() {
@@ -91,41 +91,41 @@ $( document ).ready(function() {
 
         $("#main").load(loc.href + " #primary", function(responseText) {
             var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
-            document.title = newtitle; 
+            document.title = newtitle;
             openAllExternalBlank();
             swipeboxGalleryFixer();
             set_home_class(document.location);
         });
     });
-    
+
     // check if is on home an add class
     set_home_class(document.location);
-    
-    
+
+
     /* AJAX link click */
     jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox)", function(e){
         var link = jQuery(this).attr("href");
         // var title = jQuery(responseHtml).filter('title').text();
         // console.log(link);
-       
+
         jQuery("#main").load( link + " #primary", function(responseText) {
             var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
-            document.title = newtitle; 
+            document.title = newtitle;
             openAllExternalBlank();
             swipeboxGalleryFixer();
             //$("#site-navigation-toggle.toggled").trigger("click"); //automatically collapses open show menu on mobile
-            } 
+            }
         );
         e.preventDefault();
         history.pushState({}, null, link);
         // jQuery(document).find("title").text(jQuery(responseHtml).filter('title').text());
         set_home_class(document.location);
         jQuery(".main-navigation ul.menu li:hover > ul").hide();
-        
+
     });
 
-        
-    
+
+
     /*jQuery(document).on("click", ".site-title a", function(e){
         jQuery("body").addClass("home");
     });*/
@@ -135,10 +135,76 @@ $( document ).ready(function() {
 	$(document).on("click", "html.ismobile nav.main-navigation li.menu-item-has-children a", function(e){
 		$(this).parentsUntil("ul").find("ul.sub-menu").toggle();
 		e.preventDefault;
-	})    
-    
-        
-    // A $( document ).ready() block end    
+	})
+
+
+// Dates Sorter
+
+var dateobj = new Date();
+var ndateobj = dateobj.getDay() || 8 - 1;
+var gooddateobj = ndateobj - 1;
+var datedifference = 7 - gooddateobj;
+		// console.log(ndateobj);
+		// console.log(gooddateobj);
+		// console.log(datedifference);
+
+window.onfocus = function() {
+		var Cdateobj = new Date();
+		var Cndateobj = Cdateobj.getDay() || 8 - 1;
+		var Cgooddateobj = Cndateobj - 1;
+
+		// console.log(gooddateobj);
+		// console.log(Cgooddateobj);
+
+if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") ) {
+		location.reload();
+}
+
+};
+
+// var $monday = $(".day").eq(0);
+// var $lastday = $(".day").eq(6);
+// var $today = $(".day").eq(gooddateobj);
+
+function sortDates( callbackFunction ) {
+	$(".day").not(".sorted").addClass("notsorted");
+	$(".day.notsorted").each(function(i){
+	// console.log(i);
+	if ( i < gooddateobj ) {
+		$(this).appendTo($("#endofweek"));
+	}
+	$(".day").removeClass("notsorted").addClass("sorted");
+	});
+
+	callbackFunction();
+
+}
+
+function dateWriteSchedule() {
+	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	var i = 0;
+	$(".schedulewrap .sorted > h3:not(.addedDate)").each(function(i){
+		var nextday = new Date(dateobj.getFullYear(),dateobj.getMonth(),dateobj.getDate()+i);
+		var $dateformat = "<div class='scheddate'>" + monthNames[nextday.getMonth()] + " " + nextday.getDate() + "</div>";
+		$(this).addClass("addedDate").append($dateformat);
+		i++;
+	})
+
+}
+
+// var nextday = new Date(dateobj.getFullYear(),dateobj.getMonth(),dateobj.getDate()+1);
+// console.log(nextday);
+
+
+$( document ).on("ajaxComplete", function(){
+		sortDates( dateWriteSchedule );
 });
 
+$( ".shows-block" ).ready(function(){
+		sortDates( dateWriteSchedule );
+});
 
+        
+    // A $( document ).ready() block end
+});
