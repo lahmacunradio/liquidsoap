@@ -3,7 +3,7 @@
 <?php
 
 // load in the shows lister
-// get_template_part( "showslist" );
+get_template_part( "showslist" );
 
 /*
 server

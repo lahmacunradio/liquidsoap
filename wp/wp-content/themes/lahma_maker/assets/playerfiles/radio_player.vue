@@ -24,11 +24,11 @@
             <div class="now-playing-main">
               <div class="media-body">
                 <div v-if="np.now_playing.song.title !== ''">
-                    <h4 class="now-playing-title">{{ np.now_playing.song.title }}</h4>
-                    <h5 class="now-playing-artist">{{ np.now_playing.song.artist }}</h5>
+                    <h4 class="now-playing-title">{{ show_title }}</h4>
+                    <h5 class="now-playing-artist">{{ show_subtitle }}</h5>
                 </div>
                 <div v-else>
-                    <h4 class="now-playing-title">{{ np.now_playing.song.text }}</h4>
+                    <h4 class="now-playing-title">{{ show_title }}</h4>
                 </div>
               </div>
 
@@ -286,6 +286,18 @@ export default {
         "time_display_total": function() {
             let time_total = this.np.now_playing.duration;
             return (time_total) ? this.formatTime(time_total) : null;
+        },
+        "show_title": function() {
+            if (this.np.live.is_live)
+            return this.np.live.streamer_name
+            else
+            return this.np.now_playing.song.title
+        },
+        "show_subtitle": function() {
+            if (this.np.live.is_live)
+            return this.np.now_playing.song.title
+            else
+            return this.np.now_playing.song.artist
         }
     },
     watch: {
