@@ -311,9 +311,9 @@ export default {
                 else return try_art_from_show //resturn show art work
             }
             else {
-                song_title_json = this.np.now_playing.song.title;
-                song_artist_json = this.np.now_playing.song.artist;
-                artwork_json = this.np.now_playing.song.art; //art work url in json
+                let song_title_json = this.np.now_playing.song.title;
+                let song_artist_json = this.np.now_playing.song.artist;
+                let artwork_json = this.np.now_playing.song.art; //art work url in json
                 if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
                     try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
                     if (try_art_from_show == undefined){ //show not found
