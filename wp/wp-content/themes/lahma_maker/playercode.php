@@ -3,7 +3,7 @@
 <?php
 
 // load in the shows lister
-// get_template_part( "showslist" );
+get_template_part( "showslist" );
 
 /*
 server
@@ -64,6 +64,17 @@ Vue.prototype.$eventHub = new Vue();</script>
 <script type="text/javascript" nonce="BgC6RZJvXd9J/qcBqlIz7EFw">
 
 var i18n, radio_player;
+var showsList_lookup = {};
+var default_art_url = "<?php echo $home_url ?>/wp-content/uploads/defaultshowart.jpg";
+var default_azuracast_art_url = "<?php echo $broadcastServer ?>static/img/generic_song.jpg";
+
+function create_showsList_lookup(){
+    showsList.forEach(function (el, i, arr) {
+        var key = Object.keys(el)[0];
+        showsList_lookup[key] = el[key];
+    });
+}
+create_showsList_lookup();
 
 $(function() {
     i18n = new VueI18n({"locale":"en","messages":{"en":{"play_btn":"Play","pause_btn":"Pause","mute_btn":"Mute","volume_slider":"Volume","full_volume_btn":"Full Volume","album_art_alt":"Album Art"}}})
