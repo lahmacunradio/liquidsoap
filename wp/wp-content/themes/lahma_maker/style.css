@@ -1,0 +1,756 @@
+/*
+ Theme Name:   Radio Lahmacun theme (maker)
+ Theme URI:
+ Description:  Radio Lahmacun theme based on maker Wordpress theme
+ Author:       gamma
+ Author URI:
+ Template:     maker
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         no-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  lahmacun
+*/
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+html > body {
+    font-family: 'Rubik', "Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: .875rem;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+	background-color: #d09cf8 !important;
+	color: #23282d;
+}
+
+body.home {
+	background-image: url("img/lahmacun.png") !important;
+	background-size: initial !important;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+body a {
+    color: #762778;
+    text-decoration: none;
+}
+
+body button:focus {
+    outline: none;
+}
+
+p, #main ul {
+
+}
+
+#main p {
+	line-height: 1.6em;
+}
+
+
+html:not(.ismobile) body a:hover,
+html:not(.ismobile) .main-navigation a:hover, html:not(.ismobile) .main-navigation a:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* workaround for issue 31 "Highlight remains after hitting back/clicking on non-reloadable parts"*/
+html:not(.ismobile) body a:focus, html:not(.ismobile) body a:active, html:not(.ismobile) .main-navigation a:active, html:not(.ismobile) .main-navigation a:focus{
+    color: #23282d;
+    text-decoration: none;
+}
+html.ismobile body a:active, html.ismobile body a:focus, html.ismobile body a:hover,
+html.ismobile .main-navigation a:hover, html.ismobile .main-navigation a:focus, html.ismobile .main-navigation a:active {
+    color: #23282d;
+    text-decoration: none;
+}
+
+
+body div#main {
+    padding-bottom: 2em;
+    padding-top: 2em;
+    min-height: auto;
+}
+
+div#main h1, div#main h2, div#main h3 {
+    font-weight: 500;
+}
+
+.site-header {   border-bottom: 2px solid #9a74b8;  }
+body.home .site-header {   }
+
+.station-lahmacun_radio {
+    display: block;
+    margin: auto;
+    width: 300px;
+}
+
+.site-branding {
+    max-width: none;
+}
+
+.site-title {
+  font-family: inherit;
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 1em;
+  background: url(img/lahmacun-logo.png) no-repeat left 20px;
+  background-size: 70px;
+  height: 82px;
+}
+
+html:not(.ismobile) .site-title:hover {
+    background-image: url("img/lahmacun-logo-wh.png");
+}
+
+html:not(.ismobile) .site-title:hover > a {
+    color: white;
+}
+
+.site-title a {
+    font-weight: 500;
+    padding-left: 80px;
+    display: block;
+}
+
+.main-navigation {
+    font-size: 1.3em;
+}
+
+
+div#page{
+	background-color: transparent !important;
+}
+
+body.page-template-default {
+background-color: #d09cf8 !important;
+background-image: none;
+}
+
+header #playerdiv {
+	float:left;
+}
+
+header .wrap {
+	float:right;
+}
+
+header .wrap .site-branding {
+	display: block;
+}
+
+
+/* Fix maker mistakes */
+.blog .entry-content, .blog .entry-footer, .blog .comments-area, .blog .post-navigation, .archive .entry-content, .archive .entry-footer, .archive .comments-area, .archive .post-navigation, .single-post .entry-content, .single-post .entry-footer, .single-post .comments-area, .single-post .post-navigation, .blog .entry-header, .archive .entry-header, .single-post .entry-header, .page-template-default .entry-header, .page-template-default .entry-content, .page-template-default .comments-area {
+    max-width: initial;
+}
+
+
+
+/* player overrides */
+
+header #playerdiv div.station-lahmacun_radio .public-page .card {
+  background: none;
+  box-shadow: none;
+  width: 300px;
+  height: 100px;
+  min-width: 300px;
+  margin-top: 2.3em;
+}
+
+header #playerdiv div.station-lahmacun_radio .public-page .card-body {
+    padding: 0;
+}
+
+#playerdiv .radio-player-widget .now-playing-details .now-playing-main {
+    max-width: 180px;
+}
+
+header #playerdiv .public-page .card-body a,
+header #playerdiv .public-page .card-body .media-body {
+    color: #1e1e1e !important;
+}
+
+header #playerdiv .public-page .card-body a.programimage {
+    width: 50px;
+    height: 50px;
+    display: block;
+    overflow: hidden;
+}
+
+header #playerdiv .public-page .card-body a.programimage img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+header #playerdiv .public-page .card-body .media-body {
+    max-height: 55px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+header #playerdiv .public-page .card-body .media-body h4,
+header #playerdiv .public-page .card-body .media-body h5 {
+	text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 30px;
+    cursor: default;
+}
+
+header #playerdiv .public-page .card-body .media-body h5 {
+    color: #585858 !important;
+    font-size: 0.9em;
+    text-transform: none;
+}
+
+
+header #playerdiv .custom-range::-webkit-slider-runnable-track {
+
+}
+
+header #playerdiv #radio-player-controls.radio-controls-standalone {
+    margin-top: 0.5em;
+}
+
+header #playerdiv #radio-player-controls.radio-controls-standalone > div {
+    display: inline-block;
+}
+
+header #playerdiv #radio-player-controls.radio-controls-standalone .radio-control-volume-slider {
+    width: 230px;
+}
+
+#radio-player-controls.radio-controls-standalone input.jp-volume-range {
+    width: 225px;
+    height: 10px;
+}
+
+/* volume control cursos */
+/* these ones work for Safari and Chrome  */
+#playerdiv .custom-range::-webkit-slider-thumb {
+  transition-duration: .3s;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #f5f5f5;
+  border: 1px solid #9a9a9a;
+  border-radius: 50%;
+  height: 19px;
+  margin-top: -7px;
+  width: 19px;
+}
+
+#playerdiv .custom-range:focus::-webkit-slider-thumb {
+    border: 1px solid grey;
+    box-shadow: none;
+    background: #e6e6e6;
+}
+
+#playerdiv .custom-range::-webkit-slider-thumb:active {
+  box-shadow: none;
+}
+
+#playerdiv .custom-range::-webkit-slider-runnable-track {
+  border-radius: 2px;
+  height: 5px;
+}
+
+
+/* these ones work for Mozilla */
+#playerdiv .custom-range::-moz-range-thumb {
+  transition-duration: .3s;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #f5f5f5;
+  border: 1px solid #9a9a9a;
+  border-radius: 50%;
+  height: 19px;
+  margin-top: -7px;
+  width: 19px;
+}
+
+#playerdiv .custom-range::-moz-range-progress {
+  background-color: #9a9a9a;
+}
+
+#playerdiv .custom-range:focus::-moz-range-thumb {
+    border: 1px solid grey;
+    box-shadow: none;
+    background: #e6e6e6;
+}
+
+#playerdiv .custom-range::-moz-range-thumb:active {
+  box-shadow: none;
+}
+
+#playerdiv .custom-range::-moz-range-runnable-track {
+  border-radius: 2px;
+  height: 5px;
+}
+
+html.ismobile .volumecontrolos {
+    display: none !important;
+}
+
+header #playerdiv .creditswrap {
+    display:none;
+}
+
+.main-navigation ul.menu li > ul {
+	display: none;
+}
+
+
+html:not(.ismobile) .main-navigation ul.menu li:hover > ul {
+	right: 0;
+	display: block !important;
+}
+
+.site-footer {
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    background: #d09cf8;
+}
+
+.site-info {
+    float: none;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Post-sub-pages */
+
+.lahma_post-title {
+    text-transform: uppercase;
+    margin: 0 0 1em;
+}
+
+.lahma_side-infos, .lahma_post-content {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 1.1em;
+	color: #1e1e1e;
+}
+
+.lahma_side-infos {
+	width: 30%;
+	margin-right: 2%;
+}
+
+.lahma_post-content {
+    width: 67%;
+/*
+    border-radius: 2px;
+    background-color: #ffffffed;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.14), 0 3px 4px 0 rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+    padding: 1em;
+ */
+}
+
+
+/* Home page */
+
+.lahma_home-content  {
+    overflow: auto;
+}
+
+.lahma_home-content table {
+	background: #d09cf859;
+    line-height: 1.2em;
+    width: 100%;
+}
+
+.lahma_home-content table tr:first-child th, .lahma_home-content .tg-idopont {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.lahma_home-content td, .lahma_home-content th {
+	padding: 0.7em 0.5em;
+    border: 1px solid #441054;
+    width: 12%;
+}
+
+.lahma_home-content .tg-idopont {
+	width: 80px;
+}
+
+.content-area.centered {
+    width: 70%;
+    margin: auto;
+    float: none;
+}
+
+
+/* Swipebox fixes */
+
+body #swipebox-slider .slide {
+    height: 90%;
+    width: 90%;
+    display: block;
+    margin: 5% auto;
+}
+
+body #swipebox-overlay {
+    background: rgba(13, 13, 13, 0.87);
+}
+
+#swipebox-close, #swipebox-next, #swipebox-prev {
+	background-image: url(img/icons.svg) !important;
+	background-size: 120px;
+}
+
+body #swipebox-bottom-bar, body #swipebox-top-bar {
+    background: #00000000;
+}
+
+li.facebookmenu a, li.listen a, li.donate a {
+    overflow: hidden;
+      width: 35px;
+      height: 35px;
+      vertical-align: top;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 5px;
+}
+
+li.facebookmenu a:before, li.listen a:before, li.donate a:before  {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1em;
+      margin-bottom: 50px;
+}
+
+li.facebookmenu a:before {
+  content: "\f09a";
+}
+
+li.listen a:before {
+  content: "\f025";
+}
+
+li.donate a:before {
+  content: "\f004";
+}
+
+
+/* Home News/Schedule */
+
+.lahma_home-content {
+  background: #d09cf891;
+  margin-top: -2em;
+  padding-top: 2em;
+  width: 100%;
+}
+
+.lahma_home-content h1, .categoryposts h1 {
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+
+.halver {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+}
+
+.halver.news-block {
+  padding-right: 4%;
+}
+
+.newslist {
+  margin-bottom: 0em;
+  clear: both;
+  margin-top: 2em;
+}
+
+.halver a, .postslister h3 a {
+  color: #1d1d1d;
+}
+
+.postslister h3 a {
+  font-weight: 500;
+}
+
+.newspic-container {
+  float: left;
+  margin-right: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.news-block .description {
+
+}
+
+.description p {
+  /* margin-bottom: 0.3em; */
+  display: inline;
+}
+
+.readmorelink {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  color: #1d1d1d;
+}
+
+.morenews {
+  text-align: right;
+  display: block;
+  border-top: 1px solid rgba(0,0,0,.87);
+  margin-top: 2em;
+  padding-top: 1em;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+
+.categoryposts .page-header {
+    margin-bottom: 0em;
+}
+
+
+.postslister {
+  margin-bottom: 2em;
+  clear: both;
+  margin-top: 1em;
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  margin-right: 4%;
+  border-bottom: 1px solid rgba(0,0,0,.87);
+  padding-bottom: 2em;
+}
+
+.news-title, .news-time {
+  margin-bottom: 0.3em;
+}
+
+.news-title {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.news-time {
+font-style: italic;
+}
+
+/* Schedule */
+
+.schedulewrap .day {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.schedulewrap h1 {
+    margin-bottom: 0.5em;
+}
+
+.schedulewrap h4 {
+    text-transform: none;
+    margin-bottom: 1em;
+}
+
+.schedulewrap .timenotice {
+  float: right;
+    margin-top: -3em;
+    margin-bottom: 1em;
+}
+
+.schedulewrap .day h3 {
+  border-bottom: 1px solid rgba(0,0,0,.87);
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.schedulewrap ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.schedulewrap ul li {
+  margin-bottom: 0.3em;
+}
+
+.schedulewrap a {
+  margin: 0 0.5em;
+}
+
+.schedulewrap strong {
+  font-weight: 500;
+}
+
+.scheddate {
+  float: right;
+  font-weight: normal;
+      font-size: 0.8em;
+}
+
+
+/*******
+********
+Responsive
+******
+******/
+
+html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
+    height: 60px;
+}
+
+
+@media screen and (min-width: 1024px) {
+.blog.no-sidebar .entry-content, .blog.no-sidebar .entry-footer, .blog.no-sidebar .comments-area, .blog.no-sidebar .post-navigation, .archive.no-sidebar .entry-content, .archive.no-sidebar .entry-footer, .archive.no-sidebar .comments-area, .archive.no-sidebar .post-navigation, .single-post.no-sidebar .entry-content, .single-post.no-sidebar .entry-footer, .single-post.no-sidebar .comments-area, .single-post.no-sidebar .post-navigation,
+.blog.no-sidebar .entry-header, .archive.no-sidebar .entry-header, .single-post.no-sidebar .entry-header {
+    width: 100%;
+    padding-right: 0;
+}
+.content-area {  width: 100%;  max-width: 100%; margin-right: 0; }
+
+/* end min 1024 */
+}
+
+@media screen and (min-width: 1300px) {
+.main-navigation ul.menu li > ul {  padding: 0px 17%; }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1300px)  {
+.main-navigation ul.menu li > ul {  padding: 0px 5%; }
+}
+
+@media screen and (min-width: 768px) and (max-width: 769px)  {
+.main-navigation {  float: left}
+.main-navigation ul {   padding:0; }
+}
+
+
+
+@media screen and (min-width: 769px) {
+
+.main-navigation ul {  padding: 0.3em 0; }
+.main-navigation li {  position: initial; }
+.main-navigation ul > li > a {  padding-bottom: 2em; padding-top: 0; }
+.main-navigation ul ul {background-color: #d09cf8de; }
+.main-navigation ul.menu li > ul {
+  right: 0;
+  top: 0;
+  margin: 135px 0 0;
+  border-top: none;
+  left: 0;
+  text-align: center;
+  box-shadow: none;
+}
+.main-navigation ul ul li, .main-navigation ul ul li:last-child {
+  box-shadow: 0 13px 0 -12px rgba(88, 88, 88, 0.3);
+  float: none;
+  display: inline-block;
+  margin: 0;
+}
+.main-navigation ul ul a {
+  width: auto;
+  padding: 0.6em 0.8em 0.3em;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+.site-header {   padding: 0 0 0.5em;   height: 135px; }
+.entry-title {     font-size: 2.5em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
+
+/* end min 786 */
+}
+
+@media screen and (min-width: 769px) and (max-width: 855px) {
+  .main-navigation ul.menu > li > a {
+      font-size: 0.9em;
+      padding: 0 0.4em 2em 0.4em;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+header .wrap {       float: none; }
+.main-navigation ul.menu li:hover > ul {  right: auto; }
+.menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
+.main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
+.main-navigation.toggled ul.sub-menu { padding-left: 0; margin-bottom: 5px; }
+.main-navigation.toggled ul.sub-menu li { display: inline-block; }
+.main-navigation.toggled ul.sub-menu a { padding: 0.2em 0.6em;  border-left: 1px solid; }
+.main-navigation.toggled ul.nav-menu {  margin-bottom: 1em ; }
+
+.content-area.centered {  width: 100%; }
+
+header #playerdiv div.station-lahmacun_radio .public-page .card {  }
+#radio-player-controls.radio-controls-standalone input.jp-volume-range { }
+
+.halver {  display: block;  width: 100%;  margin-bottom: 3em; }
+.halver .newslist {  display: none;  }
+.halver .newslist:first-child {  display: block;  }
+
+.station-lahmacun_radio {   width: 300px; }
+.main-navigation a {   padding-right: 0; }
+
+body.home div#page {  background-color: #d09cf891 !important; }
+.lahma_home-content {  background-color: transparent; }
+.schedulewrap .timenotice {   margin-top: -2.6em; }
+.site-header {   padding: 0; }
+
+header #playerdiv {  }
+
+/* end max 786 */
+}
+
+
+@media (max-width: 460px) {
+
+.site {  padding-right: 3%;  padding-left: 3%; }
+.site-title {   padding-top: 0.5em; }
+.site-header {   margin-bottom: 0.5em; background: #d09cf859; }
+
+.lahma_side-infos, .lahma_post-content {  display: block;  width: 100%;     margin: 3% auto; }
+.lahma_post-title {   margin-bottom: 2em; }
+header #playerdiv div.station-lahmacun_radio .public-page .card {   zoom: 0.9; margin-top: 4%;      width: 320px;  min-width: 320px; }
+header div.station-lahmacun_radio .might-overflow {   width: 100% !important; }
+div.station-lahmacun_radio h4.might-overflow {  max-height: 2.3em; }
+header #playerdiv .public-page .card-body .media-body > div {    min-height: 20px; }
+#radio-player-controls.radio-controls-standalone input.jp-volume-range { }
+.postslister {   display: block;   width: auto;   padding-bottom: 1em;    margin: 1em auto; }
+.newspic-container {   float: none;   margin-right: 0;   margin-top: 10px;    margin-bottom: 10px;    width: 100%; }
+
+
+/* end max 460 */
+}
+
+@media (max-width: 330px) {
+
+div#page { overflow: hidden; }
+
+
+}
