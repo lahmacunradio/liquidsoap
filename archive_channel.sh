@@ -25,7 +25,7 @@ is_container() {
 
 copy_container_host() {
   echo "$self: copying $1..."
-  docker cp "$1" "$2"
+  cp -r "$1" "$2"
   echo "$self: data copy finished successfully"
 }
 
@@ -37,8 +37,7 @@ main () {
     fi
     
     image_based_container_name=$(docker ps | awk '$2=="azuracast/azuracast_web_v2:latest" { print $1 }')
-    src="$image_based_container_name:$1"
-
+    src="$1"
     # if ! is_container "$src"; then
     #     fatal "there is no container with this name running"
     #     exit
