@@ -9,21 +9,7 @@ fatal () {
   exit 1
 }
 
-is_container() {
-    # suppose the input string is the argument needed for 'docker cp'
-    # eg. in the form of: 'docker_container_name:/path/to/folder_or_file'
-    container_name=${1%:*}
-    echo "$self: $container_name"
-    echo "$self: checking if running container with this name is available..."
-    if [[ $(docker ps --no-trunc -qf "id=$container_name" --format '{{.ID}}') == $container_name ]];
-    then
-        return 0
-    else
-        return 1
-    fi
-}
-
-copy_container_host() {
+copy_container_data() {
   echo "$self: copying $1..."
   cp -r "$1" "$2"
   echo "$self: data copy finished successfully"
@@ -32,27 +18,29 @@ copy_container_host() {
 main () {
     
     if [ $# -eq 0 ]; then
-        fatal "please specify archive source and destination paths"
+        fatal "please specify archive source path"
         exit
     fi
     
-    image_based_container_name=$(docker ps | awk '$2=="azuracast/azuracast_web_v2:latest" { print $1 }')
     src="$1"
-    # if ! is_container "$src"; then
-    #     fatal "there is no container with this name running"
-    #     exit
-    # fi 
 
     # so we don't add this huge data blob to the repo we create archive in the
     # parent folder. No need to gitignore this way either
     cd $(dirname $self)
+    # date=$(date +%F)
+    # dst="$(pwd)/../archive-$date"
+    # TODO Do we want to timestamp the folders?
     dst="$(pwd)/../archive"
 
     if ! [ -d $dst ]; then
         mkdir -p $dst
     fi
 
-    copy_container_host $src $dst
+    if ! [ -d $src ]; then
+        fatal "source path to be archived is not a folder it seems"
+    else
+        copy_container_data $src $dst
+    fi
 }
 
 main "${@}"
