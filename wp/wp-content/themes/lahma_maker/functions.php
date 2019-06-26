@@ -38,20 +38,29 @@ add_action( 'wp_enqueue_scripts', 'lahma_enqueue_js' );
 
 /* Player styles + scripts */
 
-function lahma_player_css() {
-    wp_enqueue_style('lahmaplayer',  get_stylesheet_directory_uri() . '/radio_files/web-lahmacun-player.css');
+
+// Changing excerpt more
+
+function new_excerpt_more($more) {
+    return '';
 }
+add_filter('excerpt_more', 'new_excerpt_more', 21 );
 
-add_action( 'get_footer', 'lahma_player_css' );
-
-function lahma_enqueue_playerjs() {
-    wp_enqueue_script(
-        'player_scripts',
-        get_stylesheet_directory_uri() . '/radio_files/web-radio_BG.js',
-        array( 'jquery' ), null, true
-    );
+function the_excerpt_more_link( $excerpt ){
+    $post = get_post();
+    $excerpt .= '... <a class="readmorelink" href="'. get_permalink($post->ID) . '">Open news item »</a>';
+    return $excerpt;
 }
+add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
 
-add_action( 'wp_enqueue_scripts', 'lahma_enqueue_playerjs' );
+ function excerpt_length_home( $length ) {
+ if ( is_front_page() || is_home() ) {
+ 	return 30;
+ } else {
+ 	return 50;
+ }
+ }
+ add_filter( 'excerpt_length', 'excerpt_length_home' );
+
 
 ?>

@@ -2,7 +2,8 @@
 /* GET SHOWS INFOS */
 
 $args = array(
-  'category_name' => 'shows'
+  'category_name' => 'shows',
+  'posts_per_page'=>-1
 );
 
 
