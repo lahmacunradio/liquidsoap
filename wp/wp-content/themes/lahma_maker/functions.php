@@ -35,12 +35,6 @@ function lahma_enqueue_js() {
 
 add_action( 'wp_enqueue_scripts', 'lahma_enqueue_js' );
 
-/* Add Vue globally */
-function add_vuejs() {
-    wp_register_script('add_vuejs', "https://unpkg.com/vue", array( 'jquery' ), false, false);
-    wp_enqueue_script('add_vuejs');
-}
-add_action('wp_enqueue_scripts', 'add_vuejs');
 
 
 /* Player styles + scripts */
