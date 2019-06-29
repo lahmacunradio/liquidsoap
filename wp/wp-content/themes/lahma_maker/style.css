@@ -192,7 +192,7 @@ header #playerdiv .public-page .card-body a.programimage img {
 }
 
 header #playerdiv .public-page .card-body .media-body {
-    max-height: 55px;
+    max-height: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
@@ -201,10 +201,10 @@ header #playerdiv .public-page .card-body .media-body {
 
 header #playerdiv .public-page .card-body .media-body h4,
 header #playerdiv .public-page .card-body .media-body h5 {
-	text-overflow: ellipsis;
-    overflow: hidden;
-    max-height: 30px;
-    cursor: default;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: default;
+  word-break: normal;
 }
 
 header #playerdiv .public-page .card-body .media-body h5 {
