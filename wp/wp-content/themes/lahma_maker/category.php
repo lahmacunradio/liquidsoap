@@ -13,7 +13,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header categorytitle">
 
 				<?php single_cat_title( '<h1 class="page-title">', '</h1>' ); ?>
 
@@ -27,7 +27,7 @@ get_header(); ?>
 				  <?php if ( has_post_thumbnail()) : ?>
 				  <div class="newspic-container">
 				   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="newsimage">
-				   <?php the_post_thumbnail("thumbnail"); ?>
+				   <?php the_post_thumbnail("medium"); ?>
 				   </a>
 				</div>
 				<?php endif; ?>

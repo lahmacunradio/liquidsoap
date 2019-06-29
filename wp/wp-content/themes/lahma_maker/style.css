@@ -81,6 +81,11 @@ div#main h1, div#main h2, div#main h3 {
     font-weight: 500;
 }
 
+div#main h1 {
+  font-size: 2em;
+}
+
+
 .site-header {   border-bottom: 2px solid #9a74b8;  }
 body.home .site-header {   }
 
@@ -470,7 +475,7 @@ li.donate a:before {
 
 .lahma_home-content h1, .categoryposts h1 {
   text-transform: uppercase;
-  margin-bottom: 1em;
+  margin-bottom: 0.7em;
 }
 
 
@@ -485,9 +490,11 @@ li.donate a:before {
 }
 
 .newslist {
-  margin-bottom: 0em;
   clear: both;
-  margin-top: 2em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid rgba(0,0,0,.87);
+  padding-bottom: 1em;
 }
 
 .halver a, .postslister h3 a {
@@ -503,6 +510,7 @@ li.donate a:before {
   margin-right: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
+  width: 30%;
 }
 
 .news-block .description {
@@ -532,8 +540,9 @@ li.donate a:before {
 }
 
 
-.categoryposts .page-header {
+.categoryposts .page-header, .page-header.categorytitle {
     margin-bottom: 0em;
+    text-transform: uppercase;
 }
 
 
@@ -680,7 +689,7 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
   font-size: 0.9em;
 }
 .site-header {   padding: 0 0 0.5em;   height: 135px; }
-.entry-title {     font-size: 2.5em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
+.entry-title {     font-size: 2em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
 
 /* end min 786 */
 }
