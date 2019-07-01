@@ -49,7 +49,8 @@ add_filter('excerpt_more', 'new_excerpt_more', 21 );
 
 function the_excerpt_more_link( $excerpt ){
     $post = get_post();
-    $excerpt .= '... <a class="readmorelink" href="'. get_permalink($post->ID) . '">Open news item »</a>';
+    $excerpt .= '<span class="moresign"> ... </span>';
+    // $excerpt .= '... <a class="readmorelink" href="'. get_permalink($post->ID) . '">Open news item »</a>';
     return $excerpt;
 }
 add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );

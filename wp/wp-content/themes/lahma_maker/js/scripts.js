@@ -103,7 +103,7 @@ $( document ).ready(function() {
 
 
     /* AJAX link click */
-    jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox)", function(e){
+    jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox):not(.showsopen)", function(e){
         var link = jQuery(this).attr("href");
         // var title = jQuery(responseHtml).filter('title').text();
         // console.log(link);
@@ -205,6 +205,9 @@ $( ".shows-block" ).ready(function(){
 		sortDates( dateWriteSchedule );
 });
 
-        
+// prevent Shows menu clicking
+$(".menu-lahma-menu-container li.menu-item-has-children > a").removeAttr("href").css({'cursor': 'pointer'}).addClass("showsopen");
+
+
     // A $( document ).ready() block end
 });

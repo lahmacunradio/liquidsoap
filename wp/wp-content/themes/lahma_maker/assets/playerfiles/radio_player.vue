@@ -20,12 +20,12 @@
                     <img class="progimg" v-bind:src="show_art_url" :alt="$t('album_art_alt')">
                 </a>
             </div>
-            
+
             <div class="now-playing-main">
               <div class="media-body">
                 <div v-if="np.now_playing.song.title !== ''">
-                    <h4 class="now-playing-title">{{ show_title }}</h4>
-                    <h5 class="now-playing-artist">{{ show_subtitle }}</h5>
+                    <h4 v-bind:title="show_title" class="now-playing-title">{{ show_title }}</h4>
+                    <h5 v-bind:title="show_subtitle" class="now-playing-artist">{{ show_subtitle }}</h5>
                 </div>
                 <div v-else>
                     <h4 class="now-playing-title">{{ show_title }}</h4>
@@ -113,7 +113,7 @@
             white-space: nowrap;
             &:hover {
                 text-overflow: clip;
-                white-space: normal;
+                /* white-space: normal; */
                 word-break: break-all;
             }
         }
