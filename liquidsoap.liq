@@ -35,6 +35,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [ 
     #Live DJ
     ({!live_enabled}, live),
@@ -46,7 +47,8 @@ radio = switch(track_sensitive=false, transitions=[
     #Tuesday
     ({2w and 1h04m-1h40m}, once(playlist_lahmacun_gyorsnaszd_hdja)),
     ({2w and 11h-12h30m}, once(playlist_csinltam_neked_egy_vlogats_kazettt)),  
-    ({2w and 16h-18h}, once(playlist_mmn_radio)),  
+    ({2w and 16h-17h}, once(playlist_mmn_radio)),  
+    ({2w and 17h30m-19h}, once(playlist_havizaj)),  
     ({2w and 19h-20h}, once(playlist_turmeric_acid)),  
     #Wednesday
     ({3w and 13h-14h}, once(playlist_rt_hallgats)),  
