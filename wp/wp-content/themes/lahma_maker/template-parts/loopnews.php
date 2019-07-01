@@ -13,23 +13,25 @@ News template for homepage
   ?>
 
 <div class="newslist">
+  <a href="<?php the_permalink(); ?>">
   <h3 class="news-title">
-    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    <?php the_title(); ?>
   </h3>
-  
+
   <p class="news-time"><?php the_time('l, F jS, Y') ?></p>
 
   <?php if ( has_post_thumbnail()) : ?>
   <div class="newspic-container">
-   <a href="<?php the_permalink(); ?>" class="newsimage">
-   <?php the_post_thumbnail("medium"); ?>
- </a>
+   <div class="newsimage">
+     <?php the_post_thumbnail("medium"); ?>
+   </div>
 </div>
 <?php endif; ?>
 
 <div class="description">
   <?php the_excerpt(); ?>
   </div>
+  </a>
 <div class="clearfix"></div>
 
 </div>

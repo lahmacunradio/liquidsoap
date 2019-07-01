@@ -497,6 +497,25 @@ li.donate a:before {
   padding-bottom: 1em;
 }
 
+.newscat a {
+  color: #1d1d1d;
+}
+
+.newslist a:hover .description, .newslist a:hover .news-time,
+.newscat a:hover .description, .newscat a:hover .news-time {
+  color: #1d1d1d !important;
+}
+
+.newslist a:hover h3, .newscat a:hover h3 {
+  color: white;
+}
+
+.newslist a:hover span.moresign:after, .halver.news-block h1:hover a:after,
+.newscat a:hover span.moresign:after {
+  content:" >>";
+  white-space: nowrap;
+}
+
 .halver a, .postslister h3 a {
   color: #1d1d1d;
 }
