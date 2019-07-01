@@ -45,7 +45,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 17h-17h30m}, once(playlist_kezek_a_sebekben)),  
     ({1w and 18h-20h}, once(playlist_erdenklang)),  
     #Tuesday
-    ({2w and 1h04m-1h40m}, once(playlist_lahmacun_gyorsnaszd_hdja)),
+    ({2w and 1h04m-3h30m}, once(playlist_lahmacun_gyorsnaszd_hdja)),
     ({2w and 11h-12h30m}, once(playlist_csinltam_neked_egy_vlogats_kazettt)),  
     ({2w and 16h-17h}, once(playlist_mmn_radio)),  
     ({2w and 17h30m-19h}, once(playlist_havizaj)),  
