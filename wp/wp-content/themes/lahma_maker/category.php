@@ -21,6 +21,30 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
+<?php if ( in_category( 'News' ) ) : ?>
+
+				<article class="postslister newscat">
+					<a href="<?php the_permalink(); ?>">
+				  	<h3 class="news-title"><?php the_title(); ?></h3>
+					<p class="news-time"><?php the_time('l, F jS, Y') ?></p>
+				  <?php if ( has_post_thumbnail()) : ?>
+				  <div class="newspic-container">
+				   <div class="newsimage">
+				   <?php the_post_thumbnail("medium"); ?>
+				 </div>
+				</div>
+				<?php endif; ?>
+
+				<div class="description">
+				  <?php the_excerpt(); ?>
+				  </div>
+				</a>
+				<div class="clearfix"></div>
+
+				</article>
+
+		<?php else : ?>
+
 				<article class="postslister">
 				  <h3 class="news-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<p class="news-time"><?php the_time('l, F jS, Y') ?></p>
@@ -38,6 +62,8 @@ get_header(); ?>
 				<div class="clearfix"></div>
 
 				</article>
+
+<?php endif; ?>
 
 
 			<?php endwhile; ?>
