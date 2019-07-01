@@ -497,6 +497,15 @@ li.donate a:before {
   padding-bottom: 1em;
 }
 
+.newslist a:hover {
+  color:inherit !important;
+}
+
+.newslist a:hover span.moresign:after, .halver.news-block h1:hover a:after {
+  content:" >>";
+  white-space: nowrap;
+}
+
 .halver a, .postslister h3 a {
   color: #1d1d1d;
 }
