@@ -295,13 +295,13 @@ export default {
             if (this.np.live.is_live)
             return this.np.live.streamer_name
             else
-            return this.np.now_playing.song.title
+            return this.np.now_playing.song.artist
         },
         "show_subtitle": function() {
             if (this.np.live.is_live)
             return this.np.now_playing.song.title
             else
-            return this.np.now_playing.song.artist
+            return this.np.now_playing.song.title
         },
         "show_art_url": function() {
             if (this.np.live.is_live){
