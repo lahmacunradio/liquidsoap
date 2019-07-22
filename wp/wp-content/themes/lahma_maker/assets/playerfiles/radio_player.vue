@@ -16,7 +16,8 @@
               </div>
 
             <div class="now-playing-art" v-if="show_album_art && np.now_playing.song.art">
-                <a v-bind:href="np.now_playing.song.art" class="swipebox programimage" target="_blank" rel="playerimg">
+                <a v-bind:href="show_art_url" class="swipebox programimage" target="_blank" rel="playerimg">
+                  <div v-if="np.live.is_live || (np.now_playing.playlist !== 'OFF AIR' && np.now_playing.playlist !== 'Jingle' && np.now_playing.playlist !== 'Jingle AFTER SHOW')" class="onair">On air</div>
                     <img class="progimg" v-bind:src="show_art_url" :alt="$t('album_art_alt')">
                 </a>
             </div>
@@ -303,6 +304,19 @@ export default {
             else
             return this.np.now_playing.song.artist
         },
+/*      Art URL link not needed?
+        "art_url_link": function() {
+            if (this.np.live.is_live) {
+                let try_link_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
+                if (try_link_from_show == undefined) //show not found
+                    return default_art_url // return default
+                else
+                    return try_link_from_show //resturn show art work
+            }
+            else {
+              return this.np.now_playing.song.art; //art work url in json
+            }
+        }, */
         "show_art_url": function() {
             if (this.np.live.is_live){
                 let try_art_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
