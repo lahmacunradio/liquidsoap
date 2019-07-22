@@ -304,19 +304,6 @@ export default {
             else
             return this.np.now_playing.song.artist
         },
-/*      Art URL link not needed?
-        "art_url_link": function() {
-            if (this.np.live.is_live) {
-                let try_link_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
-                if (try_link_from_show == undefined) //show not found
-                    return default_art_url // return default
-                else
-                    return try_link_from_show //resturn show art work
-            }
-            else {
-              return this.np.now_playing.song.art; //art work url in json
-            }
-        }, */
         "show_art_url": function() {
             if (this.np.live.is_live){
                 let try_art_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
