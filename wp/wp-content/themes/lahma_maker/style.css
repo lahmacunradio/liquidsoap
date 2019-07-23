@@ -643,7 +643,7 @@ font-style: italic;
 }
 
 /* Gallery fixes */
-#spider_popup_wrap a.spider_popup_close_fullscreen, #spider_popup_wrap a.spider_popup_close_fullscreen:hover {
+#spider_popup_wrap a.spider_popup_close_fullscreen, #spider_popup_wrap a.spider_popup_close_fullscreen:hover, .bwg_ctrl_btn:hover {
   color: white !important;
 }
 
