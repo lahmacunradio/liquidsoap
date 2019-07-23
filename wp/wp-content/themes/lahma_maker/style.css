@@ -642,6 +642,19 @@ font-style: italic;
       font-size: 0.8em;
 }
 
+/* Gallery fixes */
+#spider_popup_wrap a.spider_popup_close_fullscreen, #spider_popup_wrap a.spider_popup_close_fullscreen:hover {
+  color: white !important;
+}
+
+#spider_popup_wrap a.spider_popup_close_fullscreen:hover .bwg_close_btn {
+  opacity: 1 !important;
+}
+
+.bwg_image_wrap .bwg_image_info:after {
+    height: 10px !important;
+}
+
 
 /*******
 ********
