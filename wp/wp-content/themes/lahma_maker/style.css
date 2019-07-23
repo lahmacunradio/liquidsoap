@@ -186,6 +186,7 @@ header #playerdiv .public-page .card-body a.programimage {
     height: 50px;
     display: block;
     overflow: hidden;
+    position: relative;
 }
 
 header #playerdiv .public-page .card-body a.programimage img {
@@ -194,6 +195,32 @@ header #playerdiv .public-page .card-body a.programimage img {
     width: 100%;
     max-width: 50px;
     max-height: 50px;
+}
+
+header #playerdiv .public-page .card-body a.programimage .onair {
+  position: absolute;
+      bottom: 0;
+      background: #da1313;
+      padding: 0.1em;
+      font-size: 0.7em;
+      color: white;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+}
+
+@keyframes pulse {
+  from { opacity: 0; }
+  45% { opacity: 1; }
+  50% { opacity: 1; }
+  to { opacity: 0; }
+}
+
+header #playerdiv .public-page .card-body a.programimage .onair {
+  animation-name: pulse;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 header #playerdiv .public-page .card-body .media-body {
