@@ -50,7 +50,7 @@ radio = switch(track_sensitive=false, transitions=[
     #Tuesday
     ({2w and 1h04m-3h30m}, once(playlist_lahmacun_gyorsnaszd_hdja)),
     ({2w and 11h-12h29m}, once(playlist_csinltam_neked_egy_vlogats_kazettt)),
-    ({2w and 14h30m-15h35m}, once(playlist_dalmata_gergo_show),
+    ({2w and 14h30m-15h35m}, once(playlist_dalmata_gergo_show)),
     ({2w and 16h-17h15m}, once(playlist_mmn_radio)),
     ({2w and 17h30m-18h29m}, once(playlist_havizaj)),
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
