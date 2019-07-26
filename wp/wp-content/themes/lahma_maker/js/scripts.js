@@ -152,7 +152,6 @@ window.onfocus = function() {
 		var Cdateobj = new Date();
 		var Cndateobj = Cdateobj.getDay() || 8 - 1;
 		var Cgooddateobj = Cndateobj - 1;
-
 		// console.log(gooddateobj);
 		// console.log(Cgooddateobj);
 
