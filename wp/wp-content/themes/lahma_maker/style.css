@@ -655,6 +655,11 @@ font-style: italic;
     height: 10px !important;
 }
 
+.bwg_loading_div_2 {
+    background-color: #d09cf8;
+    opacity: .9;
+}
+
 
 /*******
 ********
