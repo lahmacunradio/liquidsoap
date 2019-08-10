@@ -110,6 +110,11 @@ playlist_mt = playlist(id="playlist_mt",mode="randomize",reload_mode="watch",con
 playlist_mt = audio_to_stereo(id="stereo_playlist_mt", playlist_mt)
 ignore(playlist_mt)
 
+playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/devlahma/playlists/playlist_arcadeok_alatt.m3u")
+playlist_arcadeok_alatt = audio_to_stereo(id="stereo_playlist_arcadeok_alatt", playlist_arcadeok_alatt)
+ignore(playlist_mt)
+
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/devlahma/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -241,6 +246,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition2j(playlist_jingle),
     transition2j(playlist_jingle),
     transition2j(playlist_jingle),
+    transition2j(playlist_jingle),
     transition2j(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -264,6 +270,7 @@ radio = switch(track_sensitive=false, transitions=[
     #Friday
     ({5w and 16h-16h59m}, once(playlist_agybaj)),
     ({5w and 17h-18h59m}, once(playlist_mkd_mkd)),
+    ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),
     #Saturday
     ({6w and 6h50m-6h51m}, once(playlist_rnr666)),
     #Sunday
