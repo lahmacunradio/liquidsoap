@@ -205,7 +205,8 @@ live = audio_to_stereo(input.harbor("/", id="lahmacun_radio_input_streamer", por
 ignore(output.dummy(live, fallible=true))
 live = fallback(id="lahmacun_radio_live_fallback", track_sensitive=false, [live, blank(duration=2.)])
 
-radio = switch(id="lahmacun_radio_live_switch", track_sensitive=false, [({!live_enabled}, live), ({true}, radio)])
+#LAHMACUN: CHANGE IN AZURA GENERATED CONFIG (COMMENT OUT NEXT LINE)
+#radio = switch(id="lahmacun_radio_live_switch", track_sensitive=false, [({!live_enabled}, live), ({true}, radio)])
 
 # Allow for Telnet-driven insertion of custom metadata.
 radio = server.insert_metadata(id="custom_metadata", radio)
