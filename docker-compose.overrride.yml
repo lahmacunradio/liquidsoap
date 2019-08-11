@@ -1,0 +1,9 @@
+version: '2.2'
+
+services:
+  web:
+    volumes:
+      - ./liquidsoap_custom.liq:/var/azuracast/stations/devlahma/config/liquidsoap.liq:ro
+  stations:
+    volumes:
+      - ./liquidsoap_custom.liq:/var/azuracast/stations/devlahma/config/liquidsoap.liq:ro
