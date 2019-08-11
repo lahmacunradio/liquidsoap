@@ -298,7 +298,7 @@ radio = switch(track_sensitive=false, transitions=[
 # Send metadata changes back to AzuraCast
 def metadata_updated(m) =
   if (m["song_id"] != "") then
-    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^quote(m["song_id"])^" --form media="^quote(m["media_id"])^" --form playlist="^quote(m["playlist_id"])^" --form api_auth="^quote("28b0fbdcebae7bece3695fb3e1bed358b4eb41ef8e29c4a68490fb60b4f40c6223d65d1c4acb1ad1f53e7f5237c7ade7b562")^""), default="")
+    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^quote(m["song_id"])^" --form media="^quote(m["media_id"])^" --form playlist="^quote(m["playlist_id"])^" --form api_auth="^quote("4f5323f4258a8d86034c7c8ec16361d9e9d56c67cf8d6e89e3d955b77ef02601624294caee31b22eb9c03d58aadceacd938a")^""), default="")
     log("AzuraCast Feedback Response: #{ret}")
   end
 end
@@ -306,6 +306,6 @@ end
 radio = on_metadata(metadata_updated,radio)
 
 # Local Broadcasts
-output.icecast(%mp3(samplerate=44100, stereo=true, bitrate=128, id3v2=true), id="devlahma_local_1", host = "127.0.0.1", port = 8000, password = "d7MAp6Lg", mount = "/radio.mp3", name = "DEV.LAHMA", description = "                         .......                        ::DEV:                        ::DEV:                        ::DEV:                        ::DEV:                        ::DEV:                        ::DEV:                        ::DEV:                           ::DEV:....... ....... ....... DEV  ....... ....... .......DEV DEV DEV DEV DEV DEV DEVDEV DEV DEV DEV DEV DEV DEV`````` `````` `````` DEV `````` `````` ``````                        ::DEV:                          ``````  ", genre = "", url = "dev.lahmacun.hu", public = false, encoding = "UTF-8", radio)
+output.icecast(%mp3(samplerate=44100, stereo=true, bitrate=128, id3v2=true), id="lahmacun_radio_local_1", host = "127.0.0.1", port = 8000, password = "q9Fd6CAq", mount = "/radio.mp3", name = "Lahmacun radio", description = "", genre = "", public = false, encoding = "UTF-8", radio)
 
 # Remote Relays
