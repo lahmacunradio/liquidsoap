@@ -149,7 +149,7 @@ radio = fallback(track_sensitive=true, [delay(60., playlist_jingle_azura), radio
 
 # AutoDJ Next Song Script
 def azuracast_next_song() =
-  uri = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/nextsong --form api_auth="^quote("4f5323f4258a8d86034c7c8ec16361d9e9d56c67cf8d6e89e3d955b77ef02601624294caee31b22eb9c03d58aadceacd938a")^""), default="")
+  uri = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/nextsong --form api_auth="^quote("AZURA_KEY")^""), default="")
   log("AzuraCast Raw Response: #{uri}")
   
   if uri == "" or string.match(pattern="Error", uri) then
@@ -175,7 +175,7 @@ radio = fallback(id="lahmacun_radio_safe_fallback", track_sensitive = false, [ra
 # DJ Authentication
 def dj_auth(user,password) =
   log("Authenticating DJ: #{user}")
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj_user="^quote(user)^" --form dj_password="^quote(password)^" --form api_auth="^quote("4f5323f4258a8d86034c7c8ec16361d9e9d56c67cf8d6e89e3d955b77ef02601624294caee31b22eb9c03d58aadceacd938a")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj_user="^quote(user)^" --form dj_password="^quote(password)^" --form api_auth="^quote("AZURA_KEY")^""), default="")
   log("AzuraCast DJ Auth Response: #{ret}")
   bool_of_string(ret)
 end
@@ -185,14 +185,14 @@ live_enabled = ref false
 def live_connected(header) =
   log("DJ Source connected! #{header}")
   live_enabled := true
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djon --form api_auth="^quote("4f5323f4258a8d86034c7c8ec16361d9e9d56c67cf8d6e89e3d955b77ef02601624294caee31b22eb9c03d58aadceacd938a")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djon --form api_auth="^quote("AZURA_KEY")^""), default="")
   log("AzuraCast Live Connected Response: #{ret}")
 end
 
 def live_disconnected() =
   log("DJ Source disconnected!")
   live_enabled := false
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djoff --form api_auth="^quote("4f5323f4258a8d86034c7c8ec16361d9e9d56c67cf8d6e89e3d955b77ef02601624294caee31b22eb9c03d58aadceacd938a")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djoff --form api_auth="^quote("AZURA_KEY")^""), default="")
   log("AzuraCast Live Disconnected Response: #{ret}")
 end
 
@@ -299,7 +299,7 @@ radio = switch(track_sensitive=false, transitions=[
 # Send metadata changes back to AzuraCast
 def metadata_updated(m) =
   if (m["song_id"] != "") then
-    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^quote(m["song_id"])^" --form media="^quote(m["media_id"])^" --form playlist="^quote(m["playlist_id"])^" --form api_auth="^quote("4f5323f4258a8d86034c7c8ec16361d9e9d56c67cf8d6e89e3d955b77ef02601624294caee31b22eb9c03d58aadceacd938a")^""), default="")
+    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^quote(m["song_id"])^" --form media="^quote(m["media_id"])^" --form playlist="^quote(m["playlist_id"])^" --form api_auth="^quote("AZURA_KEY")^""), default="")
     log("AzuraCast Feedback Response: #{ret}")
   end
 end
@@ -307,6 +307,6 @@ end
 radio = on_metadata(metadata_updated,radio)
 
 # Local Broadcasts
-output.icecast(%mp3(samplerate=44100, stereo=true, bitrate=128, id3v2=true), id="lahmacun_radio_local_1", host = "127.0.0.1", port = 8000, password = "q9Fd6CAq", mount = "/radio.mp3", name = "Lahmacun radio", description = "", genre = "", public = false, encoding = "UTF-8", radio)
+output.icecast(%mp3(samplerate=44100, stereo=true, bitrate=128, id3v2=true), id="lahmacun_radio_local_1", host = "127.0.0.1", port = 8000, password = "ICECAST_KEY", mount = "/radio.mp3", name = "Lahmacun radio", description = "", genre = "", public = false, encoding = "UTF-8", radio)
 
 # Remote Relays
