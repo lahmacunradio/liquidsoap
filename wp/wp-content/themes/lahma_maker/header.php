@@ -31,7 +31,22 @@
 
 <body>
 
+  <?php // donatebanner show
+  $contDonate = get_option("contDonate");
+  $contShower = get_option("shower");
+
+  if ( $contShower == "show" ) :
+
+  ?>
+
+  <div id="donatebanner">
+    <p><?php echo $contDonate; ?></p>
+    <center><a href="../donate">Donate Us!</a></center>
+  </div>
+  <?php endif; ?>
+
 <div id="page" class="hfeed site">
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maker' ); ?></a>
 
 <header id="masthead" class="site-header" role="banner">

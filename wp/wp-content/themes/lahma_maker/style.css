@@ -149,6 +149,37 @@ header .wrap .site-branding {
 	display: block;
 }
 
+#donatebanner {
+  display: block;
+  clear: both;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px black;
+      text-align: center;
+}
+
+#donatebanner p {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 98%;
+  display: block;
+}
+
+#donatebanner a {
+  background: black;
+  color: white;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 0.5em;
+  display: inline-block;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
 
 /* Fix maker mistakes */
 .blog .entry-content, .blog .entry-footer, .blog .comments-area, .blog .post-navigation, .archive .entry-content, .archive .entry-footer, .archive .comments-area, .archive .post-navigation, .single-post .entry-content, .single-post .entry-footer, .single-post .comments-area, .single-post .post-navigation, .blog .entry-header, .archive .entry-header, .single-post .entry-header, .page-template-default .entry-header, .page-template-default .entry-content, .page-template-default .comments-area {
