@@ -25,7 +25,10 @@
             <div class="now-playing-main">
               <div class="media-body">
                 <div v-if="np.now_playing.song.title !== ''">
-                    <h4 v-bind:title="show_title" class="now-playing-title">{{ show_title }}</h4>
+                    <h4 v-bind:title="show_title" class="now-playing-title">
+                      <a v-if="show_check == true" v-bind:href="show_url">{{ show_title }}</a>
+                      <span v-if="show_check == false">{{ show_title }}</span>
+                    </h4>
                     <h5 v-bind:title="show_subtitle" class="now-playing-artist">{{ show_subtitle }}</h5>
                 </div>
                 <div v-else>
@@ -303,6 +306,21 @@ export default {
             return this.np.now_playing.song.title
             else
             return this.np.now_playing.song.artist
+        },
+        "show_check": function() {
+            if (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Between Shows' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW') {
+              return true;
+            } else {
+              return false;
+            }
+        },
+        "show_url": function() {
+            let try_url_from_show = showsURLList_lookup[this.np.now_playing.song.title];
+            let default_url = "https://www.lahmacun.hu/";
+            // console.log( try_url_from_show );
+            if (try_url_from_show == undefined) //show not found
+                return default_url; // return default
+            else return try_url_from_show //return show URL
         },
         "show_art_url": function() {
             if (this.np.live.is_live){
