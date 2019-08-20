@@ -158,26 +158,49 @@ header .wrap .site-branding {
   background: rgba(255, 255, 255, 0.9);
   width: 100%;
   box-shadow: 0px 0px 5px 0px black;
-      text-align: center;
+}
+
+#donatebanner #donateholder {
+  display: flex;
+  padding: 0 2em;
+  justify-content: space-around;
+  margin: auto;
 }
 
 #donatebanner p {
-  margin: 0 auto;
-  max-width: 1000px;
+  margin: 0 2em 0 0;
   width: 98%;
   display: block;
+  flex: 9;
+  align-self: start;
 }
 
-#donatebanner a {
+#donatebanner a#donatebutton {
   background: black;
   color: white;
   padding: 0.5em 1em;
   text-transform: uppercase;
   font-weight: 500;
-  margin-top: 0.5em;
-  display: inline-block;
+  display: block;
   font-size: 1.2em;
   border-radius: 5px;
+  white-space: nowrap;
+  height: 40px;
+  width: 130px;
+  justify-content: end;
+}
+
+#donatebanner a#donatebutton:hover {
+    color: #d09cf8;
+}
+
+#donatebanner a#closedonate {
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  font-size: 1.2em;
+  margin-top: -5px;
 }
 
 
@@ -837,6 +860,11 @@ body.home div#page {  background-color: #d09cf891 !important; }
 .site-header {   padding: 0; }
 
 header #playerdiv {  }
+
+#donatebanner #donateholder {  display: block; padding: 0 1em; }
+#donatebanner p {  margin: 0;  width: 100%; }
+#donatebanner a#donatebutton {  margin-top: 0.5em; }
+
 
 /* end max 786 */
 }

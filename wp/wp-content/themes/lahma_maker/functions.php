@@ -104,7 +104,7 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
  		<td>
  			<h2>Donate datas</h2>
  			<p><label for="fenticsik">Text for the Donate part:</label><br/>
- 			<input type="text" name="contDonate" size="100" value="';
+ 			<input type="text" name="contDonate" size="500" style="width:100%;" value="';
  				echo $contDonate;
  				echo '" /></p>
  			<p>

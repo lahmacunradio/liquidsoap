@@ -40,8 +40,12 @@
   ?>
 
   <div id="donatebanner">
-    <p><?php echo $contDonate; ?></p>
-    <center><a href="../donate">Donate Us!</a></center>
+    <a id="closedonate"><i class="fa fa-times" aria-hidden="true"></i>
+</a>
+    <div id="donateholder">
+      <p><?php echo $contDonate; ?></p>
+      <a id="donatebutton" href="../donate">Donate Us!</a>
+    </div>
   </div>
   <?php endif; ?>
 
