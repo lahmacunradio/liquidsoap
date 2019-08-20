@@ -31,10 +31,31 @@
 
 <body>
 
+
 <div id="page" class="hfeed site">
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maker' ); ?></a>
 
 <header id="masthead" class="site-header" role="banner">
+
+  <?php // donatebanner show
+  $contDonate = get_option("contDonate");
+  $contShower = get_option("shower");
+
+  if ( $contShower == "show" ) :
+
+  ?>
+
+  <div id="donatebanner">
+    <a id="closedonate"><i class="fa fa-times" aria-hidden="true"></i>
+</a>
+    <div id="donateholder">
+      <p><?php echo $contDonate; ?></p>
+      <a id="donatebutton" href="../donate">Donate Us</a>
+    </div>
+  </div>
+  <?php endif; ?>
+
 
 <div id="playerdiv">
 <?php

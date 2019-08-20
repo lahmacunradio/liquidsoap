@@ -65,4 +65,80 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
  add_filter( 'excerpt_length', 'excerpt_length_home' );
 
 
+ /* Add admin menu pages */
+
+ if( is_admin() ){
+     add_action( 'admin_menu', 'lahma_donate_menu' );
+ }
+
+ function lahma_donate_menu(){
+
+   $page_title = 'Donate banner';
+   $menu_title = 'Donate banner';
+   $capability = 'edit_posts';
+   $menu_slug  = 'lahma_donate_menu';
+   $function   = 'lahma_donate_menu_page';
+   $icon_url   = 'dashicons-smiley';
+   $position   = 3;
+
+   add_menu_page( $page_title,
+                  $menu_title,
+                  $capability,
+                  $menu_slug,
+                  $function,
+                  $icon_url,
+                  $position );
+ }
+
+ function lahma_donate_menu_page(){
+
+ $contDonate = get_option("contDonate");
+ $contShower = get_option("shower");
+ $contShowCheck = $contShower == "show" ? "checked" : false;
+
+ echo '<div class="wrap">';
+ echo '<h1>Lahmacun Donate Options</h1>';
+ echo '<form method="POST" action="?page=lahma_donate_menu">
+ 		<table>
+ 		<tr valign="top">
+ 		<td>
+ 			<h2>Donate datas</h2>
+ 			<p><label for="fenticsik">Text for the Donate part:</label><br/>
+ 			<input type="text" name="contDonate" size="500" style="width:100%;" value="';
+ 				echo $contDonate;
+ 				echo '" /></p>
+ 			<p>
+      <input type="checkbox" name="shower" value="show" ';
+        echo $contShowCheck;
+        echo '> Show Donate Banner<br>
+        </p>
+ 			</td>
+ 			</tr>
+ 			<tr valign="top"><td>
+
+ 			</td></tr>
+ 		</table>
+    <input type="submit" name="submit" value="Submit" />
+
+ 	</form>';
+
+echo "<br/>" . $contShower . " " .  $contShowCheck ;
+
+ echo '</div>';
+
+ if (isset($_POST["submit"])) {
+
+ 	$contDonate = esc_attr($_POST["contDonate"]);
+ 	update_option("contDonate", $contDonate);
+
+ 	$contShower = $_POST["shower"];
+ 	update_option("shower", $contShower);
+
+ 	echo '<script>parent.window.location.reload(true);</script>';
+ }
+
+}/* End Lahma Donate menu */
+
+
+
 ?>
