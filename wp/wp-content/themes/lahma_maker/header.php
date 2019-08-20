@@ -31,6 +31,13 @@
 
 <body>
 
+
+<div id="page" class="hfeed site">
+
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maker' ); ?></a>
+
+<header id="masthead" class="site-header" role="banner">
+
   <?php // donatebanner show
   $contDonate = get_option("contDonate");
   $contShower = get_option("shower");
@@ -49,11 +56,6 @@
   </div>
   <?php endif; ?>
 
-<div id="page" class="hfeed site">
-
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maker' ); ?></a>
-
-<header id="masthead" class="site-header" role="banner">
 
 <div id="playerdiv">
 <?php

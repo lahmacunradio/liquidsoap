@@ -155,6 +155,7 @@ header .wrap .site-branding {
   padding: 1em;
   position: fixed;
   bottom: 0;
+      left: 0;
   background: rgba(255, 255, 255, 0.9);
   width: 100%;
   box-shadow: 0px 0px 5px 0px black;
