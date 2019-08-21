@@ -308,7 +308,7 @@ export default {
             return this.np.now_playing.song.artist
         },
         "show_check": function() {
-            if (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Between Shows' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW') {
+            if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Between Shows' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW') ) {
               return true;
             } else {
               return false;
@@ -316,11 +316,14 @@ export default {
         },
         "show_url": function() {
             let try_url_from_show = showsURLList_lookup[this.np.now_playing.song.title];
+            let live_show_url = showsURLList_lookup[this.np.live.streamer_name];
             let default_url = "https://www.lahmacun.hu/";
             // console.log( try_url_from_show );
-            if (try_url_from_show == undefined) //show not found
+            // console.log( live_show_url );
+            if ( try_url_from_show == undefined && live_show_url == undefined ) //show not found
                 return default_url; // return default
-            else return try_url_from_show //return show URL
+            else if (this.np.live.is_live) return live_show_url;
+            else return try_url_from_show; //return show URL
         },
         "show_art_url": function() {
             if (this.np.live.is_live){
