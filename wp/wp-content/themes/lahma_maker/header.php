@@ -51,7 +51,7 @@
 </a>
     <div id="donateholder">
       <p><?php echo $contDonate; ?></p>
-      <a id="donatebutton" href="../donate">Donate Us</a>
+      <a id="donatebutton" href="<?php echo get_home_url(); ?>/donate">Donate Us</a>
     </div>
   </div>
   <?php endif; ?>
