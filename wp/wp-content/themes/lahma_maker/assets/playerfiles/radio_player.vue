@@ -339,7 +339,7 @@ export default {
                 if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
                     let try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
                     if (try_art_from_show == undefined){ //show not found
-                        artwork_history_json = "";
+                        let artwork_history_json = "";
                         (this.np.song_history).some(function (el){  //check song in history one by one; check by artist not by title!
                             if (el.song.artist == song_artist_json && el.song.art != default_azuracast_art_url){
                                 artwork_history_json = el.song.art;
