@@ -27,7 +27,7 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
     $home_url = "https://www.lahmacun.hu/";
 }
 
-/* Only for development, uncomment - Gas
+/* Only for development, uncomment - Gas 
 $broadcastServer = "https://dev.lahmacun.hu:8084/";
 $home_url = "https://dev.lahmacun.hu";
 */
@@ -38,6 +38,8 @@ $home_url = "https://dev.lahmacun.hu";
 
 <script type="text/javascript">
 	var streamServer = "<?php echo $broadcastServer ?>";
+    var homeServer = "<?php echo $home_url ?>";
+    // console.log(homeServer);
 </script>
 
 <link rel="manifest" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/site.webmanifest">

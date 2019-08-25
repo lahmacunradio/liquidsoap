@@ -317,7 +317,7 @@ export default {
         "show_url": function() {
             let try_url_from_show = showsURLList_lookup[this.np.now_playing.song.title];
             let live_show_url = showsURLList_lookup[this.np.live.streamer_name];
-            let default_url = "https://www.lahmacun.hu/";
+            let default_url = homeServer;
             // console.log( try_url_from_show );
             // console.log( live_show_url );
             if ( try_url_from_show == undefined && live_show_url == undefined ) //show not found
