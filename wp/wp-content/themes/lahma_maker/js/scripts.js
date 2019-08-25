@@ -208,5 +208,12 @@ $( ".shows-block" ).ready(function(){
 $(".menu-lahma-menu-container li.menu-item-has-children > a").removeAttr("href").css({'cursor': 'pointer'}).addClass("showsopen");
 
 
+// Close Donate
+$(document).on("click", "#donatebanner a#closedonate", function(e){
+	$(this).hide();
+	$("#donatebanner").slideUp();
+	e.preventDefault;
+})
+
     // A $( document ).ready() block end
 });
