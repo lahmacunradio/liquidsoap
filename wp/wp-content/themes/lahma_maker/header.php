@@ -47,7 +47,7 @@
   ?>
 
   <div id="donatebanner">
-    <a id="closedonate"><i class="fa fa-times" aria-hidden="true"></i>
+    <a id="closedonate" class="showsopen"><i class="fa fa-times" aria-hidden="true"></i>
 </a>
     <div id="donateholder">
       <p><?php echo $contDonate; ?></p>
