@@ -1,5 +1,6 @@
 <?php
 
+add_image_size("post_page_img", 300); // with width 300px
 
 function lahma_maker_enqueue_styles() {
 
