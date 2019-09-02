@@ -83,6 +83,7 @@ div#main h1, div#main h2, div#main h3 {
 
 div#main h1 {
   font-size: 2em;
+  text-transform: none;
 }
 
 
