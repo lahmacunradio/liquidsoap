@@ -28,9 +28,9 @@ services:
       - WORDPRESS_DB_NAME=lahmadb
     volumes:
       - wordpress:/var/www/html
-      - ./wp/wp-content/themes/maker:/var/www/html/wp-content/themes/maker 
-      - ./wp/wp-content/themes/lahma_maker:/var/www/html/wp-content/themes/lahma_maker 
-      - php.ini:/usr/local/etc/php/php.ini
+      - ./wp-content/themes/maker:/var/www/html/wp-content/themes/maker 
+      - ./wp-content/themes/lahma_maker:/var/www/html/wp-content/themes/lahma_maker 
+      - ./php.ini:/usr/local/etc/php/php.ini
     networks:
       - app-network
 
