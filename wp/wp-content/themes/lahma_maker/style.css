@@ -83,6 +83,7 @@ div#main h1, div#main h2, div#main h3 {
 
 div#main h1 {
   font-size: 2em;
+  text-transform: none;
 }
 
 
@@ -293,6 +294,7 @@ header #playerdiv .public-page .card-body .media-body h5 {
   overflow: hidden;
   cursor: default;
   word-break: normal;
+  text-transform: none;
 }
 
 header #playerdiv .public-page .card-body .media-body h5 {
