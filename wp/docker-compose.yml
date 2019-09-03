@@ -45,6 +45,8 @@ services:
       - "443:443"
     volumes:
       - wordpress:/var/www/html
+      - ./wp-content/themes/maker:/var/www/html/wp-content/themes/maker 
+      - ./wp-content/themes/lahma_maker:/var/www/html/wp-content/themes/lahma_maker 
       - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
     networks:
