@@ -13,17 +13,11 @@ else lahmacun - lahmacun
 then echo
 */
 
-$development = "https://dev.lahmacun.hu";
-$main = "https://www.lahmacun.hu";
-$port = "8084";
-$broadcastServer = "";
-$home_url = "";
-
-if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
-    $broadcastServer = "https://dev.lahmacun.hu:8084/";
-    $home_url = "https://dev.lahmacun.hu";
+if ( in_array( $_SERVER['SERVER_NAME'], array( 'staging.lahmacun.hu') ) ) {
+    $broadcastServer = "https://devstreaming.lahmacun.hu/";
+    $home_url = "https://staging.lahmacun.hu";
 } else {
-    $broadcastServer = "https://www.lahmacun.hu:8084/";
+    $broadcastServer = "https://streaming.lahmacun.hu/";
     $home_url = "https://www.lahmacun.hu/";
 }
 
