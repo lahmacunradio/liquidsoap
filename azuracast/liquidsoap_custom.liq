@@ -134,6 +134,11 @@ playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mode="randomize"
 playlist_arcadeok_alatt = audio_to_stereo(id="stereo_playlist_arcadeok_alatt", playlist_arcadeok_alatt)
 ignore(playlist_arcadeok_alatt)
 
+playlist_dodo = playlist(id="playlist_dodo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dodo.m3u")
+playlist_dodo = audio_to_stereo(id="stereo_playlist_dodo", playlist_dodo)
+ignore(playlist_dodo)
+
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -279,6 +284,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
+    ({4w and 18h-18h59m}, once(playlist_dodo)),
     ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 21h-21h59m}, once(playlist_gygyfrd)),
     #Friday
