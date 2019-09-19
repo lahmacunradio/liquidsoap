@@ -260,6 +260,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
