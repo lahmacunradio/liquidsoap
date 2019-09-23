@@ -138,6 +138,10 @@ playlist_dodo = playlist(id="playlist_dodo",mode="randomize",reload_mode="watch"
 playlist_dodo = audio_to_stereo(id="stereo_playlist_dodo", playlist_dodo)
 ignore(playlist_dodo)
 
+playlist_azvlm = playlist(id="playlist_azvlm",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_azvlm.m3u")
+playlist_azvlm = audio_to_stereo(id="stereo_playlist_azvlm", playlist_azvlm)
+ignore(playlist_azvlm)
+
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
@@ -261,6 +265,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -272,6 +277,7 @@ radio = switch(track_sensitive=false, transitions=[
     #Tuesday
     ({2w and 1h04m-3h30m}, once(playlist_lahmacun_gyorsnaszd_hdja)),
     ({2w and 11h-12h29m}, once(playlist_csinltam_neked_egy_vlogats_kazettt)),
+    ({2w and 15h-15h59m}, once(playlist_azvlm)),
     ({2w and 16h-17h15m}, once(playlist_mmn_radio)),
     ({2w and 17h30m-18h29m}, once(playlist_havizaj)),
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
