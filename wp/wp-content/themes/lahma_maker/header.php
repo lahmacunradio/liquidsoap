@@ -41,6 +41,10 @@
   <?php // donatebanner show
   $contDonate = get_option("contDonate");
   $contShower = get_option("shower");
+  $contCampaignText = get_option("contCampaignText");  
+  $contCampaign = get_option("contCampaign");
+  $contCampaignBar = get_option("contCampaignBar");
+  $contShowCampaign = get_option("showCampaign");
 
   if ( $contShower == "show" ) :
 
@@ -50,11 +54,29 @@
     <a id="closedonate" class="avoidAjax"><i class="fa fa-times" aria-hidden="true"></i>
 </a>
     <div id="donateholder">
+
+	<?php if ($contShowCampaign == "show") { 
+	?>
+		<p><?php echo $contCampaignText; ?></p>
+	<?php
+		$queryMeterPost = get_page_by_path( $contCampaignBar, OBJECT, 'donatecampaign' );
+		if ( $queryMeterPost ) { echo $queryMeterPost->post_content; };
+	?>
+		<a id="campaignbutton" class="donate-button" href="../donatecampaign/<?php echo $contCampaign; ?>">Support the Campaign!</a>
+
+	<?php
+
+	 } else { ?>	
+
       <p><?php echo $contDonate; ?></p>
-      <a id="donatebutton" href="<?php echo get_home_url(); ?>/donate">Donate Us</a>
+	  <a id="donatebutton" class="donate-button" href="<?php echo get_home_url(); ?>/donate">Donate Us</a>
+
+	<?php } ?>  
+
     </div>
   </div>
-  <?php endif; ?>
+
+<?php endif; ?>
 
 
 <div id="playerdiv">

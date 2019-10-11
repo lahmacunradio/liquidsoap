@@ -97,48 +97,115 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
  $contShower = get_option("shower");
  $contShowCheck = $contShower == "show" ? "checked" : false;
 
+ $contCampaignText = get_option("contCampaignText");
+ $contCampaign = get_option("contCampaign");
+ $contCampaignBar = get_option("contCampaignBar");
+ $contShowCampaign = get_option("showCampaign");
+ $contShowCampaignCheck = $contShowCampaign == "show" ? "checked" : false;
+
  echo '<div class="wrap">';
  echo '<h1>Lahmacun Donate Options</h1>';
  echo '<form method="POST" action="?page=lahma_donate_menu">
  		<table>
  		<tr valign="top">
  		<td>
- 			<h2>Donate datas</h2>
- 			<p><label for="fenticsik">Text for the Donate part:</label><br/>
- 			<input type="text" name="contDonate" size="500" style="width:100%;" value="';
- 				echo $contDonate;
- 				echo '" /></p>
- 			<p>
-      <input type="checkbox" name="shower" value="show" ';
-        echo $contShowCheck;
-        echo '> Show Donate Banner<br>
+             <h2>Donate datas</h2>
+        <p>
+        <input type="checkbox" name="shower" value="show" ';
+            echo $contShowCheck;
+            echo '> Show Donate Banner<br>
+        </p>                         
+        <p>
+            <label for="fenticsik">Text for the Donate part:</label><br/>
+            <input type="text" name="contDonate" size="500" style="width:100%;" value="';
+            echo $contDonate;
+                echo '" />
         </p>
- 			</td>
- 			</tr>
- 			<tr valign="top"><td>
 
- 			</td></tr>
- 		</table>
-    <input type="submit" name="submit" value="Submit" />
+        <input type="checkbox" name="showCampaign" value="show" ';
+            echo $contShowCampaignCheck;
+            echo '> Switch to Campaign Banner<br>
 
- 	</form>';
+        <p>
+            <label for="fenticsik">Text for the Donate Campaign:</label><br/>
+            <input type="text" name="contCampaignText" size="500" style="width:100%;" value="';
+            echo $contCampaignText;
+                echo '" />
+        </p>
 
-echo "<br/>" . $contShower . " " .  $contShowCheck ;
+        <p>
+            <label for="campaigncsik">Slug of the Campaign code page:</label><br/>
+            <input type="text" name="contCampaign" size="100" style="width:50%;" value="';
+                echo $contCampaign;
+                echo '" />
+        </p>
+        <p>
+            <label for="campaigncsik">Slug of the Campaign progressbar page:</label><br/>
+            <input type="text" name="contCampaignBar" size="100" style="width:50%;" value="';
+                echo $contCampaignBar;
+                echo '" />
+        </p>
+        </td>
+        </tr>
+        <tr valign="top"><td>
+
+        </td></tr>
+    </table>
+<input type="submit" name="submit" value="Submit" />
+
+</form>';
+
+if ( $contShower == "show" ) { 
+    echo "<h4 style='margin-bottom:0.3em;'>Campaign Bar Showed</h4>"; 
+    if ( $contShowCampaign == "show" ) { echo "<i>Switched to Campaign</i>"; }
+} else {
+    echo "<h4>No Campaign Running!</h4>"; 
+}
 
  echo '</div>';
 
  if (isset($_POST["submit"])) {
 
  	$contDonate = esc_attr($_POST["contDonate"]);
- 	update_option("contDonate", $contDonate);
+    update_option("contDonate", $contDonate);
+
+    $contCampaignText = esc_attr($_POST["contCampaignText"]);
+    update_option("contCampaignText", $contCampaignText);
+    
+    $contCampaign = esc_attr($_POST["contCampaign"]);
+    update_option("contCampaign", $contCampaign);
+
+    $contCampaignBar = esc_attr($_POST["contCampaignBar"]);
+    update_option("contCampaignBar", $contCampaignBar);
 
  	$contShower = $_POST["shower"];
- 	update_option("shower", $contShower);
+    update_option("shower", $contShower);
+
+    $contShowCampaign = $_POST["showCampaign"];
+    update_option("showCampaign", $contShowCampaign);
 
  	echo '<script>parent.window.location.reload(true);</script>';
  }
 
 }/* End Lahma Donate menu */
+
+
+/* Donate Campaigns custom post type */
+function donate_custom_init() {
+    $args = array(
+      'public' => true,
+      'publicly_queryable' => true,
+      'label'  => 'Donate Campaigns',
+      'menu_position' => 10,
+      'show_in_nav_menus' => false,
+      'has_archive' => true,
+      'exclude_from_search' => true,
+      'menu_icon' => 'dashicons-sos',
+      'supports'  => array( 'title', 'editor', 'revisions' )
+    );
+    register_post_type( 'donatecampaign', $args );
+}
+add_action( 'init', 'donate_custom_init' );
 
 
 

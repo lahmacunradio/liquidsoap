@@ -160,9 +160,10 @@ header .wrap .site-branding {
   padding: 1em;
   position: fixed;
   bottom: 0;
-      left: 0;
+  left: 0;
   background: rgba(255, 255, 255, 0.9);
   width: 100%;
+  min-height: 50px;
   box-shadow: 0px 0px 5px 0px black;
   z-index: 1000;
 }
@@ -172,6 +173,7 @@ header .wrap .site-branding {
   padding: 0 2em;
   justify-content: space-around;
   margin: auto;
+  align-items: center;
 }
 
 #donatebanner p {
@@ -179,10 +181,9 @@ header .wrap .site-branding {
   width: 98%;
   display: block;
   flex: 9;
-  align-self: start;
 }
 
-#donatebanner a#donatebutton {
+#donatebanner a.donate-button {
   background: black;
   color: white;
   padding: 0.5em 1em;
@@ -193,11 +194,10 @@ header .wrap .site-branding {
   border-radius: 5px;
   white-space: nowrap;
   height: 40px;
-  width: 130px;
   justify-content: end;
 }
 
-#donatebanner a#donatebutton:hover {
+#donatebanner a.donate-button:hover {
     color: #d09cf8;
 }
 
@@ -208,6 +208,14 @@ header .wrap .site-branding {
   right: 5px;
   font-size: 1.2em;
   margin-top: -5px;
+}
+
+#donatebanner iframe {
+  margin: 0;
+}
+
+article.donatecampaign iframe {
+  float: right;
 }
 
 
