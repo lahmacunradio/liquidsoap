@@ -62,7 +62,7 @@
 		$queryMeterPost = get_page_by_path( $contCampaignBar, OBJECT, 'donatecampaign' );
 		if ( $queryMeterPost ) { echo $queryMeterPost->post_content; };
 	?>
-		<a id="campaignbutton" class="donate-button" href="../donatecampaign/<?php echo $contCampaign; ?>">Support the Campaign!</a>
+		<a id="campaignbutton" class="donate-button" href="/donatecampaign/<?php echo $contCampaign; ?>">Support the Campaign!</a>
 
 	<?php
 
