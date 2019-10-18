@@ -280,7 +280,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({!live_enabled}, live),
     #Monday
     ({1w and 5h-5h59m}, once(playlist_szarok_bele)),
-    ({1w and 12h-12h59m}, once(playlist_a_who_say)),
+    ({1w and 11h-11h59m}, once(playlist_a_who_say)),
     ({1w and 16h-16h59m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h30m}, once(playlist_kezek_a_sebekben)),
     ({1w and 18h-19h59m}, once(playlist_erdenklang)),
