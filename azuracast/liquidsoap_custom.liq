@@ -195,7 +195,7 @@ radio = fallback(id="lahmacun_radio_safe_fallback", track_sensitive = false, [ra
 # DJ Authentication
 def dj_auth(user,password) =
   log("Authenticating DJ: #{user}")
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj_user="^quote(user)^" --form dj_password="^quote(password)^" --form api_auth="^quote("AZURA_KEY")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^quote(user)^" --form dj-password="^quote(password)^" --form api_auth="^quote("AZURA_KEY")^""), default="")
   log("AzuraCast DJ Auth Response: #{ret}")
   bool_of_string(ret)
 end
