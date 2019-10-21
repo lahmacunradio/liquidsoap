@@ -850,8 +850,7 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 .main-navigation ul ul {background-color: #d09cf8; }
 .main-navigation ul.menu li > ul {
   right: 0;
-  top: 0;
-  margin: 135px 0 0;
+  top: 135px;
   border-top: none;
   left: 0;
   text-align: center;
@@ -918,7 +917,7 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 
 header .wrap {       float: none; }
 .main-navigation ul.menu li > ul { background: #d09cf8e0; }
-.main-navigation.toggled ul.menu li > ul { background: none; }
+body.home .main-navigation.toggled ul.menu li > ul { background: none; }
 .main-navigation ul.menu li:hover > ul {  
   right: auto;
   width: 95vW;

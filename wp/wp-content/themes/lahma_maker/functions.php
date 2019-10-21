@@ -30,7 +30,7 @@ function lahma_enqueue_js() {
     wp_enqueue_script(
         'scripts',
         get_stylesheet_directory_uri() . '/js/scripts.js',
-        array( 'jquery', 'jquery-ui-core', 'jquery-effects-core', 'jquery-effects-slide' ),
+        array( 'jquery' ),
         wp_get_theme()->get('Version')
     );
 }
