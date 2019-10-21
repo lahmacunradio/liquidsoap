@@ -114,6 +114,7 @@ $( document ).ready(function() {
             openAllExternalBlank();
             swipeboxGalleryFixer();
             //$("#site-navigation-toggle.toggled").trigger("click"); //automatically collapses open show menu on mobile
+            $("#primary-menu .sub-menu").hide("slide", { "direction":"up" }, "slow" );
             }
         );
         e.preventDefault();
