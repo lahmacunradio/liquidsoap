@@ -99,7 +99,7 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
 
  $contCampaignText = get_option("contCampaignText");
  $contCampaign = get_option("contCampaign");
- $contCampaignBar = get_option("contCampaignBar");
+ $contCampaignButton = get_option("contCampaignButton");
  $contShowCampaign = get_option("showCampaign");
  $contShowCampaignCheck = $contShowCampaign == "show" ? "checked" : false;
 
@@ -132,19 +132,19 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
             echo $contCampaignText;
                 echo '" />
         </p>
-
+        <p>
+            <label for="campaigncsik">Text of the button:</label><br/>
+            <input type="text" name="contCampaignButton" size="100" style="width:50%;" value="';
+                echo $contCampaignButton;
+                echo '" />
+        </p>
         <p>
             <label for="campaigncsik">Slug of the Campaign code page:</label><br/>
             <input type="text" name="contCampaign" size="100" style="width:50%;" value="';
                 echo $contCampaign;
                 echo '" />
         </p>
-        <p>
-            <label for="campaigncsik">Slug of the Campaign progressbar page:</label><br/>
-            <input type="text" name="contCampaignBar" size="100" style="width:50%;" value="';
-                echo $contCampaignBar;
-                echo '" />
-        </p>
+
         </td>
         </tr>
         <tr valign="top"><td>
@@ -175,8 +175,8 @@ if ( $contShower == "show" ) {
     $contCampaign = esc_attr($_POST["contCampaign"]);
     update_option("contCampaign", $contCampaign);
 
-    $contCampaignBar = esc_attr($_POST["contCampaignBar"]);
-    update_option("contCampaignBar", $contCampaignBar);
+    $contCampaignButton = esc_attr($_POST["contCampaignButton"]);
+    update_option("contCampaignButton", $contCampaignButton);
 
  	$contShower = $_POST["shower"];
     update_option("shower", $contShower);
@@ -188,25 +188,6 @@ if ( $contShower == "show" ) {
  }
 
 }/* End Lahma Donate menu */
-
-
-/* Donate Campaigns custom post type */
-function donate_custom_init() {
-    $args = array(
-      'public' => true,
-      'publicly_queryable' => true,
-      'label'  => 'Donate Campaigns',
-      'menu_position' => 10,
-      'show_in_nav_menus' => false,
-      'has_archive' => true,
-      'exclude_from_search' => true,
-      'menu_icon' => 'dashicons-sos',
-      'supports'  => array( 'title', 'editor', 'revisions' )
-    );
-    register_post_type( 'donatecampaign', $args );
-}
-add_action( 'init', 'donate_custom_init' );
-
 
 
 ?>

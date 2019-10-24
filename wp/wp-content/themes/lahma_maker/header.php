@@ -43,7 +43,7 @@
   $contShower = get_option("shower");
   $contCampaignText = get_option("contCampaignText");  
   $contCampaign = get_option("contCampaign");
-  $contCampaignBar = get_option("contCampaignBar");
+  $contCampaignButton = get_option("contCampaignButton");
   $contShowCampaign = get_option("showCampaign");
 
   if ( $contShower == "show" ) :
@@ -57,12 +57,12 @@
 
 	<?php if ($contShowCampaign == "show") { 
 	?>
+		<div class="campaignTextBar">
 		<p><?php echo $contCampaignText; ?></p>
-	<?php
-		$queryMeterPost = get_page_by_path( $contCampaignBar, OBJECT, 'donatecampaign' );
-		if ( $queryMeterPost ) { echo $queryMeterPost->post_content; };
-	?>
-		<a id="campaignbutton" class="donate-button" href="/donatecampaign/<?php echo $contCampaign; ?>">Support the Campaign!</a>
+		<?php echo do_shortcode( "[charitable_stat display=progress goal=100]" );	?>
+		</div>
+
+		<a id="campaignbutton" class="donate-button" href="/donatecampaign/<?php echo $contCampaign; ?>"><?php echo $contCampaignButton; ?></a>
 
 	<?php
 
