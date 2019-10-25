@@ -138,6 +138,21 @@ playlist_dodo = playlist(id="playlist_dodo",mode="randomize",reload_mode="watch"
 playlist_dodo = audio_to_stereo(id="stereo_playlist_dodo", playlist_dodo)
 ignore(playlist_dodo)
 
+playlist_azvlm = playlist(id="playlist_azvlm",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_azvlm.m3u")
+playlist_azvlm = audio_to_stereo(id="stereo_playlist_azvlm", playlist_azvlm)
+ignore(playlist_azvlm)
+
+playlist_speakers_corner = playlist(id="playlist_speakers_corner",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_speakers_corner.m3u")
+playlist_speakers_corner = audio_to_stereo(id="stereo_playlist_speakers_corner", playlist_speakers_corner)
+ignore(playlist_speakers_corner)
+
+playlist_a_who_say = playlist(id="playlist_a_who_say",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
+playlist_a_who_say = audio_to_stereo(id="stereo_playlist_a_who_say", playlist_a_who_say)
+ignore(playlist_a_who_say)
+
+playlist_brains_sublimating = playlist(id="playlist_brains_sublimating",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_brains_sublimating.m3u")
+playlist_brains_sublimating = audio_to_stereo(id="stereo_playlist_brains_sublimating", playlist_brains_sublimating)
+ignore(playlist_brains_sublimating)
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
@@ -180,7 +195,7 @@ radio = fallback(id="lahmacun_radio_safe_fallback", track_sensitive = false, [ra
 # DJ Authentication
 def dj_auth(user,password) =
   log("Authenticating DJ: #{user}")
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj_user="^quote(user)^" --form dj_password="^quote(password)^" --form api_auth="^quote("AZURA_KEY")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^quote(user)^" --form dj-password="^quote(password)^" --form api_auth="^quote("AZURA_KEY")^""), default="")
   log("AzuraCast DJ Auth Response: #{ret}")
   bool_of_string(ret)
 end
@@ -261,17 +276,23 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
     #Monday
     ({1w and 5h-5h59m}, once(playlist_szarok_bele)),
+    ({1w and 11h-11h59m}, once(playlist_a_who_say)),
     ({1w and 16h-16h59m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h30m}, once(playlist_kezek_a_sebekben)),
     ({1w and 18h-19h59m}, once(playlist_erdenklang)),
     #Tuesday
     ({2w and 1h04m-3h30m}, once(playlist_lahmacun_gyorsnaszd_hdja)),
     ({2w and 11h-12h29m}, once(playlist_csinltam_neked_egy_vlogats_kazettt)),
+    ({2w and 15h-15h59m}, once(playlist_azvlm)),
     ({2w and 16h-17h15m}, once(playlist_mmn_radio)),
     ({2w and 17h30m-18h29m}, once(playlist_havizaj)),
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
@@ -296,10 +317,12 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 15h-15h59m}, once(playlist_footwork_jimbob)),
     ({6w and 16h-17h59m}, once(playlist_rnr666)),
     ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
+    ({6w and 20h30m-21h29m}, once(playlist_brains_sublimating)),
     #Sunday
     ({7w and 10h-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 18h-18h59m}, once(playlist_sub_burek)),
+    ({7w and 19h-19h59m}, once(playlist_speakers_corner)),
     ({true}, radio) ])
 
 
