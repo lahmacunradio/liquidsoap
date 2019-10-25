@@ -471,7 +471,7 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
     background: #00000000;
 }
 
-li.facebookmenu a, li.listen a, li.donate a, li.instagrammenu a {
+li.facebookmenu a, li.listen a, li.instagrammenu a {
     overflow: hidden;
       width: 35px;
       height: 35px;
@@ -830,6 +830,35 @@ font-style: italic;
   margin-right: 2%;
 }
 
+
+#donatebanner .campaigntext  {
+    text-align: center;
+}
+
+#donatebanner .startgoal {
+  width: 40px;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#donatebanner .progressinfos .infotext {
+  text-align: center;
+  width: calc(100% - 100px);
+  display: inline-block;
+  height: 20px;
+  vertical-align: bottom;
+}
+
+#donatebanner .endgoal {
+  width: 45px;
+  text-align: right;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
 #donatebanner .campaign-progress-bar {
   margin: 0.5em 0 0;
   overflow: hidden;
@@ -1027,7 +1056,7 @@ header #playerdiv {  }
   margin-right: 0;
 }
 #donatebanner .campaign-progress-bar { margin-bottom: 1em; }
-
+#donatebanner .progressinfos  {  margin-bottom: 1em; }
 
 /* end max 786 */
 }
@@ -1048,7 +1077,7 @@ header #playerdiv .public-page .card-body .media-body > div {    min-height: 20p
 #radio-player-controls.radio-controls-standalone input.jp-volume-range { }
 .postslister {   display: block;   width: auto;   padding-bottom: 1em;    margin: 1em auto; }
 .newspic-container {   float: none;   margin-right: 0;   margin-top: 10px;    margin-bottom: 10px;    width: 100%; }
-
+#donatebanner #donateholder {  padding: 0; }
 
 /* end max 460 */
 }

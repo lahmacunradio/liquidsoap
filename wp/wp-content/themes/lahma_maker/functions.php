@@ -1,6 +1,7 @@
 <?php
 
 add_image_size("post_page_img", 300); // with width 300px
+add_image_size("nav_thumb", 80, 80, true); // nav thumb 80x80
 
 function lahma_maker_enqueue_styles() {
 
@@ -103,6 +104,9 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
  $contShowCampaign = get_option("showCampaign");
  $contShowCampaignCheck = $contShowCampaign == "show" ? "checked" : false;
 
+ $contCampaignStartAmount = get_option("CampaignStart");
+ $contCampaignEndAmount = get_option("CampaignEnd");
+
  echo '<div class="wrap">';
  echo '<h1>Lahmacun Donate Options</h1>';
  echo '<form method="POST" action="?page=lahma_donate_menu">
@@ -144,12 +148,23 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
                 echo $contCampaign;
                 echo '" />
         </p>
+             
+        <p>
+            <label for="campaignstart">Start Amount:</label><br/>
+            <input type="text" name="CampaignStart" size="50" style="width:50%;" value="';
+                echo $contCampaignStartAmount;
+                echo '" />
+        </p>
 
-        </td>
+        <p>
+            <label for="campaignend">End Amount:</label><br/>
+            <input type="text" name="CampaignEnd" size="50" style="width:50%;" value="';
+                echo $contCampaignEndAmount;
+                echo '" />
+        </p>   
+             
+        </td>        
         </tr>
-        <tr valign="top"><td>
-
-        </td></tr>
     </table>
 <input type="submit" name="submit" value="Submit" />
 
@@ -183,6 +198,13 @@ if ( $contShower == "show" ) {
 
     $contShowCampaign = $_POST["showCampaign"];
     update_option("showCampaign", $contShowCampaign);
+    
+    $contCampaignStartAmount = $_POST["CampaignStart"];
+    update_option("CampaignStart", $contCampaignStartAmount);
+    
+    $contCampaignEndAmount = $_POST["CampaignEnd"];
+    update_option("CampaignEnd", $contCampaignEndAmount);
+
 
  	echo '<script>parent.window.location.reload(true);</script>';
  }

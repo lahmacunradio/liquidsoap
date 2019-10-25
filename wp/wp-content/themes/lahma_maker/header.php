@@ -45,6 +45,8 @@
   $contCampaign = get_option("contCampaign");
   $contCampaignButton = get_option("contCampaignButton");
   $contShowCampaign = get_option("showCampaign");
+  $contCampaignStartAmount = get_option("CampaignStart");
+  $contCampaignEndAmount = get_option("CampaignEnd");
 
   if ( $contShower == "show" ) :
 
@@ -58,8 +60,18 @@
 	<?php if ($contShowCampaign == "show") { 
 	?>
 		<div class="campaignTextBar">
-		<p><?php echo $contCampaignText; ?></p>
-		<?php echo do_shortcode( "[charitable_stat display=progress goal=100]" );	?>
+			<div class="campaigntext">
+				<?php echo $contCampaignText; ?>
+			</div>
+				
+			<div class="progressinfos">
+				<div class="startgoal"><?php echo $contCampaignStartAmount; ?></div>
+<div class="infotext">
+				<?php echo do_shortcode( "[charitable_stat display=progress goal=100]" );	?>
+</div>
+				<div class="endgoal"><?php echo $contCampaignEndAmount; ?></div>
+			</div>
+		
 		</div>
 
 		<a id="campaignbutton" class="donate-button" href="/donatecampaign/<?php echo $contCampaign; ?>"><?php echo $contCampaignButton; ?></a>
