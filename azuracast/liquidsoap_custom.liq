@@ -142,6 +142,10 @@ playlist_azvlm = playlist(id="playlist_azvlm",mode="randomize",reload_mode="watc
 playlist_azvlm = audio_to_stereo(id="stereo_playlist_azvlm", playlist_azvlm)
 ignore(playlist_azvlm)
 
+playlist_speakers_corner = playlist(id="playlist_speakers_corner",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_speakers_corner.m3u")
+playlist_speakers_corner = audio_to_stereo(id="stereo_playlist_speakers_corner", playlist_speakers_corner)
+ignore(playlist_speakers_corner)
+
 playlist_a_who_say = playlist(id="playlist_a_who_say",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
 playlist_a_who_say = audio_to_stereo(id="stereo_playlist_a_who_say", playlist_a_who_say)
 ignore(playlist_a_who_say)
@@ -191,7 +195,7 @@ radio = fallback(id="lahmacun_radio_safe_fallback", track_sensitive = false, [ra
 # DJ Authentication
 def dj_auth(user,password) =
   log("Authenticating DJ: #{user}")
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj_user="^quote(user)^" --form dj_password="^quote(password)^" --form api_auth="^quote("AZURA_KEY")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^quote(user)^" --form dj-password="^quote(password)^" --form api_auth="^quote("AZURA_KEY")^""), default="")
   log("AzuraCast DJ Auth Response: #{ret}")
   bool_of_string(ret)
 end
@@ -275,6 +279,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -317,6 +322,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({7w and 10h-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 18h-18h59m}, once(playlist_sub_burek)),
+    ({7w and 19h-19h59m}, once(playlist_speakers_corner)),
     ({true}, radio) ])
 
 
