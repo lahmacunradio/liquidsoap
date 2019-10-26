@@ -793,7 +793,7 @@ font-style: italic;
 }
 
 #donatebanner a.donate-button {
-  background: black;
+  background: #27d9b0;
   color: white;
   padding: 0.5em 1em;
   text-transform: uppercase;
@@ -865,10 +865,12 @@ font-style: italic;
   border-radius: 15px;
 }
 
+#donatebanner .campaign-progress-bar .bar {
+  background-color: #27d9b0;
+}
 
 /* Campaigns */
 article.campaign .entry-content {
-  background: #ffffffdb;
   padding: 1.2em 1.5em;
   margin: 1em 0 3em;
 }
@@ -891,7 +893,7 @@ article.campaign .campaign-description {
 }
 
 .charitable-form-fields .charitable-fieldset {
-  background: white;
+  border: 1px solid #000000 !important;
 }
 
 .charitable-donation-form .donation-amounts .donation-amount.selected label {
@@ -915,12 +917,18 @@ article.campaign .campaign-description {
 }
 
 .charitable-submit-field .button {
-  font-size: 1.2em;
+  font-size: 1.4em;
   line-height: 1em;
   text-transform: uppercase;
   padding: 1em;
-  color: white;
-  background: black;
+  color: black;
+  background: #b296c8;
+  font-weight: 400;
+}
+
+.charitable-submit-field .button:hover {
+  border-color: black;
+  box-shadow: none;
 }
 
 .charitable-form-field select {

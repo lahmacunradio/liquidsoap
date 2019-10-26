@@ -74,7 +74,7 @@
 		
 		</div>
 
-		<a id="campaignbutton" class="donate-button" href="/donatecampaign/<?php echo $contCampaign; ?>"><?php echo $contCampaignButton; ?></a>
+		<a id="campaignbutton" class="donate-button" href="/campaigns/<?php echo $contCampaign; ?>/donate"><?php echo $contCampaignButton; ?></a>
 
 	<?php
 
