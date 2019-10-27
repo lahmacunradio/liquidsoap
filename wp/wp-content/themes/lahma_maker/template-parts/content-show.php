@@ -19,7 +19,7 @@
 	<?php if ( has_post_thumbnail() ) { ?>
 
 			<?php
-			the_post_thumbnail( 'medium', array(
+			the_post_thumbnail( 'post_page_img', array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),

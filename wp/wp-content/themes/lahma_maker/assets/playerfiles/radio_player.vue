@@ -16,7 +16,8 @@
               </div>
 
             <div class="now-playing-art" v-if="show_album_art && np.now_playing.song.art">
-                <a v-bind:href="np.now_playing.song.art" class="swipebox programimage" target="_blank" rel="playerimg">
+                <a v-bind:href="show_art_url" class="swipebox programimage" target="_blank" rel="playerimg">
+                  <div v-if="np.live.is_live || (np.now_playing.playlist !== 'OFF AIR' && np.now_playing.playlist !== 'Between Shows' && np.now_playing.playlist !== 'Jingle' && np.now_playing.playlist !== 'Jingle AFTER SHOW' && np.now_playing.playlist !== '')" class="onair">On air</div>
                     <img class="progimg" v-bind:src="show_art_url" :alt="$t('album_art_alt')">
                 </a>
             </div>
@@ -24,7 +25,10 @@
             <div class="now-playing-main">
               <div class="media-body">
                 <div v-if="np.now_playing.song.title !== ''">
-                    <h4 v-bind:title="show_title" class="now-playing-title">{{ show_title }}</h4>
+                    <h4 v-bind:title="show_title" class="now-playing-title">
+                      <a v-if="show_check == true" v-bind:href="show_url">{{ show_title }}</a>
+                      <span v-if="show_check == false">{{ show_title }}</span>
+                    </h4>
                     <h5 v-bind:title="show_subtitle" class="now-playing-artist">{{ show_subtitle }}</h5>
                 </div>
                 <div v-else>
@@ -303,6 +307,24 @@ export default {
             else
             return this.np.now_playing.song.title
         },
+        "show_check": function() {
+            if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Between Shows' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW' && this.np.now_playing.playlist !== '') ) {
+              return true;
+            } else {
+              return false;
+            }
+        },
+        "show_url": function() {
+            let try_url_from_show = showsURLList_lookup[this.np.now_playing.song.title];
+            let live_show_url = showsURLList_lookup[this.np.live.streamer_name];
+            let default_url = homeServer;
+            // console.log( try_url_from_show );
+            // console.log( live_show_url );
+            if ( try_url_from_show == undefined && live_show_url == undefined ) //show not found
+                return default_url; // return default
+            else if (this.np.live.is_live) return live_show_url;
+            else return try_url_from_show; //return show URL
+        },
         "show_art_url": function() {
             if (this.np.live.is_live){
                 let try_art_from_show = showsList_lookup[this.np.live.streamer_name] //try to find show artwork url based on streamer name
@@ -317,7 +339,7 @@ export default {
                 if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
                     let try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
                     if (try_art_from_show == undefined){ //show not found
-                        artwork_history_json = "";
+                        let artwork_history_json = "";
                         (this.np.song_history).some(function (el){  //check song in history one by one; check by artist not by title!
                             if (el.song.artist == song_artist_json && el.song.art != default_azuracast_art_url){
                                 artwork_history_json = el.song.art;

@@ -5,7 +5,7 @@
  Author:       gamma
  Author URI:
  Template:     maker
- Version:      1.0.0
+ Version:      1.1.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         no-sidebar, responsive-layout, accessibility-ready
@@ -16,6 +16,10 @@
   content: "";
   clear: both;
   display: table;
+}
+
+input:focus, select:focus {
+  outline: none;
 }
 
 html > body {
@@ -83,6 +87,7 @@ div#main h1, div#main h2, div#main h3 {
 
 div#main h1 {
   font-size: 2em;
+  text-transform: none;
 }
 
 
@@ -149,6 +154,62 @@ header .wrap .site-branding {
 	display: block;
 }
 
+#donatebanner {
+  display: block;
+  clear: both;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+      left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px black;
+  z-index: 1000;
+}
+
+#donatebanner #donateholder {
+  display: flex;
+  padding: 0 2em;
+  justify-content: space-around;
+  margin: auto;
+}
+
+#donatebanner p {
+  margin: 0 2em 0 0;
+  width: 98%;
+  display: block;
+  flex: 9;
+  align-self: start;
+}
+
+#donatebanner a#donatebutton {
+  background: black;
+  color: white;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  font-size: 1.2em;
+  border-radius: 5px;
+  white-space: nowrap;
+  height: 40px;
+  width: 130px;
+  justify-content: end;
+}
+
+#donatebanner a#donatebutton:hover {
+    color: #d09cf8;
+}
+
+#donatebanner a#closedonate {
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  font-size: 1.2em;
+  margin-top: -5px;
+}
+
 
 /* Fix maker mistakes */
 .blog .entry-content, .blog .entry-footer, .blog .comments-area, .blog .post-navigation, .archive .entry-content, .archive .entry-footer, .archive .comments-area, .archive .post-navigation, .single-post .entry-content, .single-post .entry-footer, .single-post .comments-area, .single-post .post-navigation, .blog .entry-header, .archive .entry-header, .single-post .entry-header, .page-template-default .entry-header, .page-template-default .entry-content, .page-template-default .comments-area {
@@ -186,6 +247,7 @@ header #playerdiv .public-page .card-body a.programimage {
     height: 50px;
     display: block;
     overflow: hidden;
+    position: relative;
 }
 
 header #playerdiv .public-page .card-body a.programimage img {
@@ -194,6 +256,32 @@ header #playerdiv .public-page .card-body a.programimage img {
     width: 100%;
     max-width: 50px;
     max-height: 50px;
+}
+
+header #playerdiv .public-page .card-body a.programimage .onair {
+  position: absolute;
+      bottom: 0;
+      background: #da1313;
+      padding: 0.1em;
+      font-size: 0.7em;
+      color: white;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+}
+
+@keyframes pulse {
+  from { opacity: 0; }
+  45% { opacity: 1; }
+  50% { opacity: 1; }
+  to { opacity: 0; }
+}
+
+header #playerdiv .public-page .card-body a.programimage .onair {
+  animation-name: pulse;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 header #playerdiv .public-page .card-body .media-body {
@@ -210,6 +298,7 @@ header #playerdiv .public-page .card-body .media-body h5 {
   overflow: hidden;
   cursor: default;
   word-break: normal;
+  text-transform: none;
 }
 
 header #playerdiv .public-page .card-body .media-body h5 {
@@ -373,6 +462,14 @@ html:not(.ismobile) .main-navigation ul.menu li:hover > ul {
  */
 }
 
+.lahma_post-content ul {
+  margin: 0 0 1em;
+  padding-left: 1em;
+}
+
+.lahma_post-content ul li {
+  margin: 0;
+}
 
 /* Home page */
 
@@ -430,7 +527,7 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
     background: #00000000;
 }
 
-li.facebookmenu a, li.listen a, li.donate a {
+li.facebookmenu a, li.listen a, li.donate a, li.instagrammenu a {
     overflow: hidden;
       width: 35px;
       height: 35px;
@@ -440,7 +537,7 @@ li.facebookmenu a, li.listen a, li.donate a {
       padding-right: 5px;
 }
 
-li.facebookmenu a:before, li.listen a:before, li.donate a:before  {
+li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before  {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -453,6 +550,10 @@ li.facebookmenu a:before, li.listen a:before, li.donate a:before  {
 
 li.facebookmenu a:before {
   content: "\f09a";
+}
+
+li.instagrammenu a:before {
+  content: "\f16d";
 }
 
 li.listen a:before {
@@ -514,6 +615,8 @@ li.donate a:before {
 .newscat a:hover span.moresign:after {
   content:" >>";
   white-space: nowrap;
+  color: white;
+  font-weight: 500;
 }
 
 .halver a, .postslister h3 a {
@@ -642,6 +745,65 @@ font-style: italic;
       font-size: 0.8em;
 }
 
+/* Gallery fixes */
+#spider_popup_wrap a.spider_popup_close_fullscreen, #spider_popup_wrap a.spider_popup_close_fullscreen:hover, .bwg_ctrl_btn:hover {
+  color: white !important;
+}
+
+#spider_popup_wrap a.spider_popup_close_fullscreen:hover .bwg_close_btn {
+  opacity: 1 !important;
+}
+
+.bwg_image_wrap .bwg_image_info:after {
+    height: 10px !important;
+}
+
+.bwg_loading_div_2 {
+    background-color: #d09cf8;
+    opacity: .9;
+}
+
+
+/* Donate */
+
+#donatetext {
+  width: 63%;
+  display: inline-block;
+  vertical-align: top;
+} 
+
+#donatepart {
+  width: 33%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 3%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.4em;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px 0px #3a2a46;
+  text-align: center;
+}
+
+#donatepart h4 {
+  margin: 0 0 0.5em;
+}
+
+#donatepart table {
+  margin: 0;
+  border-bottom: 1px solid #9a74b8;
+}
+
+#donatepart table td {
+  border: none;
+  padding: 0 0 1em;
+  text-align: center;
+}
+
+#donatepart figure {
+  margin: 0;
+}
+
+
 
 /*******
 ********
@@ -751,6 +913,16 @@ body.home div#page {  background-color: #d09cf891 !important; }
 .site-header {   padding: 0; }
 
 header #playerdiv {  }
+
+#donatebanner #donateholder {  display: block; padding: 0 1em; }
+#donatebanner p {  margin: 0;  width: 100%; }
+#donatebanner a#donatebutton {  margin-top: 0.5em; }
+
+#donatepart, #donatetext {
+  width: 100%;
+  display: block;
+  margin: 0 0 0.5em;
+} 
 
 /* end max 786 */
 }

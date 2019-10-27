@@ -103,7 +103,7 @@ $( document ).ready(function() {
 
 
     /* AJAX link click */
-    jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox):not(.showsopen)", function(e){
+    jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox):not(.avoidAjax)", function(e){
         var link = jQuery(this).attr("href");
         // var title = jQuery(responseHtml).filter('title').text();
         // console.log(link);
@@ -152,7 +152,6 @@ window.onfocus = function() {
 		var Cdateobj = new Date();
 		var Cndateobj = Cdateobj.getDay() || 8 - 1;
 		var Cgooddateobj = Cndateobj - 1;
-
 		// console.log(gooddateobj);
 		// console.log(Cgooddateobj);
 
@@ -206,8 +205,15 @@ $( ".shows-block" ).ready(function(){
 });
 
 // prevent Shows menu clicking
-$(".menu-lahma-menu-container li.menu-item-has-children > a").removeAttr("href").css({'cursor': 'pointer'}).addClass("showsopen");
+$(".menu-lahma-menu-container li.menu-item-has-children > a").removeAttr("href").css({'cursor': 'pointer'}).addClass("avoidAjax");
 
+
+// Close Donate
+$(document).on("click", "#donatebanner a#closedonate", function(e){
+	$(this).hide();
+	$("#donatebanner").slideUp();
+	e.preventDefault;
+})
 
     // A $( document ).ready() block end
 });

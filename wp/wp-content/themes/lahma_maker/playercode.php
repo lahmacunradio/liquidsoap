@@ -13,21 +13,15 @@ else lahmacun - lahmacun
 then echo
 */
 
-$development = "https://dev.lahmacun.hu";
-$main = "https://www.lahmacun.hu";
-$port = "8084";
-$broadcastServer = "";
-$home_url = "";
-
-if ( in_array( $_SERVER['SERVER_NAME'], array( 'dev.lahmacun.hu') ) ) {
-    $broadcastServer = "https://dev.lahmacun.hu:8084/";
-    $home_url = "https://dev.lahmacun.hu";
+if ( in_array( $_SERVER['SERVER_NAME'], array( 'staging.lahmacun.hu') ) ) {
+    $broadcastServer = "https://devstreaming.lahmacun.hu/";
+    $home_url = "https://staging.lahmacun.hu";
 } else {
-    $broadcastServer = "https://www.lahmacun.hu:8084/";
+    $broadcastServer = "https://streaming.lahmacun.hu/";
     $home_url = "https://www.lahmacun.hu/";
 }
 
-/* Only for development, uncomment - Gas
+/* Only for development, uncomment - Gas 
 $broadcastServer = "https://dev.lahmacun.hu:8084/";
 $home_url = "https://dev.lahmacun.hu";
 */
@@ -38,6 +32,8 @@ $home_url = "https://dev.lahmacun.hu";
 
 <script type="text/javascript">
 	var streamServer = "<?php echo $broadcastServer ?>";
+    var homeServer = "<?php echo $home_url ?>";
+    // console.log(homeServer);
 </script>
 
 <link rel="manifest" href="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/site.webmanifest">
@@ -65,6 +61,7 @@ Vue.prototype.$eventHub = new Vue();</script>
 
 var i18n, radio_player;
 var showsList_lookup = {};
+var showsURLList_lookup = {};
 var default_art_url = "<?php echo $home_url ?>/wp-content/uploads/defaultshowart.jpg";
 var default_azuracast_art_url = "<?php echo $broadcastServer ?>static/img/generic_song.jpg";
 
@@ -75,6 +72,17 @@ function create_showsList_lookup(){
     });
 }
 create_showsList_lookup();
+
+function create_showsURLList_lookup(){
+    showsURLList.forEach(function (el, i, arr) {
+        var URLkey = Object.keys(el)[0];
+        showsURLList_lookup[URLkey] = el[URLkey];
+    });
+
+}
+create_showsURLList_lookup();
+
+// console.log( showsURLList_lookup[ "MMN radio" ] );
 
 $(function() {
     i18n = new VueI18n({"locale":"en","messages":{"en":{"play_btn":"Play","pause_btn":"Pause","mute_btn":"Mute","volume_slider":"Volume","full_volume_btn":"Full Volume","album_art_alt":"Album Art"}}})

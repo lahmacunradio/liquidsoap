@@ -20,7 +20,7 @@
 
 			<a class="post-thumbnail swipebox" href="<?php the_post_thumbnail_url(); ?>" aria-hidden="true" >
 			<?php
-			the_post_thumbnail( 'medium', array(
+			the_post_thumbnail( 'post_page_img', array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),
