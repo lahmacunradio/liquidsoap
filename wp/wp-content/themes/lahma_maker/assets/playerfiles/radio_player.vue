@@ -299,13 +299,13 @@ export default {
             if (this.np.live.is_live)
             return this.np.live.streamer_name
             else
-            return this.np.now_playing.song.title
+            return this.np.now_playing.song.artist
         },
         "show_subtitle": function() {
             if (this.np.live.is_live)
             return this.np.now_playing.song.title
             else
-            return this.np.now_playing.song.artist
+            return this.np.now_playing.song.title
         },
         "show_check": function() {
             if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Between Shows' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW' && this.np.now_playing.playlist !== '') ) {
