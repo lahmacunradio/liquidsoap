@@ -808,7 +808,7 @@ font-style: italic;
 }
 
 #donatebanner a.donate-button:hover {
-    color: #d09cf8;
+    color: black;
 }
 
 #donatebanner a#closedonate {
