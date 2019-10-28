@@ -315,7 +315,7 @@ export default {
             }
         },
         "show_url": function() {
-            let try_url_from_show = showsURLList_lookup[this.np.now_playing.song.title];
+            let try_url_from_show = showsURLList_lookup[this.np.now_playing.song.artist];
             let live_show_url = showsURLList_lookup[this.np.live.streamer_name];
             let default_url = homeServer;
             // console.log( try_url_from_show );
