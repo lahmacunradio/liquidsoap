@@ -48,6 +48,8 @@
   $contCampaignStartAmount = get_option("CampaignStart");
   $contCampaignEndAmount = get_option("CampaignEnd");
 
+  $campaign = $view_args['campaign'];
+
   if ( $contShower == "show" ) :
 
   ?>
@@ -67,6 +69,7 @@
 			<div class="progressinfos">
 				<div class="startgoal"><?php echo $contCampaignStartAmount; ?></div>
 <div class="infotext">
+				<div class="goalprogress"></div>
 				<?php echo do_shortcode( "[charitable_stat display=progress goal=100]" );	?>
 </div>
 				<div class="endgoal"><?php echo $contCampaignEndAmount; ?></div>
@@ -74,7 +77,7 @@
 		
 		</div>
 
-		<a id="campaignbutton" class="donate-button" href="/campaigns/<?php echo $contCampaign; ?>/donate"><?php echo $contCampaignButton; ?></a>
+		<a id="campaignbutton" class="donate-button" href="/campaigns/<?php echo $contCampaign; ?>"><?php echo $contCampaignButton; ?></a>
 
 	<?php
 

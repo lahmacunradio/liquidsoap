@@ -849,6 +849,14 @@ font-style: italic;
   display: inline-block;
   height: 20px;
   vertical-align: bottom;
+  position: relative;
+  margin-top: 5px;
+}
+
+#donatebanner .goalprogress {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
 }
 
 #donatebanner .endgoal {
@@ -860,9 +868,10 @@ font-style: italic;
 }
 
 #donatebanner .campaign-progress-bar {
-  margin: 0.5em 0 0;
+  margin: 0;
   overflow: hidden;
   border-radius: 15px;
+  height: 20px;
 }
 
 #donatebanner .campaign-progress-bar .bar {
@@ -871,7 +880,7 @@ font-style: italic;
 
 /* Campaigns */
 article.campaign .entry-content {
-  padding: 1.2em 1.5em;
+  padding: 0;
   margin: 1em 0 3em;
 }
 
@@ -893,7 +902,7 @@ article.campaign .campaign-description {
 }
 
 .charitable-form-fields .charitable-fieldset {
-  border: 1px solid #000000 !important;
+  border: 1px solid #9a74b8 !important;
 }
 
 .charitable-donation-form .donation-amounts .donation-amount.selected label {
@@ -921,8 +930,8 @@ article.campaign .campaign-description {
   line-height: 1em;
   text-transform: uppercase;
   padding: 1em;
-  color: black;
-  background: #b296c8;
+  color: white;
+  background: #000000;
   font-weight: 400;
 }
 
@@ -939,7 +948,18 @@ article.campaign .campaign-description {
   text-indent: 0.5em;
 }
 
+.charitable-fieldset input {
+  background: white;
+}
 
+.campaign-summary .campaign-summary-item {
+  width: 49%;
+}
+
+.campaign-summary .campaign-figures .amount, .campaign-summary .campaign-raised .amount {
+  display: inline;
+  margin-right: 0.3em;
+}
 
 /*******
 ********
@@ -1086,6 +1106,8 @@ header #playerdiv .public-page .card-body .media-body > div {    min-height: 20p
 .postslister {   display: block;   width: auto;   padding-bottom: 1em;    margin: 1em auto; }
 .newspic-container {   float: none;   margin-right: 0;   margin-top: 10px;    margin-bottom: 10px;    width: 100%; }
 #donatebanner #donateholder {  padding: 0; }
+.campaign-summary .campaign-summary-item { float: none;  width: 100%; }
+
 
 /* end max 460 */
 }
