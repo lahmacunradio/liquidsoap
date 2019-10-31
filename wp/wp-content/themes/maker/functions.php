@@ -150,10 +150,10 @@ function maker_scripts() {
 		array()
 	);
 
-	wp_enqueue_style(
-		'maker-style',
-		get_stylesheet_uri()
-	);
+	// wp_enqueue_style(
+	// 	'maker-style',
+	// 	get_stylesheet_uri()
+	// );
 
 	wp_enqueue_script(
 		'maker-navigation',

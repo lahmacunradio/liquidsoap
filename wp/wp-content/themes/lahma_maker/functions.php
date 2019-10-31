@@ -2,18 +2,35 @@
 
 add_image_size("post_page_img", 300); // with width 300px
 
-function lahma_maker_enqueue_styles() {
+function maker_enqueue_styles() {
 
     $parent_style = 'maker';
+    $style_ver = filemtime( get_template_directory_uri() . '/style.css' );
 
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    /* wp_enqueue_style( 'lahma_maker',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
-    ); */
+    wp_enqueue_style( 
+        $parent_style, 
+        get_template_directory_uri() . '/style.css', 
+        '', $style_ver );
+    // wp_enqueue_style( 
+    //     'lahma_maker', 
+    //     get_stylesheet_directory_uri() . '/style.css',
+    //     '', $style_ver );
+
 }
 
+function lahma_maker_enqueue_styles() {
+
+    $main_style = 'lahma_maker';
+    $style_ver = filemtime( get_stylesheet_directory() . '/style.css' );
+
+    wp_enqueue_style( 
+        $main_style, 
+        get_stylesheet_directory_uri() . '/style.css', 
+        '', $style_ver );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'maker_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'lahma_maker_enqueue_styles' );
 
 
