@@ -299,13 +299,13 @@ export default {
             if (this.np.live.is_live)
             return this.np.live.streamer_name
             else
-            return this.np.now_playing.song.title
+            return this.np.now_playing.song.artist
         },
         "show_subtitle": function() {
             if (this.np.live.is_live)
             return this.np.now_playing.song.title
             else
-            return this.np.now_playing.song.artist
+            return this.np.now_playing.song.title
         },
         "show_check": function() {
             if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Between Shows' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW' && this.np.now_playing.playlist !== '') ) {
@@ -315,7 +315,7 @@ export default {
             }
         },
         "show_url": function() {
-            let try_url_from_show = showsURLList_lookup[this.np.now_playing.song.title];
+            let try_url_from_show = showsURLList_lookup[this.np.now_playing.song.artist];
             let live_show_url = showsURLList_lookup[this.np.live.streamer_name];
             let default_url = homeServer;
             // console.log( try_url_from_show );
