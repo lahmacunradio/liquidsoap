@@ -22,8 +22,8 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'staging.lahmacun.hu') ) ) {
 }
 
 /* Only for development, uncomment - Gas 
-$broadcastServer = "https://dev.lahmacun.hu:8084/";
-$home_url = "https://dev.lahmacun.hu";
+    $broadcastServer = "https://devstreaming.lahmacun.hu/";
+    $home_url = "https://staging.lahmacun.hu";
 */
 
 // echo "<h1>".$broadcastServer."</h1>";
