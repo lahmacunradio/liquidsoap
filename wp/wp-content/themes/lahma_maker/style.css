@@ -950,15 +950,27 @@ article.campaign .campaign-description {
   text-transform: uppercase;
   padding: 0.7em;
   color: white;
-  background: #ad002e;
-  font-weight: 400;
+  background: #585858;
+  font-weight: 500;
   width: 100%;
   line-height: 1.2em;
 }
 
 .charitable-submit-field .button:hover {
-  border-color: #ffffff;
+  border-color: #b60000;
   box-shadow: none;
+}
+
+.campaign-summary .campaign-figures .amount, .campaign-summary .campaign-raised .amount {
+  font-weight: normal !important;
+}
+
+.campaign-summary .donors-count, .campaign-summary .time-left {
+  font-weight: normal !important;
+}
+
+.required {
+  color: #b60000 !important;  
 }
 
 .charitable-form-field select {
