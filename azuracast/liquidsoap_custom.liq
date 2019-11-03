@@ -154,6 +154,10 @@ playlist_brains_sublimating = playlist(id="playlist_brains_sublimating",mode="ra
 playlist_brains_sublimating = audio_to_stereo(id="stereo_playlist_brains_sublimating", playlist_brains_sublimating)
 ignore(playlist_brains_sublimating)
 
+playlist_dalmata_radio = playlist(id="playlist_dalmata_radio",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_radio.m3u")
+playlist_dalmata_radio = audio_to_stereo(id="stereo_playlist_dalmata_radio", playlist_dalmata_radio)
+ignore(playlist_dalmata_radio)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -280,12 +284,14 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
     #Monday
     ({1w and 6h-6h59m}, once(playlist_szarok_bele)),
     ({1w and 12h-12h59m}, once(playlist_a_who_say)),
+    ({1w and 13h-16h59m}, once(playlist_dalmata_radio)),
     ({1w and 17h-17h59m}, once(playlist_szmuti_csorba)),
     ({1w and 18h-18h35m}, once(playlist_kezek_a_sebekben)),
     ({1w and 19h-20h59m}, once(playlist_erdenklang)),
@@ -321,8 +327,8 @@ radio = switch(track_sensitive=false, transitions=[
     #Sunday
     ({7w and 11h-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
-    ({7w and 19h-19h59m}, once(playlist_sub_burek)),
-    ({7w and 20h-20h59m}, once(playlist_speakers_corner)),
+    ({7w and 19h-19h59m}, once(playlist_speakers_corner)),
+    ({7w and 20h-20h59m}, once(playlist_sub_burek)),
     ({true}, radio) ])
 
 
