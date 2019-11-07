@@ -44,6 +44,12 @@ body a {
     text-decoration: none;
 }
 
+figcaption a
+{
+  color: white;
+}
+
+
 body button:focus {
     outline: none;
 }
@@ -62,6 +68,12 @@ html:not(.ismobile) .main-navigation a:hover, html:not(.ismobile) .main-navigati
     color: #ffffff;
     text-decoration: none;
 }
+
+html:not(.ismobile) figcaption a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
 
 /* workaround for issue 31 "Highlight remains after hitting back/clicking on non-reloadable parts"*/
 html:not(.ismobile) body a:focus, html:not(.ismobile) body a:active, html:not(.ismobile) .main-navigation a:active, html:not(.ismobile) .main-navigation a:focus{
