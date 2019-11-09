@@ -31,6 +31,8 @@ function lahma_maker_enqueue_styles() {
 
 }
 
+
+
 add_action( 'wp_enqueue_scripts', 'maker_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'lahma_maker_enqueue_styles' );
 
@@ -44,11 +46,12 @@ add_action('wp_enqueue_scripts', 'add_modernizr');
 
 
 function lahma_enqueue_js() {
+    $scripts_ver = filemtime(get_stylesheet_directory_uri() . '/js/scripts.js');
     wp_enqueue_script(
         'scripts',
         get_stylesheet_directory_uri() . '/js/scripts.js',
         array( 'jquery' ),
-        wp_get_theme()->get('Version')
+        $scripts_ver
     );
 }
 
