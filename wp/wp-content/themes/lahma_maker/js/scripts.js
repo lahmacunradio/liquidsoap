@@ -218,9 +218,12 @@ $(document).on("click", "#donatebanner a#closedonate", function(e){
 // Donate Campaigns
 let progresswidth = $( "#donatebanner .campaign-progress-bar" ).attr( "aria-valuenow" );
 // console.log(progresswidth);
-$("#donatebanner .goalprogress").text(Math.round(progresswidth) + "%")
-// $(".campaign-donation a").attr("href", "");
-
-
-    // A $( document ).ready() block end
+$("#donatebanner .goalprogress").text(Math.round(progresswidth*100)/100 + "%")
 });
+
+
+
+
+
+
+
