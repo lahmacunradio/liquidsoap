@@ -898,8 +898,9 @@ article.campaign .entry-content form
 article.campaign .campaign-description {
   font-size: 1.2em;
   font-weight: inherit;
-  text-align: left;
+  text-align: justify;
   line-height: 1.5em;
+  margin-right: 1em !important;
 }
 
 .campaign-summary {

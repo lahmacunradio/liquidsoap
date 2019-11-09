@@ -70,7 +70,7 @@
 				<div class="startgoal"><?php echo $contCampaignStartAmount; ?></div>
 <div class="infotext">
 				<div class="goalprogress"></div>
-				<?php echo do_shortcode( "[charitable_stat campaigns=812 display=progress goal=100]" );	?>
+				<?php echo do_shortcode( "[charitable_stat campaigns=812 display=progress goal=650]" );	?>
 </div>
 				<div class="endgoal"><?php echo $contCampaignEndAmount; ?></div>
 			</div>
