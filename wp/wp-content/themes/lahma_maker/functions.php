@@ -46,7 +46,7 @@ add_action('wp_enqueue_scripts', 'add_modernizr');
 
 
 function lahma_enqueue_js() {
-    $scripts_ver = filemtime(get_stylesheet_directory_uri() . '/js/scripts.js');
+    $scripts_ver = filemtime(get_stylesheet_directory() . '/js/scripts.js');
     wp_enqueue_script(
         'scripts',
         get_stylesheet_directory_uri() . '/js/scripts.js',
