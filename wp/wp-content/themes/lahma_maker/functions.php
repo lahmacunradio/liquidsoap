@@ -120,6 +120,7 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
 
  $contCampaignText = get_option("contCampaignText");
  $contCampaign = get_option("contCampaign");
+ $contCampaignID = get_page_by_path($contCampaign, number, "campaign")->ID;
  $contCampaignButton = get_option("contCampaignButton");
  $contShowCampaign = get_option("showCampaign");
  $contShowCampaignCheck = $contShowCampaign == "show" ? "checked" : false;
@@ -192,12 +193,13 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
 
 if ( $contShower == "show" ) { 
     echo "<h4 style='margin-bottom:0.3em;'>Campaign Bar Showed</h4>"; 
-    if ( $contShowCampaign == "show" ) { echo "<i>Switched to Campaign</i>"; }
+    if ( $contShowCampaign == "show" ) { echo "<i>Switched to Campaign with ID number: </i>" . $contCampaignID; }
 } else {
     echo "<h4>No Campaign Running!</h4>"; 
 }
 
  echo '</div>';
+
 
  if (isset($_POST["submit"])) {
 
