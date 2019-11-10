@@ -912,7 +912,12 @@ article.campaign .campaign-description {
   font-weight: inherit;
   text-align: justify;
   line-height: 1.5em;
-  margin-right: 4em !important;
+}
+
+@media screen and (min-width: 1024px) {
+  article.campaign .campaign-description {
+    margin-right: 4em !important;
+  }
 }
 
 .campaign-summary {

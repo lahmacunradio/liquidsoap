@@ -43,6 +43,7 @@
   $contShower = get_option("shower");
   $contCampaignText = get_option("contCampaignText");  
   $contCampaign = get_option("contCampaign");
+  $contCampaignID = get_page_by_path($contCampaign, number, "campaign")->ID;
   $contCampaignButton = get_option("contCampaignButton");
   $contShowCampaign = get_option("showCampaign");
   $contCampaignStartAmount = get_option("CampaignStart");
@@ -70,7 +71,7 @@
 				<div class="startgoal"><?php echo $contCampaignStartAmount; ?></div>
 <div class="infotext">
 				<div class="goalprogress"></div>
-				<?php echo do_shortcode( "[charitable_stat campaigns=812 display=progress goal=650]" );	?>
+				<?php echo do_shortcode( "[charitable_stat campaigns=" . $contCampaignID . " display=progress goal=650]" );	?>
 </div>
 				<div class="endgoal"><?php echo $contCampaignEndAmount; ?></div>
 			</div>
