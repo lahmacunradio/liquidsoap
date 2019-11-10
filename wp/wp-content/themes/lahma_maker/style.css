@@ -5,7 +5,7 @@
  Author:       gamma
  Author URI:
  Template:     maker
- Version:      1.1.0
+ Version:      1.2.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         no-sidebar, responsive-layout, accessibility-ready
@@ -44,6 +44,12 @@ body a {
     text-decoration: none;
 }
 
+figcaption a
+{
+  color: white;
+}
+
+
 body button:focus {
     outline: none;
 }
@@ -62,6 +68,12 @@ html:not(.ismobile) .main-navigation a:hover, html:not(.ismobile) .main-navigati
     color: #ffffff;
     text-decoration: none;
 }
+
+html:not(.ismobile) figcaption a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
 
 /* workaround for issue 31 "Highlight remains after hitting back/clicking on non-reloadable parts"*/
 html:not(.ismobile) body a:focus, html:not(.ismobile) body a:active, html:not(.ismobile) .main-navigation a:active, html:not(.ismobile) .main-navigation a:focus{
@@ -156,62 +168,6 @@ header .wrap {
 
 header .wrap .site-branding {
 	display: block;
-}
-
-#donatebanner {
-  display: block;
-  clear: both;
-  padding: 1em;
-  position: fixed;
-  bottom: 0;
-      left: 0;
-  background: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  box-shadow: 0px 0px 5px 0px black;
-  z-index: 1000;
-}
-
-#donatebanner #donateholder {
-  display: flex;
-  padding: 0 2em;
-  justify-content: space-around;
-  margin: auto;
-}
-
-#donatebanner p {
-  margin: 0 2em 0 0;
-  width: 98%;
-  display: block;
-  flex: 9;
-  align-self: start;
-}
-
-#donatebanner a#donatebutton {
-  background: black;
-  color: white;
-  padding: 0.5em 1em;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: block;
-  font-size: 1.2em;
-  border-radius: 5px;
-  white-space: nowrap;
-  height: 40px;
-  width: 130px;
-  justify-content: end;
-}
-
-#donatebanner a#donatebutton:hover {
-    color: #d09cf8;
-}
-
-#donatebanner a#closedonate {
-  color: black;
-  cursor: pointer;
-  position: absolute;
-  right: 5px;
-  font-size: 1.2em;
-  margin-top: -5px;
 }
 
 
@@ -531,7 +487,7 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
     background: #00000000;
 }
 
-li.facebookmenu a, li.listen a, li.donate a, li.instagrammenu a {
+li.facebookmenu a, li.listen a, li.instagrammenu a {
     overflow: hidden;
       width: 35px;
       height: 35px;
@@ -564,10 +520,26 @@ li.listen a:before {
   content: "\f025";
 }
 
+/*
 li.donate a:before {
   content: "\f004";
 }
+*/
 
+@keyframes pulse {
+  0% { color: black; }
+  30% { color: white; }
+  70% { color: white; }
+  100% { color: black; }
+}
+
+li.donate a {
+  animation: pulse 5s infinite;
+}
+
+li.donate a:hover {
+  animation: none;
+}
 
 /* Home News/Schedule */
 
@@ -807,7 +779,245 @@ font-style: italic;
   margin: 0;
 }
 
+#donatebanner {
+  display: block;
+  clear: both;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  min-height: 50px;
+  box-shadow: 0px 0px 5px 0px black;
+  z-index: 1000;
+}
 
+#donatebanner #donateholder {
+  display: flex;
+  padding: 0 2em;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+}
+
+#donatebanner p {
+  margin: 0 2em 0 0;
+  width: 98%;
+  display: block;
+  flex: 9;
+}
+
+#donatebanner a.donate-button {
+  background: #27d9b0;
+  color: white;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  font-size: 1.2em;
+  border-radius: 5px;
+  white-space: nowrap;
+  height: 40px;
+  justify-content: end;
+  text-align: center;
+}
+
+#donatebanner a.donate-button:hover {
+    color: black;
+}
+
+#donatebanner a#closedonate {
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  font-size: 1.2em;
+  margin-top: -5px;
+}
+
+#donatebanner iframe {
+  margin: 0;
+}
+
+#donatebanner .campaignTextBar {
+  width: 90%;
+  flex: 4;
+  margin-right: 2%;
+}
+
+
+#donatebanner .campaigntext  {
+    text-align: center;
+}
+
+#donatebanner .startgoal {
+  width: 40px;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#donatebanner .progressinfos .infotext {
+  text-align: center;
+  width: calc(100% - 100px);
+  display: inline-block;
+  height: 20px;
+  vertical-align: bottom;
+  position: relative;
+  margin-top: 5px;
+}
+
+#donatebanner .goalprogress {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+#donatebanner .endgoal {
+  width: 45px;
+  text-align: right;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#donatebanner .campaign-progress-bar {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  height: 20px;
+}
+
+#donatebanner .campaign-progress-bar .bar {
+  background-color: #27d9b0;
+}
+
+/* Campaigns */
+article.campaign .entry-content {
+  padding: 0;
+  margin: 1em 0 3em;
+}
+
+article.campaign .entry-content .campaigninfos,
+article.campaign .entry-content form
+ {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  padding: 0;
+}
+
+
+
+article.campaign .campaign-description {
+  font-size: 1.2em;
+  font-weight: inherit;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 1024px) {
+  article.campaign .campaign-description {
+    margin-right: 4em !important;
+  }
+}
+
+.campaign-summary {
+  padding: 0;
+  border: none;
+  display: block;
+  background: transparent;
+  border-radius: 0;
+  width: 90%;
+}
+
+.charitable-form-fields .charitable-fieldset, #charitable-donor-fields {
+  margin: 0 0 0.5em;
+  padding: 0;
+  border: none;
+}
+
+#charitable-donor-fields .charitable-form-header, #charitable-meta-fields, #charitable-user-fields {
+  padding: 0;
+}
+
+.charitable-donation-form .donation-amounts .donation-amount.selected label {
+  color: #fff;
+}
+
+.campaign-summary .campaign-donation .donate-button {
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.charitable-form-header {
+  margin: 0 0 0.7em;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.charitable-submit-field {
+  text-align: center;
+}
+
+.campaign-summary .campaign-donation {
+  display: none;
+}
+
+.charitable-submit-field .button {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding: 0.7em;
+  color: white;
+  background: #585858;
+  font-weight: 500;
+  width: 100%;
+  line-height: 1.2em;
+}
+
+.charitable-submit-field .button:hover {
+  border-color: #b60000;
+  box-shadow: none;
+}
+
+.campaign-summary .campaign-figures .amount, .campaign-summary .campaign-raised .amount {
+  font-weight: normal !important;
+}
+
+.campaign-summary .donors-count, .campaign-summary .time-left {
+  font-weight: normal !important;
+}
+
+.required {
+  color: #b60000 !important;  
+}
+
+.charitable-form-field select {
+  padding: 1em;
+  font-size: 1.2em;
+  line-height: 2em;
+  height: 40px;
+  text-indent: 0.5em;
+}
+
+.charitable-fieldset input {
+  background: white;
+  border: none;
+}
+
+.campaign-summary .campaign-summary-item {
+  width: 100%;
+  padding: 0.6em 0 0.3em;
+  border-bottom: 1px solid #9a73b8;
+}
+
+.campaign-summary .campaign-figures .amount, .campaign-summary .campaign-raised .amount {
+  display: inline;
+  margin-right: 0.3em;
+}
 
 /*******
 ********
@@ -962,6 +1172,14 @@ header #playerdiv {  }
   display: block;
   margin: 0 0 0.5em;
 } 
+#donatebanner .campaignTextBar {
+  width: 100%;
+  margin-right: 0;
+}
+#donatebanner .campaign-progress-bar { margin-bottom: 1em; }
+#donatebanner .progressinfos  {  margin-bottom: 1em; }
+article.campaign .entry-content .campaigninfos, article.campaign .entry-content form {  display: block;  width: 100%;  margin-bottom: 2em; }
+.campaign-summary { width: 100%; }
 
 .main-navigation ul ul li img,
 .main-navigation ul ul li .sub {
@@ -987,6 +1205,8 @@ header #playerdiv .public-page .card-body .media-body > div {    min-height: 20p
 #radio-player-controls.radio-controls-standalone input.jp-volume-range { }
 .postslister {   display: block;   width: auto;   padding-bottom: 1em;    margin: 1em auto; }
 .newspic-container {   float: none;   margin-right: 0;   margin-top: 10px;    margin-bottom: 10px;    width: 100%; }
+#donatebanner #donateholder {  padding: 0; }
+.campaign-summary .campaign-summary-item { float: none;  width: 100%; }
 
 
 /* end max 460 */

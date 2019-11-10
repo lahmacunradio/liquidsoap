@@ -41,6 +41,15 @@
   <?php // donatebanner show
   $contDonate = get_option("contDonate");
   $contShower = get_option("shower");
+  $contCampaignText = get_option("contCampaignText");  
+  $contCampaign = get_option("contCampaign");
+  $contCampaignID = get_page_by_path($contCampaign, number, "campaign")->ID;
+  $contCampaignButton = get_option("contCampaignButton");
+  $contShowCampaign = get_option("showCampaign");
+  $contCampaignStartAmount = get_option("CampaignStart");
+  $contCampaignEndAmount = get_option("CampaignEnd");
+
+  $campaign = $view_args['campaign'];
 
   if ( $contShower == "show" ) :
 
@@ -50,11 +59,40 @@
     <a id="closedonate" class="avoidAjax"><i class="fa fa-times" aria-hidden="true"></i>
 </a>
     <div id="donateholder">
+
+	<?php if ($contShowCampaign == "show") { 
+	?>
+		<div class="campaignTextBar">
+			<div class="campaigntext">
+				<?php echo $contCampaignText; ?>
+			</div>
+				
+			<div class="progressinfos">
+				<div class="startgoal"><?php echo $contCampaignStartAmount; ?></div>
+<div class="infotext">
+				<div class="goalprogress"></div>
+				<?php echo do_shortcode( "[charitable_stat campaigns=" . $contCampaignID . " display=progress goal=650]" );	?>
+</div>
+				<div class="endgoal"><?php echo $contCampaignEndAmount; ?></div>
+			</div>
+		
+		</div>
+
+		<a id="campaignbutton" class="donate-button" href="/campaigns/<?php echo $contCampaign; ?>"><?php echo $contCampaignButton; ?></a>
+
+	<?php
+
+	 } else { ?>	
+
       <p><?php echo $contDonate; ?></p>
-      <a id="donatebutton" href="<?php echo get_home_url(); ?>/donate">Donate Us</a>
+	  <a id="donatebutton" class="donate-button" href="<?php echo get_home_url(); ?>/donate">Donate Us</a>
+
+	<?php } ?>  
+
     </div>
   </div>
-  <?php endif; ?>
+
+<?php endif; ?>
 
 
 <div id="playerdiv">
