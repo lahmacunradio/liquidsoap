@@ -227,7 +227,7 @@ header #playerdiv .public-page .card-body a.programimage .onair {
       font-weight: 500;
 }
 
-@keyframes pulse {
+@keyframes pulseonair {
   from { opacity: 0; }
   45% { opacity: 1; }
   50% { opacity: 1; }
@@ -235,7 +235,7 @@ header #playerdiv .public-page .card-body a.programimage .onair {
 }
 
 header #playerdiv .public-page .card-body a.programimage .onair {
-  animation-name: pulse;
+  animation-name: pulseonair;
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
