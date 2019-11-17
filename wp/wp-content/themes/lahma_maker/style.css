@@ -144,6 +144,10 @@ html:not(.ismobile) .site-title:hover > a {
     font-size: 1.3em;
 }
 
+.main-navigation ul ul li img {
+  display: inline-block;
+  border-radius: 3px;
+}
 
 div#page{
 	background-color: transparent !important;
@@ -1038,7 +1042,7 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 }
 
 @media screen and (min-width: 1300px) {
-.main-navigation ul.menu li > ul {  padding: 0px 17%; }
+.main-navigation ul.menu li > ul {  padding: 0px 11%; }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1300px)  {
@@ -1056,29 +1060,59 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 
 .main-navigation ul {  padding: 0.3em 0; }
 .main-navigation li {  position: initial; }
-.main-navigation ul > li > a {  padding-bottom: 2em; padding-top: 0; padding-right: 0.5em;  padding-left: 0.5em; }
-.main-navigation ul ul {background-color: #d09cf8de; }
+.main-navigation ul > li > a {  padding-bottom: 2em; padding-top: 0; }
+.main-navigation ul ul {background-color: #d09cf8; }
 .main-navigation ul.menu li > ul {
   right: 0;
-  top: 0;
-  margin: 135px 0 0;
+  top: 135px;
   border-top: none;
   left: 0;
   text-align: center;
   box-shadow: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  height: calc(100vH - 135px);
+  overflow: auto;
 }
 .main-navigation ul ul li, .main-navigation ul ul li:last-child {
-  box-shadow: 0 13px 0 -12px rgba(88, 88, 88, 0.3);
+  box-shadow: none;
   float: none;
   display: inline-block;
-  margin: 0;
+  margin: 1em 0;
+  width: 32%;
+  max-width: 325px;
+  vertical-align: middle;
+  text-align: left;
+  overflow: hidden;
+  height: 80px;
 }
-.main-navigation ul ul a {
+.main-navigation ul ul li > a {
+  padding: 0 0.5em 0 0;
   width: auto;
-  padding: 0.6em 0.8em 0.3em;
-  white-space: nowrap;
-  font-size: 0.9em;
 }
+
+.main-navigation ul ul .nav-text {
+  width: calc(100% - 80px);
+  padding: 0 0.8em;
+  font-size: 0.8em;
+  display: inline-block;
+  line-height: 1.1em;
+  vertical-align: top;
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-navigation ul ul li .maintitle {
+  font-weight: 500;
+}
+.main-navigation ul ul li .sub {
+  font-size: 0.8em;
+  line-height: 1.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
 .site-header {   padding: 0 0 0.5em;   height: 135px; }
 .entry-title {     font-size: 2em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
 
@@ -1097,12 +1131,18 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 @media screen and (max-width: 768px) {
 
 header .wrap {       float: none; }
-.main-navigation ul.menu li:hover > ul {  right: auto; }
+.main-navigation ul.menu li > ul { background: #d09cf8e0; }
+body.home .main-navigation.toggled ul.menu li > ul { background: none; }
+.main-navigation ul.menu li:hover > ul {  
+  right: auto;
+  width: 95vW;
+  box-shadow: none;
+ }
 .menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
 .main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
-.main-navigation.toggled ul.sub-menu { padding-left: 0; margin-bottom: 5px; }
-.main-navigation.toggled ul.sub-menu li { display: inline-block; }
-.main-navigation.toggled ul.sub-menu a { padding: 0.2em 0.6em;  border-left: 1px solid; }
+.main-navigation ul.sub-menu { padding-left: 0; margin-bottom: 5px; }
+.main-navigation ul.sub-menu li  { display: inline-block; box-shadow: none; float: none; }
+.main-navigation ul.sub-menu a { padding: 0.3em 0.6em;  border-left: 1px solid; width: auto; }
 .main-navigation.toggled ul.nav-menu {  margin-bottom: 1em ; }
 
 .content-area.centered {  width: 100%; }
@@ -1141,6 +1181,11 @@ header #playerdiv {  }
 #donatebanner .progressinfos  {  margin-bottom: 1em; }
 article.campaign .entry-content .campaigninfos, article.campaign .entry-content form {  display: block;  width: 100%;  margin-bottom: 2em; }
 .campaign-summary { width: 100%; }
+
+.main-navigation ul ul li img,
+.main-navigation ul ul li .sub {
+  display: none;
+}
 
 /* end max 786 */
 }
