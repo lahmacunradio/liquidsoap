@@ -162,6 +162,11 @@ playlist_eastern_daze = playlist(id="playlist_eastern_daze",mode="randomize",rel
 playlist_eastern_daze = audio_to_stereo(id="stereo_playlist_eastern_daze", playlist_eastern_daze)
 ignore(playlist_eastern_daze)
 
+playlist_midnight_song = playlist(id="playlist_midnight_song",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_midnight_song.m3u")
+playlist_midnight_song = audio_to_stereo(id="stereo_playlist_midnight_song", playlist_midnight_song)
+ignore(playlist_midnight_song)
+
+
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
@@ -291,10 +296,18 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
     #Monday
+    ({1w and 0h-0h5m}, once(playlist_midnight_song)),
     ({1w and 6h-6h59m}, once(playlist_szarok_bele)),
     ({1w and 12h-12h59m}, once(playlist_a_who_say)),
     ({1w and 13h-16h59m}, once(playlist_dalmata_radio)),
@@ -302,6 +315,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 18h-18h35m}, once(playlist_kezek_a_sebekben)),
     ({1w and 19h-20h59m}, once(playlist_erdenklang)),
     #Tuesday
+    ({2w and 0h-0h5m}, once(playlist_midnight_song)),
     ({2w and 2h04m-4h30m}, once(playlist_lahmacun_gyorsnaszd_hdja)),
     ({2w and 12h-13h29m}, once(playlist_csinltam_neked_egy_vlogats_kazettt)),
     ({2w and 16h-16h59m}, once(playlist_azvlm)),
@@ -309,12 +323,14 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 18h30m-19h29m}, once(playlist_havizaj)),
     ({2w and 20h-20h59m}, once(playlist_turmeric_acid)),
     #Wednesday
+    ({3w and 0h-0h5m}, once(playlist_midnight_song)),
     ({3w and 14h-14h59m}, once(playlist_rt_hallgats)),
     ({3w and 15h-15h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 18h-18h59m}, once(playlist_geigercounterculture)),
     ({3w and 19h-19h59m}, once(playlist_cellz)),
     ({3w and 20h-20h59m}, once(playlist_eastern_daze)),
     #Thursday
+    ({4w and 0h-0h5m}, once(playlist_midnight_song)),
     ({4w and 14h-14h59m}, once(playlist_konkret_riport)),
     ({4w and 15h-15h59m}, once(playlist_alternoon)),
     ({4w and 16h-17h59m}, once(playlist_lazy_calm_raga)),
@@ -323,15 +339,18 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 20h-21h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 22h-22h59m}, once(playlist_gygyfrd)),
     #Friday
+    ({5w and 0h-0h5m}, once(playlist_midnight_song)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
     ({5w and 18h-19h59m}, once(playlist_mkd_mkd)),
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),
     #Saturday
+    ({6w and 0h-0h5m}, once(playlist_midnight_song)),
     ({6w and 16h-16h59m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
     ({6w and 21h30m-22h29m}, once(playlist_brains_sublimating)),
     #Sunday
+    ({7w and 0h-0h5m}, once(playlist_midnight_song)),
     ({7w and 11h-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 19h-19h59m}, once(playlist_speakers_corner)),
