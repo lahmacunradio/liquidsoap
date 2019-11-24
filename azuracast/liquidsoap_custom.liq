@@ -166,7 +166,9 @@ playlist_midnight_song = playlist(id="playlist_midnight_song",mode="randomize",r
 playlist_midnight_song = audio_to_stereo(id="stereo_playlist_midnight_song", playlist_midnight_song)
 ignore(playlist_midnight_song)
 
-
+playlist_transverszia = playlist(id="playlist_transverszia",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_transverszia.m3u")
+playlist_transverszia = audio_to_stereo(id="stereo_playlist_transverszia", playlist_transverszia)
+ignore(playlist_transverszia)
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
@@ -303,11 +305,13 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
     #Monday
     ({1w and 6h-6h59m}, once(playlist_szarok_bele)),
+    ({1w and 10h11m-11h11m}, once(playlist_transverszia)),  #orig requested time 11:11 am 12:12 pm
     ({1w and 12h-12h59m}, once(playlist_a_who_say)),
     ({1w and 13h-16h59m}, once(playlist_dalmata_radio)),
     ({1w and 17h-17h59m}, once(playlist_szmuti_csorba)),
