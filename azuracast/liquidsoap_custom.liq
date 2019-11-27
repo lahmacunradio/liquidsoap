@@ -170,6 +170,10 @@ playlist_transverszia = playlist(id="playlist_transverszia",mode="randomize",rel
 playlist_transverszia = audio_to_stereo(id="stereo_playlist_transverszia", playlist_transverszia)
 ignore(playlist_transverszia)
 
+playlist_radio_bluszcze = playlist(id="playlist_radio_bluszcze",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_radio_bluszcze.m3u")
+playlist_radio_bluszcze = audio_to_stereo(id="stereo_playlist_radio_bluszcze", playlist_radio_bluszcze)
+ignore(playlist_radio_bluszcze)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -306,6 +310,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -332,6 +337,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 18h-18h59m}, once(playlist_geigercounterculture)),
     ({3w and 19h-19h59m}, once(playlist_cellz)),
     ({3w and 20h-20h59m}, once(playlist_eastern_daze)),
+    ({3w and 22h-22h59m}, once(playlist_radio_bluszcze)),
     ({3w and 23h-23h15m}, once(playlist_midnight_song)),
     #Thursday
     ({4w and 14h-14h59m}, once(playlist_konkret_riport)),
