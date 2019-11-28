@@ -174,6 +174,10 @@ playlist_radio_bluszcze = playlist(id="playlist_radio_bluszcze",mode="randomize"
 playlist_radio_bluszcze = audio_to_stereo(id="stereo_playlist_radio_bluszcze", playlist_radio_bluszcze)
 ignore(playlist_radio_bluszcze)
 
+playlist_mhelycast = playlist(id="playlist_mhelycast",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mhelycast.m3u")
+playlist_mhelycast = audio_to_stereo(id="stereo_playlist_mhelycast", playlist_mhelycast)
+ignore(playlist_mhelycast)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -311,6 +315,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -340,6 +345,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 22h-22h59m}, once(playlist_radio_bluszcze)),
     ({3w and 23h-23h15m}, once(playlist_midnight_song)),
     #Thursday
+    ({4w and 13h-13h59m}, once(playlist_mhelycast)),
     ({4w and 14h-14h59m}, once(playlist_konkret_riport)),
     ({4w and 15h-15h59m}, once(playlist_alternoon)),
     ({4w and 16h-17h59m}, once(playlist_lazy_calm_raga)),
