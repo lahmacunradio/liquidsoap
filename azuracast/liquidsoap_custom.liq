@@ -178,6 +178,18 @@ playlist_mhelycast = playlist(id="playlist_mhelycast",mode="randomize",reload_mo
 playlist_mhelycast = audio_to_stereo(id="stereo_playlist_mhelycast", playlist_mhelycast)
 ignore(playlist_mhelycast)
 
+playlist_off_air_premiere = playlist(id="playlist_off_air_premiere",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_premiere.m3u")
+playlist_off_air_premiere = audio_to_stereo(id="stereo_playlist_off_air_premiere", playlist_off_air_premiere)
+ignore(playlist_off_air_premiere)
+
+playlist_dead_hound = playlist(id="playlist_dead_hound",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dead_hound.m3u")
+playlist_dead_hound = audio_to_stereo(id="stereo_playlist_dead_hound", playlist_dead_hound)
+ignore(playlist_dead_hound)
+
+playlist_infinite_scroll = playlist(id="playlist_infinite_scroll",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_infinite_scroll.m3u")
+playlist_infinite_scroll = audio_to_stereo(id="stereo_playlist_infinite_scroll", playlist_infinite_scroll)
+ignore(playlist_infinite_scroll)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -316,6 +328,9 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -327,6 +342,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 17h-17h59m}, once(playlist_szmuti_csorba)),
     ({1w and 18h-18h35m}, once(playlist_kezek_a_sebekben)),
     ({1w and 19h-20h59m}, once(playlist_erdenklang)),
+    ({1w and 21h-22h59m}, once(playlist_infinite_scroll)),
     ({1w and 23h-23h15m}, once(playlist_midnight_song)),
     #Tuesday
     ({2w and 2h04m-4h30m}, once(playlist_lahmacun_gyorsnaszd_hdja)),
@@ -337,6 +353,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 20h-20h59m}, once(playlist_turmeric_acid)),
     ({2w and 23h-23h15m}, once(playlist_midnight_song)),
     #Wednesday
+    ({3w and 11h-12h59m}, once(playlist_off_air_premiere)),
     ({3w and 14h-14h59m}, once(playlist_rt_hallgats)),
     ({3w and 15h-15h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 18h-18h59m}, once(playlist_geigercounterculture)),
@@ -355,6 +372,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 22h-22h59m}, once(playlist_gygyfrd)),
     ({4w and 23h-23h15m}, once(playlist_midnight_song)),
     #Friday
+    ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
     ({5w and 18h-19h59m}, once(playlist_mkd_mkd)),
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),
