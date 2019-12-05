@@ -178,12 +178,16 @@ if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") ) {
 function sortDates( callbackFunction ) {
 	$(".day").not(".sorted").addClass("notsorted");
 	$(".day.notsorted").each(function(i){
-	// console.log(i);
-	if ( i < gooddateobj ) {
-		$(this).appendTo($("#endofweek"));
-	}
-	$(".day").removeClass("notsorted").addClass("sorted");
-	});
+        // console.log(i);
+        if ( i < gooddateobj ) {
+            $(this).appendTo($("#endofweek"));
+        }
+        $(".day").removeClass("notsorted").addClass("sorted");
+        
+    });
+    
+    $(".schedulewrap > .day").first().addClass("today");
+    $(".day").not(".today").children("ul").hide();
 
 	callbackFunction();
 
