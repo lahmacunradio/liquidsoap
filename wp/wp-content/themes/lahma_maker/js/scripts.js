@@ -114,8 +114,11 @@ $( document ).ready(function() {
             openAllExternalBlank();
             swipeboxGalleryFixer();
             //$("#site-navigation-toggle.toggled").trigger("click"); //automatically collapses open show menu on mobile
-            $("#primary-menu .sub-menu").slideUp("fast");
-            }
+            $("#primary-menu .sub-menu").slideUp("fast", function() {
+                $(this).addClass("closed");
+            });
+            
+        }
         );
         e.preventDefault();
         history.pushState({}, null, link);
@@ -132,11 +135,17 @@ $( document ).ready(function() {
     });*/
 
 
-	// Main-menu toggler
-	$(document).on("click", "html.ismobile nav.main-navigation li.menu-item-has-children a", function(e){
-		$(this).parentsUntil("ul").find("ul.sub-menu").toggle();
-		e.preventDefault;
-	})
+// Main-menu toggler
+$(document).on("click", "html.ismobile nav.main-navigation li.menu-item-has-children a", function(e){
+    $(this).parentsUntil("ul").find("ul.sub-menu").toggle();
+    e.preventDefault;
+})
+
+
+// Shows menu remove closed class on hover
+$(document).on("mouseenter", "ul.nav-menu > li", function(e){
+    $(this).find("ul.sub-menu").removeClass("closed");
+})
 
 
 // Dates Sorter
