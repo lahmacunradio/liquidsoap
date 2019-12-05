@@ -22,15 +22,15 @@
 <p>In-between shows non-stop</p>
 
 <?php
-/**** Automatisation not finished in loopshows.php, needs filtering by day/time
+/* Shows Schedule loaded from template file not backend */
 
-	get_template_part('template-parts/loopshows');
+	get_template_part('Showsschedule');
 
-*/
 ?>
 
 
 <?php
+/**** Query post from backend
 $query1 = new WP_Query( array( 'pagename'=>'shows-lister' ) );
 
 if ( $query1->have_posts() ) {
@@ -41,7 +41,7 @@ if ( $query1->have_posts() ) {
 	}
 	wp_reset_postdata();
 }
-
+*/
 ?>
 
 <div id="endofweek"></div>
