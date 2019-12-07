@@ -190,6 +190,10 @@ playlist_infinite_scroll = playlist(id="playlist_infinite_scroll",mode="randomiz
 playlist_infinite_scroll = audio_to_stereo(id="stereo_playlist_infinite_scroll", playlist_infinite_scroll)
 ignore(playlist_infinite_scroll)
 
+playlist_torso = playlist(id="playlist_torso",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_torso.m3u")
+playlist_torso = audio_to_stereo(id="stereo_playlist_torso", playlist_torso)
+ignore(playlist_torso)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -331,6 +335,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -378,6 +383,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),
     ({5w and 23h-23h15m}, once(playlist_midnight_song)),
     #Saturday
+    ({6w and 14h-14h59m}, once(playlist_torso)),
     ({6w and 16h-16h59m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
