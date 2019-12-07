@@ -984,7 +984,7 @@ article.campaign .campaign-description {
 }
 
 .charitable-submit-field .button:hover {
-  border-color: #b60000;
+  background: #917f7f;
   box-shadow: none;
 }
 
