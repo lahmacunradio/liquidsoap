@@ -389,7 +389,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),
     ({5w and 23h-23h15m}, once(playlist_midnight_song)),
     #Saturday
-    ({6w and 14h-14h59m}, once(playlist_torso)),
+    ({6w and 14h-15h29m}, once(playlist_torso)),
     ({6w and 16h-16h59m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
