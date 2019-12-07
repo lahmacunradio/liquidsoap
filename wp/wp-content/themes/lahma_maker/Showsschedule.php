@@ -62,6 +62,7 @@
 <div class="Saturday day">
     <h3>Saturday / Szombat</h3>
     <ul>
+    <li>15:00–16:30 <strong><a href="../shows/learning-audio-classification-with-torso/">Learning Audio Classification with Torso</a></strong></li>
     <li>17:00–18:00 <strong><a href="../shows/footwork-jimbob/">Footwork Jimbob</a></strong>| <a href="https://www.mixcloud.com/regost542/" target="_blank" rel="noopener noreferrer">archive</a></li>
     <li>18:00–20:00 <strong><a href="../shows/rnr666-radioshow/">RNR666 radioshow</a></strong>| <a href="https://www.mixcloud.com/RNR666/" target="_blank" rel="noopener noreferrer">archive</a></li>
     <li>20:00–22:00 <strong><a href="../shows/mood-sequence/">Mood Sequence</a></strong></li>
@@ -73,6 +74,7 @@
     <ul>
     <li>12:00–14:00 Bambuszrádió</li>
     <li>14:00–18:00 <strong><a href="../shows/donald-kacsa-klub/">Donald Kacsa Klub</a></strong> | <a href="https://www.facebook.com/donaldkacsaklub/" target="_blank" rel="noopener noreferrer">archive</a></li>
+    <li>18:30–19:30 <strong><a href="../shows/hetedik-tipusu-talalkozas/">Hetedik Típusú Találkozás</a></strong></li>
     <li>20:00–21:00 <strong><a href="../shows/speakers-corner/"> Speakers Corner</a></strong> | <a href="https://anchor.fm/speakers-corner" target="_blank" rel="noopener noreferrer">archive</a></li>
     <li>21:00–22:00 <strong><a href="../shows/sub-burek/">Sub Burek</a></strong></li>
     </ul>
