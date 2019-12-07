@@ -700,6 +700,7 @@ font-style: italic;
   border-bottom: 1px solid rgba(0,0,0,.87);
   padding-bottom: 0.3em;
   margin-bottom: 0.5em;
+  cursor: pointer;
 }
 
 .schedulewrap ul {

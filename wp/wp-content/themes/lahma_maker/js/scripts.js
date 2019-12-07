@@ -211,12 +211,18 @@ function dateWriteSchedule() {
 
 
 $( document ).on("ajaxComplete", function(){
-		sortDates( dateWriteSchedule );
+	sortDates( dateWriteSchedule );
 });
 
 $( ".shows-block" ).ready(function(){
-		sortDates( dateWriteSchedule );
+	sortDates( dateWriteSchedule );
 });
+
+// toggle day sub-items
+$(document).on("click", ".day > h3", function(){
+    $(this).next("ul").slideToggle();
+});
+
 
 // prevent Shows menu clicking
 $(".menu-lahma-menu-container li.menu-item-has-children > a").removeAttr("href").css({'cursor': 'pointer'}).addClass("avoidAjax");
