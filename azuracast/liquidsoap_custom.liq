@@ -194,6 +194,10 @@ playlist_torso = playlist(id="playlist_torso",mode="randomize",reload_mode="watc
 playlist_torso = audio_to_stereo(id="stereo_playlist_torso", playlist_torso)
 ignore(playlist_torso)
 
+playlist_svadhyaya = playlist(id="playlist_svadhyaya",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_svadhyaya.m3u")
+playlist_svadhyaya = audio_to_stereo(id="stereo_playlist_svadhyaya", playlist_svadhyaya)
+ignore(playlist_svadhyaya)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -336,6 +340,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -361,6 +366,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 11h-12h59m}, once(playlist_off_air_premiere)),
     ({3w and 14h-14h59m}, once(playlist_rt_hallgats)),
     ({3w and 15h-15h59m}, once(playlist_wikihow_adventure_cruise)),
+    ({3w and 17h-17h59m}, once(playlist_svadhyaya)),
     ({3w and 18h-18h59m}, once(playlist_geigercounterculture)),
     ({3w and 19h-19h59m}, once(playlist_cellz)),
     ({3w and 20h-20h59m}, once(playlist_eastern_daze)),
