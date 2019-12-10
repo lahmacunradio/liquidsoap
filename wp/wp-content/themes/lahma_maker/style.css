@@ -54,10 +54,6 @@ body button:focus {
     outline: none;
 }
 
-p, #main ul {
-
-}
-
 #main p {
 	line-height: 1.6em;
 }
@@ -102,9 +98,7 @@ div#main h1 {
   text-transform: none;
 }
 
-
 .site-header {   border-bottom: 2px solid #9a74b8;  }
-body.home .site-header {   }
 
 .station-lahmacun_radio {
     display: block;
@@ -270,11 +264,6 @@ header #playerdiv .public-page .card-body .media-body h5 {
     color: #585858 !important;
     font-size: 0.9em;
     text-transform: none;
-}
-
-
-header #playerdiv .custom-range::-webkit-slider-runnable-track {
-
 }
 
 header #playerdiv #radio-player-controls.radio-controls-standalone {
@@ -614,10 +603,6 @@ li.donate a:hover {
   margin-top: 5px;
   margin-bottom: 5px;
   width: 30%;
-}
-
-.news-block .description {
-
 }
 
 .description p {
@@ -1152,9 +1137,6 @@ body.home .main-navigation.toggled ul.menu li > ul { background: none; }
 
 .content-area.centered {  width: 100%; }
 
-header #playerdiv div.station-lahmacun_radio .public-page .card {  }
-#radio-player-controls.radio-controls-standalone input.jp-volume-range { }
-
 .halver {  display: block;  width: 100%;  margin-bottom: 3em; }
 .halver .newslist {  display: none;  }
 .halver .newslist:first-child {  display: block;  }
@@ -1166,8 +1148,6 @@ body.home div#page {  background-color: #d09cf891 !important; }
 .lahma_home-content {  background-color: transparent; }
 .schedulewrap .timenotice {   margin-top: -2.6em; }
 .site-header {   padding: 0; }
-
-header #playerdiv {  }
 
 #donatebanner #donateholder {  display: block; padding: 0 1em; }
 #donatebanner p {  margin: 0;  width: 100%; }
@@ -1208,7 +1188,6 @@ header #playerdiv div.station-lahmacun_radio .public-page .card {   zoom: 0.9; m
 header div.station-lahmacun_radio .might-overflow {   width: 100% !important; }
 div.station-lahmacun_radio h4.might-overflow {  max-height: 2.3em; }
 header #playerdiv .public-page .card-body .media-body > div {    min-height: 20px; }
-#radio-player-controls.radio-controls-standalone input.jp-volume-range { }
 .postslister {   display: block;   width: auto;   padding-bottom: 1em;    margin: 1em auto; }
 .newspic-container {   float: none;   margin-right: 0;   margin-top: 10px;    margin-bottom: 10px;    width: 100%; }
 #donatebanner #donateholder {  padding: 0; }
