@@ -380,8 +380,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 18h-18h59m}, once(playlist_dalmata_gergo_show)),
     ({4w and 19h-19h59m}, once(playlist_dodo)),
     ({4w and 20h-21h59m}, once(playlist_great_galactick_ghaul)),
-    ({4w and 22h-22h59m}, once(playlist_gygyfrd)),
-    ({4w and 23h-23h15m}, once(playlist_midnight_song)),
+    ({4w and 22h-23h59m}, once(playlist_gygyfrd)),
+    ({5w and 00h-00h15m}, once(playlist_midnight_song)),
     #Friday
     ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
