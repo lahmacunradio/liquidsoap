@@ -41,7 +41,7 @@
     <h3>Thursday / Csütörtök</h3>
     <ul>
     <li>14:00–15:00 <strong><a href="../shows/muhelycast/">Műhelycast</a></strong></li>
-    <li>15:00–16:00 <strong><a href="../shows/konkret-riport/">Konkrét Riport</a></strong></li>
+    <li>15:00–16:00 <strong><a href="../shows/konkret-riport/">Konkrét Riport</a></strong>&nbsp;| <a href="https://www.mixcloud.com/ZzzzBone/" target="_blank" rel="noopener noreferrer">archive</a></li>
     <li>16:00–17:00 <strong><a href="../shows/alternoon/">AlternoON</a></strong></li>
     <li>17:00–19:00 <strong><a href="../shows/lazy-calm-raga/">Lazy Calm Raga</a></strong>&nbsp;| <a href="https://www.mixcloud.com/lazycalmraga/" target="_blank" rel="noopener noreferrer">archive</a></li>
     <li>19:00–20:00 <strong><a href="../shows/dalmata-gergo-show/">Dalmata Gergő Show</a></strong> | <a href="https://www.mixcloud.com/djluci/" target="_blank" rel="noopener noreferrer">archive</a> </li>
