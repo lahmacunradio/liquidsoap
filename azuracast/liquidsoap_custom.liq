@@ -198,6 +198,10 @@ playlist_svadhyaya = playlist(id="playlist_svadhyaya",mode="randomize",reload_mo
 playlist_svadhyaya = audio_to_stereo(id="stereo_playlist_svadhyaya", playlist_svadhyaya)
 ignore(playlist_svadhyaya)
 
+playlist_hetedik_tipusu_talalkozas = playlist(id="playlist_hetedik_tipusu_talalkozas",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hetedik_tipusu_talalkozas.m3u")
+playlist_hetedik_tipusu_talalkozas = audio_to_stereo(id="stereo_playlist_hetedik_tipusu_talalkozas", playlist_hetedik_tipusu_talalkozas)
+ignore(playlist_hetedik_tipusu_talalkozas)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -341,6 +345,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], [
     #Live DJ
     ({!live_enabled}, live),
@@ -398,6 +403,7 @@ radio = switch(track_sensitive=false, transitions=[
     #Sunday
     ({7w and 11h-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 17h30m-18h29m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h59m}, once(playlist_speakers_corner)),
     ({7w and 20h-20h59m}, once(playlist_sub_burek)),
     ({7w and 23h-23h15m}, once(playlist_midnight_song)),
