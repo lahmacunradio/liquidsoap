@@ -481,7 +481,7 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
     background: #00000000;
 }
 
-li.facebookmenu a, li.listen a, li.instagrammenu a {
+li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a {
     overflow: hidden;
       width: 35px;
       height: 35px;
@@ -491,7 +491,7 @@ li.facebookmenu a, li.listen a, li.instagrammenu a {
       padding-right: 5px;
 }
 
-li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before  {
+li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before, li.bcmenu a:before  {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -512,6 +512,10 @@ li.instagrammenu a:before {
 
 li.listen a:before {
   content: "\f025";
+}
+
+li.bcmenu a:before {
+  content: "\f2d5";  
 }
 
 /*
@@ -1109,13 +1113,39 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 /* end min 786 */
 }
 
-@media screen and (min-width: 769px) and (max-width: 855px) {
+/* Menu fix for tablet-desktop */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .main-navigation ul.menu > li > a {
       font-size: 0.9em;
-      padding: 0 0.4em 2em 0.4em;
+      padding: 0 0.5em 2em 0.5em;
   }
 
+  li.donate a:before {
+    content: "\f004";
+  } 
+
+  li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a, li.donate a {
+    width: 25px;
+  }
+
+  li.donate a {
+    overflow: hidden;
+    height: 35px;
+    vertical-align: top;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 5px;
+}  
+  .site-title { font-size: 1.5rem;  line-height: 2em;  background-size: 65px; }
+  .site-title a { padding-left: 75px; }
+
 }
+
+@media screen and (min-width: 769px) and (max-width: 870px) {
+  .main-navigation ul.menu > li > a {   padding: 0 0.2em 2em 0.2em; font-size: 0.8em;  }
+}
+/* End menu fix */  
+
 
 
 @media screen and (max-width: 768px) {
