@@ -54,10 +54,6 @@ body button:focus {
     outline: none;
 }
 
-p, #main ul {
-
-}
-
 #main p {
 	line-height: 1.6em;
 }
@@ -102,9 +98,7 @@ div#main h1 {
   text-transform: none;
 }
 
-
 .site-header {   border-bottom: 2px solid #9a74b8;  }
-body.home .site-header {   }
 
 .station-lahmacun_radio {
     display: block;
@@ -168,6 +162,11 @@ header .wrap {
 
 header .wrap .site-branding {
 	display: block;
+}
+
+ul.sub-menu.closed {
+  height: 0 !important;
+  visibility: hidden !important;
 }
 
 
@@ -265,11 +264,6 @@ header #playerdiv .public-page .card-body .media-body h5 {
     color: #585858 !important;
     font-size: 0.9em;
     text-transform: none;
-}
-
-
-header #playerdiv .custom-range::-webkit-slider-runnable-track {
-
 }
 
 header #playerdiv #radio-player-controls.radio-controls-standalone {
@@ -487,7 +481,7 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
     background: #00000000;
 }
 
-li.facebookmenu a, li.listen a, li.instagrammenu a {
+li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a {
     overflow: hidden;
       width: 35px;
       height: 35px;
@@ -497,7 +491,7 @@ li.facebookmenu a, li.listen a, li.instagrammenu a {
       padding-right: 5px;
 }
 
-li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before  {
+li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before, li.bcmenu a:before  {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -518,6 +512,10 @@ li.instagrammenu a:before {
 
 li.listen a:before {
   content: "\f025";
+}
+
+li.bcmenu a:before {
+  content: "\f2d5";  
 }
 
 /*
@@ -609,10 +607,6 @@ li.donate a:hover {
   margin-top: 5px;
   margin-bottom: 5px;
   width: 30%;
-}
-
-.news-block .description {
-
 }
 
 .description p {
@@ -979,7 +973,7 @@ article.campaign .campaign-description {
 }
 
 .charitable-submit-field .button:hover {
-  border-color: #b60000;
+  background: #917f7f;
   box-shadow: none;
 }
 
@@ -1119,13 +1113,39 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 /* end min 786 */
 }
 
-@media screen and (min-width: 769px) and (max-width: 855px) {
+/* Menu fix for tablet-desktop */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .main-navigation ul.menu > li > a {
       font-size: 0.9em;
-      padding: 0 0.4em 2em 0.4em;
+      padding: 0 0.5em 2em 0.5em;
   }
 
+  li.donate a:before {
+    content: "\f004";
+  } 
+
+  li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a, li.donate a {
+    width: 25px;
+  }
+
+  li.donate a {
+    overflow: hidden;
+    height: 35px;
+    vertical-align: top;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 5px;
+}  
+  .site-title { font-size: 1.5rem;  line-height: 2em;  background-size: 65px; }
+  .site-title a { padding-left: 75px; }
+
 }
+
+@media screen and (min-width: 769px) and (max-width: 870px) {
+  .main-navigation ul.menu > li > a {   padding: 0 0.2em 2em 0.2em; font-size: 0.8em;  }
+}
+/* End menu fix */  
+
 
 
 @media screen and (max-width: 768px) {
@@ -1147,9 +1167,6 @@ body.home .main-navigation.toggled ul.menu li > ul { background: none; }
 
 .content-area.centered {  width: 100%; }
 
-header #playerdiv div.station-lahmacun_radio .public-page .card {  }
-#radio-player-controls.radio-controls-standalone input.jp-volume-range { }
-
 .halver {  display: block;  width: 100%;  margin-bottom: 3em; }
 .halver .newslist {  display: none;  }
 .halver .newslist:first-child {  display: block;  }
@@ -1161,8 +1178,6 @@ body.home div#page {  background-color: #d09cf891 !important; }
 .lahma_home-content {  background-color: transparent; }
 .schedulewrap .timenotice {   margin-top: -2.6em; }
 .site-header {   padding: 0; }
-
-header #playerdiv {  }
 
 #donatebanner #donateholder {  display: block; padding: 0 1em; }
 #donatebanner p {  margin: 0;  width: 100%; }
@@ -1203,7 +1218,6 @@ header #playerdiv div.station-lahmacun_radio .public-page .card {   zoom: 0.9; m
 header div.station-lahmacun_radio .might-overflow {   width: 100% !important; }
 div.station-lahmacun_radio h4.might-overflow {  max-height: 2.3em; }
 header #playerdiv .public-page .card-body .media-body > div {    min-height: 20px; }
-#radio-player-controls.radio-controls-standalone input.jp-volume-range { }
 .postslister {   display: block;   width: auto;   padding-bottom: 1em;    margin: 1em auto; }
 .newspic-container {   float: none;   margin-right: 0;   margin-top: 10px;    margin-bottom: 10px;    width: 100%; }
 #donatebanner #donateholder {  padding: 0; }
