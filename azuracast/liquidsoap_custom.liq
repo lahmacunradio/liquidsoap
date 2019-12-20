@@ -283,14 +283,100 @@ radio = server.insert_metadata(id="custom_metadata", radio)
 radio = amplify(1., radio)
 
 # LAHMACUN: THIS IS WHERE THE CUSTOM CONFIGURATION WOULD START
+
+#Liquidsoap 1.3.7 fadeing bug fix 
+#start
+def mkfade(~type="lin",~start=0.,~stop=1.,~duration=3.,~on_done={()},s) =
+  log = log(label="mkfade")
+
+  # Shape functions must map 0. -> 0. and 1. -> 1.
+  pi = acos(-1.)
+  def sin_shape(x) =
+    (1. + sin((x-0.5)*pi))/2.
+  end
+
+  curve = 2.
+  m = exp(curve-1.) - exp(-1.)
+  def exp_shape(x) =
+    (exp((curve*x)-1.) - exp(-1.))/m
+  end
+
+  curve = 10.
+  m = log_e(1.+curve)
+  def log_shape(x) =
+    log_e(1.+10.*x)/m
+  end
+
+  def lin_shape(x) =
+    x
+  end
+
+  shape =
+    if type == "sin" then
+      sin_shape
+    elsif type == "exp" then
+      exp_shape
+    elsif type == "log" then
+      log_shape
+    elsif type == "lin" then
+      lin_shape
+    else
+      log("Invalid type #{type}, using \"lin\"")
+      lin_shape
+    end
+
+  start_time = ref (-1.)
+  def fade() =
+    if !start_time < 0. then
+      start_time := source.time(s)
+    end
+
+    t = source.time(s) - !start_time
+    if t >= duration then
+      on_done ()
+      stop
+    else
+      if start <= stop then
+        start + shape(t/duration)*(stop-start)
+      else
+        stop + shape(1.-t/duration)*(start-stop)
+      end
+    end
+  end
+
+  fade
+end
+
+def fade.final(~id="fade.final",~duration=3.,~type="lin",s) =
+  fn = mkfade(start=1.,stop=0.,type=type,duration=duration,s)
+  should_play = ref true
+
+  def fn() =
+    v = fn()
+    if v == 0. then
+      should_play := false
+    end
+    v
+  end
+
+  s = amplify(id=id,fn,s)
+  switch(track_sensitive=false,[({!should_play},s)])
+end
+
+def fade.initial(~id="fade.initial",~duration=3.,~type="lin",s) =
+  fn = mkfade(start=0.,stop=1.,type=type,duration=duration,s)
+  amplify(id=id,fn,s)
+end
+#end
+
 # Fade out off air music, play jingle, start playing show (unfaded)
 def transition_into_show(j,a,b)
-	sequence([fade.final(duration=5.,a),j,b])
+	sequence(merge=true, [fade.final(duration=5.,a),j,b])
 end
 
 # Stop show (faded), play jingle, fade in off air music
 def transition_into_off(j,a,b)
-	sequence([fade.final(duration=5.,a),j,fade.initial(duration=5., b)])
+	sequence(merge=true, [fade.final(duration=5.,a),j,fade.initial(duration=5., b)])
 end
 
 radio = switch(track_sensitive=false, transitions=[
@@ -346,7 +432,9 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show) ], [
+    transition_into_off(playlist_jingle_after_show) ], 
+    transition_length=60., #max duration of jingle (60s)
+    [
     #Live DJ
     ({!live_enabled}, live),
     #Monday
