@@ -217,7 +217,7 @@ radio = fallback(track_sensitive=true, [delay(60., playlist_jingle_azura), radio
 
 # AutoDJ Next Song Script
 def azuracast_next_song() =
-  uri = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/nextsong --form api_auth="^quote("AZURA_KEY")^""), default="")
+  uri = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/nextsong --form api_auth="^string.quote("AZURA_KEY")^""), default="")
   log("AzuraCast Raw Response: #{uri}")
   
   if uri == "" or string.match(pattern="Error", uri) then
@@ -243,7 +243,7 @@ radio = fallback(id="lahmacun_radio_safe_fallback", track_sensitive = false, [ra
 # DJ Authentication
 def dj_auth(user,password) =
   log("Authenticating DJ: #{user}")
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^quote(user)^" --form dj-password="^quote(password)^" --form api_auth="^quote("AZURA_KEY")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^string.quote(user)^" --form dj-password="^string.quote(password)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
   log("AzuraCast DJ Auth Response: #{ret}")
   bool_of_string(ret)
 end
@@ -253,14 +253,14 @@ live_enabled = ref false
 def live_connected(header) =
   log("DJ Source connected! #{header}")
   live_enabled := true
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djon --form api_auth="^quote("AZURA_KEY")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djon --form api_auth="^string.quote("AZURA_KEY")^""), default="")
   log("AzuraCast Live Connected Response: #{ret}")
 end
 
 def live_disconnected() =
   log("DJ Source disconnected!")
   live_enabled := false
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djoff --form api_auth="^quote("AZURA_KEY")^""), default="")
+  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djoff --form api_auth="^string.quote("AZURA_KEY")^""), default="")
   log("AzuraCast Live Disconnected Response: #{ret}")
 end
 
@@ -501,7 +501,7 @@ radio = switch(track_sensitive=false, transitions=[
 # Send metadata changes back to AzuraCast
 def metadata_updated(m) =
   if (m["song_id"] != "") then
-    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^quote(m["song_id"])^" --form media="^quote(m["media_id"])^" --form playlist="^quote(m["playlist_id"])^" --form api_auth="^quote("AZURA_KEY")^""), default="")
+    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^string.quote(m["song_id"])^" --form media="^string.quote(m["media_id"])^" --form playlist="^string.quote(m["playlist_id"])^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
     log("AzuraCast Feedback Response: #{ret}")
   end
 end
