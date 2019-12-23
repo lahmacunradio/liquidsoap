@@ -1013,6 +1013,12 @@ article.campaign .campaign-description {
   margin-right: 0.3em;
 }
 
+/* Photos page fix */
+.wp-block-gallery.aligncenter, .wp-block-gallery.alignleft, .wp-block-gallery.alignright {
+  display: flex;
+}
+
+
 /*******
 ********
 Responsive
