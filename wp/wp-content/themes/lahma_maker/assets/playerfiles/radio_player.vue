@@ -337,7 +337,7 @@ export default {
                 let song_artist_json = this.np.now_playing.song.artist;
                 let artwork_json = this.np.now_playing.song.art; //art work url in json
                 if (artwork_json == default_azuracast_art_url){ //default url by azuracast (must be returning off air music with art work)
-                    let try_art_from_show = showsList_lookup[song_title_json] //try to find show artwork url based on show title
+                    let try_art_from_show = showsList_lookup[song_artist_json] //try to find show artwork url based on show title
                     if (try_art_from_show == undefined){ //show not found
                         let artwork_history_json = "";
                         (this.np.song_history).some(function (el){  //check song in history one by one; check by artist not by title!
