@@ -588,7 +588,8 @@ li.donate a:hover {
   color: #1d1d1d !important;
 }
 
-.newslist a:hover h3, .newscat a:hover h3 {
+.newslist a:hover h3, .newscat a:hover h3, 
+.halver.news-block h1:hover a, .day.sorted:hover > h3 {
   color: white;
 }
 
@@ -598,6 +599,11 @@ li.donate a:hover {
   white-space: nowrap;
   color: white;
   font-weight: 500;
+}
+
+.halver.news-block h1:hover a:before {
+  content:"More ";
+  white-space: nowrap;
 }
 
 .halver a, .postslister h3 a {
@@ -726,6 +732,18 @@ font-style: italic;
   font-weight: normal;
       font-size: 0.8em;
 }
+
+.schedulewrap .day.sorted h3:before {
+  content: "+";
+  width: 15px;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+.schedulewrap .day.sorted h3.openedSchedule:before {
+  content: "-";
+}
+
 
 /* Gallery fixes */
 #spider_popup_wrap a.spider_popup_close_fullscreen, #spider_popup_wrap a.spider_popup_close_fullscreen:hover, .bwg_ctrl_btn:hover {

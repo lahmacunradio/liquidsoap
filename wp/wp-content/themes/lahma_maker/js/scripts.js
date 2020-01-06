@@ -187,6 +187,7 @@ function sortDates( callbackFunction ) {
     });
     
     $(".schedulewrap > .day").first().addClass("today");
+    $(".day.today").children("h3").addClass("openedSchedule");
     $(".day").not(".today").children("ul").hide();
 
 	callbackFunction();
@@ -220,7 +221,7 @@ $( ".shows-block" ).ready(function(){
 
 // toggle day sub-items
 $(document).on("click", ".day > h3", function(){
-    $(this).next("ul").slideToggle();
+    $(this).toggleClass("openedSchedule").next("ul").slideToggle();
 });
 
 
