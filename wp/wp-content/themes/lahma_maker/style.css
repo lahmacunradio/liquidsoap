@@ -601,11 +601,6 @@ li.donate a:hover {
   font-weight: 500;
 }
 
-.halver.news-block h1:hover a:before {
-  content:"More ";
-  white-space: nowrap;
-}
-
 .halver a, .postslister h3 a {
   color: #1d1d1d;
 }
@@ -677,8 +672,17 @@ li.donate a:hover {
 }
 
 .news-time {
-font-style: italic;
+  font-style: italic;
 }
+
+.morenewslink {
+  float: right;
+  font-size: 0.6em;
+  padding-top: 0.5em;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
 
 /* Schedule */
 
