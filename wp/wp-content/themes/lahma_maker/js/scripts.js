@@ -178,12 +178,17 @@ if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") ) {
 function sortDates( callbackFunction ) {
 	$(".day").not(".sorted").addClass("notsorted");
 	$(".day.notsorted").each(function(i){
-	// console.log(i);
-	if ( i < gooddateobj ) {
-		$(this).appendTo($("#endofweek"));
-	}
-	$(".day").removeClass("notsorted").addClass("sorted");
-	});
+        // console.log(i);
+        if ( i < gooddateobj ) {
+            $(this).appendTo($("#endofweek"));
+        }
+        $(".day").removeClass("notsorted").addClass("sorted");
+        
+    });
+    
+    $(".schedulewrap > .day").first().addClass("today");
+    $(".day.today").children("h3").addClass("openedSchedule");
+    $(".day").not(".today").children("ul").hide();
 
 	callbackFunction();
 
@@ -207,12 +212,18 @@ function dateWriteSchedule() {
 
 
 $( document ).on("ajaxComplete", function(){
-		sortDates( dateWriteSchedule );
+	sortDates( dateWriteSchedule );
 });
 
 $( ".shows-block" ).ready(function(){
-		sortDates( dateWriteSchedule );
+	sortDates( dateWriteSchedule );
 });
+
+// toggle day sub-items
+$(document).on("click", ".day > h3", function(){
+    $(this).toggleClass("openedSchedule").next("ul").slideToggle();
+});
+
 
 // prevent Shows menu clicking
 $(".menu-lahma-menu-container li.menu-item-has-children > a").removeAttr("href").css({'cursor': 'pointer'}).addClass("avoidAjax");

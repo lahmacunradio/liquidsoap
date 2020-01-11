@@ -2,7 +2,12 @@
 News template for homepage
  */?>
 
-<h1><a href="category/news/">News</a></h1>
+<h1>
+  <a href="category/news/">
+  News
+  <span class="morenewslink">More news...</span>
+  </a>
+</h1>
 
 <article>
 
