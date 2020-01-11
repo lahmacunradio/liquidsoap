@@ -202,6 +202,11 @@ playlist_hetedik_tipusu_talalkozas = playlist(id="playlist_hetedik_tipusu_talalk
 playlist_hetedik_tipusu_talalkozas = audio_to_stereo(id="stereo_playlist_hetedik_tipusu_talalkozas", playlist_hetedik_tipusu_talalkozas)
 ignore(playlist_hetedik_tipusu_talalkozas)
 
+playlist_mills_weather = playlist(id="playlist_mills_weather",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mills_weather.m3u")
+playlist_mills_weather = audio_to_stereo(id="stereo_playlist_mills_weather", playlist_mills_weather)
+ignore(playlist_mills_weather)
+
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -432,6 +437,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -450,6 +456,7 @@ radio = switch(track_sensitive=false, transitions=[
     #Tuesday
     ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),
     ({2w and 12h-13h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
+    ({2w and 15h-15h59m}, once(playlist_mills_weather)),
     ({2w and 16h-16h59m}, once(playlist_azvlm)),
     ({2w and 17h-18h29m}, once(playlist_mmn_radio)),
     ({2w and 18h30m-19h29m}, once(playlist_havizaj)),

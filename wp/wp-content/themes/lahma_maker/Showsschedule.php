@@ -16,6 +16,7 @@
     <ul>
     <li>03:04–05:30 <strong><a href="../shows/lahmacun-gyorsnaszad-hidja/">Lahmacun gyorsznaszád hídja</a></strong></li>
     <li>13:00–14:30 <strong><a href="../shows/csinaltam-neked-egy-valogatas-kazettat/">Csináltam neked egy válogatás kazettát</a></strong> | <a href="https://www.mixcloud.com/vargyai/" target="_blank" rel="noopener noreferrer">archive</a></li>
+    <li>16:00–17:00 <strong><a href="../shows/mills-strange-weather-condition/">Mill’s Strange Weather Condition</a></strong></li>
     <li>17:00–18:00 <strong><a href="../shows/azvlm/">AZVLM</a></strong></li>
     <li>18:00–19:00 <strong><a href="../shows/mmn-radio/">MMN radio</a></strong> | <a href="https://www.mixcloud.com/mmmnmnm/" target="_blank" rel="noopener noreferrer">archive</a></li>
     <li>19:30–20:30 <strong><a href="../shows/havizaj/">Havizaj</a></strong>  | <a href="https://www.mixcloud.com/havizaj/" target="_blank" rel="noopener noreferrer">archive</a></li>
