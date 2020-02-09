@@ -206,6 +206,10 @@ playlist_mills_weather = playlist(id="playlist_mills_weather",mode="randomize",r
 playlist_mills_weather = audio_to_stereo(id="stereo_playlist_mills_weather", playlist_mills_weather)
 ignore(playlist_mills_weather)
 
+playlist_udcsi = playlist(id="playlist_udcsi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_udcsi.m3u")
+playlist_udcsi = audio_to_stereo(id="stereo_playlist_udcsi", playlist_udcsi)
+ignore(playlist_udcsi)
+
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
@@ -438,6 +442,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -447,7 +452,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 6h-6h59m}, once(playlist_szarok_bele)),
     ({1w and 10h11m-11h11m}, once(playlist_transverszia)),  #orig requested time 11:11 am 12:12 pm
     ({1w and 12h-12h59m}, once(playlist_a_who_say)),
-    ({1w and 13h-16h59m}, once(playlist_dalmata_radio)),
+    ({1w and 13h-14h59m}, once(playlist_dalmata_radio)),
+    ({1w and 16h-16h59m}, once(playlist_udcsi)),
     ({1w and 17h-17h59m}, once(playlist_szmuti_csorba)),
     ({1w and 18h-18h35m}, once(playlist_kezek_a_sebekben)),
     ({1w and 19h-20h59m}, once(playlist_erdenklang)),
