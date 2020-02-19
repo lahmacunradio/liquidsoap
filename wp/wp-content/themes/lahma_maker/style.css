@@ -481,7 +481,7 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
     background: #00000000;
 }
 
-li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a {
+li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a, li.mixcloudmenu a {
     overflow: hidden;
       width: 35px;
       height: 35px;
@@ -491,7 +491,7 @@ li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a {
       padding-right: 5px;
 }
 
-li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before, li.bcmenu a:before  {
+li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before, li.bcmenu a:before, li.mixcloudmenu a:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -517,6 +517,11 @@ li.listen a:before {
 li.bcmenu a:before {
   content: "\f2d5";  
 }
+
+li.mixcloudmenu a:before {
+  content: "\f289";  
+}
+
 
 /*
 li.donate a:before {
