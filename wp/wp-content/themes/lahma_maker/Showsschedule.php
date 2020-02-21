@@ -55,6 +55,7 @@
 <div class="Friday day">
     <h3>Friday / Péntek</h3>
     <ul>
+    <li>16:00–17:00 <strong><a href="../shows/user-f-3901-music-idm/">/user/f-3901/music/idm |</a></strong>| <a href="https://www.mixcloud.com/user_f-3901_music_idm/" target="_blank" rel="noopener noreferrer">archive</a></li>
     <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong></li>
     <li>18:00–19:00 <strong><a href="../shows/agybaj/">Agybaj</a></strong></li>
     <li>19:00–21:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong>| <a href="https://www.mixcloud.com/d-j-k-o-d/" target="_blank" rel="noopener noreferrer">archive</a></li>

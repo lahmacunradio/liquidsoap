@@ -210,6 +210,9 @@ playlist_udcsi = playlist(id="playlist_udcsi",mode="randomize",reload_mode="watc
 playlist_udcsi = audio_to_stereo(id="stereo_playlist_udcsi", playlist_udcsi)
 ignore(playlist_udcsi)
 
+playlist_idm_user = playlist(id="playlist_idm_user",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_idm_user.m3u")
+playlist_idm_user = audio_to_stereo(id="stereo_playlist_idm_user", playlist_idm_user)
+ignore(playlist_idm_user)
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
@@ -443,6 +446,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -489,6 +493,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 22h-22h59m}, once(playlist_gyogyfurdo)),
     ({5w and 00h-00h15m}, once(playlist_midnight_song)),
     #Friday
+    ({5w and 15h-15h59m}, once(playlist_idm_user)),
     ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
     ({5w and 18h-19h59m}, once(playlist_mukodo_mukod)),
