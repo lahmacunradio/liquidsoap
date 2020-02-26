@@ -262,11 +262,17 @@ end
 
 live_enabled = ref false
 
+title = insert_metadata(radio)
+insert = fst(title)
+radio = snd(title)
+
 def live_connected(header) =
   log("DJ Source connected! #{header}")
   live_enabled := true
   ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djon --form api_auth="^string.quote("AZURA_KEY")^""), default="")
   log("AzuraCast Live Connected Response: #{ret}")
+  #Lahmacun default sub title for live session
+  insert([("title","live") ])
 end
 
 def live_disconnected() =
@@ -522,6 +528,8 @@ def metadata_updated(m) =
     ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^string.quote(m["song_id"])^" --form media="^string.quote(m["media_id"])^" --form playlist="^string.quote(m["playlist_id"])^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
     log("AzuraCast Feedback Response: #{ret}")
   end
+  mtitle = m["title"]
+  log("LAHMA title on metadata change: #{mtitle}")
 end
 
 radio = on_metadata(metadata_updated,radio)
