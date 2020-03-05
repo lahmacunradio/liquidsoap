@@ -95,11 +95,11 @@
 <?php endif; ?>
 
 
-<div id="playerdiv">
-<?php
-	get_template_part( 'playercode' );
-?>
-</div>
+	<div id="playerwrap">
+	<?php
+		get_template_part( 'playercode' );
+	?>
+	</div>
 
 	<div class="wrap">
 		<div class="site-branding">
@@ -113,6 +113,8 @@
 			<?php esc_html_e( 'Primary Menu', 'maker' ); ?>
 		</button><!-- #site-navigation-menu-toggle -->
 
+	</div><!-- .column -->
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<?php 
 			wp_nav_menu( array( 
@@ -121,5 +123,5 @@
 			
 			?>
 		</nav><!-- #site-navigation -->
-	</div><!-- .column -->
+
 </header><!-- #masthead -->

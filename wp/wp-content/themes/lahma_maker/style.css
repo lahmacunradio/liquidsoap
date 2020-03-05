@@ -103,7 +103,6 @@ div#main h1 {
 .station-lahmacun_radio {
     display: block;
     margin: auto;
-    width: 300px;
 }
 
 .site-branding {
@@ -136,6 +135,14 @@ html:not(.ismobile) .site-title:hover > a {
 
 .main-navigation {
     font-size: 1.3em;
+    float: none;
+    clear: both;
+}
+
+.wrap:after {
+  content:"";
+  display: block;
+  clear: both;
 }
 
 .main-navigation ul ul li img {
@@ -152,8 +159,11 @@ background-color: #d09cf8 !important;
 background-image: none;
 }
 
-header #playerdiv {
-	float:left;
+header #playerwrap {
+  float:left;
+  width: calc(100% - 400px);
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 header .wrap {
@@ -182,18 +192,16 @@ ul.sub-menu.closed {
 header #playerdiv div.station-lahmacun_radio .public-page .card {
   background: none;
   box-shadow: none;
-  width: 300px;
-  height: 100px;
+  height: 85px;
   min-width: 300px;
-  margin-top: 2.3em;
 }
 
 header #playerdiv div.station-lahmacun_radio .public-page .card-body {
     padding: 0;
 }
 
-#playerdiv .radio-player-widget .now-playing-details .now-playing-main {
-    max-width: 180px;
+#playerdiv .radio-player-widget .radio-controls {
+  width: 100%;
 }
 
 header #playerdiv .public-page .card-body a,
@@ -201,9 +209,15 @@ header #playerdiv .public-page .card-body .media-body {
     color: #1e1e1e !important;
 }
 
+header #playerdiv .radio-player-widget .radio-controls .radio-control-play-button {
+  margin-right: 0.5em;
+  margin-top: 0;
+  font-size: 1.1em;
+}
+
 header #playerdiv .public-page .card-body a.programimage {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     display: block;
     overflow: hidden;
     position: relative;
@@ -213,16 +227,16 @@ header #playerdiv .public-page .card-body a.programimage img {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 70px;
+    max-height: 70px;
 }
 
 header #playerdiv .public-page .card-body a.programimage .onair {
   position: absolute;
       bottom: 0;
       background: #da1313;
-      padding: 0.1em;
-      font-size: 0.7em;
+      padding: 0.2em;
+      font-size: 0.8em;
       color: white;
       width: 100%;
       text-align: center;
@@ -244,20 +258,18 @@ header #playerdiv .public-page .card-body a.programimage .onair {
 }
 
 header #playerdiv .public-page .card-body .media-body {
-    max-height: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-height: 70px;
     display: block;
-    white-space: nowrap;
 }
 
 header #playerdiv .public-page .card-body .media-body h4,
 header #playerdiv .public-page .card-body .media-body h5 {
-  text-overflow: ellipsis;
-  overflow: hidden;
+  text-overflow: initial;
+  overflow: unset;
   cursor: default;
-  word-break: normal;
+  word-break: inherit;
   text-transform: none;
+  white-space: normal;
 }
 
 header #playerdiv .public-page .card-body .media-body h5 {
@@ -267,19 +279,28 @@ header #playerdiv .public-page .card-body .media-body h5 {
 }
 
 header #playerdiv #radio-player-controls.radio-controls-standalone {
-    margin-top: 0.5em;
+    position: absolute;
+    background: #d09cf8;
+    top: 50px;
+    z-index: 500;
+    padding-left: 6px;
 }
 
 header #playerdiv #radio-player-controls.radio-controls-standalone > div {
     display: inline-block;
 }
 
+.volumeshower {
+  margin: 11px 8px 0;
+  display: block;
+}
+
 header #playerdiv #radio-player-controls.radio-controls-standalone .radio-control-volume-slider {
-    width: 230px;
+    width: 200px;
 }
 
 #radio-player-controls.radio-controls-standalone input.jp-volume-range {
-    width: 225px;
+    width: 200px;
     height: 10px;
 }
 
@@ -351,8 +372,12 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
   height: 5px;
 }
 
-html.ismobile .volumecontrolos {
+html.ismobile .volumecontrolos, html.ismobile .volumeshower {
     display: none !important;
+}
+
+html.ismobile header #playerdiv .radio-player-widget .radio-controls .radio-control-play-button {
+  margin-top: 15px;
 }
 
 header #playerdiv .creditswrap {
@@ -1054,7 +1079,7 @@ Responsive
 ******/
 
 html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
-    height: 60px;
+
 }
 
 
@@ -1086,20 +1111,20 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
 
 @media screen and (min-width: 769px) {
 
-.main-navigation ul {  padding: 0.3em 0; }
+.main-navigation ul {  padding: 0.3em 0; float: none; }
 .main-navigation li {  position: initial; }
 .main-navigation ul > li > a {  padding-bottom: 2em; padding-top: 0; }
 .main-navigation ul ul {background-color: #d09cf8; }
 .main-navigation ul.menu li > ul {
   right: 0;
-  top: 135px;
+  top: 150px;
   border-top: none;
   left: 0;
   text-align: center;
   box-shadow: none;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  height: calc(100vH - 135px);
+  height: calc(100vH - 150px);
   overflow: auto;
 }
 .main-navigation ul ul li, .main-navigation ul ul li:last-child {
@@ -1141,50 +1166,18 @@ html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
   display: block;
 }
 
-.site-header {   padding: 0 0 0.5em;   height: 135px; }
+.site-header {   padding: 0 0 0.5em;   height: 150px; }
 .entry-title {     font-size: 2em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
 
 /* end min 786 */
 }
 
-/* Menu fix for tablet-desktop */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .main-navigation ul.menu > li > a {
-      font-size: 0.9em;
-      padding: 0 0.5em 2em 0.5em;
-  }
-
-  li.donate a:before {
-    content: "\f004";
-  } 
-
-  li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a, li.donate a {
-    width: 25px;
-  }
-
-  li.donate a {
-    overflow: hidden;
-    height: 35px;
-    vertical-align: top;
-    text-align: center;
-    padding-left: 0;
-    padding-right: 5px;
-}  
-  .site-title { font-size: 1.5rem;  line-height: 2em;  background-size: 65px; }
-  .site-title a { padding-left: 75px; }
-
-}
-
-@media screen and (min-width: 769px) and (max-width: 870px) {
-  .main-navigation ul.menu > li > a {   padding: 0 0.2em 2em 0.2em; font-size: 0.8em;  }
-}
-/* End menu fix */  
-
-
 
 @media screen and (max-width: 768px) {
 
-header .wrap {       float: none; }
+header .wrap, header #playerwrap {   float: none; display: block; }
+header #playerwrap {   width: 100%; height: 70px; }
+
 .main-navigation ul.menu li > ul { background: #d09cf8e0; }
 body.home .main-navigation.toggled ul.menu li > ul { background: none; }
 .main-navigation ul.menu li:hover > ul {  
@@ -1205,7 +1198,7 @@ body.home .main-navigation.toggled ul.menu li > ul { background: none; }
 .halver .newslist {  display: none;  }
 .halver .newslist:first-child {  display: block;  }
 
-.station-lahmacun_radio {   width: 300px; }
+.station-lahmacun_radio {   width: auto; }
 .main-navigation a {   padding-right: 0; }
 
 body.home div#page {  background-color: #d09cf891 !important; }
@@ -1248,7 +1241,7 @@ article.campaign .entry-content .campaigninfos, article.campaign .entry-content 
 
 .lahma_side-infos, .lahma_post-content {  display: block;  width: 100%;     margin: 3% auto; }
 .lahma_post-title {   margin-bottom: 2em; }
-header #playerdiv div.station-lahmacun_radio .public-page .card {   zoom: 0.9; margin-top: 4%;      width: 320px;  min-width: 320px; }
+header #playerdiv div.station-lahmacun_radio .public-page .card {   zoom: 0.9; margin-top: 4%;      width: auto;  min-width: 320px; }
 header div.station-lahmacun_radio .might-overflow {   width: 100% !important; }
 div.station-lahmacun_radio h4.might-overflow {  max-height: 2.3em; }
 header #playerdiv .public-page .card-body .media-body > div {    min-height: 20px; }
