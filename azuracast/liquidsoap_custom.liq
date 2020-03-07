@@ -214,6 +214,10 @@ playlist_idm_user = playlist(id="playlist_idm_user",mode="randomize",reload_mode
 playlist_idm_user = audio_to_stereo(id="stereo_playlist_idm_user", playlist_idm_user)
 ignore(playlist_idm_user)
 
+playlist_jambikus_nesz = playlist(id="playlist_jambikus_nesz",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jambikus_nesz.m3u")
+playlist_jambikus_nesz = audio_to_stereo(id="stereo_playlist_jambikus_nesz", playlist_jambikus_nesz)
+ignore(playlist_jambikus_nesz)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -447,6 +451,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -500,6 +505,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),
     ({5w and 23h-23h15m}, once(playlist_midnight_song)),
     #Saturday
+    ({6w and 12h30m-13h29m}, once(playlist_jambikus_nesz)),
     ({6w and 14h-15h29m}, once(playlist_torso)),
     ({6w and 16h-16h59m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
