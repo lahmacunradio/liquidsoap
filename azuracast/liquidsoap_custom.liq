@@ -445,7 +445,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
     ({6w and 21h30m-22h29m}, once(playlist_brains_sublimating)),
     #Sunday
-    ({7w and 11:30h-12h59m}, once(playlist_bambusz)),
+    ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h30m-18h29m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h59m}, once(playlist_speakers_corner)),
