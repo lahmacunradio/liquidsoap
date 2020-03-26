@@ -214,6 +214,10 @@ playlist_idm_user = playlist(id="playlist_idm_user",mode="randomize",reload_mode
 playlist_idm_user = audio_to_stereo(id="stereo_playlist_idm_user", playlist_idm_user)
 ignore(playlist_idm_user)
 
+playlist_jambikus_nesz = playlist(id="playlist_jambikus_nesz",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jambikus_nesz.m3u")
+playlist_jambikus_nesz = audio_to_stereo(id="stereo_playlist_jambikus_nesz", playlist_jambikus_nesz)
+ignore(playlist_jambikus_nesz)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -441,12 +445,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -462,7 +460,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 18h-18h35m}, once(playlist_kezek_a_sebekben)),
     ({1w and 19h-20h59m}, once(playlist_erdenklang)),
     ({1w and 21h-22h59m}, once(playlist_infinite_scroll)),
-    ({1w and 23h-23h15m}, once(playlist_midnight_song)),
     #Tuesday
     ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),
     ({2w and 12h-13h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
@@ -471,7 +468,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 17h-18h29m}, once(playlist_mmn_radio)),
     ({2w and 18h30m-19h29m}, once(playlist_havizaj)),
     ({2w and 20h-20h59m}, once(playlist_turmeric_acid)),
-    ({2w and 23h-23h15m}, once(playlist_midnight_song)),
     #Wednesday
     ({3w and 11h-12h59m}, once(playlist_off_air_premiere)),
     ({3w and 14h-14h59m}, once(playlist_erto_hallgatas)),
@@ -481,7 +477,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 19h-19h59m}, once(playlist_cellz)),
     ({3w and 20h-20h59m}, once(playlist_eastern_daze)),
     ({3w and 22h-22h59m}, once(playlist_radio_bluszcze)),
-    ({3w and 23h-23h15m}, once(playlist_midnight_song)),
     #Thursday
     ({4w and 13h-13h59m}, once(playlist_muhelycast)),
     ({4w and 14h-14h59m}, once(playlist_konkret_riport)),
@@ -491,28 +486,25 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 19h-19h59m}, once(playlist_dodo)),
     ({4w and 20h-21h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 22h-22h59m}, once(playlist_gyogyfurdo)),
-    ({5w and 00h-00h15m}, once(playlist_midnight_song)),
     #Friday
     ({5w and 15h-15h59m}, once(playlist_idm_user)),
     ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
     ({5w and 18h-19h59m}, once(playlist_mukodo_mukod)),
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),
-    ({5w and 23h-23h15m}, once(playlist_midnight_song)),
     #Saturday
+    ({6w and 12h30m-13h29m}, once(playlist_jambikus_nesz)),
     ({6w and 14h-15h29m}, once(playlist_torso)),
     ({6w and 16h-16h59m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
     ({6w and 21h30m-22h29m}, once(playlist_brains_sublimating)),
-    ({6w and 23h-23h15m}, once(playlist_midnight_song)),
     #Sunday
-    ({7w and 11h-12h59m}, once(playlist_bambusz)),
+    ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h30m-18h29m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h59m}, once(playlist_speakers_corner)),
     ({7w and 20h-20h59m}, once(playlist_sub_burek)),
-    ({7w and 23h-23h15m}, once(playlist_midnight_song)),
     ({true}, radio) ])
 
 

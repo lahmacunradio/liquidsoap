@@ -74,7 +74,7 @@
 <div class="Sunday day">
     <h3>Sunday / Vasárnap</h3>
     <ul>
-        <li>12:00–14:00 Bambuszrádió</li>
+        <li>12:30–14:00 <strong><a href="../shows/bambuszradio/">Bambuszrádió</a></strong> | <a href="https://soundcloud.com/enigmapanda/sets/radiobamboo" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>14:00–18:00 <strong><a href="../shows/donald-kacsa-klub/">Donald Kacsa Klub</a></strong> | <a href="https://www.facebook.com/donaldkacsaklub/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>18:30–19:30 <strong><a href="../shows/hetedik-tipusu-talalkozas/">Hetedik Típusú Találkozás</a></strong> | <a href="https://www.mixcloud.com/HetedikTipusuTalalkozas/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>20:00–21:00 <strong><a href="../shows/speakers-corner/"> Speakers Corner</a></strong> | <a href="https://anchor.fm/speakers-corner" target="_blank" rel="noopener noreferrer">archive</a></li>
