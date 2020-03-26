@@ -3,7 +3,7 @@
     <div class="radio-player-widget">
 
         <template v-if="is_playing">
-            <audio ref="player" v-bind:title="np.now_playing.song.text"/>
+            <audio ref="player" :title="np.now_playing.song.text"/>
         </template>
 
         <div class="now-playing-details">
@@ -385,11 +385,13 @@ export default {
             this.audio.src = this.current_stream.url;
             this.audio.play();
             this.is_playing = true;
+            document.body.classList.add("Playing");
         },
         "stop": function() {
             this.is_playing = false;
             this.audio.pause();
             this.audio.src = '';
+            document.body.classList.remove("Playing");
         },
         "toggle": function() {
             if (this.is_playing) {

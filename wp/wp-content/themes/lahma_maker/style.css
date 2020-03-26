@@ -301,7 +301,7 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
 
 #radio-player-controls.radio-controls-standalone input.jp-volume-range {
     width: 200px;
-    height: 10px;
+    height: 8px;
 }
 
 /* volume control cursos */
@@ -317,7 +317,7 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
   border: 1px solid #9a9a9a;
   border-radius: 50%;
   height: 15px;
-  margin-top: -5px;
+  margin-top: -6px;
   width: 15px;
 }
 
@@ -333,7 +333,7 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
 
 #playerdiv .custom-range::-webkit-slider-runnable-track {
   border-radius: 2px;
-  height: 5px;
+  height: 3px;
 }
 
 

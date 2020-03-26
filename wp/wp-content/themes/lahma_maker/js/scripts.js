@@ -165,7 +165,7 @@ window.onfocus = function() {
 		// console.log(gooddateobj);
 		// console.log(Cgooddateobj);
 
-if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") ) {
+if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") && !$("body").hasClass("Playing") ) {
 		location.reload();
 }
 
