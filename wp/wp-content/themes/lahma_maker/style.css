@@ -293,6 +293,7 @@ header #playerdiv #radio-player-controls.radio-controls-standalone > div {
 .volumeshower {
   margin: 11px 8px 0;
   display: block;
+  -moz-transform: translateY(-1px);
 }
 
 header #playerdiv #radio-player-controls.radio-controls-standalone .radio-control-volume-slider {
@@ -321,6 +322,10 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
   width: 15px;
 }
 
+#playerdiv .custom-range::-webkit-slider-progress {
+  background-color: black;
+}
+
 #playerdiv .custom-range:focus::-webkit-slider-thumb {
     border: 1px solid grey;
     box-shadow: none;
@@ -338,6 +343,11 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
 
 
 /* these ones work for Mozilla */
+
+.custom-range::-moz-range-track {
+  height: 3px;
+}
+
 #playerdiv .custom-range::-moz-range-thumb {
   transition-duration: .3s;
   transition-property: box-shadow;
@@ -348,13 +358,13 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
   background-color: #f5f5f5;
   border: 1px solid #9a9a9a;
   border-radius: 50%;
-  height: 19px;
-  margin-top: -7px;
-  width: 19px;
+  height: 15px;
+  margin-top: -6px;
+  width: 15px;
 }
 
 #playerdiv .custom-range::-moz-range-progress {
-  background-color: #9a9a9a;
+  background-color: black;
 }
 
 #playerdiv .custom-range:focus::-moz-range-thumb {
@@ -371,6 +381,7 @@ header #playerdiv #radio-player-controls.radio-controls-standalone .radio-contro
   border-radius: 2px;
   height: 5px;
 }
+
 
 html.ismobile .volumecontrolos, html.ismobile .volumeshower {
     display: none !important;
