@@ -245,49 +245,79 @@ def azuracast_next_song() =
   end
 end
 
-dynamic = audio_to_stereo(request.dynamic(id="lahmacun_radio_next_song", timeout=20., azuracast_next_song))
+dynamic = cue_cut(id="lahmacun_radio_cue_next_song", audio_to_stereo(id="lahmacun_radio_stereo_next_song", request.dynamic(id="lahmacun_radio_next_song", timeout=20., azuracast_next_song)))
 radio = fallback(id="lahmacun_radio_autodj_fallback", track_sensitive = true, [dynamic, radio])
 
-requests = audio_to_stereo(request.queue(id="lahmacun_radio_requests"))
+requests = cue_cut(id="lahmacun_radio_cue_requests", audio_to_stereo(id="lahmacun_radio_stereo_requests", request.queue(id="lahmacun_radio_requests")))
 radio = fallback(id="lahmacun_radio_requests_fallback", track_sensitive = true, [requests, radio])
 
-radio = cue_cut(id="lahmacun_radio_radio_cue", radio)
 add_skip_command(radio)
 
 radio = fallback(id="lahmacun_radio_safe_fallback", track_sensitive = false, [radio, single(id="error_jingle", "/usr/local/share/icecast/web/error.mp3")])
 
 # DJ Authentication
-def dj_auth(user,password) =
-  log("Authenticating DJ: #{user}")
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^string.quote(user)^" --form dj-password="^string.quote(password)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
-  log("AzuraCast DJ Auth Response: #{ret}")
-  bool_of_string(ret)
-end
-
 live_enabled = ref false
+last_authenticated_dj = ref ""
+live_dj = ref ""
+
+def dj_auth(auth_user,auth_pw) =
+    user = ref ""
+    password = ref ""
+  
+    if (auth_user == "source" or auth_user == "") and (string.match(pattern="(:|,)+", auth_pw)) then
+        auth_string = string.split(separator="(:|,)", auth_pw)
+        
+        user := list.nth(default="", auth_string, 0)
+        password := list.nth(default="", auth_string, 2)
+    else
+        user := auth_user
+        password := auth_pw
+    end
+    
+    log("Authenticating DJ: #{!user}")
+    
+    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^string.quote(!user)^" --form dj-password="^string.quote(!password)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
+    log("AzuraCast DJ Auth Response: #{ret}")
+    
+    authed = bool_of_string(ret)
+    if (authed) then
+        last_authenticated_dj := !user
+    end
+    
+    authed
+end
 
 def live_connected(header) =
-  log("DJ Source connected! #{header}")
-  live_enabled := true
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djon --form api_auth="^string.quote("AZURA_KEY")^""), default="")
-  log("AzuraCast Live Connected Response: #{ret}")
+    dj = !last_authenticated_dj
+    log("DJ Source connected! Last authenticated DJ: #{dj} - #{header}")
+    
+    live_enabled := true
+    live_dj := dj
+    
+    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djon --form dj-user="^string.quote(dj)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
+    log("AzuraCast Live Connected Response: #{ret}")
 end
 
-def live_disconnected() =
-  log("DJ Source disconnected!")
-  live_enabled := false
-  ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djoff --form api_auth="^string.quote("AZURA_KEY")^""), default="")
-  log("AzuraCast Live Disconnected Response: #{ret}")
-end
+def live_disconnected() = 
+    dj = !live_dj
+    
+    log("DJ Source disconnected! Current live DJ: #{dj}")
+    
+    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djoff --form dj-user="^string.quote(dj)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
+    log("AzuraCast Live Disconnected Response: #{ret}")
+    
+    live_enabled := false
+    last_authenticated_dj := ""
+    live_dj := ""
+end 
 
-# A Pre-DJ source of radio that can be broadcasted if needed
+# A Pre-DJ source of radio that can be broadcast if needed
 radio_without_live = radio
 ignore(radio_without_live)
 
 # Live Broadcasting
-live = audio_to_stereo(input.harbor("/", id="lahmacun_radio_input_streamer", port=8005, user="shoutcast", auth=dj_auth, icy=true, max=30., buffer=5., icy_metadata_charset="UTF-8", metadata_charset="UTF-8", on_connect=live_connected, on_disconnect=live_disconnected))
+live = audio_to_stereo(input.harbor("/", id = "lahmacun_radio_input_streamer", port = 8005, auth = dj_auth, icy = true, icy_metadata_charset = "UTF-8", metadata_charset = "UTF-8", on_connect = live_connected, on_disconnect = live_disconnected, buffer = 5., max = 10.))
 ignore(output.dummy(live, fallible=true))
-live = fallback(id="lahmacun_radio_live_fallback", track_sensitive=false, [live, blank(duration=2.)])
 
 #LAHMACUN: CHANGE IN AZURA GENERATED CONFIG (COMMENT OUT NEXT LINE)
 #radio = switch(id="lahmacun_radio_live_switch", track_sensitive=false, [({!live_enabled}, live), ({true}, radio)])
@@ -299,91 +329,6 @@ radio = server.insert_metadata(id="custom_metadata", radio)
 radio = amplify(1., radio)
 
 # LAHMACUN: THIS IS WHERE THE CUSTOM CONFIGURATION WOULD START
-
-#Liquidsoap 1.3.7 fadeing bug fix 
-#start
-def mkfade(~type="lin",~start=0.,~stop=1.,~duration=3.,~on_done={()},s) =
-  log = log(label="mkfade")
-
-  # Shape functions must map 0. -> 0. and 1. -> 1.
-  pi = acos(-1.)
-  def sin_shape(x) =
-    (1. + sin((x-0.5)*pi))/2.
-  end
-
-  curve = 2.
-  m = exp(curve-1.) - exp(-1.)
-  def exp_shape(x) =
-    (exp((curve*x)-1.) - exp(-1.))/m
-  end
-
-  curve = 10.
-  m = log_e(1.+curve)
-  def log_shape(x) =
-    log_e(1.+10.*x)/m
-  end
-
-  def lin_shape(x) =
-    x
-  end
-
-  shape =
-    if type == "sin" then
-      sin_shape
-    elsif type == "exp" then
-      exp_shape
-    elsif type == "log" then
-      log_shape
-    elsif type == "lin" then
-      lin_shape
-    else
-      log("Invalid type #{type}, using \"lin\"")
-      lin_shape
-    end
-
-  start_time = ref (-1.)
-  def fade() =
-    if !start_time < 0. then
-      start_time := source.time(s)
-    end
-
-    t = source.time(s) - !start_time
-    if t >= duration then
-      on_done ()
-      stop
-    else
-      if start <= stop then
-        start + shape(t/duration)*(stop-start)
-      else
-        stop + shape(1.-t/duration)*(start-stop)
-      end
-    end
-  end
-
-  fade
-end
-
-def fade.final(~id="fade.final",~duration=3.,~type="lin",s) =
-  fn = mkfade(start=1.,stop=0.,type=type,duration=duration,s)
-  should_play = ref true
-
-  def fn() =
-    v = fn()
-    if v == 0. then
-      should_play := false
-    end
-    v
-  end
-
-  s = amplify(id=id,fn,s)
-  switch(track_sensitive=false,[({!should_play},s)])
-end
-
-def fade.initial(~id="fade.initial",~duration=3.,~type="lin",s) =
-  fn = mkfade(start=0.,stop=1.,type=type,duration=duration,s)
-  amplify(id=id,fn,s)
-end
-#end
 
 # Fade out off air music, play jingle, start playing show (unfaded)
 def transition_into_show(j,a,b)
