@@ -50,11 +50,11 @@ if ( in_array( $_SERVER['SERVER_NAME'], array( 'staging.lahmacun.hu') ) ) {
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/material-c652fed16a.js"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/jquery.bootgrid.updated.js"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerdependencies/bootgrid-acbc545ec1.js"></script>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/dist/radio_player.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/assets/playerfiles/dist/radio_player_202003281727.js"></script>
 
-</head>
 
-<body class="page-minimal station-lahmacun_radio">
+<div class="page-minimal station-lahmacun_radio">
+
 <script type="text/javascript" nonce="BgC6RZJvXd9J/qcBqlIz7EFw">
 Vue.prototype.$eventHub = new Vue();</script>
 <script type="text/javascript" nonce="BgC6RZJvXd9J/qcBqlIz7EFw">
@@ -117,6 +117,8 @@ $(function() {
     </div>
 </div>
 </div>
+</div>
+
 </div>
 
 <!-- RADIO code -->

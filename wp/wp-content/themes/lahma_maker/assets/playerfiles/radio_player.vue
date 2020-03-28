@@ -1,9 +1,15 @@
 <template>
   <div class="stations nowplaying altalanosinfok">
     <div class="radio-player-widget">
+
+        <template v-if="is_playing">
+            <audio ref="player" :title="np.now_playing.song.text"/>
+        </template>
+
         <div class="now-playing-details">
 
           <div class="radio-controls">
+              <div class="play-volume-controls">
               <div class="radio-control-play-button" v-if="is_playing">
                   <a href="#" role="button" :title="$t('pause_btn')" :aria-label="$t('pause_btn')" @click.prevent="toggle()">
                       <i class="material-icons lg" aria-hidden="true">pause_circle_outline</i>
@@ -14,6 +20,27 @@
                       <i class="material-icons lg" aria-hidden="true">play_circle_outline</i>
                   </a>
               </div>
+
+                <a href="#" class="text-secondary volumeshower" @mouseenter="showVolumeSlider = !showVolumeSlider" >
+                    <i class="material-icons" aria-hidden="true">volume_down</i>
+                </a>
+              </div>  
+              
+              <div v-show="showVolumeSlider" @mouseleave="showVolumeSlider = !showVolumeSlider" class="radio-controls-standalone volumecontrolos" id="radio-player-controls">
+                <div class="radio-control-mute-button">
+                    <a href="#" class="text-secondary" :title="$t('mute_btn')" @click.prevent="volume = 0">
+                        <i class="material-icons" aria-hidden="true">volume_mute</i>
+                    </a>
+                </div>
+                <div class="radio-control-volume-slider">
+                    <input type="range" :title="$t('volume_slider')" class="custom-range jp-volume-range" min="0" max="100" step="1" v-model="volume" id="jp-volume-range">
+                </div>
+                <div class="radio-control-max-volume-button">
+                    <a href="#" class="text-secondary" :title="$t('full_volume_btn')" @click.prevent="volume = 100">
+                        <i class="material-icons" aria-hidden="true">volume_up</i>
+                    </a>
+                </div>
+          </div>
 
             <div class="now-playing-art" v-if="show_album_art && np.now_playing.song.art">
                 <a v-bind:href="show_art_url" class="swipebox programimage" target="_blank" rel="playerimg">
@@ -59,7 +86,7 @@
                         {{ current_stream.name }}
                     </button>
                     <div class="dropdown-menu" aria-labelledby="btn-select-stream">
-                        <a class="dropdown-item" v-for="stream in streams" href="javascript:;" @click="switchStream(stream)">
+                        <a class="dropdown-item" v-for="stream in streams" href="javascript:;" @click="switchStream(stream)" :key="stream.name">
                             {{ stream.name }}
                         </a>
                     </div>
@@ -67,21 +94,6 @@
             </div>
         </div>
 
-          <div class="radio-controls-standalone volumecontrolos" id="radio-player-controls">
-            <div class="radio-control-mute-button">
-                <a href="#" class="text-secondary" :title="$t('mute_btn')" @click.prevent="volume = 0">
-                    <i class="material-icons" aria-hidden="true">volume_mute</i>
-                </a>
-            </div>
-            <div class="radio-control-volume-slider">
-                <input type="range" :title="$t('volume_slider')" class="custom-range jp-volume-range" min="0" max="100" step="1" v-model="volume" id="jp-volume-range">
-            </div>
-            <div class="radio-control-max-volume-button">
-                <a href="#" class="text-secondary" :title="$t('full_volume_btn')" @click.prevent="volume = 100">
-                    <i class="material-icons" aria-hidden="true">volume_up</i>
-                </a>
-            </div>
-          </div>
         </div>
     </div>
 </template>
@@ -181,6 +193,7 @@ export default {
     },
     data: function() {
         return {
+            "showVolumeSlider": false,
             "np": {
                 "live": {
                     "is_live":"Is Live",
@@ -372,11 +385,13 @@ export default {
             this.audio.src = this.current_stream.url;
             this.audio.play();
             this.is_playing = true;
+            document.body.classList.add("Playing");
         },
         "stop": function() {
             this.is_playing = false;
             this.audio.pause();
             this.audio.src = '';
+            document.body.classList.remove("Playing");
         },
         "toggle": function() {
             if (this.is_playing) {
