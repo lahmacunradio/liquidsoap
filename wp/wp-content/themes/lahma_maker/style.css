@@ -137,6 +137,9 @@ html:not(.ismobile) .site-title:hover > a {
     font-size: 1.3em;
     float: none;
     clear: both;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .wrap:after {
@@ -517,6 +520,12 @@ body #swipebox-bottom-bar, body #swipebox-top-bar {
     background: #00000000;
 }
 
+/* Social menu icons */
+
+#social-menu {
+  margin-bottom: 0.8em;
+}
+
 li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a, li.mixcloudmenu a {
     overflow: hidden;
       width: 35px;
@@ -527,7 +536,7 @@ li.facebookmenu a, li.listen a, li.instagrammenu a, li.bcmenu a, li.mixcloudmenu
       padding-right: 5px;
 }
 
-li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before, li.bcmenu a:before, li.mixcloudmenu a:before {
+li.facebookmenu a:before, li.listen a:before, li.donate a:before, li.instagrammenu a:before, li.bcmenu a:before, li.mixcloudmenu a:before, li.donate a:after {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -558,12 +567,11 @@ li.mixcloudmenu a:before {
   content: "\f289";  
 }
 
-
-/*
-li.donate a:before {
-  content: "\f004";
+li.donate a:after {
+  content: "\f094";
+  margin-left: 7px;
+  margin-bottom: 0;
 }
-*/
 
 @keyframes pulse {
   0% { color: black; }
@@ -1197,11 +1205,12 @@ body.home .main-navigation.toggled ul.menu li > ul { background: none; }
   box-shadow: none;
  }
 .menu-toggle { float: left;     margin-bottom: 1em;  margin-top: 1em; }
+.main-navigation.toggled {  display: block; }
 .main-navigation.toggled a {  padding: 0.4em 1em 0.4em 0; }
 .main-navigation ul.sub-menu { padding-left: 0; margin-bottom: 5px; }
 .main-navigation ul.sub-menu li  { display: inline-block; box-shadow: none; float: none; }
 .main-navigation ul.sub-menu a { padding: 0.3em 0.6em;  border-left: 1px solid; width: auto; }
-.main-navigation.toggled ul.nav-menu {  margin-bottom: 1em ; }
+.main-navigation.toggled ul.nav-menu {  margin-bottom: 0; }
 
 .content-area.centered {  width: 100%; }
 

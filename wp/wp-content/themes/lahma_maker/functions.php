@@ -31,8 +31,6 @@ function lahma_maker_enqueue_styles() {
 
 }
 
-
-
 add_action( 'wp_enqueue_scripts', 'maker_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'lahma_maker_enqueue_styles' );
 
@@ -58,9 +56,7 @@ function lahma_enqueue_js() {
 add_action( 'wp_enqueue_scripts', 'lahma_enqueue_js' );
 
 
-
 /* Player styles + scripts */
-
 
 // Changing excerpt more
 
@@ -287,5 +283,10 @@ function my_add_menu_descriptions( $args ) {
 	}
 	return $args;
 }
+
+/* Add Social Menu */
+register_nav_menus( array(
+    'social' => __( 'Social Menu', 'maker' )
+) );
 
 ?>
