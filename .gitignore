@@ -10,3 +10,7 @@ uploads\.zip
 export_local\.sh
 import_local\.sh
 wp/wp-content/themes/lahma_maker/assets/playerfiles/node_modules/
+
+wp/nginx-conf/nginx.conf
+
+wp/.env
