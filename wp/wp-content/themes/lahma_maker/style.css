@@ -576,6 +576,10 @@ li.mixcloudmenu a:before {
   content: "\f289";  
 }
 
+li.donate .nav-text {
+  display: inline-block;
+}
+
 li.donate a:after {
   content: "\f094";
   margin-left: 7px;
