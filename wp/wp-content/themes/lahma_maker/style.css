@@ -31,6 +31,15 @@ html > body {
 	color: #23282d;
 }
 
+
+body div::-webkit-scrollbar {
+  -webkit-appearance: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+
+
 body.home {
 	background-image: url("img/lahmacun.png") !important;
 	background-size: initial !important;
