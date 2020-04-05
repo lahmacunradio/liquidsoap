@@ -105,6 +105,7 @@ $( document ).ready(function() {
             document.title = newtitle;
             openAllExternalBlank();
             swipeboxGalleryFixer();
+            makeAlbumPictureClick();
             set_home_class(document.location);
         });
     });
