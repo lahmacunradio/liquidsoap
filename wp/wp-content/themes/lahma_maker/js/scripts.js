@@ -76,6 +76,16 @@ function set_home_class(scope){
     }
 }
 
+// photo album picture click automation
+function makeAlbumPictureClick() {
+    $(".wp-block-gallery .blocks-gallery-item").each(function(){
+        let albumlink = $(this).find("figcaption > a").attr("href");
+        if ( albumlink ) {
+            $(this).find("figure > img").wrap("<a href=" + albumlink + "></a>");
+        }
+    });    
+}
+
 
 // A $( document ).ready() block.
 $( document ).ready(function() {
@@ -84,6 +94,7 @@ $( document ).ready(function() {
     is_touch_device();
     openAllExternalBlank();
     swipeboxGalleryFixer();
+    makeAlbumPictureClick();
 
     // popstate event handler for browser back button
     window.addEventListener("popstate", function(e) {
@@ -113,6 +124,7 @@ $( document ).ready(function() {
             document.title = newtitle;
             openAllExternalBlank();
             swipeboxGalleryFixer();
+            makeAlbumPictureClick();
             //$("#site-navigation-toggle.toggled").trigger("click"); //automatically collapses open show menu on mobile
             $("#primary-menu .sub-menu").slideUp("fast", function() {
                 $(this).addClass("closed");
@@ -241,10 +253,4 @@ let progresswidth = $( "#donatebanner .campaign-progress-bar" ).attr( "aria-valu
 // console.log(progresswidth);
 $("#donatebanner .goalprogress").text(Math.round(progresswidth*100)/100 + "%")
 });
-
-
-
-
-
-
 
