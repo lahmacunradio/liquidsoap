@@ -218,6 +218,10 @@ playlist_jambikus_nesz = playlist(id="playlist_jambikus_nesz",mode="randomize",r
 playlist_jambikus_nesz = audio_to_stereo(id="stereo_playlist_jambikus_nesz", playlist_jambikus_nesz)
 ignore(playlist_jambikus_nesz)
 
+playlist_mosolyszunet = playlist(id="playlist_mosolyszunet",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mosolyszunet.m3u")
+playlist_mosolyszunet = audio_to_stereo(id="stereo_playlist_mosolyszunet", playlist_mosolyszunet)
+ignore(playlist_mosolyszunet)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -390,6 +394,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -413,6 +418,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 16h-17h29m}, once(playlist_mmn_radio)),
     ({2w and 17h30m-18h29m}, once(playlist_havizaj)),
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
+    ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
     #Wednesday
     ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
