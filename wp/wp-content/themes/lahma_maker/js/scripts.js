@@ -165,8 +165,8 @@ window.onfocus = function() {
 		// console.log(gooddateobj);
 		// console.log(Cgooddateobj);
 
-if ( Cgooddateobj !== gooddateobj && $("body").hasClass("home") && !$("body").hasClass("Playing") ) {
-		location.reload();
+if ( Cgooddateobj !== gooddateobj && !$("body").hasClass("Playing") ) {
+	location.reload();
 }
 
 };
@@ -226,8 +226,9 @@ $(document).on("click", ".day > h3", function(){
 
 
 // prevent Shows menu clicking
+/*
 $(".menu-lahma-menu-container li.menu-item-has-children > a").removeAttr("href").css({'cursor': 'pointer'}).addClass("avoidAjax");
-
+*/
 
 // Close Donate
 $(document).on("click", "#donatebanner a#closedonate", function(e){
