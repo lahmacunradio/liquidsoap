@@ -14,40 +14,12 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 
 	<header class="page-header categorytitle">
-
-		<?php 
-		if ( in_category( 'Shows' ) ) {
-			echo '<h1 class="page-title">List of Lahmacun radio shows</h1>';
-		} else {
-			single_cat_title( '<h1 class="page-title">', '</h1>' ); 
-		}
-		
-		?>
-
+		<?php single_cat_title( '<h1 class="page-title">', '</h1>' ); ?>
 	</header><!-- .page-header -->
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<?php if ( in_category( 'Shows' ) ) : ?>
-
-<article class="postslister shows">
-	<h3 class="news-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		<?php if ( has_post_thumbnail()) : ?>
-		<div class="newspic-container">
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="newsimage">
-		<?php the_post_thumbnail("nav_thumb"); ?>
-		</a>
-	</div>
-	<?php endif; ?>
-
-	<div class="description">
-		<?php echo wp_trim_words( get_the_excerpt(), 12, '...' ); ?>
-	</div>
-	<div class="clearfix"></div>
-
-</article>
-
-<?php elseif ( in_category( 'News' ) ) : ?>
+<?php if ( in_category( 'News' ) ) : ?>
 
 				<article class="postslister newscat">
 					<a href="<?php the_permalink(); ?>">
