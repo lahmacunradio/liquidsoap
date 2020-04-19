@@ -398,6 +398,21 @@ header #playerdiv .creditswrap {
     display:none;
 }
 
+header #playerdiv .now-playing-title a i {
+  color: #8d769f;
+	-webkit-transition: 0.7s all linear;
+  -moz-transition: 0.7s all linear;
+  transition: 0.7s all linear;
+  transform: rotate(90deg);
+}
+
+header #playerdiv .now-playing-title a:hover i {
+  color: black;
+}
+
+
+/* Finish player overrides */
+
 .main-navigation ul.menu li > ul {
 	display: none;
 }
@@ -1096,11 +1111,6 @@ article.campaign .campaign-description {
 Responsive
 ******
 ******/
-
-html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
-
-}
-
 
 @media screen and (min-width: 1024px) {
 .blog.no-sidebar .entry-content, .blog.no-sidebar .entry-footer, .blog.no-sidebar .comments-area, .blog.no-sidebar .post-navigation, .archive.no-sidebar .entry-content, .archive.no-sidebar .entry-footer, .archive.no-sidebar .comments-area, .archive.no-sidebar .post-navigation, .single-post.no-sidebar .entry-content, .single-post.no-sidebar .entry-footer, .single-post.no-sidebar .comments-area, .single-post.no-sidebar .post-navigation,

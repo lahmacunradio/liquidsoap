@@ -252,7 +252,7 @@ export default {
             }
         },
         "check_offairlink": function() {
-            if ( this.np.now_playing.song.custom_fields.offairlink !== null )  {
+            if ( this.np.now_playing.song.custom_fields.offairlink !== null && this.np.now_playing.song.custom_fields.offairlink.length > 3 )  {
               return true;
             } else {
               return false;
