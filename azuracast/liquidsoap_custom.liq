@@ -180,7 +180,7 @@ playlist_muhelycast = playlist(id="playlist_muhelycast",mode="randomize",reload_
 playlist_muhelycast = audio_to_stereo(id="stereo_playlist_muhelycast", playlist_muhelycast)
 ignore(playlist_muhelycast)
 
-playlist_off_air_premiere = playlist.once(id="playlist_off_air_premiere",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_premiere.m3u")
+playlist_off_air_premiere = playlist.once(id="playlist_off_air_premiere",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_premiere.m3u")
 playlist_off_air_premiere = audio_to_stereo(id="stereo_playlist_off_air_premiere", playlist_off_air_premiere)
 ignore(playlist_off_air_premiere)
 
