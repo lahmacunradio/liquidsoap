@@ -180,7 +180,7 @@ playlist_muhelycast = playlist(id="playlist_muhelycast",mode="randomize",reload_
 playlist_muhelycast = audio_to_stereo(id="stereo_playlist_muhelycast", playlist_muhelycast)
 ignore(playlist_muhelycast)
 
-playlist_off_air_premiere = playlist(id="playlist_off_air_premiere",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_premiere.m3u")
+playlist_off_air_premiere = playlist.once(id="playlist_off_air_premiere",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_premiere.m3u")
 playlist_off_air_premiere = audio_to_stereo(id="stereo_playlist_off_air_premiere", playlist_off_air_premiere)
 ignore(playlist_off_air_premiere)
 
@@ -422,7 +422,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
     ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
     #Wednesday
-    ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),
+    ({3w and 10h-11h59m}, playlist_off_air_premiere),
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
