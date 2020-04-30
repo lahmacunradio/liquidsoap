@@ -16,7 +16,7 @@
     "clipboard": "^2.0.4",
     "codemirror": "^5.47.0",
     "fullcalendar": "^3.10.0",
-    "jquery": "^3.4",
+    "jquery": "^3.5",
     "leaflet": "^1.5.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
