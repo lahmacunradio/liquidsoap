@@ -11,13 +11,15 @@ get_header(); ?>
 
 		<div id="primary" class="content-area">
 
-<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-	<header class="page-header categorytitle">
-		<?php single_cat_title( '<h1 class="page-title">', '</h1>' ); ?>
-	</header><!-- .page-header -->
+			<header class="page-header categorytitle">
 
-<?php while ( have_posts() ) : the_post(); ?>
+				<?php single_cat_title( '<h1 class="page-title">', '</h1>' ); ?>
+
+			</header><!-- .page-header -->
+
+			<?php while ( have_posts() ) : the_post(); ?>
 
 <?php if ( in_category( 'News' ) ) : ?>
 

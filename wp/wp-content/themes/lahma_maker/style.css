@@ -734,21 +734,6 @@ li.donate a:hover {
   white-space: nowrap;
 }
 
-/* Shows page */
-article.postslister.shows {
-  width: 30%;
-  border-bottom: none;
-  margin-bottom: 3%;
-  padding-bottom: 0;
-  margin-right: 3%;
-}
-
-article.postslister.shows .description {
-  line-height: 1.5em;
-  word-break: break-word;
-}
-
-
 
 /* Schedule */
 
@@ -1277,8 +1262,6 @@ article.campaign .entry-content .campaigninfos, article.campaign .entry-content 
   display: none;
 }
 
-article.postslister.shows {  width: 46%; }
-
 /* end max 786 */
 }
 
@@ -1299,15 +1282,6 @@ header #playerdiv .public-page .card-body .media-body > div {    min-height: 20p
 .newspic-container {   float: none;   margin-right: 0;   margin-top: 10px;    margin-bottom: 10px;    width: 100%; }
 #donatebanner #donateholder {  padding: 0; }
 .campaign-summary .campaign-summary-item { float: none;  width: 100%; }
-
-article.postslister.shows {  width: 98%;   margin-bottom: 5%; }
-article.postslister.shows .newspic-container {
-  float: left;
-  margin-right: 1em;
-  margin-top: 0;
-  margin-bottom: 0;
-  width: auto;
-}
 
 
 /* end max 460 */
