@@ -13,8 +13,8 @@ get_header(); ?>
 
 <?php
 $args = array(
-    'orderby' => 'date',
-    'order'   => 'DESC',
+    'orderby' => 'name',
+    'order'   => 'ASC',
 );
 $query = new WP_Query( $args ); 
 
