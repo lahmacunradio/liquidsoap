@@ -197,7 +197,7 @@ export default {
             "np": {
                 "live": {
                     "is_live":"Is Live",
-                    "streamer_name":"Lahmacun Radio"
+                    "streamer_name":"Streamer Name"
                 },
                 "station": {
                     "listen_url": '',
@@ -206,8 +206,8 @@ export default {
                 },
                 "now_playing": {
                     "song": {
-                        "title": "Online Radio from Budapest",
-                        "artist": "Lahmacun Radio",
+                        "title": "Song Title",
+                        "artist": "Song Artist",
                         "art": "",
                     },
                     "is_request": false,
