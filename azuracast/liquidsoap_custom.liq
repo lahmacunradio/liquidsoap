@@ -239,28 +239,22 @@ playlist_jingle_azura = drop_metadata(playlist_jingle_azura)
 radio = random(id="lahmacun_radio_standard_playlists", weights=[3], [playlist_off_air])
 
 # Once per x Minutes Playlists
-radio = fallback(track_sensitive=true, [delay(60., playlist_jingle_azura), radio])
+# LAHMACUN: id is the one used in Azuracast to trigger the skip command on
+radio = fallback(id="lahmacun_radio_requests_fallback", track_sensitive=true, [delay(60., playlist_jingle_azura), radio])
 
-# AutoDJ Next Song Script
-def azuracast_next_song() =
-    uri = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/nextsong --form api_auth="^string.quote("AZURA_KEY")^""), default="")
-    log("AzuraCast Raw Response: #{uri}")
-    
-    if uri == "" or string.match(pattern="Error", uri) then
-        []
-    else 
-        req = request.create(uri)
-        [req]                
-    end
+# LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
+def add_skip_command(s) =
+ # A command to skip
+ def skip(_) =
+   source.skip(s)
+   "Done!"
+ end
+ # Register the command:
+ server.register(namespace="#{source.id(s)}",
+                 usage="skip",
+                 description="Skip the current song.",
+                 "skip",skip)
 end
-
-dynamic = request.dynamic.list(id="lahmacun_radio_next_song", timeout=20., retry_delay=3., azuracast_next_song)
-dynamic = audio_to_stereo(id="lahmacun_radio_stereo_next_song", dynamic)
-dynamic = cue_cut(id="lahmacun_radio_cue_next_song", dynamic)
-radio = fallback(id="lahmacun_radio_autodj_fallback", track_sensitive = true, [dynamic, radio])
-
-requests = cue_cut(id="lahmacun_radio_cue_requests", audio_to_stereo(id="lahmacun_radio_stereo_requests", request.queue(id="lahmacun_radio_requests")))
-radio = fallback(id="lahmacun_radio_requests_fallback", track_sensitive = true, [requests, radio])
 
 add_skip_command(radio)
 
