@@ -228,6 +228,10 @@ playlist_exit = playlist(id="playlist_exit",mode="randomize",reload_mode="watch"
 playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
 ignore(playlist_exit)
 
+playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
+playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
+ignore(playlist_lohuma)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -402,6 +406,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -458,6 +463,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
     ({6w and 20h30m-21h29m}, once(playlist_brains_sublimating)),
     #Sunday
+    ({7w and 9h30m-10h29m}, once(playlist_lohuma)),
     ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 16h30m-17h29m}, once(playlist_hetedik_tipusu_talalkozas)),
