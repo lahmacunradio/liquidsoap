@@ -232,6 +232,14 @@ playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="wa
 playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
 ignore(playlist_lohuma)
 
+playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
+playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
+ignore(playlist_lohuma)
+
+playlist_weirdest_hits = playlist(id="playlist_weirdest_hits",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_weirdest_hits.m3u")
+playlist_weirdest_hits = audio_to_stereo(id="stereo_playlist_weirdest_hits", playlist_weirdest_hits)
+ignore(playlist_weirdest_hits)
+
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
@@ -407,6 +415,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -419,7 +428,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 12h-13h59m}, once(playlist_dalmata_radio)),
     ({1w and 15h-15h59m}, once(playlist_udcsi)),
     ({1w and 16h-16h59m}, once(playlist_szmuti_csorba)),
-    ({1w and 17h-17h35m}, once(playlist_kezek_a_sebekben)),
+    ({1w and 17h-17h29m}, once(playlist_kezek_a_sebekben)),
+    ({1w and 17h30m-17h59m}, once(playlist_weirdest_hits)),
     ({1w and 18h-19h59m}, once(playlist_erdenklang)),
     ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),
     #Tuesday

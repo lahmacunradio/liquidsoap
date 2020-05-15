@@ -8,6 +8,7 @@
         <li>17:00–18:00 <strong><a href="../shows/udcsi/">Üdcsi</a></strong> | <a href="https://www.mixcloud.com/%C3%9Cdcsi/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>18:00–19:00 <strong><a href="../shows/szmuti-csorba/">Szmúti csórba</a></strong> | <a href="https://www.mixcloud.com/baksa-gaspar" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>19:00–19:30 <strong><a href="../shows/kezek-a-sebekben/">Kezek a Sebekben</a></strong> | <a href="https://www.mixcloud.com/KezekaSebekben/" target="_blank" rel="noopener noreferrer">archive</a></li>
+        <li>19:30–20:00 <strong><a href="../shows/weirdest-hits-of-the-week/">Weirdest Hits Of The Week</a></strong> | <a href="https://www.mixcloud.com/WeirdestHitsOfTheWeek/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>20:00–22:00 <strong><a href="../shows/earth-oddities-erdenklang/">Earth Oddities – Erdenklang</a></strong> | <a href="https://soundcloud.com/a_leidal" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>22:00–24:00 <strong><a href="../shows/infinite-scroll/">Infinite Scroll</a></strong> | <a href="https://soundcloud.com/gilbertpomelo" target="_blank" rel="noopener noreferrer">archive</a></li>
     </ul>
