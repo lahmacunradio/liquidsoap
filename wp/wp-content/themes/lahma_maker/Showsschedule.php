@@ -82,6 +82,6 @@
         <li>18:30–19:30 <strong><a href="../shows/hetedik-tipusu-talalkozas/">Hetedik Típusú Találkozás</a></strong> | <a href="https://www.mixcloud.com/HetedikTipusuTalalkozas/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>20:00–21:00 <strong><a href="../shows/speakers-corner/"> Speakers Corner</a></strong> | <a href="https://anchor.fm/speakers-corner" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>21:00–22:00 <strong><a href="../shows/sub-burek/">Sub Burek</a></strong></li>
-        <li>22:00-23:00 <strong><a href="../shows/exit/">Exit</a></strong></li>
+        <li>22:00-23:00 <strong><a href="../shows/exit/">Exit</a></strong>| <a href="https://www.mixcloud.com/orsolya-kaincz/" target="_blank" rel="noopener noreferrer">archive</a></li>
     </ul>
 </div>
