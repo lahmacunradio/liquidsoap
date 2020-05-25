@@ -343,7 +343,8 @@ end
 
 # Stop show (faded), play jingle, fade in off air music
 def transition_into_off(j,a,b)
-	sequence(merge=true, [fade.final(duration=5.,a),j,fade.initial(duration=5., b)])
+    source.skip(b)
+	sequence(merge=true, [fade.final(duration=5.,a),j,b])
 end
 
 radio = switch(track_sensitive=false, transitions=[
