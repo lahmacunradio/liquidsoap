@@ -16,7 +16,7 @@
 <div class="Tuesday day">
     <h3>Tuesday / Kedd</h3>
     <ul>
-        <li>03:04–05:30 <strong><a href="../shows/lahmacun-gyorsnaszad-hidja/">Lahmacun gyorsznaszád hídja</a></strong></li>
+        <li>03:04–05:30 <strong><a href="../shows/lahmacun-gyorsnaszad-hidja/">Lahmacun gyorsnaszád hídja</a></strong></li>
         <li>13:00–14:30 <strong><a href="../shows/csinaltam-neked-egy-valogatas-kazettat/">Csináltam neked egy válogatás kazettát</a></strong> | <a href="https://www.mixcloud.com/vargyai/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>16:00–17:00 <strong><a href="../shows/mills-strange-weather-condition/">Mill’s Strange Weather Condition</a></strong> | <a href="https://www.mixcloud.com/mill-burray/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>17:00–18:00 <strong><a href="../shows/azvlm/">AZVLM</a></strong></li>
