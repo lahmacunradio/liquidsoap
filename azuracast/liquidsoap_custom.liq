@@ -108,10 +108,6 @@ playlist_gyorsnaszad_hidja = playlist(id="playlist_gyorsnaszad_hidja",mode="rand
 playlist_gyorsnaszad_hidja = audio_to_stereo(id="stereo_playlist_gyorsnaszad_hidja", playlist_gyorsnaszad_hidja)
 ignore(playlist_gyorsnaszad_hidja)
 
-playlist_konkret_riport = playlist(id="playlist_konkret_riport",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_konkret_riport.m3u")
-playlist_konkret_riport = audio_to_stereo(id="stereo_playlist_konkret_riport", playlist_konkret_riport)
-ignore(playlist_konkret_riport)
-
 playlist_footwork_jimbob = playlist(id="playlist_footwork_jimbob",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_footwork_jimbob.m3u")
 playlist_footwork_jimbob = audio_to_stereo(id="stereo_playlist_footwork_jimbob", playlist_footwork_jimbob)
 ignore(playlist_footwork_jimbob)
@@ -415,7 +411,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -452,7 +447,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
     #Thursday
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),
-    ({4w and 13h-13h59m}, once(playlist_konkret_riport)),
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
