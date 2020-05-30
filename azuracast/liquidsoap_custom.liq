@@ -412,10 +412,8 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
-    #Live DJ
-    ({!live_enabled}, live),
-    #Monday
-    ({1w and 5h-5h59m}, once(playlist_szarok_bele)),
+    ({!live_enabled}, live),     #Live DJ
+    ({1w and 5h-5h59m}, once(playlist_szarok_bele)),     #Monday
     ({1w and 9h11m-10h11m}, once(playlist_transverszia)),  #orig requested time 11:11 am 12:12 pm
     ({1w and 11h-11h59m}, once(playlist_a_who_say)),
     ({1w and 12h-13h59m}, once(playlist_dalmata_radio)),
@@ -424,8 +422,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 17h-17h29m}, once(playlist_kezek_a_sebekben)),
     ({1w and 17h30m-17h59m}, once(playlist_weirdest_hits)),
     ({1w and 18h-19h59m}, once(playlist_erdenklang)),
-    ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),
-    #Tuesday
+    ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),     #Tuesday
     ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),
     ({2w and 11h-12h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
     ({2w and 14h-14h59m}, once(playlist_mills_weather)),
@@ -434,8 +431,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 17h30m-18h29m}, once(playlist_havizaj)),
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
     ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
-    #Wednesday
-    ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),
+    ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),   #Wednesday
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
@@ -443,29 +439,25 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
-    #Thursday
-    ({4w and 12h-12h59m}, once(playlist_muhelycast)),
+    ({4w and 12h-12h59m}, once(playlist_muhelycast)),     #Thursday
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
     ({4w and 18h-18h59m}, once(playlist_dodo)),
     ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 21h-21h59m}, once(playlist_gyogyfurdo)),
-    #Friday
-    ({5w and 14h-14h59m}, once(playlist_idm_user)),
+    ({5w and 14h-14h59m}, once(playlist_idm_user)),     #Friday
     ({5w and 15h-15h59m}, once(playlist_dead_hound)),
     ({5w and 16h-16h59m}, once(playlist_agybaj)),
     ({5w and 17h-18h59m}, once(playlist_mukodo_mukod)),
-    ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),
-    #Saturday
+    ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),    #Saturday
     ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),
     ({6w and 13h-14h59m}, once(playlist_torso)),
     ({6w and 15h-15h59m}, once(playlist_footwork_jimbob)),
     ({6w and 16h-17h59m}, once(playlist_rnr666)),
     ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
     ({6w and 20h30m-21h29m}, once(playlist_brains_sublimating)),
-    #Sunday
-    ({7w and 9h30m-10h29m}, once(playlist_lohuma)),
+    ({7w and 9h30m-10h29m}, once(playlist_lohuma)),    #Sunday
     ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 16h30m-17h29m}, once(playlist_hetedik_tipusu_talalkozas)),
