@@ -108,10 +108,6 @@ playlist_gyorsnaszad_hidja = playlist(id="playlist_gyorsnaszad_hidja",mode="rand
 playlist_gyorsnaszad_hidja = audio_to_stereo(id="stereo_playlist_gyorsnaszad_hidja", playlist_gyorsnaszad_hidja)
 ignore(playlist_gyorsnaszad_hidja)
 
-playlist_konkret_riport = playlist(id="playlist_konkret_riport",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_konkret_riport.m3u")
-playlist_konkret_riport = audio_to_stereo(id="stereo_playlist_konkret_riport", playlist_konkret_riport)
-ignore(playlist_konkret_riport)
-
 playlist_footwork_jimbob = playlist(id="playlist_footwork_jimbob",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_footwork_jimbob.m3u")
 playlist_footwork_jimbob = audio_to_stereo(id="stereo_playlist_footwork_jimbob", playlist_footwork_jimbob)
 ignore(playlist_footwork_jimbob)
@@ -227,6 +223,18 @@ ignore(playlist_mosolyszunet)
 playlist_exit = playlist(id="playlist_exit",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
 playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
 ignore(playlist_exit)
+
+playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
+playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
+ignore(playlist_lohuma)
+
+playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
+playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
+ignore(playlist_lohuma)
+
+playlist_weirdest_hits = playlist(id="playlist_weirdest_hits",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_weirdest_hits.m3u")
+playlist_weirdest_hits = audio_to_stereo(id="stereo_playlist_weirdest_hits", playlist_weirdest_hits)
+ignore(playlist_weirdest_hits)
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
@@ -400,6 +408,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -412,7 +421,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 12h-13h59m}, once(playlist_dalmata_radio)),
     ({1w and 15h-15h59m}, once(playlist_udcsi)),
     ({1w and 16h-16h59m}, once(playlist_szmuti_csorba)),
-    ({1w and 17h-17h35m}, once(playlist_kezek_a_sebekben)),
+    ({1w and 17h-17h29m}, once(playlist_kezek_a_sebekben)),
+    ({1w and 17h30m-17h59m}, once(playlist_weirdest_hits)),
     ({1w and 18h-19h59m}, once(playlist_erdenklang)),
     ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),
     #Tuesday
@@ -435,7 +445,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
     #Thursday
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),
-    ({4w and 13h-13h59m}, once(playlist_konkret_riport)),
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
@@ -456,6 +465,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
     ({6w and 20h30m-21h29m}, once(playlist_brains_sublimating)),
     #Sunday
+    ({7w and 9h30m-10h29m}, once(playlist_lohuma)),
     ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 16h30m-17h29m}, once(playlist_hetedik_tipusu_talalkozas)),
