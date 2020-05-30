@@ -44,7 +44,7 @@
 
             <div class="now-playing-art" v-if="show_album_art && np.now_playing.song.art">
                 <a v-bind:href="show_art_url" class="swipebox programimage" target="_blank" rel="playerimg">
-                  <div v-if="np.live.is_live || (np.now_playing.playlist !== 'OFF AIR' && np.now_playing.playlist !== 'Between Shows' && np.now_playing.playlist !== 'Jingle' && np.now_playing.playlist !== 'Jingle AFTER SHOW' && np.now_playing.playlist !== '')" class="onair">On air</div>
+                  <div v-if="show_check == true" class="onair">On air</div>
                     <img class="progimg" v-bind:src="show_art_url" :alt="$t('album_art_alt')">
                 </a>
             </div>
