@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Categories
+ * The template for displaying Archives
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 $args = array(
     'orderby' => 'name',
 	'order'   => 'ASC',
-	'category_name' => 'shows'
+	'category_name' => 'archived-shows'
 );
 $query = new WP_Query( $args ); 
 
@@ -25,7 +25,7 @@ if ( $query->have_posts() ) :
 
 	<header class="page-header categorytitle">
 
-		<?php echo '<h1 class="page-title">List of Lahmacun radio shows</h1>';	?>
+		<?php echo '<h1 class="page-title">Lahmacun radio Archived Shows</h1>';	?>
 
 	</header><!-- .page-header -->
 
