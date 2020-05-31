@@ -200,6 +200,9 @@ radio = random(id="lahmacun_radio_standard_playlists", weights=[3], [playlist_of
 # Once per x Songs Playlists
 radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1], [playlist_jingle_azura, radio])
 
+#off air ambient source with jingles
+off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_azura, playlist_off_air_ambient])
+
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
 def add_skip_command(s) =
  # A command to skip
