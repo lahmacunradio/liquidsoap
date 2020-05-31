@@ -312,6 +312,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -319,6 +320,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -367,14 +369,16 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 5h-5h59m}, once(playlist_szarok_bele)),            #Monday
     ({1w and 9h11m-10h11m}, once(playlist_transverszia)),           #orig requested time 11:11 am 12:12 pm
     ({1w and 11h-11h59m}, once(playlist_a_who_say)),
+    ({1w and 11h-12h}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
     ({1w and 12h-13h59m}, once(playlist_dalmata_radio)),
     ({1w and 15h-15h59m}, once(playlist_udcsi)),
     ({1w and 16h-16h59m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h29m}, once(playlist_kezek_a_sebekben)),
     ({1w and 17h30m-17h59m}, once(playlist_weirdest_hits)),
     ({1w and 18h-19h59m}, once(playlist_erdenklang)),
-    ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),      #Tuesday
-    ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),
+    ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),      
+    ({1w and 15h-20h}, off_air_ambient_mix),                        #ambient: Udcsi - Infinite
+    ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),   #Tuesday
     ({2w and 11h-12h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
     ({2w and 14h-14h59m}, once(playlist_mills_weather)),
     ({2w and 15h-15h59m}, once(playlist_azvlm)),
@@ -401,8 +405,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 15h-15h59m}, once(playlist_dead_hound)),
     ({5w and 16h-16h59m}, once(playlist_agybaj)),
     ({5w and 17h-18h59m}, once(playlist_mukodo_mukod)),
-    ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),       #Saturday
-    ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),
+    ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),       
+    ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),     #Saturday
     ({6w and 13h-14h59m}, once(playlist_torso)),
     ({6w and 15h-15h59m}, once(playlist_footwork_jimbob)),
     ({6w and 16h-17h59m}, once(playlist_rnr666)),
