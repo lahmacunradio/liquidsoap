@@ -124,9 +124,6 @@ playlist_dalmata_radio = audio_to_stereo(id="stereo_playlist_dalmata_radio", pla
 playlist_eastern_daze = playlist(id="playlist_eastern_daze",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_eastern_daze.m3u")
 playlist_eastern_daze = audio_to_stereo(id="stereo_playlist_eastern_daze", playlist_eastern_daze)
 
-playlist_midnight_song = playlist(id="playlist_midnight_song",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_midnight_song.m3u")
-playlist_midnight_song = audio_to_stereo(id="stereo_playlist_midnight_song", playlist_midnight_song)
-
 playlist_transverszia = playlist(id="playlist_transverszia",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_transverszia.m3u")
 playlist_transverszia = audio_to_stereo(id="stereo_playlist_transverszia", playlist_transverszia)
 
@@ -171,9 +168,6 @@ playlist_mosolyszunet = audio_to_stereo(id="stereo_playlist_mosolyszunet", playl
 
 playlist_exit = playlist(id="playlist_exit",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
 playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
-
-playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
-playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
 
 playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
 playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
