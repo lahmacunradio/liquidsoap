@@ -305,21 +305,14 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient 
+    transition_into_off(playlist_jingle_after_show), #ambient: Who Say - Dalmata
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient 
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Udcsi - Infinite 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -328,6 +321,15 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Mill - Mosoly
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Erto - Eastern 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -336,6 +338,20 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Alter - Gyogyf
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: user - Arcade 
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Jambikus - Brains
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -343,17 +359,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Lohuma - Exit
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
@@ -378,6 +384,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 17h30m-18h29m}, once(playlist_havizaj)),
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
     ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
+    ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
     ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),     #Wednesday
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_wikihow_adventure_cruise)),
@@ -385,6 +392,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 17h-17h59m}, once(playlist_geigercounterculture)),
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
+    ({3w and 13h-19h30m}, off_air_ambient_mix),                        #ambient: Erto - Eastern
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),           #Thursday
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
@@ -393,17 +401,20 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 18h-18h59m}, once(playlist_dodo)),
     ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 21h-21h59m}, once(playlist_gyogyfurdo)),
+    ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
     ({5w and 14h-14h59m}, once(playlist_idm_user)),             #Friday
     ({5w and 15h-15h59m}, once(playlist_dead_hound)),
     ({5w and 16h-16h59m}, once(playlist_agybaj)),
     ({5w and 17h-18h59m}, once(playlist_mukodo_mukod)),
     ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),       
+    ({5w and 14h-19h30m}, off_air_ambient_mix),                        #ambient: user - Arcade
     ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),     #Saturday
     ({6w and 13h-14h59m}, once(playlist_torso)),
     ({6w and 15h-15h59m}, once(playlist_footwork_jimbob)),
     ({6w and 16h-17h59m}, once(playlist_rnr666)),
     ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
     ({6w and 20h30m-21h29m}, once(playlist_brains_sublimating)),
+    ({6w and 11h30m-21h}, off_air_ambient_mix),                        #ambient: Jambikus - Brains
     ({7w and 9h30m-10h29m}, once(playlist_lohuma)),             #Sunday
     ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
@@ -411,6 +422,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({7w and 18h-18h59m}, once(playlist_speakers_corner)),
     ({7w and 19h-19h59m}, once(playlist_sub_burek)),
     ({7w and 20h-20h59m}, once(playlist_exit)),
+    ({7w and 9h30m-20h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Exit
     ({true}, radio) ])
 
 
