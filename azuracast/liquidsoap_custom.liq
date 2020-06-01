@@ -304,8 +304,8 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient 
     transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -361,8 +361,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 5h-5h59m}, once(playlist_szarok_bele)),            #Monday
     ({1w and 9h11m-10h11m}, once(playlist_transverszia)),           #orig requested time 11:11 am 12:12 pm
     ({1w and 11h-11h59m}, once(playlist_a_who_say)),
-    ({1w and 11h-12h30m}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
     ({1w and 12h-13h59m}, once(playlist_dalmata_radio)),
+    ({1w and 11h-12h30m}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
     ({1w and 15h-15h59m}, once(playlist_udcsi)),
     ({1w and 16h-16h59m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h29m}, once(playlist_kezek_a_sebekben)),
