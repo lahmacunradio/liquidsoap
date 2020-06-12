@@ -170,6 +170,9 @@ playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
 playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
 playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
 
+playlist_merites= playlist(id="playlist_merites",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_merites.m3u")
+playlist_merites= audio_to_stereo(id="stereo_playlist_merites", playlist_merites)
+
 playlist_weirdest_hits = playlist(id="playlist_weirdest_hits",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_weirdest_hits.m3u")
 playlist_weirdest_hits = audio_to_stereo(id="stereo_playlist_weirdest_hits", playlist_weirdest_hits)
 
@@ -351,7 +354,8 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Jambikus - Brains
+    transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Merites - Brains
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -408,13 +412,14 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 17h-18h59m}, once(playlist_mukodo_mukod)),
     ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),       
     ({5w and 14h-19h30m}, off_air_ambient_mix),                        #ambient: user - Arcade
-    ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),     #Saturday
+    ({6w and 9h30m-11h29m}, once(playlist_merites)),     #Saturday
+    ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),     
     ({6w and 13h-14h59m}, once(playlist_torso)),
     ({6w and 15h-15h59m}, once(playlist_footwork_jimbob)),
     ({6w and 16h-17h59m}, once(playlist_rnr666)),
     ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
     ({6w and 20h30m-21h29m}, once(playlist_brains_sublimating)),
-    ({6w and 11h30m-21h}, off_air_ambient_mix),                        #ambient: Jambikus - Brains
+    ({6w and 9h30m-21h}, off_air_ambient_mix),                        #ambient: Merites - Brains
     ({7w and 9h30m-10h29m}, once(playlist_lohuma)),             #Sunday
     ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),

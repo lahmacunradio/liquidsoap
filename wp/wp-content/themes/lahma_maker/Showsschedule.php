@@ -64,6 +64,7 @@
 <div class="Saturday day">
     <h3>Saturday / Szombat</h3>
     <ul>
+        <li>11:30-13:30 <strong><a href="../shows/merites/">Merítés</a></strong></li>
         <li>13:30-14:30 <strong><a href="../shows/jambikus-nesz/">Jambikus nesz</a></strong></li>
         <li>15:00–17:00 <strong><a href="../shows/learning-audio-classification-with-torso/">Learning Audio Classification with Torso</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/footwork-jimbob/">Footwork Jimbob</a></strong>| <a href="https://www.mixcloud.com/regost542/" target="_blank" rel="noopener noreferrer">archive</a></li>
