@@ -34,8 +34,8 @@ playlist_szmuti_csorba = audio_to_stereo(id="stereo_playlist_szmuti_csorba", pla
 playlist_mukodo_mukod = playlist(id="playlist_mukodo_mukod",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mukodo_mukod.m3u")
 playlist_mukodo_mukod = audio_to_stereo(id="stereo_playlist_mukodo_mukod", playlist_mukodo_mukod)
 
-playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
-playlist_geigercounterculture = audio_to_stereo(id="stereo_playlist_geigercounterculture", playlist_geigercounterculture)
+playlist_merites= playlist(id="playlist_merites",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_merites.m3u")
+playlist_merites= audio_to_stereo(id="stereo_playlist_merites", playlist_merites)
 
 playlist_wikihow_adventure_cruise = playlist(id="playlist_wikihow_adventure_cruise",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_wikihow_adventure_cruise.m3u")
 playlist_wikihow_adventure_cruise = audio_to_stereo(id="stereo_playlist_wikihow_adventure_cruise", playlist_wikihow_adventure_cruise)
@@ -331,7 +331,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show), #ambient: Erto - Eastern 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -393,7 +392,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
-    ({3w and 17h-17h59m}, once(playlist_geigercounterculture)),
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
     ({3w and 13h-19h30m}, off_air_ambient_mix),                        #ambient: Erto - Eastern
