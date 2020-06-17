@@ -329,9 +329,10 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Erto - Svad 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Erto - Eastern 
+    transition_into_off(playlist_jingle_after_show), #ambient: cell - Eastern 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -392,9 +393,10 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
+    ({3w and 13h-17h30m}, off_air_ambient_mix),                        #ambient: Erto - Svad
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
-    ({3w and 13h-19h30m}, off_air_ambient_mix),                        #ambient: Erto - Eastern
+    ({3w and 18h-19h30m}, off_air_ambient_mix),                        #ambient: cell - Eastern
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),           #Thursday
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
