@@ -386,12 +386,20 @@ export default {
             this.audio.play();
             this.is_playing = true;
             document.body.classList.add("Playing");
+
+            let now_playing = this.np.now_playing.song.text;
+            let islive = this.np.live.is_live;
+            dataLayer.push({'event':'stream-play','show-title':now_playing, 'is_live': islive});
         },
         "stop": function() {
             this.is_playing = false;
             this.audio.pause();
             this.audio.src = '';
             document.body.classList.remove("Playing");
+
+            let now_playing = this.np.now_playing.song.text;
+            let islive = this.np.live.is_live;
+            dataLayer.push({'event':'stream-stop','show-title':now_playing,'is_live': islive});
         },
         "toggle": function() {
             if (this.is_playing) {
