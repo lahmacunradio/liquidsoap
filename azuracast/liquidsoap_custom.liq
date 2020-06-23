@@ -390,7 +390,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
-    ({3w and 13h-17h30m}, off_air_ambient_mix),                        #ambient: Erto - Svad
+    ({3w and 12h-17h30m}, off_air_ambient_mix),                        #ambient: Muto - Svad
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
     ({3w and 18h-19h30m}, off_air_ambient_mix),                        #ambient: cell - Eastern
