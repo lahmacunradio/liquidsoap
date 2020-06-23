@@ -34,9 +34,6 @@ playlist_szmuti_csorba = audio_to_stereo(id="stereo_playlist_szmuti_csorba", pla
 playlist_mukodo_mukod = playlist(id="playlist_mukodo_mukod",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mukodo_mukod.m3u")
 playlist_mukodo_mukod = audio_to_stereo(id="stereo_playlist_mukodo_mukod", playlist_mukodo_mukod)
 
-playlist_merites = playlist(id="playlist_merites",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_merites.m3u")
-playlist_merites = audio_to_stereo(id="stereo_playlist_merites", playlist_merites)
-
 playlist_wikihow_adventure_cruise = playlist(id="playlist_wikihow_adventure_cruise",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_wikihow_adventure_cruise.m3u")
 playlist_wikihow_adventure_cruise = audio_to_stereo(id="stereo_playlist_wikihow_adventure_cruise", playlist_wikihow_adventure_cruise)
 
