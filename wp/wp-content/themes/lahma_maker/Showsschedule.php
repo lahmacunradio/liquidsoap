@@ -1,7 +1,6 @@
 <div class="Monday day">
     <h3>Monday / Hétfő</h3>
     <ul>
-        <li>07:00–08:00 <strong><a href="../shows/reggeli-musor-szarok-bele/">reggeli műsor, szarok bele</a></strong> | <a href="https://www.mixcloud.com/reggelimusor/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>11:11–12:11 <strong><a href="../shows/transverszia/">transverszia</a></strong> | <a href="https://www.mixcloud.com/junsuzuki/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>13:00–14:00 <strong><a href="../shows/a-who-say/">A Who Say</a></strong> | <a href="http://www.mixcloud.com/A_Who_Say/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>14:00–16:00 <strong><a href="../shows/dalmata-radio/">Dalmata Radio</a></strong>
@@ -30,6 +29,7 @@
     <h3>Wednesday / Szerda</h3>
     <ul>
         <li>12:00–14:00 <strong><a href="../shows/off-air-premiere/">OFF AIR Premiere</a>&nbsp;</strong></li>
+        <li>14:00–15:00 <strong><a href="../shows/lying-stealing-in-eastern-europe/">Lying & Stealing in Eastern Europe</a></strong></li>
         <li>15:00–16:00 <strong><a href="../shows/erto-hallgatas/">Értő Hallgatás</a>&nbsp;</strong>| <a href="https://www.mixcloud.com/%C3%A9rt%C5%91hallgat%C3%A1s/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>16:00–17:00 <strong><a href="../shows/wikihow-adventure-cruise/">Wikihow Adventure Cruise</a></strong>&nbsp;| <a href="https://www.mixcloud.com/wikihowadventurecruise/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>18:00–19:00 <strong><a href="../shows/svadhyaya-onkutatolabor/">Svādhyāya - Önkutatólabor</a></strong>&nbsp;</li>
