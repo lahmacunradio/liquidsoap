@@ -67,9 +67,6 @@ playlist_cellz = audio_to_stereo(id="stereo_playlist_cellz", playlist_cellz)
 playlist_erto_hallgatas = playlist(id="playlist_erto_hallgatas",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_erto_hallgatas.m3u")
 playlist_erto_hallgatas = audio_to_stereo(id="stereo_playlist_erto_hallgatas", playlist_erto_hallgatas)
 
-playlist_szarok_bele = playlist(id="playlist_szarok_bele",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szarok_bele.m3u")
-playlist_szarok_bele = audio_to_stereo(id="stereo_playlist_szarok_bele", playlist_szarok_bele)
-
 playlist_jingle = playlist(id="playlist_jingle",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle.m3u")
 playlist_jingle = audio_to_stereo(id="stereo_playlist_jingle", playlist_jingle)
 playlist_jingle = drop_metadata(playlist_jingle)
@@ -178,6 +175,9 @@ playlist_weirdest_hits = audio_to_stereo(id="stereo_playlist_weirdest_hits", pla
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
+
+playlist_lying_stealing = playlist(id="playlist_lying_stealing",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lying_stealing.m3u")
+playlist_lying_stealing = audio_to_stereo(id="stereo_playlist_lying_stealing", playlist_lying_stealing)
 
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
@@ -307,7 +307,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show), #ambient: Who Say - Dalmata
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -325,6 +324,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show), #ambient: Mill - Mosoly
+    transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -367,9 +367,8 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
     [
-    ({!live_enabled}, live),     #Live DJ
-    ({1w and 5h-5h59m}, once(playlist_szarok_bele)),            #Monday
-    ({1w and 9h11m-10h11m}, once(playlist_transverszia)),           #orig requested time 11:11 am 12:12 pm
+    ({!live_enabled}, live),     #Live DJ          
+    ({1w and 9h11m-10h11m}, once(playlist_transverszia)),           # Monday (orig requested time 11:11 am 12:12 pm)
     ({1w and 11h-11h59m}, once(playlist_a_who_say)),
     ({1w and 12h-13h59m}, once(playlist_dalmata_radio)),
     ({1w and 11h-12h30m}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
@@ -390,6 +389,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
     ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
     ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),     #Wednesday
+    ({3w and 12h-12h59m}, once(playlist_lying_stealing)),
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
