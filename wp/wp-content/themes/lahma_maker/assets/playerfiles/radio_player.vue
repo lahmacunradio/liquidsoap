@@ -44,7 +44,7 @@
 
             <div class="now-playing-art" v-if="show_album_art && np.now_playing.song.art">
                 <a v-bind:href="show_art_url" class="swipebox programimage" target="_blank" rel="playerimg">
-                  <div v-if="np.live.is_live || (np.now_playing.playlist !== 'OFF AIR' && np.now_playing.playlist !== 'Between Shows' && np.now_playing.playlist !== 'Jingle' && np.now_playing.playlist !== 'Jingle AFTER SHOW' && np.now_playing.playlist !== '')" class="onair">On air</div>
+                  <div v-if="show_check == true" class="onair">On air</div>
                     <img class="progimg" v-bind:src="show_art_url" :alt="$t('album_art_alt')">
                 </a>
             </div>
@@ -245,7 +245,7 @@ export default {
             return this.np.now_playing.song.title
         },
         "show_check": function() {
-            if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Between Shows' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW' && this.np.now_playing.playlist !== '') ) {
+            if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Off Air Ambient' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW' && this.np.now_playing.playlist !== '') ) {
               return true;
             } else {
               return false;
@@ -317,12 +317,20 @@ export default {
             this.audio.play();
             this.is_playing = true;
             document.body.classList.add("Playing");
+
+            let now_playing = this.np.now_playing.song.text;
+            let islive = this.np.live.is_live;
+            dataLayer.push({'event':'stream-play','show-title':now_playing, 'is_live': islive});
         },
         "stop": function() {
             this.is_playing = false;
             this.audio.pause();
             this.audio.src = '';
             document.body.classList.remove("Playing");
+
+            let now_playing = this.np.now_playing.song.text;
+            let islive = this.np.live.is_live;
+            dataLayer.push({'event':'stream-stop','show-title':now_playing,'is_live': islive});
         },
         "toggle": function() {
             if (this.is_playing) {
