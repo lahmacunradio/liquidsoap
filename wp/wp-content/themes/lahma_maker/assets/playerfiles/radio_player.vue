@@ -53,8 +53,13 @@
               <div class="media-body">
                 <div v-if="np.now_playing.song.title !== ''">
                     <h4 v-bind:title="show_title" class="now-playing-title">
-                      <a v-if="show_check == true" v-bind:href="show_url">{{ show_title }}</a>
-                      <span v-if="show_check == false">{{ show_title }}</span>
+
+                      <a v-if="show_check == true" v-bind:href="show_url">{{ show_title }} <i class="fa fa-link" aria-hidden="true"></i></a>
+
+                      <a v-if="check_offairlink == true" v-bind:href="this.np.now_playing.song.custom_fields.offairlink" target="_blank"> {{ show_title }} <i class="fa fa-link" aria-hidden="true"></i></a>
+
+                      <span v-if="show_check == false && check_offairlink == false">{{ show_title }}</span>
+
                     </h4>
                     <h5 v-bind:title="show_subtitle" class="now-playing-artist">{{ show_subtitle }}</h5>
                 </div>
@@ -98,91 +103,6 @@
     </div>
 </template>
 
-<style lang="scss">
-.radio-player-widget {
-    .now-playing-details {
-        display: flex;
-        align-items: center;
-        .now-playing-art {
-              margin-right: 0.7rem;
-
-        }
-        .now-playing-main {
-            flex: 1;
-            min-width: 0;
-        }
-        h4, h5 {
-            margin: 0;
-            line-height: 1.3;
-        }
-        h4 {
-            font-size: 15px;
-        }
-        h5 {
-            font-size: 13px;
-            font-weight: normal;
-        }
-        .now-playing-title,
-        .now-playing-artist {
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-            &:hover {
-                text-overflow: clip;
-                /* white-space: normal; */
-                word-break: break-all;
-            }
-        }
-        .time-display {
-            font-size: 10px;
-            margin-top: .25rem;
-            flex-direction: row;
-            align-items: center;
-            display: flex;
-            .time-display-played {
-                margin-right: .5rem;
-            }
-            .time-display-progress {
-                flex: 1 1 auto;
-                .progress-bar {
-                    -webkit-transition: width 1s; /* Safari */
-                    transition: width 1s;
-                    transition-timing-function: linear;
-                }
-            }
-            .time-display-total {
-                margin-left: .5rem;
-            }
-        }
-    }
-    hr {
-        margin-top: .5rem;
-        margin-bottom: .5rem;
-    }
-    i.material-icons {
-        line-height: 1;
-    }
-    .radio-controls {
-        display: flex;
-        flex-direction: row;
-        .radio-control-play-button {
-            margin-right: 0.5em;
-            margin-top: 0.5em;
-        }
-        .radio-control-select-stream {
-            flex: 1 1 auto;
-        }
-        .radio-control-mute-button,
-        .radio-control-max-volume-button {
-            flex-shrink: 0;
-        }
-        .radio-control-volume-slider {
-
-        }
-    }
-}
-</style>
-
 <script>
 import axios from 'axios';
 import store from 'store';
@@ -206,9 +126,13 @@ export default {
                 },
                 "now_playing": {
                     "song": {
-                        "title": "Song Title",
-                        "artist": "Song Artist",
+                        "title": "Title",
+                        "artist": "Artist",
+                        "text": "Lahmacun Radio",
                         "art": "",
+                        "custom_fields": {
+                            "offairlink": null
+                        }
                     },
                     "is_request": false,
                     "elapsed": 0,
@@ -322,6 +246,13 @@ export default {
         },
         "show_check": function() {
             if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Off Air Ambient' && this.np.now_playing.playlist !== 'Jingle' && this.np.now_playing.playlist !== 'Jingle AFTER SHOW' && this.np.now_playing.playlist !== '') ) {
+              return true;
+            } else {
+              return false;
+            }
+        },
+        "check_offairlink": function() {
+            if ( this.np.now_playing.song.custom_fields.offairlink !== null && this.np.now_playing.song.custom_fields.offairlink.length > 3 )  {
               return true;
             } else {
               return false;
@@ -470,3 +401,89 @@ export default {
     }
 }
 </script>
+
+
+<style lang="scss">
+.radio-player-widget {
+    .now-playing-details {
+        display: flex;
+        align-items: center;
+        .now-playing-art {
+              margin-right: 0.7rem;
+
+        }
+        .now-playing-main {
+            flex: 1;
+            min-width: 0;
+        }
+        h4, h5 {
+            margin: 0;
+            line-height: 1.3;
+        }
+        h4 {
+            font-size: 15px;
+        }
+        h5 {
+            font-size: 13px;
+            font-weight: normal;
+        }
+        .now-playing-title,
+        .now-playing-artist {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            &:hover {
+                text-overflow: clip;
+                /* white-space: normal; */
+                word-break: break-all;
+            }
+        }
+        .time-display {
+            font-size: 10px;
+            margin-top: .25rem;
+            flex-direction: row;
+            align-items: center;
+            display: flex;
+            .time-display-played {
+                margin-right: .5rem;
+            }
+            .time-display-progress {
+                flex: 1 1 auto;
+                .progress-bar {
+                    -webkit-transition: width 1s; /* Safari */
+                    transition: width 1s;
+                    transition-timing-function: linear;
+                }
+            }
+            .time-display-total {
+                margin-left: .5rem;
+            }
+        }
+    }
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+    i.material-icons {
+        line-height: 1;
+    }
+    .radio-controls {
+        display: flex;
+        flex-direction: row;
+        .radio-control-play-button {
+            margin-right: 0.5em;
+            margin-top: 0.5em;
+        }
+        .radio-control-select-stream {
+            flex: 1 1 auto;
+        }
+        .radio-control-mute-button,
+        .radio-control-max-volume-button {
+            flex-shrink: 0;
+        }
+        .radio-control-volume-slider {
+
+        }
+    }
+}
+</style>
