@@ -290,6 +290,10 @@ header #playerdiv .public-page .card-body .media-body h5 {
     text-transform: none;
 }
 
+header #playerdiv .public-page .card-body .now-playing-main .media-body {
+    overflow: auto;
+}
+
 header #playerdiv #radio-player-controls.radio-controls-standalone {
     position: absolute;
     background: #d09cf8;
