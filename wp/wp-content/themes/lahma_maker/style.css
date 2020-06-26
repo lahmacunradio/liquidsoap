@@ -1122,6 +1122,11 @@ article.campaign .campaign-description {
   display: flex;
 }
 
+.sponsors.content-area .entry-content img {
+  max-width: 130px;
+  margin: 0 10px 20px 0;
+}
+
 
 /*******
 ********
