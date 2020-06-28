@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Categories
+ * The template for displaying Tags
  */
 
 get_header(); ?>
@@ -11,25 +11,13 @@ get_header(); ?>
 
 		<div id="primary" class="content-area">
 
-<?php
-$args = array(
-    'orderby' => 'name',
-	'order'   => 'ASC',
-	'category_name' => 'shows'
-);
-$query = new WP_Query( $args ); 
-
-if ( $query->have_posts() ) : 
-    
-?>
+<?php if ( have_posts() ) : ?>
 
 	<header class="page-header categorytitle">
-
-		<?php echo '<h1 class="page-title">List of Lahmacun radio shows</h1>';	?>
-
+        <h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'pietergoosen' ), single_tag_title( '', false ) ); ?></h1>
 	</header><!-- .page-header -->
 
-<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
 <article class="postslister shows">
 	<h3 class="news-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -42,7 +30,7 @@ if ( $query->have_posts() ) :
 	<?php endif; ?>
 
 	<div class="description">
-		<?php echo wp_trim_words( get_the_excerpt(), 15, '...' ); ?>
+		<?php echo wp_trim_words( get_the_excerpt(), 12, '...' ); ?>
 	</div>
 	<div class="clearfix"></div>
 
