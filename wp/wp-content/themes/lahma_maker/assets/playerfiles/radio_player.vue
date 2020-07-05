@@ -319,8 +319,15 @@ export default {
             document.body.classList.add("Playing");
 
             let now_playing = this.np.now_playing.song.text;
-            let islive = this.np.live.is_live;
-            dataLayer.push({'event':'stream-play','show-title':now_playing, 'is_live': islive});
+            let islive = this.np.live.is_live ? 'Live Stream' : 'Not Live Stream';
+
+            // dataLayer.push({'event':'stream-play','show-title':now_playing, 'is_live': islive});
+
+            gtag('event', 'Stream player', {
+                'event_category': 'Radio play',
+                'event_label': 'Started',
+                'value': now_playing + ' | ' + islive
+            });
         },
         "stop": function() {
             this.is_playing = false;
@@ -329,8 +336,15 @@ export default {
             document.body.classList.remove("Playing");
 
             let now_playing = this.np.now_playing.song.text;
-            let islive = this.np.live.is_live;
-            dataLayer.push({'event':'stream-stop','show-title':now_playing,'is_live': islive});
+            let islive = this.np.live.is_live ? 'Live Stream' : 'Not Live Stream';
+
+            // dataLayer.push({'event':'stream-stop','show-title':now_playing,'is_live': islive});
+
+            gtag('event', 'Stream player', {
+                'event_category': 'Radio play',
+                'event_label': 'Stopped',
+                'value': now_playing + ' | ' + islive
+            });
         },
         "toggle": function() {
             if (this.is_playing) {
