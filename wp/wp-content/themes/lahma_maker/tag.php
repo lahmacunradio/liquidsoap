@@ -14,7 +14,7 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 
 	<header class="page-header categorytitle">
-        <h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'pietergoosen' ), single_tag_title( '', false ) ); ?></h1>
+        <h1 class="archive-title"><?php printf( __( 'Tagged by <em>%s</em>', 'pietergoosen' ), single_tag_title( '', false ) ); ?></h1>
 	</header><!-- .page-header -->
 
 <?php while ( have_posts() ) : the_post(); ?>
