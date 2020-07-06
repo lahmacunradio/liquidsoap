@@ -42,7 +42,7 @@ if ( $query->have_posts() ) :
 	<?php endif; ?>
 
 	<div class="description">
-		<?php echo wp_trim_words( get_the_excerpt(), 15, '...' ); ?>
+		<?php echo wp_trim_words( get_the_excerpt(), 30, '...' ); ?>
 	</div>
 	<div class="clearfix"></div>
 
