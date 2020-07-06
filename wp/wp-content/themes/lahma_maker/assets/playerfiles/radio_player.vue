@@ -54,9 +54,13 @@
                 <div v-if="np.now_playing.song.title !== ''">
                     <h4 v-bind:title="show_title" class="now-playing-title">
 
-                      <a v-if="show_check == true" v-bind:href="show_url">{{ show_title }} <i class="fa fa-link" aria-hidden="true"></i></a>
+                      <a v-if="show_check == true" v-bind:href="show_url">
+                          <span>{{ show_title }}&nbsp;</span>
+                          <i class="fa fa-link" aria-hidden="true"></i></a>
 
-                      <a v-if="check_offairlink == true" v-bind:href="this.np.now_playing.song.custom_fields.offairlink" target="_blank"> {{ show_title }} <i class="fa fa-link" aria-hidden="true"></i></a>
+                      <a v-if="check_offairlink == true" v-bind:href="this.np.now_playing.song.custom_fields.offairlink" target="_blank">
+                          <span>{{ show_title }}&nbsp;</span>
+                          <i class="fa fa-link" aria-hidden="true"></i></a>
 
                       <span v-if="show_check == false && check_offairlink == false">{{ show_title }}</span>
 
@@ -324,9 +328,9 @@ export default {
             // dataLayer.push({'event':'stream-play','show-title':now_playing, 'is_live': islive});
 
             gtag('event', 'Stream player', {
-                'event_category': 'Radio play',
-                'event_label': 'Started',
-                'value': now_playing + ' | ' + islive
+                'event_category': 'Radio Play',
+                'event_label': now_playing + ' | ' + islive,
+                'value': this.np.live.is_live ? 1 : 0,
             });
         },
         "stop": function() {
@@ -341,9 +345,9 @@ export default {
             // dataLayer.push({'event':'stream-stop','show-title':now_playing,'is_live': islive});
 
             gtag('event', 'Stream player', {
-                'event_category': 'Radio play',
-                'event_label': 'Stopped',
-                'value': now_playing + ' | ' + islive
+                'event_category': 'Radio Stop',
+                'event_label': now_playing + ' | ' + islive,
+                'value': this.np.live.is_live ? 1 : 0,
             });
         },
         "toggle": function() {
