@@ -31,7 +31,6 @@
         <li>12:00–14:00 <strong><a href="../shows/off-air-premiere/">OFF AIR Premiere</a>&nbsp;</strong></li>
         <li>14:00–15:00 <strong><a href="../shows/lying-stealing-in-eastern-europe/">Lying & Stealing in Eastern Europe</a></strong></li>
         <li>15:00–16:00 <strong><a href="../shows/erto-hallgatas/">Értő Hallgatás</a>&nbsp;</strong>| <a href="https://www.mixcloud.com/%C3%A9rt%C5%91hallgat%C3%A1s/" target="_blank" rel="noopener noreferrer">archive</a></li>
-        <li>16:00–17:00 <strong><a href="../shows/wikihow-adventure-cruise/">Wikihow Adventure Cruise</a></strong>&nbsp;| <a href="https://www.mixcloud.com/wikihowadventurecruise/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>18:00–19:00 <strong><a href="../shows/svadhyaya-onkutatolabor/">Svādhyāya - Önkutatólabor</a></strong>&nbsp;</li>
         <li>19:00–20:00 <strong><a href="../shows/rambo-kierkegaard-pszichotonikus-pecoja/">Rambo Kierkegaard Pszichotónikus Pecója</a></strong>&nbsp;</li>
         <li>20:00–21:00 <strong><a href="../shows/cellz-nocturnal-emissions/">@cellz nocturnal emissions</a></strong>&nbsp;| <a href="http://cellz.neocities.org/" target="_blank" rel="noopener noreferrer">archive</a></li>
