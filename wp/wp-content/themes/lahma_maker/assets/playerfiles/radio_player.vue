@@ -322,15 +322,10 @@ export default {
             this.is_playing = true;
             document.body.classList.add("Playing");
 
-            let now_playing = this.np.now_playing.song.text;
-            let islive = this.np.live.is_live ? 'Live Stream' : 'Not Live Stream';
-
-            // dataLayer.push({'event':'stream-play','show-title':now_playing, 'is_live': islive});
-
-            gtag('event', 'Stream player', {
-                'event_category': 'Radio Play',
-                'event_label': now_playing + ' | ' + islive,
-                'value': this.np.live.is_live ? 1 : 0,
+            gtag('event', 'Radio play', {
+                'event_category': this.np.now_playing.song.text,
+                'event_label': 'Play state',
+                'value': 1,
             });
         },
         "stop": function() {
@@ -339,15 +334,10 @@ export default {
             this.audio.src = '';
             document.body.classList.remove("Playing");
 
-            let now_playing = this.np.now_playing.song.text;
-            let islive = this.np.live.is_live ? 'Live Stream' : 'Not Live Stream';
-
-            // dataLayer.push({'event':'stream-stop','show-title':now_playing,'is_live': islive});
-
-            gtag('event', 'Stream player', {
-                'event_category': 'Radio Stop',
-                'event_label': now_playing + ' | ' + islive,
-                'value': this.np.live.is_live ? 1 : 0,
+            gtag('event', 'Radio play', {
+                'event_category': this.np.now_playing.song.text,
+                'event_label': 'Play state',
+                'value': 0,
             });
         },
         "toggle": function() {
