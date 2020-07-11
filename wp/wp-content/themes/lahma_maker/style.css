@@ -1148,6 +1148,19 @@ article.campaign .campaign-description {
   margin: 0 10px 20px 0;
 }
 
+/* Arcsi */
+.arcsiblokk {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.arcsiblokk img {
+  max-width: 150px;
+  margin-right: 1rem;
+}
+
+
 
 /*******
 ********
