@@ -323,7 +323,7 @@ export default {
             document.body.classList.add("Playing");
 
             gtag('event', 'Radio play', {
-                'event_category': this.np.now_playing.song.text,
+                'event_category': this.np.now_playing.song.artist,
                 'event_label': 'Play state',
                 'value': 1,
             });
@@ -335,7 +335,7 @@ export default {
             document.body.classList.remove("Playing");
 
             gtag('event', 'Radio play', {
-                'event_category': this.np.now_playing.song.text,
+                'event_category': this.np.now_playing.song.artist,
                 'event_label': 'Play state',
                 'value': 0,
             });
