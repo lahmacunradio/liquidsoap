@@ -54,9 +54,13 @@
                 <div v-if="np.now_playing.song.title !== ''">
                     <h4 v-bind:title="show_title" class="now-playing-title">
 
-                      <a v-if="show_check == true" v-bind:href="show_url">{{ show_title }} <i class="fa fa-link" aria-hidden="true"></i></a>
+                      <a v-if="show_check == true" v-bind:href="show_url">
+                          <span>{{ show_title }}&nbsp;</span>
+                          <i class="fa fa-link" aria-hidden="true"></i></a>
 
-                      <a v-if="check_offairlink == true" v-bind:href="this.np.now_playing.song.custom_fields.offairlink" target="_blank"> {{ show_title }} <i class="fa fa-link" aria-hidden="true"></i></a>
+                      <a v-if="check_offairlink == true" v-bind:href="this.np.now_playing.song.custom_fields.offairlink" target="_blank">
+                          <span>{{ show_title }}&nbsp;</span>
+                          <i class="fa fa-link" aria-hidden="true"></i></a>
 
                       <span v-if="show_check == false && check_offairlink == false">{{ show_title }}</span>
 
@@ -318,15 +322,10 @@ export default {
             this.is_playing = true;
             document.body.classList.add("Playing");
 
-            let now_playing = this.np.now_playing.song.text;
-            let islive = this.np.live.is_live ? 'Live Stream' : 'Not Live Stream';
-
-            // dataLayer.push({'event':'stream-play','show-title':now_playing, 'is_live': islive});
-
-            gtag('event', 'Stream player', {
-                'event_category': 'Radio play',
-                'event_label': 'Started',
-                'value': now_playing + ' | ' + islive
+            gtag('event', 'Radio play', {
+                'event_category': this.np.now_playing.song.artist,
+                'event_label': 'Play state',
+                'value': 1,
             });
         },
         "stop": function() {
@@ -335,15 +334,10 @@ export default {
             this.audio.src = '';
             document.body.classList.remove("Playing");
 
-            let now_playing = this.np.now_playing.song.text;
-            let islive = this.np.live.is_live ? 'Live Stream' : 'Not Live Stream';
-
-            // dataLayer.push({'event':'stream-stop','show-title':now_playing,'is_live': islive});
-
-            gtag('event', 'Stream player', {
-                'event_category': 'Radio play',
-                'event_label': 'Stopped',
-                'value': now_playing + ' | ' + islive
+            gtag('event', 'Radio play', {
+                'event_category': this.np.now_playing.song.artist,
+                'event_label': 'Play state',
+                'value': 0,
             });
         },
         "toggle": function() {
