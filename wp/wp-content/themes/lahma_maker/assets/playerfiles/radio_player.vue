@@ -321,12 +321,16 @@ export default {
             this.audio.play();
             this.is_playing = true;
             document.body.classList.add("Playing");
+            
+            if (this.show_check) {
+                gtag('event', 'Radio play', {
+                    'event_category': this.np.now_playing.song.artist,
+                    'event_label': 'Play state',
+                    'value': 1,
+                });                
+            }
 
-            gtag('event', 'Radio play', {
-                'event_category': this.np.now_playing.song.artist,
-                'event_label': 'Play state',
-                'value': 1,
-            });
+
         },
         "stop": function() {
             this.is_playing = false;
@@ -334,11 +338,13 @@ export default {
             this.audio.src = '';
             document.body.classList.remove("Playing");
 
-            gtag('event', 'Radio play', {
-                'event_category': this.np.now_playing.song.artist,
-                'event_label': 'Play state',
-                'value': 0,
-            });
+            if (this.show_check) {
+                gtag('event', 'Radio play', {
+                    'event_category': this.np.now_playing.song.artist,
+                    'event_label': 'Play state',
+                    'value': 0,
+                });
+            }
         },
         "toggle": function() {
             if (this.is_playing) {
