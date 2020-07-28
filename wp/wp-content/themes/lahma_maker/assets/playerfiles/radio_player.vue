@@ -324,12 +324,11 @@ export default {
             
             if (this.show_check) {
                 gtag('event', 'Radio play', {
-                    'event_category': this.np.now_playing.song.artist,
+                    'event_category': this.show_title,
                     'event_label': 'Play state',
                     'value': 1,
                 });                
             }
-
 
         },
         "stop": function() {
@@ -340,11 +339,12 @@ export default {
 
             if (this.show_check) {
                 gtag('event', 'Radio play', {
-                    'event_category': this.np.now_playing.song.artist,
+                    'event_category': this.show_title,
                     'event_label': 'Play state',
                     'value': 0,
                 });
             }
+            
         },
         "toggle": function() {
             if (this.is_playing) {
