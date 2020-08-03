@@ -34,9 +34,6 @@ playlist_szmuti_csorba = audio_to_stereo(id="stereo_playlist_szmuti_csorba", pla
 playlist_mukodo_mukod = playlist(id="playlist_mukodo_mukod",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mukodo_mukod.m3u")
 playlist_mukodo_mukod = audio_to_stereo(id="stereo_playlist_mukodo_mukod", playlist_mukodo_mukod)
 
-playlist_wikihow_adventure_cruise = playlist(id="playlist_wikihow_adventure_cruise",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_wikihow_adventure_cruise.m3u")
-playlist_wikihow_adventure_cruise = audio_to_stereo(id="stereo_playlist_wikihow_adventure_cruise", playlist_wikihow_adventure_cruise)
-
 playlist_agybaj = playlist(id="playlist_agybaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_agybaj.m3u")
 playlist_agybaj = audio_to_stereo(id="stereo_playlist_agybaj", playlist_agybaj)
 
@@ -175,6 +172,9 @@ playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_ai
 
 playlist_lying_stealing = playlist(id="playlist_lying_stealing",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lying_stealing.m3u")
 playlist_lying_stealing = audio_to_stereo(id="stereo_playlist_lying_stealing", playlist_lying_stealing)
+
+playlist_rambo = playlist(id="playlist_rambo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
+playlist_rambo = audio_to_stereo(id="stereo_playlist_rambo", playlist_rambo)
 
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
@@ -326,10 +326,9 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Erto - Svad 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: cell - Eastern 
+    transition_into_off(playlist_jingle_after_show), #ambient: Muto - Eastern 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -388,12 +387,11 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),     #Wednesday
     ({3w and 12h-12h59m}, once(playlist_lying_stealing)),
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
-    ({3w and 14h-14h59m}, once(playlist_wikihow_adventure_cruise)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
-    ({3w and 13h-17h30m}, off_air_ambient_mix),                        #ambient: Erto - Svad
+    ({3w and 17h-17h59m}, once(playlist_rambo)),
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
-    ({3w and 18h-19h30m}, off_air_ambient_mix),                        #ambient: cell - Eastern
+    ({3w and 12h-19h30m}, off_air_ambient_mix),                        #ambient: Muto - Eastern
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),           #Thursday
     ({4w and 14h-14h59m}, once(playlist_alternoon)),

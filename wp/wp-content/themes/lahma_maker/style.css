@@ -290,6 +290,10 @@ header #playerdiv .public-page .card-body .media-body h5 {
     text-transform: none;
 }
 
+header #playerdiv .public-page .card-body .now-playing-main .media-body {
+    overflow: auto;
+}
+
 header #playerdiv #radio-player-controls.radio-controls-standalone {
     position: absolute;
     background: #d09cf8;
@@ -406,6 +410,21 @@ html.ismobile header #playerdiv .radio-player-widget .radio-controls .radio-cont
 header #playerdiv .creditswrap {
     display:none;
 }
+
+header #playerdiv .now-playing-title a i {
+  color: #8d769f;
+	-webkit-transition: 0.7s all linear;
+  -moz-transition: 0.7s all linear;
+  transition: 0.7s all linear;
+  transform: rotate(90deg);
+}
+
+header #playerdiv .now-playing-title a:hover i {
+  color: black;
+}
+
+
+/* Finish player overrides */
 
 .main-navigation ul.menu li > ul {
 	display: none;
@@ -734,6 +753,27 @@ li.donate a:hover {
   white-space: nowrap;
 }
 
+/* Shows page */
+article.postslister.shows {
+  width: 30%;
+  border-bottom: none;
+  margin-bottom: 3%;
+  padding-bottom: 0;
+  margin-right: 3%;
+}
+
+article.postslister.shows .news-title {
+  font-size: 1.3em; 
+}
+
+article.postslister.shows .newspic-container {
+  margin-right: 5px;
+}
+
+article.postslister.shows .description {
+  line-height: 1.5em;
+  font-size: 0.95em;
+}
 
 /* Schedule */
 
@@ -1103,17 +1143,17 @@ article.campaign .campaign-description {
   display: flex;
 }
 
+.sponsors.content-area .entry-content img {
+  max-width: 130px;
+  margin: 0 10px 20px 0;
+}
+
 
 /*******
 ********
 Responsive
 ******
 ******/
-
-html.ismobile header #playerdiv div.station-lahmacun_radio .public-page .card {
-
-}
-
 
 @media screen and (min-width: 1024px) {
 .blog.no-sidebar .entry-content, .blog.no-sidebar .entry-footer, .blog.no-sidebar .comments-area, .blog.no-sidebar .post-navigation, .archive.no-sidebar .entry-content, .archive.no-sidebar .entry-footer, .archive.no-sidebar .comments-area, .archive.no-sidebar .post-navigation, .single-post.no-sidebar .entry-content, .single-post.no-sidebar .entry-footer, .single-post.no-sidebar .comments-area, .single-post.no-sidebar .post-navigation,
@@ -1262,6 +1302,8 @@ article.campaign .entry-content .campaigninfos, article.campaign .entry-content 
   display: none;
 }
 
+article.postslister.shows {  width: 46%; }
+
 /* end max 786 */
 }
 
@@ -1283,6 +1325,14 @@ header #playerdiv .public-page .card-body .media-body > div {    min-height: 20p
 #donatebanner #donateholder {  padding: 0; }
 .campaign-summary .campaign-summary-item { float: none;  width: 100%; }
 
+article.postslister.shows {  width: 98%;   margin-bottom: 5%; }
+article.postslister.shows .newspic-container {
+  float: left;
+  margin-right: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: auto;
+}
 
 /* end max 460 */
 }
