@@ -35,6 +35,7 @@
         <li>18:00–19:00 <strong><a href="../shows/svadhyaya-onkutatolabor/">Svādhyāya - Önkutatólabor</a></strong>&nbsp;</li>
         <li>20:00–21:00 <strong><a href="../shows/cellz-nocturnal-emissions/">@cellz nocturnal emissions</a></strong>&nbsp;| <a href="http://cellz.neocities.org/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>21:00–22:00 <strong><a href="../shows/eastern-daze-via-cashmere-radio/">Eastern Daze (via Cashmere Radio)</a></strong></li>
+        <li>22:00-23:00 <strong><a href="../shows/1-800-venus/">1-800-VENUS</a></strong></li>
         <li>23:00–24:00 <strong><a href="../shows/radio-bluszcze/">Radio Bluszcze (via Radio Kapitał)</a></strong></li>
     </ul>
 </div>
