@@ -176,6 +176,9 @@ playlist_lying_stealing = audio_to_stereo(id="stereo_playlist_lying_stealing", p
 playlist_rambo = playlist(id="playlist_rambo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
 playlist_rambo = audio_to_stereo(id="stereo_playlist_rambo", playlist_rambo)
 
+playlist_1800venus = playlist(id="playlist_1800venus",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_1800venus.m3u")
+playlist_1800venus = audio_to_stereo(id="stereo_playlist_1800venus", playlist_1800venus)
+
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
 
@@ -329,7 +332,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show), #ambient: Muto - Eastern 
-    transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),    
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -392,6 +395,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
     ({3w and 12h-19h30m}, off_air_ambient_mix),                        #ambient: Muto - Eastern
+    ({3w and 20h-20h59m}, once(playlist_1800venus)),
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),           #Thursday
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
