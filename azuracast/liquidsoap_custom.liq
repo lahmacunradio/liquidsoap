@@ -9,6 +9,7 @@ set("harbor.bind_addrs",["0.0.0.0"])
 
 set("tag.encodings",["UTF-8","ISO-8859-1"])
 set("encoder.encoder.export",["artist","title","album","song"])
+set("log.level",5)
 
 setenv("TZ", "UTC")
 
@@ -331,9 +332,9 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Muto - Eastern 
     transition_into_show(playlist_jingle),    
     transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Muto - Bluszcze 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -394,9 +395,9 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 17h-17h59m}, once(playlist_rambo)),
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
-    ({3w and 12h-19h30m}, off_air_ambient_mix),                        #ambient: Muto - Eastern
     ({3w and 20h-20h59m}, once(playlist_1800venus)),
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
+    ({3w and 12h-21h30m}, off_air_ambient_mix),                        #ambient: Muto - Bluszcze
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),           #Thursday
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
@@ -413,7 +414,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 14h-19h30m}, off_air_ambient_mix),                        #ambient: user - Arcade
     ({6w and 9h30m-11h29m}, once(playlist_merites)),     #Saturday
     ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),     
-    ({6w and 13h-14h59m}, once(playlist_torso)),
+    ({6w and 12h30m-14h59m}, once(playlist_torso)),
     ({6w and 15h-15h59m}, once(playlist_footwork_jimbob)),
     ({6w and 16h-17h59m}, once(playlist_rnr666)),
     ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
