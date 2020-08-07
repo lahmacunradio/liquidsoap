@@ -19,7 +19,6 @@
 <section class="schedulewrap">
 <h1>Schedule</h1>
 <span class="timenotice">All times are CET</span>
-<p>In-between shows non-stop</p>
 
 <?php
 /* Shows Schedule loaded from template file not backend */

@@ -778,8 +778,8 @@ article.postslister.shows .description {
 /* Schedule */
 
 .schedulewrap .day {
-  margin-top: 1em;
-  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 .schedulewrap h1 {
