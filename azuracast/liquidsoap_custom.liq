@@ -421,7 +421,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
     ({6w and 20h30m-21h29m}, once(playlist_brains_sublimating)),
     ({6w and 9h30m-21h}, off_air_ambient_mix),                        #ambient: Merites - Brains
-    ({7w and 9h30m-10h29m}, once(playlist_lohuma)),             #Sunday
+    ({7w and 8h30m-10h29m}, once(playlist_lohuma)),             #Sunday
     ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 16h30m-17h29m}, once(playlist_hetedik_tipusu_talalkozas)),
