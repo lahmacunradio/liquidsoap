@@ -99,9 +99,6 @@ playlist_dodo = audio_to_stereo(id="stereo_playlist_dodo", playlist_dodo)
 playlist_azvlm = playlist(id="playlist_azvlm",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_azvlm.m3u")
 playlist_azvlm = audio_to_stereo(id="stereo_playlist_azvlm", playlist_azvlm)
 
-playlist_speakers_corner = playlist(id="playlist_speakers_corner",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_speakers_corner.m3u")
-playlist_speakers_corner = audio_to_stereo(id="stereo_playlist_speakers_corner", playlist_speakers_corner)
-
 playlist_a_who_say = playlist(id="playlist_a_who_say",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
 playlist_a_who_say = audio_to_stereo(id="stereo_playlist_a_who_say", playlist_a_who_say)
 
@@ -363,7 +360,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show), #ambient: Lohuma - Exit
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
@@ -425,7 +421,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 16h30m-17h29m}, once(playlist_hetedik_tipusu_talalkozas)),
-    ({7w and 18h-18h59m}, once(playlist_speakers_corner)),
     ({7w and 19h-19h59m}, once(playlist_sub_burek)),
     ({7w and 20h-20h59m}, once(playlist_exit)),
     ({7w and 9h30m-20h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Exit
