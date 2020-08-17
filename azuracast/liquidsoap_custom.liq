@@ -168,8 +168,8 @@ playlist_weirdest_hits = audio_to_stereo(id="stereo_playlist_weirdest_hits", pla
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
 
-playlist_lying_stealing = playlist(id="playlist_lying_stealing",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lying_stealing.m3u")
-playlist_lying_stealing = audio_to_stereo(id="stereo_playlist_lying_stealing", playlist_lying_stealing)
+playlist_gold_liebe = playlist(id="playlist_gold_liebe",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_gold_liebe.m3u")
+playlist_gold_liebe = audio_to_stereo(id="stereo_playlist_gold_liebe", playlist_gold_liebe)
 
 playlist_rambo = playlist(id="playlist_rambo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
 playlist_rambo = audio_to_stereo(id="stereo_playlist_rambo", playlist_rambo)
@@ -334,7 +334,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),    
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Muto - Bluszcze 
+    transition_into_off(playlist_jingle_after_show), #ambient: Erto - Bluszcze 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -390,15 +390,15 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
     ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
     ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),     #Wednesday
-    ({3w and 12h-12h59m}, once(playlist_lying_stealing)),
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
+    ({3w and 15h-15h59m}, once(playlist_gold_liebe)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
     ({3w and 17h-17h59m}, once(playlist_rambo)),
     ({3w and 18h-18h59m}, once(playlist_cellz)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
     ({3w and 20h-20h59m}, once(playlist_1800venus)),
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
-    ({3w and 12h-21h30m}, off_air_ambient_mix),                        #ambient: Muto - Bluszcze
+    ({3w and 12h-21h30m}, off_air_ambient_mix),                        #ambient: Erto - Bluszcze
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),           #Thursday
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
