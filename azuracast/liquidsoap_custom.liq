@@ -178,7 +178,7 @@ playlist_1800venus = playlist(id="playlist_1800venus",mode="randomize",reload_mo
 playlist_1800venus = audio_to_stereo(id="stereo_playlist_1800venus", playlist_1800venus)
 
 playlist_ltmshow = playlist(id="playlist_ltmshow",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ltmshow.m3u")
-playlist_ltmshow = audio_to_stereo(id="stereo_playlist_1800venus", playlist_ltmshow)
+playlist_ltmshow = audio_to_stereo(id="stereo_playlist_ltmshow", playlist_ltmshow)
 
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
