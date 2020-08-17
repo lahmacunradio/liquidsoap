@@ -177,6 +177,9 @@ playlist_rambo = audio_to_stereo(id="stereo_playlist_rambo", playlist_rambo)
 playlist_1800venus = playlist(id="playlist_1800venus",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_1800venus.m3u")
 playlist_1800venus = audio_to_stereo(id="stereo_playlist_1800venus", playlist_1800venus)
 
+playlist_ltmshow = playlist(id="playlist_ltmshow",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ltmshow.m3u")
+playlist_ltmshow = audio_to_stereo(id="stereo_playlist_1800venus", playlist_ltmshow)
+
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
 
@@ -360,6 +363,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show), #ambient: Lohuma - Exit
     transition_into_off(playlist_jingle_after_show) ], 
     transition_length=60., #max duration of jingle (60s)
@@ -421,6 +425,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
     ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 16h30m-17h29m}, once(playlist_hetedik_tipusu_talalkozas)),
+    ({7w and 18h-18h59m}, once(playlist_ltmshow)),
     ({7w and 19h-19h59m}, once(playlist_sub_burek)),
     ({7w and 20h-20h59m}, once(playlist_exit)),
     ({7w and 9h30m-20h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Exit
