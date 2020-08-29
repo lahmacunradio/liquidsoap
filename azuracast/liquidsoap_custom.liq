@@ -144,8 +144,8 @@ playlist_mills_weather = audio_to_stereo(id="stereo_playlist_mills_weather", pla
 playlist_udcsi = playlist(id="playlist_udcsi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_udcsi.m3u")
 playlist_udcsi = audio_to_stereo(id="stereo_playlist_udcsi", playlist_udcsi)
 
-playlist_idm_user = playlist(id="playlist_idm_user",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_idm_user.m3u")
-playlist_idm_user = audio_to_stereo(id="stereo_playlist_idm_user", playlist_idm_user)
+playlist_recently_played = playlist(id="playlist_recently_played",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_recently_played.m3u")
+playlist_recently_played = audio_to_stereo(id="stereo_playlist_recently_played", playlist_recently_played)
 
 playlist_jambikus_nesz = playlist(id="playlist_jambikus_nesz",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jambikus_nesz.m3u")
 playlist_jambikus_nesz = audio_to_stereo(id="stereo_playlist_jambikus_nesz", playlist_jambikus_nesz)
@@ -407,7 +407,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 21h-21h59m}, once(playlist_gyogyfurdo)),
     ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
-    ({5w and 14h-14h59m}, once(playlist_idm_user)),             #Friday
+    ({5w and 14h-14h59m}, once(playlist_recently_played)),             #Friday
     ({5w and 15h-15h59m}, once(playlist_dead_hound)),
     ({5w and 16h-16h59m}, once(playlist_agybaj)),
     ({5w and 17h-18h59m}, once(playlist_mukodo_mukod)),
