@@ -79,7 +79,7 @@
         <li>10:30–12:30 <strong><a href="../shows/sunday-lockdown-w-lohuma/">Sunday Lockdown w/ Lohuma</a></strong> | <a href="https://www.mixcloud.com/lohuma/ " target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>12:30–14:00 <strong><a href="../shows/bambuszradio/">Bambuszrádió</a></strong> | <a href="https://soundcloud.com/enigmapanda/sets/radiobamboo" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>14:00–18:00 <strong><a href="../shows/donald-kacsa-klub/">Donald Kacsa Klub</a></strong> | <a href="https://www.facebook.com/donaldkacsaklub/" target="_blank" rel="noopener noreferrer">archive</a></li>
-        <li>18:30–19:30 <strong><a href="../shows/hetedik-tipusu-talalkozas/">Hetedik Típusú Találkozás</a></strong> | <a href="https://www.mixcloud.com/HetedikTipusuTalalkozas/" target="_blank" rel="noopener noreferrer">archive</a></li>
+        <li>18:00–19:00 <strong><a href="../shows/hetedik-tipusu-talalkozas/">Hetedik Típusú Találkozás</a></strong> | <a href="https://www.mixcloud.com/HetedikTipusuTalalkozas/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>20:00–21:00 <strong><a href="../shows/the-ltm-show/">The LTM Show</a></strong> | <a href="http://mixcloud.com/leftfieldtechnomemes" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>21:00–22:00 <strong><a href="../shows/sub-burek/">Sub Burek</a></strong></li>
         <li>22:00-23:00 <strong><a href="../shows/exit/">Exit</a></strong>| <a href="https://www.mixcloud.com/orsolya-kaincz/" target="_blank" rel="noopener noreferrer">archive</a></li>
