@@ -754,6 +754,10 @@ li.donate a:hover {
 }
 
 /* Shows page */
+header#pastshows {
+  margin-top: 2rem;
+}  
+
 article.postslister.shows {
   width: 32%;
   border-bottom: none;
