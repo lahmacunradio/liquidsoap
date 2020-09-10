@@ -113,6 +113,9 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
  $contDonate = get_option("contDonate");
  $contShower = get_option("shower");
  $contShowCheck = $contShower == "show" ? "checked" : false;
+ 
+ $showDonateButton = get_option("showDonateButton");
+ $showDonateButtonCheck = $showDonateButton == "show" ? "checked" : false;
 
  $contCampaignText = get_option("contCampaignText");
  $contCampaign = get_option("contCampaign");
@@ -142,6 +145,15 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
             echo $contDonate;
                 echo '" />
         </p>
+        <p>
+        <input type="checkbox" name="showDonateButton" value="show" ';
+            echo $showDonateButtonCheck;
+            echo '> Show Donate Button<br>
+        </p>   
+
+        <hr>
+
+        <h2>Campaign datas</h2>
 
         <input type="checkbox" name="showCampaign" value="show" ';
             echo $contShowCampaignCheck;
@@ -187,6 +199,7 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
 
 </form>';
 
+
 if ( $contShower == "show" ) { 
     echo "<h4 style='margin-bottom:0.3em;'>Campaign Bar Showed</h4>"; 
     if ( $contShowCampaign == "show" ) { echo "<i>Switched to Campaign with ID number: </i>" . $contCampaignID; }
@@ -213,6 +226,10 @@ if ( $contShower == "show" ) {
 
  	$contShower = $_POST["shower"];
     update_option("shower", $contShower);
+    
+    $showDonateButton = $_POST["showDonateButton"];
+    update_option("showDonateButton", $showDonateButton);
+
 
     $contShowCampaign = $_POST["showCampaign"];
     update_option("showCampaign", $contShowCampaign);

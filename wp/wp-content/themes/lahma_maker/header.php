@@ -49,6 +49,8 @@
   <?php // donatebanner show
   $contDonate = get_option("contDonate");
   $contShower = get_option("shower");
+  $showDonateButton = get_option("showDonateButton");
+
   $contCampaignText = get_option("contCampaignText");  
   $contCampaign = get_option("contCampaign");
   $contCampaignID = get_page_by_path($contCampaign, number, "campaign")->ID;
@@ -92,8 +94,12 @@
 
 	 } else { ?>	
 
-      <p><?php echo $contDonate; ?></p>
-	  <a id="donatebutton" class="donate-button" href="<?php echo get_home_url(); ?>/donate">Donate Us</a>
+	  <p><?php echo $contDonate; ?></p>
+	  
+	  <?php if ($showDonateButton == "show" ) { ?>
+		  <a id="donatebutton" class="donate-button" href="<?php echo get_home_url(); ?>/donate">Donate Us</a>
+		<?php } ?>  
+
 
 	<?php } ?>  
 
