@@ -405,7 +405,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
     ({4w and 18h-18h59m}, once(playlist_dodo)),
     ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
-    ({4w and 21h-21h59m}, once(playlist_gyogyfurdo)),
+    ({4w and 21h-22h29m}, once(playlist_gyogyfurdo)),
     ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
     ({5w and 14h-14h59m}, once(playlist_recently_played)),             #Friday
     ({5w and 15h-15h59m}, once(playlist_dead_hound)),
