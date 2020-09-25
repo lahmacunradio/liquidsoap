@@ -48,7 +48,7 @@
         <li>19:00–20:00 <strong><a href="../shows/dalmata-gergo-show/">Dalmata Gergő Show</a></strong> | <a href="https://www.mixcloud.com/djluci/" target="_blank" rel="noopener noreferrer">archive</a> </li>
         <li>20:00–21:00 <strong><a href="../shows/dodo/">dôdô</a></strong> | <a href="https://soundcloud.com/george-finlay-ramsay/best-of-god" target="_blank" rel="noopener noreferrer">archive</a> </li>
         <li>21:00–23:00 <strong><a href="../shows/great-galactic-ghoul/">Great Galactic Ghoul</a></strong>&nbsp;| <a href="https://www.mixcloud.com/GREATGALACTICGHOUL/" target="_blank" rel="noopener noreferrer">archive</a></li>
-        <li>23:00–00:00 <strong><a href="../shows/gyogyfurdo/">Gyógyfürdő</a></strong></li>
+        <li>23:00–00:30 <strong><a href="../shows/gyogyfurdo/">Gyógyfürdő</a></strong></li>
     </ul>
 </div>
 <div class="Friday day">
