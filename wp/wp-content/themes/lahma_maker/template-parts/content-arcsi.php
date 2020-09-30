@@ -49,32 +49,46 @@ $showarcsiJSON =
     }
 ]';
 
-$showarcsi = json_decode($showarcsiJSON, true);
+// $showarcsi = json_decode($showarcsiJSON, true);
+
+$showslug = get_post_field( 'post_name', get_post() );
+$showjson = file_get_contents('https://arcsi.lahmacun.hu/arcsi/show/' . $showslug . '/archive');
+$showarcsi = json_decode($showjson, true);
 
 ?>
 
+<script>
+
+</script>
+
 
 <?php 
-// print_r($showarcsi);
 foreach($showarcsi as $archiveitem) {
+    // print_r($archiveitem);
+
+    $shownumber = $archiveitem['number'];
+    $showname = $archiveitem['name'];
+    $showdescription = $archiveitem['description'];
+    $showplaydate = $archiveitem['play_date'];
+    $showid = $archiveitem['id'];
 ?>
 
 <div class="arcsiblokk">
     <div class="arcsiimage">
-        <img src="<?php echo $archiveitem['image_url']; ?>" alt="">  
+        <img src="" alt="">  
     </div>
     <div class="arcsiinfos">
-        <div>Episode nr. <?php echo $archiveitem['number']; ?></div>
-        <h4><?php echo $archiveitem['name']; ?></h4>   
-        <p><?php echo $archiveitem['description']; ?></p> 
-        <p>Was aired on <?php echo $archiveitem['play_date']; ?></p> 
-        <a href="<?php echo $archiveitem['download_link']; ?>">Download</a>              
+        <div>Episode nr. <?php echo $shownumber; ?></div>
+        <h4><?php echo $showname; ?></h4>   
+        <p><?php echo $showdescription; ?></p> 
+        <p>Was aired on <?php echo $showplaydate; ?></p> 
+        <a href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/download" target="_blank">Download</a>              
     </div>
 </div>
   
 <?php
+
 }
 ?>
-
 
 </article><!-- #post-## -->
