@@ -38,14 +38,12 @@ body div::-webkit-scrollbar {
   height: 0 !important;
 }
 
-
-
-body.home {
-	background-image: url("img/lahmacun.png") !important;
-	background-size: initial !important;
+body {
+	background-image: url("img/dj-citrom-web.png") !important;
+  background-size: contain;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center;
+	background-position: center;  
 }
 
 body a {
