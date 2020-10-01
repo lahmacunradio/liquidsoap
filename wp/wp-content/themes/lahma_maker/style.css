@@ -621,7 +621,9 @@ li.donate a:hover {
 /* Home News/Schedule */
 
 .lahma_home-content {
-  background: #d09cf891;
+  /*
+  background: #d09cf891; 
+  */
   margin-top: -2em;
   padding-top: 2em;
   width: 100%;
