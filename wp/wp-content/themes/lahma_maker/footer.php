@@ -6,7 +6,18 @@
  */
 
 ?>
+
+<footer class="page-footer">
+	<?php 
+	wp_nav_menu( array( 
+		'theme_location' => 'footer', 
+		'menu_id' => 'footer-menu' ) ); 
+	?>
+</footer>
+
 </div><!-- #page -->
+
+
 
 <?php wp_footer(); ?>
 

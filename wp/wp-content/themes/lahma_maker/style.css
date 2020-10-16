@@ -91,9 +91,9 @@ html.ismobile .main-navigation a:hover, html.ismobile .main-navigation a:focus, 
 
 
 body div#main {
-    padding-bottom: 2em;
-    padding-top: 2em;
-    min-height: auto;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  min-height: calc(100vH - 210px);
 }
 
 div#main h1, div#main h2, div#main h3 {
@@ -1151,6 +1151,36 @@ article.campaign .campaign-description {
 .sponsors.content-area .entry-content img {
   max-width: 130px;
   margin: 0 10px 20px 0;
+}
+
+/* Footer */
+footer.page-footer {
+  padding: 1rem 0;
+  width: 100%;
+  border-top: 2px solid #9a74b8;
+}
+
+ul#footer-menu {
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+ul#footer-menu li {
+  display: inline-block;
+  margin: 0;
+}
+
+ul#footer-menu li a {
+  display: block;
+  padding: 0 0.5em;
+  color: #1e1e1e;
+}
+
+ul#footer-menu li a:hover {
+  color: white;
 }
 
 
