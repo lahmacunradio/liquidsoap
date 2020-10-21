@@ -26,8 +26,6 @@ $showarcsi = json_decode($showjson, true);
 
 <?php 
 foreach($showarcsi as $archiveitem) {
-    // print_r($archiveitem);
-
     $shownumber = $archiveitem['number'];
     $showname = $archiveitem['name'];
     $showdescription = $archiveitem['description'];
@@ -40,11 +38,17 @@ foreach($showarcsi as $archiveitem) {
         <img src="" alt="">  
     </div>
     <div class="arcsiinfos">
-        <div>Episode nr. <?php echo $shownumber; ?></div>
+        <div>Episode nr. <?php echo $shownumber; ?> – <span>Was aired on <?php echo $showplaydate; ?></span> </div>
         <h4><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
-        <p>Was aired on <?php echo $showplaydate; ?></p> 
-        <a href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/download" target="_blank">Download</a>              
+        <div>
+            <a class="arcsibutton" href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
+                <i class="fa fa-download" aria-hidden="true"></i> Download
+            </a>              
+            <a class="arcsibutton" href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/listen" target="_blank">
+                <i class="fa fa-headphones" aria-hidden="true"></i> Listen
+            </a>              
+        </div>
     </div>
 </div>
   
