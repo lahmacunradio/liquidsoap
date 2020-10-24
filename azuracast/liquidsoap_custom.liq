@@ -369,66 +369,66 @@ radio = switch(track_sensitive=false, transitions=[
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
-    ({1w and 9h11m-10h11m}, once(playlist_transverszia)),           # Monday (orig requested time 11:11 am 12:12 pm)
-    ({1w and 11h-11h59m}, once(playlist_a_who_say)),
-    ({1w and 12h-13h59m}, once(playlist_dalmata_radio)),
-    ({1w and 11h-12h30m}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
-    ({1w and 15h-15h59m}, once(playlist_udcsi)),
-    ({1w and 16h-16h59m}, once(playlist_szmuti_csorba)),
-    ({1w and 17h-17h29m}, once(playlist_kezek_a_sebekben)),
-    ({1w and 17h30m-17h59m}, once(playlist_weirdest_hits)),
-    ({1w and 18h-19h59m}, once(playlist_erdenklang)),
-    ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),      
-    ({1w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Udcsi - Infinite
-    ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),   #Tuesday
-    ({2w and 11h-12h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
-    ({2w and 14h-14h59m}, once(playlist_mills_weather)),
-    ({2w and 15h-15h59m}, once(playlist_azvlm)),
-    ({2w and 16h-17h29m}, once(playlist_mmn_radio)),
-    ({2w and 17h30m-18h29m}, once(playlist_havizaj)),
-    ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
-    ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
-    ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
-    ({3w and 10h-11h59m}, once(playlist_off_air_premiere)),     #Wednesday
-    ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
-    ({3w and 15h-15h59m}, once(playlist_gold_liebe)),
-    ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
-    ({3w and 17h-17h59m}, once(playlist_rambo)),
-    ({3w and 18h-18h59m}, once(playlist_cellz)),
-    ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
-    ({3w and 20h-20h59m}, once(playlist_1800venus)),
-    ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
-    ({3w and 12h-21h30m}, off_air_ambient_mix),                        #ambient: Erto - Bluszcze
-    ({4w and 12h-12h59m}, once(playlist_muhelycast)),           #Thursday
-    ({4w and 14h-14h59m}, once(playlist_alternoon)),
-    ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
-    ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 18h-18h59m}, once(playlist_dodo)),
-    ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
-    ({4w and 21h-22h29m}, once(playlist_gyogyfurdo)),
-    ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
-    ({5w and 14h-14h59m}, once(playlist_recently_played)),             #Friday
-    ({5w and 15h-15h59m}, once(playlist_dead_hound)),
-    ({5w and 16h-16h59m}, once(playlist_agybaj)),
-    ({5w and 17h-18h59m}, once(playlist_mukodo_mukod)),
-    ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),       
-    ({5w and 14h-19h30m}, off_air_ambient_mix),                        #ambient: user - Arcade
-    ({6w and 9h30m-11h29m}, once(playlist_merites)),     #Saturday
-    ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),     
-    ({6w and 12h30m-14h59m}, once(playlist_torso)),
-    ({6w and 15h-15h59m}, once(playlist_footwork_jimbob)),
-    ({6w and 16h-17h59m}, once(playlist_rnr666)),
-    ({6w and 18h-19h59m}, once(playlist_mood_sequence)),
-    ({6w and 20h30m-21h29m}, once(playlist_brains_sublimating)),
-    ({6w and 9h30m-21h}, off_air_ambient_mix),                        #ambient: Merites - Brains
-    ({7w and 8h30m-10h29m}, once(playlist_lohuma)),             #Sunday
-    ({7w and 10h30m-11h59m}, once(playlist_bambusz)),
-    ({7w and 12h-15h59m}, once(playlist_donald_kacsa_klub)),
-    ({7w and 16h00m-16h59m}, once(playlist_hetedik_tipusu_talalkozas)),
-    ({7w and 18h-18h59m}, once(playlist_ltmshow)),
-    ({7w and 19h-19h59m}, once(playlist_sub_burek)),
-    ({7w and 20h-20h59m}, once(playlist_exit)),
-    ({7w and 9h30m-20h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Exit
+    ({1w and 10h11m-11h11m}, once(playlist_transverszia)),           # Monday (orig requested time 11:11 am 12:12 pm)
+    ({1w and 12h-12h59m}, once(playlist_a_who_say)),
+    ({1w and 13h-14h59m}, once(playlist_dalmata_radio)),
+    ({1w and 12h-13h30m}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
+    ({1w and 16h-16h59m}, once(playlist_udcsi)),
+    ({1w and 17h-17h59m}, once(playlist_szmuti_csorba)),
+    ({1w and 18h-18h29m}, once(playlist_kezek_a_sebekben)),
+    ({1w and 18h30m-18h59m}, once(playlist_weirdest_hits)),
+    ({1w and 19h-20h59m}, once(playlist_erdenklang)),
+    ({1w and 21h-22h59m}, once(playlist_infinite_scroll)),      
+    ({1w and 16h-21h30m}, off_air_ambient_mix),                        #ambient: Udcsi - Infinite
+    ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),   #Tuesday
+    ({2w and 12h-13h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
+    ({2w and 15h-15h59m}, once(playlist_mills_weather)),
+    ({2w and 16h-16h59m}, once(playlist_azvlm)),
+    ({2w and 17h-18h29m}, once(playlist_mmn_radio)),
+    ({2w and 18h30m-19h29m}, once(playlist_havizaj)),
+    ({2w and 20h-20h59m}, once(playlist_turmeric_acid)),
+    ({2w and 21h-22h59m}, once(playlist_mosolyszunet)),
+    ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
+    ({3w and 11h-12h59m}, once(playlist_off_air_premiere)),     #Wednesday
+    ({3w and 14h-14h59m}, once(playlist_erto_hallgatas)),
+    ({3w and 16h-16h59m}, once(playlist_gold_liebe)),
+    ({3w and 17h-17h59m}, once(playlist_svadhyaya)),
+    ({3w and 18h-18h59m}, once(playlist_rambo)),
+    ({3w and 19h-19h59m}, once(playlist_cellz)),
+    ({3w and 20h-20h59m}, once(playlist_eastern_daze)),
+    ({3w and 21h-21h59m}, once(playlist_1800venus)),
+    ({3w and 22h-22h59m}, once(playlist_radio_bluszcze)),
+    ({3w and 14h-22h30m}, off_air_ambient_mix),                        #ambient: Erto - Bluszcze
+    ({4w and 13h-13h59m}, once(playlist_muhelycast)),           #Thursday
+    ({4w and 15h-15h59m}, once(playlist_alternoon)),
+    ({4w and 16h-17h59m}, once(playlist_lazy_calm_raga)),
+    ({4w and 18h-18h59m}, once(playlist_dalmata_gergo_show)),
+    ({4w and 19h-19h59m}, once(playlist_dodo)),
+    ({4w and 20h-21h59m}, once(playlist_great_galactick_ghaul)),
+    ({4w and 22h-23h29m}, once(playlist_gyogyfurdo)),
+    ({4w and 15h-22h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
+    ({5w and 15h-15h59m}, once(playlist_recently_played)),             #Friday
+    ({5w and 16h-16h59m}, once(playlist_dead_hound)),
+    ({5w and 17h-17h59m}, once(playlist_agybaj)),
+    ({5w and 18h-19h59m}, once(playlist_mukodo_mukod)),
+    ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),       
+    ({5w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Recently - Arcade
+    ({6w and 10h30m-12h29m}, once(playlist_merites)),     #Saturday
+    ({6w and 12h30m-13h29m}, once(playlist_jambikus_nesz)),     
+    ({6w and 13h30m-15h59m}, once(playlist_torso)),
+    ({6w and 16h-16h59m}, once(playlist_footwork_jimbob)),
+    ({6w and 17h-18h59m}, once(playlist_rnr666)),
+    ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
+    ({6w and 21h30m-22h29m}, once(playlist_brains_sublimating)),
+    ({6w and 10h30m-22h}, off_air_ambient_mix),                        #ambient: Merites - Brains
+    ({7w and 9h30m-11h29m}, once(playlist_lohuma)),             #Sunday
+    ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
+    ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 17h-17h59m}, once(playlist_hetedik_tipusu_talalkozas)),
+    ({7w and 19h-19h59m}, once(playlist_ltmshow)),
+    ({7w and 20h-20h59m}, once(playlist_sub_burek)),
+    ({7w and 21h-21h59m}, once(playlist_exit)),
+    ({7w and 9h30m-21h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Exit
     ({true}, radio) ])
 
 
