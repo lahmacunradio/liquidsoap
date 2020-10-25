@@ -9,7 +9,7 @@
 
 <article class="arcsi-list" >
 
-<h3>Archived shows for <?php the_title(); ?></h3>
+<h3>Arcsived shows for <?php the_title(); ?></h3>
 
 <?php
 

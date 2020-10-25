@@ -1199,6 +1199,10 @@ article.campaign .campaign-description {
   display: inline-block;
 }
 
+.arcsibutton i {
+  margin-right: 0.3rem;
+}
+
 .arcsiblokk .arcsibutton:active, .arcsiblokk .arcsibutton:hover, .arcsiblokk .arcsibutton:focus  {
   color: white;
   border: none;
@@ -1230,7 +1234,7 @@ Responsive
 /* end min 1024 */
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
 
 .arcsi-blokks {
   display: block;
