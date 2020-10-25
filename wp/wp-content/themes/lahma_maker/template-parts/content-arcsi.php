@@ -9,7 +9,7 @@
 
 <article class="arcsi-list" >
 
-<h3>Arcsived shows for <?php the_title(); ?></h3>
+<h3>Archived shows for <?php the_title(); ?></h3>
 
 <?php
 
@@ -19,10 +19,7 @@ $showarcsi = json_decode($showjson, true);
 
 ?>
 
-<script>
-
-</script>
-
+<div class="arcsi-blokks">
 
 <?php 
 foreach($showarcsi as $archiveitem) {
@@ -39,14 +36,14 @@ foreach($showarcsi as $archiveitem) {
         <img src="<?php echo $showimg;?>" alt="<?php echo $showname; ?>">  
     </div>
     <div class="arcsiinfos">
-        <div>Episode nr. <?php echo $shownumber; ?> – <span>Was aired on <?php echo $showplaydate; ?></span> </div>
+        <div>Episode nr. <?php echo $shownumber; ?> – <span>Aired on <?php echo $showplaydate; ?></span> </div>
         <h4><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
         <div>
-            <a class="arcsibutton" href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
+            <a class="arcsibutton arcsidown" href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
                 <i class="fa fa-download" aria-hidden="true"></i> Download
             </a>              
-            <a class="arcsibutton" href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/listen" target="_blank">
+            <a class="arcsibutton arcsilisten" href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/listen" target="_blank">
                 <i class="fa fa-headphones" aria-hidden="true"></i> Listen
             </a>              
         </div>
@@ -57,5 +54,6 @@ foreach($showarcsi as $archiveitem) {
 
 }
 ?>
+</div>
 
 </article><!-- #post-## -->

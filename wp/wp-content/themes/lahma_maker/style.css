@@ -1149,10 +1149,30 @@ article.campaign .campaign-description {
 }
 
 /* Arcsi */
+
+.arcsi-list {
+  margin: 2rem 0;
+}
+
+.arcsi-list h3 {
+  margin-bottom: 1.7rem;
+  text-align: center;
+  border-bottom: 1px solid;
+  padding-bottom: 0.7rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.arcsi-blokks {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 2rem;
+}
+
 .arcsiblokk {
   display: flex;
   flex-direction: row;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .arcsiblokk img {
@@ -1160,12 +1180,36 @@ article.campaign .campaign-description {
   margin-right: 1rem;
 }
 
+.arcsiblokk h4 {
+  margin: 0.3rem 0;
+  text-transform: none;
+}
+
+#main .arcsiblokk p {
+  margin-bottom: 0.4rem;
+  line-height: 1.4em;
+}
+
 .arcsibutton {
   background: black;
-  color: white;
+  color: #ffffffe0;
   padding: 0.5rem 1rem;
   border-radius: 3px;
-  margin-right: 1rem;
+  margin: 0.3rem 0.6rem 0.3rem 0;
+  display: inline-block;
+}
+
+.arcsiblokk .arcsibutton:active, .arcsiblokk .arcsibutton:hover, .arcsiblokk .arcsibutton:focus  {
+  color: white;
+  border: none;
+}
+
+.arcsidown {
+  background-color: #d71417;
+}
+
+.arcsilisten {
+  background-color: #009821;
 }
 
 
@@ -1185,6 +1229,16 @@ Responsive
 
 /* end min 1024 */
 }
+
+@media screen and (max-width: 850px) {
+
+.arcsi-blokks {
+  display: block;
+}
+
+/* end max 1024 */
+}  
+
 
 @media screen and (min-width: 1300px) {
 .main-navigation ul.menu li > ul {  padding: 0px 11%; }
@@ -1353,6 +1407,8 @@ article.postslister.shows .newspic-container {
   margin-bottom: 0;
   width: auto;
 }
+
+.arcsiblokk img {  max-width: 100px; }
 
 /* end max 460 */
 }
