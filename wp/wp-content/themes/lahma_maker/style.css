@@ -38,14 +38,12 @@ body div::-webkit-scrollbar {
   height: 0 !important;
 }
 
-
-
-body.home {
-	background-image: url("img/lahmacun.png") !important;
-	background-size: initial !important;
+body {
+	background-image: url("img/dj-citrom-web.png") !important;
+  background-size: contain;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center;
+	background-position: center;  
 }
 
 body a {
@@ -623,7 +621,9 @@ li.donate a:hover {
 /* Home News/Schedule */
 
 .lahma_home-content {
-  background: #d09cf891;
+  /*
+  background: #d09cf891; 
+  */
   margin-top: -2em;
   padding-top: 2em;
   width: 100%;
@@ -754,12 +754,17 @@ li.donate a:hover {
 }
 
 /* Shows page */
+header#pastshows {
+  margin-top: 2rem;
+}  
+
 article.postslister.shows {
-  width: 30%;
+  width: 32%;
   border-bottom: none;
   margin-bottom: 3%;
   padding-bottom: 0;
-  margin-right: 3%;
+  padding-right: 3em;
+  margin-right: 0%;
 }
 
 article.postslister.shows .news-title {
@@ -778,8 +783,8 @@ article.postslister.shows .description {
 /* Schedule */
 
 .schedulewrap .day {
-  margin-top: 1em;
-  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 .schedulewrap h1 {
@@ -1380,7 +1385,7 @@ article.campaign .entry-content .campaigninfos, article.campaign .entry-content 
   display: none;
 }
 
-article.postslister.shows {  width: 46%; }
+article.postslister.shows {  width: 49%; padding-right: 1em; }
 
 /* end max 786 */
 }
@@ -1403,7 +1408,7 @@ header #playerdiv .public-page .card-body .media-body > div {    min-height: 20p
 #donatebanner #donateholder {  padding: 0; }
 .campaign-summary .campaign-summary-item { float: none;  width: 100%; }
 
-article.postslister.shows {  width: 98%;   margin-bottom: 5%; }
+article.postslister.shows {  width: 100%;   margin-bottom: 3em; padding-right: 0; }
 article.postslister.shows .newspic-container {
   float: left;
   margin-right: 1em;

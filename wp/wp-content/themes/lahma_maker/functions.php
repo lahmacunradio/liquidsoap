@@ -113,6 +113,11 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
  $contDonate = get_option("contDonate");
  $contShower = get_option("shower");
  $contShowCheck = $contShower == "show" ? "checked" : false;
+ 
+ $showDonateButton = get_option("showDonateButton");
+ $showDonateButtonCheck = $showDonateButton == "show" ? "checked" : false;
+ $contButton = get_option("contButton");
+ $linkButton = get_option("linkButton");
 
  $contCampaignText = get_option("contCampaignText");
  $contCampaign = get_option("contCampaign");
@@ -142,6 +147,30 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
             echo $contDonate;
                 echo '" />
         </p>
+
+        <hr>
+
+        <p>
+        <input type="checkbox" name="showDonateButton" value="show" ';
+            echo $showDonateButtonCheck;
+            echo '> Show Donate Button<br>
+        </p>   
+        <p>
+            <label for="contButton">Text for the Button (if empty, the default "Donate Us" is visible):</label><br/>
+            <input type="text" name="contButton" size="500" style="width:100%;" value="';
+            echo $contButton;
+                echo '" />
+        </p>
+        <p>
+            <label for="linkButton">Link on the Button (if empty, the default "Donate" page is linked):</label><br/>
+            <input type="text" name="linkButton" size="500" style="width:100%;" value="';
+            echo $linkButton;
+                echo '" />
+        </p>
+
+        <hr>
+
+        <h2>Campaign datas</h2>
 
         <input type="checkbox" name="showCampaign" value="show" ';
             echo $contShowCampaignCheck;
@@ -183,9 +212,16 @@ add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
         </td>        
         </tr>
     </table>
-<input type="submit" name="submit" value="Submit" />
+<input type="submit" name="submit" value="Submit" style="
+    background: #23282d;
+    color: white;
+    padding: 0.7em 1em;
+    border: none;
+    border-radius: 3px;" 
+/>
 
 </form>';
+
 
 if ( $contShower == "show" ) { 
     echo "<h4 style='margin-bottom:0.3em;'>Campaign Bar Showed</h4>"; 
@@ -213,6 +249,15 @@ if ( $contShower == "show" ) {
 
  	$contShower = $_POST["shower"];
     update_option("shower", $contShower);
+    
+    $showDonateButton = $_POST["showDonateButton"];
+    update_option("showDonateButton", $showDonateButton);
+    
+    $contButton = $_POST["contButton"];
+    update_option("contButton", $contButton);
+    
+    $linkButton = $_POST["linkButton"];
+    update_option("linkButton", $linkButton);
 
     $contShowCampaign = $_POST["showCampaign"];
     update_option("showCampaign", $contShowCampaign);
