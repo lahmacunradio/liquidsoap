@@ -70,7 +70,7 @@
         <li>17:00–18:00 <strong><a href="../shows/footwork-jimbob/">Footwork Jimbob</a></strong>| <a href="https://www.mixcloud.com/regost542/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>18:00–20:00 <strong><a href="../shows/rnr666-radioshow/">RNR666 radioshow</a></strong>| <a href="https://www.mixcloud.com/RNR666/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>20:00–22:00 <strong><a href="../shows/mood-sequence/">Mood Sequence</a></strong></li>
-        <li>22:30–23:30 <strong><a href="../shows/brains-sublimating/">Brains Sublimating</a></strong>| <a href="https://www.mixcloud.com/tapes_sublimating/" target="_blank" rel="noopener noreferrer">archive</a></li>
+        <li>22:00–23:00 <strong><a href="../shows/brains-sublimating/">Brains Sublimating</a></strong>| <a href="https://www.mixcloud.com/tapes_sublimating/" target="_blank" rel="noopener noreferrer">archive</a></li>
     </ul>
 </div>
 <div class="Sunday day">
