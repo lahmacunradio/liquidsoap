@@ -490,6 +490,14 @@ html:not(.ismobile) .main-navigation ul.menu li:hover > ul {
   margin: 0;
 }
 
+.taglist {
+  font-size: 0.9em;
+}
+
+.taglist span {
+  margin: 0 0.1em;
+}
+
 /* Home page */
 
 .lahma_home-content  {
@@ -1245,6 +1253,8 @@ Responsive
 
 .site-header {   padding: 0 0 0.5em;   height: 150px; }
 .entry-title {     font-size: 2em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
+
+.post-thumbnail {  margin-bottom: 1em; }
 
 /* end min 786 */
 }
