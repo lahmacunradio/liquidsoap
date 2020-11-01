@@ -29,7 +29,7 @@
 		</a>
 	<?php } ?>	
 
-	<p class="taglist"><?php the_tags( 'Tags: ', '<span> | </span>', '' ); ?></p>
+	<p class="taglist"><?php the_tags( '', ' ', '' ); ?></p>
 
 </div><!-- side-content -->
 
