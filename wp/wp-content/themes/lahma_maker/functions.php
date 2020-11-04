@@ -2,6 +2,7 @@
 
 add_image_size("post_page_img", 300); // with width 300px
 add_image_size("nav_thumb", 80, 80, true); // nav thumb 80x80
+add_image_size("newsonhome", 770, 770); // news image
 
 function maker_enqueue_styles() {
 

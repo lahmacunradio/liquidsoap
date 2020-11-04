@@ -645,12 +645,51 @@ li.donate a:hover {
   padding-right: 4%;
 }
 
+.homenews {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  gap: 1em;
+  margin-top: 2em;
+}
+
 .newslist {
-  clear: both;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  border-bottom: 1px solid rgba(0,0,0,.87);
-  padding-bottom: 1em;
+}
+
+.newslist:first-child {
+  grid-column: span 2;
+  height: auto;
+}
+
+.newspic-full {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.newslist:first-child .newspic-full {
+  height: auto;
+  max-height: 300px;
+}
+
+.newspic-full img {
+  min-height: 200px;
+  object-fit: cover;
+}
+
+.newslist a {
+  position: relative;
+  display: block;
+}
+
+.newslist .news-title {
+  background: #1b1520;
+  padding: 0.5em;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.2em;
 }
 
 .newscat a {
@@ -1179,11 +1218,15 @@ Responsive
 .main-navigation ul.menu li > ul {  padding: 0px 5%; }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px)  {
+.homenews {  grid-template-columns: auto; }
+.newslist:first-child { grid-column: auto; }
+}
+
 @media screen and (min-width: 768px) and (max-width: 769px)  {
 .main-navigation {  float: left}
 .main-navigation ul {   padding:0; }
 }
-
 
 
 @media screen and (min-width: 769px) {

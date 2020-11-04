@@ -9,7 +9,7 @@ News template for homepage
   </a>
 </h1>
 
-<article>
+<article class="homenews">
 
 <?php
   $args = array(   'category_name' => 'News', 'posts_per_page'   => 3, 'post_type' =>  'post' );
@@ -19,25 +19,17 @@ News template for homepage
 
 <div class="newslist">
   <a href="<?php the_permalink(); ?>">
-  <h3 class="news-title">
-    <?php the_title(); ?>
-  </h3>
-
-  <p class="news-time"><?php the_time('l, F jS, Y') ?></p>
 
   <?php if ( has_post_thumbnail()) : ?>
-  <div class="newspic-container">
-   <div class="newsimage">
-     <?php the_post_thumbnail("medium"); ?>
-   </div>
-</div>
-<?php endif; ?>
-
-<div class="description">
-  <?php the_excerpt(); ?>
+  <div class="newspic-full">
+      <?php the_post_thumbnail("newsonhome"); ?>
   </div>
+  <?php endif; ?>
+  <h3 class="news-title">
+      <?php the_title(); ?>
+  </h3>
+
   </a>
-<div class="clearfix"></div>
 
 </div>
 
