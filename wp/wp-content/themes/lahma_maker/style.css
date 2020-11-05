@@ -507,6 +507,12 @@ html:not(.ismobile) .main-navigation ul.menu li:hover > ul {
   margin: 0 0.1em;
 }
 
+header.othertags h3 {
+  text-transform: none;
+  margin-top:1em; 
+  margin-bottom:0.7em;  
+}
+
 /* Home page */
 
 .lahma_home-content  {

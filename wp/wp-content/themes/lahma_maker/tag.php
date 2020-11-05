@@ -46,10 +46,27 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+	<header class="page-header othertags">
+        <h3>Our other Tags</h3>
+	</header><!-- .page-header -->
+
+		<div class="taglist">
+            <?php
+            $tags = get_tags('post_tag'); //taxonomy=post_tag
+
+            if ( $tags ) :
+                foreach ( $tags as $tag ) : ?>
+                
+                <a class="tag" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>">
+                    <?php echo esc_html( $tag->name ); ?>
+                </a>
+                <?php endforeach; ?>
+                
+            <?php endif; ?>
+		</div>
+
 		</div><!-- #primary -->
-
-		<?php // get_sidebar(); ?>
-
+			
 	</div><!-- #content -->
 </div><!-- #main -->
 
