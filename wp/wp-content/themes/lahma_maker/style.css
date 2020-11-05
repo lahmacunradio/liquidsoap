@@ -685,11 +685,16 @@ li.donate a:hover {
 }
 
 .newslist .news-title {
-  background: #1b1520;
-  padding: 0.5em;
-  color: #ffffff;
-  text-align: center;
-  font-size: 1.2em;
+    background: #1b15208c;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+    padding: 0.5em;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.2em;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
 }
 
 .newscat a {
