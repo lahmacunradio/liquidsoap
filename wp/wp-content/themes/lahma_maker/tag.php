@@ -47,7 +47,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 	<header class="page-header othertags">
-        <h3>Our other Tags</h3>
+        <h3>All Lahmacun tags</h3>
 	</header><!-- .page-header -->
 
 		<div class="taglist">
