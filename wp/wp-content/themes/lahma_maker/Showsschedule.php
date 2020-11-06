@@ -28,7 +28,7 @@
 <div class="Wednesday day">
     <h3>Wednesday / Szerda</h3>
     <ul>
-        <li>12:00–14:00 <strong><a href="../shows/off-air-premiere/">OFF AIR Premiere</a>&nbsp;</strong></li>
+        <li>12:00–14:00 <strong><a href="../shows/lahmacun-presents/">Lahmacun presents</a>&nbsp;</strong></li>
         <li>15:00–16:00 <strong><a href="../shows/erto-hallgatas/">Értő Hallgatás</a>&nbsp;</strong>| <a href="https://www.mixcloud.com/%C3%A9rt%C5%91hallgat%C3%A1s/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>17:00–18:00 <strong><a href="../shows/gold-und-liebe/">Gold und Liebe</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/svadhyaya-onkutatolabor/">Svādhyāya - Önkutatólabor</a></strong>&nbsp;</li>
