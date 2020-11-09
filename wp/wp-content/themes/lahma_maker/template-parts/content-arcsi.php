@@ -13,8 +13,11 @@
 
 <?php
 
+$server = 'https://arcsi.lahmacun.hu'; // prod server
+// $server = 'https://devarcsi.lahmacun.hu'; // dev server
+
 $showslug = get_post_field( 'post_name', get_post() );
-$showjson = file_get_contents('https://arcsi.lahmacun.hu/arcsi/show/' . $showslug . '/archive');
+$showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
 $showarcsi = json_decode($showjson, true);
 
 ?>
@@ -40,10 +43,10 @@ foreach($showarcsi as $archiveitem) {
         <h4><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
         <div>
-            <a class="arcsibutton arcsidown" href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
+            <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
                 <i class="fa fa-download" aria-hidden="true"></i> Download
             </a>              
-            <a class="arcsibutton arcsilisten" href="https://arcsi.lahmacun.hu/arcsi/item/<?php echo $showid; ?>/listen" target="_blank">
+            <a class="arcsibutton arcsilisten" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/listen" target="_blank">
                 <i class="fa fa-headphones" aria-hidden="true"></i> Listen
             </a>              
         </div>
