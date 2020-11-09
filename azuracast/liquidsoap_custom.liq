@@ -120,8 +120,8 @@ playlist_radio_bluszcze = audio_to_stereo(id="stereo_playlist_radio_bluszcze", p
 playlist_muhelycast = playlist(id="playlist_muhelycast",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_muhelycast.m3u")
 playlist_muhelycast = audio_to_stereo(id="stereo_playlist_muhelycast", playlist_muhelycast)
 
-playlist_off_air_premiere = playlist(id="playlist_off_air_premiere",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_premiere.m3u")
-playlist_off_air_premiere = audio_to_stereo(id="stereo_playlist_off_air_premiere", playlist_off_air_premiere)
+playlist_lahmacun_presents = playlist(id="playlist_lahmacun_presents",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmacun_presents.m3u")
+playlist_lahmacun_presents = audio_to_stereo(id="stereo_playlist_lahmacun_presents", playlist_lahmacun_presents)
 
 playlist_dead_hound = playlist(id="playlist_dead_hound",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dead_hound.m3u")
 playlist_dead_hound = audio_to_stereo(id="stereo_playlist_dead_hound", playlist_dead_hound)
@@ -389,7 +389,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 20h-20h59m}, once(playlist_turmeric_acid)),
     ({2w and 21h-22h59m}, once(playlist_mosolyszunet)),
     ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
-    ({3w and 11h-12h59m}, once(playlist_off_air_premiere)),     #Wednesday
+    ({3w and 11h-12h59m}, once(playlist_lahmacun_presents)),     #Wednesday
     ({3w and 14h-14h59m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h59m}, once(playlist_gold_liebe)),
     ({3w and 17h-17h59m}, once(playlist_svadhyaya)),
