@@ -180,6 +180,10 @@ playlist_1800venus = audio_to_stereo(id="stereo_playlist_1800venus", playlist_18
 playlist_ltmshow = playlist(id="playlist_ltmshow",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ltmshow.m3u")
 playlist_ltmshow = audio_to_stereo(id="stereo_playlist_ltmshow", playlist_ltmshow)
 
+playlist_boombap = playlist(id="playlist_boombap",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
+playlist_boombap = audio_to_stereo(id="stereo_playlist_boombap", playlist_boombap)
+
+
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
 
@@ -348,6 +352,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
+    transition_into_show(playlist_jingle),
     transition_into_off(playlist_jingle_after_show), #ambient: user - Arcade 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -369,7 +374,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
-    ({1w and 10h11m-11h11m}, once(playlist_transverszia)),           # Monday (orig requested time 11:11 am 12:12 pm)
+    ({1w and 10h11m-11h11m}, once(playlist_transverszia)),             # Monday (orig requested time 11:11 am 12:12 pm)
     ({1w and 12h-12h59m}, once(playlist_a_who_say)),
     ({1w and 13h-14h59m}, once(playlist_dalmata_radio)),
     ({1w and 12h-13h30m}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
@@ -380,7 +385,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 19h-20h59m}, once(playlist_erdenklang)),
     ({1w and 21h-22h59m}, once(playlist_infinite_scroll)),      
     ({1w and 16h-21h30m}, off_air_ambient_mix),                        #ambient: Udcsi - Infinite
-    ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),   #Tuesday
+    ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 12h-13h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
     ({2w and 15h-15h59m}, once(playlist_mills_weather)),
     ({2w and 16h-16h59m}, once(playlist_azvlm)),
@@ -389,7 +394,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 20h-20h59m}, once(playlist_turmeric_acid)),
     ({2w and 21h-22h59m}, once(playlist_mosolyszunet)),
     ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
-    ({3w and 11h-12h59m}, once(playlist_lahmacun_presents)),     #Wednesday
+    ({3w and 11h-12h59m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 14h-14h59m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h59m}, once(playlist_gold_liebe)),
     ({3w and 17h-17h59m}, once(playlist_svadhyaya)),
@@ -399,7 +404,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 21h-21h59m}, once(playlist_1800venus)),
     ({3w and 22h-22h59m}, once(playlist_radio_bluszcze)),
     ({3w and 14h-22h30m}, off_air_ambient_mix),                        #ambient: Erto - Bluszcze
-    ({4w and 13h-13h59m}, once(playlist_muhelycast)),           #Thursday
+    ({4w and 13h-13h59m}, once(playlist_muhelycast)),                  #Thursday
     ({4w and 15h-15h59m}, once(playlist_alternoon)),
     ({4w and 16h-17h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 18h-18h59m}, once(playlist_dalmata_gergo_show)),
@@ -407,21 +412,22 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 20h-21h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 22h-23h29m}, once(playlist_gyogyfurdo)),
     ({4w and 15h-22h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
-    ({5w and 15h-15h59m}, once(playlist_recently_played)),             #Friday
+    ({5w and 14h-14h59m}, once(playlist_boombap)),                     #Friday
+    ({5w and 15h-15h59m}, once(playlist_recently_played)),             
     ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
     ({5w and 18h-19h59m}, once(playlist_mukodo_mukod)),
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),       
     ({5w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Recently - Arcade
-    ({6w and 10h30m-12h29m}, once(playlist_merites)),     #Saturday
+    ({6w and 10h30m-12h29m}, once(playlist_merites)),                  #Saturday
     ({6w and 12h30m-13h29m}, once(playlist_jambikus_nesz)),     
     ({6w and 13h30m-15h59m}, once(playlist_torso)),
     ({6w and 16h-16h59m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
     ({6w and 21h00m-21h59m}, once(playlist_brains_sublimating)),
-    ({6w and 10h30m-21h30m}, off_air_ambient_mix),                        #ambient: Merites - Brains
-    ({7w and 9h30m-11h29m}, once(playlist_lohuma)),             #Sunday
+    ({6w and 10h30m-21h30m}, off_air_ambient_mix),                     #ambient: Merites - Brains
+    ({7w and 9h30m-11h29m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h-17h59m}, once(playlist_hetedik_tipusu_talalkozas)),
