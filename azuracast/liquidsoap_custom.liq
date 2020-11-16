@@ -183,6 +183,8 @@ playlist_ltmshow = audio_to_stereo(id="stereo_playlist_ltmshow", playlist_ltmsho
 playlist_boombap = playlist(id="playlist_boombap",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
 playlist_boombap = audio_to_stereo(id="stereo_playlist_boombap", playlist_boombap)
 
+playlist_rodina = playlist(id="playlist_rodina",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rodina.m3u")
+playlist_rodina = audio_to_stereo(id="stereo_playlist_rodina", playlist_rodina)
 
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
@@ -353,7 +355,8 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: user - Arcade 
+    transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Rodina - Arcade 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -412,13 +415,14 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 20h-21h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 22h-23h29m}, once(playlist_gyogyfurdo)),
     ({4w and 15h-22h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
-    ({5w and 14h-14h59m}, once(playlist_boombap)),                     #Friday
+    ({5w and 13h30m-13h59m}, once(playlist_rodina)),                     #Friday
+    ({5w and 14h-14h59m}, once(playlist_boombap)),                     
     ({5w and 15h-15h59m}, once(playlist_recently_played)),             
     ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
     ({5w and 18h-19h59m}, once(playlist_mukodo_mukod)),
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),       
-    ({5w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Recently - Arcade
+    ({5w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Rodina - Arcade
     ({6w and 10h30m-12h29m}, once(playlist_merites)),                  #Saturday
     ({6w and 12h30m-13h29m}, once(playlist_jambikus_nesz)),     
     ({6w and 13h30m-15h59m}, once(playlist_torso)),
