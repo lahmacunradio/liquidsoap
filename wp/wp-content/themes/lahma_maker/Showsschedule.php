@@ -54,7 +54,7 @@
 <div class="Friday day">
     <h3>Friday / Péntek</h3>
     <ul>
-        <li>15:30-16:00 <strong><a href="../shows/rodina-fektory/">Rodina Féktory</a></strong></li>
+        <li>14:30-15:00 <strong><a href="../shows/rodina-fektory/">Rodina Féktory</a></strong></li>
         <li>15:00-16:00 <strong><a href="../shows/boombap/">BoomBAP</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/recently-played-music/">Recently Played Music</a></strong>| <a href="https://www.mixcloud.com/recently-played-music/" target="_blank" rel="noopener">archive</a></li>
         <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong>| <a href="https://www.mixcloud.com/DeadHoundRadio/" target="_blank" rel="noopener">archive</a></li>
