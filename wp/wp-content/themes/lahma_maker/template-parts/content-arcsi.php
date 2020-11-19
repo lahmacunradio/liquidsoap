@@ -5,22 +5,27 @@
  * @package Maker
  */
 
+
+// $server = 'https://arcsi.lahmacun.hu'; // prod server
+// $server = 'https://devarcsi.lahmacun.hu'; // dev server
+$server = 'http://localhost:40'; // local server
+
+$showslug = get_post_field( 'post_name', get_post() );
+$showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
+// $showjson = file_get_contents('http://localhost:40/arcsi/show/mmn-radio/archive');
+$showarcsi = json_decode($showjson, true);
+
+// print_r($showjson)
+
 ?>
+
+<?php 
+// if arcsi is available for the Show
+// if ($showjson) : ?>
 
 <article class="arcsi-list" >
 
 <h3>Arcsived shows for <?php the_title(); ?></h3>
-
-<?php
-
-$server = 'https://arcsi.lahmacun.hu'; // prod server
-// $server = 'https://devarcsi.lahmacun.hu'; // dev server
-
-$showslug = get_post_field( 'post_name', get_post() );
-$showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
-$showarcsi = json_decode($showjson, true);
-
-?>
 
 <div class="arcsi-blokks">
 
@@ -60,3 +65,8 @@ foreach($showarcsi as $archiveitem) {
 </div>
 
 </article><!-- #post-## -->
+
+
+<?php
+// close if arcsi is available for the Show
+// endif; ?>
