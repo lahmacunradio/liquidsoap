@@ -45,7 +45,7 @@
         <li>14:00–15:00 <strong><a href="../shows/muhelycast/">Műhelycast</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/alternoon/">AlternoON</a></strong></li>
         <li>17:00–19:00 <strong><a href="../shows/lazy-calm-raga/">Lazy Calm Raga</a></strong>&nbsp;| <a href="https://www.mixcloud.com/lazycalmraga/" target="_blank" rel="noopener noreferrer">archive</a></li>
-        <li>19:30–22:00 <strong><a href="https://www.facebook.com/events/423476432152818/">☆UH 2020 Online☆</a></strong> </li>
+        <li>19:30–22:00 <strong><a href="../shows/uh-2020-online/">☆UH 2020 Online☆</a></strong> </li>
         <li>23:00–00:30 <strong><a href="../shows/gyogyfurdo/">Gyógyfürdő</a></strong></li>
     </ul>
 </div>
@@ -68,7 +68,7 @@
         <li>13:30-14:30 <strong><a href="../shows/jambikus-nesz/">Jambikus nesz</a></strong></li>
         <li>14:30–17:00 <strong><a href="../shows/learning-audio-classification-with-torso/">Learning Audio Classification with Torso</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/footwork-jimbob/">Footwork Jimbob</a></strong>| <a href="https://www.mixcloud.com/regost542/" target="_blank" rel="noopener noreferrer">archive</a></li>
-        <li>18:00–20:00 <strong><a href="https://www.facebook.com/events/423476432152818/">☆UH 2020 Online☆</a></strong> </li>
+        <li>18:00–20:00 <strong><a href="../shows/uh-2020-online/">☆UH 2020 Online☆</a></strong> </li>
         <li>20:00–22:00 <strong><a href="../shows/mood-sequence/">Mood Sequence</a></strong></li>
         <li>22:00–23:00 <strong><a href="../shows/brains-sublimating/">Brains Sublimating</a></strong>| <a href="https://www.mixcloud.com/tapes_sublimating/" target="_blank" rel="noopener noreferrer">archive</a></li>
     </ul>
