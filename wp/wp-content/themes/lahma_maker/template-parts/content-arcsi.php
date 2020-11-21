@@ -100,9 +100,9 @@ function arcsiStop(episodeName) {
     jQuery(document).on("click", ".arcsilisten", function(e) {
         
         e.preventDefault();
-        // let listenLink = $(this).attr('href')
+        let listenLink = $(this).attr('href')
         // let listenLink = 'https://devarcsi.lahmacun.hu/arcsi/item/7'
-        let listenLink = 'https://streaming.lahmacun.hu/api/nowplaying/1'
+        // let listenLink = 'https://streaming.lahmacun.hu/api/nowplaying/1'
 
         /* dummy audio link */
         audioLink="https://geekanddummy.com/wp-content/uploads/2014/02/ambient-noise-server-room.mp3"
@@ -115,9 +115,9 @@ function arcsiStop(episodeName) {
         fetch(listenLink) 
             .then(response => response.json())
             .then(json => {
-                // console.log(json)
-                // audioLink = json.file_url // get audio link from ARCSI json
-                audioLink = json.station.listen_url // get DUMMY audio link from STATION json
+                console.log(json)
+                audioLink = json.file_url // get audio link from ARCSI json
+                // audioLink = json.station.listen_url // get DUMMY audio link from STATION json
             } )
             .then( () => { 
                 stopAllAudio()
