@@ -6,12 +6,12 @@
  */
 
 // $server = 'https://arcsi.lahmacun.hu'; // prod server
-$server = 'https://devarcsi.lahmacun.hu'; // dev server
-// $server = 'http://localhost:40'; // local server
+// $server = 'https://devarcsi.lahmacun.hu'; // dev server
+$server = 'http://docker.for.mac.localhost:40'; // local server
 
 $showslug = get_post_field( 'post_name', get_post() );
 $showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
-// $showjson = file_get_contents('http://localhost:40/arcsi/show/mmn-radio/archive');
+// $showjson = file_get_contents('http://docker.for.mac.localhost:40/arcsi/show/mmn-radio/archive');;
 $showarcsi = json_decode($showjson, true);
 
 // print_r($showjson)
