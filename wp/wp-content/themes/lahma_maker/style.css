@@ -46,7 +46,7 @@ body {
 }
 
 .hiddenelement {
-  display: none;
+  display: none !important;
 }
 
 body a {
