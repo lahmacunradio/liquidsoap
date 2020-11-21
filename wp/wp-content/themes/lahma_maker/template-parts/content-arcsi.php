@@ -130,7 +130,7 @@ function arcsiStop(episodeName) {
                 `
                 $("#" + parentId).append($player)
                 $("#" + parentId + " > a").addClass("hiddenelement")
-                // $("audio.episodeplay")[0].play()
+                $("audio.episodeplay")[0].play()
             }
             )
             .catch( error => console.log(error) )
