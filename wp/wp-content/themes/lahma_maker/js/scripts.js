@@ -30,7 +30,7 @@ function escapeHtml(unsafe) {
  }
 
 function openAllExternalBlank() {
-$('#main a:not(.swipebox)').each(function() {
+$('#main a:not(.swipebox):not(.avoidAjax)').each(function() {
    var a = new RegExp('/' + window.location.host + '/');
    if(!a.test(this.href)) {
        $(this).click(function(event) {

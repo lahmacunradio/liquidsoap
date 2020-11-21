@@ -31,7 +31,6 @@ html > body {
 	color: #23282d;
 }
 
-
 body div::-webkit-scrollbar {
   -webkit-appearance: none !important;
   width: 0 !important;
@@ -44,6 +43,10 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;  
+}
+
+.hiddenelement {
+  display: none;
 }
 
 body a {
