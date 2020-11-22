@@ -1185,6 +1185,8 @@ article.campaign .campaign-description {
 
 .arcsiblokk audio {
   width: 100%;
+  margin-top: 0.5rem;
+  max-width: 330px;
 }
 
 .arcsiblokk img {

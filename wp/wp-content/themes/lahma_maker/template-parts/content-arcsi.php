@@ -50,7 +50,7 @@ foreach($showarcsi as $archiveitem) {
             <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
                 <i class="fa fa-download" aria-hidden="true"></i> Download
             </a>              
-            <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>">
+            <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>" title="<?php echo $showname; ?>">
                 <i class="fa fa-headphones" aria-hidden="true"></i> Listen
             </a>
         </div>
@@ -70,6 +70,7 @@ foreach($showarcsi as $archiveitem) {
 $( document ).ready(function() {
 
 let audioLink = null
+let audioTitle = ""
 
 function stopAllAudio() {
     let sounds = document.getElementsByTagName('audio');
@@ -79,7 +80,7 @@ function stopAllAudio() {
 
 function arcsiPlay(episodeName) {
     document.body.classList.add("Playing");
-
+    // console.log(episodeName + " playing")
     gtag('event', 'Arcsi play', {
         'event_category': episodeName,
         'event_label': 'Play state',
@@ -89,7 +90,7 @@ function arcsiPlay(episodeName) {
 
 function arcsiStop(episodeName) {
     document.body.classList.remove("Playing");
-
+    // console.log(episodeName + " stopped")
     gtag('event', 'Arcsi stop', {
         'event_category': episodeName,
         'event_label': 'Play state',
@@ -98,16 +99,18 @@ function arcsiStop(episodeName) {
 }
 
     jQuery(document).on("click", ".arcsilisten", function(e) {
-        
         e.preventDefault();
-        let listenLink = $(this).attr('href')
+
+        audioTitle = $(this).attr('title') // maybe from arcsi json is better?
+
+        // let listenLink = $(this).attr('href')
         // let listenLink = 'https://devarcsi.lahmacun.hu/arcsi/item/7'
-        // let listenLink = 'https://streaming.lahmacun.hu/api/nowplaying/1'
+        let listenLink = 'https://streaming.lahmacun.hu/api/nowplaying/1'
 
         /* dummy audio link */
         audioLink="https://geekanddummy.com/wp-content/uploads/2014/02/ambient-noise-server-room.mp3"
 
-        // console.log(listenLink)
+        // console.log(audioTitle)
 
         let parentId = $(this).parent("div").attr("id")
         //console.log(parentId)
@@ -115,24 +118,35 @@ function arcsiStop(episodeName) {
         fetch(listenLink) 
             .then(response => response.json())
             .then(json => {
-                console.log(json)
-                audioLink = json.file_url // get audio link from ARCSI json
-                // audioLink = json.station.listen_url // get DUMMY audio link from STATION json
+                // console.log(json)
+                // audioLink = json.file_url // get audio link from ARCSI json
+                audioLink = json.station.listen_url // get DUMMY audio link from STATION json
             } )
-            .then( () => { 
+            .then( () => { // assemble and insert player
                 stopAllAudio()
                 $(".arcsicontrols a").removeClass("hiddenelement")
                 let $player = `
-                    <audio controls class="episodeplay">
+                    <audio controls id="arcsiplayer" class="episodeplay" title="${audioTitle}">
                         <source src="${audioLink}" type="audio/mpeg">
                         Your browser does not support the audio tag.
                     </audio>
                 `
                 $("#" + parentId).append($player)
                 $("#" + parentId + " > a").addClass("hiddenelement")
-                $("audio.episodeplay")[0].play()
-            }
-            )
+            } )
+            .then( () => { // player logistics
+                let myPlayer = document.getElementById('arcsiplayer');
+                myPlayer.addEventListener("play", (e) => {
+                    arcsiPlay(audioTitle)
+                })
+                myPlayer.addEventListener("pause", (e) => {
+                    arcsiStop(audioTitle)
+                })
+                myPlayer.addEventListener("ended", (e) => {
+                    arcsiStop(audioTitle)
+                })
+                myPlayer.play();
+            } )
             .catch( error => console.log(error) )
     
     });
