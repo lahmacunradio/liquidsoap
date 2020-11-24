@@ -6,8 +6,8 @@
  */
 
 // $server = 'https://arcsi.lahmacun.hu'; // prod server
-// $server = 'https://devarcsi.lahmacun.hu'; // dev server
-$server = 'http://docker.for.mac.localhost:40'; // local server
+$server = 'https://devarcsi.lahmacun.hu'; // dev server
+// $server = 'http://docker.for.mac.localhost:40'; // local server
 
 $showslug = get_post_field( 'post_name', get_post() );
 $showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
@@ -20,7 +20,7 @@ $showarcsi = json_decode($showjson, true);
 
 <?php 
 // if arcsi is available for the Show
-// if ($showjson) : ?>
+if ($showjson) : ?>
 
 <article class="arcsi-list" >
 
@@ -29,7 +29,8 @@ $showarcsi = json_decode($showjson, true);
 <div class="arcsi-blokks">
 
 <?php 
-foreach($showarcsi as $archiveitem) {
+foreach($showarcsi as $archiveitem) :
+    $showarchived = $archiveitem['archived'];
     $shownumber = $archiveitem['number'];
     $showname = $archiveitem['name'];
     $showimg = $archiveitem['image_url'];
@@ -38,12 +39,20 @@ foreach($showarcsi as $archiveitem) {
     $showid = $archiveitem['id'];
 ?>
 
+<?php 
+// if Episode is archived
+if ($showarchived) { ?>
+
 <div class="arcsiblokk">
     <div class="arcsiimage">
         <img src="<?php echo $showimg;?>" alt="<?php echo $showname; ?>">  
     </div>
     <div class="arcsiinfos">
-        <div>Episode nr. <?php echo $shownumber; ?> – <span>Aired on <?php echo $showplaydate; ?></span> </div>
+        <div>
+        <?php /* no episode number ?> 
+        Episode nr. <?php echo $shownumber; ?> – 
+        <?php */ ?> 
+        <span>Aired on <?php echo $showplaydate; ?></span> </div>
         <h4><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
         <div id="arcsi-audio-<?php echo $showid; ?>" class="arcsicontrols">
@@ -58,8 +67,8 @@ foreach($showarcsi as $archiveitem) {
 </div>
   
 <?php
-
-}
+} // endif
+endforeach;
 ?>
 </div>
 
@@ -103,9 +112,9 @@ function arcsiStop(episodeName) {
 
         audioTitle = $(this).attr('title') // maybe from arcsi json is better?
 
-        // let listenLink = $(this).attr('href')
+        let listenLink = $(this).attr('href')
         // let listenLink = 'https://devarcsi.lahmacun.hu/arcsi/item/7'
-        let listenLink = 'https://streaming.lahmacun.hu/api/nowplaying/1'
+        // let listenLink = 'https://streaming.lahmacun.hu/api/nowplaying/1'
 
         /* dummy audio link */
         audioLink="https://geekanddummy.com/wp-content/uploads/2014/02/ambient-noise-server-room.mp3"
@@ -119,8 +128,8 @@ function arcsiStop(episodeName) {
             .then(response => response.json())
             .then(json => {
                 // console.log(json)
-                // audioLink = json.file_url // get audio link from ARCSI json
-                audioLink = json.station.listen_url // get DUMMY audio link from STATION json
+                audioLink = json.file_url // get audio link from ARCSI json
+                // audioLink = json.station.listen_url // get DUMMY audio link from STATION json
             } )
             .then( () => { // assemble and insert player
                 stopAllAudio()
@@ -155,4 +164,4 @@ function arcsiStop(episodeName) {
 
 <?php
 // close if arcsi is available for the Show
-// endif; ?>
+endif; ?>
