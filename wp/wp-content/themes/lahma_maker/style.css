@@ -1177,6 +1177,10 @@ article.campaign .campaign-description {
   grid-gap: 2rem;
 }
 
+.arcsiinfos {
+  width: 100%;
+}
+
 .arcsiblokk {
   display: flex;
   flex-direction: row;
