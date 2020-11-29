@@ -186,6 +186,10 @@ playlist_boombap = audio_to_stereo(id="stereo_playlist_boombap", playlist_boomba
 playlist_rodina = playlist(id="playlist_rodina",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rodina.m3u")
 playlist_rodina = audio_to_stereo(id="stereo_playlist_rodina", playlist_rodina)
 
+playlist_jazzaj = playlist(id="playlist_jazzaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jazzaj.m3u")
+playlist_jazzaj = audio_to_stereo(id="stereo_playlist_jazzaj", playlist_jazzaj)
+
+
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
 
@@ -314,14 +318,14 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Who Say - Dalmata
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Udcsi - Infinite 
+    transition_into_show(playlist_jingle),
+    transition_into_off(playlist_jingle_after_show), #ambient: Szmuti - Infinite 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -380,14 +384,14 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 10h11m-11h11m}, once(playlist_transverszia)),             # Monday (orig requested time 11:11 am 12:12 pm)
     ({1w and 12h-12h59m}, once(playlist_a_who_say)),
     ({1w and 13h-14h59m}, once(playlist_dalmata_radio)),
-    ({1w and 12h-13h30m}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
-    ({1w and 16h-16h59m}, once(playlist_udcsi)),
-    ({1w and 17h-17h59m}, once(playlist_szmuti_csorba)),
+    ({1w and 15h-15h59m}, once(playlist_szmuti_csorba)),
+    ({1w and 16h-16h59m}, once(playlist_jazzaj)),
+    ({1w and 17h-17h59m}, once(playlist_udcsi)),
     ({1w and 18h-18h29m}, once(playlist_kezek_a_sebekben)),
     ({1w and 18h30m-18h59m}, once(playlist_weirdest_hits)),
     ({1w and 19h-20h59m}, once(playlist_erdenklang)),
     ({1w and 21h-22h59m}, once(playlist_infinite_scroll)),      
-    ({1w and 16h-21h30m}, off_air_ambient_mix),                        #ambient: Udcsi - Infinite
+    ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 12h-13h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
     ({2w and 15h-15h59m}, once(playlist_mills_weather)),
