@@ -4,8 +4,9 @@
         <li>11:11–12:11 <strong><a href="../shows/transverszia/">transverszia</a></strong> | <a href="https://www.mixcloud.com/junsuzuki/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>13:00–14:00 <strong><a href="../shows/a-who-say/">A Who Say</a></strong> | <a href="http://www.mixcloud.com/A_Who_Say/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>14:00–16:00 <strong><a href="../shows/dalmata-radio/">Dalmata Radio</a></strong>
-        <li>17:00–18:00 <strong><a href="../shows/udcsi/">Üdcsi</a></strong> | <a href="https://www.mixcloud.com/%C3%9Cdcsi/" target="_blank" rel="noopener noreferrer">archive</a></li>
-        <li>18:00–19:00 <strong><a href="../shows/szmuti-csorba/">Szmúti csórba</a></strong> | <a href="https://www.mixcloud.com/baksa-gaspar" target="_blank" rel="noopener noreferrer">archive</a></li>
+        <li>16:00–17:00 <strong><a href="../shows/szmuti-csorba/">Szmúti csórba</a></strong> | <a href="https://www.mixcloud.com/baksa-gaspar" target="_blank" rel="noopener noreferrer">archive</a></li>
+        <li>17:00–18:00 <strong><a href="../shows/jazzaj-podcast/">JazzaJ PODCAST</a></strong></li>
+        <li>18:00–19:00 <strong><a href="../shows/udcsi/">Üdcsi</a></strong> | <a href="https://www.mixcloud.com/%C3%9Cdcsi/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>19:00–19:30 <strong><a href="../shows/kezek-a-sebekben/">Kezek a Sebekben</a></strong> | <a href="https://www.mixcloud.com/KezekaSebekben/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>19:30–20:00 <strong><a href="../shows/weirdest-hits-of-the-week/">Weirdest Hits Of The Week</a></strong> | <a href="https://www.mixcloud.com/WeirdestHitsOfTheWeek/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>20:00–22:00 <strong><a href="../shows/earth-oddities-erdenklang/">Earth Oddities – Erdenklang</a></strong> | <a href="https://soundcloud.com/a_leidal" target="_blank" rel="noopener noreferrer">archive</a></li>
