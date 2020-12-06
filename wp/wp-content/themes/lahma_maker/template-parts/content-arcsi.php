@@ -5,7 +5,7 @@
  * @package Maker
  */
 
-// $server = 'https://arcsi.lahmacun.hu'; // prod server
+$server = 'https://arcsi.lahmacun.hu'; // prod server
 // $server = 'https://devarcsi.lahmacun.hu'; // dev server
 // $server = 'http://localhost:40'; // local server
 // $server_internal = 'http://docker.for.mac.localhost:40'; // local server
