@@ -6,12 +6,13 @@
  */
 
 // $server = 'https://arcsi.lahmacun.hu'; // prod server
-$server = 'https://devarcsi.lahmacun.hu'; // dev server
-// $server = 'http://docker.for.mac.localhost:40'; // local server
+// $server = 'https://devarcsi.lahmacun.hu'; // dev server
+// $server = 'http://localhost:40'; // local server
+// $server_internal = 'http://docker.for.mac.localhost:40'; // local server
 
 $showslug = get_post_field( 'post_name', get_post() );
+// $showjson = file_get_contents($server_internal . '/arcsi/show/' . $showslug . '/archive');
 $showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
-// $showjson = file_get_contents('http://docker.for.mac.localhost:40/arcsi/show/mmn-radio/archive');;
 $showarcsi = json_decode($showjson, true);
 
 // print_r($showjson)
@@ -59,7 +60,7 @@ if ($showarchived) { ?>
             <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
                 <i class="fa fa-download" aria-hidden="true"></i> Download
             </a>              
-            <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>" title="<?php echo $showname; ?>">
+            <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/listen" title="<?php echo $showname; ?>">
                 <i class="fa fa-headphones" aria-hidden="true"></i> Listen
             </a>
         </div>
@@ -113,23 +114,14 @@ function arcsiStop(episodeName) {
         audioTitle = $(this).attr('title') // maybe from arcsi json is better?
 
         let listenLink = $(this).attr('href')
-        // let listenLink = 'https://devarcsi.lahmacun.hu/arcsi/item/7'
-        // let listenLink = 'https://streaming.lahmacun.hu/api/nowplaying/1'
-
-        /* dummy audio link */
-        audioLink="https://geekanddummy.com/wp-content/uploads/2014/02/ambient-noise-server-room.mp3"
-
-        // console.log(audioTitle)
 
         let parentId = $(this).parent("div").attr("id")
         //console.log(parentId)
 
         fetch(listenLink) 
-            .then(response => response.json())
-            .then(json => {
-                // console.log(json)
-                audioLink = json.file_url // get audio link from ARCSI json
-                // audioLink = json.station.listen_url // get DUMMY audio link from STATION json
+            .then(response => response.text()) // Transform the data into simple text (acc. to arcsi's listen interface spec)
+            .then(text => {
+                audioLink = text // response should be the raw audio URL from Lahma store
             } )
             .then( () => { // assemble and insert player
                 stopAllAudio()
