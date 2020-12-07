@@ -66,8 +66,8 @@ playlist_jingle = playlist(id="playlist_jingle",mode="randomize",reload_mode="wa
 playlist_jingle = audio_to_stereo(id="stereo_playlist_jingle", playlist_jingle)
 playlist_jingle = drop_metadata(playlist_jingle)
 
-playlist_jingle_after_show = playlist(id="playlist_jingle_after_show",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_after_show.m3u")
-playlist_jingle_after_show = audio_to_stereo(id="stereo_playlist_jingle_after_show", playlist_jingle_after_show)
+playlist_jingle_donate = playlist(id="playlist_jingle_donate",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_donate.m3u")
+playlist_jingle_donate = audio_to_stereo(id="stereo_playlist_jingle_donate", playlist_jingle_donate)
 
 playlist_mood_sequence = playlist(id="playlist_mood_sequence",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mood_sequence.m3u")
 playlist_mood_sequence = audio_to_stereo(id="stereo_playlist_mood_sequence", playlist_mood_sequence)
@@ -325,7 +325,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Szmuti - Infinite 
+    transition_into_off(playlist_jingle_donate), #ambient: Szmuti - Infinite 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -334,7 +334,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Mill - Mosoly
+    transition_into_off(playlist_jingle_donate), #ambient: Mill - Mosoly
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -344,7 +344,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),    
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Erto - Bluszcze 
+    transition_into_off(playlist_jingle_donate), #ambient: Erto - Bluszcze 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -352,7 +352,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Alter - Gyogyf
+    transition_into_off(playlist_jingle_donate), #ambient: Alter - Gyogyf
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -360,7 +360,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Rodina - Arcade 
+    transition_into_off(playlist_jingle_donate), #ambient: Rodina - Arcade 
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -368,7 +368,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Merites - Brains
+    transition_into_off(playlist_jingle_donate), #ambient: Merites - Brains
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
@@ -376,8 +376,8 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
     transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Lohuma - Exit
-    transition_into_off(playlist_jingle_after_show) ], 
+    transition_into_off(playlist_jingle_donate), #ambient: Lohuma - Exit
+    transition_into_off(playlist_jingle_donate) ], 
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
