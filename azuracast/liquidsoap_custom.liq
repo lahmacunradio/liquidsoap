@@ -193,10 +193,6 @@ playlist_jazzaj = audio_to_stereo(id="stereo_playlist_jazzaj", playlist_jazzaj)
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
 
-playlist_jingle_azura = playlist(id="playlist_jingle_azura",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_azura.m3u")
-playlist_jingle_azura = audio_to_stereo(id="stereo_playlist_jingle_azura", playlist_jingle_azura)
-playlist_jingle_azura = drop_metadata(playlist_jingle_azura)
-
 # Standard Playlists
 radio = random(id="lahmacun_radio_standard_playlists", weights=[3], [playlist_off_air])
 
@@ -204,10 +200,10 @@ radio = random(id="lahmacun_radio_standard_playlists", weights=[3], [playlist_of
 # LAHMACUN: id is the one used in Azuracast to trigger the skip command on
 # Code location: /AzuraCast/src/Radio/Backend/Liquidsoap.php
 # Once per x Songs Playlists
-radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1], [playlist_jingle_azura, radio])
+radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1], [playlist_jingle, radio])
 
 #off air ambient source with jingles
-off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_azura, playlist_off_air_ambient])
+off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle, playlist_off_air_ambient])
 
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
 def add_skip_command(s) =
