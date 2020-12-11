@@ -426,7 +426,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 15h-15h59m}, once(playlist_recently_played)),             
     ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
-    ({5w and 18h-19h59m}, once(playlist_mukodo_mukod)),
+    ({5w and 18h-18h59m}, once(playlist_mukodo_mukod)),
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),       
     ({5w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Rodina - Arcade
     ({6w and 10h30m-12h29m}, once(playlist_merites)),                  #Saturday

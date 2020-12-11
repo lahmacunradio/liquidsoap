@@ -61,7 +61,7 @@
         <li>16:00–17:00 <strong><a href="../shows/recently-played-music/">Recently Played Music</a></strong>| <a href="https://www.mixcloud.com/recently-played-music/" target="_blank" rel="noopener">archive</a></li>
         <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong>| <a href="https://www.mixcloud.com/DeadHoundRadio/" target="_blank" rel="noopener">archive</a></li>
         <li>18:00–19:00 <strong><a href="../shows/agybaj/">Agybaj</a></strong></li>
-        <li>19:00–21:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong>| <a href="https://www.mixcloud.com/d-j-k-o-d/" target="_blank" rel="noopener noreferrer">archive</a></li>
+        <li>19:00–20:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong>| <a href="https://www.mixcloud.com/d-j-k-o-d/" target="_blank" rel="noopener noreferrer">archive</a></li>
         <li>21:00-23:00 <strong><a href="../shows/arcade-ok-alatt/">Arcade-ok alatt</a></strong></li>
     </ul>
 </div>
