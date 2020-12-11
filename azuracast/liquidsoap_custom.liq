@@ -62,13 +62,6 @@ playlist_cellz = audio_to_stereo(id="stereo_playlist_cellz", playlist_cellz)
 playlist_erto_hallgatas = playlist(id="playlist_erto_hallgatas",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_erto_hallgatas.m3u")
 playlist_erto_hallgatas = audio_to_stereo(id="stereo_playlist_erto_hallgatas", playlist_erto_hallgatas)
 
-playlist_jingle = playlist(id="playlist_jingle",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle.m3u")
-playlist_jingle = audio_to_stereo(id="stereo_playlist_jingle", playlist_jingle)
-playlist_jingle = drop_metadata(playlist_jingle)
-
-playlist_jingle_after_show = playlist(id="playlist_jingle_after_show",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_after_show.m3u")
-playlist_jingle_after_show = audio_to_stereo(id="stereo_playlist_jingle_after_show", playlist_jingle_after_show)
-
 playlist_mood_sequence = playlist(id="playlist_mood_sequence",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mood_sequence.m3u")
 playlist_mood_sequence = audio_to_stereo(id="stereo_playlist_mood_sequence", playlist_mood_sequence)
 
@@ -192,13 +185,17 @@ playlist_jazzaj = audio_to_stereo(id="stereo_playlist_jazzaj", playlist_jazzaj)
 playlist_hirszalonna = playlist(id="playlist_hirszalonna",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hirszalonna.m3u")
 playlist_hirszalonna = audio_to_stereo(id="stereo_playlist_hirszalonna", playlist_hirszalonna)
 
+# Jingle playlists
+playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
+playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
+playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
+
+playlist_jingle_donate = playlist(id="playlist_jingle_donate",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_donate.m3u")
+playlist_jingle_donate = audio_to_stereo(id="stereo_playlist_jingle_donate", playlist_jingle_donate)
+
 # Generic playlists
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
-
-playlist_jingle_azura = playlist(id="playlist_jingle_azura",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_azura.m3u")
-playlist_jingle_azura = audio_to_stereo(id="stereo_playlist_jingle_azura", playlist_jingle_azura)
-playlist_jingle_azura = drop_metadata(playlist_jingle_azura)
 
 # Standard Playlists
 radio = random(id="lahmacun_radio_standard_playlists", weights=[3], [playlist_off_air])
@@ -207,10 +204,10 @@ radio = random(id="lahmacun_radio_standard_playlists", weights=[3], [playlist_of
 # LAHMACUN: id is the one used in Azuracast to trigger the skip command on
 # Code location: /AzuraCast/src/Radio/Backend/Liquidsoap.php
 # Once per x Songs Playlists
-radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1], [playlist_jingle_azura, radio])
+radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1], [playlist_jingle_donate, radio])
 
 #off air ambient source with jingles
-off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_azura, playlist_off_air_ambient])
+off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_donate, playlist_off_air_ambient])
 
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
 def add_skip_command(s) =
@@ -317,71 +314,71 @@ def transition_into_off(j,a,b)
 end
 
 radio = switch(track_sensitive=false, transitions=[
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Monday 
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Tuesday
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),    
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Wednesday 
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Thursday
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Friday 
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Saturday
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Sunday
-    transition_into_off(playlist_jingle_after_show) ], 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Monday 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Tuesday
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),    
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Wednesday 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Thursday
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Friday 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Saturday
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Sunday
+    transition_into_off(playlist_jingle_station_id) ], 
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
