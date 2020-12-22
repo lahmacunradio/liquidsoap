@@ -17,11 +17,21 @@ $showarcsi = json_decode($showjson, true);
 
 // print_r($showjson)
 
+/* CHECK IF THERE ARE ARCHIVED SHOWS */
+$has_archived = false;
+
+foreach ($showarcsi as $k_arr => $v_arr) {
+    if ($k_arr == 'archived') {
+        $has_archived = true;
+    }
+}
+
 ?>
 
 <?php 
 // if arcsi is available for the Show
-if ($showjson) : ?>
+// check all shows if all 
+if ($showjson && $has_archived) : ?>
 
 <article class="arcsi-list" >
 
@@ -83,8 +93,7 @@ let audioLink = null
 let audioTitle = ""
 
 function stopAllAudio() {
-    let sounds = document.getElementsByTagName('audio');
-    for(i=0; i<sounds.length; i++) sounds[i].pause();
+    radio_player.$children[0].stop()
     $("audio.episodeplay").remove()
 }
 
