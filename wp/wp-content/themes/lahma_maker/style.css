@@ -493,6 +493,30 @@ html:not(.ismobile) .main-navigation ul.menu li:hover > ul {
   margin: 0;
 }
 
+.taglist {
+  font-size: 0.9em;
+}
+
+.taglist a {
+  border: 1px solid;
+  padding: 0.2em 0.5em;
+  color: black;
+  margin-bottom: 0.4em;
+  display: inline-block;
+  margin-right: 0.3em;
+  background: #d09cf8;
+}
+
+.taglist span {
+  margin: 0 0.1em;
+}
+
+header.othertags h3 {
+  text-transform: none;
+  margin-top:1em; 
+  margin-bottom:0.7em;  
+}
+
 /* Home page */
 
 .lahma_home-content  {
@@ -1336,6 +1360,8 @@ Responsive
 
 .site-header {   padding: 0 0 0.5em;   height: 150px; }
 .entry-title {     font-size: 2em;   margin-bottom: 0.7em;   margin-top: 0.1em; }
+
+.post-thumbnail {  margin-bottom: 1em; }
 
 /* end min 786 */
 }

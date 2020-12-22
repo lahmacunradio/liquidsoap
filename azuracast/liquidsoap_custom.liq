@@ -62,13 +62,6 @@ playlist_cellz = audio_to_stereo(id="stereo_playlist_cellz", playlist_cellz)
 playlist_erto_hallgatas = playlist(id="playlist_erto_hallgatas",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_erto_hallgatas.m3u")
 playlist_erto_hallgatas = audio_to_stereo(id="stereo_playlist_erto_hallgatas", playlist_erto_hallgatas)
 
-playlist_jingle = playlist(id="playlist_jingle",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle.m3u")
-playlist_jingle = audio_to_stereo(id="stereo_playlist_jingle", playlist_jingle)
-playlist_jingle = drop_metadata(playlist_jingle)
-
-playlist_jingle_after_show = playlist(id="playlist_jingle_after_show",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_after_show.m3u")
-playlist_jingle_after_show = audio_to_stereo(id="stereo_playlist_jingle_after_show", playlist_jingle_after_show)
-
 playlist_mood_sequence = playlist(id="playlist_mood_sequence",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mood_sequence.m3u")
 playlist_mood_sequence = audio_to_stereo(id="stereo_playlist_mood_sequence", playlist_mood_sequence)
 
@@ -120,8 +113,8 @@ playlist_radio_bluszcze = audio_to_stereo(id="stereo_playlist_radio_bluszcze", p
 playlist_muhelycast = playlist(id="playlist_muhelycast",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_muhelycast.m3u")
 playlist_muhelycast = audio_to_stereo(id="stereo_playlist_muhelycast", playlist_muhelycast)
 
-playlist_off_air_premiere = playlist(id="playlist_off_air_premiere",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_premiere.m3u")
-playlist_off_air_premiere = audio_to_stereo(id="stereo_playlist_off_air_premiere", playlist_off_air_premiere)
+playlist_lahmacun_presents = playlist(id="playlist_lahmacun_presents",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmacun_presents.m3u")
+playlist_lahmacun_presents = audio_to_stereo(id="stereo_playlist_lahmacun_presents", playlist_lahmacun_presents)
 
 playlist_dead_hound = playlist(id="playlist_dead_hound",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dead_hound.m3u")
 playlist_dead_hound = audio_to_stereo(id="stereo_playlist_dead_hound", playlist_dead_hound)
@@ -180,12 +173,29 @@ playlist_1800venus = audio_to_stereo(id="stereo_playlist_1800venus", playlist_18
 playlist_ltmshow = playlist(id="playlist_ltmshow",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ltmshow.m3u")
 playlist_ltmshow = audio_to_stereo(id="stereo_playlist_ltmshow", playlist_ltmshow)
 
+playlist_boombap = playlist(id="playlist_boombap",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
+playlist_boombap = audio_to_stereo(id="stereo_playlist_boombap", playlist_boombap)
+
+playlist_rodina = playlist(id="playlist_rodina",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rodina.m3u")
+playlist_rodina = audio_to_stereo(id="stereo_playlist_rodina", playlist_rodina)
+
+playlist_jazzaj = playlist(id="playlist_jazzaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jazzaj.m3u")
+playlist_jazzaj = audio_to_stereo(id="stereo_playlist_jazzaj", playlist_jazzaj)
+
+playlist_hirszalonna = playlist(id="playlist_hirszalonna",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hirszalonna.m3u")
+playlist_hirszalonna = audio_to_stereo(id="stereo_playlist_hirszalonna", playlist_hirszalonna)
+
+# Jingle playlists
+playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
+playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
+playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
+
+playlist_jingle_donate = playlist(id="playlist_jingle_donate",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_donate.m3u")
+playlist_jingle_donate = audio_to_stereo(id="stereo_playlist_jingle_donate", playlist_jingle_donate)
+
+# Generic playlists
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
-
-playlist_jingle_azura = playlist(id="playlist_jingle_azura",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_azura.m3u")
-playlist_jingle_azura = audio_to_stereo(id="stereo_playlist_jingle_azura", playlist_jingle_azura)
-playlist_jingle_azura = drop_metadata(playlist_jingle_azura)
 
 # Standard Playlists
 radio = random(id="lahmacun_radio_standard_playlists", weights=[3], [playlist_off_air])
@@ -194,10 +204,10 @@ radio = random(id="lahmacun_radio_standard_playlists", weights=[3], [playlist_of
 # LAHMACUN: id is the one used in Azuracast to trigger the skip command on
 # Code location: /AzuraCast/src/Radio/Backend/Liquidsoap.php
 # Once per x Songs Playlists
-radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1], [playlist_jingle_azura, radio])
+radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1], [playlist_jingle_donate, radio])
 
 #off air ambient source with jingles
-off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_azura, playlist_off_air_ambient])
+off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_donate, playlist_off_air_ambient])
 
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
 def add_skip_command(s) =
@@ -304,83 +314,86 @@ def transition_into_off(j,a,b)
 end
 
 radio = switch(track_sensitive=false, transitions=[
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Who Say - Dalmata
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Udcsi - Infinite 
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Mill - Mosoly
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),    
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Erto - Bluszcze 
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Alter - Gyogyf
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: user - Arcade 
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Merites - Brains
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_show(playlist_jingle),
-    transition_into_off(playlist_jingle_after_show), #ambient: Lohuma - Exit
-    transition_into_off(playlist_jingle_after_show) ], 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Monday 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Tuesday
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),    
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Wednesday 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Thursday
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Friday 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Saturday
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: Sunday
+    transition_into_off(playlist_jingle_station_id) ], 
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
-    ({1w and 10h11m-11h11m}, once(playlist_transverszia)),           # Monday (orig requested time 11:11 am 12:12 pm)
+    ({1w and 10h11m-11h11m}, once(playlist_transverszia)),             # Monday (orig requested time 11:11 am 12:12 pm)
     ({1w and 12h-12h59m}, once(playlist_a_who_say)),
     ({1w and 13h-14h59m}, once(playlist_dalmata_radio)),
-    ({1w and 12h-13h30m}, off_air_ambient_mix),                        #ambient: Who Say - Dalmata
-    ({1w and 16h-16h59m}, once(playlist_udcsi)),
-    ({1w and 17h-17h59m}, once(playlist_szmuti_csorba)),
+    ({1w and 15h-15h59m}, once(playlist_szmuti_csorba)),
+    ({1w and 16h-16h59m}, once(playlist_jazzaj)),
+    ({1w and 17h-17h59m}, once(playlist_udcsi)),
     ({1w and 18h-18h29m}, once(playlist_kezek_a_sebekben)),
     ({1w and 18h30m-18h59m}, once(playlist_weirdest_hits)),
     ({1w and 19h-20h59m}, once(playlist_erdenklang)),
     ({1w and 21h-22h59m}, once(playlist_infinite_scroll)),      
-    ({1w and 16h-21h30m}, off_air_ambient_mix),                        #ambient: Udcsi - Infinite
-    ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),   #Tuesday
+    ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
+    ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 12h-13h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
     ({2w and 15h-15h59m}, once(playlist_mills_weather)),
     ({2w and 16h-16h59m}, once(playlist_azvlm)),
@@ -389,8 +402,9 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 20h-20h59m}, once(playlist_turmeric_acid)),
     ({2w and 21h-22h59m}, once(playlist_mosolyszunet)),
     ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
-    ({3w and 11h-12h59m}, once(playlist_off_air_premiere)),     #Wednesday
+    ({3w and 11h-12h59m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 14h-14h59m}, once(playlist_erto_hallgatas)),
+    ({3w and 15h-15h59m}, once(playlist_hirszalonna)),
     ({3w and 16h-16h59m}, once(playlist_gold_liebe)),
     ({3w and 17h-17h59m}, once(playlist_svadhyaya)),
     ({3w and 18h-18h59m}, once(playlist_rambo)),
@@ -399,7 +413,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 21h-21h59m}, once(playlist_1800venus)),
     ({3w and 22h-22h59m}, once(playlist_radio_bluszcze)),
     ({3w and 14h-22h30m}, off_air_ambient_mix),                        #ambient: Erto - Bluszcze
-    ({4w and 13h-13h59m}, once(playlist_muhelycast)),           #Thursday
+    ({4w and 13h-13h59m}, once(playlist_muhelycast)),                  #Thursday
     ({4w and 15h-15h59m}, once(playlist_alternoon)),
     ({4w and 16h-17h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 18h-18h59m}, once(playlist_dalmata_gergo_show)),
@@ -407,21 +421,23 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 20h-21h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 22h-23h29m}, once(playlist_gyogyfurdo)),
     ({4w and 15h-22h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
-    ({5w and 15h-15h59m}, once(playlist_recently_played)),             #Friday
+    ({5w and 13h30m-13h59m}, once(playlist_rodina)),                     #Friday
+    ({5w and 14h-14h59m}, once(playlist_boombap)),                     
+    ({5w and 15h-15h59m}, once(playlist_recently_played)),             
     ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
-    ({5w and 18h-19h59m}, once(playlist_mukodo_mukod)),
+    ({5w and 18h-18h59m}, once(playlist_mukodo_mukod)),
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),       
-    ({5w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Recently - Arcade
-    ({6w and 10h30m-12h29m}, once(playlist_merites)),     #Saturday
+    ({5w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Rodina - Arcade
+    ({6w and 10h30m-12h29m}, once(playlist_merites)),                  #Saturday
     ({6w and 12h30m-13h29m}, once(playlist_jambikus_nesz)),     
     ({6w and 13h30m-15h59m}, once(playlist_torso)),
     ({6w and 16h-16h59m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
-    ({6w and 21h30m-22h29m}, once(playlist_brains_sublimating)),
-    ({6w and 10h30m-22h}, off_air_ambient_mix),                        #ambient: Merites - Brains
-    ({7w and 9h30m-11h29m}, once(playlist_lohuma)),             #Sunday
+    ({6w and 21h00m-21h59m}, once(playlist_brains_sublimating)),
+    ({6w and 10h30m-21h30m}, off_air_ambient_mix),                     #ambient: Merites - Brains
+    ({7w and 9h30m-11h29m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h-17h59m}, once(playlist_hetedik_tipusu_talalkozas)),
