@@ -7,12 +7,12 @@
 
 $server = 'https://arcsi.lahmacun.hu'; // prod server
 // $server = 'https://devarcsi.lahmacun.hu'; // dev server
- $server = 'http://localhost:40'; // local server
- $server_internal = 'http://docker.for.mac.localhost:40'; // local server
+// $server = 'http://localhost:40'; // local server
+// $server_internal = 'http://docker.for.mac.localhost:40'; // local server
 
 $showslug = get_post_field( 'post_name', get_post() );
-$showjson = file_get_contents($server_internal . '/arcsi/show/' . $showslug . '/archive');
-//$showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
+//$showjson = file_get_contents($server_internal . '/arcsi/show/' . $showslug . '/archive');
+$showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
 $showarcsi = json_decode($showjson, true);
 
 // print_r($showjson)
