@@ -7,12 +7,12 @@
 
 $server = 'https://arcsi.lahmacun.hu'; // prod server
 // $server = 'https://devarcsi.lahmacun.hu'; // dev server
-// $server = 'http://localhost:40'; // local server
-// $server_internal = 'http://docker.for.mac.localhost:40'; // local server
+ $server = 'http://localhost:40'; // local server
+ $server_internal = 'http://docker.for.mac.localhost:40'; // local server
 
 $showslug = get_post_field( 'post_name', get_post() );
-// $showjson = file_get_contents($server_internal . '/arcsi/show/' . $showslug . '/archive');
-$showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
+$showjson = file_get_contents($server_internal . '/arcsi/show/' . $showslug . '/archive');
+//$showjson = file_get_contents($server . '/arcsi/show/' . $showslug . '/archive');
 $showarcsi = json_decode($showjson, true);
 
 // print_r($showjson)
@@ -84,84 +84,6 @@ endforeach;
 </div>
 
 </article><!-- #post-## -->
-
-<script>
-// A $( document ).ready() block.
-$( document ).ready(function() {
-
-let audioLink = null
-let audioTitle = ""
-
-function stopAllAudio() {
-    radio_player.$children[0].stop()
-    $("audio.episodeplay").remove()
-}
-
-function arcsiPlay(episodeName) {
-    document.body.classList.add("Playing");
-    // console.log(episodeName + " playing")
-    gtag('event', 'Arcsi play', {
-        'event_category': episodeName,
-        'event_label': 'Play state',
-        'value': 1,
-    });
-}
-
-function arcsiStop(episodeName) {
-    document.body.classList.remove("Playing");
-    // console.log(episodeName + " stopped")
-    gtag('event', 'Arcsi stop', {
-        'event_category': episodeName,
-        'event_label': 'Play state',
-        'value': 0,
-    });
-}
-
-    jQuery(document).on("click", ".arcsilisten", function(e) {
-        e.preventDefault();
-
-        audioTitle = $(this).attr('title') // maybe from arcsi json is better?
-
-        let listenLink = $(this).attr('href')
-
-        let parentId = $(this).parent("div").attr("id")
-        //console.log(parentId)
-
-        fetch(listenLink) 
-            .then(response => response.text()) // Transform the data into simple text (acc. to arcsi's listen interface spec)
-            .then(text => {
-                audioLink = text // response should be the raw audio URL from Lahma store
-            } )
-            .then( () => { // assemble and insert player
-                stopAllAudio()
-                $(".arcsicontrols a").removeClass("hiddenelement")
-                let $player = `
-                    <audio controls id="arcsiplayer" class="episodeplay" title="${audioTitle}">
-                        <source src="${audioLink}" type="audio/mpeg">
-                        Your browser does not support the audio tag.
-                    </audio>
-                `
-                $("#" + parentId).append($player)
-                $("#" + parentId + " > a").addClass("hiddenelement")
-            } )
-            .then( () => { // player logistics
-                let myPlayer = document.getElementById('arcsiplayer');
-                myPlayer.addEventListener("play", (e) => {
-                    arcsiPlay(audioTitle)
-                })
-                myPlayer.addEventListener("pause", (e) => {
-                    arcsiStop(audioTitle)
-                })
-                myPlayer.addEventListener("ended", (e) => {
-                    arcsiStop(audioTitle)
-                })
-                myPlayer.play();
-            } )
-            .catch( error => console.log(error) )
-    
-    });
-});
-</script>
 
 <?php
 // close if arcsi is available for the Show
