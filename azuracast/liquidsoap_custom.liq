@@ -185,6 +185,9 @@ playlist_jazzaj = audio_to_stereo(id="stereo_playlist_jazzaj", playlist_jazzaj)
 playlist_hirszalonna = playlist(id="playlist_hirszalonna",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hirszalonna.m3u")
 playlist_hirszalonna = audio_to_stereo(id="stereo_playlist_hirszalonna", playlist_hirszalonna)
 
+playlist_moneyka = playlist(id="playlist_moneyka",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
+playlist_moneyka = audio_to_stereo(id="stereo_playlist_moneyka", playlist_moneyka)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -361,6 +364,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Friday 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -427,6 +431,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 16h-16h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_agybaj)),
     ({5w and 18h-18h59m}, once(playlist_mukodo_mukod)),
+    ({5w and 19h-19h59m}, once(playlist_moneyka)),
     ({5w and 20h-21h59m}, once(playlist_arcadeok_alatt)),       
     ({5w and 15h-20h30m}, off_air_ambient_mix),                        #ambient: Rodina - Arcade
     ({6w and 10h30m-12h29m}, once(playlist_merites)),                  #Saturday
