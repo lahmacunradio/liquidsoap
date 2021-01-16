@@ -31,14 +31,14 @@
     <ul>
         <li>12:00–14:00 <strong><a href="../shows/lahmacun-presents/">Lahmacun presents</a>&nbsp;</strong></li>
         <li>15:00–16:00 <strong><a href="../shows/erto-hallgatas/">Értő Hallgatás</a>&nbsp;</strong></li>
-        <li>16:00–17:00 <strong><a href="../shows/hirszalonna/">Hírszalonna - Közéleti Hájleszívás</a></strong></li>
+        <li>16:00–17:00 <strong><a href="../shows/hirszalonna-kozeleti-hajleszivas/">Hírszalonna - Közéleti Hájleszívás</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/gold-und-liebe/">Gold und Liebe</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/svadhyaya-onkutatolabor/">Svādhyāya - Önkutatólabor</a></strong>&nbsp;</li>
         <li>19:00–20:00 <strong><a href="../shows/rambo-kierkegaard-pszichotonikus-pecoja/">Rambo Kierkegaard Pszichotónikus Pecója</a></strong>&nbsp;</li>
         <li>20:00–21:00 <strong><a href="../shows/cellz-nocturnal-emissions/">@cellz nocturnal emissions</a></strong></li>
         <li>21:00–22:00 <strong><a href="../shows/eastern-daze-via-cashmere-radio/">Eastern Daze (via Cashmere Radio)</a></strong></li>
         <li>22:00-23:00 <strong><a href="../shows/1-800-venus/">1-800-VENUS</a></strong></li>
-        <li>23:00–24:00 <strong><a href="../shows/radio-bluszcze/">Radio Bluszcze (via Radio Kapitał)</a></strong></li>
+        <li>23:00–24:00 <strong><a href="../shows/radio-bluszcze-via-radio-kapital/">Radio Bluszcze (via Radio Kapitał)</a></strong></li>
     </ul>
 </div>
 <div class="Thursday day">
@@ -62,7 +62,7 @@
         <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/agybaj/">Agybaj</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong></li>
-        <li>20:00–21:00 <strong><a href="../shows/moneyka/">A PÉNZ bemutatja: Moneyka Show</a></strong></li>
+        <li>20:00–21:00 <strong><a href="../shows/a-penz-bemutatja-moneyka-show/">A PÉNZ bemutatja: Moneyka Show</a></strong></li>
         <li>21:00-23:00 <strong><a href="../shows/arcade-ok-alatt/">Arcade-ok alatt</a></strong></li>
     </ul>
 </div>
