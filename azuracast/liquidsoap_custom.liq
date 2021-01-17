@@ -444,7 +444,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 10h30m-21h30m}, off_air_ambient_mix),                     #ambient: Merites - Brains
     ({7w and 9h30m-11h29m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
-    ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 13h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h-17h59m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h59m}, once(playlist_ltmshow)),
     ({7w and 20h-20h59m}, once(playlist_sub_burek)),
