@@ -87,6 +87,6 @@
         <li>18:00–19:00 <strong><a href="../shows/hetedik-tipusu-talalkozas/">Hetedik Típusú Találkozás</a></strong> </li>
         <li>20:00–21:00 <strong><a href="../shows/the-ltm-show/">The LTM Show</a></strong></li>
         <li>21:00–22:00 <strong><a href="../shows/sub-burek/">Sub Burek</a></strong></li>
-        <li>22:00-23:00 <strong><a href="../shows/zeneszen-avagy-a-rizskeksz-latvanya/">Zenészen (avagy a rizskeksz látványa)</a></strong></li>
+        <li>22:00-23:00 <strong><a href="../shows/zeneszen-avagy-a-rizskeksz-latvanya/">zenészen (avagy a rizskeksz látványa)</a></strong></li>
     </ul>
 </div>
