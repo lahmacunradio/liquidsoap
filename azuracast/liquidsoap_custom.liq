@@ -146,9 +146,6 @@ playlist_jambikus_nesz = audio_to_stereo(id="stereo_playlist_jambikus_nesz", pla
 playlist_mosolyszunet = playlist(id="playlist_mosolyszunet",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mosolyszunet.m3u")
 playlist_mosolyszunet = audio_to_stereo(id="stereo_playlist_mosolyszunet", playlist_mosolyszunet)
 
-playlist_exit = playlist(id="playlist_exit",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
-playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
-
 playlist_lohuma = playlist(id="playlist_lohuma",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
 playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
 
@@ -187,6 +184,9 @@ playlist_hirszalonna = audio_to_stereo(id="stereo_playlist_hirszalonna", playlis
 
 playlist_moneyka = playlist(id="playlist_moneyka",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
 playlist_moneyka = audio_to_stereo(id="stereo_playlist_moneyka", playlist_moneyka)
+
+playlist_zeneszen playlist(id="playlist_zeneszen",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeneszen.m3u")
+playlist_zeneszen = audio_to_stereo(id="stereo_playlist_zeneszen", playlist_zeneszen)
 
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
@@ -444,12 +444,12 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 10h30m-21h30m}, off_air_ambient_mix),                     #ambient: Merites - Brains
     ({7w and 9h30m-11h29m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
-    ({7w and 13h-16h59m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 13h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h-17h59m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h59m}, once(playlist_ltmshow)),
     ({7w and 20h-20h59m}, once(playlist_sub_burek)),
-    ({7w and 21h-21h59m}, once(playlist_exit)),
-    ({7w and 9h30m-21h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Exit
+    ({7w and 21h-21h59m}, once(playlist_zeneszen)),
+    ({7w and 9h30m-21h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Zeneszen
     ({true}, radio) ])
 
 

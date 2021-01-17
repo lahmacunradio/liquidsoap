@@ -83,10 +83,10 @@
     <ul>
         <li>10:30–12:30 <strong><a href="../shows/sunday-lockdown-w-lohuma/">Sunday Lockdown w/ Lohuma</a></strong></li>
         <li>12:30–14:00 <strong><a href="../shows/bambuszradio-with-panda/">Bambuszradio with Panda</a></strong></li>
-        <li>14:00–18:00 <strong><a href="../shows/donald-kacsa-klub/">Donald Kacsa Klub</a></strong></li>
+        <li>14:00–17:00 <strong><a href="../shows/donald-kacsa-klub/">Donald Kacsa Klub</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/hetedik-tipusu-talalkozas/">Hetedik Típusú Találkozás</a></strong> </li>
         <li>20:00–21:00 <strong><a href="../shows/the-ltm-show/">The LTM Show</a></strong></li>
         <li>21:00–22:00 <strong><a href="../shows/sub-burek/">Sub Burek</a></strong></li>
-        <li>22:00-23:00 <strong><a href="../shows/exit/">Exit</a></strong></li>
+        <li>22:00-23:00 <strong><a href="../shows/zeneszen-avagy-a-rizskeksz-latvanya/">Zenészen (avagy a rizskeksz látványa)</a></strong></li>
     </ul>
 </div>
