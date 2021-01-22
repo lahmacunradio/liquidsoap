@@ -188,6 +188,9 @@ playlist_moneyka = audio_to_stereo(id="stereo_playlist_moneyka", playlist_moneyk
 playlist_zeneszen = playlist(id="playlist_zeneszen",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeneszen.m3u")
 playlist_zeneszen = audio_to_stereo(id="stereo_playlist_zeneszen", playlist_zeneszen)
 
+playlist_queer = playlist(id="playlist_queer",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_queer.m3u")
+playlist_queer = audio_to_stereo(id="stereo_playlist_queer", playlist_queer)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -381,6 +384,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Sunday
     transition_into_off(playlist_jingle_station_id) ], 
     transition_length=60., #max duration of jingle (60s)
@@ -445,6 +449,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({7w and 9h30m-11h29m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-15h59m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 16h-16h59m}, once(playlist_queer)),
     ({7w and 17h-17h59m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h59m}, once(playlist_ltmshow)),
     ({7w and 20h-20h59m}, once(playlist_sub_burek)),
