@@ -5,6 +5,35 @@
  * @package Maker
  */
 
+/**
+ * A method for sorting associative arrays by a key and a direction.
+ * Direction can be ASC or DESC.
+ *
+ * @param $array
+ * @param $key
+ * @param $direction
+ * @return mixed $array
+ */
+function sortAssociativeArrayByKey($array, $key, $direction){
+
+    switch ($direction){
+        case "ASC":
+            usort($array, function ($first, $second) use ($key) {
+                return $first[$key] <=> $second[$key];
+            });
+            break;
+        case "DESC":
+            usort($array, function ($first, $second) use ($key) {
+                return $second[$key] <=> $first[$key];
+            });
+            break;
+        default:
+            break;
+    }
+
+    return $array;
+} 
+
 $server = 'https://arcsi.lahmacun.hu'; // prod server
 // $server = 'https://devarcsi.lahmacun.hu'; // dev server
 // $server = 'http://localhost:40'; // local server
@@ -40,6 +69,9 @@ if ($showjson && $has_archived) : ?>
 <div class="arcsi-blokks">
 
 <?php 
+
+$showarcsi = sortAssociativeArrayByKey($showarcsi, "play_date", "ASC");
+
 foreach($showarcsi as $archiveitem) :
     $showarchived = $archiveitem['archived'];
     $shownumber = $archiveitem['number'];
