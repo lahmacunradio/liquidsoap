@@ -1195,9 +1195,32 @@ article.campaign .campaign-description {
   font-size: 1.5rem;
 }
 
+.sort-block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: -0.5rem;
+}
+
+.sort-block > strong {
+  font-weight: 500;
+}
+
+.sort-block > button {
+  cursor: pointer;
+  color: black;
+  padding: 0.5rem 0.8rem;
+  line-height: 1;
+  font-weight: 400;
+  height: auto;
+  background: transparent;
+  border: 1px solid #775a8f;
+}
+
 .arcsi-blokks {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   grid-gap: 2rem;
 }
 
@@ -1277,10 +1300,6 @@ Responsive
 }
 
 @media screen and (max-width: 1024px) {
-
-.arcsi-blokks {
-  display: block;
-}
 
 /* end max 1024 */
 }  
@@ -1425,6 +1444,10 @@ article.campaign .entry-content .campaigninfos, article.campaign .entry-content 
 }
 
 article.postslister.shows {  width: 49%; padding-right: 1em; }
+
+.arcsi-blokks {
+  display: block;
+}
 
 /* end max 786 */
 }

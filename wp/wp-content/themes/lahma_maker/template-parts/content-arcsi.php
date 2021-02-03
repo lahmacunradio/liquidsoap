@@ -66,6 +66,12 @@ if ($showjson && $has_archived) : ?>
 
 <h3>Arcsived shows for <?php the_title(); ?></h3>
 
+<div class="sort-block">
+    <button id="sortreverse">
+        <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Reverse Order
+    </button>
+</div>
+
 <div class="arcsi-blokks">
 
 <?php 
@@ -88,7 +94,9 @@ if ($showarchived) { ?>
 
 <div class="arcsiblokk">
     <div class="arcsiimage">
-        <img src="<?php echo $showimg;?>" alt="<?php echo $showname; ?>">  
+        <a href="<?php echo $showimg;?>" class="swipebox">
+            <img src="<?php echo $showimg;?>" alt="<?php echo $showname; ?>">
+        </a>
     </div>
     <div class="arcsiinfos">
         <div>

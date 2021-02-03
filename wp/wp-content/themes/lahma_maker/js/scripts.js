@@ -245,6 +245,7 @@ $( document ).ready(function() {
 
         let parentId = $(this).parent("div").attr("id")
         //console.log(parentId)
+        $(this).find('i').removeClass('fa-headphones').addClass('fa-cog fa-spin')
 
         fetch(listenLink) 
             .then(response => response.text()) // Transform the data into simple text (acc. to arcsi's listen interface spec)
@@ -275,10 +276,31 @@ $( document ).ready(function() {
                     arcsiStop(audioTitle)
                 })
                 myPlayer.play();
+                $(this).find('i').removeClass('fa-cog fa-spin').addClass('fa-headphones')
+
             } )
-            .catch( error => console.log(error) )
+            .catch( error => {
+                console.log(error)
+                $(this).find('i').removeClass('fa-cog fa-spin').addClass('fa-headphones')
+            }  )
     
     });
+
+    let ascending = true
+    // reverse order
+    jQuery(document).on('click', '#sortreverse', function(e) {
+        e.preventDefault()
+
+        jQuery('.arcsi-blokks').html(jQuery('.arcsi-blokks').find(jQuery('.arcsi-blokks .arcsiblokk')).get().reverse());
+
+        if (ascending) {
+            ascending = false
+            $(this).find('i').removeClass('fa-sort-numeric-asc').addClass('fa-sort-numeric-desc')
+        } else {
+            ascending = true
+            $(this).find('i').removeClass('fa-sort-numeric-desc').addClass('fa-sort-numeric-asc')
+        }
+    })
 
 });
 
