@@ -191,6 +191,9 @@ playlist_zeneszen = audio_to_stereo(id="stereo_playlist_zeneszen", playlist_zene
 playlist_queer = playlist(id="playlist_queer",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_queer.m3u")
 playlist_queer = audio_to_stereo(id="stereo_playlist_queer", playlist_queer)
 
+playlist_linear_systems_with_gestalt = playlist(id="playlist_linear_systems_with_gestalt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_linear_systems_with_gestalt.m3u")
+playlist_linear_systems_with_gestalt = audio_to_stereo(id="stereo_playlist_linear_systems_with_gestalt", playlist_linear_systems_with_gestalt)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -376,6 +379,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Saturday
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -445,7 +449,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
     ({6w and 21h00m-21h59m}, once(playlist_brains_sublimating)),
-    ({6w and 10h30m-21h30m}, off_air_ambient_mix),                     #ambient: Merites - Brains
+    ({6w23h30m-7w0h29m}, once(playlist_linear_systems_with_gestalt)),
+    ({6w10h30m-7w0h30m}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 9h30m-11h29m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h59m}, once(playlist_bambusz)),
     ({7w and 13h-15h59m}, once(playlist_donald_kacsa_klub)),
