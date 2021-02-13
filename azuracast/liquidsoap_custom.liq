@@ -194,6 +194,9 @@ playlist_queer = audio_to_stereo(id="stereo_playlist_queer", playlist_queer)
 playlist_linear_systems_with_gestalt = playlist(id="playlist_linear_systems_with_gestalt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_linear_systems_with_gestalt.m3u")
 playlist_linear_systems_with_gestalt = audio_to_stereo(id="stereo_playlist_linear_systems_with_gestalt", playlist_linear_systems_with_gestalt)
 
+playlist_himihumi = playlist(id="playlist_himihumi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_himihumi.m3u")
+playlist_himihumi = audio_to_stereo(id="stereo_playlist_himihumi", playlist_himihumi)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -362,6 +365,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Thursday
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -426,7 +430,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 22h-22h59m}, once(playlist_radio_bluszcze)),
     ({3w and 14h-22h30m}, off_air_ambient_mix),                        #ambient: Erto - Bluszcze
     ({4w and 13h-13h59m}, once(playlist_muhelycast)),                  #Thursday
-    ({4w and 15h-15h59m}, once(playlist_alternoon)),
+    ({4w and 14h-14h59m}, once(playlist_alternoon)),
+    ({4w and 15h-15h59m}, once(playlist_himihumi)),
     ({4w and 16h-17h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 18h-18h59m}, once(playlist_dalmata_gergo_show)),
     ({4w and 19h-19h59m}, once(playlist_dodo)),

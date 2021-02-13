@@ -45,7 +45,8 @@
     <h3>Thursday / Csütörtök</h3>
     <ul>
         <li>14:00–15:00 <strong><a href="../shows/muhelycast/">Műhelycast</a></strong></li>
-        <li>16:00–17:00 <strong><a href="../shows/alternoon/">AlternoON</a></strong></li>
+        <li>15:00–16:00 <strong><a href="../shows/alternoon/">AlternoON</a></strong></li>
+        <li>16:00–17:00 <strong><a href="../shows/himi-humi-radio/">Himi-Humi Rádió</a></strong></li>
         <li>17:00–19:00 <strong><a href="../shows/lazy-calm-raga/">Lazy Calm Raga</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/dalmata-gergo-show/">Dalmata Gergő Show</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/dodo/">dôdô</a></strong></li>
