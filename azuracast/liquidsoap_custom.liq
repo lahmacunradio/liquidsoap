@@ -9,7 +9,6 @@ set("harbor.bind_addrs",["0.0.0.0"])
 
 set("tag.encodings",["UTF-8","ISO-8859-1"])
 set("encoder.encoder.export",["artist","title","album","song"])
-set("log.level",5)
 
 setenv("TZ", "UTC")
 
