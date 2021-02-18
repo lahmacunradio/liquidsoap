@@ -97,9 +97,6 @@ playlist_a_who_say = audio_to_stereo(id="stereo_playlist_a_who_say", playlist_a_
 playlist_brains_sublimating = playlist(id="playlist_brains_sublimating",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_brains_sublimating.m3u")
 playlist_brains_sublimating = audio_to_stereo(id="stereo_playlist_brains_sublimating", playlist_brains_sublimating)
 
-playlist_d23 = playlist(id="playlist_d23",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_d23.m3u")
-playlist_d23 = audio_to_stereo(id="stereo_playlist_d23", playlist_d23)
-
 playlist_dalmata_radio = playlist(id="playlist_dalmata_radio",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_radio.m3u")
 playlist_dalmata_radio = audio_to_stereo(id="stereo_playlist_dalmata_radio", playlist_dalmata_radio)
 
@@ -456,7 +453,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 17h-18h59m}, once(playlist_rnr666)),
     ({6w and 19h-20h59m}, once(playlist_mood_sequence)),
     ({6w and 21h00m-21h59m}, once(playlist_brains_sublimating)),
-    ({6w and 22h00m-23h29m}, once(playlist_d23)),
     ({6w23h30m-7w0h29m}, once(playlist_linear_systems_with_gestalt)),
     ({6w10h30m-7w0h30m}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 9h30m-11h29m}, once(playlist_lohuma)),                    #Sunday
