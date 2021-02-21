@@ -20,8 +20,8 @@ $showarcsi = json_decode($showjson, true);
 /* CHECK IF THERE ARE ARCHIVED SHOWS */
 $has_archived = false;
 
-foreach ($showarcsi as $k_arr => $v_arr) {
-    if ($k_arr == 'archived') {
+foreach ($showarcsi as $v_arr) {
+    if ($v_arr['archived']) {
         $has_archived = true;
     }
 }
