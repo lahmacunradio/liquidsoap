@@ -77,6 +77,7 @@
         <li>18:00–20:00 <strong><a href="../shows/rnr666-radioshow/">RNR666 radioshow</a></strong></li>
         <li>20:00–22:00 <strong><a href="../shows/mood-sequence/">Mood Sequence</a></strong></li>
         <li>22:00–23:00 <strong><a href="../shows/brains-sublimating/">Brains Sublimating</a></strong></li>
+        <li>23:00–00:30 <strong><a href="../shows/d23/">D23</a></strong></li>
         <li>00:30–01:30 <strong><a href="../shows/linear-systems-with-gestalt/">Linear Systems with Gestalt!</a></strong></li>
     </ul>
 </div>
