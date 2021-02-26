@@ -13,13 +13,14 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
-					<?php /* if ( comments_open() || get_comments_number() ) : ?>
-
-						<?php comments_template(); ?>
-
-					<?php endif; */ ?>
+					<?php 
+					if ( in_category('shows') ) {
+						get_template_part( 'template-parts/content', 'show' ); 
+						get_template_part( 'template-parts/content', 'arcsi' );
+					} else {
+						get_template_part( 'template-parts/content', 'single' ); 
+					}
+					?>
 
 			<?php endwhile; ?>
 

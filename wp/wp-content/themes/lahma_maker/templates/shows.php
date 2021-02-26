@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying fullwidth pages.
+ *
+ * Template Name: Shows page
  *
  * @package Maker
  */
@@ -11,16 +13,15 @@ get_header(); ?>
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+				while ( have_posts() ) : the_post();
 
-					<?php get_template_part( 'template-parts/content', 'page' ); ?>
-
-			<?php endwhile; ?>
+					get_template_part( 'template-parts/content', 'show' );
+				
+				endwhile;
+			?>
 
 		</div>
-
-		<?php get_sidebar(); ?>
-
 	</div><!-- #content -->
 </div><!-- #main -->
 

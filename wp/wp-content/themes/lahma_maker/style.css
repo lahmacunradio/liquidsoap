@@ -31,7 +31,6 @@ html > body {
 	color: #23282d;
 }
 
-
 body div::-webkit-scrollbar {
   -webkit-appearance: none !important;
   width: 0 !important;
@@ -44,6 +43,10 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;  
+}
+
+.hiddenelement {
+  display: none !important;
 }
 
 body a {
@@ -1177,6 +1180,107 @@ article.campaign .campaign-description {
   margin: 0 10px 20px 0;
 }
 
+/* Arcsi */
+
+.arcsi-list {
+  margin: 2rem 0;
+}
+
+.arcsi-list h3 {
+  margin-bottom: 1.7rem;
+  text-align: center;
+  border-bottom: 1px solid;
+  padding-bottom: 0.7rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.sort-block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: -0.5rem;
+}
+
+.sort-block > strong {
+  font-weight: 500;
+}
+
+.sort-block > button {
+  cursor: pointer;
+  color: black;
+  padding: 0.5rem 0.8rem;
+  line-height: 1;
+  font-weight: 400;
+  height: auto;
+  background: transparent;
+  border: 1px solid #775a8f;
+}
+
+.arcsi-blokks {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 2rem;
+}
+
+.arcsiinfos {
+  width: 100%;
+}
+
+.arcsiblokk {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.5rem;
+}
+
+.arcsiblokk audio {
+  width: 100%;
+  margin-top: 0.5rem;
+  max-width: 330px;
+}
+
+.arcsiblokk img {
+  max-width: 150px;
+  margin-right: 1rem;
+}
+
+.arcsiblokk h4 {
+  margin: 0.3rem 0;
+  text-transform: none;
+}
+
+#main .arcsiblokk p {
+  margin-bottom: 0.4rem;
+  line-height: 1.4em;
+}
+
+.arcsibutton {
+  background: black;
+  color: #ffffffe0;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  margin: 0.3rem 0.6rem 0.3rem 0;
+  display: inline-block;
+}
+
+.arcsibutton i {
+  margin-right: 0.3rem;
+}
+
+.arcsiblokk .arcsibutton:active, .arcsiblokk .arcsibutton:hover, .arcsiblokk .arcsibutton:focus  {
+  color: white;
+  border: none;
+}
+
+.arcsidown {
+  background-color: #d71417;
+}
+
+.arcsilisten {
+  background-color: #009821;
+}
+
 
 /*******
 ********
@@ -1194,6 +1298,12 @@ Responsive
 
 /* end min 1024 */
 }
+
+@media screen and (max-width: 1024px) {
+
+/* end max 1024 */
+}  
+
 
 @media screen and (min-width: 1300px) {
 .main-navigation ul.menu li > ul {  padding: 0px 11%; }
@@ -1335,6 +1445,10 @@ article.campaign .entry-content .campaigninfos, article.campaign .entry-content 
 
 article.postslister.shows {  width: 49%; padding-right: 1em; }
 
+.arcsi-blokks {
+  display: block;
+}
+
 /* end max 786 */
 }
 
@@ -1369,6 +1483,8 @@ article.postslister.shows .newspic-container {
   margin: 1em 0 0;
   width: 100%;
 }
+
+.arcsiblokk img {  max-width: 100px; }
 
 /* end max 460 */
 }
