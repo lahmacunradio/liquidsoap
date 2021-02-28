@@ -199,6 +199,9 @@ playlist_linear_systems_with_gestalt = audio_to_stereo(id="stereo_playlist_linea
 playlist_himihumi = playlist(id="playlist_himihumi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_himihumi.m3u")
 playlist_himihumi = audio_to_stereo(id="stereo_playlist_himihumi", playlist_himihumi)
 
+playlist_tudtad = playlist(id="playlist_tudtad",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_tudtad.m3u")
+playlist_tudtad = audio_to_stereo(id="stereo_playlist_tudtad", playlist_tudtad)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -359,6 +362,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),    
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Wednesday 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -422,6 +426,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 21h-22h59m}, once(playlist_mosolyszunet)),
     ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
     ({3w and 11h-12h59m}, once(playlist_lahmacun_presents)),           #Wednesday
+    ({3w and 13h30m-13h59m}, once(playlist_tudtad)),
     ({3w and 14h-14h59m}, once(playlist_erto_hallgatas)),
     ({3w and 15h-15h59m}, once(playlist_hirszalonna)),
     ({3w and 16h-16h59m}, once(playlist_gold_liebe)),
@@ -431,7 +436,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 20h-20h59m}, once(playlist_eastern_daze)),
     ({3w and 21h-21h59m}, once(playlist_1800venus)),
     ({3w and 22h-22h59m}, once(playlist_radio_bluszcze)),
-    ({3w and 14h-22h30m}, off_air_ambient_mix),                        #ambient: Erto - Bluszcze
+    ({3w and 13h30m-22h30m}, off_air_ambient_mix),                        #ambient: Tudtad - Bluszcze
     ({4w and 13h-13h59m}, once(playlist_muhelycast)),                  #Thursday
     ({4w and 14h-14h59m}, once(playlist_alternoon)),
     ({4w and 15h-15h59m}, once(playlist_himihumi)),
