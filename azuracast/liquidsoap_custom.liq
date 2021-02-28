@@ -199,6 +199,9 @@ playlist_linear_systems_with_gestalt = audio_to_stereo(id="stereo_playlist_linea
 playlist_himihumi = playlist(id="playlist_himihumi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_himihumi.m3u")
 playlist_himihumi = audio_to_stereo(id="stereo_playlist_himihumi", playlist_himihumi)
 
+playlist_hatterzaj = playlist(id="playlist_hatterzaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hatterzaj.m3u")
+playlist_hatterzaj = audio_to_stereo(id="stereo_playlist_hatterzaj", playlist_hatterzaj)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -396,6 +399,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Sunday
     transition_into_off(playlist_jingle_station_id) ], 
     transition_length=60., #max duration of jingle (60s)
@@ -465,6 +469,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({7w and 13h-15h59m}, once(playlist_donald_kacsa_klub)),
     ({7w and 16h-16h59m}, once(playlist_queer)),
     ({7w and 17h-17h59m}, once(playlist_hetedik_tipusu_talalkozas)),
+    ({7w and 18h-18h59m}, once(playlist_hatterzaj)),
     ({7w and 19h-19h59m}, once(playlist_ltmshow)),
     ({7w and 20h-20h59m}, once(playlist_sub_burek)),
     ({7w and 21h-21h59m}, once(playlist_zeneszen)),
