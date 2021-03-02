@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php 
-					if ( in_category('shows') ) {
+					if ( in_category('shows') || in_category('past-shows') ) {
 						get_template_part( 'template-parts/content', 'show' ); 
 						get_template_part( 'template-parts/content', 'arcsi' );
 					} else {
