@@ -321,6 +321,7 @@ export default {
             this.audio.play();
             this.is_playing = true;
             document.body.classList.add("Playing");
+            document.querySelectorAll("audio.episodeplay").remove();
             
             if (this.show_check) {
                 gtag('event', 'Radio play', {
