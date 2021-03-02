@@ -291,15 +291,57 @@ $( document ).ready(function() {
     jQuery(document).on('click', '#sortreverse', function(e) {
         e.preventDefault()
 
-        jQuery('.arcsi-blokks').html(jQuery('.arcsi-blokks').find(jQuery('.arcsi-blokks .arcsiblokk')).get().reverse());
+        const mylist = $('.arcsi-blokks');
+        let listitems = mylist.children(".arcsiblokk");
 
         if (ascending) {
             ascending = false
             $(this).find('i').removeClass('fa-sort-numeric-asc').addClass('fa-sort-numeric-desc')
+            listitems.sort(function(b, a) {
+            let compA = $(a).find('.airtime').text().toUpperCase();
+            let compB = $(b).find('.airtime').text().toUpperCase();
+                return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+            })
+            $(mylist).append(listitems);  
         } else {
             ascending = true
             $(this).find('i').removeClass('fa-sort-numeric-desc').addClass('fa-sort-numeric-asc')
+             listitems.sort(function(a, b) {
+            let compA = $(a).find('.airtime').text().toUpperCase();
+            let compB = $(b).find('.airtime').text().toUpperCase();
+                return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+            })
+            $(mylist).append(listitems);           
         }
+    })
+
+    let alphabetascending = true
+    jQuery(document).on('click', '#alphabetical', function(e) {
+        e.preventDefault()
+
+        const mylist = $('.arcsi-blokks');
+        let listitems = mylist.children(".arcsiblokk");
+
+        if (alphabetascending) {
+            alphabetascending = false
+            $(this).find('i').removeClass('fa-sort-alpha-asc').addClass('fa-sort-alpha-desc')
+            listitems.sort(function(b, a) {
+            let compA = $(a).find('h4').text().toUpperCase();
+            let compB = $(b).find('h4').text().toUpperCase();
+                return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+            })
+            $(mylist).append(listitems);
+        } else {
+            alphabetascending = true
+            $(this).find('i').removeClass('fa-sort-alpha-desc').addClass('fa-sort-alpha-asc')
+            listitems.sort(function(a, b) {
+            let compA = $(a).find('h4').text().toUpperCase();
+            let compB = $(b).find('h4').text().toUpperCase();
+                return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+            })
+            $(mylist).append(listitems);
+        }
+
     })
 
 });
