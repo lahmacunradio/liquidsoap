@@ -70,7 +70,7 @@ if ($showjson && $has_archived) : ?>
     <button id="alphabetical" style="margin-right: 1rem;">
         <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i> Order by Title
     </button>
-    <button id="sortreverse">
+    <button id="bydate">
         <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Order by Air time
     </button>
 </div>
@@ -107,7 +107,7 @@ if ($showarchived) { ?>
         Episode nr. <?php echo $shownumber; ?> – 
         <?php */ ?> 
         Aired on <span class="airtime"><?php echo $showplaydate; ?></span> </div>
-        <h4><?php echo $showname; ?></h4>   
+        <h4 class="episode-name"><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
         <div id="arcsi-audio-<?php echo $showid; ?>" class="arcsicontrols">
             <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
