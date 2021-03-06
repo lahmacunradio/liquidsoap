@@ -1405,6 +1405,7 @@ body.home .main-navigation.toggled ul.menu li > ul { background: none; }
 .main-navigation ul.sub-menu li  { display: inline-block; box-shadow: none; float: none; }
 .main-navigation ul.sub-menu a { padding: 0.3em 0.6em;  border-left: 1px solid; width: auto; }
 .main-navigation.toggled ul.nav-menu {  margin-bottom: 0; }
+#social-menu li { display: inline-block; }
 
 .content-area.centered {  width: 100%; }
 
