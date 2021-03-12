@@ -94,7 +94,7 @@ html.ismobile .main-navigation a:hover, html.ismobile .main-navigation a:focus, 
 
 
 body div#main {
-    padding-bottom: 2em;
+    padding-bottom: 4rem;
     padding-top: 2em;
     min-height: auto;
 }
@@ -1216,6 +1216,10 @@ article.campaign .campaign-description {
   height: auto;
   background: transparent;
   border: 1px solid #775a8f;
+}
+
+.sort-block > button.selected {
+  background: #ffffff52;
 }
 
 .arcsi-blokks {

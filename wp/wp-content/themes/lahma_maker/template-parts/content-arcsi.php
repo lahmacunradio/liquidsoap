@@ -67,8 +67,11 @@ if ($showjson && $has_archived) : ?>
 <h3>Arcsived shows for <?php the_title(); ?></h3>
 
 <div class="sort-block">
-    <button id="sortreverse">
-        <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Reverse Order
+    <button id="alphabetical" style="margin-right: 1rem;">
+        <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i> Order by Title
+    </button>
+    <button id="bydate">
+        <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Order by Air time
     </button>
 </div>
 
@@ -103,8 +106,8 @@ if ($showarchived) { ?>
         <?php /* no episode number ?> 
         Episode nr. <?php echo $shownumber; ?> – 
         <?php */ ?> 
-        <span>Aired on <?php echo $showplaydate; ?></span> </div>
-        <h4><?php echo $showname; ?></h4>   
+        Aired on <span class="airtime"><?php echo $showplaydate; ?></span> </div>
+        <h4 class="episode-name"><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
         <div id="arcsi-audio-<?php echo $showid; ?>" class="arcsicontrols">
             <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
