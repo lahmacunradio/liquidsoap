@@ -289,13 +289,13 @@ $( document ).ready(function() {
     
     });
 
-    const mylist = $('.arcsi-blokks');
-    let listitems = mylist.children(".arcsiblokk");
-
     let ascending = true
     // reverse order
     $(document).on('click', '#bydate', function(e) {
         e.preventDefault()
+
+        const mylist = $('.arcsi-blokks');
+        let listitems = mylist.children(".arcsiblokk");    
 
         $('.sort-block > button#alphabetical').removeClass('selected')
         $(this).addClass('selected')
@@ -312,7 +312,7 @@ $( document ).ready(function() {
         } else {
             ascending = true
             $(this).find('i').removeClass('fa-sort-numeric-desc').addClass('fa-sort-numeric-asc')
-             listitems.sort(function(a, b) {
+            listitems.sort(function(a, b) {
             let compA = $(a).find('.airtime').text().toUpperCase();
             let compB = $(b).find('.airtime').text().toUpperCase();
                 return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
@@ -324,6 +324,9 @@ $( document ).ready(function() {
     let alphabetascending = true
     $(document).on('click', '#alphabetical', function(e) {
         e.preventDefault()
+
+        const mylist = $('.arcsi-blokks');
+        let listitems = mylist.children(".arcsiblokk");    
 
         $('.sort-block > button#bydate').removeClass('selected')
         $(this).addClass('selected')
