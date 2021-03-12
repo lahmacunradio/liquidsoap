@@ -82,6 +82,7 @@ if ($showjson && $has_archived) : ?>
 $showarcsi = sortAssociativeArrayByKey($showarcsi, "play_date", "ASC");
 
 foreach($showarcsi as $archiveitem) :
+    $showtitle = get_the_title();
     $showarchived = $archiveitem['archived'];
     $shownumber = $archiveitem['number'];
     $showname = $archiveitem['name'];
@@ -93,7 +94,12 @@ foreach($showarcsi as $archiveitem) :
 
 <?php 
 // if Episode is archived
-if ($showarchived) { ?>
+if ($showarchived) { 
+    
+$fullTitle = $showtitle . ' | ' . $showname;
+    
+?>
+
 
 <div class="arcsiblokk">
     <div class="arcsiimage">
@@ -110,10 +116,10 @@ if ($showarchived) { ?>
         <h4 class="episode-name"><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
         <div id="arcsi-audio-<?php echo $showid; ?>" class="arcsicontrols">
-            <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
+            <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" title="<?php echo $fullTitle; ?>">
                 <i class="fa fa-download" aria-hidden="true"></i> Download
             </a>              
-            <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/listen" title="<?php echo $showname; ?>">
+            <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/listen" title="<?php echo $fullTitle; ?>">
                 <i class="fa fa-headphones" aria-hidden="true"></i> Listen
             </a>
         </div>
