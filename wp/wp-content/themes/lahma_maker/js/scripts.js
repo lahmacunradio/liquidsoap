@@ -54,9 +54,9 @@ function swipeboxGalleryFixer() {
 
 function set_home_class(scope){
     if (scope.pathname == "/"  &&  scope.hash.length <= 1  &&  scope.search.length <= 1) {
-        jQuery("body").addClass("home");
+        $("body").addClass("home");
     } else {
-        jQuery("body").removeClass("home");
+        $("body").removeClass("home");
     }
 }
 
@@ -128,10 +128,10 @@ $( document ).ready(function() {
 
 
     /* AJAX link click */
-    jQuery(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox):not(.avoidAjax)", function(e){
-        var link = jQuery(this).attr("href");
+    $(document).on("click", "#page a[target!='_blank']:not(a[href^='#']):not(.swipebox):not(.avoidAjax)", function(e){
+        var link = $(this).attr("href");
 
-        jQuery("#main").load( link + " #primary", function(responseText) {
+        $("#main").load( link + " #primary", function(responseText) {
             var newtitle = escapeHtml(responseText.match(/<title>([^<]*)/)[1]);
             document.title = newtitle;
             openAllExternalBlank();
@@ -146,7 +146,7 @@ $( document ).ready(function() {
         e.preventDefault();
         history.pushState({}, null, link);
         set_home_class(document.location);
-        jQuery(".main-navigation ul.menu li:hover > ul").hide();
+        $("button.menu-toggle.toggled").trigger('click');
 
     });
 
@@ -175,7 +175,10 @@ $( document ).ready(function() {
             var Cndateobj = Cdateobj.getDay() || 8 - 1;
             var Cgooddateobj = Cndateobj - 1;
 
-        if ( Cgooddateobj !== gooddateobj && !$("body").hasClass("Playing") ) {
+        if ( 
+            Cgooddateobj !== gooddateobj && !$("body").hasClass("Playing") && $(".content-area > div").hasClass("lahma_home-content") 
+            ) 
+        {
             location.reload();
         }
 
@@ -236,7 +239,7 @@ $( document ).ready(function() {
     let progresswidth = $( "#donatebanner .campaign-progress-bar" ).attr( "aria-valuenow" );
     $("#donatebanner .goalprogress").text(Math.round(progresswidth*100)/100 + "%")
 
-    jQuery(document).on("click", ".arcsilisten", function(e) {
+    $(document).on("click", ".arcsilisten", function(e) {
         e.preventDefault();
 
         audioTitle = $(this).attr('title') // maybe from arcsi json is better?

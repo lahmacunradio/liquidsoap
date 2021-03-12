@@ -30,6 +30,7 @@
     <h3>Wednesday / Szerda</h3>
     <ul>
         <li>12:00–14:00 <strong><a href="../shows/lahmacun-presents/">Lahmacun presents</a>&nbsp;</strong></li>
+        <li>14:30–15:00 <strong><a href="../shows/tudtad-hogy-nem-tudtad/">Tudtad, hogy nem tudtad?</a>&nbsp;</strong></li>
         <li>15:00–16:00 <strong><a href="../shows/erto-hallgatas/">Értő Hallgatás</a>&nbsp;</strong></li>
         <li>16:00–17:00 <strong><a href="../shows/hirszalonna-kozeleti-hajleszivas/">Hírszalonna - Közéleti Hájleszívás</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/gold-und-liebe/">Gold und Liebe</a></strong></li>
