@@ -116,7 +116,7 @@ $fullTitle = $showtitle . ' | ' . $showname;
         <h4 class="episode-name"><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
         <div id="arcsi-audio-<?php echo $showid; ?>" class="arcsicontrols">
-            <a class="arcsibutton arcsidown" href="#" data-href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" title="<?php echo $fullTitle; ?>">
+            <a class="arcsibutton arcsidown avoidAjax" href="#" data-href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" title="<?php echo $fullTitle; ?>">
                 <i class="fa fa-download" aria-hidden="true"></i> Download
             </a>              
             <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/listen" title="<?php echo $fullTitle; ?>">
