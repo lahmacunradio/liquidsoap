@@ -100,12 +100,13 @@ function arcsiStop(episodeName) {
     });
 }
 
-function arcsiDownload(episodeName) {
+function arcsiDownload(episodeName, downloadLink) {
     gtag('event', 'Arcsi download', {
         'event_category': episodeName,
         'event_label': 'Download name',
         'value': 1,
     });
+    window.open(downloadLink)
 }
 
 
@@ -300,8 +301,10 @@ $( document ).ready(function() {
 
     // Arcsi Download
     $(document).on("click", ".arcsidown", function(e) {
-        audioTitle = $(this).attr('title') 
-        arcsiDownload(audioTitle)
+        e.preventDefault();
+        audioTitle = $(this).attr('title')
+        audioLink = $(this).data('href')
+        arcsiDownload(audioTitle, audioLink)        
     });
 
     // Arcsi Sorting
