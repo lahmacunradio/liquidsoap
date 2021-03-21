@@ -11,7 +11,7 @@ function isDomainAvailable($domain)
         //check, if a valid url is provided
         if(!filter_var($domain, FILTER_VALIDATE_URL))
         {
-                return false;
+            return false;
         }
 
         //initialize curl
@@ -94,7 +94,7 @@ if (!isDomainAvailable($server)) {
 
 // if arcsi is available for the Show
 // check all shows if all 
-if ($showjson && $has_archived) : ?>
+if (isDomainAvailable($server) && $showjson && $has_archived): ?>
 
 <article class="arcsi-list" >
 
