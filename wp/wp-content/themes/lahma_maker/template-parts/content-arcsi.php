@@ -6,7 +6,7 @@
  */
 
 //returns true, if domain is availible, false if not
-function isDomainAvailible($domain)
+function isDomainAvailable($domain)
 {
         //check, if a valid url is provided
         if(!filter_var($domain, FILTER_VALIDATE_URL))
@@ -85,7 +85,7 @@ foreach ($showarcsi as $v_arr) {
 
 <?php 
 // check if Arcsi is available
-if (!isDomainAvailible($server)) {
+if (!isDomainAvailable($server)) {
     echo '<center><h3>';
     echo 'الدمام 🤯 Arcsi is ❌ not available 🚧 at the moment 😬 نحن اسفون <br/>
     🧤 🔥 🎯 Please try again later 👉 💫 🔊';
