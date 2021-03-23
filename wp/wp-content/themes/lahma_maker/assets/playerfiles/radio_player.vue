@@ -321,6 +321,8 @@ export default {
             this.audio.play();
             this.is_playing = true;
             document.body.classList.add("Playing");
+            document.querySelectorAll("audio.episodeplay").forEach(el => el.remove());
+            document.querySelectorAll(".arcsibutton").forEach(el => el.classList.remove('hiddenelement'));
             
             if (this.show_check) {
                 gtag('event', 'Radio play', {
