@@ -93,7 +93,7 @@ function arcsiPlay(showName, episodeName) {
 function arcsiStop(showName, episodeName) {
     document.body.classList.remove("Playing");
     // console.log(episodeName + " stopped")
-    gtag('event', 'Arcsi stop', {
+    gtag('event', 'Arcsi play', {
         'event_category': showName,
         'event_label': episodeName,
         'value': 0,
