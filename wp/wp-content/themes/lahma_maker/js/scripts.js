@@ -73,37 +73,37 @@ function makeAlbumPictureClick() {
 //Arcsi player helper functions
 
 let audioLink = null
-let audioTitle = ""
+let audioTitle, showTitle, episodeTitle = ""
 
 function stopAllAudio() {
     radio_player.$children[0].stop()
     $("audio.episodeplay").remove()
 }
 
-function arcsiPlay(episodeName) {
+function arcsiPlay(showName, episodeName) {
     document.body.classList.add("Playing");
     // console.log(episodeName + " playing")
     gtag('event', 'Arcsi play', {
-        'event_category': episodeName,
-        'event_label': 'Play state',
+        'event_category': showName,
+        'event_label': episodeName,
         'value': 1,
     });
 }
 
-function arcsiStop(episodeName) {
+function arcsiStop(showName, episodeName) {
     document.body.classList.remove("Playing");
     // console.log(episodeName + " stopped")
     gtag('event', 'Arcsi stop', {
-        'event_category': episodeName,
-        'event_label': 'Play state',
+        'event_category': showName,
+        'event_label': episodeName,
         'value': 0,
     });
 }
 
-function arcsiDownload(episodeName, downloadLink) {
+function arcsiDownload(showName, episodeName, downloadLink) {
     gtag('event', 'Arcsi download', {
-        'event_category': episodeName,
-        'event_label': 'Download name',
+        'event_category': showName,
+        'event_label': episodeName,
         'value': 1,
     });
     window.open(downloadLink)
@@ -253,6 +253,8 @@ $( document ).ready(function() {
         e.preventDefault();
 
         audioTitle = $(this).attr('title') // maybe from arcsi json is better?
+        showTitle = $(this).data('showtitle') 
+        episodeTitle = $(this).data('episodetitle') 
 
         let listenLink = $(this).attr('href')
 
@@ -280,13 +282,13 @@ $( document ).ready(function() {
             .then( () => { // player logistics
                 let myPlayer = document.getElementById('arcsiplayer');
                 myPlayer.addEventListener("play", (e) => {
-                    arcsiPlay(audioTitle)
+                    arcsiPlay(showTitle, episodeTitle)
                 })
                 myPlayer.addEventListener("pause", (e) => {
-                    arcsiStop(audioTitle)
+                    arcsiStop(showTitle, episodeTitle)
                 })
                 myPlayer.addEventListener("ended", (e) => {
-                    arcsiStop(audioTitle)
+                    arcsiStop(showTitle, episodeTitle)
                 })
                 myPlayer.play();
                 $(this).find('i').removeClass('fa-cog fa-spin').addClass('fa-headphones')
@@ -302,15 +304,15 @@ $( document ).ready(function() {
     // Arcsi Download
     $(document).on("click", ".arcsidown", function(e) {
         e.preventDefault();
-        audioTitle = $(this).attr('title')
+        showTitle = $(this).data('showtitle') 
+        episodeTitle = $(this).data('episodetitle') 
         audioLink = $(this).data('href')
-        arcsiDownload(audioTitle, audioLink)        
+        arcsiDownload(showTitle, episodeTitle, audioLink) 
     });
 
     // Arcsi Sorting
-
     let ascending = true
-    // reverse order
+
     $(document).on('click', '#bydate', function(e) {
         e.preventDefault()
 
