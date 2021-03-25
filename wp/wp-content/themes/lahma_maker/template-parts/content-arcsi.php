@@ -5,6 +5,32 @@
  * @package Maker
  */
 
+//returns true, if domain is availible, false if not
+function isDomainAvailable($domain)
+{
+        //check, if a valid url is provided
+        if(!filter_var($domain, FILTER_VALIDATE_URL))
+        {
+            return false;
+        }
+
+        //initialize curl
+        $curlInit = curl_init($domain);
+        curl_setopt($curlInit,CURLOPT_CONNECTTIMEOUT,10);
+        curl_setopt($curlInit,CURLOPT_HEADER,true);
+        curl_setopt($curlInit,CURLOPT_NOBODY,true);
+        curl_setopt($curlInit,CURLOPT_RETURNTRANSFER,true);
+
+        //get answer
+        $response = curl_exec($curlInit);
+
+        curl_close($curlInit);
+
+        if ($response) return true;
+
+        return false;
+}
+
 /**
  * A method for sorting associative arrays by a key and a direction.
  * Direction can be ASC or DESC.
@@ -58,9 +84,17 @@ foreach ($showarcsi as $v_arr) {
 ?>
 
 <?php 
+// check if Arcsi is available
+if (!isDomainAvailable($server)) {
+    echo '<center><h3>';
+    echo 'الدمام 🤯 Arcsi is ❌ not available 🚧 at the moment 😬 نحن اسفون <br/>
+    🧤 🔥 🎯 Please try again later 👉 💫 🔊';
+    echo '</center></h3>';
+}
+
 // if arcsi is available for the Show
 // check all shows if all 
-if ($showjson && $has_archived) : ?>
+if (isDomainAvailable($server) && $showjson && $has_archived): ?>
 
 <article class="arcsi-list" >
 
@@ -82,6 +116,7 @@ if ($showjson && $has_archived) : ?>
 $showarcsi = sortAssociativeArrayByKey($showarcsi, "play_date", "ASC");
 
 foreach($showarcsi as $archiveitem) :
+    $showtitle = get_the_title();
     $showarchived = $archiveitem['archived'];
     $shownumber = $archiveitem['number'];
     $showname = $archiveitem['name'];
@@ -93,7 +128,12 @@ foreach($showarcsi as $archiveitem) :
 
 <?php 
 // if Episode is archived
-if ($showarchived) { ?>
+if ($showarchived) { 
+    
+$fullTitle = $showtitle . ' | ' . $showname;
+    
+?>
+
 
 <div class="arcsiblokk">
     <div class="arcsiimage">
@@ -110,10 +150,10 @@ if ($showarchived) { ?>
         <h4 class="episode-name"><?php echo $showname; ?></h4>   
         <p><?php echo $showdescription; ?></p> 
         <div id="arcsi-audio-<?php echo $showid; ?>" class="arcsicontrols">
-            <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" target="_blank">
+            <a class="arcsibutton arcsidown" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/download" title="<?php echo $fullTitle; ?>">
                 <i class="fa fa-download" aria-hidden="true"></i> Download
             </a>              
-            <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/listen" title="<?php echo $showname; ?>">
+            <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/listen" title="<?php echo $fullTitle; ?>">
                 <i class="fa fa-headphones" aria-hidden="true"></i> Listen
             </a>
         </div>

@@ -82,7 +82,7 @@ function stopAllAudio() {
 
 function arcsiPlay(episodeName) {
     document.body.classList.add("Playing");
-    // console.log(episodeName + " playing")
+    console.log(episodeName + " playing")
     gtag('event', 'Arcsi play', {
         'event_category': episodeName,
         'event_label': 'Play state',
@@ -97,6 +97,14 @@ function arcsiStop(episodeName) {
         'event_category': episodeName,
         'event_label': 'Play state',
         'value': 0,
+    });
+}
+
+function arcsiDownload(episodeName) {
+    gtag('event', 'Arcsi download', {
+        'event_category': episodeName,
+        'event_label': 'Download name',
+        'value': 1,
     });
 }
 
@@ -239,6 +247,7 @@ $( document ).ready(function() {
     let progresswidth = $( "#donatebanner .campaign-progress-bar" ).attr( "aria-valuenow" );
     $("#donatebanner .goalprogress").text(Math.round(progresswidth*100)/100 + "%")
 
+    // Arcsi Player
     $(document).on("click", ".arcsilisten", function(e) {
         e.preventDefault();
 
@@ -288,6 +297,14 @@ $( document ).ready(function() {
             }  )
     
     });
+
+    // Arcsi Download
+    $(document).on("click", ".arcsidown", function(e) {
+        audioTitle = $(this).attr('title') 
+        arcsiDownload(audioTitle)
+    });
+
+    // Arcsi Sorting
 
     let ascending = true
     // reverse order
