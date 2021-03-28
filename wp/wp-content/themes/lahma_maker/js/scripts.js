@@ -82,7 +82,7 @@ function stopAllAudio() {
 
 function arcsiPlay(showName, episodeName) {
     document.body.classList.add("Playing");
-    // console.log(episodeName + " playing")
+    console.log(episodeName + " playing")
     gtag('event', 'Arcsi play', {
         'event_category': showName,
         'event_label': episodeName,

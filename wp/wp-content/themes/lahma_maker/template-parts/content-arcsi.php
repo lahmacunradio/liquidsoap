@@ -5,6 +5,32 @@
  * @package Maker
  */
 
+//returns true, if domain is availible, false if not
+function isDomainAvailable($domain)
+{
+        //check, if a valid url is provided
+        if(!filter_var($domain, FILTER_VALIDATE_URL))
+        {
+            return false;
+        }
+
+        //initialize curl
+        $curlInit = curl_init($domain);
+        curl_setopt($curlInit,CURLOPT_CONNECTTIMEOUT,10);
+        curl_setopt($curlInit,CURLOPT_HEADER,true);
+        curl_setopt($curlInit,CURLOPT_NOBODY,true);
+        curl_setopt($curlInit,CURLOPT_RETURNTRANSFER,true);
+
+        //get answer
+        $response = curl_exec($curlInit);
+
+        curl_close($curlInit);
+
+        if ($response) return true;
+
+        return false;
+}
+
 /**
  * A method for sorting associative arrays by a key and a direction.
  * Direction can be ASC or DESC.
@@ -58,9 +84,17 @@ foreach ($showarcsi as $v_arr) {
 ?>
 
 <?php 
+// check if Arcsi is available
+if (!isDomainAvailable($server)) {
+    echo '<center><h3>';
+    echo 'الدمام 🤯 Arcsi is ❌ not available 🚧 at the moment 😬 نحن اسفون <br/>
+    🧤 🔥 🎯 Please try again later 👉 💫 🔊';
+    echo '</center></h3>';
+}
+
 // if arcsi is available for the Show
 // check all shows if all 
-if ($showjson && $has_archived) : ?>
+if (isDomainAvailable($server) && $showjson && $has_archived): ?>
 
 <article class="arcsi-list" >
 
@@ -121,7 +155,7 @@ $fullTitle = $showtitle . ' | ' . $showname;
                 <i class="fa fa-download" aria-hidden="true"></i> Download
             </a>              
             <a class="arcsibutton arcsilisten avoidAjax" href="<?php echo $server; ?>/arcsi/item/<?php echo $showid; ?>/listen" title="<?php echo $fullTitle; ?>"
-            data-showtitle="<?php echo $showtitle; ?>" data-episodetitle="<?php echo $showname; ?>">
+            data-showtitle="<?php echo $showtitle; ?>" data-episodetitle="<?php echo $showname; ?>
                 <i class="fa fa-headphones" aria-hidden="true"></i> Listen
             </a>
         </div>
