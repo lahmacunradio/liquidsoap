@@ -243,9 +243,6 @@ export default {
             return this.np.now_playing.song.artist
         },
         "show_subtitle": function() {
-            if (this.np.live.is_live)
-            return this.np.now_playing.song.title
-            else
             return this.np.now_playing.song.title
         },
         "show_check": function() {
@@ -327,7 +324,7 @@ export default {
             if (this.show_check) {
                 gtag('event', 'Radio play', {
                     'event_category': this.show_title,
-                    'event_label': 'Play state',
+                    'event_label': this.show_subtitle,
                     'value': 1,
                 });                
             }
@@ -342,7 +339,7 @@ export default {
             if (this.show_check) {
                 gtag('event', 'Radio play', {
                     'event_category': this.show_title,
-                    'event_label': 'Play state',
+                    'event_label': this.show_subtitle,
                     'value': 0,
                 });
             }
@@ -376,7 +373,7 @@ export default {
                 // Update the browser metadata for browsers that support it (i.e. Mobile Chrome)
                 if ('mediaSession' in navigator) {
                     navigator.mediaSession.metadata = new MediaMetadata({
-                        title: np_new.now_playing.song.title,
+                        title: np_new.live.is_live ? np_new.live.streamer_name : np_new.now_playing.song.title,
                         artist: np_new.now_playing.song.artist,
                         artwork: [
                             { src: np_new.now_playing.song.art }
