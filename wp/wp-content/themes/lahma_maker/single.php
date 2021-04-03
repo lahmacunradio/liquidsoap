@@ -17,6 +17,8 @@ get_header(); ?>
 					if ( in_category('shows') || in_category('past-shows') ) {
 						get_template_part( 'template-parts/content', 'show' ); 
 						get_template_part( 'template-parts/content', 'arcsi' );
+					} else if (in_category('news')) {
+						get_template_part( 'template-parts/content', 'news' ); 
 					} else {
 						get_template_part( 'template-parts/content', 'single' ); 
 					}

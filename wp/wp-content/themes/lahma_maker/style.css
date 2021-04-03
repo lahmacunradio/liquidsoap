@@ -462,6 +462,11 @@ html:not(.ismobile) .main-navigation ul.menu li:hover > ul {
     margin: 0 0 1em;
 }
 
+.lahma_post-title .news-timestamp {
+    text-transform: none;
+    margin: -0.5rem 0 1rem;
+}
+
 .lahma_side-infos, .lahma_post-content {
 	display: inline-block;
 	vertical-align: top;
