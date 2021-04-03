@@ -34,9 +34,6 @@ playlist_szmuti_csorba = audio_to_stereo(id="stereo_playlist_szmuti_csorba", pla
 playlist_mukodo_mukod = playlist(id="playlist_mukodo_mukod",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mukodo_mukod.m3u")
 playlist_mukodo_mukod = audio_to_stereo(id="stereo_playlist_mukodo_mukod", playlist_mukodo_mukod)
 
-playlist_agybaj = playlist(id="playlist_agybaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_agybaj.m3u")
-playlist_agybaj = audio_to_stereo(id="stereo_playlist_agybaj", playlist_agybaj)
-
 playlist_great_galactick_ghaul = playlist(id="playlist_great_galactick_ghaul",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_great_galactick_ghaul.m3u")
 playlist_great_galactick_ghaul = audio_to_stereo(id="stereo_playlist_great_galactick_ghaul", playlist_great_galactick_ghaul)
 
@@ -159,9 +156,6 @@ playlist_weirdest_hits = audio_to_stereo(id="stereo_playlist_weirdest_hits", pla
 
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
-
-playlist_gold_liebe = playlist(id="playlist_gold_liebe",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_gold_liebe.m3u")
-playlist_gold_liebe = audio_to_stereo(id="stereo_playlist_gold_liebe", playlist_gold_liebe)
 
 playlist_rambo = playlist(id="playlist_rambo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
 playlist_rambo = audio_to_stereo(id="stereo_playlist_rambo", playlist_rambo)
@@ -361,7 +355,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),    
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -376,7 +369,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Thursday
-    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -433,7 +425,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 12h30m-12h59m}, once(playlist_tudtad)),
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_hirszalonna)),
-    ({3w and 15h-15h59m}, once(playlist_gold_liebe)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
     ({3w and 17h-17h59m}, once(playlist_rambo)),
     ({3w and 18h-18h59m}, once(playlist_cellz)),
@@ -454,7 +445,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 13h-13h59m}, once(playlist_boombap)),                     
     ({5w and 14h-14h59m}, once(playlist_recently_played)),             
     ({5w and 15h-15h59m}, once(playlist_dead_hound)),
-    ({5w and 16h-16h59m}, once(playlist_agybaj)),
     ({5w and 17h-17h59m}, once(playlist_mukodo_mukod)),
     ({5w and 18h-18h59m}, once(playlist_moneyka)),
     ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),       
