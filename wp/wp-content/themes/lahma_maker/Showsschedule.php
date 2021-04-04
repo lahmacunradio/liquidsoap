@@ -33,7 +33,6 @@
         <li>14:30–15:00 <strong><a href="../shows/tudtad-hogy-nem-tudtad/">Tudtad, hogy nem tudtad?</a>&nbsp;</strong></li>
         <li>15:00–16:00 <strong><a href="../shows/erto-hallgatas/">Értő Hallgatás</a>&nbsp;</strong></li>
         <li>16:00–17:00 <strong><a href="../shows/hirszalonna-kozeleti-hajleszivas/">Hírszalonna - Közéleti Hájleszívás</a></strong></li>
-        <li>17:00–18:00 <strong><a href="../shows/gold-und-liebe/">Gold und Liebe</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/svadhyaya-onkutatolabor/">Svādhyāya - Önkutatólabor</a></strong>&nbsp;</li>
         <li>19:00–20:00 <strong><a href="../shows/rambo-kierkegaard-pszichotonikus-pecoja/">Rambo Kierkegaard Pszichotónikus Pecója</a></strong>&nbsp;</li>
         <li>20:00–21:00 <strong><a href="../shows/cellz-nocturnal-emissions/">@cellz nocturnal emissions</a></strong></li>
@@ -62,7 +61,6 @@
         <li>15:00-16:00 <strong><a href="../shows/boombap/">BoomBAP</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/recently-played-music/">Recently Played Music</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong></li>
-        <li>18:00–19:00 <strong><a href="../shows/agybaj/">Agybaj</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/a-penz-bemutatja-moneyka-show/">A PÉNZ bemutatja: Moneyka Show</a></strong></li>
         <li>21:00-23:00 <strong><a href="../shows/arcade-ok-alatt/">Arcade-ok alatt</a></strong></li>
