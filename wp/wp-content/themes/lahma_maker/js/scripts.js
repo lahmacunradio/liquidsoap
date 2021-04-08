@@ -311,7 +311,7 @@ $( document ).ready(function() {
     });
 
     // Arcsi Sorting
-    let ascending = true
+    let ascending = false
 
     $(document).on('click', '#bydate', function(e) {
         e.preventDefault()

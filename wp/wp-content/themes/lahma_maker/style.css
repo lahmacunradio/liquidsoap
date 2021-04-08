@@ -1244,9 +1244,26 @@ article.campaign .campaign-description {
   max-width: 330px;
 }
 
-.arcsiblokk img {
-  max-width: 150px;
+.arcsiimage {
   margin-right: 1rem;
+}
+
+.arcsiimage a {
+  max-width: 150px;
+  max-height: 150px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+.arcsiblokk img {
+  min-width: 150px;
+  min-height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
 }
 
 .arcsiblokk h4 {
@@ -1489,7 +1506,19 @@ article.postslister.shows .newspic-container {
   width: 100%;
 }
 
-.arcsiblokk img {  max-width: 100px; }
+.arcsiblokk {
+  display: block;
+}
+
+.arcsiimage a {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.arcsiimage {
+  margin: 0 0 1rem 0;
+}
+
 
 /* end max 460 */
 }

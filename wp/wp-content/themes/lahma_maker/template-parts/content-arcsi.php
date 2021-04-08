@@ -105,7 +105,7 @@ if (isDomainAvailable($server) && $showjson && $has_archived): ?>
         <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i> Order by Title
     </button>
     <button id="bydate">
-        <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Order by Air time
+        <i class="fa fa-sort-numeric-desc" aria-hidden="true"></i> Order by Air time
     </button>
 </div>
 
@@ -113,7 +113,7 @@ if (isDomainAvailable($server) && $showjson && $has_archived): ?>
 
 <?php 
 
-$showarcsi = sortAssociativeArrayByKey($showarcsi, "play_date", "ASC");
+$showarcsi = sortAssociativeArrayByKey($showarcsi, "play_date", "DESC");
 
 foreach($showarcsi as $archiveitem) :
     $showtitle = get_the_title();
