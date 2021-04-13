@@ -321,12 +321,33 @@ def transition_into_show(j,a,b)
 	sequence(merge=true, [fade.final(duration=5.,a),j,b])
 end
 
+def fade.final_skip(~id="fade.final",~duration=3.,~type="lin",s) =
+  def skip()
+    log("Fade finished executing. Calling skip now") 
+    source.skip(s); #first skip to jump to the end of file
+  end
+
+  fn = mkfade(start=1.,stop=0.,type=type,duration=duration,on_done=skip,s)
+    should_play = ref true
+
+  def fn() =
+    v = fn()
+    if v == 0. then
+      should_play := false
+    end
+    v
+  end
+
+  s = amplify(id=id,fn,s)
+  switch(track_sensitive=false,[({!should_play},s)])
+end
+
+
 # Stop show (faded), play jingle, fade in off air music
 def transition_into_off(j,a,b)
     source.skip(b)
-	sequence(merge=true, [fade.final(duration=5.,a),j,b])
+	sequence(merge=true, [fade.final_skip(duration=5.,a),j,b])
 end
-
 radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
