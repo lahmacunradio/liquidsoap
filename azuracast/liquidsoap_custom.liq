@@ -199,6 +199,9 @@ playlist_hatterzaj = audio_to_stereo(id="stereo_playlist_hatterzaj", playlist_ha
 playlist_tudtad = playlist(id="playlist_tudtad",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_tudtad.m3u")
 playlist_tudtad = audio_to_stereo(id="stereo_playlist_tudtad", playlist_tudtad)
 
+playlist_mc5 = playlist(id="playlist_mc5",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mc5.m3u")
+playlist_mc5 = audio_to_stereo(id="stereo_playlist_mc5", playlist_mc5)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -380,6 +383,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Wednesday 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -442,7 +446,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
     ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
     ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
-    ({3w and 10h-11h59m}, once(playlist_lahmacun_presents)),           #Wednesday
+    ({3w and (7h05m-7h10m or 7h25m-7h35m or 7h45m-7h55m)}, delay(540.0,playlist_mc5)), #Wednesday
+    ({3w and 10h-11h59m}, once(playlist_lahmacun_presents)),           
     ({3w and 12h30m-12h59m}, once(playlist_tudtad)),
     ({3w and 13h-13h59m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h59m}, once(playlist_hirszalonna)),
