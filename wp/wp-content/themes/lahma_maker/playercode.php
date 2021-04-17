@@ -63,7 +63,7 @@ Vue.prototype.$eventHub = new Vue();</script>
 var i18n, radio_player;
 var showsList_lookup = {};
 var showsURLList_lookup = {};
-var default_art_url = "<?php echo $home_url ?>/wp-content/uploads/defaultshowart.jpg";
+var default_art_url = "<?php echo $home_url ?>/wp-content/uploads/easterndaze.png";
 var default_azuracast_art_url = "<?php echo $broadcastServer ?>static/img/generic_song.jpg";
 
 function create_showsList_lookup(){
