@@ -19,6 +19,8 @@
 <section class="schedulewrap">
 <h1>Schedule</h1>
 <span class="timenotice">All times are CET</span>
+<p><a href="https://www.facebook.com/events/827099934831111" target="_blank">☽ Easterndaze x Berlin: Community Radio Week</a></p>
+
 
 <?php
 /* Shows Schedule loaded from template file not backend */
