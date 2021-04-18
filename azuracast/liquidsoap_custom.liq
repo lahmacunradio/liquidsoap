@@ -369,7 +369,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Friday 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -438,8 +437,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 12h30m-12h59m}, once(playlist_melania)),                     #Friday
     ({5w and 13h-13h59m}, once(playlist_boombap)),                     
     ({5w and 14h-14h59m}, once(playlist_recently_played)),             
-    ({5w and 15h-18h59m}, playlist_urlteszt),
-    ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),       
+    ({5w and 15h-21h59m}, playlist_urlteszt),
     ({5w and 14h-19h30m}, off_air_ambient_mix),                        #ambient: Melánia - Arcade
     ({6w and 09h30m-11h29m}, once(playlist_merites)),                  #Saturday
     ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),     
