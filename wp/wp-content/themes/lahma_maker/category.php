@@ -26,7 +26,7 @@ get_header(); ?>
 				<article class="postslister newscat">
 					<a href="<?php the_permalink(); ?>">
 				  	<h3 class="news-title"><?php the_title(); ?></h3>
-					<p class="news-time"><?php the_time('l, F jS, Y') ?></p>
+					<p class="news-time"><?php the_time('F jS, Y') ?></p>
 				  <?php if ( has_post_thumbnail()) : ?>
 				  <div class="newspic-container">
 				   <div class="newsimage">

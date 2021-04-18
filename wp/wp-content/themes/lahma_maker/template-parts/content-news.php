@@ -12,7 +12,7 @@
 <header class="lahma_post-title">
 
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-    <p class="news-timestamp"><?php the_time('l, F jS, Y') ?></p>
+    <p class="news-timestamp"><?php the_time('F jS, Y') ?></p>
 
 </header><!-- .entry-header -->
 
