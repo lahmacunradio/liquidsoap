@@ -246,7 +246,7 @@ export default {
             return this.np.now_playing.song.title
         },
         "show_check": function() {
-            if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Off Air Ambient' && this.np.now_playing.playlist !== 'Jingle Station ID' && this.np.now_playing.playlist !== 'Jingle Donate' && this.np.now_playing.playlist !== '') ) {
+            if ( this.np.now_playing.song.artist == 'Cashmere Radio' || this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Off Air Ambient' && this.np.now_playing.playlist !== 'Jingle Station ID' && this.np.now_playing.playlist !== 'Jingle Donate' && this.np.now_playing.playlist !== '') ) {
               return true;
             } else {
               return false;
