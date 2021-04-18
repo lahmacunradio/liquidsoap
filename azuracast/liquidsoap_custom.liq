@@ -76,9 +76,6 @@ playlist_gyogyfurdo = audio_to_stereo(id="stereo_playlist_gyogyfurdo", playlist_
 playlist_alternoon = playlist(id="playlist_alternoon",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_alternoon.m3u")
 playlist_alternoon = audio_to_stereo(id="stereo_playlist_alternoon", playlist_alternoon)
 
-playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
-playlist_arcadeok_alatt = audio_to_stereo(id="stereo_playlist_arcadeok_alatt", playlist_arcadeok_alatt)
-
 playlist_dodo = playlist(id="playlist_dodo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dodo.m3u")
 playlist_dodo = audio_to_stereo(id="stereo_playlist_dodo", playlist_dodo)
 
