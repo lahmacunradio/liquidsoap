@@ -23,7 +23,7 @@ News template for homepage
     <?php the_title(); ?>
   </h3>
 
-  <p class="news-time"><?php the_time('l, F jS, Y') ?></p>
+  <p class="news-time"><?php the_time('F jS, Y') ?></p>
 
   <?php if ( has_post_thumbnail()) : ?>
   <div class="newspic-container">
