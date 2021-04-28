@@ -57,7 +57,7 @@
 <div class="Friday day">
     <h3>Friday / Péntek</h3>
     <ul>
-        <li>14:30-15:00 <strong><a href="../shows/radio-melania/">Rádió Melánia</a></strong></li>
+        <li>14:00-14:30 <strong><a href="../shows/radio-melania/">Rádió Melánia</a></strong></li>
         <li>15:00-16:00 <strong><a href="../shows/boombap/">BoomBAP</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/recently-played-music/">Recently Played Music</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong></li>
