@@ -441,7 +441,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 21h-22h29m}, once(playlist_gyogyfurdo)),
     ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
-    ({5w and 12h30m-12h59m}, once(playlist_melania)),                     #Friday
+    ({5w and 12h00m-12h29m}, once(playlist_melania)),                     #Friday
     ({5w and 13h-13h59m}, once(playlist_boombap)),                     
     ({5w and 14h-14h59m}, once(playlist_recently_played)),             
     ({5w and 15h-15h59m}, once(playlist_dead_hound)),
