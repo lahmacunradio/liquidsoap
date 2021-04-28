@@ -87,7 +87,6 @@
         <li>10:30–12:30 <strong><a href="../shows/sunday-lockdown-w-lohuma/">Sunday Lockdown w/ Lohuma</a></strong></li>
         <li>12:30–14:00 <strong><a href="../shows/bambuszradio-with-panda/">Bambuszradio with Panda</a></strong></li>
         <li>14:00–17:00 <strong><a href="../shows/donald-kacsa-klub/">Donald Kacsa Klub</a></strong></li>
-        <li>17:00–18:00 <strong><a href="../shows/queer-budapest-talks/">Queer Budapest Talks</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/hetedik-tipusu-talalkozas/">Hetedik Típusú Találkozás</a></strong> </li>
         <li>19:00–20:00 <strong><a href="../shows/hatterzaj/">Háttérzaj</a></strong> </li>
         <li>20:00–21:00 <strong><a href="../shows/the-ltm-show/">The LTM Show</a></strong></li>
