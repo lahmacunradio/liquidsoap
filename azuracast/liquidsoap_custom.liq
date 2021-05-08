@@ -130,8 +130,8 @@ playlist_svadhyaya = audio_to_stereo(id="stereo_playlist_svadhyaya", playlist_sv
 playlist_hetedik_tipusu_talalkozas = playlist(id="playlist_hetedik_tipusu_talalkozas",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hetedik_tipusu_talalkozas.m3u")
 playlist_hetedik_tipusu_talalkozas = audio_to_stereo(id="stereo_playlist_hetedik_tipusu_talalkozas", playlist_hetedik_tipusu_talalkozas)
 
-playlist_mills_weather = playlist(id="playlist_mills_weather",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mills_weather.m3u")
-playlist_mills_weather = audio_to_stereo(id="stereo_playlist_mills_weather", playlist_mills_weather)
+playlist_melyvagas = playlist(id="playlist_melyvagas",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_melyvagas.m3u")
+playlist_melyvagas = audio_to_stereo(id="stereo_playlist_melyvagas", playlist_melyvagas)
 
 playlist_udcsi = playlist(id="playlist_udcsi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_udcsi.m3u")
 playlist_udcsi = audio_to_stereo(id="stereo_playlist_udcsi", playlist_udcsi)
@@ -414,7 +414,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 11h-12h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
-    ({2w and 14h-14h59m}, once(playlist_mills_weather)),
+    ({2w and 14h-14h59m}, once(playlist_melyvagas)),
     ({2w and 15h-15h59m}, once(playlist_azvlm)),
     ({2w and 16h-17h29m}, once(playlist_mmn_radio)),
     ({2w and 17h30m-18h29m}, once(playlist_havizaj)),
