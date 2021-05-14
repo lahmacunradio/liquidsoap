@@ -1277,8 +1277,11 @@ article.campaign .campaign-description {
 }
 
 #main .arcsiblokk p {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   line-height: 1.4em;
+  max-height: 8em;
+  overflow: auto;
+  padding-right: 0.7em;
 }
 
 .arcsibutton {
