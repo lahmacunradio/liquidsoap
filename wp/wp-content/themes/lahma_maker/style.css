@@ -1284,6 +1284,22 @@ article.campaign .campaign-description {
   padding-right: 0.7em;
 }
 
+/* Track */
+#main .arcsiblokk ::-webkit-scrollbar-track {
+  background: transparent;
+}
+#main .arcsiblokk:hover ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Handle */
+#main .arcsiblokk ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+#main .arcsiblokk:hover ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.8);
+}
+
 .arcsibutton {
   background: black;
   color: #ffffffe0;
