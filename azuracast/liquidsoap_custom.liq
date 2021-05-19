@@ -196,6 +196,9 @@ playlist_tudtad = audio_to_stereo(id="stereo_playlist_tudtad", playlist_tudtad)
 playlist_bananturmix = playlist(id="playlist_bananturmix",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_bananturmix.m3u")
 playlist_bananturmix = audio_to_stereo(id="stereo_playlist_bananturmix", playlist_bananturmix)
 
+playlist_paikka = playlist(id="playlist_paikka",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_paikka.m3u")
+playlist_paikka = audio_to_stereo(id="stereo_playlist_paikka", playlist_paikka)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -335,6 +338,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Monday 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -401,6 +405,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 11h-11h59m}, once(playlist_a_who_say)),
     ({1w and 12h-13h59m}, once(playlist_dalmata_radio)),
     ({1w and 14h-14h59m}, once(playlist_szmuti_csorba)),
+    ({1w and 15h-15h59m}, once(playlist_paikka)),
     ({1w and 16h-16h59m}, once(playlist_udcsi)),
     ({1w and 17h-17h29m}, once(playlist_kezek_a_sebekben)),
     ({1w and 17h30m-17h59m}, once(playlist_weirdest_hits)),
