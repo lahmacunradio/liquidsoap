@@ -5,6 +5,7 @@
         <li>13:00–14:00 <strong><a href="../shows/a-who-say/">A Who Say</a></strong></li>
         <li>14:00–16:00 <strong><a href="../shows/dalmata-radio/">Dalmata Radio</a></strong>
         <li>16:00–17:00 <strong><a href="../shows/szmuti-csorba/">Szmúti csórba</a></strong></li>
+        <li>17:00–18:00 <strong><a href="../shows/paikka/">Paikka</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/udcsi/">Üdcsi</a></strong></li>
         <li>19:00–19:30 <strong><a href="../shows/kezek-a-sebekben/">Kezek a Sebekben</a></strong></li>
         <li>19:30–20:00 <strong><a href="../shows/weirdest-hits-of-the-week/">Weirdest Hits Of The Week</a></strong></li>
