@@ -7,8 +7,8 @@
         <li>16:00–17:00 <strong><a href="../shows/szmuti-csorba/">Szmúti csórba</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/paikka/">PAIKKA</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/udcsi/">Üdcsi</a></strong></li>
-        <li>19:00–19:30 <strong><a href="../shows/kezek-a-sebekben/">Kezek a Sebekben</a></strong></li>
-        <li>19:30–20:00 <strong><a href="../shows/weirdest-hits-of-the-week/">Weirdest Hits Of The Week</a></strong></li>
+        <li>19:00–19:30 <strong><a href="../shows/weirdest-hits-of-the-week/">Weirdest Hits Of The Week</a></strong></li>
+        <li>19:30–20:00 <strong><a href="../shows/soundscape-diaries-emcsivel/">Soundscape Diaries Emcsivel</a></strong></li>
         <li>20:00–22:00 <strong><a href="../shows/earth-oddities-erdenklang/">Earth Oddities – Erdenklang</a></strong></li>
         <li>22:00–24:00 <strong><a href="../shows/infinite-scroll/">Infinite Scroll</a></strong></li>
     </ul>
