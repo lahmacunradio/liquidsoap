@@ -43,9 +43,6 @@ playlist_erdenklang = audio_to_stereo(id="stereo_playlist_erdenklang", playlist_
 playlist_donald_kacsa_klub = playlist(id="playlist_donald_kacsa_klub",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_donald_kacsa_klub.m3u")
 playlist_donald_kacsa_klub = audio_to_stereo(id="stereo_playlist_donald_kacsa_klub", playlist_donald_kacsa_klub)
 
-playlist_kezek_a_sebekben = playlist(id="playlist_kezek_a_sebekben",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_kezek_a_sebekben.m3u")
-playlist_kezek_a_sebekben = audio_to_stereo(id="stereo_playlist_kezek_a_sebekben", playlist_kezek_a_sebekben)
-
 playlist_turmeric_acid = playlist(id="playlist_turmeric_acid",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_turmeric_acid.m3u")
 playlist_turmeric_acid = audio_to_stereo(id="stereo_playlist_turmeric_acid", playlist_turmeric_acid)
 
@@ -198,6 +195,9 @@ playlist_bananturmix = audio_to_stereo(id="stereo_playlist_bananturmix", playlis
 
 playlist_paikka = playlist(id="playlist_paikka",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_paikka.m3u")
 playlist_paikka = audio_to_stereo(id="stereo_playlist_paikka", playlist_paikka)
+
+playlist_soundscape_diaries_emcsivel = playlist(id="playlist_soundscape_diaries_emcsivel",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_soundscape_diaries_emcsivel.m3u")
+playlist_soundscape_diaries_emcsivel = audio_to_stereo(id="stereo_playlist_soundscape_diaries_emcsivel", playlist_soundscape_diaries_emcsivel)
 
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
@@ -407,8 +407,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 14h-14h59m}, once(playlist_szmuti_csorba)),
     ({1w and 15h-15h59m}, once(playlist_paikka)),
     ({1w and 16h-16h59m}, once(playlist_udcsi)),
-    ({1w and 17h-17h29m}, once(playlist_kezek_a_sebekben)),
-    ({1w and 17h30m-17h59m}, once(playlist_weirdest_hits)),
+    ({1w and 17h-17h29m}, once(playlist_weirdest_hits)),
+    ({1w and 17h30m-17h59m}, once(playlist_soundscape_diaries_emcsivel)),
     ({1w and 18h-19h59m}, once(playlist_erdenklang)),
     ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),      
     ({1w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
