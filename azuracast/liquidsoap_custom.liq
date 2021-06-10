@@ -199,6 +199,9 @@ playlist_paikka = audio_to_stereo(id="stereo_playlist_paikka", playlist_paikka)
 playlist_soundscape_diaries_emcsivel = playlist(id="playlist_soundscape_diaries_emcsivel",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_soundscape_diaries_emcsivel.m3u")
 playlist_soundscape_diaries_emcsivel = audio_to_stereo(id="stereo_playlist_soundscape_diaries_emcsivel", playlist_soundscape_diaries_emcsivel)
 
+playlist_revzrt = playlist(id="playlist_revzrt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_revzrt.m3u")
+playlist_revzrt = audio_to_stereo(id="stereo_playlist_revzrt", playlist_revzrt)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -377,6 +380,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Friday 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -449,6 +453,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 17h-17h59m}, once(playlist_mukodo_mukod)),
     ({5w and 18h-18h59m}, once(playlist_moneyka)),
     ({5w and 19h-20h59m}, once(playlist_arcadeok_alatt)),       
+    ({5w and 21h-21h59m}, once(playlist_revzrt)),       
     ({5w and 14h-19h30m}, off_air_ambient_mix),                        #ambient: Melánia - Arcade
     ({6w and 09h30m-11h29m}, once(playlist_merites)),                  #Saturday
     ({6w and 11h30m-12h29m}, once(playlist_jambikus_nesz)),     
