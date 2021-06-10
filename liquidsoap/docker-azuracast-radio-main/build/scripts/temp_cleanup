@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+/usr/sbin/tmpreaper 12h --protect '.tmpreaper' --verboase \
+    /tmp \
+    /var/azuracast/stations/*/temp \
+    > /proc/1/fd/1 2> /proc/1/fd/2
