@@ -44,7 +44,7 @@ RUN cd ~/ \
     && git checkout 6fc002dd8c27ea4d6849ac3078662d53fd484106 \
     && opam pin add --no-action liquidsoap .
 
-ARG opam_packages="ladspa.0.1.5 ffmpeg.0.4.3 samplerate.0.1.4 taglib.0.3.3 mad.0.4.5 faad.0.4.0 fdkaac.0.3.1 lame.0.3.3 vorbis.0.7.1 cry.0.6.1 flac.0.1.5 opus.0.1.3 duppy.0.8.0 ssl liquidsoap"
+ARG opam_packages="ladspa ffmpeg samplerate taglib mad faad fdkaac lame vorbis cry flac opus duppy ssl liquidsoap"
 RUN opam install -y ${opam_packages}
 
 #
