@@ -65,6 +65,7 @@
         <li>19:00–20:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/a-penz-bemutatja-moneyka-show/">A PÉNZ bemutatja: Moneyka Show</a></strong></li>
         <li>21:00-23:00 <strong><a href="../shows/arcade-ok-alatt/">Arcade-ok alatt</a></strong></li>
+        <li>23:00-00:00 <strong><a href="../shows/rev-zrt-friday-night-noise/">Rév.zrt Friday Night Noise</a></strong></li>
     </ul>
 </div>
 <div class="Saturday day">
