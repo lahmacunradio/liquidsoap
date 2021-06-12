@@ -245,13 +245,13 @@ add_skip_command(radio)
 radio = fallback(id="lahmacun_radio_safe_fallback", track_sensitive = false, [radio, single(id="error_jingle", "/usr/local/share/icecast/web/error.mp3")])
 
 # DJ Authentication
-live_enabled = ref false
-last_authenticated_dj = ref ""
-live_dj = ref ""
+live_enabled = ref(false)
+last_authenticated_dj = ref("")
+live_dj = ref("")
 
 def dj_auth(auth_user,auth_pw) =
-    user = ref ""
-    password = ref ""
+    user = ref("")
+    password = ref("")
   
     if (auth_user == "source" or auth_user == "") and (string.match(pattern="(:|,)+", auth_pw)) then
         auth_string = string.split(separator="(:|,)", auth_pw)
@@ -331,7 +331,7 @@ def fade.final_skip(~id="fade.final",~duration=3.,~type="lin",s) =
   end
 
   fn = mkfade(start=1.,stop=0.,type=type,duration=duration,on_done=skip,s)
-    should_play = ref true
+    should_play = ref(true)
 
   def fn() =
     v = fn()
