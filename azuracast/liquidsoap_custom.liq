@@ -265,7 +265,7 @@ def dj_auth(auth_user,auth_pw) =
     
     log("Authenticating DJ: #{!user}")
     
-    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^string.quote(!user)^" --form dj-password="^string.quote(!password)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
+    ret = list.hd(process.read.lines("curl -s --request POST --url http://web/api/internal/1/auth --form dj-user="^string.quote(!user)^" --form dj-password="^string.quote(!password)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
     log("AzuraCast DJ Auth Response: #{ret}")
     
     authed = bool_of_string(ret)
@@ -283,7 +283,7 @@ def live_connected(header) =
     live_enabled := true
     live_dj := dj
     
-    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djon --form dj-user="^string.quote(dj)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
+    ret = list.hd(process.read.lines("curl -s --request POST --url http://web/api/internal/1/djon --form dj-user="^string.quote(dj)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
     log("AzuraCast Live Connected Response: #{ret}")
 end
 
@@ -292,7 +292,7 @@ def live_disconnected() =
     
     log("DJ Source disconnected! Current live DJ: #{dj}")
     
-    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/djoff --form dj-user="^string.quote(dj)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
+    ret = list.hd(process.read.lines("curl -s --request POST --url http://web/api/internal/1/djoff --form dj-user="^string.quote(dj)^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
     log("AzuraCast Live Disconnected Response: #{ret}")
     
     live_enabled := false
@@ -501,7 +501,7 @@ radio = switch(track_sensitive=false, transitions=[
 # Send metadata changes back to AzuraCast
 def metadata_updated(m) =
   if (m["song_id"] != "") then
-    ret = list.hd(get_process_lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^string.quote(m["song_id"])^" --form media="^string.quote(m["media_id"])^" --form playlist="^string.quote(m["playlist_id"])^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
+    ret = list.hd(process.read.lines("curl -s --request POST --url http://web/api/internal/1/feedback --form song="^string.quote(m["song_id"])^" --form media="^string.quote(m["media_id"])^" --form playlist="^string.quote(m["playlist_id"])^" --form api_auth="^string.quote("AZURA_KEY")^""), default="")
     log("AzuraCast Feedback Response: #{ret}")
   end
 end
