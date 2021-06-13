@@ -249,18 +249,18 @@ live_enabled = ref(false)
 last_authenticated_dj = ref("")
 live_dj = ref("")
 
-def dj_auth(auth_user,auth_pw) =
+def dj_auth(login) =
     user = ref("")
     password = ref("")
   
-    if (auth_user == "source" or auth_user == "") and (string.match(pattern="(:|,)+", auth_pw)) then
-        auth_string = string.split(separator="(:|,)", auth_pw)
+    if (login.user == "source" or login.user == "") and (string.match(pattern="(:|,)+", login.password)) then
+        auth_string = string.split(separator="(:|,)", login.password)
         
         user := list.nth(default="", auth_string, 0)
         password := list.nth(default="", auth_string, 2)
     else
-        user := auth_user
-        password := auth_pw
+        user := login.user
+        password := login.password
     end
     
     log("Authenticating DJ: #{!user}")
