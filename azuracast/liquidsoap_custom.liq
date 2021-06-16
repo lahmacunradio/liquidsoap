@@ -46,9 +46,6 @@ playlist_donald_kacsa_klub = audio_to_stereo(id="stereo_playlist_donald_kacsa_kl
 playlist_turmeric_acid = playlist(id="playlist_turmeric_acid",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_turmeric_acid.m3u")
 playlist_turmeric_acid = audio_to_stereo(id="stereo_playlist_turmeric_acid", playlist_turmeric_acid)
 
-playlist_csinaltam_neked_egy_valogatas_kazettat = playlist(id="playlist_csinaltam_neked_egy_valogatas_kazettat",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_csinaltam_neked_egy_valogatas_kazettat.m3u")
-playlist_csinaltam_neked_egy_valogatas_kazettat = audio_to_stereo(id="stereo_playlist_csinaltam_neked_egy_valogatas_kazettat", playlist_csinaltam_neked_egy_valogatas_kazettat)
-
 playlist_cellz = playlist(id="playlist_cellz",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_cellz.m3u")
 playlist_cellz = audio_to_stereo(id="stereo_playlist_cellz", playlist_cellz)
 
@@ -78,9 +75,6 @@ playlist_alternoon = audio_to_stereo(id="stereo_playlist_alternoon", playlist_al
 
 playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
 playlist_arcadeok_alatt = audio_to_stereo(id="stereo_playlist_arcadeok_alatt", playlist_arcadeok_alatt)
-
-playlist_dodo = playlist(id="playlist_dodo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dodo.m3u")
-playlist_dodo = audio_to_stereo(id="stereo_playlist_dodo", playlist_dodo)
 
 playlist_azvlm = playlist(id="playlist_azvlm",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_azvlm.m3u")
 playlist_azvlm = audio_to_stereo(id="stereo_playlist_azvlm", playlist_azvlm)
@@ -201,6 +195,9 @@ playlist_soundscape_diaries_emcsivel = audio_to_stereo(id="stereo_playlist_sound
 
 playlist_revzrt = playlist(id="playlist_revzrt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_revzrt.m3u")
 playlist_revzrt = audio_to_stereo(id="stereo_playlist_revzrt", playlist_revzrt)
+
+playlist_keygen = playlist(id="playlist_keygen",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_keygen.m3u")
+playlist_keygen = audio_to_stereo(id="stereo_playlist_keygen", playlist_keygen)
 
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
@@ -350,7 +347,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Tuesday
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -417,7 +413,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 20h-21h59m}, once(playlist_infinite_scroll)),      
     ({1w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
-    ({2w and 11h-12h29m}, once(playlist_csinaltam_neked_egy_valogatas_kazettat)),
     ({2w and 14h-14h59m}, once(playlist_melyvagas)),
     ({2w and 15h-15h59m}, once(playlist_azvlm)),
     ({2w and 16h-17h29m}, once(playlist_mmn_radio)),
@@ -441,7 +436,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 14h-14h59m}, once(playlist_himihumi)),
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 18h-18h59m}, once(playlist_dodo)),
+    ({4w and 18h-18h59m}, once(playlist_keygen)),
     ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
     ({4w and 21h-22h29m}, once(playlist_gyogyfurdo)),
     ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
