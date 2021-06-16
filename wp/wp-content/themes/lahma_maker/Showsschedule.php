@@ -17,7 +17,6 @@
     <h3>Tuesday / Kedd</h3>
     <ul>
         <li>03:04–05:30 <strong><a href="../shows/lahmacun-gyorsnaszad-hidja/">Lahmacun gyorsnaszád hídja</a></strong></li>
-        <li>13:00–14:30 <strong><a href="../shows/csinaltam-neked-egy-valogatas-kazettat/">Csináltam neked egy válogatás kazettát</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/melyvagas/">Mélyvágás</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/azvlm/">AZVLM</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/mmn-radio/">MMN radio</a></strong></li>
@@ -49,7 +48,7 @@
         <li>16:00–17:00 <strong><a href="../shows/himi-humi-radio/">Himi-Humi Rádió</a></strong></li>
         <li>17:00–19:00 <strong><a href="../shows/lazy-calm-raga/">Lazy Calm Raga</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/dalmata-gergo-show/">Dalmata Gergő Show</a></strong></li>
-        <li>20:00–21:00 <strong><a href="../shows/dodo/">dôdô</a></strong></li>
+        <li>20:00–21:00 <strong><a href="../shows/keygen/">Keygen</a></strong></li>
         <li>21:00–23:00 <strong><a href="../shows/great-galactic-ghoul/">Great Galactic Ghoul</a></strong></li>
         <li>23:00–00:30 <strong><a href="../shows/gyogyfurdo/">Gyógyfürdő</a></strong></li>
     </ul>
