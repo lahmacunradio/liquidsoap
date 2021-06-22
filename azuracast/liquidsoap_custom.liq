@@ -34,8 +34,8 @@ playlist_szmuti_csorba = audio_to_stereo(id="stereo_playlist_szmuti_csorba", pla
 playlist_mukodo_mukod = playlist(id="playlist_mukodo_mukod",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mukodo_mukod.m3u")
 playlist_mukodo_mukod = audio_to_stereo(id="stereo_playlist_mukodo_mukod", playlist_mukodo_mukod)
 
-playlist_great_galactick_ghaul = playlist(id="playlist_great_galactick_ghaul",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_great_galactick_ghaul.m3u")
-playlist_great_galactick_ghaul = audio_to_stereo(id="stereo_playlist_great_galactick_ghaul", playlist_great_galactick_ghaul)
+playlist_schmerz = playlist(id="playlist_schmerz",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_schmerz.m3u")
+playlist_schmerz = audio_to_stereo(id="stereo_playlist_schmerz", playlist_schmerz)
 
 playlist_erdenklang = playlist(id="playlist_erdenklang",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_erdenklang.m3u")
 playlist_erdenklang = audio_to_stereo(id="stereo_playlist_erdenklang", playlist_erdenklang)
@@ -437,7 +437,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
     ({4w and 18h-18h59m}, once(playlist_keygen)),
-    ({4w and 19h-20h59m}, once(playlist_great_galactick_ghaul)),
+    ({4w and 19h-20h59m}, once(playlist_schmerz)),
     ({4w and 21h-22h29m}, once(playlist_gyogyfurdo)),
     ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
     ({5w and 12h00m-12h29m}, once(playlist_melania)),                     #Friday
