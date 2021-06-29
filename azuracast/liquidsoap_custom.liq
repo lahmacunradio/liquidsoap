@@ -70,9 +70,6 @@ playlist_dalmata_gergo_show = audio_to_stereo(id="stereo_playlist_dalmata_gergo_
 playlist_gyogyfurdo = playlist(id="playlist_gyogyfurdo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_gyogyfurdo.m3u")
 playlist_gyogyfurdo = audio_to_stereo(id="stereo_playlist_gyogyfurdo", playlist_gyogyfurdo)
 
-playlist_alternoon = playlist(id="playlist_alternoon",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_alternoon.m3u")
-playlist_alternoon = audio_to_stereo(id="stereo_playlist_alternoon", playlist_alternoon)
-
 playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
 playlist_arcadeok_alatt = audio_to_stereo(id="stereo_playlist_arcadeok_alatt", playlist_arcadeok_alatt)
 
@@ -366,7 +363,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: Thursday
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -432,7 +428,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
     ({3w and 12h30m-21h30m}, off_air_ambient_mix),                        #ambient: Tudtad - Bluszcze
     ({4w and 12h-12h59m}, once(playlist_muhelycast)),                  #Thursday
-    ({4w and 13h-13h59m}, once(playlist_alternoon)),
     ({4w and 14h-14h59m}, once(playlist_himihumi)),
     ({4w and 15h-16h59m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h59m}, once(playlist_dalmata_gergo_show)),
