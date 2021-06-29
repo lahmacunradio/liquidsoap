@@ -336,7 +336,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Monday 
+    transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Monday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -344,7 +344,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Tuesday
+    transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Tuesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -355,7 +355,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Wednesday 
+    transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -363,17 +363,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Thursday
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Friday 
+    transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Thursday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -383,7 +373,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Saturday
+    transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -392,7 +382,17 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Sunday
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Saturday ^^^
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Sunday ^^^
     transition_into_off(playlist_jingle_station_id) ], 
     transition_length=60., #max duration of jingle (60s)
     [
