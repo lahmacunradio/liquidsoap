@@ -20,7 +20,7 @@
         <li>16:00–17:00 <strong><a href="../shows/melyvagas/">Mélyvágás</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/azvlm/">AZVLM</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/mmn-radio/">MMN radio</a></strong></li>
-        <li>19:30–20:30 <strong><a href="../shows/havizaj/">Havizaj</a></strong></li>
+        <li>20:00–21:00 <strong><a href="../shows/havizaj/">Havizaj</a></strong></li>
         <li>21:00–22:00 <strong><a href="../shows/turmeric-acid/">Turmeric Acid</a></strong></li>
         <li>22:00–24:00 <strong><a href="../shows/mosolyszunet/">Mosolyszünet (via Periszkóp rádió)</a></strong></li>
     </ul>
@@ -44,7 +44,6 @@
     <h3>Thursday / Csütörtök</h3>
     <ul>
         <li>14:00–15:00 <strong><a href="../shows/muhelycast/">Műhelycast</a></strong></li>
-        <li>15:00–16:00 <strong><a href="../shows/alternoon/">AlternoON</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/himi-humi-radio/">Himi-Humi Rádió</a></strong></li>
         <li>17:00–19:00 <strong><a href="../shows/lazy-calm-raga/">Lazy Calm Raga</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/dalmata-gergo-show/">Dalmata Gergő Show</a></strong></li>
