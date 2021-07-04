@@ -407,10 +407,10 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 14h-14h59m}, once(playlist_melyvagas)),
     ({2w and 15h-15h59m}, once(playlist_azvlm)),
-    ({2w and 16h-17h29m}, once(playlist_mmn_radio)),
+    ({2w and 16h-16h59m}, once(playlist_mmn_radio)),
+    ({2w and 17h-17h59m}, once(playlist_mosolyszunet)),
     ({2w and 18h-18h59m}, once(playlist_havizaj)),
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
-    ({2w and 20h-21h59m}, once(playlist_mosolyszunet)),
     ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
     ({3w and 10h-11h59m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 12h30m-12h59m}, once(playlist_tudtad)),

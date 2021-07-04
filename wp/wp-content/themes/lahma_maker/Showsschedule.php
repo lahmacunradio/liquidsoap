@@ -20,9 +20,9 @@
         <li>16:00–17:00 <strong><a href="../shows/melyvagas/">Mélyvágás</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/azvlm/">AZVLM</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/mmn-radio/">MMN radio</a></strong></li>
+        <li>19:00–20:00 <strong><a href="../shows/mosolyszunet/">Mosolyszünet (via Periszkóp rádió)</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/havizaj/">Havizaj</a></strong></li>
         <li>21:00–22:00 <strong><a href="../shows/turmeric-acid/">Turmeric Acid</a></strong></li>
-        <li>22:00–24:00 <strong><a href="../shows/mosolyszunet/">Mosolyszünet (via Periszkóp rádió)</a></strong></li>
     </ul>
 </div>
 <div class="Wednesday day">
