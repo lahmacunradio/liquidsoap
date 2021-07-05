@@ -46,9 +46,6 @@ playlist_donald_kacsa_klub = audio_to_stereo(id="stereo_playlist_donald_kacsa_kl
 playlist_turmeric_acid = playlist(id="playlist_turmeric_acid",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_turmeric_acid.m3u")
 playlist_turmeric_acid = audio_to_stereo(id="stereo_playlist_turmeric_acid", playlist_turmeric_acid)
 
-playlist_cellz = playlist(id="playlist_cellz",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_cellz.m3u")
-playlist_cellz = audio_to_stereo(id="stereo_playlist_cellz", playlist_cellz)
-
 playlist_erto_hallgatas = playlist(id="playlist_erto_hallgatas",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_erto_hallgatas.m3u")
 playlist_erto_hallgatas = audio_to_stereo(id="stereo_playlist_erto_hallgatas", playlist_erto_hallgatas)
 
@@ -368,7 +365,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -418,7 +414,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 14h-14h59m}, once(playlist_hirszalonna)),
     ({3w and 16h-16h59m}, once(playlist_svadhyaya)),
     ({3w and 17h-17h59m}, once(playlist_rambo)),
-    ({3w and 18h-18h59m}, once(playlist_cellz)),
+    ({3w and 18h-18h59m}, once(playlist_boombap)),
     ({3w and 19h-19h59m}, once(playlist_eastern_daze)),
     ({3w and 20h-20h59m}, once(playlist_1800venus)),
     ({3w and 21h-21h59m}, once(playlist_radio_bluszcze)),
@@ -432,7 +428,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 21h-22h29m}, once(playlist_gyogyfurdo)),
     ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
     ({5w and 12h00m-12h29m}, once(playlist_melania)),                     #Friday
-    ({5w and 13h-13h59m}, once(playlist_boombap)),                     
     ({5w and 14h-14h59m}, once(playlist_recently_played)),             
     ({5w and 15h-15h59m}, once(playlist_dead_hound)),
     ({5w and 17h-17h59m}, once(playlist_mukodo_mukod)),
