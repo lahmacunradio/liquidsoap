@@ -15,12 +15,19 @@ function isDomainAvailable($domain) {
         //initialize curl
         $curlInit = curl_init($domain);
         curl_setopt($curlInit,CURLOPT_CONNECTTIMEOUT,10);
+        curl_setopt($curlInit,CURLOPT_TIMEOUT,40);
         curl_setopt($curlInit,CURLOPT_HEADER,true);
         curl_setopt($curlInit,CURLOPT_NOBODY,true);
         curl_setopt($curlInit,CURLOPT_RETURNTRANSFER,true);
 
         //get response code from answer
-        $response = curl_exec($curlInit);
+        curl_exec($curlInit);
+        //arcsi is unreachable so curl timeout is reached
+        if (curl_errno($curlInit)) {
+            if (in_array(curl_errno($curlInit), array(CURLE_OPERATION_TIMEDOUT, CURLE_OPERATION_TIMEOUTED))) {
+                return false;
+            }
+        }
         $responseCode = curl_getinfo($curlInit, CURLINFO_HTTP_CODE);
         
         curl_close($curlInit);
