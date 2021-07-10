@@ -20,9 +20,9 @@
         <li>16:00–17:00 <strong><a href="../shows/melyvagas/">Mélyvágás</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/azvlm/">AZVLM</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/mmn-radio/">MMN radio</a></strong></li>
+        <li>19:00–20:00 <strong><a href="../shows/mosolyszunet/">Mosolyszünet (via Periszkóp rádió)</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/havizaj/">Havizaj</a></strong></li>
         <li>21:00–22:00 <strong><a href="../shows/turmeric-acid/">Turmeric Acid</a></strong></li>
-        <li>22:00–24:00 <strong><a href="../shows/mosolyszunet/">Mosolyszünet (via Periszkóp rádió)</a></strong></li>
     </ul>
 </div>
 <div class="Wednesday day">
@@ -34,7 +34,7 @@
         <li>16:00–17:00 <strong><a href="../shows/hirszalonna-kozeleti-hajleszivas/">Hírszalonna - Közéleti Hájleszívás</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/svadhyaya-onkutatolabor/">Svādhyāya - Önkutatólabor</a></strong>&nbsp;</li>
         <li>19:00–20:00 <strong><a href="../shows/rambo-kierkegaard-pszichotonikus-pecoja/">Rambo Kierkegaard Pszichotónikus Pecója</a></strong>&nbsp;</li>
-        <li>20:00–21:00 <strong><a href="../shows/cellz-nocturnal-emissions/">@cellz nocturnal emissions</a></strong></li>
+        <li>20:00-21:00 <strong><a href="../shows/boombap/">BoomBAP</a></strong></li>
         <li>21:00–22:00 <strong><a href="../shows/eastern-daze-via-cashmere-radio/">Eastern Daze (via Cashmere Radio)</a></strong></li>
         <li>22:00-23:00 <strong><a href="../shows/1-800-venus/">1-800-VENUS</a></strong></li>
         <li>23:00–24:00 <strong><a href="../shows/radio-bluszcze-via-radio-kapital/">Radio Bluszcze (via Radio Kapitał)</a></strong></li>
@@ -56,10 +56,8 @@
     <h3>Friday / Péntek</h3>
     <ul>
         <li>14:00-14:30 <strong><a href="../shows/radio-melania/">Rádió Melánia</a></strong></li>
-        <li>15:00-16:00 <strong><a href="../shows/boombap/">BoomBAP</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/recently-played-music/">Recently Played Music</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong></li>
-        <li>18:00–19:00 <strong><a href="../shows/bananturmix/">Banánturmix</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/a-penz-bemutatja-moneyka-show/">A PÉNZ bemutatja: Moneyka Show</a></strong></li>
         <li>21:00-23:00 <strong><a href="../shows/arcade-ok-alatt/">Arcade-ok alatt</a></strong></li>
