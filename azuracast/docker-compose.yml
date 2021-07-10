@@ -117,7 +117,7 @@ services:
   stations:
     container_name: azuracast_stations
     image: "azuracast/azuracast_radio:local-ls"
-    build: ../liquidsoap/docker-azuracast-radio
+    build: ../liquidsoap/docker-azuracast-radio-main
     ports:
       # This default mapping is the outgoing and incoming ports for the first 50 stations.
       # You can override this port mapping in your own docker-compose.override.yml file.
