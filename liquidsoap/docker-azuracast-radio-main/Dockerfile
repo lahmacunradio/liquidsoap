@@ -37,27 +37,25 @@ USER azuracast
 
 RUN opam init --disable-sandboxing -a --bare && opam switch create ocaml-system.4.08.1 
 
+RUN opam install opam-depext
+
 # Uncomment to Pin specific commit of Liquidsoap
 RUN cd ~/ \
      && git clone --recursive https://github.com/savonet/liquidsoap.git \
     && cd liquidsoap \
-    && git checkout 6fc002dd8c27ea4d6849ac3078662d53fd484106 \
+    && git checkout f0ec18b495a576b84dc9dfa74e85ec5d15208dbb \
     && opam pin add --no-action liquidsoap .
 
 ARG opam_packages="ladspa ffmpeg samplerate taglib mad faad fdkaac lame vorbis cry flac opus duppy ssl liquidsoap"
+RUN opam depext -y ${opam_packages}
 RUN opam install -y ${opam_packages}
 
-#
-# Main image
-#
-FROM base
 
 # Import Icecast-KH from build container
 COPY --from=icecast /usr/local/bin/icecast /usr/local/bin/icecast
 COPY --from=icecast /usr/local/share/icecast /usr/local/share/icecast
 
-# Import Liquidsoap from build container
-COPY --from=liquidsoap --chown=azuracast:azuracast /var/azuracast/.opam/ocaml-system.4.08.1 /var/azuracast/.opam/ocaml-system.4.08.1
+USER root
 
 RUN ln -s /var/azuracast/.opam/ocaml-system.4.08.1/bin/liquidsoap /usr/local/bin/liquidsoap
 
