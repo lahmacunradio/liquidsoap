@@ -320,8 +320,8 @@ radio = amplify(1., radio)
 # LAHMACUN: THIS IS WHERE THE CUSTOM CONFIGURATION WOULD START
 
 # Fade out off air music, play jingle, start playing show (unfaded)
-def transition_into_show(j,a,b)
-	sequence(merge=true, [fade.final(duration=5.,a),j,b])
+def transition_into_show(a,b)
+	sequence(merge=true, [fade.final(duration=5.,a),playlist_jingle_station_id,b])
 end
 
 def fade.final_skip(~id="fade.final",~duration=3.,~type="lin",s) =
@@ -347,82 +347,82 @@ end
 
 
 # Stop show (faded), play jingle, fade in off air music
-def transition_into_off(j,a,b)
+def transition_into_off(a,b)
     source.skip(b)
-	sequence(merge=true, [fade.final_skip(duration=5.,a),j,b])
+	sequence(merge=true, [fade.final_skip(duration=5.,a),playlist_jingle_station_id,b])
 end
 radio = switch(track_sensitive=false, transitions=[
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Monday 
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Tuesday
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),    
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Wednesday 
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Thursday
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Friday 
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Saturday
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
-    transition_into_off(playlist_jingle_station_id), #ambient: Sunday
-    transition_into_off(playlist_jingle_station_id) ], 
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_off(), #ambient: Monday 
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_off(), #ambient: Tuesday
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),    
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_off(), #ambient: Wednesday 
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_off(), #ambient: Thursday
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_off(), #ambient: Friday 
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_off(), #ambient: Saturday
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_show(),
+    transition_into_off(), #ambient: Sunday
+    transition_into_off() ], 
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
