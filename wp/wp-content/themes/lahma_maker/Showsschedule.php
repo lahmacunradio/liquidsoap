@@ -23,6 +23,7 @@
         <li>19:00–20:00 <strong><a href="../shows/mosolyszunet/">Mosolyszünet (via Periszkóp rádió)</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/havizaj/">Havizaj</a></strong></li>
         <li>21:00–22:00 <strong><a href="../shows/turmeric-acid/">Turmeric Acid</a></strong></li>
+        <li>22:00–23:00 <strong><a href="../shows/exit/">Exit</a></strong></li>
     </ul>
 </div>
 <div class="Wednesday day">
