@@ -190,6 +190,9 @@ playlist_revzrt = audio_to_stereo(id="stereo_playlist_revzrt", playlist_revzrt)
 playlist_keygen = playlist(id="playlist_keygen",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_keygen.m3u")
 playlist_keygen = audio_to_stereo(id="stereo_playlist_keygen", playlist_keygen)
 
+playlist_exit = playlist(id="playlist_exit",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
+playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -338,6 +341,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Tuesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -407,6 +411,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 17h-17h59m}, once(playlist_mosolyszunet)),
     ({2w and 18h-18h59m}, once(playlist_havizaj)),
     ({2w and 19h-19h59m}, once(playlist_turmeric_acid)),
+    ({2w and 20h-20h59m}, once(playlist_exit)),
     ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
     ({3w and 10h-11h59m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 12h30m-12h59m}, once(playlist_tudtad)),
