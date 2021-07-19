@@ -43,7 +43,7 @@ RUN opam install opam-depext
 RUN cd ~/ \
      && git clone --recursive https://github.com/savonet/liquidsoap.git \
     && cd liquidsoap \
-    && git checkout f0ec18b495a576b84dc9dfa74e85ec5d15208dbb \
+    && git checkout 55d5a7e8731ce39e9acb041990d349c88ef3408d \
     && opam pin add --no-action liquidsoap .
 
 ARG opam_packages="ladspa ffmpeg samplerate taglib mad faad fdkaac lame vorbis cry flac opus duppy ssl liquidsoap"
