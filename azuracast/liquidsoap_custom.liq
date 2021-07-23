@@ -321,7 +321,7 @@ radio = amplify(1., radio)
 
 # Fade out off air music, play jingle, start playing show (unfaded)
 def transition_into_show(a,b)
-	sequence(merge=true, [fade.final(duration=5.,a),playlist_jingle_station_id,b])
+	sequence(merge=true, [fade.out(duration=5.,a),playlist_jingle_station_id,b])
 end
 
 def fade.final_skip(~id="fade.final",~duration=3.,~type="lin",s) =
