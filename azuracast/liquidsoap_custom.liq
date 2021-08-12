@@ -1,14 +1,16 @@
-set("init.daemon", false)
-set("init.daemon.pidfile.path","/var/azuracast/stations/lahmacun_radio/config/liquidsoap.pid")
-set("log.stdout", true)
-set("log.file", false)
-set("server.telnet",true)
-set("server.telnet.bind_addr","0.0.0.0")
-set("server.telnet.port", 8004)
-set("harbor.bind_addrs",["0.0.0.0"])
+settings.init.daemon.set(false)
+settings.init.daemon.pidfile.path.set("/var/azuracast/stations/lahmacun_radio/config/liquidsoap.pid")
+settings.log.stdout.set(true)
+settings.log.file.set(false)
+settings.server.telnet.set(true)
+settings.server.telnet.bind_addr.set("0.0.0.0")
+settings.server.telnet.port.set(8004)
+settings.harbor.bind_addrs.set(["0.0.0.0"])
 
-set("tag.encodings",["UTF-8","ISO-8859-1"])
-set("encoder.encoder.export",["artist","title","album","song"])
+settings.tag.encodings.set(["UTF-8","ISO-8859-1"])
+settings.encoder.metadata.export.set(["artist","title","album","song"])
+
+
 
 setenv("TZ", "UTC")
 
