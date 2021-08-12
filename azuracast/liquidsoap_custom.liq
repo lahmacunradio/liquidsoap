@@ -2,6 +2,10 @@ settings.init.daemon.set(false)
 settings.init.daemon.pidfile.path.set("/var/azuracast/stations/lahmacun_radio/config/liquidsoap.pid")
 settings.log.stdout.set(true)
 settings.log.file.set(false)
+
+settings.ffmpeg.log.verbosity.set("fatal")
+settings.log.level.set(3)
+
 settings.server.telnet.set(true)
 settings.server.telnet.bind_addr.set("0.0.0.0")
 settings.server.telnet.port.set(8004)
