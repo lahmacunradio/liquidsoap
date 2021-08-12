@@ -278,7 +278,7 @@ services:
     networks:
       - frontend
       - backend
-    init: true
+    entrypoint: sudo /usr/local/bin/my_init
     restart: always
     ulimits: *default-ulimits
     logging: *default-logging
