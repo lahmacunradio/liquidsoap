@@ -482,7 +482,7 @@ end
 source.on_metadata(radio, metadata_updated)
 
 # Local Broadcasts
-#output.icecast(%mp3(samplerate=44100, stereo=true, bitrate=128, id3v2=true), id="lahmacun_radio_local_1", host = "127.0.0.1", port = 8000, password = "ICECAST_KEY", mount = "/radio.mp3", name = "Lahmacun radio", description = "", genre = "", public = false, encoding = "UTF-8", radio)
-output.harbor(%mp3, mount="my-radio.mp3", radio)
+output.icecast(%mp3(samplerate=44100, stereo=true, bitrate=128, id3v2=true), id="lahmacun_radio_local_1", host = "127.0.0.1", port = 8000, password = "ICECAST_KEY", mount = "/radio.mp3", name = "Lahmacun radio", description = "", genre = "", public = false, encoding = "UTF-8", radio)
+#output.harbor(%mp3, mount="my-radio.mp3", radio)
 
 # Remote Relays
