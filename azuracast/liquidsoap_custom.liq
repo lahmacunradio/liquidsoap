@@ -439,7 +439,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 18h-18h58m}, once(playlist_moneyka)),
     ({5w and 19h-20h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 21h-21h58m}, once(playlist_revzrt)),       
-    ({5w and 14h-19h30m}, off_air_ambient_mix),                        #ambient: Melánia - Arcade
+    ({5w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Melánia - Rev
     ({6w and 09h30m-11h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 11h30m-12h28m}, once(playlist_jambikus_nesz)),     
     ({6w and 12h30m-14h58m}, once(playlist_torso)),
@@ -449,7 +449,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 20h00m-20h58m}, once(playlist_brains_sublimating)),
     ({6w and 21h00m-22h28m}, once(playlist_d23)),
     ({6w22h30m-6w23h28m}, once(playlist_linear_systems_with_gestalt)),
-    ({6w09h30m-6w23h30m}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
+    ({6w09h30m-6w23h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 8h30m-10h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 10h30m-11h58m}, once(playlist_bambusz)),
     ({7w and 12h-14h58m}, once(playlist_donald_kacsa_klub)),
