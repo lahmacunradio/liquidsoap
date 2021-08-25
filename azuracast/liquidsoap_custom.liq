@@ -7,7 +7,7 @@ set("server.telnet.bind_addr","0.0.0.0")
 set("server.telnet.port", 8004)
 set("harbor.bind_addrs",["0.0.0.0"])
 
-set("tag.encodings",["UTF-8","ISO-8858-1"])
+set("tag.encodings",["UTF-8","ISO-8859-1"])
 set("encoder.encoder.export",["artist","title","album","song"])
 
 setenv("TZ", "UTC")
