@@ -393,7 +393,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
-    ({1w and 9h11m-10h11m}, once(playlist_transverszia)),             # Monday (orig requested time 11:11 am 12:12 pm)
+    ({1w and 9h11m-10h9m}, once(playlist_transverszia)),             # Monday (orig requested time 11:11 am 12:12 pm)
     ({1w and 11h-11h58m}, once(playlist_a_who_say)),
     ({1w and 12h-13h58m}, once(playlist_dalmata_radio)),
     ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
