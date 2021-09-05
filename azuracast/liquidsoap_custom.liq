@@ -193,6 +193,8 @@ playlist_keygen = audio_to_stereo(id="stereo_playlist_keygen", playlist_keygen)
 playlist_exit = playlist(id="playlist_exit",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
 playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
 
+playlist_graveyard_slot = playlist(id="playlist_graveyard_slot",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_graveyard_slot.m3u")
+playlist_graveyard_slot = audio_to_stereo(id="stereo_playlist_graveyard_slot", playlist_graveyard_slot)graveyard_slot
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -369,6 +371,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -435,6 +438,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 12h00m-12h28m}, once(playlist_melania)),                     #Friday
     ({5w and 14h-14h58m}, once(playlist_recently_played)),             
     ({5w and 15h-15h58m}, once(playlist_dead_hound)),
+    ({5w and 16h-16h58m}, once(playlist_graveyard_slot)),
     ({5w and 17h-17h58m}, once(playlist_mukodo_mukod)),
     ({5w and 18h-18h58m}, once(playlist_moneyka)),
     ({5w and 19h-20h58m}, once(playlist_arcadeok_alatt)),       
