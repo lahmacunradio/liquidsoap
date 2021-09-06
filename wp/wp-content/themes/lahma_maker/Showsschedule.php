@@ -59,7 +59,7 @@
         <li>14:00-14:30 <strong><a href="../shows/radio-melania/">Rádió Melánia</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/recently-played-music/">Recently Played Music</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong></li>
-        <li>17:00–18:00 <strong><a href="../shows/graveyard-slot/">Graveyard Slot</a></strong></li>
+        <li>18:00–19:00 <strong><a href="../shows/graveyard-slot/">Graveyard Slot</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/a-penz-bemutatja-moneyka-show/">A PÉNZ bemutatja: Moneyka Show</a></strong></li>
         <li>21:00-23:00 <strong><a href="../shows/arcade-ok-alatt/">Arcade-ok alatt</a></strong></li>
