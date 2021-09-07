@@ -196,6 +196,13 @@ playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
 playlist_graveyard_slot = playlist(id="playlist_graveyard_slot",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_graveyard_slot.m3u")
 playlist_graveyard_slot = audio_to_stereo(id="stereo_playlist_graveyard_slot", playlist_graveyard_slot)
 
+playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
+playlist_ritka_csut = audio_to_stereo(id="stereo_playlist_ritka_csut", playlist_ritka_csut)
+
+playlist_ritka_pentek = playlist(id="playlist_ritka_pentek",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_pentek.m3u")
+playlist_ritka_pentek = audio_to_stereo(id="stereo_playlist_ritka_pentek", playlist_ritka_pentek)
+
+
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -364,7 +371,9 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Thursday ^^^ 
+    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -427,16 +436,18 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 19h-19h58m}, once(playlist_eastern_daze)),
     ({3w and 20h-20h58m}, once(playlist_1800venus)),
     ({3w and 21h-21h58m}, once(playlist_radio_bluszcze)),
-    ({3w and 12h30m-21h30m}, off_air_ambient_mix),                        #ambient: Tudtad - Bluszcze
-    ({4w and 12h-12h58m}, once(playlist_muhelycast)),                  #Thursday
+    ({3w and 12h30m-21h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Bluszcze
+    ({4w and 10h-11h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 12h-12h58m}, once(playlist_muhelycast)),                  
     ({4w and 14h-14h58m}, once(playlist_himihumi)),
     ({4w and 15h-16h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h58m}, once(playlist_dalmata_gergo_show)),
     ({4w and 18h-18h58m}, once(playlist_keygen)),
     ({4w and 19h-20h58m}, once(playlist_schmerz)),
     ({4w and 21h-22h28m}, once(playlist_gyogyfurdo)),
-    ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
-    ({5w and 12h00m-12h28m}, once(playlist_melania)),                     #Friday
+    ({4w and 10h-21h30m}, off_air_ambient_mix),                        #ambient: Ritka csut - Gyogyf
+    ({5w and 10h-11h58m}, once(playlist_ritka_pentek)),                #Friday
+    ({5w and 12h00m-12h28m}, once(playlist_melania)),                     
     ({5w and 14h-14h58m}, once(playlist_recently_played)),             
     ({5w and 15h-15h58m}, once(playlist_dead_hound)),
     ({5w and 16h-16h58m}, once(playlist_graveyard_slot)),
@@ -444,7 +455,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 18h-18h58m}, once(playlist_moneyka)),
     ({5w and 19h-20h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 21h-21h58m}, once(playlist_revzrt)),       
-    ({5w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Melánia - Rev
+    ({5w and 10h-21h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
     ({6w and 09h30m-11h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 11h30m-12h28m}, once(playlist_jambikus_nesz)),     
     ({6w and 12h30m-14h58m}, once(playlist_torso)),
