@@ -148,6 +148,9 @@ playlist_boombap = audio_to_stereo(id="stereo_playlist_boombap", playlist_boomba
 playlist_melania = playlist(id="playlist_melania",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_melania.m3u")
 playlist_melania = audio_to_stereo(id="stereo_playlist_melania", playlist_melania)
 
+playlist_szusivacsi = playlist(id="playlist_szusivacsi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szusivacsi.m3u")
+playlist_szusivacsi = audio_to_stereo(id="stereo_playlist_szusivacsi", playlist_szusivacsi)
+
 playlist_hirszalonna = playlist(id="playlist_hirszalonna",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hirszalonna.m3u")
 playlist_hirszalonna = audio_to_stereo(id="stereo_playlist_hirszalonna", playlist_hirszalonna)
 
@@ -370,6 +373,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -434,6 +438,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 10h-21h30m}, off_air_ambient_mix),                        #ambient: Ritka csut - Gyogyf
     ({5w and 10h-11h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 12h00m-12h28m}, once(playlist_melania)),                     
+    ({5w and 12h30-13h58m}, once(playlist_szusivacsi)),           
     ({5w and 14h-14h58m}, once(playlist_recently_played)),             
     ({5w and 15h-15h58m}, once(playlist_dead_hound)),
     ({5w and 16h-16h58m}, once(playlist_graveyard_slot)),
