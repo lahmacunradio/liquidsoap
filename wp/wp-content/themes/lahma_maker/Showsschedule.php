@@ -3,7 +3,6 @@
     <ul>
         <li>11:11–12:11 <strong><a href="../shows/transverszia/">transverszia</a></strong></li>
         <li>13:00–14:00 <strong><a href="../shows/a-who-say/">A Who Say</a></strong></li>
-        <li>14:00–16:00 <strong><a href="../shows/dalmata-radio/">Dalmata Radio</a></strong>
         <li>16:00–17:00 <strong><a href="../shows/szmuti-csorba/">Szmúti csórba</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/paikka/">PAIKKA</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/udcsi/">Üdcsi</a></strong></li>
@@ -18,7 +17,6 @@
     <ul>
         <li>03:04–05:30 <strong><a href="../shows/lahmacun-gyorsnaszad-hidja/">Lahmacun gyorsnaszád hídja</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/melyvagas/">Mélyvágás</a></strong></li>
-        <li>17:00–18:00 <strong><a href="../shows/azvlm/">AZVLM</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/mmn-radio/">MMN radio</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/mosolyszunet/">Mosolyszünet (via Periszkóp rádió)</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/havizaj/">Havizaj</a></strong></li>
@@ -44,6 +42,7 @@
 <div class="Thursday day">
     <h3>Thursday / Csütörtök</h3>
     <ul>
+        <li>12:00–14:00 <strong><a href="../shows/dalmata-radio/">Dalmata Radio</a></strong>
         <li>14:00–15:00 <strong><a href="../shows/muhelycast/">Műhelycast</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/himi-humi-radio/">Himi-Humi Rádió</a></strong></li>
         <li>17:00–19:00 <strong><a href="../shows/lazy-calm-raga/">Lazy Calm Raga</a></strong></li>
@@ -56,12 +55,12 @@
 <div class="Friday day">
     <h3>Friday / Péntek</h3>
     <ul>
+        <li>12:00–14:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong></li>
         <li>14:00-14:30 <strong><a href="../shows/radio-melania/">Rádió Melánia</a></strong></li>
         <li>14:30-16:00 <strong><a href="../shows/mindentbele-szusivacsi/">Mindentbele Szusivacsi</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/recently-played-music/">Recently Played Music</a></strong></li>
         <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/graveyard-slot/">Graveyard Slot</a></strong></li>
-        <li>19:00–20:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/a-penz-bemutatja-moneyka-show/">A PÉNZ bemutatja: Moneyka Show</a></strong></li>
         <li>21:00-23:00 <strong><a href="../shows/arcade-ok-alatt/">Arcade-ok alatt</a></strong></li>
         <li>23:00-00:00 <strong><a href="../shows/rev-zrt-friday-night-noise/">Rév.zrt Friday Night Noise</a></strong></li>

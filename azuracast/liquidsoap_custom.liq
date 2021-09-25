@@ -31,9 +31,6 @@ playlist_lazy_calm_raga = audio_to_stereo(id="stereo_playlist_lazy_calm_raga", p
 playlist_szmuti_csorba = playlist(id="playlist_szmuti_csorba",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szmuti_csorba.m3u")
 playlist_szmuti_csorba = audio_to_stereo(id="stereo_playlist_szmuti_csorba", playlist_szmuti_csorba)
 
-playlist_mukodo_mukod = playlist(id="playlist_mukodo_mukod",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mukodo_mukod.m3u")
-playlist_mukodo_mukod = audio_to_stereo(id="stereo_playlist_mukodo_mukod", playlist_mukodo_mukod)
-
 playlist_schmerz = playlist(id="playlist_schmerz",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_schmerz.m3u")
 playlist_schmerz = audio_to_stereo(id="stereo_playlist_schmerz", playlist_schmerz)
 
@@ -70,9 +67,6 @@ playlist_gyogyfurdo = audio_to_stereo(id="stereo_playlist_gyogyfurdo", playlist_
 playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
 playlist_arcadeok_alatt = audio_to_stereo(id="stereo_playlist_arcadeok_alatt", playlist_arcadeok_alatt)
 
-playlist_azvlm = playlist(id="playlist_azvlm",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_azvlm.m3u")
-playlist_azvlm = audio_to_stereo(id="stereo_playlist_azvlm", playlist_azvlm)
-
 playlist_a_who_say = playlist(id="playlist_a_who_say",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
 playlist_a_who_say = audio_to_stereo(id="stereo_playlist_a_who_say", playlist_a_who_say)
 
@@ -81,9 +75,6 @@ playlist_brains_sublimating = audio_to_stereo(id="stereo_playlist_brains_sublima
 
 playlist_d23 = playlist(id="playlist_d23",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_d23.m3u")
 playlist_d23 = audio_to_stereo(id="stereo_playlist_d23", playlist_d23)
-
-playlist_dalmata_radio = playlist(id="playlist_dalmata_radio",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_radio.m3u")
-playlist_dalmata_radio = audio_to_stereo(id="stereo_playlist_dalmata_radio", playlist_dalmata_radio)
 
 playlist_eastern_daze = playlist(id="playlist_eastern_daze",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_eastern_daze.m3u")
 playlist_eastern_daze = audio_to_stereo(id="stereo_playlist_eastern_daze", playlist_eastern_daze)
@@ -198,6 +189,13 @@ playlist_exit = audio_to_stereo(id="stereo_playlist_exit", playlist_exit)
 
 playlist_graveyard_slot = playlist(id="playlist_graveyard_slot",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_graveyard_slot.m3u")
 playlist_graveyard_slot = audio_to_stereo(id="stereo_playlist_graveyard_slot", playlist_graveyard_slot)
+
+playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
+playlist_ritka_csut = audio_to_stereo(id="stereo_playlist_ritka_csut", playlist_ritka_csut)
+
+playlist_ritka_pentek = playlist(id="playlist_ritka_pentek",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_pentek.m3u")
+playlist_ritka_pentek = audio_to_stereo(id="stereo_playlist_ritka_pentek", playlist_ritka_pentek)
+
 
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
@@ -338,9 +336,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Monday ^^^ 
-    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -360,6 +356,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
+    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -403,7 +400,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({!live_enabled}, live),     #Live DJ          
     ({1w and 9h11m-10h9m}, once(playlist_transverszia)),             # Monday (orig requested time 11:11 am 12:12 pm)
     ({1w and 11h-11h58m}, once(playlist_a_who_say)),
-    ({1w and 12h-13h58m}, once(playlist_dalmata_radio)),
     ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
     ({1w and 15h-15h58m}, once(playlist_paikka)),
     ({1w and 16h-16h58m}, once(playlist_udcsi)),
@@ -414,7 +410,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 14h-14h58m}, once(playlist_melyvagas)),
-    ({2w and 15h-15h58m}, once(playlist_azvlm)),
     ({2w and 16h-16h58m}, once(playlist_mmn_radio)),
     ({2w and 17h-17h58m}, once(playlist_mosolyszunet)),
     ({2w and 18h-18h58m}, once(playlist_havizaj)),
@@ -431,25 +426,26 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 19h-19h58m}, once(playlist_eastern_daze)),
     ({3w and 20h-20h58m}, once(playlist_1800venus)),
     ({3w and 21h-21h58m}, once(playlist_radio_bluszcze)),
-    ({3w and 12h30m-21h30m}, off_air_ambient_mix),                        #ambient: Tudtad - Bluszcze
-    ({4w and 12h-12h58m}, once(playlist_muhelycast)),                  #Thursday
+    ({3w and 12h30m-21h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Bluszcze
+    ({4w and 10h-11h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 12h-12h58m}, once(playlist_muhelycast)),                  
     ({4w and 14h-14h58m}, once(playlist_himihumi)),
     ({4w and 15h-16h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h58m}, once(playlist_dalmata_gergo_show)),
     ({4w and 18h-18h58m}, once(playlist_keygen)),
     ({4w and 19h-20h58m}, once(playlist_schmerz)),
     ({4w and 21h-22h28m}, once(playlist_gyogyfurdo)),
-    ({4w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Alter - Gyogyf
-    ({5w and 12h00m-12h28m}, once(playlist_melania)),                     #Friday
+    ({4w and 10h-21h30m}, off_air_ambient_mix),                        #ambient: Ritka csut - Gyogyf
+    ({5w and 10h-11h58m}, once(playlist_ritka_pentek)),                #Friday
+    ({5w and 12h00m-12h28m}, once(playlist_melania)),                     
     ({5w and 12h30-13h58m}, once(playlist_szusivacsi)),           
     ({5w and 14h-14h58m}, once(playlist_recently_played)),             
     ({5w and 15h-15h58m}, once(playlist_dead_hound)),
     ({5w and 16h-16h58m}, once(playlist_graveyard_slot)),
-    ({5w and 17h-17h58m}, once(playlist_mukodo_mukod)),
     ({5w and 18h-18h58m}, once(playlist_moneyka)),
     ({5w and 19h-20h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 21h-21h58m}, once(playlist_revzrt)),       
-    ({5w and 14h-21h30m}, off_air_ambient_mix),                        #ambient: Melánia - Rev
+    ({5w and 10h-21h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
     ({6w and 09h30m-11h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 11h30m-12h28m}, once(playlist_jambikus_nesz)),     
     ({6w and 12h30m-14h58m}, once(playlist_torso)),
