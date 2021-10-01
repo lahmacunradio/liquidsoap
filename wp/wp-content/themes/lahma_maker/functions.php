@@ -280,4 +280,26 @@ register_nav_menus( array(
     'social' => __( 'Social Menu', 'maker' )
 ) );
 
+// Add Gallery for REST API query
+function create_posttype_rest_galleries() {
+ 
+    register_post_type( 'lahma_gallery',
+        array(
+            'labels' => array(
+                'name' => __( 'Lahma Gallery' ),
+                'singular_name' => __( 'Lahma Gallery' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'lahma_gallery'),
+            'show_in_rest' => true,
+            'supports'  => array( 
+                'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields',
+            ),
+            'menu_icon' => 'dashicons-images-alt2',
+        )
+    );
+}
+add_action( 'init', 'create_posttype_rest_galleries' );
+
 ?>
