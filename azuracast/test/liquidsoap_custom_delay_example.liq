@@ -9,8 +9,8 @@ playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_ai
 off_air = fallback(id="playlist_off_air_safe", track_sensitive = false, [playlist_off_air, single(id="error_jingle", "/usr/local/share/icecast/web/error.mp3")])
 
 radio = switch(track_sensitive=false,
-    [({2w and 8h37m-8h38m or 8h39m-8h40m}, delay(60., playlist_my_show)),
+    [({6w and 7h30m-7h31m or 7h33m-7h34m}, delay(60., playlist_my_show)),
     ({true}, off_air) ])
 
-output.harbor(%mp3, mount="my-radio.mp3", radio)
-
+output.icecast(%mp3, host="127.0.0.1", port=8000,
+               password="testke", mount="radio.mp3", radio)
