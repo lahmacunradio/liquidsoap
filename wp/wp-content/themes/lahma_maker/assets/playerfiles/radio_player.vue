@@ -334,16 +334,7 @@ export default {
             this.is_playing = false;
             this.audio.pause();
             this.audio.src = '';
-            document.body.classList.remove("Playing");
-
-            if (this.show_check) {
-                gtag('event', 'Radio play', {
-                    'event_category': this.show_title,
-                    'event_label': this.show_subtitle,
-                    'value': 0,
-                });
-            }
-            
+            document.body.classList.remove("Playing");            
         },
         "toggle": function() {
             if (this.is_playing) {
