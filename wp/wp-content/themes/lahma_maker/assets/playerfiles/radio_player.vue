@@ -245,6 +245,26 @@ export default {
         "show_subtitle": function() {
             return this.np.now_playing.song.title
         },
+        "is_OFF_AIR": function() {
+            if (this.np.now_playing.playlist == 'OFF AIR' || this.np.now_playing.playlist !== 'Off Air Ambient') {
+              return true;
+            } else {
+              return false;
+            }
+        },
+        "OFF_AIR_type": function() {
+            return this.np.now_playing.playlist; // 'OFF AIR' or 'Off Air Ambient'
+        },
+        "is_jingle": function() {
+            if (this.np.now_playing.playlist == 'Jingle Station ID' || this.np.now_playing.playlist == 'Jingle Donate') {
+              return true;
+            } else {
+              return false;
+            }
+        },
+        "jingle_type": function() { //'Jingle Station ID' or 'Jingle Donate'
+            return this.np.now_playing.playlist;
+        },
         "show_check": function() {
             if ( this.np.live.is_live || (this.np.now_playing.playlist !== 'OFF AIR' && this.np.now_playing.playlist !== 'Off Air Ambient' && this.np.now_playing.playlist !== 'Jingle Station ID' && this.np.now_playing.playlist !== 'Jingle Donate' && this.np.now_playing.playlist !== '') ) {
               return true;
@@ -321,12 +341,28 @@ export default {
             document.querySelectorAll("audio.episodeplay").forEach(el => el.remove());
             document.querySelectorAll(".arcsibutton").forEach(el => el.classList.remove('hiddenelement'));
             
-            if (this.show_check) {
+            //OFF AIR track
+            if (this.is_OFF_AIR) {
+                gtag('event', 'Radio play', {
+                    'event_category': 'OFF AIR',
+                    'event_label': this.OFF_AIR_type,
+                    'value': 1,
+                });                
+            //Jingle track
+            } else if (this.is_jingle) {
+                gtag('event', 'Radio play', {
+                    'event_category': 'Jingle',
+                    'event_label': this.jingle_type,
+                    'value': 1,
+                });                
+            }
+            //Regular show episode
+            else {
                 gtag('event', 'Radio play', {
                     'event_category': this.show_title,
                     'event_label': this.show_subtitle,
                     'value': 1,
-                });                
+                });                                
             }
 
         },
