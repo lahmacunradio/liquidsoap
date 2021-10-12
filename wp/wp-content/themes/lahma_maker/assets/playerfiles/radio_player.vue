@@ -246,7 +246,7 @@ export default {
             return this.np.now_playing.song.title
         },
         "is_OFF_AIR": function() {
-            if (this.np.now_playing.playlist == 'OFF AIR' || this.np.now_playing.playlist !== 'Off Air Ambient') {
+            if (this.np.now_playing.playlist == 'OFF AIR' || this.np.now_playing.playlist == 'Off Air Ambient') {
               return true;
             } else {
               return false;
