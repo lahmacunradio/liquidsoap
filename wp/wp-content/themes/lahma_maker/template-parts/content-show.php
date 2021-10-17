@@ -28,7 +28,9 @@
 
 	<?php } ?>	
 	
-	</div><!-- side-content -->
+	<p class="taglist"><?php the_tags( '', ' ', '' ); ?></p>
+
+</div><!-- side-content -->
 
 
 <div class="lahma_post-content">
