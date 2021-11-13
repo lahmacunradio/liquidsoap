@@ -30,7 +30,6 @@
         <li>12:00–14:00 <strong><a href="../shows/lahmacun-presents/">Lahmacun presents</a>&nbsp;</strong></li>
         <li>14:30–15:00 <strong><a href="../shows/tudtad-hogy-nem-tudtad/">Tudtad, hogy nem tudtad?</a>&nbsp;</strong></li>
         <li>15:00–16:00 <strong><a href="../shows/erto-hallgatas/">Értő Hallgatás</a>&nbsp;</strong></li>
-        <li>16:00–17:00 <strong><a href="../shows/hirszalonna-kozeleti-hajleszivas/">Hírszalonna - Közéleti Hájleszívás</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/svadhyaya-onkutatolabor/">Svādhyāya - Önkutatólabor</a></strong>&nbsp;</li>
         <li>19:00–20:00 <strong><a href="../shows/rambo-kierkegaard-pszichotonikus-pecoja/">Rambo Kierkegaard Pszichotónikus Pecója</a></strong>&nbsp;</li>
         <li>20:00-21:00 <strong><a href="../shows/boombap/">BoomBAP</a></strong></li>

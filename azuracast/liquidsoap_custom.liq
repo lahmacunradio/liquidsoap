@@ -151,9 +151,6 @@ playlist_melania = audio_to_stereo(id="stereo_playlist_melania", playlist_melani
 playlist_szusivacsi = playlist(id="playlist_szusivacsi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szusivacsi.m3u")
 playlist_szusivacsi = audio_to_stereo(id="stereo_playlist_szusivacsi", playlist_szusivacsi)
 
-playlist_hirszalonna = playlist(id="playlist_hirszalonna",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hirszalonna.m3u")
-playlist_hirszalonna = audio_to_stereo(id="stereo_playlist_hirszalonna", playlist_hirszalonna)
-
 playlist_moneyka = playlist(id="playlist_moneyka",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
 playlist_moneyka = audio_to_stereo(id="stereo_playlist_moneyka", playlist_moneyka)
 
@@ -358,7 +355,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),    
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -424,7 +420,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 11h-12h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 13h30m-13h58m}, once(playlist_tudtad)),
     ({3w and 14h-14h58m}, once(playlist_erto_hallgatas)),
-    ({3w and 15h-15h58m}, once(playlist_hirszalonna)),
     ({3w and 17h-17h58m}, once(playlist_svadhyaya)),
     ({3w and 18h-18h58m}, once(playlist_rambo)),
     ({3w and 19h-19h58m}, once(playlist_boombap)),
