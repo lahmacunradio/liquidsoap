@@ -17,6 +17,7 @@
     <ul>
         <li>03:04–05:30 <strong><a href="../shows/lahmacun-gyorsnaszad-hidja/">Lahmacun gyorsnaszád hídja</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/melyvagas/">Mélyvágás</a></strong></li>
+        <li>17:00–18:00 <strong><a href="../shows/the-healing/">The Healing</a></strong></li>
         <li>18:00–19:00 <strong><a href="../shows/mmn-radio/">MMN radio</a></strong></li>
         <li>19:00–20:00 <strong><a href="../shows/mosolyszunet/">Mosolyszünet (via Periszkóp rádió)</a></strong></li>
         <li>20:00–21:00 <strong><a href="../shows/havizaj/">Havizaj</a></strong></li>
