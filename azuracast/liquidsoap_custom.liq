@@ -187,6 +187,9 @@ playlist_graveyard_slot = audio_to_stereo(id="stereo_playlist_graveyard_slot", p
 playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
 playlist_geigercounterculture = audio_to_stereo(id="stereo_playlist_geigercounterculture", playlist_geigercounterculture)
 
+playlist_healing = playlist(id="playlist_healing",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_healing.m3u")
+playlist_healing = audio_to_stereo(id="stereo_playlist_healing", playlist_healing)
+
 
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = audio_to_stereo(id="stereo_playlist_ritka_csut", playlist_ritka_csut)
@@ -342,6 +345,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Tuesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -407,6 +411,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 15h-15h58m}, once(playlist_melyvagas)),
+    ({2w and 16h-16h58m}, once(playlist_healing)),
     ({2w and 17h-17h58m}, once(playlist_mmn_radio)),
     ({2w and 18h-18h58m}, once(playlist_mosolyszunet)),
     ({2w and 19h-19h58m}, once(playlist_havizaj)),
