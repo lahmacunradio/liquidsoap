@@ -100,10 +100,9 @@
 	  <p><?php echo $contDonate; ?></p>
 	  
 	  <?php if ($showDonateButton == "show" ) { ?>
-		  <a id="donatebutton" class="donate-button" href="<?php 
-			echo $linkButton ? $linkButton : get_home_url().'/donate'; ?>">
+        <a id="donatebutton" class="donate-button" target="_blank" href="<?php echo $linkButton ?> ">
 		  <?php echo $contButton ? $contButton : 'Donate Us'; ?>
-		  </a>
+		</a>
 		<?php } ?>  
 
 
