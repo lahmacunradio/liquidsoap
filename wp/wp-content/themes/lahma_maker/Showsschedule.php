@@ -57,7 +57,7 @@
     <h3>Friday / Péntek</h3>
     <ul>
         <li>00:00–12:00 <strong>Szilveszteri előkészület magyar számokkal</strong>
-        <li>14:00–15:00 <strong>It's alive: Élő szilveszteri gálaműsor</strong></li>
+        <li>14:00–24:00 <strong>It's alive: Élő szilveszteri gálaműsor</strong></li>
     </ul>
 </div>
 <div class="Saturday day">
