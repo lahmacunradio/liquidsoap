@@ -56,14 +56,8 @@
 <div class="Friday day">
     <h3>Friday / Péntek</h3>
     <ul>
-        <li>12:00–14:00 <strong><a href="../shows/mukodo-mukod/">Működő Működ</a></strong></li>
-        <li>14:00-14:30 <strong><a href="../shows/radio-melania/">Rádió Melánia</a></strong></li>
-        <li>14:30-16:00 <strong><a href="../shows/mindentbele-szusivacsi/">Mindentbele Szusivacsi</a></strong></li>
-        <li>17:00–18:00 <strong><a href="../shows/dead-hound-radio/">Dead Hound</a></strong></li>
-        <li>18:00–19:00 <strong><a href="../shows/graveyard-slot/">Graveyard Slot</a></strong></li>
-        <li>20:00–21:00 <strong><a href="../shows/a-penz-bemutatja-moneyka-show/">A PÉNZ bemutatja: Moneyka Show</a></strong></li>
-        <li>21:00-23:00 <strong><a href="../shows/arcade-ok-alatt/">Arcade-ok alatt</a></strong></li>
-        <li>23:00-00:00 <strong><a href="../shows/rev-zrt-friday-night-noise/">Rév.zrt Friday Night Noise</a></strong></li>
+        <li>00:00–12:00 <strong>Szilveszteri előkészület magyar számokkal</strong>
+        <li>14:00–15:00 <strong>It's alive: Élő szilveszteri gálaműsor</strong></li>
     </ul>
 </div>
 <div class="Saturday day">
