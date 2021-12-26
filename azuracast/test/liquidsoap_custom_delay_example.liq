@@ -12,17 +12,16 @@ playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_
 playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
 
 
-off_air = fallback(id="playlist_off_air_safe", track_sensitive = false, [playlist_off_air, single(id="error_jingle", "/usr/local/share/icecast/web/error.mp3")])
+radio = switch(track_sensitive=false, 
+    [({7w and 10h18m-10h19m or 10h20m-10h21m}, delay(60., playlist_my_show)),
+    ({true}, playlist_off_air)])    
 
-
-def fade_out_transition(a,b)
-	sequence(merge=true, [fade.out(duration=5., a),playlist_jingle_station_id,(b:source)])
+def fading_transition(a,b)
+	sequence([fade.out(a.source),playlist_jingle_station_id, fade.in(b.source)])
 end
 
-radio = switch(track_sensitive=false, 
-    transitions=[fade_out_transition,fade_out_transition],
-    [({5w and 14h57m-14h58m or 14h59m-15h00m}, delay(60., playlist_my_show)),
-    ({true}, off_air) ])    
+radio = cross(fading_transition, radio)
 
-output.icecast(%mp3, host="127.0.0.1", port=8000,
+
+output.icecast(fallible=true, %mp3, host="127.0.0.1", port=8000,
                password="testke", mount="radio.mp3", radio)
