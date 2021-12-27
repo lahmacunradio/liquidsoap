@@ -43,7 +43,7 @@
 <div class="Thursday day">
     <h3>Thursday / Csütörtök</h3>
     <ul>
-        <li>12:00–14:00 <strong><a href="../shows/dalmata-radio/">Dalmata Radio</a></strong>
+        <li>12:00–14:00 <strong><a href="../shows/azvlm/">AZVLM</a></strong>
         <li>14:00–15:00 <strong><a href="../shows/muhelycast/">Műhelycast</a></strong></li>
         <li>16:00–17:00 <strong><a href="../shows/himi-humi-radio/">Himi-Humi Rádió</a></strong></li>
         <li>17:00–19:00 <strong><a href="../shows/lazy-calm-raga/">Lazy Calm Raga</a></strong></li>
@@ -56,8 +56,8 @@
 <div class="Friday day">
     <h3>Friday / Péntek</h3>
     <ul>
-        <li>00:00–12:00 <strong>Szilveszteri előkészület magyar számokkal</strong>
-        <li>14:00–24:00 <strong>It's alive: Élő szilveszteri gálaműsor</strong></li>
+        <li>00:00–12:00 <strong>Lahmacun New Year's Warm-Up - csak magyar zenékkel!</strong>
+        <li>14:00–24:00 <strong><a href="../shows/its-alive-lahmacun-radio-szilveszteri-elo-adasnap/">IT'S ALIVE! Lahmacun radio szilveszteri ÉLŐ adásnap</a></strong>
     </ul>
 </div>
 <div class="Saturday day">
