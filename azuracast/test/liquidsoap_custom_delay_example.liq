@@ -13,11 +13,16 @@ playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
 
 
 radio = switch(track_sensitive=false, 
-    [({7w and 10h18m-10h19m or 10h20m-10h21m}, delay(60., playlist_my_show)),
+    [({1w and 12h07m-12h08m or 12h09m-12h10m}, delay(60., playlist_my_show)),
     ({true}, playlist_off_air)])    
 
 def fading_transition(a,b)
-	sequence([fade.out(a.source),playlist_jingle_station_id, fade.in(b.source)])
+	#Example: play jingle after "my show" (set playlist ID as needed)
+    if a.metadata["playlist_id"] == "667" then
+        sequence([fade.out(a.source),playlist_jingle_station_id, fade.in(b.source)])
+    else 
+        sequence([fade.out(a.source),fade.in(b.source)])
+    end
 end
 
 radio = cross(fading_transition, radio)
