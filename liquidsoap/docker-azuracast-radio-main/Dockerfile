@@ -1,7 +1,7 @@
 #
 # Base image
 #
-FROM savonet/liquidsoap:v2.0.1 AS base
+FROM savonet/liquidsoap:v2.0.2 AS base
 
 # Set time zone
 ENV TZ="UTC"
