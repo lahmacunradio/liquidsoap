@@ -11,13 +11,32 @@ playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="rand
 playlist_jingle_station_id = audio_to_stereo(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
 playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
 
+live_enabled = ref(false)
+
+def live_connected(header) =
+    log("DJ Source connected! Infos: #{header}")
+    live_enabled := true
+end
+
+def live_disconnected() = 
+    log("DJ Source disconnected!")
+    live_enabled := false
+end 
+
+
+live = input.harbor("live", port=8005, password="hackme",icy = true, icy_metadata_charset = "UTF-8", metadata_charset = "UTF-8",on_connect = live_connected, on_disconnect = live_disconnected, buffer = 5., max = 10.)
+ignore(output.dummy(live, fallible=true))
+
+radio = random(id="lahmacun_radio_standard_playlists", weights=[1], [playlist_off_air])
+radio = fallback(id="lahmacun_radio_safe_fallback", track_sensitive = false, [radio, single(id="error_jingle", "/usr/local/share/icecast/web/error.mp3")])
 
 radio = switch(track_sensitive=false, 
-    [({1w and 12h07m-12h08m or 12h09m-12h10m}, delay(60., playlist_my_show)),
-    ({true}, playlist_off_air)])    
+    [({!live_enabled}, live),
+    ({1w and 12h07m-12h08m or 12h09m-12h10m}, delay(60., playlist_my_show)),
+    ({true}, radio)])    
 
 def fading_transition(a,b)
-	#Example: play jingle after "my show" (set playlist ID as needed)
+    #Example: play jingle after "my show" (set playlist ID as needed)
     if a.metadata["playlist_id"] == "667" then
         sequence([fade.out(a.source),playlist_jingle_station_id, fade.in(b.source)])
     else 
@@ -26,7 +45,6 @@ def fading_transition(a,b)
 end
 
 radio = cross(fading_transition, radio)
-
 
 output.icecast(fallible=true, %mp3, host="127.0.0.1", port=8000,
                password="testke", mount="radio.mp3", radio)
