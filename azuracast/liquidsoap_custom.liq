@@ -188,6 +188,9 @@ playlist_jingle_donate = playlist(id="playlist_jingle_donate",mode="randomize",r
 playlist_jingle_donate = audio_to_stereo(id="stereo_playlist_jingle_donate", playlist_jingle_donate)
 
 # Generic playlists
+playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
+playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
+
 playlist_szilveszter_pause = playlist(id="playlist_szilveszter_pause",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szilveszter_pause.m3u")
 playlist_szilveszter_pause = audio_to_stereo(id="stereo_playlist_szilveszter_pause", playlist_szilveszter_pause)
 
@@ -201,6 +204,8 @@ radio = random(id="lahmacun_radio_standard_playlists", weights=[1], [playlist_of
 radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1,1], [playlist_jingle_station_id, playlist_jingle_donate, radio])
 
 #off air ambient source with jingles
+off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_donate, playlist_off_air_ambient])
+
 szilveszter_pause_mix = rotate(id="lahmacun_szilveszter_pause_mix", weights=[1,1], [playlist_jingle_donate, playlist_szilveszter_pause])
 
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
