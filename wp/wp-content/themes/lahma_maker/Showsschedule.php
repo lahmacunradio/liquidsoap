@@ -56,8 +56,8 @@
 <div class="Friday day">
     <h3>Friday / Péntek</h3>
     <ul>
-        <li>00:00–12:00 <strong>Lahmacun New Year's Warm-Up - csak magyar zenékkel!</strong>
-        <li>14:00–24:00 <strong><a href="../shows/its-alive-lahmacun-radio-szilveszteri-elo-adasnap/">IT'S ALIVE! Lahmacun radio szilveszteri ÉLŐ adásnap</a></strong>
+        <li>00:30–12:00 <strong>Lahmacun New Year's Warm-Up - csak magyar zenékkel!</strong>
+        <li>14:00–24:00 <strong><a href="../shows/its-alive-lahmacun-radio-szilveszter-2021/">IT’S ALIVE! Lahmacun radio szilveszter (ÉLŐ)</a></strong>
     </ul>
 </div>
 <div class="Saturday day">
