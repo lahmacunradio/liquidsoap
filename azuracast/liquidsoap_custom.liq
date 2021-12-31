@@ -206,6 +206,7 @@ radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1,1], [playlist
 #off air ambient source with jingles
 off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_donate, playlist_off_air_ambient])
 
+szilveszter_warmup_mix = rotate(id="lahmacun_szilveszter_pause_mix", weights=[1,1], [playlist_jingle_donate, playlist_szilveszter_warmup])
 szilveszter_pause_mix = rotate(id="lahmacun_szilveszter_pause_mix", weights=[1,1], [playlist_jingle_donate, playlist_szilveszter_pause])
 
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
@@ -418,7 +419,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 20h-21h58m}, once(playlist_schmerz)),
     ({4w and 22h-23h28m}, once(playlist_gyogyfurdo)),
     ({4w and 11h-22h30m}, off_air_ambient_mix),                        #ambient: Ritka csut - Gyogyf
-    ({4w23h30m-5w11h and 11h-12h58m}, once(playlist_szilveszter_warmup)),                #Friday
+    ({4w23h30m-5w11h}, szilveszter_warmup_mix),                #Friday
     ({5w and 11h-23h}, szilveszter_pause_mix),                        #ambient: It's Alive interrupts
     ({6w and 10h30m-12h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 12h30m-13h28m}, once(playlist_jambikus_nesz)),     
