@@ -24,7 +24,7 @@ def live_disconnected() =
 end 
 
 
-live = input.harbor("live", port=8005, password="hackme",icy = true, icy_metadata_charset = "UTF-8", metadata_charset = "UTF-8",on_connect = live_connected, on_disconnect = live_disconnected, buffer = 5., max = 10.)
+live = input.harbor("live", port=8005, password="hackme",icy = true, icy_metadata_charset = "UTF-8", metadata_charset = "UTF-8",on_connect = live_connected, on_disconnect = live_disconnected, buffer = 11., max = 12.)
 ignore(output.dummy(live, fallible=true))
 
 radio = random(id="lahmacun_radio_standard_playlists", weights=[1], [playlist_off_air])
