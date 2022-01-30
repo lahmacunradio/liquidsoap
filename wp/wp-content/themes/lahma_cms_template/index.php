@@ -1,9 +1,9 @@
 <?php 
+    /* load all wp stuff */
     wp_head(); 
     wp_footer();
-?>
-
-<?php
-header("Location: https://www.lahmacun.hu/");
-die();
+    
+    /* redirect then die */
+    header("Location: https://www.lahmacun.hu/");
+    die();
 ?>
