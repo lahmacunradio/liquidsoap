@@ -69,6 +69,10 @@
 <div class="Saturday day">
     <h3>Saturday / Szombat</h3>
     <ul>
+        <li>11:00-20:00 <strong><a href="../shows/european-lab-budapest-x-sphera/">European Lab Budapest x Sphera</a></strong></li>
+        <li>20:00-01:00 <strong><a href="../shows/european-lab-budapest-x-sphera/">European Lab Budapest x Sphera (after party)</a></strong></li>
+        <?php 
+        /*
         <li>11:30-13:30 <strong><a href="../shows/merites/">Merítés</a></strong></li>
         <li>13:30-14:30 <strong><a href="../shows/jambikus-nesz/">Jambikus nesz</a></strong></li>
         <li>14:30–17:00 <strong><a href="../shows/learning-audio-classification-with-torso/">Learning Audio Classification with Torso</a></strong></li>
@@ -78,6 +82,8 @@
         <li>22:00–23:00 <strong><a href="../shows/brains-sublimating/">Brains Sublimating</a></strong></li>
         <li>23:00–00:30 <strong><a href="../shows/d23/">D23</a></strong></li>
         <li>00:30–01:30 <strong><a href="../shows/linear-systems-with-gestalt/">Linear Systems with Gestalt!</a></strong></li>
+        */
+        ?>
     </ul>
 </div>
 <div class="Sunday day">
