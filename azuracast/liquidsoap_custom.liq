@@ -338,7 +338,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Monday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -357,6 +356,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),    
+    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
@@ -409,7 +409,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 17h-17h58m}, once(playlist_udcsi)),
     ({1w and 18h-18h28m}, once(playlist_weirdest_hits)),
     ({1w and 18h30m-18h58m}, once(playlist_soundscape_diaries_emcsivel)),
-    ({1w and 19h-20h58m}, once(playlist_erdenklang)),
     ({1w and 21h-22h58m}, once(playlist_infinite_scroll)),      
     ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
@@ -425,6 +424,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 11h-12h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 13h30m-13h58m}, once(playlist_tudtad)),
     ({3w and 14h-14h58m}, once(playlist_erto_hallgatas)),
+    ({3w and 15h-15h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_svadhyaya)),
     ({3w and 18h-18h58m}, once(playlist_rambo)),
     ({3w and 19h-19h58m}, once(playlist_boombap)),
