@@ -35,7 +35,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^2.1.1",
     "del": "^3.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prettier": "1.12.1",
     "sass-loader": "^7.3.1",
     "vue-loader": "14.2.2",
