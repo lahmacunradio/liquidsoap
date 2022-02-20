@@ -238,7 +238,7 @@ if ( $contShower == "show" ) {
 
 /* Add Social Menu */
 register_nav_menus( array(
-    'social' => __( 'Social Menu', 'lahma' )
+    'social' => __( 'Social Menu', 'lahma_cms' )
 ) );
 
 // Add Gallery for REST API query
