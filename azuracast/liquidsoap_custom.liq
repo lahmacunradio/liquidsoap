@@ -187,6 +187,9 @@ playlist_healing = audio_to_stereo(id="stereo_playlist_healing", playlist_healin
 playlist_ember_a_palyan = playlist(id="playlist_ember_a_palyan",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ember_a_palyan.m3u")
 playlist_ember_a_palyan = audio_to_stereo(id="stereo_playlist_ember_a_palyan", playlist_ember_a_palyan)
 
+playlist_brainfuq = playlist(id="playlist_brainfuq",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_brainfuq.m3u")
+playlist_brainfuq = audio_to_stereo(id="stereo_playlist_brainfuq", playlist_brainfuq)
+
 # Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = audio_to_stereo(id="stereo_playlist_ritka_csut", playlist_ritka_csut)
@@ -383,6 +386,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -427,7 +431,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 19h-19h58m}, once(playlist_havizaj)),
     ({2w and 20h-20h58m}, once(playlist_turmeric_acid)),
     ({2w and 21h-21h58m}, once(playlist_exit)),
-    ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Mill - Mosoly
+    ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Melyvagas - Exit
     ({3w and 11h-12h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 13h30m-13h58m}, once(playlist_tudtad)),
     ({3w and 14h-14h58m}, once(playlist_erto_hallgatas)),
@@ -453,6 +457,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 13h30m-14h58m}, once(playlist_szusivacsi)),           
     ({5w and 16h-16h58m}, once(playlist_dead_hound)),
     ({5w and 17h-17h58m}, once(playlist_graveyard_slot)),
+    ({5w and 18h-18h58m}, once(playlist_brainfuq)),
     ({5w and 19h-19h58m}, once(playlist_moneyka)),
     ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 22h-22h58m}, once(playlist_revzrt)),       
