@@ -472,16 +472,16 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 21h-22h28m}, once(playlist_d23)),
     ({6w22h30m-6w23h28m}, once(playlist_linear_systems_with_gestalt)),
     ({6w10h-6w23h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
-    ({7w and 9h30m-11h28m}, once(playlist_lohuma)),                    #Sunday
-    ({7w and 11h30m-12h58m}, once(playlist_bambusz)),
-    ({7w and 13h-15h58m}, once(playlist_donald_kacsa_klub)),
-    ({7w and 16h-16h58m}, once(playlist_geigercounterculture)),
-    ({7w and 17h-17h58m}, once(playlist_hetedik_tipusu_talalkozas)),
-    ({7w and 18h-18h58m}, once(playlist_hatterzaj)),
-    ({7w and 19h-19h58m}, once(playlist_ltmshow)),
-    ({7w and 20h-20h58m}, once(playlist_sub_burek)),
-    ({7w and 21h-21h58m}, once(playlist_zeneszen)),
-    ({7w and 9h30m-21h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Zeneszen
+    ({7w and 8h30m-10h28m}, once(playlist_lohuma)),                    #Sunday
+    ({7w and 10h30m-11h58m}, once(playlist_bambusz)),
+    ({7w and 12h-14h58m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 15h-15h58m}, once(playlist_geigercounterculture)),
+    ({7w and 16h-16h58m}, once(playlist_hetedik_tipusu_talalkozas)),
+    ({7w and 17h-17h58m}, once(playlist_hatterzaj)),
+    ({7w and 18h-18h58m}, once(playlist_ltmshow)),
+    ({7w and 19h-19h58m}, once(playlist_sub_burek)),
+    ({7w and 20h-20h58m}, once(playlist_zeneszen)),
+    ({7w and 9h-20h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Zeneszen
     ({true}, radio) ])
 
 
