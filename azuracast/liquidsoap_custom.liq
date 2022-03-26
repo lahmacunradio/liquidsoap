@@ -432,17 +432,17 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 19h-19h58m}, once(playlist_turmeric_acid)),
     ({2w and 20h-20h58m}, once(playlist_exit)),
     ({2w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Melyvagas - Exit
-    ({3w and 11h-12h58m}, once(playlist_lahmacun_presents)),           #Wednesday
-    ({3w and 13h30m-13h58m}, once(playlist_tudtad)),
-    ({3w and 14h-14h58m}, once(playlist_erto_hallgatas)),
-    ({3w and 15h-15h58m}, once(playlist_erdenklang)),
-    ({3w and 17h-17h58m}, once(playlist_svadhyaya)),
-    ({3w and 18h-18h58m}, once(playlist_rambo)),
-    ({3w and 19h-19h58m}, once(playlist_boombap)),
-    ({3w and 20h-20h58m}, once(playlist_eastern_daze)),
-    ({3w and 21h-21h58m}, once(playlist_1800venus)),
-    ({3w and 22h-22h58m}, once(playlist_radio_bluszcze)),
-    ({3w and 13h30m-22h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Bluszcze
+    ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),           #Wednesday
+    ({3w and 12h30m-12h58m}, once(playlist_tudtad)),
+    ({3w and 13h-13h58m}, once(playlist_erto_hallgatas)),
+    ({3w and 14h-14h58m}, once(playlist_erdenklang)),
+    ({3w and 16h-16h58m}, once(playlist_svadhyaya)),
+    ({3w and 17h-17h58m}, once(playlist_rambo)),
+    ({3w and 18h-18h58m}, once(playlist_boombap)),
+    ({3w and 19h-19h58m}, once(playlist_eastern_daze)),
+    ({3w and 20h-20h58m}, once(playlist_1800venus)),
+    ({3w and 21h-21h58m}, once(playlist_radio_bluszcze)),
+    ({3w and 12h15m-21h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Bluszcze
     ({4w and 11h-12h58m}, once(playlist_ritka_csut)),                  #Thursday
     ({4w and 13h-13h58m}, once(playlist_muhelycast)),                  
     ({4w and 15h-15h58m}, once(playlist_himihumi)),
