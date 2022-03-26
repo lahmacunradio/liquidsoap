@@ -462,16 +462,16 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 19h-20h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 21h-21h58m}, once(playlist_revzrt)),       
     ({5w and 12h15m-21h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
-    ({6w and 10h30m-12h28m}, once(playlist_merites)),                  #Saturday
-    ({6w and 12h30m-13h28m}, once(playlist_jambikus_nesz)),     
-    ({6w and 13h30m-15h58m}, once(playlist_torso)),
-    ({6w and 16h-16h58m}, once(playlist_footwork_jimbob)),
-    ({6w and 17h-18h58m}, once(playlist_rnr666)),
-    ({6w and 19h-20h58m}, once(playlist_mood_sequence)),
-    ({6w and 21h00m-21h58m}, once(playlist_brains_sublimating)),
-    ({6w and 22h00m-23h28m}, once(playlist_d23)),
-    ({6w23h30m-7w00h28m}, once(playlist_linear_systems_with_gestalt)),
-    ({6w10h30m-7w00h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
+    ({6w and 9h30m-11h28m}, once(playlist_merites)),                  #Saturday
+    ({6w and 11h30m-12h28m}, once(playlist_jambikus_nesz)),     
+    ({6w and 12h30m-14h58m}, once(playlist_torso)),
+    ({6w and 15h-15h58m}, once(playlist_footwork_jimbob)),
+    ({6w and 16h-17h58m}, once(playlist_rnr666)),
+    ({6w and 18h-19h58m}, once(playlist_mood_sequence)),
+    ({6w and 20h-20h58m}, once(playlist_brains_sublimating)),
+    ({6w and 21h-22h28m}, once(playlist_d23)),
+    ({6w22h30m-6w23h28m}, once(playlist_linear_systems_with_gestalt)),
+    ({6w10h-6w23h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 9h30m-11h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h58m}, once(playlist_bambusz)),
     ({7w and 13h-15h58m}, once(playlist_donald_kacsa_klub)),
