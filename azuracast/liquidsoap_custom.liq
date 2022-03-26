@@ -452,16 +452,16 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 19h-20h58m}, once(playlist_schmerz)),
     ({4w and 21h-22h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-21h30m}, off_air_ambient_mix),                        #ambient: Ritka csut - Gyogyf
-    ({5w and 11h-12h58m}, once(playlist_ritka_pentek)),                #Friday
-    ({5w and 13h00m-13h28m}, once(playlist_melania)),                     
-    ({5w and 13h30m-14h58m}, once(playlist_szusivacsi)),           
-    ({5w and 16h-16h58m}, once(playlist_dead_hound)),
-    ({5w and 17h-17h58m}, once(playlist_graveyard_slot)),
-    ({5w and 18h-18h58m}, once(playlist_brainfuq)),
-    ({5w and 19h-19h58m}, once(playlist_moneyka)),
-    ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
-    ({5w and 22h-22h58m}, once(playlist_revzrt)),       
-    ({5w and 11h-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
+    ({5w and 10h-11h58m}, once(playlist_ritka_pentek)),                #Friday
+    ({5w and 12h00m-12h28m}, once(playlist_melania)),                     
+    ({5w and 12h30m-13h58m}, once(playlist_szusivacsi)),           
+    ({5w and 15h-15h58m}, once(playlist_dead_hound)),
+    ({5w and 16h-16h58m}, once(playlist_graveyard_slot)),
+    ({5w and 17h-17h58m}, once(playlist_brainfuq)),
+    ({5w and 18h-18h58m}, once(playlist_moneyka)),
+    ({5w and 19h-20h58m}, once(playlist_arcadeok_alatt)),       
+    ({5w and 21h-21h58m}, once(playlist_revzrt)),       
+    ({5w and 12h15m-21h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
     ({6w and 10h30m-12h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 12h30m-13h28m}, once(playlist_jambikus_nesz)),     
     ({6w and 13h30m-15h58m}, once(playlist_torso)),
