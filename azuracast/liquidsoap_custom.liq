@@ -424,7 +424,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),
-    ({2w and 14h-14h58m}, once(playlist_melyvagas)),
+    ({2w and 13h30m-14h58m}, once(playlist_melyvagas)),
     ({2w and 15h-15h58m}, once(playlist_healing)),
     ({2w and 16h-16h58m}, once(playlist_mmn_radio)),
     ({2w and 17h-17h58m}, once(playlist_mosolyszunet)),
