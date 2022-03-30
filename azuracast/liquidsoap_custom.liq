@@ -431,7 +431,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 18h-18h58m}, once(playlist_havizaj)),
     ({2w and 19h-19h58m}, once(playlist_turmeric_acid)),
     ({2w and 20h-20h58m}, once(playlist_exit)),
-    ({2w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Melyvagas - Exit
+    ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Melyvagas - Exit
     ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 12h30m-12h58m}, once(playlist_tudtad)),
     ({3w and 13h-13h58m}, once(playlist_erto_hallgatas)),
