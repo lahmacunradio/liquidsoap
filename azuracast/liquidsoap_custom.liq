@@ -190,6 +190,9 @@ playlist_ember_a_palyan = audio_to_stereo(id="stereo_playlist_ember_a_palyan", p
 playlist_brainfuq = playlist(id="playlist_brainfuq",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_brainfuq.m3u")
 playlist_brainfuq = audio_to_stereo(id="stereo_playlist_brainfuq", playlist_brainfuq)
 
+playlist_urmajmok = playlist(id="playlist_urmajmok",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
+playlist_urmajmok = audio_to_stereo(id="stereo_playlist_urmajmok", playlist_urmajmok)
+
 # Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = audio_to_stereo(id="stereo_playlist_ritka_csut", playlist_ritka_csut)
@@ -347,6 +350,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Monday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -419,7 +423,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 16h-16h58m}, once(playlist_udcsi)),
     ({1w and 17h-17h28m}, once(playlist_weirdest_hits)),
     ({1w and 17h30m-17h58m}, once(playlist_soundscape_diaries_emcsivel)),
-    ({1w and 18h-18h58m}, once(playlist_ember_a_palyan)),      
+    ({1w and 18h-18h58m}, once(playlist_ember_a_palyan)),
+    ({1w and 19h-19h58m}, once(playlist_urmajmok)),      
     ({1w and 20h-21h58m}, once(playlist_infinite_scroll)),      
     ({1w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
