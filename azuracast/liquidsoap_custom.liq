@@ -190,8 +190,8 @@ playlist_brainfuq = audio_to_stereo(id="stereo_playlist_brainfuq", playlist_brai
 playlist_urmajmok = playlist(id="playlist_urmajmok",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
 playlist_urmajmok = audio_to_stereo(id="stereo_playlist_urmajmok", playlist_urmajmok)
 
-playlist_szeddalabad = playlist(id="playlist_szeddalabad",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szeddalabad.m3u")
-playlist_szeddalabad = audio_to_stereo(id="stereo_playlist_szeddalabad", playlist_szeddalabad)
+playlist_szedd_a_labad = playlist(id="playlist_szedd_a_labad",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szedd_a_labad.m3u")
+playlist_szedd_a_labad = audio_to_stereo(id="stereo_playlist_szedd_a_labad", playlist_szedd_a_labad)
 
 
 # Shared show slots
@@ -417,7 +417,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
-    ({1w and 8h-8h58m}, once(playlist_szeddalabad)),             # Monday
+    ({1w and 8h-8h58m}, once(playlist_szedd_a_labad)),             # Monday
     ({1w and 9h11m-10h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
     ({1w and 11h-11h58m}, once(playlist_a_who_say)),
     ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
