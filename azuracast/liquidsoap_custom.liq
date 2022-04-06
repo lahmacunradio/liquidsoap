@@ -190,7 +190,7 @@ playlist_brainfuq = audio_to_stereo(id="stereo_playlist_brainfuq", playlist_brai
 playlist_urmajmok = playlist(id="playlist_urmajmok",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
 playlist_urmajmok = audio_to_stereo(id="stereo_playlist_urmajmok", playlist_urmajmok)
 
-playlist_urlteszt = mksafe(input.https(max=20., "https://c18.radioboss.fm:18146/stream"))
+playlist_urlteszt = mksafe(input.https(max=20., "https://c18.radioboss.fm/stream/146"))
 playlist_urlteszt = audio_to_stereo(id="stereo_playlist_urlteszt", playlist_urlteszt)
 playlist_urlteszt = cue_cut(id="cue_playlist_urlteszt", playlist_urlteszt)
 
