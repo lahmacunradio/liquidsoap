@@ -85,9 +85,6 @@ playlist_transverszia = audio_to_stereo(id="stereo_playlist_transverszia", playl
 playlist_radio_bluszcze = playlist(id="playlist_radio_bluszcze",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_radio_bluszcze.m3u")
 playlist_radio_bluszcze = audio_to_stereo(id="stereo_playlist_radio_bluszcze", playlist_radio_bluszcze)
 
-playlist_muhelycast = playlist(id="playlist_muhelycast",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_muhelycast.m3u")
-playlist_muhelycast = audio_to_stereo(id="stereo_playlist_muhelycast", playlist_muhelycast)
-
 playlist_dead_hound = playlist(id="playlist_dead_hound",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_dead_hound.m3u")
 playlist_dead_hound = audio_to_stereo(id="stereo_playlist_dead_hound", playlist_dead_hound)
 
@@ -380,7 +377,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Thursday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -449,7 +445,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 21h-21h58m}, once(playlist_radio_bluszcze)),
     ({3w and 12h15m-21h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Bluszcze
     ({4w and 10h-11h58m}, once(playlist_ritka_csut)),                  #Thursday
-    ({4w and 12h-12h58m}, once(playlist_muhelycast)),                  
     ({4w and 14h-14h58m}, once(playlist_himihumi)),
     ({4w and 15h-16h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h58m}, once(playlist_dalmata_gergo_show)),
