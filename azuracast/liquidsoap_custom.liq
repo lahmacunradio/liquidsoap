@@ -190,6 +190,10 @@ playlist_brainfuq = audio_to_stereo(id="stereo_playlist_brainfuq", playlist_brai
 playlist_urmajmok = playlist(id="playlist_urmajmok",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
 playlist_urmajmok = audio_to_stereo(id="stereo_playlist_urmajmok", playlist_urmajmok)
 
+playlist_urlteszt = mksafe(input.https(max=20., "https://c18.radioboss.fm:18146/stream"))
+playlist_urlteszt = audio_to_stereo(id="stereo_playlist_urlteszt", playlist_urlteszt)
+playlist_urlteszt = cue_cut(id="cue_playlist_urlteszt", playlist_urlteszt)
+
 # Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = audio_to_stereo(id="stereo_playlist_ritka_csut", playlist_ritka_csut)
@@ -377,6 +381,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Thursday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -445,6 +450,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 21h-21h58m}, once(playlist_radio_bluszcze)),
     ({3w and 12h15m-21h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Bluszcze
     ({4w and 10h-11h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 12h-13h58m}, playlist_urlteszt),
     ({4w and 14h-14h58m}, once(playlist_himihumi)),
     ({4w and 15h-16h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h58m}, once(playlist_dalmata_gergo_show)),
