@@ -193,6 +193,9 @@ playlist_urmajmok = audio_to_stereo(id="stereo_playlist_urmajmok", playlist_urma
 playlist_szedd_a_labad = playlist(id="playlist_szedd_a_labad",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szedd_a_labad.m3u")
 playlist_szedd_a_labad = audio_to_stereo(id="stereo_playlist_szedd_a_labad", playlist_szedd_a_labad)
 
+playlist_cleptorama = playlist(id="playlist_cleptorama",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_cleptorama.m3u")
+playlist_cleptorama = audio_to_stereo(id="stereo_playlist_cleptorama", playlist_cleptorama)
+
 
 # Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -374,6 +377,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -443,6 +447,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 12h30m-12h58m}, once(playlist_tudtad)),
     ({3w and 13h-13h58m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h58m}, once(playlist_erdenklang)),
+    ({3w and 15h-15h58m}, once(playlist_cleptorama)),
     ({3w and 16h-16h58m}, once(playlist_svadhyaya)),
     ({3w and 17h-17h58m}, once(playlist_rambo)),
     ({3w and 18h-18h58m}, once(playlist_boombap)),
