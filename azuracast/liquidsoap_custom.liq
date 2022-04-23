@@ -148,8 +148,8 @@ playlist_zeneszen = audio_to_stereo(id="stereo_playlist_zeneszen", playlist_zene
 playlist_linear_systems_with_gestalt = playlist(id="playlist_linear_systems_with_gestalt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_linear_systems_with_gestalt.m3u")
 playlist_linear_systems_with_gestalt = audio_to_stereo(id="stereo_playlist_linear_systems_with_gestalt", playlist_linear_systems_with_gestalt)
 
-playlist_himihumi = playlist(id="playlist_himihumi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_himihumi.m3u")
-playlist_himihumi = audio_to_stereo(id="stereo_playlist_himihumi", playlist_himihumi)
+playlist_fkse = playlist(id="playlist_fkse",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_fkse.m3u")
+playlist_fkse = audio_to_stereo(id="stereo_playlist_fkse", playlist_fkse)
 
 playlist_hatterzaj = playlist(id="playlist_hatterzaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hatterzaj.m3u")
 playlist_hatterzaj = audio_to_stereo(id="stereo_playlist_hatterzaj", playlist_hatterzaj)
@@ -456,7 +456,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 21h-21h58m}, once(playlist_radio_bluszcze)),
     ({3w and 12h15m-21h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Bluszcze
     ({4w and 10h-11h58m}, once(playlist_ritka_csut)),                  #Thursday
-    ({4w and 14h-14h58m}, once(playlist_himihumi)),
+    ({4w and 14h-14h58m}, once(playlist_fkse)),
     ({4w and 15h-16h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 17h-17h58m}, once(playlist_dalmata_gergo_show)),
     ({4w and 18h-18h58m}, once(playlist_keygen)),
