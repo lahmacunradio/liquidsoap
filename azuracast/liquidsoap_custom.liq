@@ -118,8 +118,8 @@ playlist_lohuma = audio_to_stereo(id="stereo_playlist_lohuma", playlist_lohuma)
 playlist_merites= playlist(id="playlist_merites",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_merites.m3u")
 playlist_merites= audio_to_stereo(id="stereo_playlist_merites", playlist_merites)
 
-playlist_weirdest_hits = playlist(id="playlist_weirdest_hits",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_weirdest_hits.m3u")
-playlist_weirdest_hits = audio_to_stereo(id="stereo_playlist_weirdest_hits", playlist_weirdest_hits)
+playlist_randomcsunyalanyok = playlist(id="playlist_randomcsunyalanyok",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_randomcsunyalanyok.m3u")
+playlist_randomcsunyalanyok = audio_to_stereo(id="stereo_playlist_randomcsunyalanyok", playlist_randomcsunyalanyok)
 
 playlist_rambo = playlist(id="playlist_rambo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
 playlist_rambo = audio_to_stereo(id="stereo_playlist_rambo", playlist_rambo)
@@ -355,7 +355,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Monday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -396,6 +395,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -427,7 +427,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
     ({1w and 15h-15h58m}, once(playlist_paikka)),
     ({1w and 16h-16h58m}, once(playlist_udcsi)),
-    ({1w and 17h-17h28m}, once(playlist_weirdest_hits)),
     ({1w and 17h30m-17h58m}, once(playlist_soundscape_diaries_emcsivel)),
     ({1w and 18h-18h58m}, once(playlist_ember_a_palyan)),
     ({1w and 19h-19h58m}, once(playlist_urmajmok)),      
@@ -465,7 +464,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 12h30m-21h30m}, off_air_ambient_mix),                        #ambient: Ritka csut - Gyogyf
     ({5w and 10h-11h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 12h00m-12h28m}, once(playlist_melania)),                     
-    ({5w and 12h30m-13h58m}, once(playlist_szusivacsi)),           
+    ({5w and 12h30m-13h58m}, once(playlist_szusivacsi)),
+    ({5w and 14h-14h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 15h-15h58m}, once(playlist_dead_hound)),
     ({5w and 16h-16h58m}, once(playlist_graveyard_slot)),
     ({5w and 17h-17h58m}, once(playlist_brainfuq)),
