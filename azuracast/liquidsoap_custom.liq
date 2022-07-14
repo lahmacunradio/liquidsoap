@@ -70,9 +70,6 @@ playlist_arcadeok_alatt = audio_to_stereo(id="stereo_playlist_arcadeok_alatt", p
 playlist_a_who_say = playlist(id="playlist_a_who_say",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
 playlist_a_who_say = audio_to_stereo(id="stereo_playlist_a_who_say", playlist_a_who_say)
 
-playlist_brains_sublimating = playlist(id="playlist_brains_sublimating",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_brains_sublimating.m3u")
-playlist_brains_sublimating = audio_to_stereo(id="stereo_playlist_brains_sublimating", playlist_brains_sublimating)
-
 playlist_d23 = playlist(id="playlist_d23",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_d23.m3u")
 playlist_d23 = audio_to_stereo(id="stereo_playlist_d23", playlist_d23)
 
@@ -401,7 +398,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Saturday ^^^
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -474,7 +470,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 15h-15h58m}, once(playlist_footwork_jimbob)),
     ({6w and 16h-17h58m}, once(playlist_rnr666)),
     ({6w and 18h-19h58m}, once(playlist_mood_sequence)),
-    ({6w and 20h-20h58m}, once(playlist_brains_sublimating)),
     ({6w and 21h-22h28m}, once(playlist_d23)),
     ({6w22h30m-6w23h28m}, once(playlist_linear_systems_with_gestalt)),
     ({6w10h-6w23h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
