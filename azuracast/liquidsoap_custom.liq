@@ -370,6 +370,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -390,7 +391,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
-    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -444,7 +444,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 18h-18h58m}, once(playlist_boombap)),
     ({3w and 19h-19h58m}, once(playlist_eastern_daze)),
     ({3w and 20h-20h58m}, once(playlist_1800venus)),
-    ({3w and 12h15m-20h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Venus
+    ({3w and 21h-21h58m}, once(playlist_linear_systems_with_gestalt)),
+    ({3w and 12h15m-21h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Gestalt
     ({4w and 10h-11h58m}, once(playlist_ritka_csut)),                  #Thursday
     ({4w and 14h-14h58m}, once(playlist_fkse)),
     ({4w and 15h-16h58m}, once(playlist_lazy_calm_raga)),
@@ -471,7 +472,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 16h-17h58m}, once(playlist_rnr666)),
     ({6w and 18h-19h58m}, once(playlist_mood_sequence)),
     ({6w and 21h-22h28m}, once(playlist_d23)),
-    ({6w22h30m-6w23h28m}, once(playlist_linear_systems_with_gestalt)),
     ({6w10h-6w23h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 8h30m-10h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 10h30m-11h58m}, once(playlist_bambusz)),
