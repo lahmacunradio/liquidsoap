@@ -190,6 +190,9 @@ playlist_cleptorama = audio_to_stereo(id="stereo_playlist_cleptorama", playlist_
 playlist_felregombolt = playlist(id="playlist_felregombolt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_felregombolt.m3u")
 playlist_felregombolt = audio_to_stereo(id="stereo_playlist_felregombolt", playlist_felregombolt)
 
+playlist_korunk = playlist(id="playlist_korunk",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_korunk.m3u")
+playlist_korunk = audio_to_stereo(id="stereo_playlist_korunk", playlist_korunk)
+
 
 # Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -349,6 +352,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),    
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Monday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -416,6 +420,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 8h-8h58m}, once(playlist_szedd_a_labad)),             # Monday
     ({1w and 9h11m-10h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
     ({1w and 11h-11h58m}, once(playlist_a_who_say)),
+    ({1w and 12h-12h58m}, once(playlist_korunk)),    
     ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
     ({1w and 15h-15h58m}, once(playlist_paikka)),
     ({1w and 16h-16h58m}, once(playlist_udcsi)),
