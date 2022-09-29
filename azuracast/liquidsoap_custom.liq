@@ -169,8 +169,8 @@ playlist_graveyard_slot = audio_to_stereo(id="stereo_playlist_graveyard_slot", p
 playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
 playlist_geigercounterculture = audio_to_stereo(id="stereo_playlist_geigercounterculture", playlist_geigercounterculture)
 
-playlist_healing = playlist(id="playlist_healing",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_healing.m3u")
-playlist_healing = audio_to_stereo(id="stereo_playlist_healing", playlist_healing)
+playlist_radical_happiness = playlist(id="playlist_radical_happiness",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_radical_happiness.m3u")
+playlist_radical_happiness = audio_to_stereo(id="stereo_playlist_radical_happiness", playlist_radical_happiness)
 
 playlist_ember_a_palyan = playlist(id="playlist_ember_a_palyan",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ember_a_palyan.m3u")
 playlist_ember_a_palyan = audio_to_stereo(id="stereo_playlist_ember_a_palyan", playlist_ember_a_palyan)
@@ -433,7 +433,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 6h-6h28m}, once(playlist_felregombolt)),
     ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 13h30m-14h58m}, once(playlist_melyvagas)),
-    ({2w and 15h-15h58m}, once(playlist_healing)),
+    ({2w and 15h-15h58m}, once(playlist_radical_happiness)),
     ({2w and 16h-16h58m}, once(playlist_mmn_radio)),
     ({2w and 17h-17h58m}, once(playlist_mosolyszunet)),
     ({2w and 18h-18h58m}, once(playlist_havizaj)),
