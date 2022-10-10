@@ -121,8 +121,8 @@ playlist_rambo = audio_to_stereo(id="stereo_playlist_rambo", playlist_rambo)
 playlist_1800venus = playlist(id="playlist_1800venus",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_1800venus.m3u")
 playlist_1800venus = audio_to_stereo(id="stereo_playlist_1800venus", playlist_1800venus)
 
-playlist_ltmshow = playlist(id="playlist_ltmshow",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ltmshow.m3u")
-playlist_ltmshow = audio_to_stereo(id="stereo_playlist_ltmshow", playlist_ltmshow)
+playlist_csuszka = playlist(id="playlist_csuszka",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_csuszka.m3u")
+playlist_csuszka = audio_to_stereo(id="stereo_playlist_csuszka", playlist_csuszka)
 
 playlist_boombap = playlist(id="playlist_boombap",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
 playlist_boombap = audio_to_stereo(id="stereo_playlist_boombap", playlist_boombap)
@@ -484,7 +484,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({7w and 15h-15h58m}, once(playlist_geigercounterculture)),
     ({7w and 16h-16h58m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 17h-17h58m}, once(playlist_hatterzaj)),
-    ({7w and 18h-18h58m}, once(playlist_ltmshow)),
+    ({7w and 18h-18h58m}, once(playlist_csuszka)),
     ({7w and 19h-19h58m}, once(playlist_sub_burek)),
     ({7w and 20h-20h58m}, once(playlist_zeneszen)),
     ({7w and 9h-20h30m}, off_air_ambient_mix),                        #ambient: Lohuma - Zeneszen
