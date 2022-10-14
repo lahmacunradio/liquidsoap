@@ -87,40 +87,6 @@ playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
 # Standard Playlists
 radio = random(id="lahmacun_radio_standard_playlists", weights=[1], [playlist_off_air])
 
-# Standard Schedule Switches
-
-radio = switch(id="schedule_switch", track_sensitive=false, [ ({ 5w and 14h36m-14h37m or 14h38m-14h39m}, delay(80., playlist_mmn_radio)), ({true}, radio) ])
-
-requests = request.queue(id="requests")
-requests = cue_cut(id="cue_requests", requests)
-radio = fallback(id="requests_fallback", track_sensitive = true, [requests, radio])
-
-interrupting_queue = request.queue(id="interrupting_requests")
-interrupting_queue = cue_cut(id="cue_interrupting_requests", interrupting_queue)
-radio = fallback(id="interrupting_fallback", track_sensitive = false, [interrupting_queue, radio])
-
-def add_skip_command(s) =
-    def skip(_) =
-        source.skip(s)
-        "Done!"
-    end
-
-    server.register(namespace="radio", usage="skip", description="Skip the current song.", "skip",skip)
-end
-
-add_skip_command(radio)
-
-def fading_transition(a,b)
-    #Example: play jingle after "my show" (set playlist ID as needed)
-    if a.metadata["playlist_id"] == "2" then
-        sequence([fade.out(a.source),playlist_jingle_station_id, fade.in(b.source)])
-    else 
-        sequence([fade.out(a.source),fade.in(b.source)])
-    end
-end
-
-radio = cross(fading_transition, radio)
-
 # DJ Authentication
 last_authenticated_dj = ref("")
 live_dj = ref("")
@@ -190,7 +156,34 @@ def insert_missing(m) =
 end
 live = map_metadata(insert_missing, live)
 
-radio = fallback(id="live_fallback", replay_metadata=true, [live, radio])
+# Standard Schedule Switches
+radio = switch(id="schedule_switch", track_sensitive=false, [ ({!live_enabled}, live),({ 5w and 14h36m-14h37m or 14h38m-14h39m}, delay(80., playlist_mmn_radio)), ({true}, radio) ])
+
+requests = request.queue(id="requests")
+requests = cue_cut(id="cue_requests", requests)
+radio = fallback(id="requests_fallback", track_sensitive = true, [requests, radio])
+
+interrupting_queue = request.queue(id="interrupting_requests")
+interrupting_queue = cue_cut(id="cue_interrupting_requests", interrupting_queue)
+radio = fallback(id="interrupting_fallback", track_sensitive = false, [interrupting_queue, radio])
+
+def add_skip_command(s) =
+    def skip(_) =
+        source.skip(s)
+        "Done!"
+    end
+
+    server.register(namespace="radio", usage="skip", description="Skip the current song.", "skip",skip)
+end
+
+add_skip_command(radio)
+
+def fading_transition(a,b)
+        source.skip(b.source)
+        sequence([fade.out(a.source),playlist_jingle_station_id, fade.in(b.source)])
+end
+
+radio = cross(fading_transition, radio)
 
 # Skip non-live track when live DJ goes live.
 def check_live() =
