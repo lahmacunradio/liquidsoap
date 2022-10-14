@@ -72,18 +72,24 @@ add_protocol(
     syntax="media:uri"
 )
 
-playlist_default = playlist(id="playlist_default",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_default.m3u")
-playlist_default = cue_cut(id="cue_playlist_default", playlist_default)
+playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
+playlist_off_air = cue_cut(id="stereo_playlist_off_air", playlist_off_air)
 
 playlist_mmn_radio = playlist(id="playlist_mmn_radio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mmn_radio.m3u")
 playlist_mmn_radio = cue_cut(id="cue_playlist_mmn_radio", playlist_mmn_radio)
 
+# Jingle playlists
+playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
+playlist_jingle_station_id = cue_cut(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
+playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
+
+
 # Standard Playlists
-radio = random(id="standard_playlists", weights=[3], [playlist_default])
+radio = random(id="lahmacun_radio_standard_playlists", weights=[1], [playlist_off_air])
 
 # Standard Schedule Switches
 
-radio = switch(id="schedule_switch", track_sensitive=true, [ ({ (2w) and 18h0m-18h57m }, playlist_mmn_radio), ({true}, radio) ])
+radio = switch(id="schedule_switch", track_sensitive=false, [ ({ 5w and 14h36m-14h37m or 14h38m-14h39m}, delay(80., playlist_mmn_radio)), ({true}, radio) ])
 
 requests = request.queue(id="requests")
 requests = cue_cut(id="cue_requests", requests)
@@ -104,17 +110,16 @@ end
 
 add_skip_command(radio)
 
-def live_aware_crossfade(old, new) =
-    if !to_live then
-        # If going to the live show, play a simple sequence
-        sequence([fade.out(old.source),fade.in(new.source)])
-    else
-        # Otherwise, use the smart transition
-        cross.simple(old.source, new.source, fade_in=2.00, fade_out=2.00)
+def fading_transition(a,b)
+    #Example: play jingle after "my show" (set playlist ID as needed)
+    if a.metadata["playlist_id"] == "2" then
+        sequence([fade.out(a.source),playlist_jingle_station_id, fade.in(b.source)])
+    else 
+        sequence([fade.out(a.source),fade.in(b.source)])
     end
 end
 
-radio = cross(minimum=0., duration=3.00, live_aware_crossfade, radio)
+radio = cross(fading_transition, radio)
 
 # DJ Authentication
 last_authenticated_dj = ref("")
