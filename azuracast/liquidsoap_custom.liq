@@ -83,9 +83,8 @@ playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="rand
 playlist_jingle_station_id = cue_cut(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
 playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
 
-
-# Standard Playlists
-radio = random(id="lahmacun_radio_standard_playlists", weights=[1], [playlist_off_air])
+playlist_jingle_donate = playlist(id="playlist_jingle_donate",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_donate.m3u")
+playlist_jingle_donate = cue_cut(id="stereo_playlist_jingle_donate", playlist_jingle_donate)
 
 # DJ Authentication
 last_authenticated_dj = ref("")
@@ -140,10 +139,6 @@ def live_disconnected() =
     live_dj := ""
 end
 
-# A Pre-DJ source of radio that can be broadcast if needed',
-radio_without_live = radio
-ignore(radio_without_live)
-
 # Live Broadcasting
 live = input.harbor("/", id = "input_streamer", port = 8005, auth = dj_auth, icy = true, icy_metadata_charset = "UTF-8", metadata_charset = "UTF-8", on_connect = live_connected, on_disconnect = live_disconnected, buffer = 5.00, max = 10.00)
 
@@ -157,7 +152,10 @@ end
 live = map_metadata(insert_missing, live)
 
 # Standard Schedule Switches
-radio = switch(id="schedule_switch", track_sensitive=false, [ ({!live_enabled}, live),({ 5w and 14h36m-14h37m or 14h38m-14h39m}, delay(80., playlist_mmn_radio)), ({true}, radio) ])
+radio = switch(id="schedule_switch", track_sensitive=false, [ 
+    ({!live_enabled}, live),
+    ({ 6w and 16h19m-16h21m}, delay(80., playlist_mmn_radio)), 
+    ({true}, playlist_off_air) ])
 
 requests = request.queue(id="requests")
 requests = cue_cut(id="cue_requests", requests)
@@ -179,8 +177,13 @@ end
 add_skip_command(radio)
 
 def fading_transition(a,b)
-        source.skip(b.source)
-        sequence([fade.out(a.source),playlist_jingle_station_id, fade.in(b.source)])
+    #Entering OFF AIR (after another OFF AIR track or after a show) - ADJUST OFF AIR PLAYLIST'S ID AS NEEDED 
+    if b.metadata["playlist_id"] == "1" then
+        sequence([fade.out(a.source),playlist_jingle_station_id, playlist_jingle_donate, fade.in(b.source)])
+    #Entering a show
+    else
+        sequence([fade.out(a.source),playlist_jingle_station_id, b.source])
+    end
 end
 
 radio = cross(fading_transition, radio)
@@ -190,7 +193,6 @@ def check_live() =
     if live.is_ready() then
         if not !to_live then
             to_live := true
-            radio_without_live.skip()
         end
     else
         to_live := false
