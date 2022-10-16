@@ -80,11 +80,15 @@ playlist_mmn_radio = cue_cut(id="cue_playlist_mmn_radio", playlist_mmn_radio)
 
 # Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
-playlist_jingle_station_id = cue_cut(id="stereo_playlist_jingle_station_id", playlist_jingle_station_id)
+playlist_jingle_station_id = cue_cut(id="cue_playlist_jingle_station_id", playlist_jingle_station_id)
 playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
 
 playlist_jingle_donate = playlist(id="playlist_jingle_donate",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_donate.m3u")
-playlist_jingle_donate = cue_cut(id="stereo_playlist_jingle_donate", playlist_jingle_donate)
+playlist_jingle_donate = cue_cut(id="cue_playlist_jingle_donate", playlist_jingle_donate)
+
+#External streams
+#Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
+#external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
 
 # DJ Authentication
 last_authenticated_dj = ref("")
@@ -155,15 +159,9 @@ live = map_metadata(insert_missing, live)
 radio = switch(id="schedule_switch", track_sensitive=false, [ 
     ({!live_enabled}, live),
     ({ 6w and 16h19m-16h21m}, delay(80., playlist_mmn_radio)), 
+#Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
+#    ({ 6w and 18h23m-18h24m}, external_cashmere), 
     ({true}, playlist_off_air) ])
-
-requests = request.queue(id="requests")
-requests = cue_cut(id="cue_requests", requests)
-radio = fallback(id="requests_fallback", track_sensitive = true, [requests, radio])
-
-interrupting_queue = request.queue(id="interrupting_requests")
-interrupting_queue = cue_cut(id="cue_interrupting_requests", interrupting_queue)
-radio = fallback(id="interrupting_fallback", track_sensitive = false, [interrupting_queue, radio])
 
 def add_skip_command(s) =
     def skip(_) =
