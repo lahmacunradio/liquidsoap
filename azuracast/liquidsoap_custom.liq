@@ -416,7 +416,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 8h-8h58m}, once(playlist_szedd_a_labad)),             # Monday
     ({1w and 9h11m-10h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
     ({1w and 11h-11h58m}, once(playlist_a_who_say)),
-    ({1w and 12h-12h58m}, once(playlist_korunk)),    
+    ({1w and 12h-13h28m}, once(playlist_korunk)),    
     ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
     ({1w and 15h-15h58m}, once(playlist_paikka)),
     ({1w and 16h-16h58m}, once(playlist_udcsi)),
