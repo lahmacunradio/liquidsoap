@@ -425,17 +425,17 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 20h-20h58m}, once(playlist_urmajmok)),      
     ({1w and 21h-22h58m}, once(playlist_infinite_scroll)),      
     ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
-    ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
-    ({2w and 6h-6h28m}, once(playlist_felregombolt)),
-    ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),
-    ({2w and 13h30m-14h58m}, once(playlist_melyvagas)),
-    ({2w and 15h-15h58m}, once(playlist_radical_happiness)),
-    ({2w and 16h-16h58m}, once(playlist_mmn_radio)),
-    ({2w and 17h-17h58m}, once(playlist_mosolyszunet)),
-    ({2w and 18h-18h58m}, once(playlist_havizaj)),
-    ({2w and 19h-19h58m}, once(playlist_turmeric_acid)),
-    ({2w and 20h-20h58m}, once(playlist_exit)),
-    ({2w and 14h-20h30m}, off_air_ambient_mix),                        #ambient: Melyvagas - Exit
+    ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
+    ({2w and 7h-7h28m}, once(playlist_felregombolt)),
+    ({2w and 11h-12h58m}, once(playlist_lahmaloudclouds)),
+    ({2w and 14h30m-15h58m}, once(playlist_melyvagas)),
+    ({2w and 16h-16h58m}, once(playlist_radical_happiness)),
+    ({2w and 17h-17h58m}, once(playlist_mmn_radio)),
+    ({2w and 18h-18h58m}, once(playlist_mosolyszunet)),
+    ({2w and 19h-19h58m}, once(playlist_havizaj)),
+    ({2w and 20h-20h58m}, once(playlist_turmeric_acid)),
+    ({2w and 21h-21h58m}, once(playlist_exit)),
+    ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Melyvagas - Exit
     ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 12h30m-12h58m}, once(playlist_tudtad)),
     ({3w and 13h-13h58m}, once(playlist_erto_hallgatas)),
