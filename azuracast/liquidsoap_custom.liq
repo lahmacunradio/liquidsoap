@@ -88,9 +88,6 @@ playlist_infinite_scroll = audio_to_stereo(id="stereo_playlist_infinite_scroll",
 playlist_torso = playlist(id="playlist_torso",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_torso.m3u")
 playlist_torso = audio_to_stereo(id="stereo_playlist_torso", playlist_torso)
 
-playlist_svadhyaya = playlist(id="playlist_svadhyaya",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_svadhyaya.m3u")
-playlist_svadhyaya = audio_to_stereo(id="stereo_playlist_svadhyaya", playlist_svadhyaya)
-
 playlist_hetedik_tipusu_talalkozas = playlist(id="playlist_hetedik_tipusu_talalkozas",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hetedik_tipusu_talalkozas.m3u")
 playlist_hetedik_tipusu_talalkozas = audio_to_stereo(id="stereo_playlist_hetedik_tipusu_talalkozas", playlist_hetedik_tipusu_talalkozas)
 
@@ -370,7 +367,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),    
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -420,7 +416,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 8h-8h58m}, once(playlist_szedd_a_labad)),             # Monday
     ({1w and 9h11m-10h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
     ({1w and 11h-11h58m}, once(playlist_a_who_say)),
-    ({1w and 12h-12h58m}, once(playlist_korunk)),    
+    ({1w and 12h-13h28m}, once(playlist_korunk)),    
     ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
     ({1w and 15h-15h58m}, once(playlist_paikka)),
     ({1w and 16h-16h58m}, once(playlist_udcsi)),
@@ -445,7 +441,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 13h-13h58m}, once(playlist_erto_hallgatas)),
     ({3w and 14h-14h58m}, once(playlist_erdenklang)),
     ({3w and 15h-15h58m}, once(playlist_cleptorama)),
-    ({3w and 16h-16h58m}, once(playlist_svadhyaya)),
     ({3w and 17h-17h58m}, once(playlist_rambo)),
     ({3w and 18h-18h58m}, once(playlist_boombap)),
     ({3w and 19h-19h58m}, once(playlist_eastern_daze)),
