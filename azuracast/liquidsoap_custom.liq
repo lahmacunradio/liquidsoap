@@ -413,18 +413,18 @@ radio = switch(track_sensitive=false, transitions=[
     transition_length=60., #max duration of jingle (60s)
     [
     ({!live_enabled}, live),     #Live DJ          
-    ({1w and 8h-8h58m}, once(playlist_szedd_a_labad)),             # Monday
-    ({1w and 9h11m-10h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
-    ({1w and 11h-11h58m}, once(playlist_a_who_say)),
-    ({1w and 12h-13h28m}, once(playlist_korunk)),    
-    ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
-    ({1w and 15h-15h58m}, once(playlist_paikka)),
-    ({1w and 16h-16h58m}, once(playlist_udcsi)),
-    ({1w and 17h30m-17h58m}, once(playlist_soundscape_diaries_emcsivel)),
-    ({1w and 18h-18h58m}, once(playlist_ember_a_palyan)),
-    ({1w and 19h-19h58m}, once(playlist_urmajmok)),      
-    ({1w and 20h-21h58m}, once(playlist_infinite_scroll)),      
-    ({1w and 14h30m-20h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
+    ({1w and 9h-9h58m}, once(playlist_szedd_a_labad)),             # Monday
+    ({1w and 10h11m-11h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
+    ({1w and 12h-12h58m}, once(playlist_a_who_say)),
+    ({1w and 13h-14h28m}, once(playlist_korunk)),    
+    ({1w and 15h-15h58m}, once(playlist_szmuti_csorba)),
+    ({1w and 16h-16h58m}, once(playlist_paikka)),
+    ({1w and 17h-17h58m}, once(playlist_udcsi)),
+    ({1w and 18h30m-18h58m}, once(playlist_soundscape_diaries_emcsivel)),
+    ({1w and 19h-19h58m}, once(playlist_ember_a_palyan)),
+    ({1w and 20h-20h58m}, once(playlist_urmajmok)),      
+    ({1w and 21h-22h58m}, once(playlist_infinite_scroll)),      
+    ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
     ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 6h-6h28m}, once(playlist_felregombolt)),
     ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),
