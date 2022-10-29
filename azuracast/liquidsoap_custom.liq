@@ -472,7 +472,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 17h-18h58m}, once(playlist_rnr666)),
     ({6w and 19h-20h58m}, once(playlist_mood_sequence)),
     ({6w and 22h-23h28m}, once(playlist_d23)),
-    ({6w11h-6w00h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
+    ({6w11h-7w00h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 9h30m-11h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h58m}, once(playlist_bambusz)),
     ({7w and 13h-15h58m}, once(playlist_donald_kacsa_klub)),
