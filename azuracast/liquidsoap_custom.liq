@@ -190,6 +190,8 @@ playlist_felregombolt = audio_to_stereo(id="stereo_playlist_felregombolt", playl
 playlist_korunk = playlist(id="playlist_korunk",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_korunk.m3u")
 playlist_korunk = audio_to_stereo(id="stereo_playlist_korunk", playlist_korunk)
 
+playlist_btob = playlist(id="playlist_btob",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_btob.m3u")
+playlist_btob = audio_to_stereo(id="stereo_playlist_btob", playlist_btob)
 
 # Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -380,6 +382,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),    
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Thursday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -448,6 +451,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 22h-22h58m}, once(playlist_linear_systems_with_gestalt)),
     ({3w and 13h15m-22h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Gestalt
     ({4w and 11h-12h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 14h-14h58m}, once(playlist_btob)),
     ({4w and 15h-15h58m}, once(playlist_fkse)),
     ({4w and 16h-17h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 18h-18h58m}, once(playlist_dalmata_gergo_show)),
