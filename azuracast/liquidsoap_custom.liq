@@ -35,7 +35,7 @@ to_live = ref(false)
 ignore(to_live)
 
 azuracast_api_url = "http://127.0.0.1:6010/api/internal/1/liquidsoap"
-azuracast_api_key = "087bb1335893694bd2dc79d4e0a95cc0561d283c0817743dc0f50bda42d838c8062255a81094f632240e90f68b6cf947a7c7"
+azuracast_api_key = "AZURA_KEY"
 
 def azuracast_api_call(~timeout_ms=2000, url, payload) =
     full_url = "#{azuracast_api_url}/#{url}"
@@ -522,4 +522,4 @@ end
 radio = metadata.map(update=false, handle_jingle_mode, radio)
 
 # Local Broadcasts
-output.icecast(%mp3(samplerate=44100, stereo=true, bitrate=128, id3v2=true), id="local_1", host = "127.0.0.1", port = 8000, password = "pqhg2jaD", mount = "/radio.mp3", name = "Lahmacun radio", description = "", genre = "", public = false, encoding = "UTF-8", radio)
+output.icecast(%mp3(samplerate=44100, stereo=true, bitrate=128, id3v2=true), id="local_1", host = "127.0.0.1", port = 8000, password = "ICECAST_KEY", mount = "/radio.mp3", name = "Lahmacun radio", description = "", genre = "", public = false, encoding = "UTF-8", radio)
