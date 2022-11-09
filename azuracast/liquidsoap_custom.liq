@@ -124,9 +124,6 @@ playlist_csuszka = audio_to_stereo(id="stereo_playlist_csuszka", playlist_csuszk
 playlist_boombap = playlist(id="playlist_boombap",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
 playlist_boombap = audio_to_stereo(id="stereo_playlist_boombap", playlist_boombap)
 
-playlist_melania = playlist(id="playlist_melania",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_melania.m3u")
-playlist_melania = audio_to_stereo(id="stereo_playlist_melania", playlist_melania)
-
 playlist_szusivacsi = playlist(id="playlist_szusivacsi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szusivacsi.m3u")
 playlist_szusivacsi = audio_to_stereo(id="stereo_playlist_szusivacsi", playlist_szusivacsi)
 
@@ -392,7 +389,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -460,7 +456,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 22h-23h28m}, once(playlist_gyogyfurdo)),
     ({4w and 13h30m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka csut - Gyogyf
     ({5w and 11h-12h58m}, once(playlist_ritka_pentek)),                #Friday
-    ({5w and 13h00m-13h28m}, once(playlist_melania)),                     
     ({5w and 13h30m-14h58m}, once(playlist_szusivacsi)),
     ({5w and 15h-15h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 16h-16h58m}, once(playlist_dead_hound)),
