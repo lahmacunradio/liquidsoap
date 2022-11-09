@@ -223,6 +223,9 @@ playlist_tudtad = cue_cut(id="cue_playlist_tudtad", playlist_tudtad)
 playlist_paikka = playlist(id="playlist_paikka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_paikka.m3u")
 playlist_paikka = cue_cut(id="cue_playlist_paikka", playlist_paikka)
 
+playlist_soundscape_diaries_emcsivel = playlist(id="playlist_soundscape_diaries_emcsivel",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_soundscape_diaries_emcsivel.m3u")
+playlist_soundscape_diaries_emcsivel = audio_to_stereo(id="stereo_playlist_soundscape_diaries_emcsivel", playlist_soundscape_diaries_emcsivel)
+
 playlist_keygen = playlist(id="playlist_keygen",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_keygen.m3u")
 playlist_keygen = cue_cut(id="cue_playlist_keygen", playlist_keygen)
 
@@ -355,6 +358,7 @@ radio = switch(id="schedule_switch", track_sensitive=false, [
     ({1w and 15h-15h58m}, delay(3600.,playlist_szmuti_csorba)),
     ({1w and 16h-16h58m}, delay(3600.,playlist_paikka)),
     ({1w and 17h-17h58m}, delay(3600.,playlist_udcsi)),
+    ({1w and 18h30m-18h58m}, delay(1800., playlist_soundscape_diaries_emcsivel)),    
     ({1w and 19h-19h58m}, delay(3600.,playlist_ember_a_palyan)),
     ({1w and 20h-20h58m}, delay(3600.,playlist_urmajmok)),      
     ({1w and 21h-22h58m}, delay(7200.,playlist_infinite_scroll)),      
