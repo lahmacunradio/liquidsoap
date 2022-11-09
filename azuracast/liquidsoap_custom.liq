@@ -259,6 +259,8 @@ playlist_felregombolt = cue_cut(id="cue_playlist_felregombolt", playlist_felrego
 playlist_korunk = playlist(id="playlist_korunk",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_korunk.m3u")
 playlist_korunk = cue_cut(id="cue_playlist_korunk", playlist_korunk)
 
+playlist_btob = playlist(id="playlist_btob",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_btob.m3u")
+playlist_btob = audio_to_stereo(id="stereo_playlist_btob", playlist_btob)
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -380,6 +382,7 @@ radio = switch(id="schedule_switch", track_sensitive=false, [
     ({3w and 22h-22h58m}, delay(3600.,playlist_linear_systems_with_gestalt)),
     ({3w and 13h45m-22h30m}, playlist_off_air_ambient),                     #ambient: Tudtad - Gestalt
     ({4w and 11h-12h58m}, delay(7200.,playlist_ritka_csut)),                  #Thursday
+    ({4w and 14h-14h58m}, delay(3600.,playlist_btob)),    
     ({4w and 15h-15h58m}, delay(3600.,playlist_fkse)),
     ({4w and 16h-17h58m}, delay(7200.,playlist_lazy_calm_raga)),
     ({4w and 18h-18h58m}, delay(3600.,playlist_dalmata_gergo_show)),
