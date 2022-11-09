@@ -265,6 +265,9 @@ playlist_korunk = cue_cut(id="cue_playlist_korunk", playlist_korunk)
 playlist_btob = playlist(id="playlist_btob",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_btob.m3u")
 playlist_btob = audio_to_stereo(id="stereo_playlist_btob", playlist_btob)
 
+playlist_temporary_nites = playlist(id="playlist_temporary_nites",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_temporary_nites.m3u")
+playlist_temporary_nites = audio_to_stereo(id="stereo_playlist_temporary_nites", playlist_temporary_nites) 
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -379,6 +382,7 @@ radio = switch(id="schedule_switch", track_sensitive=false, [
     ({3w and 14h-14h58m}, delay(3600.,playlist_erto_hallgatas)),
     ({3w and 15h-15h58m}, delay(3600.,playlist_erdenklang)),
     ({3w and 16h-16h58m}, delay(3600.,playlist_cleptorama)),
+    ({3w and 17h-17h58m}, delay(3600.,playlist_temporary_nites)),    
     ({3w and 18h-18h58m}, delay(3600.,playlist_rambo)),
     ({3w and 19h-19h58m}, delay(3600.,playlist_boombap)),
     ({3w and 20h-20h58m}, delay(3600.,playlist_eastern_daze)),
