@@ -64,9 +64,6 @@ playlist_dalmata_gergo_show = audio_to_stereo(id="stereo_playlist_dalmata_gergo_
 playlist_gyogyfurdo = playlist(id="playlist_gyogyfurdo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_gyogyfurdo.m3u")
 playlist_gyogyfurdo = audio_to_stereo(id="stereo_playlist_gyogyfurdo", playlist_gyogyfurdo)
 
-playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
-playlist_arcadeok_alatt = audio_to_stereo(id="stereo_playlist_arcadeok_alatt", playlist_arcadeok_alatt)
-
 playlist_a_who_say = playlist(id="playlist_a_who_say",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
 playlist_a_who_say = audio_to_stereo(id="stereo_playlist_a_who_say", playlist_a_who_say)
 
@@ -378,7 +375,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -449,7 +445,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 11h-12h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 13h30m-14h58m}, once(playlist_szusivacsi)),
     ({5w and 15h-19h58m}, playlist_url),           
-    ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 13h15m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
     ({6w and 10h30m-12h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 12h30m-13h28m}, once(playlist_jambikus_nesz)),     
