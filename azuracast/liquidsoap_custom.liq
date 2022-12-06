@@ -444,7 +444,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({4w and 13h30m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka csut - Gyogyf
     ({5w and 11h-12h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 13h30m-14h58m}, once(playlist_szusivacsi)),
-    ({5w and 15h-19h58m}, playlist_url),           
+    ({5w15h-6w2h}, playlist_url),           
     ({5w and 13h15m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
     ({6w and 10h30m-12h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 12h30m-13h28m}, once(playlist_jambikus_nesz)),     
