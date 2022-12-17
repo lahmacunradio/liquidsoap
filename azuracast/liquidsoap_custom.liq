@@ -370,7 +370,7 @@ sources = [
     ({2w and 10h-11h58m}, delay(7200.,playlist_lahmaloudclouds)),
     ({2w and 13h30m-14h58m}, delay(5400.,playlist_melyvagas)),
     ({2w and 15h-15h58m}, delay(3600.,playlist_radical_happiness)),
-    ({2w and 16h-16h58m}, delay(3600.,initial=true, playlist_mmn_radio)),
+    ({2w and 16h-16h58m}, delay(3600.,playlist_mmn_radio)),
     ({2w and 17h-17h58m}, delay(3600.,playlist_mosolyszunet)),
     ({2w and 18h-18h58m}, delay(3600.,playlist_havizaj)),
     ({2w and 19h-19h58m}, delay(3600.,playlist_turmeric_acid)),
