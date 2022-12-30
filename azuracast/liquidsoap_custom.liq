@@ -206,6 +206,9 @@ playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
 playlist_jingle_donate = playlist(id="playlist_jingle_donate",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_donate.m3u")
 playlist_jingle_donate = audio_to_stereo(id="stereo_playlist_jingle_donate", playlist_jingle_donate)
 
+playlist_jingle_szilveszter = playlist(id="playlist_jingle_szilveszter",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_szilveszter.m3u")
+playlist_jingle_szilveszter = audio_to_stereo(id="stereo_playlist_jingle_szilveszter", playlist_jingle_szilveszter)
+
 # Generic playlists
 playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
 playlist_off_air_ambient = audio_to_stereo(id="stereo_playlist_off_air_ambient", playlist_off_air_ambient)
@@ -221,6 +224,12 @@ radio = rotate(id="lahmacun_radio_requests_fallback", weights=[1,1,1], [playlist
 
 #off air ambient source with jingles
 off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [playlist_jingle_donate, playlist_off_air_ambient])
+
+#Add jingles to New Year's Eve rotation
+
+szilveszter_reggel_mix = rotate(id="lahmacun_szilveszter_reggel_mix", weights=[1,1], [playlist_jingle_szilveszter, playlist_szilveszter_reggel])
+
+szilveszter_este_mix = rotate(id="lahmacun_szilveszter_este_mix", weights=[1,1], [playlist_jingle_szilveszter, playlist_szilveszter_este])
 
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
 def add_skip_command(s) =
@@ -451,8 +460,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 19h-19h58m}, once(playlist_moneyka)),
     ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 13h15m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
-    ({5w23h-6w11h}, playlist_szilveszter_reggel),                #SATURDAY: NEW YEAR'S EVE 
-    ({6w and 17h-23h}, playlist_szilveszter_este),
+    ({5w23h-6w11h}, szilveszter_reggel_mix),                #SATURDAY: NEW YEAR'S EVE 
+    ({6w and 17h-23h}, szilveszter_este_mix),
     ({6w11h-7w00h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 9h30m-11h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h58m}, once(playlist_bambusz)),
