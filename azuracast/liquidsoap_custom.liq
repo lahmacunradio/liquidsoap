@@ -227,9 +227,9 @@ off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [
 
 #Add jingles to New Year's Eve rotation
 
-2022_retro = rotate(id="lahmacun_2022_retro", weights=[1,1], [playlist_jingle_szilveszter, playlist_2022_retro])
+szilv_retro = rotate(id="lahmacun_szilv_retro", weights=[1,1], [playlist_jingle_szilveszter, playlist_2022_retro])
 
-2022_ujev = rotate(id="lahmacun_2022_ujev", weights=[1,1], [playlist_jingle_szilveszter, playlist_2022_ujev])
+szilv_ujev = rotate(id="lahmacun_dzilv_ujev", weights=[1,1], [playlist_jingle_szilveszter, playlist_2022_ujev])
 
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
 def add_skip_command(s) =
@@ -460,9 +460,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 19h-19h58m}, once(playlist_moneyka)),
     ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 13h15m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
-    ({5w23h-6w11h}, 2022_retro),                #SATURDAY: NEW YEAR'S EVE 
-    ({6w and 17h-23h}, 2022_ujev),
-    ({6w11h-7w00h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
+    ({5w23h-6w11h}, szilv_retro),                #SATURDAY: NEW YEAR'S EVE 
+    ({6w and 17h-23h}, szilv_ujev),
     ({7w and 9h30m-11h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h58m}, once(playlist_bambusz)),
     ({7w and 13h-15h58m}, once(playlist_donald_kacsa_klub)),
