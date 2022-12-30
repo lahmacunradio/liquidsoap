@@ -188,11 +188,11 @@ playlist_lahmacun_presents = audio_to_stereo(id="stereo_playlist_lahmacun_presen
 
 # 2022 New Year's Eve playlists
 
-playlist_szilveszter_reggel = playlist(id="playlist_szilveszter_reggel",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szilveszter_reggel.m3u")
-playlist_szilveszter_reggel = audio_to_stereo(id="stereo_playlist_szilveszter_reggel", playlist_szilveszter_reggel)
+playlist_2022_retro = playlist(id="playlist_2022_retro",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_2022_retro.m3u")
+playlist_2022_retro = audio_to_stereo(id="stereo_playlist_2022_retro", playlist_2022_retro)
 
-playlist_szilveszter_este = playlist(id="playlist_szilveszter_este",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szilveszter_este.m3u")
-playlist_szilveszter_este = audio_to_stereo(id="stereo_playlist_szilveszter_este", playlist_szilveszter_este)
+playlist_2022_ujev = playlist(id="playlist_2022_ujev",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_2022_ujev.m3u")
+playlist_2022_ujev = audio_to_stereo(id="stereo_playlist_2022_ujev", playlist_2022_ujev)
 
 # OFF AIR playlists
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
@@ -227,9 +227,9 @@ off_air_ambient_mix = rotate(id="lahmacun_off_air_ambient_mix", weights=[1,1], [
 
 #Add jingles to New Year's Eve rotation
 
-szilveszter_reggel_mix = rotate(id="lahmacun_szilveszter_reggel_mix", weights=[1,1], [playlist_jingle_szilveszter, playlist_szilveszter_reggel])
+2022_retro = rotate(id="lahmacun_2022_retro", weights=[1,1], [playlist_jingle_szilveszter, playlist_2022_retro])
 
-szilveszter_este_mix = rotate(id="lahmacun_szilveszter_este_mix", weights=[1,1], [playlist_jingle_szilveszter, playlist_szilveszter_este])
+2022_ujev = rotate(id="lahmacun_2022_ujev", weights=[1,1], [playlist_jingle_szilveszter, playlist_2022_ujev])
 
 # LAHMACUN: skip command added by hand (from Liquidsoap cookbook)
 def add_skip_command(s) =
@@ -460,8 +460,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 19h-19h58m}, once(playlist_moneyka)),
     ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 13h15m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
-    ({5w23h-6w11h}, szilveszter_reggel_mix),                #SATURDAY: NEW YEAR'S EVE 
-    ({6w and 17h-23h}, szilveszter_este_mix),
+    ({5w23h-6w11h}, 2022_retro),                #SATURDAY: NEW YEAR'S EVE 
+    ({6w and 17h-23h}, 2022_ujev),
     ({6w11h-7w00h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 9h30m-11h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h58m}, once(playlist_bambusz)),
