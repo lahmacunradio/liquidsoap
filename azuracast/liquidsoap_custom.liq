@@ -186,6 +186,14 @@ playlist_lahmaloudclouds = audio_to_stereo(id="stereo_playlist_lahmaloudclouds",
 playlist_lahmacun_presents = playlist(id="playlist_lahmacun_presents",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmacun_presents.m3u")
 playlist_lahmacun_presents = audio_to_stereo(id="stereo_playlist_lahmacun_presents", playlist_lahmacun_presents)
 
+# 2022 New Year's Eve playlists
+
+playlist_szilveszter_reggel = playlist(id="playlist_szilveszter_reggel",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szilveszter_reggel.m3u")
+playlist_szilveszter_reggel = audio_to_stereo(id="stereo_playlist_szilveszter_reggel", playlist_szilveszter_reggel)
+
+playlist_szilveszter_este = playlist(id="playlist_szilveszter_este",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_szilveszter_este.m3u")
+playlist_szilveszter_este = audio_to_stereo(id="stereo_playlist_szilveszter_este", playlist_szilveszter_este)
+
 # OFF AIR playlists
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = audio_to_stereo(id="stereo_playlist_off_air", playlist_off_air)
@@ -373,6 +381,8 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Friday ^^^ 
+    transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Saturday ^^^
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -441,6 +451,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 19h-19h58m}, once(playlist_moneyka)),
     ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 13h15m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
+    ({5w23h-6w11h}, playlist_szilveszter_reggel),                #SATURDAY: NEW YEAR'S EVE 
+    ({6w and 17h-23h}, playlist_szilveszter_este),
     ({6w11h-7w00h}, off_air_ambient_mix),                     #ambient: Merites - Gestalt
     ({7w and 9h30m-11h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 11h30m-12h58m}, once(playlist_bambusz)),
