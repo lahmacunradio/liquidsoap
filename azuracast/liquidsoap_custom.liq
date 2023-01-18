@@ -470,8 +470,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 13h15m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
     ({6w and 10h30m-12h28m}, once(playlist_merites)),                  #Saturday
-    ({6w and 12h30m-13h28m}, once(playlist_kerodzo)),     
-    ({6w and 13h30m-15h58m}, once(playlist_torso)),
+    ({6w and 12h30m-13h58m}, once(playlist_kerodzo)),     
+    ({6w and 14h-15h58m}, once(playlist_torso)),
     ({6w and 16h-16h58m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h58m}, once(playlist_rnr666)),
     ({6w and 19h-20h58m}, once(playlist_mood_sequence)),
