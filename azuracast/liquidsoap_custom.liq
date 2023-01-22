@@ -97,8 +97,8 @@ playlist_melyvagas = audio_to_stereo(id="stereo_playlist_melyvagas", playlist_me
 playlist_udcsi = playlist(id="playlist_udcsi",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_udcsi.m3u")
 playlist_udcsi = audio_to_stereo(id="stereo_playlist_udcsi", playlist_udcsi)
 
-playlist_jambikus_nesz = playlist(id="playlist_jambikus_nesz",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_jambikus_nesz.m3u")
-playlist_jambikus_nesz = audio_to_stereo(id="stereo_playlist_jambikus_nesz", playlist_jambikus_nesz)
+playlist_kerodzo = playlist(id="playlist_kerodzo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_kerodzo.m3u")
+playlist_kerodzo = audio_to_stereo(id="stereo_playlist_kerodzo", playlist_kerodzo)
 
 playlist_mosolyszunet = playlist(id="playlist_mosolyszunet",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mosolyszunet.m3u")
 playlist_mosolyszunet = audio_to_stereo(id="stereo_playlist_mosolyszunet", playlist_mosolyszunet)
@@ -470,8 +470,8 @@ radio = switch(track_sensitive=false, transitions=[
     ({5w and 20h-21h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 13h15m-22h30m}, off_air_ambient_mix),                        #ambient: Ritka pentek - Rev
     ({6w and 10h30m-12h28m}, once(playlist_merites)),                  #Saturday
-    ({6w and 12h30m-13h28m}, once(playlist_jambikus_nesz)),     
-    ({6w and 13h30m-15h58m}, once(playlist_torso)),
+    ({6w and 12h30m-13h58m}, once(playlist_kerodzo)),     
+    ({6w and 14h-15h58m}, once(playlist_torso)),
     ({6w and 16h-16h58m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h58m}, once(playlist_rnr666)),
     ({6w and 19h-20h58m}, once(playlist_mood_sequence)),
