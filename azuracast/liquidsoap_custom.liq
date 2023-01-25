@@ -52,9 +52,6 @@ playlist_mood_sequence = audio_to_stereo(id="stereo_playlist_mood_sequence", pla
 playlist_gyorsnaszad_hidja = playlist(id="playlist_gyorsnaszad_hidja",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_gyorsnaszad_hidja.m3u")
 playlist_gyorsnaszad_hidja = audio_to_stereo(id="stereo_playlist_gyorsnaszad_hidja", playlist_gyorsnaszad_hidja)
 
-playlist_footwork_jimbob = playlist(id="playlist_footwork_jimbob",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_footwork_jimbob.m3u")
-playlist_footwork_jimbob = audio_to_stereo(id="stereo_playlist_footwork_jimbob", playlist_footwork_jimbob)
-
 playlist_havizaj = playlist(id="playlist_havizaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_havizaj.m3u")
 playlist_havizaj = audio_to_stereo(id="stereo_playlist_havizaj", playlist_havizaj)
 
@@ -396,7 +393,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Saturday ^^^
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -467,7 +463,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({6w and 10h30m-12h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 12h30m-13h58m}, once(playlist_kerodzo)),     
     ({6w and 14h-15h58m}, once(playlist_torso)),
-    ({6w and 16h-16h58m}, once(playlist_footwork_jimbob)),
     ({6w and 17h-18h58m}, once(playlist_rnr666)),
     ({6w and 19h-20h58m}, once(playlist_mood_sequence)),
     ({6w and 22h-23h28m}, once(playlist_d23)),
