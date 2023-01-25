@@ -115,9 +115,6 @@ playlist_randomcsunyalanyok = audio_to_stereo(id="stereo_playlist_randomcsunyala
 playlist_rambo = playlist(id="playlist_rambo",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
 playlist_rambo = audio_to_stereo(id="stereo_playlist_rambo", playlist_rambo)
 
-playlist_1800venus = playlist(id="playlist_1800venus",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_1800venus.m3u")
-playlist_1800venus = audio_to_stereo(id="stereo_playlist_1800venus", playlist_1800venus)
-
 playlist_csuszka = playlist(id="playlist_csuszka",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_csuszka.m3u")
 playlist_csuszka = audio_to_stereo(id="stereo_playlist_csuszka", playlist_csuszka)
 
@@ -374,7 +371,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -448,7 +444,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 18h-18h58m}, once(playlist_rambo)),
     ({3w and 19h-19h58m}, once(playlist_boombap)),
     ({3w and 20h-20h58m}, once(playlist_eastern_daze)),
-    ({3w and 21h-21h58m}, once(playlist_1800venus)),
     ({3w and 22h-22h58m}, once(playlist_linear_systems_with_gestalt)),
     ({3w and 13h15m-22h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Gestalt
     ({4w and 11h-12h58m}, once(playlist_ritka_csut)),                  #Thursday
