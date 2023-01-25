@@ -49,9 +49,6 @@ playlist_erto_hallgatas = audio_to_stereo(id="stereo_playlist_erto_hallgatas", p
 playlist_mood_sequence = playlist(id="playlist_mood_sequence",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_mood_sequence.m3u")
 playlist_mood_sequence = audio_to_stereo(id="stereo_playlist_mood_sequence", playlist_mood_sequence)
 
-playlist_gyorsnaszad_hidja = playlist(id="playlist_gyorsnaszad_hidja",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_gyorsnaszad_hidja.m3u")
-playlist_gyorsnaszad_hidja = audio_to_stereo(id="stereo_playlist_gyorsnaszad_hidja", playlist_gyorsnaszad_hidja)
-
 playlist_havizaj = playlist(id="playlist_havizaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_havizaj.m3u")
 playlist_havizaj = audio_to_stereo(id="stereo_playlist_havizaj", playlist_havizaj)
 
@@ -353,7 +350,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Tuesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -416,7 +412,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 20h-20h58m}, once(playlist_urmajmok)),      
     ({1w and 21h-22h58m}, once(playlist_infinite_scroll)),      
     ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
-    ({2w and 2h04m-4h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
     ({2w and 7h-7h28m}, once(playlist_felregombolt)),
     ({2w and 11h-12h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 14h30m-15h58m}, once(playlist_melyvagas)),
@@ -436,7 +431,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 19h-19h58m}, once(playlist_boombap)),
     ({3w and 20h-20h58m}, once(playlist_eastern_daze)),
     ({3w and 22h-22h58m}, once(playlist_linear_systems_with_gestalt)),
-    ({3w and 13h15m-22h30m}, off_air_ambient_mix),                     #ambient: Tudtad - Gestalt
+    ({3w and 14h30m-22h30m}, off_air_ambient_mix),                     #ambient: EH - Gestalt
     ({4w and 11h-12h58m}, once(playlist_ritka_csut)),                  #Thursday
     ({4w and 14h-14h58m}, once(playlist_btob)),
     ({4w and 15h-15h58m}, once(playlist_fkse)),
