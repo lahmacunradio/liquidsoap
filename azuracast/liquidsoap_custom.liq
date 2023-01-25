@@ -136,9 +136,6 @@ playlist_fkse = audio_to_stereo(id="stereo_playlist_fkse", playlist_fkse)
 playlist_hatterzaj = playlist(id="playlist_hatterzaj",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_hatterzaj.m3u")
 playlist_hatterzaj = audio_to_stereo(id="stereo_playlist_hatterzaj", playlist_hatterzaj)
 
-playlist_tudtad = playlist(id="playlist_tudtad",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_tudtad.m3u")
-playlist_tudtad = audio_to_stereo(id="stereo_playlist_tudtad", playlist_tudtad)
-
 playlist_paikka = playlist(id="playlist_paikka",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_paikka.m3u")
 playlist_paikka = audio_to_stereo(id="stereo_playlist_paikka", playlist_paikka)
 
@@ -367,7 +364,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -432,7 +428,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({2w and 21h-21h58m}, once(playlist_exit)),
     ({2w and 15h-21h30m}, off_air_ambient_mix),                        #ambient: Melyvagas - Exit
     ({3w and 11h-12h58m}, once(playlist_lahmacun_presents)),           #Wednesday
-    ({3w and 13h30m-13h58m}, once(playlist_tudtad)),
     ({3w and 14h-14h58m}, once(playlist_erto_hallgatas)),
     ({3w and 15h-15h58m}, once(playlist_erdenklang)),
     ({3w and 16h-16h58m}, once(playlist_cleptorama)),
