@@ -353,76 +353,76 @@ live = map_metadata(insert_missing, live)
 
 sources = [ 
     ({!live_enabled}, live),    #Live DJ
-    ({1w and 8h-8h58m}, delay(3600.,playlist_szedd_a_labad)),             # Monday
-    ({1w and 9h11m-10h9m}, delay(3600.,playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
-    ({1w and 11h-11h58m}, delay(3600.,playlist_a_who_say)),
-    ({1w and 12h-12h58m}, delay(3600.,playlist_korunk)),    
-    ({1w and 14h-14h58m}, delay(3600.,playlist_szmuti_csorba)),
-    ({1w and 15h-15h58m}, delay(3600.,playlist_paikka)),
-    ({1w and 16h-16h58m}, delay(3600.,playlist_udcsi)),
-    ({1w and 17h30m-17h58m}, delay(1800.,playlist_soundscape_diaries_emcsivel)),
-    ({1w and 18h-18h58m}, delay(3600.,playlist_ember_a_palyan)),
-    ({1w and 19h-19h58m}, delay(3600.,playlist_urmajmok)),      
-    ({1w and 20h-21h58m}, delay(7200.,playlist_infinite_scroll)),      
+    ({1w and 8h-8h58m}, once(playlist_szedd_a_labad)),             # Monday
+    ({1w and 9h11m-10h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
+    ({1w and 11h-11h58m}, once(playlist_a_who_say)),
+    ({1w and 12h-12h58m}, once(playlist_korunk)),    
+    ({1w and 14h-14h58m}, once(playlist_szmuti_csorba)),
+    ({1w and 15h-15h58m}, once(playlist_paikka)),
+    ({1w and 16h-16h58m}, once(playlist_udcsi)),
+    ({1w and 17h30m-17h58m}, once(playlist_soundscape_diaries_emcsivel)),
+    ({1w and 18h-18h58m}, once(playlist_ember_a_palyan)),
+    ({1w and 19h-19h58m}, once(playlist_urmajmok)),      
+    ({1w and 20h-21h58m}, once(playlist_infinite_scroll)),      
     ({1w and 14h30m-20h30m}, playlist_off_air_ambient),                        #ambient: Szmuti - Infinite
-    ({2w and 1h04m-3h30m}, delay(9000.,playlist_gyorsnaszad_hidja)),          #Tuesday
-    ({2w and 6h-6h28m}, delay(1800.,playlist_felregombolt)),
-    ({2w and 10h-11h58m}, delay(7200.,playlist_lahmaloudclouds)),
-    ({2w and 13h30m-14h58m}, delay(5400.,playlist_melyvagas)),
-    ({2w and 15h-15h58m}, delay(3600.,playlist_radical_happiness)),
-    ({2w and 16h-16h58m}, delay(3600.,playlist_mmn_radio)),
-    ({2w and 17h-17h58m}, delay(3600.,playlist_mosolyszunet)),
-    ({2w and 18h-18h58m}, delay(3600.,playlist_havizaj)),
-    ({2w and 19h-19h58m}, delay(3600.,playlist_turmeric_acid)),
-    ({2w and 20h-20h58m}, delay(3600.,playlist_exit)),
+    ({2w and 1h04m-3h30m}, once(playlist_gyorsnaszad_hidja)),          #Tuesday
+    ({2w and 6h-6h28m}, once(playlist_felregombolt)),
+    ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),
+    ({2w and 13h30m-14h58m}, once(playlist_melyvagas)),
+    ({2w and 15h-15h58m}, once(playlist_radical_happiness)),
+    ({2w and 16h-16h58m}, once(playlist_mmn_radio)),
+    ({2w and 17h-17h58m}, once(playlist_mosolyszunet)),
+    ({2w and 18h-18h58m}, once(playlist_havizaj)),
+    ({2w and 19h-19h58m}, once(playlist_turmeric_acid)),
+    ({2w and 20h-20h58m}, once(playlist_exit)),
     ({2w and 14h-20h30m}, playlist_off_air_ambient),                        #ambient: Melyvagas - Exit
-    ({3w and 10h-11h58m}, delay(7200.,playlist_lahmacun_presents)),           #Wednesday
-    ({3w and 12h30m-12h58m}, delay(3600.,playlist_tudtad)),
-    ({3w and 13h-13h58m}, delay(3600.,playlist_erto_hallgatas)),
-    ({3w and 14h-14h58m}, delay(3600.,playlist_erdenklang)),
-    ({3w and 15h-15h58m}, delay(3600.,playlist_cleptorama)),
-    ({3w and 16h-16h58m}, delay(3600.,playlist_svadhyaya)),
-    ({3w and 17h-17h58m}, delay(3600.,playlist_rambo)),
-    ({3w and 18h-18h58m}, delay(3600.,playlist_boombap)),
-    ({3w and 19h-19h58m}, delay(3600.,playlist_eastern_daze)),
-    ({3w and 20h-20h58m}, delay(3600.,playlist_1800venus)),
-    ({3w and 21h-21h58m}, delay(3600.,playlist_linear_systems_with_gestalt)),
+    ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),           #Wednesday
+    ({3w and 12h30m-12h58m}, once(playlist_tudtad)),
+    ({3w and 13h-13h58m}, once(playlist_erto_hallgatas)),
+    ({3w and 14h-14h58m}, once(playlist_erdenklang)),
+    ({3w and 15h-15h58m}, once(playlist_cleptorama)),
+    ({3w and 16h-16h58m}, once(playlist_svadhyaya)),
+    ({3w and 17h-17h58m}, once(playlist_rambo)),
+    ({3w and 18h-18h58m}, once(playlist_boombap)),
+    ({3w and 19h-19h58m}, once(playlist_eastern_daze)),
+    ({3w and 20h-20h58m}, once(playlist_1800venus)),
+    ({3w and 21h-21h58m}, once(playlist_linear_systems_with_gestalt)),
     ({3w and 12h15m-21h30m}, playlist_off_air_ambient),                     #ambient: Tudtad - Gestalt
-    ({4w and 10h-11h58m}, delay(7200.,playlist_ritka_csut)),                  #Thursday
-    ({4w and 14h-14h58m}, delay(3600.,playlist_fkse)),
-    ({4w and 15h-16h58m}, delay(7200.,playlist_lazy_calm_raga)),
-    ({4w and 17h-17h58m}, delay(3600.,playlist_dalmata_gergo_show)),
-    ({4w and 18h-18h58m}, delay(3600.,playlist_keygen)),
-    ({4w and 19h-20h58m}, delay(7200.,playlist_schmerz)),
-    ({4w and 21h-22h28m}, delay(5400.,playlist_gyogyfurdo)),
+    ({4w and 10h-11h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 14h-14h58m}, once(playlist_fkse)),
+    ({4w and 15h-16h58m}, once(playlist_lazy_calm_raga)),
+    ({4w and 17h-17h58m}, once(playlist_dalmata_gergo_show)),
+    ({4w and 18h-18h58m}, once(playlist_keygen)),
+    ({4w and 19h-20h58m}, once(playlist_schmerz)),
+    ({4w and 21h-22h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
-    ({5w and 10h-11h58m}, delay(7200.,playlist_ritka_pentek)),                #Friday
-    ({5w and 12h00m-12h28m}, delay(1800.,playlist_melania)),                     
-    ({5w and 12h30m-13h58m}, delay(5400.,playlist_szusivacsi)),
-    ({5w and 14h-14h58m}, delay(3600.,playlist_randomcsunyalanyok)),           
-    ({5w and 15h-15h58m}, delay(3600.,playlist_dead_hound)),
-    ({5w and 16h-16h58m}, delay(3600.,playlist_graveyard_slot)),
-    ({5w and 17h-17h58m}, delay(3600.,playlist_brainfuq)),
-    ({5w and 18h-18h58m}, delay(3600.,playlist_moneyka)),
-    ({5w and 19h-20h58m}, delay(7200.,playlist_arcadeok_alatt)),       
+    ({5w and 10h-11h58m}, once(playlist_ritka_pentek)),                #Friday
+    ({5w and 12h00m-12h28m}, once(playlist_melania)),                     
+    ({5w and 12h30m-13h58m}, once(playlist_szusivacsi)),
+    ({5w and 14h-14h58m}, once(playlist_randomcsunyalanyok)),           
+    ({5w and 15h-15h58m}, once(playlist_dead_hound)),
+    ({5w and 16h-16h58m}, once(playlist_graveyard_slot)),
+    ({5w and 17h-17h58m}, once(playlist_brainfuq)),
+    ({5w and 18h-18h58m}, once(playlist_moneyka)),
+    ({5w and 19h-20h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 12h15m-20h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Aracde-ok
-    ({6w and 9h30m-11h28m}, delay(7200.,playlist_merites)),                  #Saturday
-    ({6w and 11h30m-12h28m}, delay(3600.,playlist_jambikus_nesz)),     
-    ({6w and 12h30m-14h58m}, delay(9000.,playlist_torso)),
-    ({6w and 15h-15h58m}, delay(3600.,playlist_footwork_jimbob)),
-    ({6w and 16h-17h58m}, delay(7200.,playlist_rnr666)),
-    ({6w and 18h-19h58m}, delay(7200.,playlist_mood_sequence)),
-    ({6w and 21h-22h28m}, delay(5400.,playlist_d23)),
+    ({6w and 9h30m-11h28m}, once(playlist_merites)),                  #Saturday
+    ({6w and 11h30m-12h28m}, once(playlist_jambikus_nesz)),     
+    ({6w and 12h30m-14h58m}, once(playlist_torso)),
+    ({6w and 15h-15h58m}, once(playlist_footwork_jimbob)),
+    ({6w and 16h-17h58m}, once(playlist_rnr666)),
+    ({6w and 18h-19h58m}, once(playlist_mood_sequence)),
+    ({6w and 21h-22h28m}, once(playlist_d23)),
     ({6w10h-6w22h}, playlist_off_air_ambient),                     #ambient: Merites - D23
-    ({7w and 8h30m-10h28m}, delay(7200.,playlist_lohuma)),                    #Sunday
-    ({7w and 10h30m-11h58m}, delay(5400.,playlist_bambusz)),
-    ({7w and 12h-14h58m}, delay(10800.,playlist_donald_kacsa_klub)),
-    ({7w and 15h-15h58m}, delay(3600.,playlist_geigercounterculture)),
-    ({7w and 16h-16h58m}, delay(3600.,playlist_hetedik_tipusu_talalkozas)),
-    ({7w and 17h-17h58m}, delay(3600.,playlist_hatterzaj)),
-    ({7w and 18h-18h58m}, delay(3600.,playlist_csuszka)),
-    ({7w and 19h-19h58m}, delay(3600.,playlist_sub_burek)),
-    ({7w and 20h-20h58m}, delay(3600.,playlist_zeneszen)),
+    ({7w and 8h30m-10h28m}, once(playlist_lohuma)),                    #Sunday
+    ({7w and 10h30m-11h58m}, once(playlist_bambusz)),
+    ({7w and 12h-14h58m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 15h-15h58m}, once(playlist_geigercounterculture)),
+    ({7w and 16h-16h58m}, once(playlist_hetedik_tipusu_talalkozas)),
+    ({7w and 17h-17h58m}, once(playlist_hatterzaj)),
+    ({7w and 18h-18h58m}, once(playlist_csuszka)),
+    ({7w and 19h-19h58m}, once(playlist_sub_burek)),
+    ({7w and 20h-20h58m}, once(playlist_zeneszen)),
     ({7w and 9h-20h30m}, playlist_off_air_ambient),                        #ambient: Lohuma - Zeneszen
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
