@@ -430,13 +430,6 @@ def fading_transition(a,b) =
     log("Fading transition starts")
     log("a source id: #{source.id(a)}")
     log("b source id: #{source.id(b)}")
-    if source.id(a) == "delay_16" then
-        log("Exiting show, skip source.")
-        thread.run(delay=10.,{
-            log("Skip source: #{source.id(a)}");
-            source.skip(a)}       
-        )
-    end
     sequence([
     fade.out(track_sensitive=false,duration=5.,a),
     playlist_jingle_station_id,    
