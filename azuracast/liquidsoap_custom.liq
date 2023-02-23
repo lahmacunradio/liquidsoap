@@ -427,21 +427,19 @@ sources = [
     ({true}, playlist_off_air) ]
 
 def fading_transition(a,b) =
-    log("Fading transition starts")
-    log("a source id: #{source.id(a)}")
-    log("b source id: #{source.id(b)}")
     sequence([
-    fade.out(track_sensitive=false,duration=5.,a),
-    playlist_jingle_station_id,    
-    fade.in(track_sensitive=false,duration=5.,b)
+    fade.out(track_sensitive=false,duration=5.,a.source),
+    playlist_jingle_station_id, playlist_jingle_donate,
+    fade.in(track_sensitive=false,duration=5.,b.source)
     ])    
 end
 
 
-transitions = list.map(fun (_) -> fading_transition, sources)
-
 # Standard Schedule Switches
-radio = switch(id="schedule_switch", track_sensitive=false, transitions=transitions, sources)
+radio = switch(id="schedule_switch", track_sensitive=false, sources)
+
+# Add crossfading
+radio = cross(fading_transition, radio)
 
 def add_skip_command(s) =
     def skip(_) =
