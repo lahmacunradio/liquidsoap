@@ -154,9 +154,6 @@ playlist_geigercounterculture = audio_to_stereo(id="stereo_playlist_geigercounte
 playlist_radical_happiness = playlist(id="playlist_radical_happiness",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_radical_happiness.m3u")
 playlist_radical_happiness = audio_to_stereo(id="stereo_playlist_radical_happiness", playlist_radical_happiness)
 
-playlist_ember_a_palyan = playlist(id="playlist_ember_a_palyan",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ember_a_palyan.m3u")
-playlist_ember_a_palyan = audio_to_stereo(id="stereo_playlist_ember_a_palyan", playlist_ember_a_palyan)
-
 playlist_brainfuq = playlist(id="playlist_brainfuq",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_brainfuq.m3u")
 playlist_brainfuq = audio_to_stereo(id="stereo_playlist_brainfuq", playlist_brainfuq)
 
@@ -339,7 +336,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),    
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Monday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -408,7 +404,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 16h-16h58m}, once(playlist_paikka)),
     ({1w and 17h-17h58m}, once(playlist_udcsi)),
     ({1w and 18h30m-18h58m}, once(playlist_soundscape_diaries_emcsivel)),
-    ({1w and 19h-19h58m}, once(playlist_ember_a_palyan)),
     ({1w and 20h-20h58m}, once(playlist_urmajmok)),      
     ({1w and 21h-22h58m}, once(playlist_infinite_scroll)),      
     ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
