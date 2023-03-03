@@ -175,6 +175,9 @@ playlist_btob = audio_to_stereo(id="stereo_playlist_btob", playlist_btob)
 playlist_temporary_nites = playlist(id="playlist_temporary_nites",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_temporary_nites.m3u")
 playlist_temporary_nites = audio_to_stereo(id="stereo_playlist_temporary_nites", playlist_temporary_nites) 
 
+playlist_kigyotanc = playlist(id="playlist_kigyotanc",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_kigyotanc.m3u")
+playlist_kigyotanc = audio_to_stereo(id="stereo_playlist_kigyotanc", playlist_kigyotanc)
+
 # Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = audio_to_stereo(id="stereo_playlist_ritka_csut", playlist_ritka_csut)
@@ -360,6 +363,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
+    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),    
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Thursday ^^^ 
     transition_into_show(playlist_jingle_station_id),
@@ -423,6 +427,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 22h-22h58m}, once(playlist_linear_systems_with_gestalt)),
     ({3w and 14h30m-22h30m}, off_air_ambient_mix),                     #ambient: EH - Gestalt
     ({4w and 11h-12h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 13h-13h58m}, once(playlist_kigyotanc)),
     ({4w and 14h-14h58m}, once(playlist_btob)),
     ({4w and 15h-15h58m}, once(playlist_fkse)),
     ({4w and 16h-17h58m}, once(playlist_lazy_calm_raga)),
