@@ -166,9 +166,6 @@ playlist_szedd_a_labad = audio_to_stereo(id="stereo_playlist_szedd_a_labad", pla
 playlist_cleptorama = playlist(id="playlist_cleptorama",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_cleptorama.m3u")
 playlist_cleptorama = audio_to_stereo(id="stereo_playlist_cleptorama", playlist_cleptorama)
 
-playlist_felregombolt = playlist(id="playlist_felregombolt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_felregombolt.m3u")
-playlist_felregombolt = audio_to_stereo(id="stereo_playlist_felregombolt", playlist_felregombolt)
-
 playlist_korunk = playlist(id="playlist_korunk",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_korunk.m3u")
 playlist_korunk = audio_to_stereo(id="stereo_playlist_korunk", playlist_korunk)
 
@@ -345,7 +342,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Tuesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -407,7 +403,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 20h-20h58m}, once(playlist_urmajmok)),      
     ({1w and 21h-22h58m}, once(playlist_infinite_scroll)),      
     ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
-    ({2w and 7h-7h28m}, once(playlist_felregombolt)),
     ({2w and 11h-12h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 14h30m-15h58m}, once(playlist_melyvagas)),
     ({2w and 16h-16h58m}, once(playlist_radical_happiness)),
