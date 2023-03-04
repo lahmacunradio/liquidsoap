@@ -166,9 +166,6 @@ playlist_szedd_a_labad = audio_to_stereo(id="stereo_playlist_szedd_a_labad", pla
 playlist_cleptorama = playlist(id="playlist_cleptorama",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_cleptorama.m3u")
 playlist_cleptorama = audio_to_stereo(id="stereo_playlist_cleptorama", playlist_cleptorama)
 
-playlist_felregombolt = playlist(id="playlist_felregombolt",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_felregombolt.m3u")
-playlist_felregombolt = audio_to_stereo(id="stereo_playlist_felregombolt", playlist_felregombolt)
-
 playlist_korunk = playlist(id="playlist_korunk",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_korunk.m3u")
 playlist_korunk = audio_to_stereo(id="stereo_playlist_korunk", playlist_korunk)
 
@@ -177,6 +174,9 @@ playlist_btob = audio_to_stereo(id="stereo_playlist_btob", playlist_btob)
 
 playlist_temporary_nites = playlist(id="playlist_temporary_nites",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_temporary_nites.m3u")
 playlist_temporary_nites = audio_to_stereo(id="stereo_playlist_temporary_nites", playlist_temporary_nites) 
+
+playlist_kigyotanc = playlist(id="playlist_kigyotanc",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_kigyotanc.m3u")
+playlist_kigyotanc = audio_to_stereo(id="stereo_playlist_kigyotanc", playlist_kigyotanc)
 
 # Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mode="randomize",reload_mode="watch",conservative=true,default_duration=10.,length=20.,"/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -345,7 +345,6 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
-    transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Tuesday ^^^ 
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -357,6 +356,7 @@ radio = switch(track_sensitive=false, transitions=[
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_off(playlist_jingle_station_id), #ambient: ^^^ Wednesday ^^^ 
+    transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
     transition_into_show(playlist_jingle_station_id),
@@ -407,7 +407,6 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 20h-20h58m}, once(playlist_urmajmok)),      
     ({1w and 21h-22h58m}, once(playlist_infinite_scroll)),      
     ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
-    ({2w and 7h-7h28m}, once(playlist_felregombolt)),
     ({2w and 11h-12h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 14h30m-15h58m}, once(playlist_melyvagas)),
     ({2w and 16h-16h58m}, once(playlist_radical_happiness)),
@@ -428,6 +427,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({3w and 22h-22h58m}, once(playlist_linear_systems_with_gestalt)),
     ({3w and 14h30m-22h30m}, off_air_ambient_mix),                     #ambient: EH - Gestalt
     ({4w and 11h-12h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 13h-13h58m}, once(playlist_kigyotanc)),
     ({4w and 14h-14h58m}, once(playlist_btob)),
     ({4w and 15h-15h58m}, once(playlist_fkse)),
     ({4w and 16h-17h58m}, once(playlist_lazy_calm_raga)),
