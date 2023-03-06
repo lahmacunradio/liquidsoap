@@ -403,7 +403,7 @@ radio = switch(track_sensitive=false, transitions=[
     ({1w and 15h-15h58m}, once(playlist_szmuti_csorba)),
     ({1w and 16h-16h58m}, once(playlist_paikka)),
     ({1w and 17h-17h58m}, once(playlist_udcsi)),
-    ({1w and 18h30m-18h58m}, once(playlist_soundscape_diaries_emcsivel)),
+    ({1w and 18h-18h28m}, once(playlist_soundscape_diaries_emcsivel)),
     ({1w and 20h-20h58m}, once(playlist_urmajmok)),      
     ({1w and 21h-22h58m}, once(playlist_infinite_scroll)),      
     ({1w and 15h30m-21h30m}, off_air_ambient_mix),                        #ambient: Szmuti - Infinite
