@@ -340,7 +340,7 @@ def live_disconnected() =
 end
 
 # Live Broadcasting
-live = input.harbor("/", id = "input_streamer", port = 8005, auth = dj_auth, icy = true, icy_metadata_charset = "UTF-8", metadata_charset = "UTF-8", on_connect = live_connected, on_disconnect = live_disconnected, buffer = 5.00, max = 10.00)
+live = input.harbor("/", id = "input_streamer", port = 8005, auth = dj_auth, icy = true, icy_metadata_charset = "UTF-8", metadata_charset = "UTF-8", on_connect = live_connected, on_disconnect = live_disconnected, buffer = 12.00, max = 15.00)
 
 def insert_missing(m) =
     if m == [] then
@@ -428,9 +428,9 @@ sources = [
 
 def fading_transition(a,b) =
     sequence([
-    fade.out(track_sensitive=false,duration=5.,a.source),
+    fade.out(track_sensitive=false,a.source),
     playlist_jingle_station_id, playlist_jingle_donate,
-    fade.in(track_sensitive=false,duration=5.,b.source)
+    fade.in(track_sensitive=false,b.source)
     ])    
 end
 
