@@ -18,7 +18,7 @@ settings.harbor.bind_addrs.set(["0.0.0.0"])
 settings.tag.encodings.set(["UTF-8","ISO-8859-1"])
 settings.encoder.metadata.export.set(["artist","title","album","song"])
 
-setenv("TZ", "UTC")
+setenv("TZ", "CET")
 
 autodj_is_loading = ref(true)
 ignore(autodj_is_loading)
