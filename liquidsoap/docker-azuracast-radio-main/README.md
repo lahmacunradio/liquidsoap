@@ -1,1 +1,0 @@
-[![Build Status](https://drone.azuracast.com/api/badges/AzuraCast/docker-azuracast-radio/status.svg)](https://drone.azuracast.com/AzuraCast/docker-azuracast-radio)
