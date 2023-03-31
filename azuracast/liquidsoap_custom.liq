@@ -214,9 +214,6 @@ playlist_paikka = cue_cut(id="cue_playlist_paikka", playlist_paikka)
 playlist_soundscape_diaries_emcsivel = playlist(id="playlist_soundscape_diaries_emcsivel",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_soundscape_diaries_emcsivel.m3u")
 playlist_soundscape_diaries_emcsivel = cue_cut(id="stereo_playlist_soundscape_diaries_emcsivel", playlist_soundscape_diaries_emcsivel)
 
-playlist_keygen = playlist(id="playlist_keygen",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_keygen.m3u")
-playlist_keygen = cue_cut(id="cue_playlist_keygen", playlist_keygen)
-
 playlist_exit = playlist(id="playlist_exit",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
 playlist_exit = cue_cut(id="cue_playlist_exit", playlist_exit)
 
@@ -378,7 +375,6 @@ sources = [
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 19h-19h58m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 20h-20h58m}, once(playlist_keygen)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w and 4w23h-5w00h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
