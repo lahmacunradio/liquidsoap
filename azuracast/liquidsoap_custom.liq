@@ -253,6 +253,9 @@ playlist_kigyotanc = cue_cut(id="stereo_playlist_kigyotanc", playlist_kigyotanc)
 playlist_kolegak = playlist(id="playlist_kolegak",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kolegak.m3u")
 playlist_kolegak = cue_cut(id="stereo_playlist_kolegak", playlist_kolegak) 
 
+playlist_kikelteto = playlist(id="playlist_kikelteto",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kikelteto.m3u")
+playlist_kikelteto = cue_cut(id="stereo_playlist_kikelteto", playlist_kikelteto) 
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -351,6 +354,7 @@ sources = [
     ({1w and 22h-23h58m}, once(playlist_infinite_scroll)),      
     ({1w and 10h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Szedd - Infinite
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),
+    ({2w and 14h-14h58m}, once(playlist_kikelteto)),
     ({2w and 15h30m-16h58m}, once(playlist_melyvagas)),
     ({2w and 17h-17h58m}, once(playlist_radical_happiness)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
@@ -358,7 +362,7 @@ sources = [
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 21h-21h58m}, once(playlist_turmeric_acid)),
     ({2w and 22h-22h58m}, once(playlist_exit)),
-    ({2w and 16h-22h30m}, playlist_off_air_ambient),                        #ambient: Melyvagas - Exit
+    ({2w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Clouds - Exit
     ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
