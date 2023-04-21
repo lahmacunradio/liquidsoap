@@ -142,9 +142,6 @@ playlist_a_who_say = cue_cut(id="cue_playlist_a_who_say", playlist_a_who_say)
 playlist_d23 = playlist(id="playlist_d23",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_d23.m3u")
 playlist_d23 = cue_cut(id="cue_playlist_d23", playlist_d23)
 
-playlist_eastern_daze = playlist(id="playlist_eastern_daze",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_eastern_daze.m3u")
-playlist_eastern_daze = cue_cut(id="cue_playlist_eastern_daze", playlist_eastern_daze)
-
 playlist_transverszia = playlist(id="playlist_transverszia",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_transverszia.m3u")
 playlist_transverszia = cue_cut(id="cue_playlist_transverszia", playlist_transverszia)
 
@@ -370,7 +367,6 @@ sources = [
     ({3w and 18h-18h58m}, once(playlist_temporary_nites)),
     ({3w and 19h-19h58m}, once(playlist_rambo)),
     ({3w and 20h-20h58m}, once(playlist_boombap)),
-    ({3w and 21h-21h58m}, once(playlist_eastern_daze)),
     ({3w and 23h-23h58m}, once(playlist_linear_systems_with_gestalt)),
     ({3w and 15h30m-23h30m}, playlist_off_air_ambient),                     #ambient: EH - Gestalt
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  #Thursday
