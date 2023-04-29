@@ -202,9 +202,6 @@ playlist_hatterzaj = cue_cut(id="cue_playlist_hatterzaj", playlist_hatterzaj)
 playlist_paikka = playlist(id="playlist_paikka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_paikka.m3u")
 playlist_paikka = cue_cut(id="cue_playlist_paikka", playlist_paikka)
 
-playlist_soundscape_diaries_emcsivel = playlist(id="playlist_soundscape_diaries_emcsivel",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_soundscape_diaries_emcsivel.m3u")
-playlist_soundscape_diaries_emcsivel = cue_cut(id="stereo_playlist_soundscape_diaries_emcsivel", playlist_soundscape_diaries_emcsivel)
-
 playlist_exit = playlist(id="playlist_exit",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
 playlist_exit = cue_cut(id="cue_playlist_exit", playlist_exit)
 
@@ -330,7 +327,6 @@ sources = [
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_paikka)),
     ({1w and 18h-18h58m}, once(playlist_udcsi)),
-    ({1w and 19h-19h28m}, once(playlist_soundscape_diaries_emcsivel)),
     ({1w and 19h30m-20h58m}, once(playlist_kolegak)),
     ({1w and 21h-21h58m}, once(playlist_urmajmok)),      
     ({1w and 22h-23h58m}, once(playlist_infinite_scroll)),      
