@@ -187,9 +187,6 @@ playlist_csuszka = cue_cut(id="cue_playlist_csuszka", playlist_csuszka)
 playlist_boombap = playlist(id="playlist_boombap",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
 playlist_boombap = cue_cut(id="cue_playlist_boombap", playlist_boombap)
 
-playlist_szusivacsi = playlist(id="playlist_szusivacsi",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_szusivacsi.m3u")
-playlist_szusivacsi = cue_cut(id="cue_playlist_szusivacsi", playlist_szusivacsi)
-
 playlist_moneyka = playlist(id="playlist_moneyka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
 playlist_moneyka = cue_cut(id="cue_playlist_moneyka", playlist_moneyka)
 
@@ -368,7 +365,6 @@ sources = [
     ({4w and 4w23h-5w00h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
-    ({5w and 14h30m-15h58m}, once(playlist_szusivacsi)),
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
