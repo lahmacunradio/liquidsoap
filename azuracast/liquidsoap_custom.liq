@@ -223,9 +223,6 @@ playlist_geigercounterculture = cue_cut(id="cue_playlist_geigercounterculture", 
 playlist_radical_happiness = playlist(id="playlist_radical_happiness",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_radical_happiness.m3u")
 playlist_radical_happiness = cue_cut(id="cue_playlist_radical_happiness", playlist_radical_happiness)
 
-playlist_brainfuq = playlist(id="playlist_brainfuq",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_brainfuq.m3u")
-playlist_brainfuq = cue_cut(id="cue_playlist_brainfuq", playlist_brainfuq)
-
 playlist_urmajmok = playlist(id="playlist_urmajmok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
 playlist_urmajmok = cue_cut(id="cue_playlist_urmajmok", playlist_urmajmok)
 
@@ -383,7 +380,6 @@ sources = [
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
-    ({5w and 19h-19h58m}, once(playlist_brainfuq)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-22h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Arcede-ok
