@@ -196,9 +196,6 @@ playlist_moneyka = cue_cut(id="cue_playlist_moneyka", playlist_moneyka)
 playlist_zeneszen = playlist(id="playlist_zeneszen",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeneszen.m3u")
 playlist_zeneszen = cue_cut(id="cue_playlist_zeneszen", playlist_zeneszen)
 
-playlist_linear_systems_with_gestalt = playlist(id="playlist_linear_systems_with_gestalt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_linear_systems_with_gestalt.m3u")
-playlist_linear_systems_with_gestalt = cue_cut(id="cue_playlist_linear_systems_with_gestalt", playlist_linear_systems_with_gestalt)
-
 playlist_fkse = playlist(id="playlist_fkse",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_fkse.m3u")
 playlist_fkse = cue_cut(id="cue_playlist_fkse", playlist_fkse)
 
@@ -364,7 +361,6 @@ sources = [
     ({3w and 18h-18h58m}, once(playlist_temporary_nites)),
     ({3w and 19h-19h58m}, once(playlist_rambo)),
     ({3w and 20h-20h58m}, once(playlist_boombap)),
-    ({3w and 23h-23h58m}, once(playlist_linear_systems_with_gestalt)),
     ({3w and 15h30m-23h30m}, playlist_off_air_ambient),                     #ambient: EH - Gestalt
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  #Thursday
     ({4w and 14h-14h58m}, once(playlist_kigyotanc)),
