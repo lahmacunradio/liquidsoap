@@ -217,9 +217,6 @@ playlist_graveyard_slot = cue_cut(id="cue_playlist_graveyard_slot", playlist_gra
 playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
 playlist_geigercounterculture = cue_cut(id="cue_playlist_geigercounterculture", playlist_geigercounterculture)
 
-playlist_radical_happiness = playlist(id="playlist_radical_happiness",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_radical_happiness.m3u")
-playlist_radical_happiness = cue_cut(id="cue_playlist_radical_happiness", playlist_radical_happiness)
-
 playlist_urmajmok = playlist(id="playlist_urmajmok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
 playlist_urmajmok = cue_cut(id="cue_playlist_urmajmok", playlist_urmajmok)
 
@@ -347,7 +344,6 @@ sources = [
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 14h-14h58m}, once(playlist_kikelteto)),
     ({2w and 15h30m-16h58m}, once(playlist_melyvagas)),
-    ({2w and 17h-17h58m}, once(playlist_radical_happiness)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
     ({2w and 19h-19h58m}, once(playlist_mosolyszunet)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
