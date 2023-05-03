@@ -187,17 +187,11 @@ playlist_csuszka = cue_cut(id="cue_playlist_csuszka", playlist_csuszka)
 playlist_boombap = playlist(id="playlist_boombap",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
 playlist_boombap = cue_cut(id="cue_playlist_boombap", playlist_boombap)
 
-playlist_szusivacsi = playlist(id="playlist_szusivacsi",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_szusivacsi.m3u")
-playlist_szusivacsi = cue_cut(id="cue_playlist_szusivacsi", playlist_szusivacsi)
-
 playlist_moneyka = playlist(id="playlist_moneyka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
 playlist_moneyka = cue_cut(id="cue_playlist_moneyka", playlist_moneyka)
 
 playlist_zeneszen = playlist(id="playlist_zeneszen",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeneszen.m3u")
 playlist_zeneszen = cue_cut(id="cue_playlist_zeneszen", playlist_zeneszen)
-
-playlist_linear_systems_with_gestalt = playlist(id="playlist_linear_systems_with_gestalt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_linear_systems_with_gestalt.m3u")
-playlist_linear_systems_with_gestalt = cue_cut(id="cue_playlist_linear_systems_with_gestalt", playlist_linear_systems_with_gestalt)
 
 playlist_fkse = playlist(id="playlist_fkse",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_fkse.m3u")
 playlist_fkse = cue_cut(id="cue_playlist_fkse", playlist_fkse)
@@ -208,9 +202,6 @@ playlist_hatterzaj = cue_cut(id="cue_playlist_hatterzaj", playlist_hatterzaj)
 playlist_paikka = playlist(id="playlist_paikka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_paikka.m3u")
 playlist_paikka = cue_cut(id="cue_playlist_paikka", playlist_paikka)
 
-playlist_soundscape_diaries_emcsivel = playlist(id="playlist_soundscape_diaries_emcsivel",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_soundscape_diaries_emcsivel.m3u")
-playlist_soundscape_diaries_emcsivel = cue_cut(id="stereo_playlist_soundscape_diaries_emcsivel", playlist_soundscape_diaries_emcsivel)
-
 playlist_exit = playlist(id="playlist_exit",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
 playlist_exit = cue_cut(id="cue_playlist_exit", playlist_exit)
 
@@ -219,12 +210,6 @@ playlist_graveyard_slot = cue_cut(id="cue_playlist_graveyard_slot", playlist_gra
 
 playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
 playlist_geigercounterculture = cue_cut(id="cue_playlist_geigercounterculture", playlist_geigercounterculture)
-
-playlist_radical_happiness = playlist(id="playlist_radical_happiness",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_radical_happiness.m3u")
-playlist_radical_happiness = cue_cut(id="cue_playlist_radical_happiness", playlist_radical_happiness)
-
-playlist_brainfuq = playlist(id="playlist_brainfuq",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_brainfuq.m3u")
-playlist_brainfuq = cue_cut(id="cue_playlist_brainfuq", playlist_brainfuq)
 
 playlist_urmajmok = playlist(id="playlist_urmajmok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
 playlist_urmajmok = cue_cut(id="cue_playlist_urmajmok", playlist_urmajmok)
@@ -249,9 +234,6 @@ playlist_kigyotanc = cue_cut(id="stereo_playlist_kigyotanc", playlist_kigyotanc)
 
 playlist_kolegak = playlist(id="playlist_kolegak",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kolegak.m3u")
 playlist_kolegak = cue_cut(id="stereo_playlist_kolegak", playlist_kolegak) 
-
-playlist_kikelteto = playlist(id="playlist_kikelteto",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kikelteto.m3u")
-playlist_kikelteto = cue_cut(id="stereo_playlist_kikelteto", playlist_kikelteto) 
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -345,15 +327,12 @@ sources = [
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_paikka)),
     ({1w and 18h-18h58m}, once(playlist_udcsi)),
-    ({1w and 19h-19h28m}, once(playlist_soundscape_diaries_emcsivel)),
     ({1w and 19h30m-20h58m}, once(playlist_kolegak)),
     ({1w and 21h-21h58m}, once(playlist_urmajmok)),      
     ({1w and 22h-23h58m}, once(playlist_infinite_scroll)),      
     ({1w and 10h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Szedd - Infinite
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),
-    ({2w and 14h-14h58m}, once(playlist_kikelteto)),
     ({2w and 15h30m-16h58m}, once(playlist_melyvagas)),
-    ({2w and 17h-17h58m}, once(playlist_radical_happiness)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
     ({2w and 19h-19h58m}, once(playlist_mosolyszunet)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
@@ -367,7 +346,6 @@ sources = [
     ({3w and 18h-18h58m}, once(playlist_temporary_nites)),
     ({3w and 19h-19h58m}, once(playlist_rambo)),
     ({3w and 20h-20h58m}, once(playlist_boombap)),
-    ({3w and 23h-23h58m}, once(playlist_linear_systems_with_gestalt)),
     ({3w and 15h30m-23h30m}, playlist_off_air_ambient),                     #ambient: EH - Gestalt
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  #Thursday
     ({4w and 14h-14h58m}, once(playlist_kigyotanc)),
@@ -379,11 +357,9 @@ sources = [
     ({4w and 4w23h-5w00h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
-    ({5w and 14h30m-15h58m}, once(playlist_szusivacsi)),
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
-    ({5w and 19h-19h58m}, once(playlist_brainfuq)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-22h58m}, once(playlist_arcadeok_alatt)),       
     ({5w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Arcede-ok
