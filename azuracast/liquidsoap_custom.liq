@@ -251,7 +251,10 @@ playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playli
 
 #External streams
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
-#external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
+external_tirkultura = mksafe(buffer(buffer=5., input.http("https://s3.radio.co/s216811754/listen")))
+external_palanga = mksafe(buffer(buffer=5., input.http("https://stream.palanga.live:8443/palanga128.mp3")))
+external_ida = mksafe(buffer(buffer=5., input.http("https://stream.radio.co/s435d71fd8/listen")))
+external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
 
 # DJ Authentication
 last_authenticated_dj = ref("")
@@ -320,7 +323,8 @@ live = map_metadata(insert_missing, live)
 
 sources = [ 
     ({!live_enabled}, live),    #Live DJ
-    ({1w and 10h-10h58m}, once(playlist_szedd_a_labad)),             # Monday
+    ({1w and 8h30m-10h}, external_tirkultura),             # Monday
+    ({1w and 10h-10h58m}, once(playlist_szedd_a_labad)),             
     ({1w and 11h11m-12h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
     ({1w and 13h-13h58m}, once(playlist_a_who_say)),
     ({1w and 14h-15h28m}, once(playlist_korunk)),    
@@ -339,7 +343,8 @@ sources = [
     ({2w and 21h-21h58m}, once(playlist_turmeric_acid)),
     ({2w and 22h-22h58m}, once(playlist_exit)),
     ({2w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Clouds - Exit
-    ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),           #Wednesday
+    ({3w and 8h30m-10h}, external_palanga),                  #Wednesday
+    ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),           
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_cleptorama)),
@@ -347,7 +352,8 @@ sources = [
     ({3w and 19h-19h58m}, once(playlist_rambo)),
     ({3w and 20h-20h58m}, once(playlist_boombap)),
     ({3w and 15h30m-23h30m}, playlist_off_air_ambient),                     #ambient: EH - Gestalt
-    ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 8h30m-10h}, external_ida),                          #Thursday
+    ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  
     ({4w and 14h-14h58m}, once(playlist_kigyotanc)),
     ({4w and 15h-15h58m}, once(playlist_btob)),
     ({4w and 16h-16h58m}, once(playlist_fkse)),
@@ -356,7 +362,8 @@ sources = [
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w and 4w23h-5w00h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
-    ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
+    ({5w and 8h30m-10h}, external_cashmere),                    #Friday
+    ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
