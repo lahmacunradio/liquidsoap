@@ -4,6 +4,3 @@ services:
   web:
     volumes:
       - ./liquidsoap_custom.liq:/var/azuracast/stations/lahmacun_radio/config/liquidsoap.liq:ro
-  stations:
-    volumes:
-      - ./liquidsoap_custom.liq:/var/azuracast/stations/lahmacun_radio/config/liquidsoap.liq:ro
