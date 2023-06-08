@@ -256,6 +256,8 @@ external_palanga = mksafe(buffer(buffer=5., input.http("https://stream.palanga.l
 external_ida = mksafe(buffer(buffer=5., input.http("https://stream.radio.co/s435d71fd8/listen")))
 external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
 
+external_sphere = mksafe(buffer(buffer=5., input.http("https://stream.sphere-radio.net/listen")))
+
 # DJ Authentication
 last_authenticated_dj = ref("")
 live_dj = ref("")
@@ -363,13 +365,7 @@ sources = [
     ({4w and 4w23h-5w00h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
     ({5w and 8h30m-10h}, external_cashmere),                    #Friday
-    ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                
-    ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
-    ({5w and 17h-17h58m}, once(playlist_dead_hound)),
-    ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
-    ({5w and 20h-20h58m}, once(playlist_moneyka)),
-    ({5w and 21h-22h58m}, once(playlist_arcadeok_alatt)),       
-    ({5w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Arcede-ok
+    ({5w and 10h-23h59m}, external_sphere),                
     ({6w and 11h30m-13h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     
     ({6w and 15h-17h58m}, once(playlist_torso)),
