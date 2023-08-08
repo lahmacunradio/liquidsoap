@@ -133,9 +133,6 @@ playlist_dalmata_gergo_show = cue_cut(id="cue_playlist_dalmata_gergo_show", play
 playlist_gyogyfurdo = playlist(id="playlist_gyogyfurdo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_gyogyfurdo.m3u")
 playlist_gyogyfurdo = cue_cut(id="cue_playlist_gyogyfurdo", playlist_gyogyfurdo)
 
-playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
-playlist_arcadeok_alatt = cue_cut(id="cue_playlist_arcadeok_alatt", playlist_arcadeok_alatt)
-
 playlist_a_who_say = playlist(id="playlist_a_who_say",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
 playlist_a_who_say = cue_cut(id="cue_playlist_a_who_say", playlist_a_who_say)
 
@@ -356,7 +353,6 @@ sources = [
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 19h-19h58m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 20h-20h58m}, once(playlist_boombap)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w and 4w23h-5w00h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
@@ -365,7 +361,7 @@ sources = [
     ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
-    ({5w and 21h-22h58m}, once(playlist_arcadeok_alatt)),       
+    ({5w and 21h-21h58m}, once(playlist_boombap)),       
     ({5w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Arcede-ok
     ({6w and 11h30m-13h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     
