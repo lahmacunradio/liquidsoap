@@ -340,7 +340,7 @@ sources = [
     ({3w and 18h-18h58m}, once(playlist_temporary_nites)),
     ({3w and 19h-19h58m}, once(playlist_rambo)),
     ({3w and 20h-21h58m}, once(playlist_random_times)),
-    ({3w and 15h30m-23h30m}, playlist_off_air_ambient),                     #ambient: EH - Gestalt
+    ({3w and 15h30m-21h30m}, playlist_off_air_ambient),                     #ambient: EH - Random Times
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  #Thursday
     ({4w and 14h-14h58m}, once(playlist_kigyotanc)),
     ({4w and 15h-15h58m}, once(playlist_btob)),
@@ -349,14 +349,14 @@ sources = [
     ({4w and 19h-19h58m}, once(playlist_dalmata_gergo_show)),
     ({4w and 20h-20h58m}, once(playlist_nepek_zaja)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
-    ({4w and 12h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
+    ({4w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Schmerz
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),       
-    ({5w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Arcede-ok
+    ({5w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Boombap
     ({6w and 11h30m-13h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     
     ({6w and 15h-17h58m}, once(playlist_torso)),
@@ -371,7 +371,7 @@ sources = [
     ({7w and 19h-19h58m}, once(playlist_hatterzaj)),
     ({7w and 20h-20h58m}, once(playlist_csuszka)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
-    ({7w and 11h-22h30m}, playlist_off_air_ambient),                        #ambient: Lohuma - Zeneszen
+    ({7w and 11h-21h30m}, playlist_off_air_ambient),                        #ambient: Lohuma - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
     ({true}, playlist_off_air) ]
