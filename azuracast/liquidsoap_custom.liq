@@ -91,9 +91,6 @@ playlist_jingle_donate = cue_cut(id="cue_playlist_jingle_donate", playlist_jingl
 playlist_sub_burek = playlist(id="playlist_sub_burek",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sub_burek.m3u")
 playlist_sub_burek = cue_cut(id="cue_playlist_sub_burek", playlist_sub_burek)
 
-playlist_bambusz = playlist(id="playlist_bambusz",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_bambusz.m3u")
-playlist_bambusz = cue_cut(id="cue_playlist_bambusz", playlist_bambusz)
-
 playlist_mmn_radio = playlist(id="playlist_mmn_radio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mmn_radio.m3u")
 playlist_mmn_radio = cue_cut(id="cue_playlist_mmn_radio", playlist_mmn_radio)
 
@@ -129,9 +126,6 @@ playlist_havizaj = cue_cut(id="cue_playlist_havizaj", playlist_havizaj)
 
 playlist_dalmata_gergo_show = playlist(id="playlist_dalmata_gergo_show",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_gergo_show.m3u")
 playlist_dalmata_gergo_show = cue_cut(id="cue_playlist_dalmata_gergo_show", playlist_dalmata_gergo_show)
-
-playlist_gyogyfurdo = playlist(id="playlist_gyogyfurdo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_gyogyfurdo.m3u")
-playlist_gyogyfurdo = cue_cut(id="cue_playlist_gyogyfurdo", playlist_gyogyfurdo)
 
 playlist_a_who_say = playlist(id="playlist_a_who_say",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
 playlist_a_who_say = cue_cut(id="cue_playlist_a_who_say", playlist_a_who_say)
@@ -186,9 +180,6 @@ playlist_boombap = cue_cut(id="cue_playlist_boombap", playlist_boombap)
 
 playlist_moneyka = playlist(id="playlist_moneyka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
 playlist_moneyka = cue_cut(id="cue_playlist_moneyka", playlist_moneyka)
-
-playlist_zeneszen = playlist(id="playlist_zeneszen",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeneszen.m3u")
-playlist_zeneszen = cue_cut(id="cue_playlist_zeneszen", playlist_zeneszen)
 
 playlist_fkse = playlist(id="playlist_fkse",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_fkse.m3u")
 playlist_fkse = cue_cut(id="cue_playlist_fkse", playlist_fkse)
@@ -358,7 +349,6 @@ sources = [
     ({4w and 19h-19h58m}, once(playlist_dalmata_gergo_show)),
     ({4w and 20h-20h58m}, once(playlist_nepek_zaja)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
-    ({4w and 4w23h-5w00h28m}, once(playlist_gyogyfurdo)),
     ({4w and 12h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Gyogyf
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
@@ -375,14 +365,12 @@ sources = [
     ({6w and 6w23h-7w00h28m}, once(playlist_d23)),
     ({6w12h-7w00h}, playlist_off_air_ambient),                     #ambient: Merites - D23
     ({7w and 10h30m-12h28m}, once(playlist_lohuma)),                    #Sunday
-    ({7w and 12h30m-13h58m}, once(playlist_bambusz)),
     ({7w and 14h-16h58m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h-17h58m}, once(playlist_geigercounterculture)),
     ({7w and 18h-18h58m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h58m}, once(playlist_hatterzaj)),
     ({7w and 20h-20h58m}, once(playlist_csuszka)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
-    ({7w and 22h-22h58m}, once(playlist_zeneszen)),
     ({7w and 11h-22h30m}, playlist_off_air_ambient),                        #ambient: Lohuma - Zeneszen
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
