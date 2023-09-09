@@ -243,6 +243,10 @@ playlist_lahmaloudclouds = cue_cut(id="cue_playlist_lahmaloudclouds", playlist_l
 playlist_lahmacun_presents = playlist(id="playlist_lahmacun_presents",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmacun_presents.m3u")
 playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playlist_lahmacun_presents)
 
+#Special event
+playlist_lahma_kripta_support = playlist(id="playlist_lahma_kripta_support",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahma_kripta_support.m3u")
+playlist_lahma_kripta_support = cue_cut(id="cue_playlist_lahma_kripta_support", playlist_lahma_kripta_support)
+
 #External streams
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
 external_tirkultura = mksafe(buffer(buffer=5., input.http("https://s3.radio.co/s216811754/listen")))
@@ -319,8 +323,7 @@ live = map_metadata(insert_missing, live)
 
 sources = [ 
     ({!live_enabled}, live),    #Live DJ
-    ({1w and 8h30m-10h}, external_tirkultura),             # Monday
-    ({1w and 10h-10h58m}, once(playlist_szedd_a_labad)),             
+    ({1w and 10h-10h58m}, once(playlist_szedd_a_labad)),             # Monday
     ({1w and 11h11m-12h9m}, once(playlist_transverszia)),             # orig requested time 11:11 am 12:12 pm
     ({1w and 13h-13h58m}, once(playlist_a_who_say)),
     ({1w and 14h-15h28m}, once(playlist_korunk)),    
@@ -339,8 +342,7 @@ sources = [
     ({2w and 21h-21h58m}, once(playlist_turmeric_acid)),
     ({2w and 22h-22h58m}, once(playlist_exit)),
     ({2w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Clouds - Exit
-    ({3w and 8h30m-10h}, external_palanga),                  #Wednesday
-    ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),           
+    ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_cleptorama)),
@@ -366,9 +368,8 @@ sources = [
     ({5w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Boombap
     ({6w and 11h30m-13h28m}, once(playlist_merites)),                  #Saturday
     ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     
-    ({6w and 15h-17h58m}, once(playlist_torso)),
-    ({6w and 18h-19h58m}, once(playlist_rnr666)),
-    ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
+    ({6w and 15h-15h58m}, once(playlist_torso)),
+    ({6w and 16h-22h58m}, once(playlist_lahma_kripta_support)),
     ({6w and 6w23h-7w00h28m}, once(playlist_d23)),
     ({6w12h-7w00h}, playlist_off_air_ambient),                     #ambient: Merites - D23
     ({7w and 10h30m-12h28m}, once(playlist_lohuma)),                    #Sunday
