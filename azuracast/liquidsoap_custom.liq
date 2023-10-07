@@ -229,6 +229,9 @@ playlist_random_times = cue_cut(id="stereo_playlist_random_times", playlist_rand
 playlist_nepek_zaja = playlist(id="playlist_nepek_zaja",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_nepek_zaja.m3u")
 playlist_nepek_zaja = cue_cut(id="stereo_playlist_nepek_zaja", playlist_nepek_zaja) 
 
+playlist_aa_radio = playlist(id="playlist_aa_radio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_aa_radio.m3u")
+playlist_aa_radio = cue_cut(id="cue_playlist_aa_radio", playlist_aa_radio)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -351,6 +354,7 @@ sources = [
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Schmerz
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
+    ({5w and 15h-15h58m}, once(playlist_aa_radio)),
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
