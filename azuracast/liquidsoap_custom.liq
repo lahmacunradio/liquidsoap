@@ -151,9 +151,6 @@ playlist_hetedik_tipusu_talalkozas = cue_cut(id="cue_playlist_hetedik_tipusu_tal
 playlist_melyvagas = playlist(id="playlist_melyvagas",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_melyvagas.m3u")
 playlist_melyvagas = cue_cut(id="cue_playlist_melyvagas", playlist_melyvagas)
 
-playlist_udcsi = playlist(id="playlist_udcsi",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_udcsi.m3u")
-playlist_udcsi = cue_cut(id="cue_playlist_udcsi", playlist_udcsi)
-
 playlist_kerodzo = playlist(id="playlist_kerodzo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kerodzo.m3u")
 playlist_kerodzo = cue_cut(id="stereo_playlist_kerodzo", playlist_kerodzo) 
 
@@ -162,9 +159,6 @@ playlist_mosolyszunet = cue_cut(id="cue_playlist_mosolyszunet", playlist_mosolys
 
 playlist_lohuma = playlist(id="playlist_lohuma",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
 playlist_lohuma = cue_cut(id="cue_playlist_lohuma", playlist_lohuma)
-
-playlist_merites= playlist(id="playlist_merites",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_merites.m3u")
-playlist_merites= cue_cut(id="cue_playlist_merites", playlist_merites)
 
 playlist_randomcsunyalanyok = playlist(id="playlist_randomcsunyalanyok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_randomcsunyalanyok.m3u")
 playlist_randomcsunyalanyok = cue_cut(id="cue_playlist_randomcsunyalanyok", playlist_randomcsunyalanyok)
@@ -323,7 +317,6 @@ sources = [
     ({1w and 14h-15h28m}, once(playlist_korunk)),    
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_paikka)),
-    ({1w and 18h-18h58m}, once(playlist_udcsi)),
     ({1w and 19h30m-20h58m}, once(playlist_kolegak)),
     ({1w and 21h-21h58m}, once(playlist_urmajmok)),      
     ({1w and 22h-23h58m}, once(playlist_infinite_scroll)),      
@@ -361,8 +354,7 @@ sources = [
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),       
     ({5w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Boombap
-    ({6w and 11h30m-13h28m}, once(playlist_merites)),                  #Saturday
-    ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     
+    ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     #Saturday
     ({6w and 15h-17h58m}, once(playlist_torso)),
     ({6w and 18h-19h58m}, once(playlist_rnr666)),
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
