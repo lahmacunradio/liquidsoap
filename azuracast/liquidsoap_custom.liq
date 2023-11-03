@@ -103,9 +103,6 @@ playlist_lazy_calm_raga = cue_cut(id="cue_playlist_lazy_calm_raga", playlist_laz
 playlist_szmuti_csorba = playlist(id="playlist_szmuti_csorba",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_szmuti_csorba.m3u")
 playlist_szmuti_csorba = cue_cut(id="cue_playlist_szmuti_csorba", playlist_szmuti_csorba)
 
-playlist_schmerz = playlist(id="playlist_schmerz",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_schmerz.m3u")
-playlist_schmerz = cue_cut(id="cue_playlist_schmerz", playlist_schmerz)
-
 playlist_erdenklang = playlist(id="playlist_erdenklang",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_erdenklang.m3u")
 playlist_erdenklang = cue_cut(id="cue_playlist_erdenklang", playlist_erdenklang)
 
@@ -168,9 +165,6 @@ playlist_rambo = cue_cut(id="cue_playlist_rambo", playlist_rambo)
 
 playlist_csuszka = playlist(id="playlist_csuszka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_csuszka.m3u")
 playlist_csuszka = cue_cut(id="cue_playlist_csuszka", playlist_csuszka)
-
-playlist_boombap = playlist(id="playlist_boombap",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
-playlist_boombap = cue_cut(id="cue_playlist_boombap", playlist_boombap)
 
 playlist_moneyka = playlist(id="playlist_moneyka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
 playlist_moneyka = cue_cut(id="cue_playlist_moneyka", playlist_moneyka)
@@ -242,7 +236,7 @@ playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playli
 
 #External streams
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
-#external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
+external_cosmos = mksafe(buffer(buffer=5., input.http("https://play.streamnerd.nl/tivolivredenburg/studiopandora/icecast.audio")))
 
 # DJ Authentication
 last_authenticated_dj = ref("")
@@ -344,16 +338,17 @@ sources = [
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 19h-19h58m}, once(playlist_dalmata_gergo_show)),
     ({4w and 20h-20h58m}, once(playlist_nepek_zaja)),
-    ({4w and 21h-22h58m}, once(playlist_schmerz)),
-    ({4w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Schmerz
+    ({4w21h-5w01h}, external_cosmos),
+    ({4w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Schmerz
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 15h-15h58m}, once(playlist_aa_radio)),
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
-    ({5w and 21h-21h58m}, once(playlist_boombap)),       
-    ({5w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Boombap
+    ({5w21h30m-6w02h}, external_cosmos),
+    ({5w and 12h30m-22h}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Boombap
+    ({6w and 9h-9h10m}, external_cosmos),                  #Test
     ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     #Saturday
     ({6w and 15h-17h58m}, once(playlist_torso)),
     ({6w and 18h-19h58m}, once(playlist_rnr666)),
