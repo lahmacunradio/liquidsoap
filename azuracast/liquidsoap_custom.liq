@@ -136,9 +136,6 @@ playlist_d23 = cue_cut(id="cue_playlist_d23", playlist_d23)
 playlist_transverszia = playlist(id="playlist_transverszia",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_transverszia.m3u")
 playlist_transverszia = cue_cut(id="cue_playlist_transverszia", playlist_transverszia)
 
-playlist_dead_hound = playlist(id="playlist_dead_hound",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_dead_hound.m3u")
-playlist_dead_hound = cue_cut(id="cue_playlist_dead_hound", playlist_dead_hound)
-
 playlist_infinite_scroll = playlist(id="playlist_infinite_scroll",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_infinite_scroll.m3u")
 playlist_infinite_scroll = cue_cut(id="cue_playlist_infinite_scroll", playlist_infinite_scroll)
 
@@ -147,9 +144,6 @@ playlist_torso = cue_cut(id="cue_playlist_torso", playlist_torso)
 
 playlist_hetedik_tipusu_talalkozas = playlist(id="playlist_hetedik_tipusu_talalkozas",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_hetedik_tipusu_talalkozas.m3u")
 playlist_hetedik_tipusu_talalkozas = cue_cut(id="cue_playlist_hetedik_tipusu_talalkozas", playlist_hetedik_tipusu_talalkozas)
-
-playlist_melyvagas = playlist(id="playlist_melyvagas",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_melyvagas.m3u")
-playlist_melyvagas = cue_cut(id="cue_playlist_melyvagas", playlist_melyvagas)
 
 playlist_kerodzo = playlist(id="playlist_kerodzo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kerodzo.m3u")
 playlist_kerodzo = cue_cut(id="stereo_playlist_kerodzo", playlist_kerodzo) 
@@ -325,7 +319,6 @@ sources = [
     ({1w and 22h-23h58m}, once(playlist_infinite_scroll)),      
     ({1w and 10h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Szedd - Infinite
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),
-    ({2w and 15h30m-16h58m}, once(playlist_melyvagas)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
     ({2w and 19h-19h58m}, once(playlist_mosolyszunet)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
@@ -352,7 +345,6 @@ sources = [
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 15h-15h58m}, once(playlist_aa_radio)),
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
-    ({5w and 17h-17h58m}, once(playlist_dead_hound)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),       
