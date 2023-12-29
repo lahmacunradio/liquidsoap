@@ -340,7 +340,8 @@ sources = [
     ({6w10h30m-7w00h}, playlist_off_air_ambient),                     #ambient: Superstar - D23
     ({7w and 10h30m-12h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 14h-14h58m}, once(playlist_donald_kacsa_klub)),
-    ({7w and 15h-23h58m}, once(playlist_2023_ujev)),
+    ({7w and 15h-15h58m}, once(playlist_urmajmok)),
+    ({7w20h-1w01h58m}, playlist_2023_ujev),
     ({7w and 11h-23h30m}, playlist_off_air_ambient),                        #ambient: Lohuma - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
