@@ -217,6 +217,9 @@ playlist_aa_radio = cue_cut(id="cue_playlist_aa_radio", playlist_aa_radio)
 playlist_superstar = playlist(id="playlist_superstar",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_superstar.m3u")
 playlist_superstar = cue_cut(id="cue_playlist_superstar", playlist_superstar)
 
+playlist_2023_ujev = playlist(id="playlist_2023_ujev",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_2023_ujev.m3u")
+playlist_2023_ujev = cue_cut(id="cue_playlist_2023_ujev", playlist_2023_ujev)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -352,13 +355,9 @@ sources = [
     ({6w and 6w23h-7w00h28m}, once(playlist_d23)),
     ({6w10h30m-7w00h}, playlist_off_air_ambient),                     #ambient: Superstar - D23
     ({7w and 10h30m-12h28m}, once(playlist_lohuma)),                    #Sunday
-    ({7w and 14h-16h58m}, once(playlist_donald_kacsa_klub)),
-    ({7w and 17h-17h58m}, once(playlist_geigercounterculture)),
-    ({7w and 18h-18h58m}, once(playlist_hetedik_tipusu_talalkozas)),
-    ({7w and 19h-19h58m}, once(playlist_hatterzaj)),
-    ({7w and 20h-20h58m}, once(playlist_csuszka)),
-    ({7w and 21h-21h58m}, once(playlist_sub_burek)),
-    ({7w and 11h-21h30m}, playlist_off_air_ambient),                        #ambient: Lohuma - Sub Burek
+    ({7w and 14h-14h58m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 20h-23h58m}, once(playlist_2023_ujev)),
+    ({7w and 11h-23h30m}, playlist_off_air_ambient),                        #ambient: Lohuma - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
     ({true}, playlist_off_air) ]
