@@ -226,6 +226,9 @@ playlist_superstar = cue_cut(id="cue_playlist_superstar", playlist_superstar)
 playlist_stringtheory = playlist(id="playlist_stringtheory",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stringtheory.m3u")
 playlist_stringtheory = cue_cut(id="cue_playlist_stringtheory", playlist_stringtheory)
 
+playlist_ganzfeld = playlist(id="playlist_ganzfeld",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ganzfeld.m3u")
+playlist_ganzfeld = cue_cut(id="cue_playlist_ganzfeld", playlist_ganzfeld)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -351,8 +354,9 @@ sources = [
     ({5w and 17h-17h58m}, once(playlist_stringtheory)),               
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
-    ({5w and 21h-21h58m}, once(playlist_boombap)),       
-    ({5w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Boombap
+    ({5w and 21h-21h58m}, once(playlist_boombap)),
+    ({5w and 21h-21h58m}, once(playlist_ganzfeld)),
+    ({5w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Ganzfeld
     ({6w and 10h-12h}, once(playlist_superstar)),     #Saturday
     ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     
     ({6w and 15h-17h58m}, once(playlist_torso)),
