@@ -355,8 +355,8 @@ sources = [
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
-    ({5w and 21h-21h58m}, once(playlist_ganzfeld)),
-    ({5w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Ganzfeld
+    ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
+    ({5w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Ganzfeld
     ({6w and 10h-12h}, once(playlist_superstar)),     #Saturday
     ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     
     ({6w and 15h-17h58m}, once(playlist_torso)),
