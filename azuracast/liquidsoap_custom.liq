@@ -222,6 +222,9 @@ playlist_lahmaloudclouds = cue_cut(id="cue_playlist_lahmaloudclouds", playlist_l
 playlist_lahmacun_presents = playlist(id="playlist_lahmacun_presents",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmacun_presents.m3u")
 playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playlist_lahmacun_presents)
 
+playlist_wrd2024 = playlist(id="playlist_wrd2024",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_wrd2024.m3u")
+playlist_wrd2024 = cue_cut(id="cue_playlist_wrd2024", playlist_wrd2024)
+
 #External streams
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
 external_cosmos = mksafe(buffer(buffer=5., input.http("https://play.streamnerd.nl/tivolivredenburg/studiopandora/icecast.audio")))
@@ -303,13 +306,14 @@ sources = [
     ({1w and 21h-21h58m}, once(playlist_urmajmok)),      
     ({1w and 22h-23h58m}, once(playlist_infinite_scroll)),      
     ({1w and 10h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Szedd - Infinite
+    ({2w and 6h-11h58m}, once(playlist_wrd2024)),
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
     ({2w and 19h-19h58m}, once(playlist_mosolyszunet)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 21h-21h58m}, once(playlist_turmeric_acid)),
     ({2w and 22h-22h58m}, once(playlist_exit)),
-    ({2w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Clouds - Exit
+    ({2w and 6h30m-22h30m}, playlist_off_air_ambient),                        #ambient: WRD - Exit
     ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
