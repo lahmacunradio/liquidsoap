@@ -306,7 +306,7 @@ sources = [
     ({1w and 21h-21h58m}, once(playlist_urmajmok)),      
     ({1w and 22h-23h58m}, once(playlist_infinite_scroll)),      
     ({1w and 10h30m-23h30m}, playlist_off_air_ambient),                        #ambient: Szedd - Infinite
-    ({2w and 6h-11h58m}, once(playlist_wrd2024)),
+    ({2w and 5h-11h58m}, once(playlist_wrd2024)),
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
     ({2w and 19h-19h58m}, once(playlist_mosolyszunet)),
