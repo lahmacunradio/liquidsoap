@@ -334,7 +334,7 @@ sources = [
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 21h-21h58m}, once(playlist_turmeric_acid)),
     ({2w and 22h-22h58m}, once(playlist_exit)),
-    ({2w and 6h30m-22h30m}, playlist_off_air_ambient),                        #ambient: WRD - Exit
+    ({2w and 5h30m-22h30m}, playlist_off_air_ambient),                        #ambient: WRD - Exit
     ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),           #Wednesday
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
