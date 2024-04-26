@@ -354,7 +354,7 @@ sources = [
     ({6w and 15h-17h58m}, once(playlist_torso)),
     ({6w and 18h-19h58m}, once(playlist_rnr666)),
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
-    ({6w and 6w23h-7w00h28m}, once(playlist_d23)),
+    ({6w23h-7w00h28m}, once(playlist_d23)),
     ({6w10h30m-7w00h}, playlist_off_air_ambient),                     #ambient: Superstar - D23
     ({7w and 10h30m-12h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 14h-16h58m}, once(playlist_donald_kacsa_klub)),
