@@ -208,9 +208,6 @@ playlist_kolegak = cue_cut(id="stereo_playlist_kolegak", playlist_kolegak)
 playlist_random_times = playlist(id="playlist_random_times",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_random_times.m3u")
 playlist_random_times = cue_cut(id="stereo_playlist_random_times", playlist_random_times) 
 
-playlist_nepek_zaja = playlist(id="playlist_nepek_zaja",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_nepek_zaja.m3u")
-playlist_nepek_zaja = cue_cut(id="stereo_playlist_nepek_zaja", playlist_nepek_zaja) 
-
 playlist_aa_radio = playlist(id="playlist_aa_radio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_aa_radio.m3u")
 playlist_aa_radio = cue_cut(id="cue_playlist_aa_radio", playlist_aa_radio)
 
@@ -341,7 +338,6 @@ sources = [
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 19h-19h58m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 20h-20h58m}, once(playlist_nepek_zaja)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Schmerz
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
@@ -358,7 +354,7 @@ sources = [
     ({6w and 15h-17h58m}, once(playlist_torso)),
     ({6w and 18h-19h58m}, once(playlist_rnr666)),
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
-    ({6w and 6w23h-7w00h28m}, once(playlist_d23)),
+    ({6w23h-7w00h28m}, once(playlist_d23)),
     ({6w10h30m-7w00h}, playlist_off_air_ambient),                     #ambient: Superstar - D23
     ({7w and 10h30m-12h28m}, once(playlist_lohuma)),                    #Sunday
     ({7w and 14h-16h58m}, once(playlist_donald_kacsa_klub)),
