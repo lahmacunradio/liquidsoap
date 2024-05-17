@@ -148,9 +148,6 @@ playlist_hetedik_tipusu_talalkozas = cue_cut(id="cue_playlist_hetedik_tipusu_tal
 playlist_kerodzo = playlist(id="playlist_kerodzo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kerodzo.m3u")
 playlist_kerodzo = cue_cut(id="stereo_playlist_kerodzo", playlist_kerodzo) 
 
-playlist_mosolyszunet = playlist(id="playlist_mosolyszunet",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mosolyszunet.m3u")
-playlist_mosolyszunet = cue_cut(id="cue_playlist_mosolyszunet", playlist_mosolyszunet)
-
 playlist_lohuma = playlist(id="playlist_lohuma",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
 playlist_lohuma = cue_cut(id="cue_playlist_lohuma", playlist_lohuma)
 
@@ -314,7 +311,6 @@ sources = [
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
-    ({2w and 19h-19h58m}, once(playlist_mosolyszunet)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 21h-21h58m}, once(playlist_turmeric_acid)),
     ({2w and 12h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Clouds - Turmeric
