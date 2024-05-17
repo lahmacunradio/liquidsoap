@@ -154,9 +154,6 @@ playlist_mosolyszunet = cue_cut(id="cue_playlist_mosolyszunet", playlist_mosolys
 playlist_lohuma = playlist(id="playlist_lohuma",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
 playlist_lohuma = cue_cut(id="cue_playlist_lohuma", playlist_lohuma)
 
-playlist_randomcsunyalanyok = playlist(id="playlist_randomcsunyalanyok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_randomcsunyalanyok.m3u")
-playlist_randomcsunyalanyok = cue_cut(id="cue_playlist_randomcsunyalanyok", playlist_randomcsunyalanyok)
-
 playlist_rambo = playlist(id="playlist_rambo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
 playlist_rambo = cue_cut(id="cue_playlist_rambo", playlist_rambo)
 
@@ -339,7 +336,6 @@ sources = [
     ({4w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Schmerz
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 15h-15h58m}, once(playlist_aa_radio)),
-    ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
