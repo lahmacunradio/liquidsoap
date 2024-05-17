@@ -214,9 +214,6 @@ playlist_aa_radio = cue_cut(id="cue_playlist_aa_radio", playlist_aa_radio)
 playlist_superstar = playlist(id="playlist_superstar",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_superstar.m3u")
 playlist_superstar = cue_cut(id="cue_playlist_superstar", playlist_superstar)
 
-playlist_stringtheory = playlist(id="playlist_stringtheory",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stringtheory.m3u")
-playlist_stringtheory = cue_cut(id="cue_playlist_stringtheory", playlist_stringtheory)
-
 playlist_ganzfeld = playlist(id="playlist_ganzfeld",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ganzfeld.m3u")
 playlist_ganzfeld = cue_cut(id="cue_playlist_ganzfeld", playlist_ganzfeld)
 
@@ -343,7 +340,6 @@ sources = [
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
     ({5w and 15h-15h58m}, once(playlist_aa_radio)),
     ({5w and 16h-16h58m}, once(playlist_randomcsunyalanyok)),           
-    ({5w and 17h-17h58m}, once(playlist_stringtheory)),               
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
