@@ -331,7 +331,7 @@ sources = [
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Schmerz
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                #Friday
-    ({5w and 15h-15h58m}, once(playlist_aa_radio)),
+    ({5w and 15h-16h58m}, once(playlist_aa_radio)),
     ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
