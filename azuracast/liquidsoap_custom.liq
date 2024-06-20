@@ -211,6 +211,15 @@ playlist_lahmaloudclouds = cue_cut(id="cue_playlist_lahmaloudclouds", playlist_l
 playlist_lahmacun_presents = playlist(id="playlist_lahmacun_presents",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmacun_presents.m3u")
 playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playlist_lahmacun_presents)
 
+playlist_scene_part1 = playlist(id="playlist_scene_part1",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_scene_part1.m3u")
+playlist_scene_part1 = cue_cut(id="cue_playlist_scene_part1", playlist_scene_part1)
+
+playlist_scene_intermezzo = playlist(id="playlist_scene_intermezzo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_scene_intermezzo.m3u")
+playlist_scene_intermezzo = cue_cut(id="cue_playlist_scene_intermezzo", playlist_scene_intermezzo)
+
+playlist_scene_part2 = playlist(id="playlist_scene_part2",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_scene_part2.m3u")
+playlist_scene_part2 = cue_cut(id="cue_playlist_scene_part2", playlist_scene_part2)
+
 #External streams
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
 #external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
@@ -327,7 +336,10 @@ sources = [
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
     ({6w23h-7w00h28m}, once(playlist_d23)),
     ({6w10h30m-7w00h}, playlist_off_air_ambient),                     #ambient: Superstar - D23
-    ({7w and 10h30m-12h28m}, once(playlist_lohuma)),                    #Sunday
+    ({7w and 10h30m-11h58m}, once(playlist_lohuma)),                    #Sunday
+    ({7w and 12h00m-16h13m}, once(playlist_scene_part1)),
+    ({7w and 16h15m-18h13m}, once(playlist_scene_intermezzo)),
+    ({7w and 18h15m-23h28m}, once(playlist_scene_part2)),
     ({7w and 11h-23h00m}, playlist_off_air_ambient),                        #ambient: Lohuma - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
