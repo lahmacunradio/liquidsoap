@@ -127,9 +127,6 @@ playlist_havizaj = cue_cut(id="cue_playlist_havizaj", playlist_havizaj)
 playlist_dalmata_gergo_show = playlist(id="playlist_dalmata_gergo_show",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_gergo_show.m3u")
 playlist_dalmata_gergo_show = cue_cut(id="cue_playlist_dalmata_gergo_show", playlist_dalmata_gergo_show)
 
-playlist_a_who_say = playlist(id="playlist_a_who_say",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
-playlist_a_who_say = cue_cut(id="cue_playlist_a_who_say", playlist_a_who_say)
-
 playlist_d23 = playlist(id="playlist_d23",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_d23.m3u")
 playlist_d23 = cue_cut(id="cue_playlist_d23", playlist_d23)
 
@@ -297,7 +294,6 @@ live = map_metadata(insert_missing, live)
 sources = [ 
     ({!live_enabled}, live),    #Live DJ
     ({1w and 11h11m-12h9m}, once(playlist_transverszia)),             # Monday
-    ({1w and 13h-13h58m}, once(playlist_a_who_say)),
     ({1w and 14h-15h28m}, once(playlist_korunk)),    
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_paikka)),
