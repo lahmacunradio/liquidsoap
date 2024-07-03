@@ -127,9 +127,6 @@ playlist_havizaj = cue_cut(id="cue_playlist_havizaj", playlist_havizaj)
 playlist_dalmata_gergo_show = playlist(id="playlist_dalmata_gergo_show",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_gergo_show.m3u")
 playlist_dalmata_gergo_show = cue_cut(id="cue_playlist_dalmata_gergo_show", playlist_dalmata_gergo_show)
 
-playlist_a_who_say = playlist(id="playlist_a_who_say",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
-playlist_a_who_say = cue_cut(id="cue_playlist_a_who_say", playlist_a_who_say)
-
 playlist_d23 = playlist(id="playlist_d23",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_d23.m3u")
 playlist_d23 = cue_cut(id="cue_playlist_d23", playlist_d23)
 
@@ -144,12 +141,6 @@ playlist_torso = cue_cut(id="cue_playlist_torso", playlist_torso)
 
 playlist_hetedik_tipusu_talalkozas = playlist(id="playlist_hetedik_tipusu_talalkozas",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_hetedik_tipusu_talalkozas.m3u")
 playlist_hetedik_tipusu_talalkozas = cue_cut(id="cue_playlist_hetedik_tipusu_talalkozas", playlist_hetedik_tipusu_talalkozas)
-
-playlist_kerodzo = playlist(id="playlist_kerodzo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kerodzo.m3u")
-playlist_kerodzo = cue_cut(id="stereo_playlist_kerodzo", playlist_kerodzo) 
-
-playlist_lohuma = playlist(id="playlist_lohuma",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
-playlist_lohuma = cue_cut(id="cue_playlist_lohuma", playlist_lohuma)
 
 playlist_rambo = playlist(id="playlist_rambo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
 playlist_rambo = cue_cut(id="cue_playlist_rambo", playlist_rambo)
@@ -303,7 +294,6 @@ live = map_metadata(insert_missing, live)
 sources = [ 
     ({!live_enabled}, live),    #Live DJ
     ({1w and 11h11m-12h9m}, once(playlist_transverszia)),             # Monday
-    ({1w and 13h-13h58m}, once(playlist_a_who_say)),
     ({1w and 14h-15h28m}, once(playlist_korunk)),    
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_paikka)),
@@ -341,21 +331,19 @@ sources = [
     ({5w and 21h-21h58m}, once(playlist_boombap)),
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({5w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Ganzfeld
-    ({6w and 10h-12h}, once(playlist_superstar)),     #Saturday
-    ({6w and 13h30m-14h58m}, once(playlist_kerodzo)),     
+    ({6w and 10h-12h}, once(playlist_superstar)),                       #Saturday
     ({6w and 15h-17h58m}, once(playlist_torso)),
     ({6w and 18h-19h58m}, once(playlist_rnr666)),
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
     ({6w23h-7w00h28m}, once(playlist_d23)),
     ({6w10h30m-7w00h}, playlist_off_air_ambient),                     #ambient: Superstar - D23
-    ({7w and 10h30m-12h28m}, once(playlist_lohuma)),                    #Sunday
-    ({7w and 14h-16h58m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 14h-16h58m}, once(playlist_donald_kacsa_klub)),          #Sunday
     ({7w and 17h-17h58m}, once(playlist_geigercounterculture)),
     ({7w and 18h-18h58m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h58m}, once(playlist_hatterzaj)),
     ({7w and 20h-20h58m}, once(playlist_csuszka)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
-    ({7w and 11h-21h30m}, playlist_off_air_ambient),                        #ambient: Lohuma - Sub Burek
+    ({7w and 11h-21h30m}, playlist_off_air_ambient),                        #ambient: Donald Kacsa - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
     ({true}, playlist_off_air) ]
