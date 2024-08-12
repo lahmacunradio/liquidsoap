@@ -206,7 +206,7 @@ playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playli
 
 #External streams
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
-#external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
+external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
 
 # DJ Authentication
 last_authenticated_dj = ref("")
@@ -275,8 +275,10 @@ live = map_metadata(insert_missing, live)
 
 sources = [ 
     ({!live_enabled}, live),    #Live DJ
-    ({1w and 11h11m-12h9m}, once(playlist_transverszia)),             # Monday
-    ({1w and 18h-18h58m}, once(playlist_fulbevalo)),     
+    ({1w and 11h11m-11h58m}, once(playlist_transverszia)),             # Monday
+    ({1w and 12h-17h58m}, external_cashmere),
+    ({1w and 18h-18h58m}, once(playlist_fulbevalo)),
+    ({1w and 19h-23h58m}, external_cashmere),     
     ({1w and 11h45m-23h30m}, playlist_off_air_ambient),                        #ambient: transverszia - Infinite
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
