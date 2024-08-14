@@ -208,6 +208,9 @@ playlist_diszko_tonik = cue_cut(id="cue_playlist_diszko_tonik", playlist_diszko_
 playlist_fulbevalo = playlist(id="playlist_fulbevalo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_fulbevalo.m3u")
 playlist_fulbevalo = cue_cut(id="playlist_fulbevalo", playlist_fulbevalo)
 
+playlist_civil_waves = playlist(id="playlist_civil_waves",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_civil_waves.m3u")
+playlist_civil_waves = cue_cut(id="playlist_civil_waves", playlist_civil_waves)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -316,7 +319,8 @@ sources = [
     ({3w and 19h-19h58m}, once(playlist_rambo)),
     ({3w and 20h-21h58m}, once(playlist_random_times)),
     ({3w and 15h30m-21h30m}, playlist_off_air_ambient),                     #ambient: EH - Random Times
-    ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  #Thursday
+    ({4w and 9h-11h}, once(playlist_civil_waves)),                  #Thursday    
+    ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  
     ({4w and 14h-14h58m}, once(playlist_kigyotanc)),
     ({4w and 15h-15h58m}, once(playlist_btob)),
     ({4w and 16h-16h58m}, once(playlist_fkse)),
