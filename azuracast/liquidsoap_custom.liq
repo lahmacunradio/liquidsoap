@@ -184,9 +184,6 @@ playlist_btob = cue_cut(id="stereo_playlist_btob", playlist_btob)
 playlist_temporary_nites = playlist(id="playlist_temporary_nites",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_temporary_nites.m3u")
 playlist_temporary_nites = cue_cut(id="stereo_playlist_temporary_nites", playlist_temporary_nites) 
 
-playlist_kigyotanc = playlist(id="playlist_kigyotanc",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kigyotanc.m3u")
-playlist_kigyotanc = cue_cut(id="stereo_playlist_kigyotanc", playlist_kigyotanc) 
-
 playlist_kolegak = playlist(id="playlist_kolegak",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kolegak.m3u")
 playlist_kolegak = cue_cut(id="stereo_playlist_kolegak", playlist_kolegak) 
 
@@ -321,7 +318,6 @@ sources = [
     ({3w and 15h30m-21h30m}, playlist_off_air_ambient),                     #ambient: EH - Random Times
     ({4w and 9h-11h}, once(playlist_civil_waves)),                  #Thursday    
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  
-    ({4w and 14h-14h58m}, once(playlist_kigyotanc)),
     ({4w and 15h-15h58m}, once(playlist_btob)),
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
