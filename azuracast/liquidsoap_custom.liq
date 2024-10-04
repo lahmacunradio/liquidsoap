@@ -218,7 +218,7 @@ playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playli
 
 #External streams
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
-#external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
+external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
 
 # DJ Authentication
 last_authenticated_dj = ref("")
@@ -319,7 +319,8 @@ sources = [
     ({4w and 19h-19h58m}, once(playlist_dalmata_gergo_show)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka csut - Schmerz
-    ({5w and 20h-20h58m}, once(playlist_moneyka)),                      #Friday
+    ({5w and 12h-19h58m}, external_cashmere),                           #Friday
+    ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({5w and 12h30m-22h30m}, playlist_off_air_ambient),                        #ambient: Ritka pentek - Ganzfeld
