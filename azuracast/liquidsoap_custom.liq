@@ -337,13 +337,13 @@ sources = [
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
     ({6w23h-7w00h28m}, once(playlist_d23)),
     ({6w10h30m-7w00h}, playlist_off_air_ambient),                     #ambient: Superstar - D23
-    ({7w and 14h-16h58m}, once(playlist_donald_kacsa_klub)),          #Sunday
+    ({7w and 15h-16h58m}, once(playlist_donald_kacsa_klub)),          #Sunday
     ({7w and 17h-17h58m}, once(playlist_geigercounterculture)),
     ({7w and 18h-18h58m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h58m}, once(playlist_hatterzaj)),
     ({7w and 20h-20h58m}, once(playlist_csuszka)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
-    ({7w and 11h-21h30m}, playlist_off_air_ambient),                        #ambient: Donald Kacsa - Sub Burek
+    ({7w and 15h30m-21h30m}, playlist_off_air_ambient),                        #ambient: Donald Kacsa - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
     ({true}, playlist_off_air) ]
