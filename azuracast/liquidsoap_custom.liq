@@ -326,12 +326,12 @@ sources = [
     ({4w and 15h-15h58m}, once(playlist_btob)),
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
-    ({4w and 19h-19h58m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 15h30m-19h30m}, playlist_off_air_ambient),                 #ambient: btob - Dalmata Geri
+    ({4w and 19h-20h28m}, once(playlist_dalmata_gergo_show)),
+    ({4w and 15h30m-20h00m}, playlist_off_air_ambient),                 #ambient: btob - Dalmata Geri
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
-    ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
+    ({5w and 18h-19h28m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
