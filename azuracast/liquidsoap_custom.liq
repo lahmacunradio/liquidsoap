@@ -95,9 +95,6 @@ playlist_mmn_radio = cue_cut(id="cue_playlist_mmn_radio", playlist_mmn_radio)
 playlist_szmuti_csorba = playlist(id="playlist_szmuti_csorba",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_szmuti_csorba.m3u")
 playlist_szmuti_csorba = cue_cut(id="cue_playlist_szmuti_csorba", playlist_szmuti_csorba)
 
-playlist_schmerz = playlist(id="playlist_schmerz",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_schmerz.m3u")
-playlist_schmerz = cue_cut(id="cue_playlist_schmerz", playlist_schmerz)
-
 playlist_erdenklang = playlist(id="playlist_erdenklang",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_erdenklang.m3u")
 playlist_erdenklang = cue_cut(id="cue_playlist_erdenklang", playlist_erdenklang)
 
@@ -280,16 +277,11 @@ sources = [
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday    
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  
     ({4w and 15h-15h58m}, once(playlist_btob)),
-    ({4w and 15h30m-19h30m}, playlist_off_air_ambient),                 #ambient: btob - Dalmata Geri
-    ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 15h-15h58m}, once(playlist_aa_radio)),
-    ({5w and 20h30m-22h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Ganzfeld
     ({6w and 10h-12h}, once(playlist_superstar)),                       #Saturday
     ({6w and 15h-15h58m}, once(playlist_torso)),
-    ({6w15h30m-6w21h30m}, playlist_off_air_ambient),                    #ambient: torso - Mood Sequence
     ({7w and 15h-15h58m}, once(playlist_donald_kacsa_klub)),            #Sunday
-    ({7w and 15h30m-21h30m}, playlist_off_air_ambient),                 #ambient: donald kacsa - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
     ({true}, playlist_off_air) ]
