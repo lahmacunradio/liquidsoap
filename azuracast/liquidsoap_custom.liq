@@ -180,7 +180,7 @@ playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playli
 
 #External streams
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
-#external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
+external_cosmos_x_refuge = mksafe(buffer(buffer=5., input.http("https://s4.radio.co/s8ce53d687/listen")))
 
 # DJ Authentication
 last_authenticated_dj = ref("")
@@ -277,11 +277,15 @@ sources = [
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday    
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  
     ({4w and 15h-15h58m}, once(playlist_btob)),
+    ({4w16h-5w1h58m}, external_cosmos_x_refuge),
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 15h-15h58m}, once(playlist_aa_radio)),
+    ({5w16h-6w1h58m}, external_cosmos_x_refuge),
     ({6w and 10h-12h}, once(playlist_superstar)),                       #Saturday
     ({6w and 15h-15h58m}, once(playlist_torso)),
+    ({6w16h-7w1h58m}, external_cosmos_x_refuge),
     ({7w and 15h-15h58m}, once(playlist_donald_kacsa_klub)),            #Sunday
+    ({7w and 16h-23h58m}, external_cosmos_x_refuge),
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
     ({true}, playlist_off_air) ]
