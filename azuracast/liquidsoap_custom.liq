@@ -142,9 +142,6 @@ playlist_torso = cue_cut(id="cue_playlist_torso", playlist_torso)
 playlist_hetedik_tipusu_talalkozas = playlist(id="playlist_hetedik_tipusu_talalkozas",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_hetedik_tipusu_talalkozas.m3u")
 playlist_hetedik_tipusu_talalkozas = cue_cut(id="cue_playlist_hetedik_tipusu_talalkozas", playlist_hetedik_tipusu_talalkozas)
 
-playlist_rambo = playlist(id="playlist_rambo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
-playlist_rambo = cue_cut(id="cue_playlist_rambo", playlist_rambo)
-
 playlist_csuszka = playlist(id="playlist_csuszka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_csuszka.m3u")
 playlist_csuszka = cue_cut(id="cue_playlist_csuszka", playlist_csuszka)
 
@@ -317,9 +314,8 @@ sources = [
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_cleptorama)),
     ({3w and 18h-18h58m}, once(playlist_temporary_nites)),
-    ({3w and 19h-19h58m}, once(playlist_rambo)),
+    ({3w and 15h30m-18h30m}, playlist_off_air_ambient),                 #ambient: eh - Temp Nites
     ({3w and 20h-21h58m}, once(playlist_random_times)),
-    ({3w and 15h30m-21h30m}, playlist_off_air_ambient),                 #ambient: eh - Random Times
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday    
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  
     ({4w and 15h-15h58m}, once(playlist_btob)),
