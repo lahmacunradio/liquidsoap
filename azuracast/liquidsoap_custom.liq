@@ -208,6 +208,9 @@ playlist_civil_waves = cue_cut(id="playlist_civil_waves", playlist_civil_waves)
 playlist_we_love_music = playlist(id="playlist_we_love_music",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_we_love_music.m3u")
 playlist_we_love_music = cue_cut(id="cue_playlist_we_love_music", playlist_we_love_music)
 
+playlist_truno_tapes = playlist(id="playlist_truno_tapes",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_truno_tapes.m3u")
+playlist_truno_tapes = cue_cut(id="cue_playlist_truno_tapes", playlist_truno_tapes)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -326,6 +329,7 @@ sources = [
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
+    ({5w and 17h-17h58m}, once(playlist_truno_tapes)),
     ({5w and 18h-19h28m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
