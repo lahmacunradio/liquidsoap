@@ -198,6 +198,18 @@ playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
 playlist_ritka_pentek = playlist(id="playlist_ritka_pentek",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_pentek.m3u")
 playlist_ritka_pentek = cue_cut(id="cue_playlist_ritka_pentek", playlist_ritka_pentek)
 
+playlist_rfm2024party = playlist(id="playlist_rfm2024party",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rfm2024party.m3u")
+playlist_rfm2024party = cue_cut(id="cue_playlist_rfm2024party", playlist_rfm2024party)
+
+playlist_rfm2024morning = playlist(id="playlist_rfm2024morning",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rfm2024morning.m3u")
+playlist_rfm2024morning = cue_cut(id="cue_playlist_rfm2024morning", playlist_rfm2024morning)
+
+playlist_rfm2024guitar = playlist(id="playlist_rfm2024guitar",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rfm2024guitar.m3u")
+playlist_rfm2024guitar = cue_cut(id="cue_playlist_rfm2024guitar", playlist_rfm2024guitar)
+
+playlist_rfm2024noise = playlist(id="playlist_rfm2024noise",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rfm2024noise.m3u")
+playlist_rfm2024noise = cue_cut(id="cue_playlist_rfm2024noise", playlist_rfm2024noise)
+
 #Lahmacun-own shows
 playlist_lahmaloudclouds = playlist(id="playlist_lahmaloudclouds",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmaloudclouds.m3u")
 playlist_lahmaloudclouds = cue_cut(id="cue_playlist_lahmaloudclouds", playlist_lahmaloudclouds)
@@ -321,6 +333,10 @@ sources = [
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
     ({6w15h30m-6w21h30m}, playlist_off_air_ambient),                    #ambient: torso - Mood Sequence
     ({6w23h-7w00h28m}, once(playlist_d23)),
+    ({7w and 01h-05h58m}, once(playlist_rfm2024party)),                 #Sunday
+    ({7w and 06h-11h58m}, once(playlist_rfm2024morning)),
+    ({7w and 12h-18h58m}, once(playlist_rfm2024guitar)),
+    ({7w19h-1w01h28m}, once(playlist_rfm2024noise)),
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),   
     ({true}, playlist_off_air) ]
