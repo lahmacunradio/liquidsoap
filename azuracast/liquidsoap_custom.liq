@@ -199,6 +199,15 @@ playlist_truno_tapes = cue_cut(id="cue_playlist_truno_tapes", playlist_truno_tap
 playlist_sunday_morgen = playlist(id="playlist_sunday_morgen",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sunday_morgen.m3u")
 playlist_sunday_morgen = cue_cut(id="cue_playlist_sunday_morgen", playlist_sunday_morgen)
 
+playlist_pszeudo_2024_magyareszt = playlist(id="playlist_pszeudo_2024_magyareszt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_pszeudo_2024_magyareszt.m3u")
+playlist_pszeudo_2024_magyareszt = cue_cut(id="cue_playlist_pszeudo_2024_magyareszt", playlist_pszeudo_2024_magyareszt)
+
+playlist_pszeudo_2024_live = playlist(id="playlist_pszeudo_2024_live",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_pszeudo_2024_live.m3u")
+playlist_pszeudo_2024_live = cue_cut(id="cue_playlist_pszeudo_2024_live", playlist_pszeudo_2024_live)
+
+playlist_pszeudo_2024_miks = playlist(id="playlist_pszeudo_2024_miks",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_pszeudo_2024_miks.m3u")
+playlist_pszeudo_2024_miks = cue_cut(id="cue_playlist_pszeudo_2024_miks", playlist_pszeudo_2024_miks)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -291,6 +300,9 @@ sources = [
     ({1w and 19h30m-20h58m}, once(playlist_kolegak)),
     ({1w and 21h-21h58m}, once(playlist_urmajmok)),      
     ({1w and 20h00m-21h30m}, playlist_off_air_ambient),                 #ambient: kolegak - Urmajmok
+    ({2w and 12h-15h58m}, playlist_pszeudo_2024_magyareszt),         #Tuesday
+    ({2w and 16h-20h58m}, playlist_pszeudo_2024_live),
+    ({2w21h-3w07h58m}, playlist_pszeudo_2024_miks),
     ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),            #Wednesday
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
