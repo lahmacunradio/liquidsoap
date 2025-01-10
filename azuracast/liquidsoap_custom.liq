@@ -335,10 +335,10 @@ sources = [
     ({5w and 21h-21h58m}, once(playlist_boombap)),
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({5w and 20h30m-22h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Ganzfeld
-    ({6w and 01h-05h58m}, once(playlist_rfm2024party)),                 #Sunday
-    ({6w and 06h-11h58m}, once(playlist_rfm2024morning)),
-    ({6w and 12h-18h58m}, once(playlist_rfm2024guitar)),
-    ({6w19h-7w01h28m}, once(playlist_rfm2024noise)),
+    ({6w and 01h-05h58m}, playlist_rfm2024party),                 #Sunday
+    ({6w and 06h-11h58m}, playlist_rfm2024morning),
+    ({6w and 12h-18h58m}, playlist_rfm2024guitar),
+    ({6w19h-7w01h28m}, playlist_rfm2024noise),
     ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),                #Sunday
     ({7w and 13h-14h58m}, once(playlist_infinite_scroll)),
     ({7w and 15h-16h58m}, once(playlist_donald_kacsa_klub)),
