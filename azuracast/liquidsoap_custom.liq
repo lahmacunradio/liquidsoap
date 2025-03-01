@@ -220,6 +220,9 @@ playlist_blr = cue_cut(id="cue_playlist_blr", playlist_blr)
 playlist_punctum = playlist(id="playlist_punctum",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_punctum.m3u")
 playlist_punctum = cue_cut(id="cue_playlist_punctum", playlist_punctum)
 
+playlist_mementomori = playlist(id="playlist_mementomori",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mementomori.m3u")
+playlist_mementomori = cue_cut(id="cue_playlist_mementomori", playlist_mementomori)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -310,10 +313,10 @@ sources = [
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_paikka)),
     ({1w and 18h-18h58m}, once(playlist_fulbevalo)),
-    ({1w and 16h30m-18h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Fulbevalo
+    ({1w and 19h-20h58m}, once(playlist_mementomori)),
     ({1w and 21h-21h58m}, once(playlist_urmajmok)),
     ({1w and 22h-22h58m}, once(playlist_punctum)),
-    ({1w and 21h30m-22h30m}, playlist_off_air_ambient),                 #ambient: urmajmok - Punctum
+    ({1w and 16h30m-22h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Punctum
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
