@@ -223,6 +223,9 @@ playlist_punctum = cue_cut(id="cue_playlist_punctum", playlist_punctum)
 playlist_mementomori = playlist(id="playlist_mementomori",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mementomori.m3u")
 playlist_mementomori = cue_cut(id="cue_playlist_mementomori", playlist_mementomori)
 
+playlist_madein = playlist(id="playlist_madein",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_madein.m3u")
+playlist_madein = cue_cut(id="cue_playlist_madein", playlist_madein)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -329,6 +332,7 @@ sources = [
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_cleptorama)),
     ({3w and 18h-18h58m}, once(playlist_temporary_nites)),
+    ({3w and 20h-21h58m}, once(playlist_madein)),
     ({3w and 15h30m-18h30m}, playlist_off_air_ambient),                 #ambient: eh - Temp Nites
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday    
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  
