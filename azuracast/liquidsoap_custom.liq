@@ -179,7 +179,7 @@ playlist_temporary_nites = playlist(id="playlist_temporary_nites",mime_type="aud
 playlist_temporary_nites = cue_cut(id="stereo_playlist_temporary_nites", playlist_temporary_nites)
 
 playlist_random_times = playlist(id="playlist_random_times",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_random_times.m3u")
-playlist_random_times = cue_cut(id="stereo_playlist_random_times", playlist_random_times) 
+playlist_random_times = cue_cut(id="stereo_playlist_random_times", playlist_random_times)
 
 playlist_aa_radio = playlist(id="playlist_aa_radio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_aa_radio.m3u")
 playlist_aa_radio = cue_cut(id="cue_playlist_aa_radio", playlist_aa_radio)
@@ -222,6 +222,9 @@ playlist_mementomori = cue_cut(id="cue_playlist_mementomori", playlist_mementomo
 
 playlist_madein = playlist(id="playlist_madein",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_madein.m3u")
 playlist_madein = cue_cut(id="cue_playlist_madein", playlist_madein)
+
+playlist_nagyot_utott_irodalom = playlist(id="playlist_nagyot_utott_irodalom",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_nagyot_utott_irodalom.m3u")
+playlist_nagyot_utott_irodalom = cue_cut(id="cue_playlist_nagyot_utott_irodalom", playlist_nagyot_utott_irodalom)
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -306,10 +309,11 @@ def insert_missing(m) =
 end
 live = map_metadata(insert_missing, live)
 
-sources = [ 
+sources = [
     ({!live_enabled}, live),    #Live DJ
-    ({1w and 11h11m-12h9m}, once(playlist_transverszia)),               # Monday
-    ({1w and 14h-15h28m}, once(playlist_korunk)),    
+    ({1w and 08h-09h58m}, once(playlist_nagyot_utott_irodalom)),               # Monday
+    ({1w and 11h11m-12h9m}, once(playlist_transverszia)),
+    ({1w and 14h-15h28m}, once(playlist_korunk)),
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_paikka)),
     ({1w and 18h-18h58m}, once(playlist_fulbevalo)),
@@ -331,8 +335,8 @@ sources = [
     ({3w and 18h-18h58m}, once(playlist_temporary_nites)),
     ({3w and 20h-21h58m}, once(playlist_madein)),
     ({3w and 15h30m-18h30m}, playlist_off_air_ambient),                 #ambient: eh - Temp Nites
-    ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday    
-    ({4w and 12h-13h58m}, once(playlist_ritka_csut)),                  
+    ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday
+    ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
     ({4w and 15h-15h58m}, once(playlist_btob)),
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
@@ -365,7 +369,7 @@ sources = [
     ({7w and 13h30m-19h30m}, playlist_off_air_ambient),                 #ambient: sunday morgen - Hatterzaj
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
-    #({ 6w and 18h23m-18h24m}, external_cashmere),   
+    #({ 6w and 18h23m-18h24m}, external_cashmere),
     ({true}, playlist_off_air) ]
 
 def fading_transition(a,b) =
@@ -373,7 +377,7 @@ def fading_transition(a,b) =
     fade.out(track_sensitive=false,a.source),
     playlist_jingle_station_id, playlist_jingle_donate,
     fade.in(track_sensitive=false,b.source)
-    ])    
+    ])
 end
 
 
