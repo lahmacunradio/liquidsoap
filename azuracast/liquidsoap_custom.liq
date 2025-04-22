@@ -223,6 +223,9 @@ playlist_mementomori = cue_cut(id="cue_playlist_mementomori", playlist_mementomo
 playlist_madein = playlist(id="playlist_madein",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_madein.m3u")
 playlist_madein = cue_cut(id="cue_playlist_madein", playlist_madein)
 
+playlist_kisszoba = playlist(id="playlist_kisszoba",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kisszoba.m3u")
+playlist_kisszoba = cue_cut(id="cue_playlist_kisszoba", playlist_kisszoba)
+
 playlist_nagyot_utott_irodalom = playlist(id="playlist_nagyot_utott_irodalom",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_nagyot_utott_irodalom.m3u")
 playlist_nagyot_utott_irodalom = cue_cut(id="cue_playlist_nagyot_utott_irodalom", playlist_nagyot_utott_irodalom)
 
@@ -366,8 +369,9 @@ sources = [
     ({7w and 17h-17h58m}, once(playlist_geigercounterculture)),
     ({7w and 18h-18h58m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 19h-19h58m}, once(playlist_hatterzaj)),
-    ({7w and 13h30m-19h30m}, playlist_off_air_ambient),                 #ambient: sunday morgen - Hatterzaj
+    ({7w and 20h-20h58m}, once(playlist_kisszoba)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
+    ({7w and 11h30m-21h30m}, playlist_off_air_ambient),                 #ambient: sunday morgen - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),
     ({true}, playlist_off_air) ]
