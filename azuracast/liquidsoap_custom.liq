@@ -202,6 +202,12 @@ playlist_kisszoba = cue_cut(id="cue_playlist_kisszoba", playlist_kisszoba)
 playlist_perspectives = playlist(id="playlist_perspectives",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_perspectives.m3u")
 playlist_perspectives = cue_cut(id="cue_playlist_perspectives", playlist_perspectives)
 
+playlist_ukmukfukklive = playlist(id="playlist_ukmukfukklive",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ukmukfukklive.m3u")
+playlist_ukmukfukklive = cue_cut(id="cue_playlist_ukmukfukklive", playlist_ukmukfukklive)
+
+playlist_ukmukfukkkonzerv = playlist(id="playlist_ukmukfukkkonzerv",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ukmukfukkkonzerv.m3u")
+playlist_ukmukfukkkonzerv = cue_cut(id="cue_playlist_ukmukfukkkonzerv", playlist_ukmukfukkkonzerv)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -329,11 +335,15 @@ sources = [
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({5w and 20h30m-22h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Ganzfeld
     ({6w and 10h-10h58m}, once(playlist_superstar)),                    #Saturday
+    ({6w and 11h-18h58m}, once(playlist_ukmukfukklive)),
+    ({6w and 19h-19h58m}, once(playlist_ukmukfukkkonzerv)),
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
     ({6w and 22h-22h58m}, once(playlist_blr)),
     ({6w23h-7w00h28m}, once(playlist_d23)),
     ({6w10h30m-7w}, playlist_off_air_ambient),                          #ambient: superstar - D23             
-    ({7w and 20h-20h58m}, once(playlist_kisszoba)),                     #Sunday
+    ({7w and 11h-18h58m}, once(playlist_ukmukfukklive)),                #Sunday
+    ({7w and 19h-19h58m}, once(playlist_ukmukfukkkonzerv)),
+    ({7w and 20h-20h58m}, once(playlist_kisszoba)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
     ({7w and 11h30m-21h30m}, playlist_off_air_ambient),                 #ambient: sunday morgen - Sub Burek
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
