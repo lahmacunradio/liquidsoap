@@ -232,6 +232,9 @@ playlist_kisszoba = cue_cut(id="cue_playlist_kisszoba", playlist_kisszoba)
 playlist_perspectives = playlist(id="playlist_perspectives",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_perspectives.m3u")
 playlist_perspectives = cue_cut(id="cue_playlist_perspectives", playlist_perspectives)
 
+playlist_stepbystep = playlist(id="playlist_stepbystep",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stepbystep.m3u")
+playlist_stepbystep = cue_cut(id="cue_playlist_stepbystep", playlist_stepbystep)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -375,7 +378,8 @@ sources = [
     ({7w and 19h-19h58m}, once(playlist_hatterzaj)),
     ({7w and 20h-20h58m}, once(playlist_kisszoba)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
-    ({7w and 11h30m-21h30m}, playlist_off_air_ambient),                 #ambient: sunday morgen - Sub Burek
+    ({7w and 22h-23h58m}, once(playlist_stepbystep)),
+    ({7w and 11h30m-23h30m}, playlist_off_air_ambient),                 #ambient: sunday morgen - Step by Step
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),
     ({true}, playlist_off_air) ]
