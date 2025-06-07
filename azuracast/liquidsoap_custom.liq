@@ -235,6 +235,9 @@ playlist_perspectives = cue_cut(id="cue_playlist_perspectives", playlist_perspec
 playlist_stepbystep = playlist(id="playlist_stepbystep",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stepbystep.m3u")
 playlist_stepbystep = cue_cut(id="cue_playlist_stepbystep", playlist_stepbystep)
 
+playlist_lehetosegek_tere = playlist(id="playlist_lehetosegek_tere",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lehetosegek_tere.m3u")
+playlist_lehetosegek_tere = cue_cut(id="cue_playlist_lehetosegek_tere", playlist_lehetosegek_tere)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -346,6 +349,7 @@ sources = [
     ({3w and 20h-21h58m}, once(playlist_madein)),
     ({3w and 15h30m-18h30m}, playlist_off_air_ambient),                 #ambient: eh - Temp Nites
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday
+    ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
     ({4w and 15h-15h58m}, once(playlist_btob)),
     ({4w and 16h-16h58m}, once(playlist_fkse)),
