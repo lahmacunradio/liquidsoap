@@ -220,6 +220,9 @@ playlist_lehetosegek_tere = cue_cut(id="cue_playlist_lehetosegek_tere", playlist
 playlist_tekerveny = playlist(id="playlist_tekerveny",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tekerveny.m3u")
 playlist_tekerveny = cue_cut(id="cue_playlist_tekerveny", playlist_tekerveny)
 
+playlist_tamogatoibuli202507 = playlist(id="playlist_tamogatoibuli202507",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tamogatoibuli202507.m3u")
+playlist_tamogatoibuli202507 = cue_cut(id="cue_playlist_tamogatoibuli202507", playlist_tamogatoibuli202507)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -349,6 +352,7 @@ sources = [
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({5w and 20h30m-22h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Ganzfeld
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
+    ({6w12h-7w01h58m}, once(playlist_tamogatoibuli202507)),
     ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),                #Sunday
     ({7w and 13h-14h58m}, once(playlist_infinite_scroll)),
     ({7w and 15h-16h58m}, once(playlist_donald_kacsa_klub)),
