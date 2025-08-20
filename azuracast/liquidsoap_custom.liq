@@ -167,9 +167,6 @@ playlist_cleptorama = cue_cut(id="cue_playlist_cleptorama", playlist_cleptorama)
 playlist_korunk = playlist(id="playlist_korunk",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_korunk.m3u")
 playlist_korunk = cue_cut(id="cue_playlist_korunk", playlist_korunk)
 
-playlist_btob = playlist(id="playlist_btob",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_btob.m3u")
-playlist_btob = cue_cut(id="stereo_playlist_btob", playlist_btob)
-
 playlist_temporary_nites = playlist(id="playlist_temporary_nites",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_temporary_nites.m3u")
 playlist_temporary_nites = cue_cut(id="stereo_playlist_temporary_nites", playlist_temporary_nites)
 
@@ -235,6 +232,9 @@ playlist_lehetosegek_tere = cue_cut(id="cue_playlist_lehetosegek_tere", playlist
 
 playlist_tekerveny = playlist(id="playlist_tekerveny",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tekerveny.m3u")
 playlist_tekerveny = cue_cut(id="cue_playlist_tekerveny", playlist_tekerveny)
+
+playlist_napkozi = playlist(id="playlist_napkozi",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_napkozi.m3u")
+playlist_napkozi = cue_cut(id="stereo_playlist_napkozi", playlist_napkozi)
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -348,11 +348,11 @@ sources = [
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
-    ({4w and 15h-15h58m}, once(playlist_btob)),
+    ({4w and 14h-15h58m}, once(playlist_napkozi)),
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 19h-20h28m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 15h30m-20h00m}, playlist_off_air_ambient),                 #ambient: btob - Dalmata Geri
+    ({4w and 15h30m-20h00m}, playlist_off_air_ambient),                 #ambient: napkozi - Dalmata Geri
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
