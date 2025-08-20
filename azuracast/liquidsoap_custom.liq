@@ -112,9 +112,6 @@ playlist_erdenklang = cue_cut(id="cue_playlist_erdenklang", playlist_erdenklang)
 playlist_donald_kacsa_klub = playlist(id="playlist_donald_kacsa_klub",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_donald_kacsa_klub.m3u")
 playlist_donald_kacsa_klub = cue_cut(id="cue_playlist_donald_kacsa_klub", playlist_donald_kacsa_klub)
 
-playlist_turmeric_acid = playlist(id="playlist_turmeric_acid",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_turmeric_acid.m3u")
-playlist_turmeric_acid = cue_cut(id="cue_playlist_turmeric_acid", playlist_turmeric_acid)
-
 playlist_erto_hallgatas = playlist(id="playlist_erto_hallgatas",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_erto_hallgatas.m3u")
 playlist_erto_hallgatas = cue_cut(id="cue_playlist_erto_hallgatas", playlist_erto_hallgatas)
 
@@ -163,8 +160,6 @@ playlist_graveyard_slot = cue_cut(id="cue_playlist_graveyard_slot", playlist_gra
 playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
 playlist_geigercounterculture = cue_cut(id="cue_playlist_geigercounterculture", playlist_geigercounterculture)
 
-playlist_urmajmok = playlist(id="playlist_urmajmok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
-playlist_urmajmok = cue_cut(id="cue_playlist_urmajmok", playlist_urmajmok)
 
 playlist_cleptorama = playlist(id="playlist_cleptorama",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_cleptorama.m3u")
 playlist_cleptorama = cue_cut(id="cue_playlist_cleptorama", playlist_cleptorama)
@@ -333,14 +328,12 @@ sources = [
     ({1w and 17h-17h58m}, once(playlist_paikka)),
     ({1w and 18h-18h58m}, once(playlist_fulbevalo)),
     ({1w and 19h-20h58m}, once(playlist_mementomori)),
-    ({1w and 21h-21h58m}, once(playlist_urmajmok)),
     ({1w and 22h-22h58m}, once(playlist_punctum)),
     ({1w and 16h30m-22h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Punctum
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
-    ({2w and 21h-21h58m}, once(playlist_turmeric_acid)),
     ({2w and 22h-23h28m}, once(playlist_we_love_music)),
     ({2w and 20h30m-23h00m}, playlist_off_air_ambient),                 #ambient: havizaj - We Love Music
     ({3w and 11h-11h58m}, once(playlist_perspectives)),                 #Wednesday
