@@ -236,6 +236,9 @@ playlist_tekerveny = cue_cut(id="cue_playlist_tekerveny", playlist_tekerveny)
 playlist_napkozi = playlist(id="playlist_napkozi",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_napkozi.m3u")
 playlist_napkozi = cue_cut(id="stereo_playlist_napkozi", playlist_napkozi)
 
+playlist_friday_afternoon = playlist(id="playlist_friday_afternoon",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_friday_afternoon.m3u")
+playlist_friday_afternoon = cue_cut(id="cue_playlist_friday_afternoon", playlist_friday_afternoon)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -354,14 +357,15 @@ sources = [
     ({4w and 19h-20h28m}, once(playlist_dalmata_gergo_show)),
     ({4w and 15h30m-20h00m}, playlist_off_air_ambient),                 #ambient: napkozi - Dalmata Geri
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
-    ({5w and 12h-13h58m}, once(playlist_ritka_pentek)),                 #Friday
+    ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
+    ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
     ({5w and 17h-17h58m}, once(playlist_truno_tapes)),
     ({5w and 18h-19h28m}, once(playlist_graveyard_slot)),
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
-    ({5w and 20h30m-22h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Ganzfeld
+    ({5w and 20h30m-22h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Ganzfeld    
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
     ({6w and 12h-13h58m}, once(playlist_random_times)),
     ({6w and 14h-14h58m}, once(playlist_esforditva)),
