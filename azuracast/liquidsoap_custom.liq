@@ -239,6 +239,9 @@ playlist_napkozi = cue_cut(id="stereo_playlist_napkozi", playlist_napkozi)
 playlist_friday_afternoon = playlist(id="playlist_friday_afternoon",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_friday_afternoon.m3u")
 playlist_friday_afternoon = cue_cut(id="cue_playlist_friday_afternoon", playlist_friday_afternoon)
 
+playlist_discursive_musical_voyage = playlist(id="playlist_discursive_musical_voyage",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_discursive_musical_voyage.m3u")
+playlist_discursive_musical_voyage = cue_cut(id="cue_playlist_discursive_musical_voyage", playlist_discursive_musical_voyage)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -336,6 +339,7 @@ sources = [
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
+    ({2w and 19h-19h58m}, once(playlist_discursive_musical_voyage)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 22h-23h28m}, once(playlist_we_love_music)),
     ({2w and 20h30m-23h00m}, playlist_off_air_ambient),                 #ambient: havizaj - We Love Music
