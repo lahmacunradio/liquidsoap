@@ -339,8 +339,8 @@ sources = [
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
-    ({2w and 19h-19h58m}, once(playlist_discursive_musical_voyage)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
+    ({2w and 21h-21h58m}, once(playlist_discursive_musical_voyage)),
     ({2w and 22h-23h28m}, once(playlist_we_love_music)),
     ({2w and 20h30m-23h00m}, playlist_off_air_ambient),                 #ambient: havizaj - We Love Music
     ({3w and 11h-11h58m}, once(playlist_perspectives)),                 #Wednesday
