@@ -334,8 +334,8 @@ sources = [
     ({1w and 17h-17h58m}, once(playlist_paikka)),
     ({1w and 18h-18h58m}, once(playlist_fulbevalo)),
     ({1w and 19h-20h58m}, once(playlist_mementomori)),
+    ({1w and 16h30m-20h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Memento
     ({1w and 22h-22h58m}, once(playlist_punctum)),
-    ({1w and 16h30m-22h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Punctum
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
@@ -345,6 +345,7 @@ sources = [
     ({2w and 20h30m-23h00m}, playlist_off_air_ambient),                 #ambient: havizaj - We Love Music
     ({3w and 11h-11h58m}, once(playlist_perspectives)),                 #Wednesday
     ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),
+    ({3w and 11h30m-13h30m}, playlist_off_air_ambient),                 #ambient: perspectives - Lahma Presents
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_cleptorama)),
@@ -359,13 +360,14 @@ sources = [
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 19h-20h28m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 15h30m-20h00m}, playlist_off_air_ambient),                 #ambient: napkozi - Dalmata Geri
+    ({4w and 9h30m-20h00m}, playlist_off_air_ambient),                 #ambient: civil waves - Dalmata Geri
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
     ({5w and 17h-17h58m}, once(playlist_truno_tapes)),
     ({5w and 18h-19h28m}, once(playlist_graveyard_slot)),
+    ({5w and 12h-19h}, playlist_off_air_ambient),                 #ambient: ritka - GS
     ({5w and 20h-20h58m}, once(playlist_moneyka)),
     ({5w and 21h-21h58m}, once(playlist_boombap)),
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
