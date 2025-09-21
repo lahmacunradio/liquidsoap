@@ -197,9 +197,6 @@ playlist_truno_tapes = cue_cut(id="cue_playlist_truno_tapes", playlist_truno_tap
 playlist_sunday_morgen = playlist(id="playlist_sunday_morgen",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sunday_morgen.m3u")
 playlist_sunday_morgen = cue_cut(id="cue_playlist_sunday_morgen", playlist_sunday_morgen)
 
-playlist_esforditva = playlist(id="playlist_esforditva",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_esforditva.m3u")
-playlist_esforditva = cue_cut(id="cue_playlist_esforditva", playlist_esforditva)
-
 playlist_blr = playlist(id="playlist_blr",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_blr.m3u")
 playlist_blr = cue_cut(id="cue_playlist_blr", playlist_blr)
 
@@ -371,13 +368,13 @@ sources = [
     ({5w and 20h30m-22h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Ganzfeld    
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
     ({6w and 12h-13h58m}, once(playlist_random_times)),
-    ({6w and 14h-14h58m}, once(playlist_esforditva)),
+    ({6w and 10h30m-13h30m}, playlist_off_air_ambient),                    #ambient: superstar - Random Times
     ({6w and 15h-17h58m}, once(playlist_torso)),
     ({6w and 18h-19h58m}, once(playlist_rnr666)),
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
     ({6w and 22h-22h58m}, once(playlist_blr)),
     ({6w23h-7w00h28m}, once(playlist_d23)),
-    ({6w10h30m-7w}, playlist_off_air_ambient),                    #ambient: superstar - D23
+    ({6w15h30m-7w}, playlist_off_air_ambient),                    #ambient: torso - D23
     ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),                #Sunday
     ({7w and 13h-14h58m}, once(playlist_infinite_scroll)),
     ({7w and 15h-16h58m}, once(playlist_donald_kacsa_klub)),
