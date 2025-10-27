@@ -340,7 +340,7 @@ sources = [
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 9h30m-18h30m}, playlist_off_air_ambient),                 #ambient: civil waves - Lazy Calm Raga
-    ({4w and 19h-22h58m}, once(playlist_bush_csutortok)),
+    ({4w and 19h-23h58m}, once(playlist_bush_csutortok)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
