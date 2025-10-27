@@ -215,6 +215,15 @@ playlist_friday_afternoon = cue_cut(id="cue_playlist_friday_afternoon", playlist
 playlist_discursive_musical_voyage = playlist(id="playlist_discursive_musical_voyage",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_discursive_musical_voyage.m3u")
 playlist_discursive_musical_voyage = cue_cut(id="cue_playlist_discursive_musical_voyage", playlist_discursive_musical_voyage)
 
+playlist_bush_szerda = playlist(id="playlist_bush_szerda",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_bush_szerda.m3u")
+playlist_bush_szerda = cue_cut(id="cue_playlist_bush_szerda", playlist_bush_szerda)
+
+playlist_bush_csutortok = playlist(id="playlist_bush_csutortok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_bush_csutortok.m3u")
+playlist_bush_csutortok = cue_cut(id="cue_playlist_bush_csutortok", playlist_bush_csutortok)
+
+playlist_bush_pentek = playlist(id="playlist_bush_pentek",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_bush_pentek.m3u")
+playlist_bush_pentek = cue_cut(id="cue_playlist_bush_pentek", playlist_bush_pentek)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -323,6 +332,7 @@ sources = [
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_cleptorama)),
     ({3w and 15h30m-17h30m}, playlist_off_air_ambient),                 #ambient: eh - Cleptorama
+    ({3w and 19h-22h58m}, once(playlist_bush_szerda)),
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
@@ -330,12 +340,14 @@ sources = [
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 9h30m-18h30m}, playlist_off_air_ambient),                 #ambient: civil waves - Lazy Calm Raga
+    ({4w and 19h-22h58m}, once(playlist_bush_csutortok)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
     ({5w and 17h-17h58m}, once(playlist_truno_tapes)),
-    ({5w and 18h-18h58m}, once(playlist_graveyard_slot)),
+    ({5w and 18h-18h28m}, once(playlist_graveyard_slot)),
     ({5w and 12h-18h30m}, playlist_off_air_ambient),                 #ambient: ritka - GS
+    ({5w18h30m-6w00h28m}, once(playlist_bush_pentek)),
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
     ({6w and 12h-13h58m}, once(playlist_random_times)),
     ({6w and 10h30m-13h30m}, playlist_off_air_ambient),                    #ambient: superstar - Random Times
