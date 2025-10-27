@@ -332,7 +332,7 @@ sources = [
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_cleptorama)),
     ({3w and 15h30m-17h30m}, playlist_off_air_ambient),                 #ambient: eh - Cleptorama
-    ({3w and 19h-22h58m}, once(playlist_bush_szerda)),
+    ({3w and 19h-22h58m}, playlist_bush_szerda),
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
@@ -340,14 +340,14 @@ sources = [
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 9h30m-18h30m}, playlist_off_air_ambient),                 #ambient: civil waves - Lazy Calm Raga
-    ({4w and 19h-23h58m}, once(playlist_bush_csutortok)),
+    ({4w and 19h-23h58m}, playlist_bush_csutortok),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
     ({5w and 17h-17h58m}, once(playlist_truno_tapes)),
     ({5w and 18h-18h28m}, once(playlist_graveyard_slot)),
     ({5w and 12h-18h30m}, playlist_off_air_ambient),                 #ambient: ritka - GS
-    ({5w18h30m-6w00h28m}, once(playlist_bush_pentek)),
+    ({5w18h30m-6w00h28m}, playlist_bush_pentek),
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
     ({6w and 12h-13h58m}, once(playlist_random_times)),
     ({6w and 10h30m-13h30m}, playlist_off_air_ambient),                    #ambient: superstar - Random Times
