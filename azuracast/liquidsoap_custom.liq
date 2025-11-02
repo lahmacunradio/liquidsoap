@@ -203,6 +203,8 @@ playlist_lahmacun_presents = cue_cut(id="cue_playlist_lahmacun_presents", playli
 #Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
 #external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
 
+external_cosmos_x_refuge = mksafe(buffer(buffer=5., input.http("https://s4.radio.co/s8ce53d687/listen")))
+
 # DJ Authentication
 last_authenticated_dj = ref("")
 live_dj = ref("")
@@ -304,18 +306,21 @@ sources = [
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-17h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 9h30m-17h30m}, playlist_off_air_ambient),                 #ambient: civil waves - Lazy Calm Raga
+    ({4w18h-5w2h}, external_cosmos_x_refuge),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
-    ({5w and 12h-16h30m}, playlist_off_air_ambient),                 #ambient: ritka - Aa Radio 
+    ({5w and 12h-16h30m}, playlist_off_air_ambient),                 #ambient: ritka - Aa Radio
+    ({5w17h-6w2h}, external_cosmos_x_refuge),
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
     ({6w and 12h-13h58m}, once(playlist_random_times)),
     ({6w and 10h30m-13h30m}, playlist_off_air_ambient),                    #ambient: superstar - Random Times
     ({6w and 15h-16h58m}, once(playlist_torso)),
-    ({6w15h30m-7w}, playlist_off_air_ambient),                    #ambient: torso - D23
+    ({6w17h-7w2h}, external_cosmos_x_refuge),
     ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),                #Sunday
     ({7w and 13h-14h58m}, once(playlist_infinite_scroll)),
     ({7w and 11h30m-14h30m}, playlist_off_air_ambient),                 #ambient: sunday morgen - Infinite Scroll
+    ({7w and 15h-23h58m}, external_cosmos_x_refuge),
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),
     ({true}, playlist_off_air) ]
