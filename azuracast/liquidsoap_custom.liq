@@ -239,6 +239,9 @@ playlist_discursive_musical_voyage = cue_cut(id="cue_playlist_discursive_musical
 playlist_furrowlines = playlist(id="playlist_furrowlines",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_furrowlines.m3u")
 playlist_furrowlines = cue_cut(id="cue_playlist_furrowlines", playlist_furrowlines)
 
+playlist_zeitgeist = playlist(id="playlist_zeitgeist",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeitgeist.m3u")
+playlist_zeitgeist = cue_cut(id="cue_playlist_zeitgeist", playlist_zeitgeist)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -350,7 +353,8 @@ sources = [
     ({3w and 19h-19h58m}, once(playlist_tekerveny)),
     ({3w and 20h-21h58m}, once(playlist_madein)),
     ({3w and 22h-22h58m}, once(playlist_furrowlines)),
-    ({3w and 19h30m-22h30m}, playlist_off_air_ambient),                 #ambient: Tekerveny - Furrow Lines
+    ({3w23h-4w00h58m}, once(playlist_zeitgeist)),
+    ({3w19h30m-4w00h30m}, playlist_off_air_ambient),                 #ambient: Tekerveny - Zeitgeist
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
