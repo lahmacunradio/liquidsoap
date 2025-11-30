@@ -242,6 +242,9 @@ playlist_furrowlines = cue_cut(id="cue_playlist_furrowlines", playlist_furrowlin
 playlist_zeitgeist = playlist(id="playlist_zeitgeist",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeitgeist.m3u")
 playlist_zeitgeist = cue_cut(id="cue_playlist_zeitgeist", playlist_zeitgeist)
 
+playlist_tropical_thunder = playlist(id="playlist_tropical_thunder",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tropical_thunder.m3u")
+playlist_tropical_thunder = cue_cut(id="cue_playlist_tropical_thunder", playlist_tropical_thunder)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -334,8 +337,9 @@ sources = [
     ({1w and 17h-17h58m}, once(playlist_paikka)),
     ({1w and 18h-18h58m}, once(playlist_fulbevalo)),
     ({1w and 19h-20h58m}, once(playlist_mementomori)),
-    ({1w and 16h30m-20h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Memento
     ({1w and 22h-22h58m}, once(playlist_punctum)),
+    ({1w and 23h-23h58m}, once(playlist_tropical_thunder)),
+    ({1w and 16h30m-23h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Tropical Thunder
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
