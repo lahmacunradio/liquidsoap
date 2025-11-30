@@ -337,9 +337,9 @@ sources = [
     ({1w and 17h-17h58m}, once(playlist_paikka)),
     ({1w and 18h-18h58m}, once(playlist_fulbevalo)),
     ({1w and 19h-20h58m}, once(playlist_mementomori)),
+    ({1w and 16h30m-20h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Memento
     ({1w and 22h-22h58m}, once(playlist_punctum)),
     ({1w and 23h-23h58m}, once(playlist_tropical_thunder)),
-    ({1w and 16h30m-23h30m}, playlist_off_air_ambient),                 #ambient: szmuti - Tropical Thunder
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 15h30m-17h30m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_mmn_radio)),
