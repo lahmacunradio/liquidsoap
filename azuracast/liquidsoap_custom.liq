@@ -160,7 +160,6 @@ playlist_graveyard_slot = cue_cut(id="cue_playlist_graveyard_slot", playlist_gra
 playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
 playlist_geigercounterculture = cue_cut(id="cue_playlist_geigercounterculture", playlist_geigercounterculture)
 
-
 playlist_cleptorama = playlist(id="playlist_cleptorama",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_cleptorama.m3u")
 playlist_cleptorama = cue_cut(id="cue_playlist_cleptorama", playlist_cleptorama)
 
@@ -245,9 +244,14 @@ playlist_zeitgeist = cue_cut(id="cue_playlist_zeitgeist", playlist_zeitgeist)
 playlist_tropical_thunder = playlist(id="playlist_tropical_thunder",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tropical_thunder.m3u")
 playlist_tropical_thunder = cue_cut(id="cue_playlist_tropical_thunder", playlist_tropical_thunder)
 
-
 playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
 playlist_arcadeok_alatt = cue_cut(id="playlist_arcadeok_alatt", playlist_arcadeok_alatt)
+
+playlist_spinning = playlist(id="playlist_spinning",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_spinning.m3u")
+playlist_spinning = cue_cut(id="cue_playlist_spinning", playlist_spinning)
+
+playlist_radioradioradio = playlist(id="playlist_radioradioradio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_radioradioradio.m3u")
+playlist_radioradioradio = cue_cut(id="cue_playlist_radioradioradio", playlist_radioradioradio)
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -372,6 +376,7 @@ sources = [
     ({4w and 19h-20h28m}, once(playlist_dalmata_gergo_show)),
     ({4w and 9h30m-20h00m}, playlist_off_air_ambient),                 #ambient: civil waves - Dalmata Geri
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
+    ({4w23h00m-5w00h58m}, once(playlist_spinning)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
@@ -392,7 +397,8 @@ sources = [
     ({6w and 22h-22h58m}, once(playlist_blr)),
     ({6w23h-7w00h28m}, once(playlist_d23)),
     ({6w15h30m-7w}, playlist_off_air_ambient),                    #ambient: torso - D23
-    ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),                #Sunday
+    ({7w and 10h-10h58m}, once(playlist_radioradioradio)),                  #Sunday
+    ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),
     ({7w and 13h-14h58m}, once(playlist_infinite_scroll)),
     ({7w and 15h-16h58m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h-17h58m}, once(playlist_geigercounterculture)),
@@ -401,7 +407,7 @@ sources = [
     ({7w and 20h-20h58m}, once(playlist_kisszoba)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
     ({7w and 22h-23h58m}, once(playlist_stepbystep)),
-    ({7w and 11h30m-23h30m}, playlist_off_air_ambient),                 #ambient: sunday morgen - Step by Step
+    ({7w and 10h30m-23h30m}, playlist_off_air_ambient),                 #ambient: radioradioradio - Step by Step
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),
     ({true}, playlist_off_air) ]
