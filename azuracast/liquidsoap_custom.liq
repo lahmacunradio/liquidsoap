@@ -376,7 +376,7 @@ sources = [
     ({4w and 19h-20h28m}, once(playlist_dalmata_gergo_show)),
     ({4w and 9h30m-20h00m}, playlist_off_air_ambient),                 #ambient: civil waves - Dalmata Geri
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
-    ({4w and 23h-23h58m}, once(playlist_spinning)),
+    ({4w23h00m-5w00h58m}, once(playlist_spinning)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
