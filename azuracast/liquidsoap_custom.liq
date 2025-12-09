@@ -160,7 +160,6 @@ playlist_graveyard_slot = cue_cut(id="cue_playlist_graveyard_slot", playlist_gra
 playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
 playlist_geigercounterculture = cue_cut(id="cue_playlist_geigercounterculture", playlist_geigercounterculture)
 
-
 playlist_cleptorama = playlist(id="playlist_cleptorama",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_cleptorama.m3u")
 playlist_cleptorama = cue_cut(id="cue_playlist_cleptorama", playlist_cleptorama)
 
@@ -245,9 +244,12 @@ playlist_zeitgeist = cue_cut(id="cue_playlist_zeitgeist", playlist_zeitgeist)
 playlist_tropical_thunder = playlist(id="playlist_tropical_thunder",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tropical_thunder.m3u")
 playlist_tropical_thunder = cue_cut(id="cue_playlist_tropical_thunder", playlist_tropical_thunder)
 
-
 playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
 playlist_arcadeok_alatt = cue_cut(id="playlist_arcadeok_alatt", playlist_arcadeok_alatt)
+
+playlist_spinning = playlist(id="playlist_spinning",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_spinning.m3u")
+playlist_spinning = cue_cut(id="cue_playlist_spinning", playlist_spinning)
+
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -372,6 +374,7 @@ sources = [
     ({4w and 19h-20h28m}, once(playlist_dalmata_gergo_show)),
     ({4w and 9h30m-20h00m}, playlist_off_air_ambient),                 #ambient: civil waves - Dalmata Geri
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
+    ({4w and 23h-23h58m}, once(playlist_spinning)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
