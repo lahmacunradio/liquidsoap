@@ -184,9 +184,6 @@ playlist_diszko_tonik = cue_cut(id="cue_playlist_diszko_tonik", playlist_diszko_
 playlist_fulbevalo = playlist(id="playlist_fulbevalo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_fulbevalo.m3u")
 playlist_fulbevalo = cue_cut(id="playlist_fulbevalo", playlist_fulbevalo)
 
-playlist_civil_waves = playlist(id="playlist_civil_waves",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_civil_waves.m3u")
-playlist_civil_waves = cue_cut(id="playlist_civil_waves", playlist_civil_waves)
-
 playlist_we_love_music = playlist(id="playlist_we_love_music",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_we_love_music.m3u")
 playlist_we_love_music = cue_cut(id="cue_playlist_we_love_music", playlist_we_love_music)
 
@@ -367,14 +364,14 @@ sources = [
     ({3w and 22h-22h58m}, once(playlist_furrowlines)),
     ({3w23h-4w00h58m}, once(playlist_zeitgeist)),
     ({3w19h30m-4w00h30m}, playlist_off_air_ambient),                 #ambient: Tekerveny - Zeitgeist
-    ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday
+    ({4w and 10h-10h58m}, once(playlist_radioradioradio)),                      #Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
     ({4w and 14h-15h58m}, once(playlist_napkozi)),
     ({4w and 16h-16h58m}, once(playlist_fkse)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 19h-20h28m}, once(playlist_dalmata_gergo_show)),
-    ({4w and 9h30m-20h00m}, playlist_off_air_ambient),                 #ambient: civil waves - Dalmata Geri
+    ({4w and 10h30m-20h00m}, playlist_off_air_ambient),                 #ambient: Radio radio radio - Dalmata Geri
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w23h00m-5w00h58m}, once(playlist_spinning)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
@@ -396,9 +393,8 @@ sources = [
     ({6w and 20h-21h58m}, once(playlist_mood_sequence)),
     ({6w and 22h-22h58m}, once(playlist_blr)),
     ({6w23h-7w00h28m}, once(playlist_d23)),
-    ({6w15h30m-7w}, playlist_off_air_ambient),                    #ambient: torso - D23
-    ({7w and 10h-10h58m}, once(playlist_radioradioradio)),                  #Sunday
-    ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),
+    ({6w15h30m-7w}, playlist_off_air_ambient),                    #ambient: torso - D23                  
+    ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),               #Sunday
     ({7w and 13h-14h58m}, once(playlist_infinite_scroll)),
     ({7w and 15h-16h58m}, once(playlist_donald_kacsa_klub)),
     ({7w and 17h-17h58m}, once(playlist_geigercounterculture)),
@@ -407,7 +403,7 @@ sources = [
     ({7w and 20h-20h58m}, once(playlist_kisszoba)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
     ({7w and 22h-23h58m}, once(playlist_stepbystep)),
-    ({7w and 10h30m-23h30m}, playlist_off_air_ambient),                 #ambient: radioradioradio - Step by Step
+    ({7w and 11h30m-23h30m}, playlist_off_air_ambient),                 #ambient: Sunday Morgen - Step by Step
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),
     ({true}, playlist_off_air) ]
