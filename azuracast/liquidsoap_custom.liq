@@ -223,9 +223,14 @@ playlist_discursive_musical_voyage = cue_cut(id="cue_playlist_discursive_musical
 playlist_tropical_thunder = playlist(id="playlist_tropical_thunder",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tropical_thunder.m3u")
 playlist_tropical_thunder = cue_cut(id="cue_playlist_tropical_thunder", playlist_tropical_thunder)
 
-
 playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
 playlist_arcadeok_alatt = cue_cut(id="playlist_arcadeok_alatt", playlist_arcadeok_alatt)
+
+playlist_2025_nye_special_live = playlist(id="playlist_2025_nye_special_live",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_2025_nye_special_live.m3u")
+playlist_2025_nye_special_live = cue_cut(id="playlist_2025_nye_special_live", playlist_2025_nye_special_live)
+
+playlist_2025_nye_special_konzerv = playlist(id="playlist_2025_nye_special_konzerv",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_2025_nye_special_konzerv.m3u")
+playlist_2025_nye_special_konzerv = cue_cut(id="playlist_2025_nye_special_konzerv", playlist_2025_nye_special_konzerv)
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -331,6 +336,8 @@ sources = [
     ({2w and 20h30m-23h00m}, playlist_off_air_ambient),                 #ambient: havizaj - We Love Music
     ({3w and 11h-11h58m}, once(playlist_perspectives)),                 #Wednesday
     ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),
+    ({3w and 15h30m-21h58m}, once(playlist_2025_nye_special_live)),
+    ({3w22h-4w00h58m}, playlist_2025_nye_special_konzerv),
     ({4w and 9h-11h}, once(playlist_civil_waves)),                      #Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
