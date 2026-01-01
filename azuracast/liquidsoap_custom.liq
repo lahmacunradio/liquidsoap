@@ -226,6 +226,12 @@ playlist_zeitgeist = cue_cut(id="cue_playlist_zeitgeist", playlist_zeitgeist)
 playlist_tropical_thunder = playlist(id="playlist_tropical_thunder",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tropical_thunder.m3u")
 playlist_tropical_thunder = cue_cut(id="cue_playlist_tropical_thunder", playlist_tropical_thunder)
 
+playlist_2025_nye_special_live = playlist(id="playlist_2025_nye_special_live",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_2025_nye_special_live.m3u")
+playlist_2025_nye_special_live = cue_cut(id="playlist_2025_nye_special_live", playlist_2025_nye_special_live)
+
+playlist_2025_nye_special_konzerv = playlist(id="playlist_2025_nye_special_konzerv",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_2025_nye_special_konzerv.m3u")
+playlist_2025_nye_special_konzerv = cue_cut(id="playlist_2025_nye_special_konzerv", playlist_2025_nye_special_konzerv)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -351,6 +357,8 @@ sources = [
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
+    ({5w and 15h30m-21h58m}, once(playlist_2025_nye_special_live)),
+    ({5w22h-6w00h58m}, playlist_2025_nye_special_konzerv),
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
     ({6w and 12h-13h58m}, once(playlist_random_times)),
     ({6w and 10h30m-13h30m}, playlist_off_air_ambient),                    #ambient: superstar - Random Times
