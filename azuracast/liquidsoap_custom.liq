@@ -357,8 +357,8 @@ sources = [
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
-    ({5w and 15h30m-21h58m}, once(playlist_2025_nye_special_live)),
-    ({5w22h-6w00h58m}, playlist_2025_nye_special_konzerv),
+    ({5w and 15h30m-20h58m}, once(playlist_2025_nye_special_live)),
+    ({5w21h-6w00h58m}, playlist_2025_nye_special_konzerv),
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
     ({6w and 12h-13h58m}, once(playlist_random_times)),
     ({6w and 10h30m-13h30m}, playlist_off_air_ambient),                    #ambient: superstar - Random Times
