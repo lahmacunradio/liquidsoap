@@ -224,9 +224,17 @@ playlist_zeitgeist = cue_cut(id="cue_playlist_zeitgeist", playlist_zeitgeist)
 playlist_tropical_thunder = playlist(id="playlist_tropical_thunder",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tropical_thunder.m3u")
 playlist_tropical_thunder = cue_cut(id="cue_playlist_tropical_thunder", playlist_tropical_thunder)
 
-
 playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
 playlist_arcadeok_alatt = cue_cut(id="playlist_arcadeok_alatt", playlist_arcadeok_alatt)
+
+playlist_2026_resonance_morning = playlist(id="playlist_2026_resonance_morning",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_2026_resonance_morning.m3u")
+playlist_2026_resonance_morning = cue_cut(id="playlist_2026_resonance_morning", playlist_2026_resonance_morning)
+
+playlist_2026_resonance_daytime = playlist(id="playlist_2026_resonance_daytime",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_2026_resonance_daytime.m3u")
+playlist_2026_resonance_daytime = cue_cut(id="playlist_2026_resonance_daytime", playlist_2026_resonance_daytime)
+
+playlist_2026_resonance_night = playlist(id="playlist_2026_resonance_night",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_2026_resonance_night.m3u")
+playlist_2026_resonance_night = cue_cut(id="playlist_2026_resonance_night", playlist_2026_resonance_night)
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -361,7 +369,10 @@ sources = [
     ({5w and 21h-21h58m}, once(playlist_boombap)),
     ({5w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({5w23h00m-6w00h58m}, once(playlist_arcadeok_alatt)),
-    ({5w and 20h30m-23h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Arcade-ok alatt                       #Saturday
+    ({5w and 20h30m-23h30m}, playlist_off_air_ambient),                 #ambient: moneyka - Arcade-ok alatt
+    ({6w and 06h00m-11h58m}, playlist_2026_resonance_morning),               #Saturday
+    ({6w and 12h00m-19h28m}, playlist_2026_resonance_daytime),
+    ({6w19h30m-7w00h58m}, playlist_2026_resonance_night),
     ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),                #Sunday
     ({7w and 13h-14h58m}, once(playlist_infinite_scroll)),
     ({7w and 15h-16h58m}, once(playlist_donald_kacsa_klub)),
