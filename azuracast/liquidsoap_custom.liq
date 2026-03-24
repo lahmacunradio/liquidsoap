@@ -232,6 +232,9 @@ playlist_uponthe960 = cue_cut(id="cue_playlist_uponthe960", playlist_uponthe960)
 playlist_pentek_pok = playlist(id="playlist_pentek_pok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_pentek_pok.m3u")
 playlist_pentek_pok = cue_cut(id="cue_playlist_pentek_pok", playlist_pentek_pok)
 
+playlist_telenko = playlist(id="playlist_telenko",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_telenko.m3u")
+playlist_telenko = cue_cut(id="cue_playlist_telenko", playlist_telenko)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -347,6 +350,7 @@ sources = [
     ({4w and 10h-10h58m}, once(playlist_radioradioradio)),                      #Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
+    ({4w and 15h-16h58m}, once(playlist_telenko)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
     ({4w and 19h-20h58m}, once(playlist_zeitgeist)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
