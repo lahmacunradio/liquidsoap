@@ -368,11 +368,11 @@ sources = [
     ({6w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({6w23h-7w00h28m}, once(playlist_d23)),
     ({6w15h30m-7w}, playlist_off_air_ambient),                    #ambient: torso - D23                  
-    ({7w and 11h-12h58m}, once(playlist_sunday_morgen)),               #Sunday
-    ({7w and 13h-14h58m}, once(playlist_infinite_scroll)),
-    ({7w and 15h-16h58m}, once(playlist_donald_kacsa_klub)),
-    ({7w and 17h-17h58m}, once(playlist_geigercounterculture)),
-    ({7w and 18h-18h58m}, once(playlist_hetedik_tipusu_talalkozas)),
+    ({7w and 12h-13h58m}, once(playlist_sunday_morgen)),               #Sunday
+    ({7w and 14h-15h58m}, once(playlist_infinite_scroll)),
+    ({7w and 16h-17h58m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 18h-18h58m}, once(playlist_geigercounterculture)),
+    ({7w and 19h-19h58m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 20h-20h58m}, once(playlist_kisszoba)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
     ({7w and 11h30m-23h30m}, playlist_off_air_ambient),                 #ambient: Sunday Morgen - Step by Step
