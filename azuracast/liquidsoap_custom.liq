@@ -76,9 +76,6 @@ add_protocol(
 playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 playlist_off_air = cue_cut(id="cue_playlist_off_air", playlist_off_air)
 
-playlist_off_air_ambient = playlist(id="playlist_off_air_ambient",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
-playlist_off_air_ambient = cue_cut(id="cue_playlist_off_air_ambient", playlist_off_air_ambient)
-
 #Jingle playlists
 playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
 playlist_jingle_station_id = cue_cut(id="cue_playlist_jingle_station_id", playlist_jingle_station_id)
@@ -332,7 +329,6 @@ sources = [
     ({1w and 19h30m-20h28m}, once(playlist_punctum)),
     ({1w and 20h30m-21h58m}, once(playlist_dalmata_gergo_show)),
     ({1w and 22h-22h58m}, once(playlist_tropical_thunder)),
-    ({1w and 14h-22h30m}, playlist_off_air_ambient),                 #ambient: merce - Tropical
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 14h-15h58m}, once(playlist_napkozi)),
     ({2w and 16h-17h58m}, once(playlist_diszko_tonik)),
@@ -341,7 +337,6 @@ sources = [
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 21h-21h58m}, once(playlist_discursive_musical_voyage)),
     ({2w and 22h-23h28m}, once(playlist_we_love_music)),
-    ({2w and 12h30m-23h00m}, playlist_off_air_ambient),                 #ambient: loudclouds - We Love Music
     ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),            #Wednesday
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
@@ -349,7 +344,6 @@ sources = [
     ({3w and 18h-19h58m}, once(playlist_madein)),
     ({3w and 20h-21h58m}, once(playlist_stepbystep)),
     ({3w and 22h-22h58m}, once(playlist_tekerveny)),
-    ({3w and 15h30m-22h30m}, playlist_off_air_ambient),                 #ambient: erto - Tekerveny
     ({4w and 10h-10h58m}, once(playlist_radioradioradio)),                      #Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
@@ -359,12 +353,10 @@ sources = [
     ({4w and 19h-20h58m}, once(playlist_zeitgeist)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w23h00m-5w00h58m}, once(playlist_spinning)),
-    ({4w17h30m-5w00h30m}, playlist_off_air_ambient),                 #ambient: lcr - Spinning
     ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
     ({5w and 17h-17h58m}, once(playlist_truno_tapes)),
-    ({5w and 12h-17h30m}, playlist_off_air_ambient),                 #ambient: ritka - Truno
     ({5w and 18h-22h58m}, once(playlist_pentek_pok)),
     ({5w23h00m-6w00h58m}, once(playlist_arcadeok_alatt)),
     ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
@@ -374,8 +366,7 @@ sources = [
     ({6w and 20h-20h58m}, once(playlist_blr)),
     ({6w and 21h-21h58m}, once(playlist_moneyka)),
     ({6w and 22h-22h58m}, once(playlist_ganzfeld)),
-    ({6w23h-7w00h28m}, once(playlist_d23)),
-    ({6w15h30m-7w}, playlist_off_air_ambient),                    #ambient: torso - D23                  
+    ({6w23h-7w00h28m}, once(playlist_d23)),             
     ({7w and 12h-13h58m}, once(playlist_sunday_morgen)),               #Sunday
     ({7w and 14h-15h58m}, once(playlist_infinite_scroll)),
     ({7w and 16h-17h58m}, once(playlist_donald_kacsa_klub)),
@@ -383,7 +374,6 @@ sources = [
     ({7w and 19h-19h58m}, once(playlist_hetedik_tipusu_talalkozas)),
     ({7w and 20h-20h58m}, once(playlist_kisszoba)),
     ({7w and 21h-21h58m}, once(playlist_sub_burek)),
-    ({7w and 11h30m-23h30m}, playlist_off_air_ambient),                 #ambient: Sunday Morgen - Step by Step
     #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
     #({ 6w and 18h23m-18h24m}, external_cashmere),
     ({true}, playlist_off_air) ]
