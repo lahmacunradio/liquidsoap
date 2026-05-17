@@ -320,16 +320,16 @@ sources = [
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_mmn_radio)),
     ({1w and 18h-19h28m}, once(playlist_graveyard_slot)),
+    ({1w and 19h30m-20h28m}, once(playlist_boombap)),
     ({1w and 20h30m-21h58m}, once(playlist_dalmata_gergo_show)),
     ({1w and 22h-22h58m}, once(playlist_tropical_thunder)),
-    ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
+    ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
     ({2w and 14h-15h58m}, once(playlist_napkozi)),
     ({2w and 16h-17h58m}, once(playlist_diszko_tonik)),
-    ({2w and 18h-18h58m}, once(playlist_boombap)),
     ({2w and 19h-19h58m}, once(playlist_uponthe960)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
-    ({2w and 21h-21h58m}, once(playlist_discursive_musical_voyage)),
-    ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),            #Wednesday
+    ({2w and 21h-23h58m}, once(playlist_discursive_musical_voyage)),
+    ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),            #Wednesday
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
     ({3w and 17h-17h58m}, once(playlist_furrowlines)),
