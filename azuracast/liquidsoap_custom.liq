@@ -163,9 +163,6 @@ playlist_diszko_tonik = cue_cut(id="cue_playlist_diszko_tonik", playlist_diszko_
 playlist_fulbevalo = playlist(id="playlist_fulbevalo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_fulbevalo.m3u")
 playlist_fulbevalo = cue_cut(id="playlist_fulbevalo", playlist_fulbevalo)
 
-playlist_we_love_music = playlist(id="playlist_we_love_music",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_we_love_music.m3u")
-playlist_we_love_music = cue_cut(id="cue_playlist_we_love_music", playlist_we_love_music)
-
 playlist_truno_tapes = playlist(id="playlist_truno_tapes",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_truno_tapes.m3u")
 playlist_truno_tapes = cue_cut(id="cue_playlist_truno_tapes", playlist_truno_tapes)
 
@@ -174,9 +171,6 @@ playlist_sunday_morgen = cue_cut(id="cue_playlist_sunday_morgen", playlist_sunda
 
 playlist_blr = playlist(id="playlist_blr",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_blr.m3u")
 playlist_blr = cue_cut(id="cue_playlist_blr", playlist_blr)
-
-playlist_punctum = playlist(id="playlist_punctum",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_punctum.m3u")
-playlist_punctum = cue_cut(id="cue_playlist_punctum", playlist_punctum)
 
 playlist_madein = playlist(id="playlist_madein",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_madein.m3u")
 playlist_madein = cue_cut(id="cue_playlist_madein", playlist_madein)
@@ -326,7 +320,6 @@ sources = [
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_mmn_radio)),
     ({1w and 18h-19h28m}, once(playlist_graveyard_slot)),
-    ({1w and 19h30m-20h28m}, once(playlist_punctum)),
     ({1w and 20h30m-21h58m}, once(playlist_dalmata_gergo_show)),
     ({1w and 22h-22h58m}, once(playlist_tropical_thunder)),
     ({2w and 12h-13h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
@@ -336,7 +329,6 @@ sources = [
     ({2w and 19h-19h58m}, once(playlist_uponthe960)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 21h-21h58m}, once(playlist_discursive_musical_voyage)),
-    ({2w and 22h-23h28m}, once(playlist_we_love_music)),
     ({3w and 12h-13h58m}, once(playlist_lahmacun_presents)),            #Wednesday
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
