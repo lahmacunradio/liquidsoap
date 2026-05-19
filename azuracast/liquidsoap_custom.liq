@@ -235,6 +235,9 @@ playlist_lapzarta = cue_cut(id="cue_playlist_lapzarta", playlist_lapzarta)
 playlist_jazzvajonmi = playlist(id="playlist_jazzvajonmi",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jazzvajonmi.m3u")
 playlist_jazzvajonmi = cue_cut(id="cue_playlist_jazzvajonmi", playlist_jazzvajonmi)
 
+playlist_stringtheory = playlist(id="playlist_stringtheory",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stringtheory.m3u")
+playlist_stringtheory = cue_cut(id="cue_playlist_stringtheory", playlist_stringtheory)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -337,6 +340,7 @@ sources = [
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 21h-23h58m}, once(playlist_discursive_musical_voyage)),
     ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),            #Wednesday
+    ({3w and 13h-13h58m}, once(playlist_stringtheory)),
     ({3w and 14h-14h58m}, once(playlist_jazzvajonmi)),
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_erdenklang)),
