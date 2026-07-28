@@ -238,6 +238,9 @@ playlist_jazzvajonmi = cue_cut(id="cue_playlist_jazzvajonmi", playlist_jazzvajon
 playlist_stringtheory = playlist(id="playlist_stringtheory",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stringtheory.m3u")
 playlist_stringtheory = cue_cut(id="cue_playlist_stringtheory", playlist_stringtheory)
 
+playlist_peppino = playlist(id="playlist_peppino",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_peppino.m3u")
+playlist_peppino = cue_cut(id="cue_playlist_peppino", playlist_peppino)
+
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
 playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
@@ -324,6 +327,7 @@ live = map_metadata(insert_missing, live)
 sources = [
     ({!live_enabled}, live),    #Live DJ
     ({1w and 08h-09h58m}, once(playlist_nagyot_utott_irodalom)),               # Monday
+    ({1w and 10h-10h58m}, once(playlist_erdenklang)),
     ({1w and 13h30m-14h58m}, once(playlist_korunk)),
     ({1w and 15h-15h58m}, once(playlist_fulbevalo)),
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
@@ -343,7 +347,7 @@ sources = [
     ({3w and 13h-13h58m}, once(playlist_stringtheory)),
     ({3w and 14h-14h58m}, once(playlist_jazzvajonmi)),
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
-    ({3w and 16h-16h58m}, once(playlist_erdenklang)),
+    ({3w and 16h-16h58m}, once(playlist_peppino)),
     ({3w and 17h-17h58m}, once(playlist_furrowlines)),
     ({3w and 18h-19h58m}, once(playlist_madein)),
     ({3w and 20h-21h58m}, once(playlist_stepbystep)),
