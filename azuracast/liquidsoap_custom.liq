@@ -342,7 +342,7 @@ sources = [
     ({2w and 18h-18h58m}, once(playlist_lapzarta)),
     ({2w and 19h-19h58m}, once(playlist_uponthe960)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
-    ({2w and 21h-23h58m}, once(playlist_discursive_musical_voyage)),
+    ({2w and 21h-22h58m}, once(playlist_discursive_musical_voyage)),
     ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),            #Wednesday
     ({3w and 13h-13h58m}, once(playlist_stringtheory)),
     ({3w and 14h-14h58m}, once(playlist_jazzvajonmi)),
