@@ -241,6 +241,9 @@ playlist_stringtheory = cue_cut(id="cue_playlist_stringtheory", playlist_stringt
 playlist_peppino = playlist(id="playlist_peppino",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_peppino.m3u")
 playlist_peppino = cue_cut(id="cue_playlist_peppino", playlist_peppino)
 
+playlist_inbetween = playlist(id="playlist_inbetween",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_inbetween.m3u")
+playlist_inbetween = cue_cut(id="cue_playlist_inbetween", playlist_inbetween)
+
 #Lahmacun-own shows
 playlist_lahmaloudclouds = playlist(id="playlist_lahmaloudclouds",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmaloudclouds.m3u")
 playlist_lahmaloudclouds = cue_cut(id="cue_playlist_lahmaloudclouds", playlist_lahmaloudclouds)
@@ -345,12 +348,13 @@ sources = [
     ({3w and 18h-19h58m}, once(playlist_madein)),
     ({3w and 20h-21h58m}, once(playlist_stepbystep)),
     ({3w and 22h-22h58m}, once(playlist_tekerveny)),
+    ({3w23h00m-4w00h58m}, once(playlist_zeitgeist)),
     ({4w and 10h-10h58m}, once(playlist_radioradioradio)),                  # Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
     ({4w and 14h-14h58m}, once(playlist_new_romantic)),
     ({4w and 15h-16h58m}, once(playlist_telenko)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
-    ({4w and 19h-20h58m}, once(playlist_zeitgeist)),
+    ({4w and 19h-20h58m}, once(playlist_inbetween)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w23h00m-5w00h58m}, once(playlist_spinning)),
     ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),              # Friday
