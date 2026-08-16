@@ -160,9 +160,6 @@ playlist_ganzfeld = cue_cut(id="cue_playlist_ganzfeld", playlist_ganzfeld)
 playlist_diszko_tonik = playlist(id="playlist_diszko_tonik",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_diszko_tonik.m3u")
 playlist_diszko_tonik = cue_cut(id="cue_playlist_diszko_tonik", playlist_diszko_tonik)
 
-playlist_fulbevalo = playlist(id="playlist_fulbevalo",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_fulbevalo.m3u")
-playlist_fulbevalo = cue_cut(id="playlist_fulbevalo", playlist_fulbevalo)
-
 playlist_truno_tapes = playlist(id="playlist_truno_tapes",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_truno_tapes.m3u")
 playlist_truno_tapes = cue_cut(id="cue_playlist_truno_tapes", playlist_truno_tapes)
 
@@ -237,6 +234,9 @@ playlist_jazzvajonmi = cue_cut(id="cue_playlist_jazzvajonmi", playlist_jazzvajon
 
 playlist_stringtheory = playlist(id="playlist_stringtheory",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stringtheory.m3u")
 playlist_stringtheory = cue_cut(id="cue_playlist_stringtheory", playlist_stringtheory)
+
+playlist_vakhang = playlist(id="playlist_vakhang",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_vakhang.m3u")
+playlist_vakhang = cue_cut(id="playlist_vakhang", playlist_vakhang)
 
 #Shared show slots
 playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
@@ -325,7 +325,7 @@ sources = [
     ({!live_enabled}, live),    #Live DJ
     ({1w and 08h-09h58m}, once(playlist_nagyot_utott_irodalom)),               # Monday
     ({1w and 13h30m-14h58m}, once(playlist_korunk)),
-    ({1w and 15h-15h58m}, once(playlist_fulbevalo)),
+    ({1w and 15h-15h58m}, once(playlist_vakhang)),
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
     ({1w and 17h-17h58m}, once(playlist_mmn_radio)),
     ({1w and 18h-19h28m}, once(playlist_graveyard_slot)),
