@@ -238,12 +238,11 @@ playlist_jazzvajonmi = cue_cut(id="cue_playlist_jazzvajonmi", playlist_jazzvajon
 playlist_stringtheory = playlist(id="playlist_stringtheory",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stringtheory.m3u")
 playlist_stringtheory = cue_cut(id="cue_playlist_stringtheory", playlist_stringtheory)
 
-#Shared show slots
-playlist_ritka_csut = playlist(id="playlist_ritka_csut",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
-playlist_ritka_csut = cue_cut(id="cue_playlist_ritka_csut", playlist_ritka_csut)
+playlist_peppino = playlist(id="playlist_peppino",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_peppino.m3u")
+playlist_peppino = cue_cut(id="cue_playlist_peppino", playlist_peppino)
 
-playlist_ritka_pentek = playlist(id="playlist_ritka_pentek",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_pentek.m3u")
-playlist_ritka_pentek = cue_cut(id="cue_playlist_ritka_pentek", playlist_ritka_pentek)
+playlist_inbetween = playlist(id="playlist_inbetween",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_inbetween.m3u")
+playlist_inbetween = cue_cut(id="cue_playlist_inbetween", playlist_inbetween)
 
 #Lahmacun-own shows
 playlist_lahmaloudclouds = playlist(id="playlist_lahmaloudclouds",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmaloudclouds.m3u")
@@ -323,7 +322,8 @@ live = map_metadata(insert_missing, live)
 
 sources = [
     ({!live_enabled}, live),    #Live DJ
-    ({1w and 08h-09h58m}, once(playlist_nagyot_utott_irodalom)),               # Monday
+    ({1w and 08h-09h58m}, once(playlist_nagyot_utott_irodalom)),            # Monday
+    ({1w and 10h-10h58m}, once(playlist_erdenklang)),
     ({1w and 13h30m-14h58m}, once(playlist_korunk)),
     ({1w and 15h-15h58m}, once(playlist_fulbevalo)),
     ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
@@ -332,38 +332,37 @@ sources = [
     ({1w and 19h30m-20h28m}, once(playlist_boombap)),
     ({1w and 20h30m-21h58m}, once(playlist_dalmata_gergo_show)),
     ({1w and 22h-22h58m}, once(playlist_tropical_thunder)),
-    ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),              # Tuesday
+    ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),                  # Tuesday
     ({2w and 14h-15h58m}, once(playlist_napkozi)),
     ({2w and 16h-17h58m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_lapzarta)),
     ({2w and 19h-19h58m}, once(playlist_uponthe960)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
-    ({2w and 21h-23h58m}, once(playlist_discursive_musical_voyage)),
-    ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),            #Wednesday
+    ({2w and 21h-22h58m}, once(playlist_discursive_musical_voyage)),
+    ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),                # Wednesday
     ({3w and 13h-13h58m}, once(playlist_stringtheory)),
     ({3w and 14h-14h58m}, once(playlist_jazzvajonmi)),
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
-    ({3w and 16h-16h58m}, once(playlist_erdenklang)),
+    ({3w and 16h-16h58m}, once(playlist_peppino)),
     ({3w and 17h-17h58m}, once(playlist_furrowlines)),
     ({3w and 18h-19h58m}, once(playlist_madein)),
     ({3w and 20h-21h58m}, once(playlist_stepbystep)),
     ({3w and 22h-22h58m}, once(playlist_tekerveny)),
-    ({4w and 10h-10h58m}, once(playlist_radioradioradio)),                      #Thursday
+    ({3w23h00m-4w00h58m}, once(playlist_zeitgeist)),
+    ({4w and 10h-10h58m}, once(playlist_radioradioradio)),                  # Thursday
     ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
-    ({4w and 12h-13h58m}, once(playlist_ritka_csut)),
     ({4w and 14h-14h58m}, once(playlist_new_romantic)),
     ({4w and 15h-16h58m}, once(playlist_telenko)),
     ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
-    ({4w and 19h-20h58m}, once(playlist_zeitgeist)),
+    ({4w and 19h-20h58m}, once(playlist_inbetween)),
     ({4w and 21h-22h58m}, once(playlist_schmerz)),
     ({4w23h00m-5w00h58m}, once(playlist_spinning)),
-    ({5w and 11h30m-13h28m}, once(playlist_ritka_pentek)),                 #Friday
-    ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),
+    ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),              # Friday
     ({5w and 15h-16h58m}, once(playlist_aa_radio)),
     ({5w and 17h-17h58m}, once(playlist_truno_tapes)),
     ({5w and 18h-22h58m}, once(playlist_pentek_pok)),
     ({5w23h00m-6w00h58m}, once(playlist_arcadeok_alatt)),
-    ({6w and 10h-11h58m}, once(playlist_superstar)),                       #Saturday
+    ({6w and 10h-11h58m}, once(playlist_superstar)),                        # Saturday
     ({6w and 12h-13h58m}, once(playlist_random_times)),
     ({6w and 15h-17h58m}, once(playlist_torso)),
     ({6w and 18h-19h58m}, once(playlist_rnr666)),
@@ -371,7 +370,7 @@ sources = [
     ({6w and 21h-21h58m}, once(playlist_moneyka)),
     ({6w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({6w23h-7w00h28m}, once(playlist_d23)),             
-    ({7w and 12h-13h58m}, once(playlist_sunday_morgen)),               #Sunday
+    ({7w and 12h-13h58m}, once(playlist_sunday_morgen)),                    # Sunday
     ({7w and 14h-15h58m}, once(playlist_infinite_scroll)),
     ({7w and 16h-17h58m}, once(playlist_donald_kacsa_klub)),
     ({7w and 18h-18h58m}, once(playlist_geigercounterculture)),
