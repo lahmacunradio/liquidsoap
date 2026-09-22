@@ -169,9 +169,6 @@ playlist_sunday_morgen = cue_cut(id="cue_playlist_sunday_morgen", playlist_sunda
 playlist_blr = playlist(id="playlist_blr",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_blr.m3u")
 playlist_blr = cue_cut(id="cue_playlist_blr", playlist_blr)
 
-playlist_madein = playlist(id="playlist_madein",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_madein.m3u")
-playlist_madein = cue_cut(id="cue_playlist_madein", playlist_madein)
-
 playlist_nagyot_utott_irodalom = playlist(id="playlist_nagyot_utott_irodalom",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_nagyot_utott_irodalom.m3u")
 playlist_nagyot_utott_irodalom = cue_cut(id="cue_playlist_nagyot_utott_irodalom", playlist_nagyot_utott_irodalom)
 
@@ -341,7 +338,6 @@ sources = [
     ({3w and 14h-14h58m}, once(playlist_jazzvajonmi)),
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_peppino)),
-    ({3w and 18h-19h58m}, once(playlist_madein)),
     ({3w and 20h-21h58m}, once(playlist_stepbystep)),
     ({3w and 22h-22h58m}, once(playlist_tekerveny)),
     ({3w23h00m-4w00h58m}, once(playlist_zeitgeist)),
