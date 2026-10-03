@@ -241,6 +241,9 @@ playlist_vakhang = cue_cut(id="playlist_vakhang", playlist_vakhang)
 playlist_internetexplorer = playlist(id="playlist_internetexplorer",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_internetexplorer.m3u")
 playlist_internetexplorer = cue_cut(id="playlist_internetexplorer", playlist_internetexplorer)
 
+playlist_miminden = playlist(id="playlist_miminden",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_miminden.m3u")
+playlist_miminden = cue_cut(id="playlist_miminden", playlist_miminden)
+
 #Lahmacun-own shows
 playlist_lahmaloudclouds = playlist(id="playlist_lahmaloudclouds",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmaloudclouds.m3u")
 playlist_lahmaloudclouds = cue_cut(id="cue_playlist_lahmaloudclouds", playlist_lahmaloudclouds)
@@ -336,12 +339,13 @@ sources = [
     ({2w and 19h-19h58m}, once(playlist_uponthe960)),
     ({2w and 20h-20h58m}, once(playlist_havizaj)),
     ({2w and 21h-22h58m}, once(playlist_discursive_musical_voyage)),
-    ({3w and 09h-09h58m}, once(playlist_internetexplorer)),
-    ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),                # Wednesday
+    ({3w and 09h-09h58m}, once(playlist_internetexplorer)),                 # Wednesday
+    ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),
     ({3w and 13h-13h58m}, once(playlist_stringtheory)),
     ({3w and 14h-14h58m}, once(playlist_jazzvajonmi)),
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_peppino)),
+    ({3w and 17h-18h28m}, once(playlist_miminden)),
     ({3w and 20h-21h58m}, once(playlist_stepbystep)),
     ({3w and 22h-22h58m}, once(playlist_tekerveny)),
     ({3w23h00m-4w00h58m}, once(playlist_zeitgeist)),
