@@ -244,6 +244,9 @@ playlist_internetexplorer = cue_cut(id="playlist_internetexplorer", playlist_int
 playlist_miminden = playlist(id="playlist_miminden",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_miminden.m3u")
 playlist_miminden = cue_cut(id="playlist_miminden", playlist_miminden)
 
+playlist_sensorseries = playlist(id="playlist_sensorseries",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sensorseries.m3u")
+playlist_sensorseries = cue_cut(id="playlist_sensorseries", playlist_sensorseries)
+
 #Lahmacun-own shows
 playlist_lahmaloudclouds = playlist(id="playlist_lahmaloudclouds",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmaloudclouds.m3u")
 playlist_lahmaloudclouds = cue_cut(id="cue_playlist_lahmaloudclouds", playlist_lahmaloudclouds)
@@ -332,6 +335,7 @@ sources = [
     ({1w and 19h30m-20h28m}, once(playlist_boombap)),
     ({1w and 20h30m-21h58m}, once(playlist_dalmata_gergo_show)),
     ({1w and 22h-22h58m}, once(playlist_tropical_thunder)),
+    ({1w and 23h-23h58m}, once(playlist_sensorseries)),
     ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),                  # Tuesday
     ({2w and 14h-15h58m}, once(playlist_napkozi)),
     ({2w and 16h-17h58m}, once(playlist_diszko_tonik)),
