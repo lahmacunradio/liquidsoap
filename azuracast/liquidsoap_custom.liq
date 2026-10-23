@@ -208,7 +208,7 @@ def dj_auth(login) =
         if (login.user == "source" or login.user == "") and (string.match(pattern="(:|,)+", login.password)) then
             auth_string = string.split(separator="(:|,)", login.password)
             {user = list.nth(default="", auth_string, 0),
-            password = list.nth(default="", auth_string, 2)}
+            password = list.nth(default="", auth_string, 1)}
         else
             {user = login.user, password = login.password}
         end
