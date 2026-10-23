@@ -287,7 +287,7 @@ def dj_auth(login) =
 end
 
 def live_connected(header) =
-    dj = !last_authenticated_dj
+    dj = last_authenticated_dj()
     log("DJ Source connected! Last authenticated DJ: #{dj} - #{header}")
 
     live_enabled := true
@@ -304,7 +304,7 @@ def live_disconnected() =
     _ = azuracast_api_call(
         timeout_ms=5000,
         "djoff",
-        json.stringify({user = !live_dj})
+        json.stringify({user = live_dj()})
     )
 
     live_enabled := false
@@ -324,7 +324,7 @@ end
 live = map_metadata(insert_missing, live)
 
 sources = [
-    ({!live_enabled}, live),    #Live DJ
+    ({live_enabled()}, live),    #Live DJ
     ({1w and 08h-09h58m}, once(playlist_nagyot_utott_irodalom)),            # Monday
     ({1w and 10h-10h58m}, once(playlist_erdenklang)),
     ({1w and 13h30m-14h58m}, once(playlist_korunk)),
@@ -414,7 +414,7 @@ add_skip_command(radio)
 # Skip non-live track when live DJ goes live.
 def check_live() =
     if live.is_ready() then
-        if not !to_live then
+        if not to_live() then
             to_live := true
         end
     else
@@ -439,7 +439,7 @@ last_artist = ref("")
 
 def metadata_updated(m) =
     def f() =
-        if (m["title"] != !last_title or m["artist"] != !last_artist) then
+        if (m["title"] != last_title() or m["artist"] != last_artist()) then
             last_title := m["title"]
             last_artist := m["artist"]
 
@@ -470,7 +470,7 @@ radio.on_metadata(metadata_updated)
 last_metadata = ref([])
 def handle_jingle_mode(m) =
     if (m["jingle_mode"] == "true") then
-        !last_metadata
+        last_metadata()
     else
         last_metadata := m
         m
