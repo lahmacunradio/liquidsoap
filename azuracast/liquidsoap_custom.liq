@@ -37,7 +37,7 @@ ignore(to_live)
 azuracast_api_url = "http://127.0.0.1:6010/api/internal/1/liquidsoap"
 azuracast_api_key = "AZURA_KEY"
 
-def azuracast_api_call(~timeout_ms=2000, url, payload) =
+def azuracast_api_call(~timeout=2, url, payload) =
     full_url = "#{azuracast_api_url}/#{url}"
 
     log("API #{url} - Sending POST request to '#{full_url}' with body: #{payload}")
@@ -48,7 +48,7 @@ def azuracast_api_call(~timeout_ms=2000, url, payload) =
                 ("User-Agent", "Liquidsoap AzuraCast"),
                 ("X-Liquidsoap-Api-Key", "#{azuracast_api_key}")
             ],
-            timeout_ms=timeout_ms,
+            timeout=timeout,
             data=payload
         )
 
@@ -214,7 +214,7 @@ def dj_auth(login) =
         end
 
     response = azuracast_api_call(
-        timeout_ms=5000,
+        timeout=5,
         "auth",
         json.stringify(auth_info)
     )
@@ -235,7 +235,7 @@ def live_connected(header) =
     live_dj := dj
 
     _ = azuracast_api_call(
-        timeout_ms=5000,
+        timeout=5,
         "djon",
         json.stringify({user = dj})
     )
@@ -243,7 +243,7 @@ end
 
 def live_disconnected() =
     _ = azuracast_api_call(
-        timeout_ms=5000,
+        timeout=5,
         "djoff",
         json.stringify({user = live_dj()})
     )
