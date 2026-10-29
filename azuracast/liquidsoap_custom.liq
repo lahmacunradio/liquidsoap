@@ -38,12 +38,12 @@ let settings.azuracast.liquidsoap_api_port = settings.make(
 
 let settings.azuracast.api_url = settings.make(
     description="The API URL used by AzuraCast API calls.",
-    ""
+    "http://127.0.0.1:6010/api/internal/1/liquidsoap"
 )
 
 let settings.azuracast.api_key = settings.make(
     description="An API key authorized to make internal API calls.",
-    ""
+    "AZURA_KEY"
 )
 
 let settings.azuracast.media_path = settings.make(
@@ -753,6 +753,13 @@ end
 Live-aware Crossfade
 ----->#
 
+#Lahma custom Jingle playlists
+playlist_jingle_station_id = playlist(id="playlist_jingle_station_id",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
+playlist_jingle_station_id = drop_metadata(playlist_jingle_station_id)
+
+playlist_jingle_donate = playlist(id="playlist_jingle_donate",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_donate.m3u")
+
+
 def azuracast.live_aware_crossfade_impl(old, new) =
     log.info(label="azuracast.crossfade", "Crossfading")
     list.iter(
@@ -769,6 +776,8 @@ def azuracast.live_aware_crossfade_impl(old, new) =
         log.info(label="azuracast.crossfade", "Fading to live...")
         sequence([
             fade.out(duration=settings.azuracast.default_fade(), old.source),
+            # Lahmacun custom
+            playlist_jingle_station_id, playlist_jingle_donate,
             fade.in(duration=settings.azuracast.default_fade(), new.source)
         ])
     elsif settings.azuracast.enable_crossfade() then
@@ -789,6 +798,8 @@ def azuracast.live_aware_crossfade_impl(old, new) =
                 old.source,
                 new.source,
                 fade_in=settings.azuracast.default_fade(),
+                # Lahmacun custom
+                playlist_jingle_station_id, playlist_jingle_donate,
                 fade_out=settings.azuracast.default_fade()
             )
         end
@@ -801,6 +812,8 @@ def azuracast.live_aware_crossfade_impl(old, new) =
                 duration=settings.azuracast.default_fade(),
                 new.source
             ),
+            # Lahmacun custom
+            playlist_jingle_station_id, playlist_jingle_donate,
             fade.out(
                 initial_metadata=old.metadata,
                 duration=settings.azuracast.default_fade(),
@@ -927,14 +940,14 @@ init.daemon.pidfile.path := "/var/azuracast/stations/lahmacun_radio/config/liqui
 
 settings.init.compact_before_start := true
 
-environment.set("TZ", {str_gmoan|Europe/Budapest|str_gmoan})
+environment.set("TZ", Europe/Budapest)
 
 settings.azuracast.liquidsoap_api_port := 8004
-settings.azuracast.api_url := {str_sbvvq|http://127.0.0.1:6010/api/internal/1/liquidsoap|str_sbvvq}
-settings.azuracast.api_key := {str_kcotd|(PASSWORD)|str_kcotd}
+settings.azuracast.api_url := "http://127.0.0.1:6010/api/internal/1/liquidsoap"
+settings.azuracast.api_key := "AZURA_KEY"
 settings.azuracast.media_path := "/var/azuracast/stations/lahmacun_radio/media"
-settings.azuracast.fallback_path := {str_qrilx|/usr/local/share/icecast/web/error.mp3|str_qrilx}
-settings.azuracast.temp_path := {str_ymmoo|/var/azuracast/stations/lahmacun_radio/temp|str_ymmoo}
+settings.azuracast.fallback_path := "/usr/local/share/icecast/web/error.mp3"
+settings.azuracast.temp_path := "/var/azuracast/stations/lahmacun_radio/temp"
 
 settings.azuracast.compute_autocue := false
 
@@ -946,265 +959,199 @@ settings.azuracast.crossfade_smart_high := -15.00
 settings.azuracast.crossfade_smart_medium := -32.00
 settings.azuracast.crossfade_smart_margin := 8.00
 
-settings.azuracast.live_broadcast_text := {str_kksfi|Live Broadcast|str_kksfi}
+settings.azuracast.live_broadcast_text := "Live Broadcast"
 
 # Start HTTP API Server
 azuracast.start_http_api()
 
+#OFF AIR playlists
+playlist_off_air = playlist(id="playlist_off_air",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
 
-playlist_bambusz = playlist(id={str_wryte|playlist_bambusz|str_wryte},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_bambusz.m3u")
-ignore(playlist_bambusz)
+#Show playlists
+playlist_sub_burek = playlist(id="playlist_sub_burek",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sub_burek.m3u")
 
-playlist_off_air = playlist(id={str_xhedv|playlist_off_air|str_xhedv},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air.m3u")
-ignore(playlist_off_air)
+playlist_mmn_radio = playlist(id="playlist_mmn_radio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mmn_radio.m3u")
 
-playlist_jingle = playlist(id={str_xwcal|playlist_jingle|str_xwcal},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle.m3u")
-playlist_jingle = azuracast.utilities.drop_metadata(playlist_jingle)
-ignore(playlist_jingle)
+playlist_rnr666 = playlist(id="playlist_rnr666",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rnr666.m3u")
 
-playlist_jingle_after_show = playlist(id={str_rvsdf|playlist_jingle_after_show|str_rvsdf},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_after_show.m3u")
-ignore(playlist_jingle_after_show)
+playlist_lazy_calm_raga = playlist(id="playlist_lazy_calm_raga",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lazy_calm_raga.m3u")
 
-playlist_jingle_azura = playlist(id={str_bdrgg|playlist_jingle_azura|str_bdrgg},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_azura.m3u")
-playlist_jingle_azura = azuracast.utilities.drop_metadata(playlist_jingle_azura)
-ignore(playlist_jingle_azura)
+playlist_szmuti_csorba = playlist(id="playlist_szmuti_csorba",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_szmuti_csorba.m3u")
 
-playlist_torso = playlist(id={str_bwmwf|playlist_torso|str_bwmwf},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_torso.m3u")
-ignore(playlist_torso)
+playlist_schmerz = playlist(id="playlist_schmerz",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_schmerz.m3u")
 
-playlist_off_air_premiere = playlist(id={str_edaii|playlist_off_air_premiere|str_edaii},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_premiere.m3u")
-ignore(playlist_off_air_premiere)
+playlist_erdenklang = playlist(id="playlist_erdenklang",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_erdenklang.m3u")
 
-playlist_infinite_scroll = playlist(id={str_fozaz|playlist_infinite_scroll|str_fozaz},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_infinite_scroll.m3u")
-ignore(playlist_infinite_scroll)
+playlist_donald_kacsa_klub = playlist(id="playlist_donald_kacsa_klub",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_donald_kacsa_klub.m3u")
 
-playlist_off_air_ambient = playlist(id={str_bjgfa|playlist_off_air_ambient|str_bjgfa},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_off_air_ambient.m3u")
-ignore(playlist_off_air_ambient)
+playlist_erto_hallgatas = playlist(id="playlist_erto_hallgatas",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_erto_hallgatas.m3u")
 
-playlist_dalmata_gergo_show = playlist(id={str_cilml|playlist_dalmata_gergo_show|str_cilml},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_gergo_show.m3u")
-ignore(playlist_dalmata_gergo_show)
+playlist_havizaj = playlist(id="playlist_havizaj",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_havizaj.m3u")
 
-playlist_arcadeok_alatt = playlist(id={str_ooegt|playlist_arcadeok_alatt|str_ooegt},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
-ignore(playlist_arcadeok_alatt)
+playlist_dalmata_gergo_show = playlist(id="playlist_dalmata_gergo_show",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_gergo_show.m3u")
 
-playlist_lohuma = playlist(id={str_lqbew|playlist_lohuma|str_lqbew},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lohuma.m3u")
-ignore(playlist_lohuma)
+playlist_d23 = playlist(id="playlist_d23",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_d23.m3u")
 
-playlist_jambikus_nesz = playlist(id={str_tntkl|playlist_jambikus_nesz|str_tntkl},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jambikus_nesz.m3u")
-ignore(playlist_jambikus_nesz)
+playlist_infinite_scroll = playlist(id="playlist_infinite_scroll",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_infinite_scroll.m3u")
 
-playlist_exit = playlist(id={str_afbhs|playlist_exit|str_afbhs},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_exit.m3u")
-ignore(playlist_exit)
+playlist_torso = playlist(id="playlist_torso",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_torso.m3u")
 
-playlist_mood_sequence = playlist(id={str_cntat|playlist_mood_sequence|str_cntat},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mood_sequence.m3u")
-ignore(playlist_mood_sequence)
+playlist_hetedik_tipusu_talalkozas = playlist(id="playlist_hetedik_tipusu_talalkozas",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_hetedik_tipusu_talalkozas.m3u")
 
-playlist_transverszia = playlist(id={str_eblit|playlist_transverszia|str_eblit},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_transverszia.m3u")
-ignore(playlist_transverszia)
+playlist_boombap = playlist(id="playlist_boombap",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
 
-playlist_sub_burek = playlist(id={str_zaxlr|playlist_sub_burek|str_zaxlr},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sub_burek.m3u")
-ignore(playlist_sub_burek)
+playlist_moneyka = playlist(id="playlist_moneyka",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
 
-playlist_erdenklang = playlist(id={str_jpqwx|playlist_erdenklang|str_jpqwx},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_erdenklang.m3u")
-ignore(playlist_erdenklang)
+playlist_graveyard_slot = playlist(id="playlist_graveyard_slot",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_graveyard_slot.m3u")
 
-playlist_udcsi = playlist(id={str_rifvr|playlist_udcsi|str_rifvr},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_udcsi.m3u")
-ignore(playlist_udcsi)
+playlist_geigercounterculture = playlist(id="playlist_geigercounterculture",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
 
-playlist_havizaj = playlist(id={str_kdbnk|playlist_havizaj|str_kdbnk},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_havizaj.m3u")
-ignore(playlist_havizaj)
+playlist_korunk = playlist(id="playlist_korunk",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_korunk.m3u")
 
-playlist_lazy_calm_raga = playlist(id={str_uicmz|playlist_lazy_calm_raga|str_uicmz},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lazy_calm_raga.m3u")
-ignore(playlist_lazy_calm_raga)
+playlist_random_times = playlist(id="playlist_random_times",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_random_times.m3u")
 
-playlist_footwork_jimbob = playlist(id={str_zxpow|playlist_footwork_jimbob|str_zxpow},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_footwork_jimbob.m3u")
-ignore(playlist_footwork_jimbob)
+playlist_aa_radio = playlist(id="playlist_aa_radio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_aa_radio.m3u")
 
-playlist_a_who_say = playlist(id={str_edknf|playlist_a_who_say|str_edknf},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_a_who_say.m3u")
-ignore(playlist_a_who_say)
+playlist_superstar = playlist(id="playlist_superstar",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_superstar.m3u")
 
-playlist_mosolyszunet = playlist(id={str_ozswd|playlist_mosolyszunet|str_ozswd},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mosolyszunet.m3u")
-ignore(playlist_mosolyszunet)
+playlist_ganzfeld = playlist(id="playlist_ganzfeld",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ganzfeld.m3u")
 
-playlist_rnr666 = playlist(id={str_hurmd|playlist_rnr666|str_hurmd},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rnr666.m3u")
-ignore(playlist_rnr666)
+playlist_diszko_tonik = playlist(id="playlist_diszko_tonik",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_diszko_tonik.m3u")
 
-playlist_dalmata_radio = playlist(id={str_kzhun|playlist_dalmata_radio|str_kzhun},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_dalmata_radio.m3u")
-ignore(playlist_dalmata_radio)
+playlist_truno_tapes = playlist(id="playlist_truno_tapes",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_truno_tapes.m3u")
 
-playlist_szmuti_csorba = playlist(id={str_rvvnu|playlist_szmuti_csorba|str_rvvnu},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_szmuti_csorba.m3u")
-ignore(playlist_szmuti_csorba)
+playlist_sunday_morgen = playlist(id="playlist_sunday_morgen",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sunday_morgen.m3u")
 
-playlist_azvlm = playlist(id={str_apfmh|playlist_azvlm|str_apfmh},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_azvlm.m3u")
-ignore(playlist_azvlm)
+playlist_blr = playlist(id="playlist_blr",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_blr.m3u")
 
-playlist_turmeric_acid = playlist(id={str_lilad|playlist_turmeric_acid|str_lilad},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_turmeric_acid.m3u")
-ignore(playlist_turmeric_acid)
+playlist_nagyot_utott_irodalom = playlist(id="playlist_nagyot_utott_irodalom",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_nagyot_utott_irodalom.m3u")
 
-playlist_erto_hallgatas = playlist(id={str_rlawx|playlist_erto_hallgatas|str_rlawx},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_erto_hallgatas.m3u")
-ignore(playlist_erto_hallgatas)
+playlist_kisszoba = playlist(id="playlist_kisszoba",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_kisszoba.m3u")
 
-playlist_eastern_daze = playlist(id={str_ltofn|playlist_eastern_daze|str_ltofn},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_eastern_daze.m3u")
-ignore(playlist_eastern_daze)
+playlist_stepbystep = playlist(id="playlist_stepbystep",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stepbystep.m3u")
 
-playlist_mukodo_mukod = playlist(id={str_hdggn|playlist_mukodo_mukod|str_hdggn},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mukodo_mukod.m3u")
-ignore(playlist_mukodo_mukod)
+playlist_lehetosegek_tere = playlist(id="playlist_lehetosegek_tere",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lehetosegek_tere.m3u")
 
-playlist_dead_hound = playlist(id={str_cgfjb|playlist_dead_hound|str_cgfjb},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_dead_hound.m3u")
-ignore(playlist_dead_hound)
+playlist_tekerveny = playlist(id="playlist_tekerveny",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tekerveny.m3u")
 
-playlist_gyorsnaszad_hidja = playlist(id={str_ylbti|playlist_gyorsnaszad_hidja|str_ylbti},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_gyorsnaszad_hidja.m3u")
-ignore(playlist_gyorsnaszad_hidja)
+playlist_napkozi = playlist(id="playlist_napkozi",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_napkozi.m3u")
 
-playlist_gyogyfurdo = playlist(id={str_kdyvp|playlist_gyogyfurdo|str_kdyvp},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_gyogyfurdo.m3u")
-ignore(playlist_gyogyfurdo)
+playlist_friday_afternoon = playlist(id="playlist_friday_afternoon",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_friday_afternoon.m3u")
 
-playlist_merites = playlist(id={str_tvscb|playlist_merites|str_tvscb},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_merites.m3u")
-ignore(playlist_merites)
+playlist_discursive_musical_voyage = playlist(id="playlist_discursive_musical_voyage",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_discursive_musical_voyage.m3u")
 
-playlist_mmn_radio = playlist(id={str_swwsh|playlist_mmn_radio|str_swwsh},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mmn_radio.m3u")
-ignore(playlist_mmn_radio)
+playlist_zeitgeist = playlist(id="playlist_zeitgeist",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeitgeist.m3u")
 
-playlist_jingle_station_id = playlist(id={str_ejwtc|playlist_jingle_station_id|str_ejwtc},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_station_id.m3u")
-playlist_jingle_station_id = azuracast.utilities.drop_metadata(playlist_jingle_station_id)
-ignore(playlist_jingle_station_id)
+playlist_tropical_thunder = playlist(id="playlist_tropical_thunder",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tropical_thunder.m3u")
 
-playlist_jingle_donate = playlist(id={str_zbehl|playlist_jingle_donate|str_zbehl},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jingle_donate.m3u")
-ignore(playlist_jingle_donate)
+playlist_arcadeok_alatt = playlist(id="playlist_arcadeok_alatt",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_arcadeok_alatt.m3u")
 
-playlist_linear_systems_with_gestalt = playlist(id={str_boonk|playlist_linear_systems_with_gestalt|str_boonk},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_linear_systems_with_gestalt.m3u")
-ignore(playlist_linear_systems_with_gestalt)
+playlist_spinning = playlist(id="playlist_spinning",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_spinning.m3u")
 
-playlist_lahmacun_presents = playlist(id={str_bzcar|playlist_lahmacun_presents|str_bzcar},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmacun_presents.m3u")
-ignore(playlist_lahmacun_presents)
+playlist_radioradioradio = playlist(id="playlist_radioradioradio",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_radioradioradio.m3u")
 
-playlist_schmerz = playlist(id={str_cujgi|playlist_schmerz|str_cujgi},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_schmerz.m3u")
-ignore(playlist_schmerz)
+playlist_uponthe960 = playlist(id="playlist_uponthe960",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_uponthe960.m3u")
 
-playlist_donald_kacsa_klub = playlist(id={str_qudlj|playlist_donald_kacsa_klub|str_qudlj},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_donald_kacsa_klub.m3u")
-ignore(playlist_donald_kacsa_klub)
+playlist_pentek_pok = playlist(id="playlist_pentek_pok",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_pentek_pok.m3u")
 
-playlist_d23 = playlist(id={str_tmbrt|playlist_d23|str_tmbrt},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_d23.m3u")
-ignore(playlist_d23)
+playlist_telenko = playlist(id="playlist_telenko",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_telenko.m3u")
 
-playlist_hetedik_tipusu_talalkozas = playlist(id={str_slgbi|playlist_hetedik_tipusu_talalkozas|str_slgbi},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_hetedik_tipusu_talalkozas.m3u")
-ignore(playlist_hetedik_tipusu_talalkozas)
+playlist_new_romantic = playlist(id="playlist_new_romantic",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_new_romantic.m3u")
 
-playlist_melyvagas = playlist(id={str_tiksd|playlist_melyvagas|str_tiksd},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_melyvagas.m3u")
-ignore(playlist_melyvagas)
+playlist_lapzarta = playlist(id="playlist_lapzarta",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lapzarta.m3u")
 
-playlist_recently_played = playlist(id={str_qxhva|playlist_recently_played|str_qxhva},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_recently_played.m3u")
-ignore(playlist_recently_played)
+playlist_jazzvajonmi = playlist(id="playlist_jazzvajonmi",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_jazzvajonmi.m3u")
 
-playlist_rambo = playlist(id={str_savni|playlist_rambo|str_savni},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_rambo.m3u")
-ignore(playlist_rambo)
+playlist_stringtheory = playlist(id="playlist_stringtheory",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_stringtheory.m3u")
 
-playlist_1800venus = playlist(id={str_frbtb|playlist_1800venus|str_frbtb},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_1800venus.m3u")
-ignore(playlist_1800venus)
+playlist_peppino = playlist(id="playlist_peppino",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_peppino.m3u")
 
-playlist_boombap = playlist(id={str_kledx|playlist_boombap|str_kledx},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_boombap.m3u")
-ignore(playlist_boombap)
+playlist_inbetween = playlist(id="playlist_inbetween",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_inbetween.m3u")
 
-playlist_melania = playlist(id={str_hhrss|playlist_melania|str_hhrss},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_melania.m3u")
-ignore(playlist_melania)
+playlist_vakhang = playlist(id="playlist_vakhang",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_vakhang.m3u")
 
-playlist_moneyka = playlist(id={str_iupte|playlist_moneyka|str_iupte},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_moneyka.m3u")
-ignore(playlist_moneyka)
+playlist_internetexplorer = playlist(id="playlist_internetexplorer",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_internetexplorer.m3u")
 
-playlist_zeneszen = playlist(id={str_gqzhy|playlist_zeneszen|str_gqzhy},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_zeneszen.m3u")
-ignore(playlist_zeneszen)
+playlist_miminden = playlist(id="playlist_miminden",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_miminden.m3u")
 
-playlist_himihumi = playlist(id={str_nhvhq|playlist_himihumi|str_nhvhq},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_himihumi.m3u")
-ignore(playlist_himihumi)
+playlist_sensorseries = playlist(id="playlist_sensorseries",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sensorseries.m3u")
 
-playlist_hatterzaj = playlist(id={str_gffrz|playlist_hatterzaj|str_gffrz},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_hatterzaj.m3u")
-ignore(playlist_hatterzaj)
+#Lahmacun-own shows
+playlist_lahmaloudclouds = playlist(id="playlist_lahmaloudclouds",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmaloudclouds.m3u")
 
-playlist_tudtad = playlist(id={str_toojo|playlist_tudtad|str_toojo},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_tudtad.m3u")
-ignore(playlist_tudtad)
+playlist_lahmacun_presents = playlist(id="playlist_lahmacun_presents",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmacun_presents.m3u")
 
-playlist_paikka = playlist(id={str_zbigt|playlist_paikka|str_zbigt},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_paikka.m3u")
-ignore(playlist_paikka)
-
-playlist_soundscape_diaries_emcsivel = playlist(id={str_mdnyn|playlist_soundscape_diaries_emcsivel|str_mdnyn},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_soundscape_diaries_emcsivel.m3u")
-ignore(playlist_soundscape_diaries_emcsivel)
-
-playlist_keygen = playlist(id={str_hnqgj|playlist_keygen|str_hnqgj},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_keygen.m3u")
-ignore(playlist_keygen)
-
-playlist_geigercounterculture = playlist(id={str_ciaxp|playlist_geigercounterculture|str_ciaxp},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_geigercounterculture.m3u")
-ignore(playlist_geigercounterculture)
-
-playlist_urmajmok = playlist(id={str_tyltu|playlist_urmajmok|str_tyltu},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_urmajmok.m3u")
-ignore(playlist_urmajmok)
-
-playlist_lahmaloudclouds = playlist(id={str_jetif|playlist_lahmaloudclouds|str_jetif},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmaloudclouds.m3u")
-ignore(playlist_lahmaloudclouds)
-
-playlist_radical_happiness = playlist(id={str_gszvj|playlist_radical_happiness|str_gszvj},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_radical_happiness.m3u")
-ignore(playlist_radical_happiness)
-
-playlist_cleptorama = playlist(id={str_vtoxh|playlist_cleptorama|str_vtoxh},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_cleptorama.m3u")
-ignore(playlist_cleptorama)
-
-playlist_example_playlist_name = playlist(id={str_xdlsk|playlist_example_playlist_name|str_xdlsk},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_example_playlist_name.m3u")
-ignore(playlist_example_playlist_name)
-
-playlist_ritka_csut = playlist(id={str_yzwpy|playlist_ritka_csut|str_yzwpy},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_csut.m3u")
-ignore(playlist_ritka_csut)
-
-playlist_fkse = playlist(id={str_uirnd|playlist_fkse|str_uirnd},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_fkse.m3u")
-ignore(playlist_fkse)
-
-playlist_ritka_pentek = playlist(id={str_odmfg|playlist_ritka_pentek|str_odmfg},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_ritka_pentek.m3u")
-ignore(playlist_ritka_pentek)
-
-playlist_szusivacsi = playlist(id={str_knsvo|playlist_szusivacsi|str_knsvo},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_szusivacsi.m3u")
-ignore(playlist_szusivacsi)
-
-playlist_randomcsunyalanyok = playlist(id={str_qmwfp|playlist_randomcsunyalanyok|str_qmwfp},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_randomcsunyalanyok.m3u")
-ignore(playlist_randomcsunyalanyok)
-
-playlist_szedd_a_labad = playlist(id={str_siqax|playlist_szedd_a_labad|str_siqax},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_szedd_a_labad.m3u")
-ignore(playlist_szedd_a_labad)
-
-playlist_nepek_zaja = playlist(id={str_tmldo|playlist_nepek_zaja|str_tmldo},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_nepek_zaja.m3u")
-ignore(playlist_nepek_zaja)
-
-playlist_default = playlist(id={str_xssvh|playlist_default|str_xssvh},mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_default.m3u")
+#External streams
+#Example - REPLACE URL AND RENAME SOURCE NAME AS NEEDED AND ADD IT TO SCHEDULE (SEE BELOW IN THE MAIN SWITCH OPERATOR)
+#external_cashmere = mksafe(buffer(buffer=5., input.http("https://cashmereradio.out.airtime.pro/cashmereradio_b")))
 
 # Standard Playlists
-radio = random(id="standard_playlists", weights=[3], [playlist_default])
+sources = [
+    ({1w and 08h-09h58m}, once(playlist_nagyot_utott_irodalom)),            # Monday
+    ({1w and 10h-10h58m}, once(playlist_erdenklang)),
+    ({1w and 13h30m-14h58m}, once(playlist_korunk)),
+    ({1w and 15h-15h58m}, once(playlist_vakhang)),
+    ({1w and 16h-16h58m}, once(playlist_szmuti_csorba)),
+    ({1w and 17h-17h58m}, once(playlist_mmn_radio)),
+    ({1w and 18h-19h28m}, once(playlist_graveyard_slot)),
+    ({1w and 19h30m-20h28m}, once(playlist_boombap)),
+    ({1w and 20h30m-21h58m}, once(playlist_dalmata_gergo_show)),
+    ({1w and 22h-22h58m}, once(playlist_tropical_thunder)),
+    ({1w and 23h-23h58m}, once(playlist_sensorseries)),
+    ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),                  # Tuesday
+    ({2w and 14h-15h58m}, once(playlist_napkozi)),
+    ({2w and 16h-17h58m}, once(playlist_diszko_tonik)),
+    ({2w and 18h-18h58m}, once(playlist_lapzarta)),
+    ({2w and 19h-19h58m}, once(playlist_uponthe960)),
+    ({2w and 20h-20h58m}, once(playlist_havizaj)),
+    ({2w and 21h-22h58m}, once(playlist_discursive_musical_voyage)),
+    ({3w and 09h-09h58m}, once(playlist_internetexplorer)),                 # Wednesday
+    ({3w and 10h-11h58m}, once(playlist_lahmacun_presents)),
+    ({3w and 13h-13h58m}, once(playlist_stringtheory)),
+    ({3w and 14h-14h58m}, once(playlist_jazzvajonmi)),
+    ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
+    ({3w and 16h-16h58m}, once(playlist_peppino)),
+    ({3w and 17h-18h28m}, once(playlist_miminden)),
+    ({3w and 20h-21h58m}, once(playlist_stepbystep)),
+    ({3w and 22h-22h58m}, once(playlist_tekerveny)),
+    ({3w23h00m-4w00h58m}, once(playlist_zeitgeist)),
+    ({4w and 10h-10h58m}, once(playlist_radioradioradio)),                  # Thursday
+    ({4w and 11h-11h58m}, once(playlist_lehetosegek_tere)),
+    ({4w and 14h-14h58m}, once(playlist_new_romantic)),
+    ({4w and 15h-16h58m}, once(playlist_telenko)),
+    ({4w and 17h-18h58m}, once(playlist_lazy_calm_raga)),
+    ({4w and 19h-20h58m}, once(playlist_inbetween)),
+    ({4w and 21h-22h58m}, once(playlist_schmerz)),
+    ({4w23h00m-5w00h58m}, once(playlist_spinning)),
+    ({5w and 13h30m-14h58m}, once(playlist_friday_afternoon)),              # Friday
+    ({5w and 15h-16h58m}, once(playlist_aa_radio)),
+    ({5w and 17h-17h58m}, once(playlist_truno_tapes)),
+    ({5w and 18h-22h58m}, once(playlist_pentek_pok)),
+    ({5w23h00m-6w00h58m}, once(playlist_arcadeok_alatt)),
+    ({6w and 10h-11h58m}, once(playlist_superstar)),                        # Saturday
+    ({6w and 12h-13h58m}, once(playlist_random_times)),
+    ({6w and 15h-17h58m}, once(playlist_torso)),
+    ({6w and 18h-19h58m}, once(playlist_rnr666)),
+    ({6w and 20h-20h58m}, once(playlist_blr)),
+    ({6w and 21h-21h58m}, once(playlist_moneyka)),
+    ({6w and 22h-22h58m}, once(playlist_ganzfeld)),
+    ({6w23h-7w00h28m}, once(playlist_d23)),             
+    ({7w and 12h-13h58m}, once(playlist_sunday_morgen)),                    # Sunday
+    ({7w and 14h-15h58m}, once(playlist_infinite_scroll)),
+    ({7w and 16h-17h58m}, once(playlist_donald_kacsa_klub)),
+    ({7w and 18h-18h58m}, once(playlist_geigercounterculture)),
+    ({7w and 19h-19h58m}, once(playlist_hetedik_tipusu_talalkozas)),
+    ({7w and 20h-20h58m}, once(playlist_kisszoba)),
+    ({7w and 21h-21h58m}, once(playlist_sub_burek)),
+    #Example - REPLACE WITH ACTUAL EXTERNAL SOURCE
+    #({ 6w and 18h23m-18h24m}, external_cashmere),
+    ({true}, random(id="playlist_off_air", [playlist_off_air])) ]
 
-remote_url = mksafe(buffer(buffer=5., input.http({str_npqyd|https://cashmereradio.out.airtime.pro/cashmereradio_b|str_npqyd})))
-radio = fallback(id="fallback_remote_url", track_sensitive = false, [remote_url, radio])
-
-requests = request.queue(id="requests", timeout=settings.azuracast.request_timeout())
-radio = fallback(id="requests_fallback", track_sensitive = true, [requests, radio])
-
-interrupting_queue = request.queue(id="interrupting_requests", timeout=settings.azuracast.request_timeout())
-radio = fallback(id="interrupting_fallback", track_sensitive = false, [interrupting_queue, radio])
-
-# Allow Telnet to skip the current track.
-azuracast.utilities.add_skip_command(radio)
-
-# Apply amplification metadata (if supplied)
-# This can be disabled by setting:
-#   settings.azuracast.apply_amplify := false
-radio = azuracast.apply_amplify(radio)
-
-# Log current metadata for debugging.
-source.methods(radio).on_metadata(synchronous=false, azuracast.log_meta)
-
-# Apply crossfade.
-radio = azuracast.apply_crossfade(radio)
-
-# A Pre-DJ source of radio that can be broadcast if needed
-radio_without_live = radio
-ignore(radio_without_live)
+# Standard Schedule Switch
+radio = switch(id="switch", track_sensitive=false, sources)
 
 # Live Broadcasting
-live = input.harbor({str_dzzet|/|str_dzzet}, id = "input_streamer", port = 8005, auth = azuracast.dj_auth, icy = true, icy_metadata_charset = {str_napys|UTF-8|str_napys}, metadata_charset = {str_mjrpi|UTF-8|str_mjrpi}, buffer = 5.00, max = 10.00)
+live = input.harbor("/", id = "input_streamer", port = 8005, auth = azuracast.dj_auth, icy = true, icy_metadata_charset = "UTF-8", metadata_charset = "UTF-8", buffer = 5.00, max = 10.00)
 live.on_connect(synchronous=false, azuracast.live_connected)
 live.on_disconnect(synchronous=false, azuracast.live_disconnected)
 
@@ -1253,6 +1200,24 @@ end
 # Continuously check on live.
 source.methods(radio).on_frame(synchronous=true, check_live)
 
+# Allow Telnet to skip the current track.
+azuracast.utilities.add_skip_command(radio)
+
+# Apply amplification metadata (if supplied)
+# This can be disabled by setting:
+#   settings.azuracast.apply_amplify := false
+radio = azuracast.apply_amplify(radio)
+
+# Log current metadata for debugging.
+source.methods(radio).on_metadata(synchronous=false, azuracast.log_meta)
+
+# Apply crossfade.
+radio = azuracast.apply_crossfade(radio)
+
+# A Pre-DJ source of radio that can be broadcast if needed
+radio_without_live = radio
+ignore(radio_without_live)
+
 # Allow for Telnet-driven insertion of custom metadata.
 azuracast.utilities.add_custom_metadata_command(id="custom_metadata", radio)
 
@@ -1266,6 +1231,6 @@ source.methods(radio).on_metadata(synchronous=false, azuracast.send_feedback)
 radio = azuracast.handle_jingle_mode(radio)
 
 # Local Broadcasts
-output.icecast(%ffmpeg(format="mp3", %audio(codec="libmp3lame", ac=2, ar=44100, b="128k")), id="local_1", host = {str_bfmuf|127.0.0.1|str_bfmuf}, port = 8000, password = {str_lnzgr|(PASSWORD)|str_lnzgr}, mount = {str_vebhj|/radio.mp3|str_vebhj}, name = {str_strrl|Lahmacun radio|str_strrl}, description = {str_aboud||str_aboud}, genre = {str_mzhkc||str_mzhkc}, public = false, encoding = {str_eqnoc|UTF-8|str_eqnoc}, radio)
+output.icecast(%ffmpeg(format="mp3", %audio(codec="libmp3lame", ac=2, ar=44100, b="128k")), id="local_1", host = "127.0.0.1", port = 8000, password = "ICECAST_KEY", mount = "/radio.mp3", name = "Lahmacun radio", description = "", genre = "", public = false, encoding = "UTF-8", radio)
 
 # Remote Relays
