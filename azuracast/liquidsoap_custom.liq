@@ -247,6 +247,9 @@ playlist_miminden = cue_cut(id="playlist_miminden", playlist_miminden)
 playlist_sensorseries = playlist(id="playlist_sensorseries",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_sensorseries.m3u")
 playlist_sensorseries = cue_cut(id="playlist_sensorseries", playlist_sensorseries)
 
+playlist_mementomori = playlist(id="playlist_mementomori",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_mementomori.m3u")
+playlist_mementomori = cue_cut(id="playlist_mementomori", playlist_mementomori)
+
 #Lahmacun-own shows
 playlist_lahmaloudclouds = playlist(id="playlist_lahmaloudclouds",mime_type="audio/x-mpegurl",mode="randomize",reload_mode="watch","/var/azuracast/stations/lahmacun_radio/playlists/playlist_lahmaloudclouds.m3u")
 playlist_lahmaloudclouds = cue_cut(id="cue_playlist_lahmaloudclouds", playlist_lahmaloudclouds)
@@ -337,6 +340,7 @@ sources = [
     ({1w and 22h-22h58m}, once(playlist_tropical_thunder)),
     ({1w and 23h-23h58m}, once(playlist_sensorseries)),
     ({2w and 10h-11h58m}, once(playlist_lahmaloudclouds)),                  # Tuesday
+    ({2w and 12h-13h58m}, once(playlist_mementomori)),
     ({2w and 14h-15h58m}, once(playlist_napkozi)),
     ({2w and 16h-17h58m}, once(playlist_diszko_tonik)),
     ({2w and 18h-18h58m}, once(playlist_lapzarta)),
@@ -350,6 +354,7 @@ sources = [
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_peppino)),
     ({3w and 17h-18h28m}, once(playlist_miminden)),
+    ({3w and 18h30m-19h58m}, once(playlist_infinite_scroll)),
     ({3w and 20h-21h58m}, once(playlist_stepbystep)),
     ({3w and 22h-22h58m}, once(playlist_tekerveny)),
     ({3w23h00m-4w00h58m}, once(playlist_zeitgeist)),
@@ -375,7 +380,6 @@ sources = [
     ({6w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({6w23h-7w00h28m}, once(playlist_d23)),             
     ({7w and 12h-13h58m}, once(playlist_sunday_morgen)),                    # Sunday
-    ({7w and 14h-15h58m}, once(playlist_infinite_scroll)),
     ({7w and 16h-17h58m}, once(playlist_donald_kacsa_klub)),
     ({7w and 18h-18h58m}, once(playlist_geigercounterculture)),
     ({7w and 19h-19h58m}, once(playlist_hetedik_tipusu_talalkozas)),
