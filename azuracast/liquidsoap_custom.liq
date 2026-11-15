@@ -350,6 +350,7 @@ sources = [
     ({3w and 15h-15h58m}, once(playlist_erto_hallgatas)),
     ({3w and 16h-16h58m}, once(playlist_peppino)),
     ({3w and 17h-18h28m}, once(playlist_miminden)),
+    ({3w and 18h30m-19h58m}, once(playlist_infinite_scroll)),
     ({3w and 20h-21h58m}, once(playlist_stepbystep)),
     ({3w and 22h-22h58m}, once(playlist_tekerveny)),
     ({3w23h00m-4w00h58m}, once(playlist_zeitgeist)),
@@ -375,7 +376,6 @@ sources = [
     ({6w and 22h-22h58m}, once(playlist_ganzfeld)),
     ({6w23h-7w00h28m}, once(playlist_d23)),             
     ({7w and 12h-13h58m}, once(playlist_sunday_morgen)),                    # Sunday
-    ({7w and 14h-15h58m}, once(playlist_infinite_scroll)),
     ({7w and 16h-17h58m}, once(playlist_donald_kacsa_klub)),
     ({7w and 18h-18h58m}, once(playlist_geigercounterculture)),
     ({7w and 19h-19h58m}, once(playlist_hetedik_tipusu_talalkozas)),
